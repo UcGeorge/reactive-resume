@@ -528,6 +528,10 @@ msgstr "비동기적 소통과 책임감을 중시하는 원격 근무 우선 �
 msgid "Advanced"
 msgstr "고급의"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Advertised"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Advice for the person reading it. None of this affects the score."
 msgstr "읽는 사람을 위한 조언입니다. 이 항목들은 점수에 영향을 주지 않습니다."
@@ -629,6 +633,10 @@ msgstr "이미 포함됨"
 #: src/features/auth/pages/register.tsx
 msgid "Already have an account? <0/>"
 msgstr "이미 계정이 있으신가요? <0/>"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Already in your skills"
+msgstr ""
 
 #: src/libs/locale.ts
 msgid "Amharic"
@@ -758,6 +766,10 @@ msgstr "지원함"
 msgid "Applied on"
 msgstr "지원일"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Apply"
+msgstr ""
+
 #: src/routes/agent/-components/patch-approval-card.tsx
 msgid "Approve"
 msgstr "승인"
@@ -781,6 +793,10 @@ msgstr "보관"
 #: src/routes/dashboard/applications/index.tsx
 msgid "Archived"
 msgstr "보관됨"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Archived job description"
+msgstr ""
 
 #: src/hooks/use-form-blocker.tsx
 msgid "Are you sure you want to close this dialog?"
@@ -839,6 +855,14 @@ msgstr "이력서에 대해 궁금한 점이 있으면 무엇이든 물어보세
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Aspect Ratio"
 msgstr "가로세로 비율"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Assessment"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "At or above the 4.0 apply line."
+msgstr ""
 
 #: src/libs/resume/section.tsx
 msgid "ATS Check"
@@ -939,6 +963,10 @@ msgstr "기본 URL"
 #: src/libs/resume/section.tsx
 msgid "Basics"
 msgstr "기본 사항"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Below the 4.0 apply line."
+msgstr ""
 
 #: src/libs/locale.ts
 msgid "Bengali"
@@ -1056,6 +1084,10 @@ msgstr "복원할 수 없습니다. 이 수정 사항이 적용된 이후 이력
 #: src/libs/locale.ts
 msgid "Catalan"
 msgstr "카탈루냐어"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "caution"
+msgstr ""
 
 #: src/components/input/rich-input.tsx
 msgid "Center Align"
@@ -1243,6 +1275,10 @@ msgstr "닫기"
 msgid "Close AI assistant"
 msgstr "AI 비서 닫기"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Collapse"
+msgstr ""
+
 #: src/features/homepage/resume-sculpture.tsx
 msgid "Color"
 msgstr "색상"
@@ -1293,9 +1329,17 @@ msgstr "회사 A–Z"
 msgid "Compare this resume against this job posting URL and update the keywords without overselling anything."
 msgstr "이 이력서를 이 채용 공고 URL과 비교하고, 과장하지 않으면서 키워드를 갱신해 주세요."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Compensation"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Compress or remove large images to keep uploads quick."
 msgstr "업로드 속도를 위해 큰 이미지를 압축하거나 제거하세요."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Confidence:"
+msgstr ""
 
 #. Account deletion confirmation dialog confirm action in account settings
 #. Create API key dialog acknowledgment action after copying
@@ -1342,6 +1386,10 @@ msgstr "연결에 실패했습니다."
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Connection verified. The provider is ready to use."
 msgstr "연결을 확인했습니다. 이 제공업체를 바로 사용할 수 있습니다."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Consider"
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Contact details"
@@ -1548,13 +1596,25 @@ msgstr "지원을 추가할 수 없습니다. 다시 시도하세요."
 msgid "Couldn't delete the application."
 msgstr "지원을 삭제할 수 없습니다."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Couldn't delete the evaluation."
+msgstr ""
+
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Couldn't delete the timeline entry."
 msgstr "타임라인 항목을 삭제할 수 없습니다."
 
+#: src/features/applications/components/application-form-sheet.tsx
+msgid "Couldn't fetch that URL."
+msgstr ""
+
 #: src/features/applications/components/board.tsx
 msgid "Couldn't move the application. Please try again."
 msgstr "지원을 이동할 수 없습니다. 다시 시도하세요."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Couldn't retry the evaluation."
+msgstr ""
 
 #: src/routes/builder/$resumeId/-components/header.tsx
 msgid "Couldn't save"
@@ -1567,6 +1627,11 @@ msgstr "메모를 저장할 수 없습니다."
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Couldn't save your changes. Please try again."
 msgstr "변경사항을 저장할 수 없습니다. 다시 시도하세요."
+
+#: src/features/applications/components/application-ai-copilot.tsx
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Couldn't start the evaluation."
+msgstr ""
 
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Couldn't update the timeline entry."
@@ -1759,6 +1824,10 @@ msgstr "API 키를 생성하는 중입니다..."
 msgid "Creating your resume..."
 msgstr "이력서를 생성하는 중입니다..."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "critical"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Crop and Upload"
 msgstr "사진 자르고 업로드"
@@ -1803,6 +1872,10 @@ msgstr "사용자 지정 섹션"
 #: src/libs/resume/section.tsx
 msgid "Custom Styles"
 msgstr "사용자 지정 스타일"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Customization plan"
+msgstr ""
 
 #: src/libs/locale.ts
 msgid "Czech"
@@ -1853,6 +1926,14 @@ msgstr "확대/축소 크기 줄이기"
 msgid "Deep check"
 msgstr "심층 점검"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Deep JD evaluation"
+msgstr ""
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Deep report: requirements, gaps, strategy, legitimacy"
+msgstr ""
+
 #: src/features/cover-letters/library.tsx
 msgid "Default template"
 msgstr "기본 템플릿"
@@ -1871,6 +1952,7 @@ msgstr "학위"
 #: src/features/applications/components/application-detail-sheet.tsx
 #: src/features/applications/components/table-view.tsx
 #: src/features/cover-letters/editor-dialog.tsx
+#: src/features/evaluations/components/evaluation-panel.tsx
 #: src/features/settings/authentication/components/passkeys.tsx
 #: src/features/settings/pages/api-keys.tsx
 #: src/routes/agent/-components/agent-chat.tsx
@@ -1887,6 +1969,10 @@ msgstr "삭제"
 #: src/features/settings/pages/account.tsx
 msgid "Delete Account"
 msgstr "계정 삭제"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Delete evaluation"
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Delete it. Hidden keywords are treated as a deliberate attempt to game the search."
@@ -1917,6 +2003,10 @@ msgstr "이 지원서를 삭제할까요?"
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Delete this cover letter?"
 msgstr "이 커버레터를 삭제할까요?"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Delete this evaluation?"
+msgstr ""
 
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Delete this timeline entry?"
@@ -2123,6 +2213,10 @@ msgstr "커버레터 초안 작성"
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Draft a follow-up"
 msgstr "후속 메시지 초안 작성"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Draft answers"
+msgstr ""
 
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Drafting failed."
@@ -2371,9 +2465,33 @@ msgstr "2단계 인증을 비활성화하려면 비밀번호를 입력하세요.
 msgid "Error"
 msgstr "오류"
 
+#: src/features/applications/components/application-detail-sheet.tsx
+msgid "Evaluation"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Evaluation failed"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Evaluation queued…"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Evaluation running…"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "Every check passed. Nothing here should stop a parser from reading your resume."
 msgstr "모든 점검이 통과되었습니다. "
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Evidence"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Evidence:"
+msgstr ""
 
 #: src/features/homepage/feature-explorer.tsx
 msgid "Example application"
@@ -2390,6 +2508,10 @@ msgstr "포커스 모드 종료"
 #: src/components/input/rich-input.tsx
 msgid "Exit Fullscreen"
 msgstr "전체 화면 종료"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Expand"
+msgstr ""
 
 #: src/dialogs/resume/sections/custom.tsx
 #: src/features/homepage/export-playground.tsx
@@ -2640,6 +2762,14 @@ msgstr "치명적 오류"
 msgid "Features"
 msgstr "기능"
 
+#: src/features/applications/components/application-form-sheet.tsx
+msgid "Fetch & autofill"
+msgstr ""
+
+#: src/features/applications/components/application-form-sheet.tsx
+msgid "Fetched the posting and filled in the fields."
+msgstr ""
+
 #: src/features/homepage/page.tsx
 msgid "Fifteen templates, all free. Pick one you like. You can change the type, color, and layout in the editor."
 msgstr "15가지 템플릿, 모두 무료입니다. 마음에 드는 것을 고르세요. 서체, 색상, 레이아웃은 편집기에서 바꿀 수 있습니다."
@@ -2687,6 +2817,10 @@ msgstr "보기에 적합함"
 #: src/features/homepage/feature-explorer.tsx
 msgid "Fits into your workflow"
 msgstr "쓰던 워크플로에 그대로"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "flag"
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Flatten the form so the text is part of the page."
@@ -2779,6 +2913,14 @@ msgstr "프랑스어"
 msgid "From your resume and the posting"
 msgstr "이력서와 공고에서"
 
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Full evaluation"
+msgstr ""
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Full evaluation started. Open the Evaluation tab to follow it."
+msgstr ""
+
 #: src/features/resume/export/download-dialog.tsx
 msgid "Full resume data for backup or import."
 msgstr "백업 또는 가져오기를 위한 전체 이력서 데이터입니다."
@@ -2796,6 +2938,10 @@ msgstr "전체 화면"
 #: src/components/input/rich-input.tsx
 msgid "Fullscreen Editor"
 msgstr "전체 화면 편집기"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Gaps & mitigations"
+msgstr ""
 
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Gaps:"
@@ -2887,6 +3033,10 @@ msgstr "그리스어"
 #: src/routes/dashboard/resumes/index.tsx
 msgid "Grid"
 msgstr "그리드"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Hard stops"
+msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/typography.tsx
 msgctxt "Headings or Titles (H1, H2, H3, H4, H5, H6)"
@@ -2997,6 +3147,10 @@ msgstr "미리보기 숨기기"
 msgid "Hide Section Icons"
 msgstr "섹션 아이콘 숨기기"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "high"
+msgstr ""
+
 #: src/features/ats-checker/ai-review/ai-review-results.tsx
 msgid "High impact"
 msgstr "높은 영향도"
@@ -3013,6 +3167,10 @@ msgstr "하이라이트 색상"
 msgid "Hindi"
 msgstr "힌디어"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Hint:"
+msgstr ""
+
 #: src/features/command-palette/pages/navigation.tsx
 msgid "Home"
 msgstr "홈"
@@ -3020,6 +3178,10 @@ msgstr "홈"
 #: src/features/settings/pages/api-keys.tsx
 msgid "How do I use the API?"
 msgstr "API는 어떻게 사용하나요?"
+
+#: src/features/applications/components/application-form-sheet.tsx
+msgid "https://… (job posting URL)"
+msgstr ""
 
 #: src/libs/locale.ts
 msgid "Hungarian"
@@ -3087,6 +3249,10 @@ msgstr "라이브러리에서 가져오기"
 msgid "Import JSON"
 msgstr "JSON 가져오기"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Importance"
+msgstr ""
+
 #. placeholder {0}: result.imported
 #: src/features/applications/components/import-applications-sheet.tsx
 msgid "Imported {0} application(s)."
@@ -3133,6 +3299,10 @@ msgstr "확대/축소"
 msgid "Indonesian"
 msgstr "인도네시아어"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "inferred"
+msgstr ""
+
 #: src/libs/resume/section.tsx
 msgid "Information"
 msgstr "정보"
@@ -3176,6 +3346,10 @@ msgstr "관심사"
 msgid "Interview"
 msgstr "면접"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Interview plan"
+msgstr ""
+
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Invalid AI provider configuration."
 msgstr "AI 제공자 구성이 잘못되었습니다."
@@ -3195,6 +3369,14 @@ msgstr "기울임"
 #: src/libs/locale.ts
 msgid "Japanese"
 msgstr "일본어"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "JD signal"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "JD signal:"
+msgstr ""
 
 #: src/features/command-palette/pages/navigation.tsx
 msgid "Job"
@@ -3313,6 +3495,10 @@ msgstr "레이아웃이 그대로 유지됩니다. 바로 보내거나, 업로�
 msgid "Key"
 msgstr "키"
 
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Keyword coverage:"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
 msgid "Keyword layout"
 msgstr "키워드 레이아웃"
@@ -3427,6 +3613,22 @@ msgstr "왼쪽 정렬"
 msgid "Legal"
 msgstr "법적 고지"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Legitimacy signals"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Legitimacy: high confidence"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Legitimacy: proceed with caution"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Legitimacy: suspicious"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Length is not a defect, and there is no universal one-page rule. Keep the pages that earn their place."
 msgstr "길이 자체는 결함이 아니며, 보편적인 한 페이지 규칙도 없습니다. 그만한 가치가 있는 페이지만 남기세요."
@@ -3445,6 +3647,10 @@ msgstr "레벨"
 #: src/components/level/display.tsx
 msgid "Level {level} of 5"
 msgstr "5점 만점에 {level}점"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Level & positioning"
+msgstr ""
 
 #: src/components/ui/copyright.tsx
 msgid "Licensed under <0>MIT</0>."
@@ -3481,6 +3687,10 @@ msgstr "Reactive Resume 연결 (권장)"
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Link a Reactive Resume to use AI match scoring and tailoring."
 msgstr "AI 적합도 평가와 맞춤 작성을 사용하려면 Reactive Resume 이력서를 연결하세요."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Link a resume and paste the job description (Edit) to run an evaluation."
+msgstr ""
 
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Link a resume and paste the job description (Edit) to score your fit and tailor a copy."
@@ -3564,6 +3774,7 @@ msgstr "… 로딩 중"
 #: src/features/applications/components/application-form-sheet.tsx
 #: src/features/applications/components/table-view.tsx
 #: src/features/ats-checker/parse-preview.tsx
+#: src/features/evaluations/components/evaluation-panel.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/basics.tsx
 msgid "Location"
 msgstr "위치"
@@ -3585,9 +3796,25 @@ msgstr "긴 구간이 대문자로 작성되어 있습니다."
 msgid "Lost access to your authenticator?"
 msgstr "인증 앱에 접근할 수 없으신가요?"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "low"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Low confidence — this is not a clean result"
+msgstr ""
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Low confidence — this is not a clean result:"
+msgstr ""
+
 #: src/features/ats-checker/ai-review/ai-review-results.tsx
 msgid "Low impact"
 msgstr "낮은 영향도"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "low signal"
+msgstr ""
 
 #: src/features/homepage/resume-sculpture.tsx
 msgid "Made with Reactive Resume"
@@ -3651,9 +3878,21 @@ msgstr "여백(세로)"
 msgid "Mark rejected"
 msgstr "거절됨으로 표시"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Match"
+msgstr ""
+
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Match scoring failed."
 msgstr "적합도 점수화에 실패했습니다."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "meaningful"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "medium"
+msgstr ""
 
 #: src/features/ats-checker/ai-review/ai-review-results.tsx
 msgid "Medium impact"
@@ -3665,6 +3904,14 @@ msgstr "중간 영향도"
 msgid "Microsoft Word"
 msgstr "Microsoft Word"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "missing"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Missing from your resume"
+msgstr ""
+
 #: src/routes/agent/-components/resume-pane.tsx
 msgid "Missing working resume"
 msgstr "이력서가 누락되었습니다."
@@ -3672,6 +3919,10 @@ msgstr "이력서가 누락되었습니다."
 #: src/features/homepage/site-footer.tsx
 msgid "MIT License"
 msgstr "MIT 라이선스"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Mitigation:"
+msgstr ""
 
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Model"
@@ -3744,6 +3995,10 @@ msgstr "다음으로 이동됨"
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom-fields.tsx
 msgid "Must start with https://"
 msgstr "https:// 으로 시작해야 합니다."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "n/a"
+msgstr ""
 
 #. Label for full name input on registration form
 #: src/dialogs/api-key/create.tsx
@@ -3832,6 +4087,10 @@ msgstr "새 스레드"
 #: src/features/cover-letters/library.tsx
 msgid "Next"
 msgstr "다음"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Next action:"
+msgstr ""
 
 #: src/features/homepage/template-shelf.tsx
 msgid "Next template"
@@ -3940,6 +4199,10 @@ msgstr "아직 이력서가 없습니다."
 msgid "No saved versions yet."
 msgstr "아직 저장된 버전이 없습니다."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "No skill requirements were extracted from the posting."
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "No skills section was found."
 msgstr "기술 섹션을 찾을 수 없습니다."
@@ -3951,6 +4214,14 @@ msgstr "아직 소스 데이터가 없습니다."
 #: src/features/ats-checker/report/jd-coverage.tsx
 msgid "No specific terms could be pulled out of that job description, so it may be mostly boilerplate. Paste the requirements section for a more useful comparison."
 msgstr "해당 채용 공고에서 구체적인 용어를 추출할 수 없어 대부분 정형화된 문구로 보입니다. 더 유용한 비교를 위해 자격 요건 섹션을 붙여넣으세요."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "No sponsorship"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "No sponsorship needed"
+msgstr ""
 
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "No tested provider"
@@ -3979,6 +4250,14 @@ msgstr "노르웨이어"
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Not connected"
 msgstr "연결되지 않음"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "not evaluated"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Not evaluated:"
+msgstr ""
 
 #: src/features/ats-checker/ai-review/ai-review-results.tsx
 msgid "Not evidenced in your resume"
@@ -4029,6 +4308,10 @@ msgstr "오디아어"
 #: src/features/homepage/feature-explorer.tsx
 msgid "Offer"
 msgstr "오퍼"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "ok"
+msgstr ""
 
 #: src/features/settings/pages/api-keys.tsx
 msgid "Once deleted, the key can no longer access your data. This cannot be undone."
@@ -4163,6 +4446,10 @@ msgstr "원본 표 서식이 유지됩니다. 안전하게 편집할 수 없어 
 msgid "out of 100"
 msgstr "100점 만점"
 
+#: src/features/applications/components/application-detail-sheet.tsx
+msgid "Overview"
+msgstr ""
+
 #: src/libs/resume/section.tsx
 msgid "Page"
 msgstr "페이지"
@@ -4184,6 +4471,10 @@ msgstr "문단"
 #: src/components/input/rich-input.tsx
 msgid "Paragraph and heading style"
 msgstr "단락 및 제목 스타일"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "partial"
+msgstr ""
 
 #. Authentication provider display name in account settings
 #. Label for passkey sign-in button
@@ -4399,6 +4690,10 @@ msgstr "포르투갈어(포르투갈)"
 msgid "Position"
 msgstr "직책"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Positioning"
+msgstr ""
+
 #: src/libs/resume/ats.ts
 msgid "Prefer a conventional heading such as \"Work Experience\" or \"Education\"."
 msgstr "\"직업 경험\" 또는 \"교육\"과 같은 일반적인 제목을 선호합니다."
@@ -4413,6 +4708,10 @@ msgstr "단일 열을 사용하거나, 사이드 열은 짧고 독립적인 목�
 #: src/routes/dashboard/settings/preferences.tsx
 msgid "Preferences"
 msgstr "환경 설정"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "preferred"
+msgstr ""
 
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Prepare a conservative patch that improves clarity without changing the story of my career."
@@ -4558,6 +4857,10 @@ msgstr "발행인"
 #: src/features/ats-checker/messages.ts
 msgid "Put a plain email address near the top of the first page. It is what most systems file you under."
 msgstr "첫 페이지 상단 근처에 일반 텍스트 이메일 주소를 넣으세요. 대부분의 시스템이 이를 기준으로 분류합니다."
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Quick match"
+msgstr ""
 
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Raw JSON"
@@ -4731,6 +5034,10 @@ msgstr "새 장치 등록"
 msgid "Released under the <0>MIT License</0>."
 msgstr "<0>MIT 라이선스</0>로 배포됩니다."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Reliability"
+msgstr ""
+
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Reload latest version"
 msgstr "최신 버전 다시 불러오기"
@@ -4829,6 +5136,22 @@ msgstr "버그 신고"
 #: src/routes/_home/-sections/footer.tsx
 msgid "Report an issue"
 msgstr "문제 신고"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Reports to"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Requirement"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Requirements"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Research first"
+msgstr ""
 
 #: src/features/settings/pages/profile.tsx
 msgid "Resend verification email"
@@ -4946,6 +5269,7 @@ msgstr "이력서"
 
 #: src/features/cover-letters/editor-dialog.tsx
 #: src/features/cover-letters/library.tsx
+#: src/features/evaluations/components/evaluation-panel.tsx
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Retry"
 msgstr "다시 해 보다"
@@ -4986,6 +5310,15 @@ msgstr "Rhyhorn 샘플 이력서"
 msgid "Right Align"
 msgstr "오른쪽 정렬"
 
+#. placeholder {0}: riskLevelLabel(blocks.riskSummary.level)
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Risk ({0}):"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Risk:"
+msgstr ""
+
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Role (optional)"
 msgstr "직무(선택 사항)"
@@ -5002,6 +5335,10 @@ msgstr "직무 A–Z"
 msgid "Role Progression"
 msgstr "역할 진행"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Role summary"
+msgstr ""
+
 #: src/libs/locale.ts
 msgid "Romanian"
 msgstr "루마니아어"
@@ -5010,6 +5347,7 @@ msgstr "루마니아어"
 msgid "Rotation"
 msgstr "회전"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "Run again"
 msgstr "다시 실행"
@@ -5022,9 +5360,21 @@ msgstr "AI 검토 실행"
 msgid "Run deep check"
 msgstr "심층 점검 실행"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Run full evaluation"
+msgstr ""
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Running quick match…"
+msgstr ""
+
 #: src/routes/agent/-components/tool-part-card.tsx
 msgid "Running…"
 msgstr "실행 중…"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Runs a multi-pass analysis of this posting against your linked resume: a requirement-by-requirement match table, level and compensation strategy, legitimacy screening, interview prep, and a 1–5 verdict where 4.0 is the apply line. The job description is archived verbatim with the report."
+msgstr ""
 
 #: src/libs/locale.ts
 msgid "Russian"
@@ -5142,14 +5492,6 @@ msgstr "아래 QR 코드를 선호하는 인증 앱으로 스캔하세요. 아�
 #: src/dialogs/resume/sections/education.tsx
 msgid "School"
 msgstr "학교"
-
-#: src/features/applications/components/application-ai-copilot.tsx
-msgid "Score my fit"
-msgstr "내 적합도 점수화"
-
-#: src/features/applications/components/application-ai-copilot.tsx
-msgid "Scoring your fit…"
-msgstr "적합도 점수화 중…"
 
 #: src/routes/dashboard/-components/sidebar.tsx
 msgid "Search"
@@ -5537,6 +5879,10 @@ msgstr "단일 열 구성에 세련되고 진중한 느낌을 더한 템플릿�
 msgid "Size"
 msgstr "크기"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Skill gap"
+msgstr ""
+
 #: src/dialogs/resume/sections/custom.tsx
 #: src/features/homepage/export-playground.tsx
 #: src/features/homepage/languages-showcase.tsx
@@ -5545,6 +5891,10 @@ msgstr "크기"
 #: src/libs/resume/section.tsx
 msgid "Skills"
 msgstr "기술"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Skip"
+msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Skip and Upload"
@@ -5569,6 +5919,10 @@ msgstr "슬로베니아어"
 #: src/dialogs/resume/index.tsx
 msgid "Slug"
 msgstr "슬러그"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Soft gaps"
+msgstr ""
 
 #: src/libs/resume/ats.ts
 msgid "Some application systems require one before you can submit."
@@ -5621,6 +5975,10 @@ msgstr "기타…"
 #: src/components/layout/error-screen.tsx
 msgid "Something went wrong"
 msgstr "뭔가 잘못됐어요"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Something went wrong during the run."
+msgstr ""
 
 #: src/features/ats-checker/tool.tsx
 msgid "Something went wrong while reading that file. Please try again."
@@ -5694,6 +6052,14 @@ msgstr "\"2022년 3월\"처럼 월을 정확히 표기하세요."
 #: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
 msgid "Sponsors"
 msgstr "스폰서"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Sponsors visas"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Sponsorship unstated"
+msgstr ""
 
 #: src/features/homepage/site-footer.tsx
 #: src/routes/_home/-sections/footer.tsx
@@ -5778,6 +6144,10 @@ msgstr "이력서 첫 줄에 이름만 단독으로 배치하세요."
 msgid "Start thread"
 msgstr "스레드 시작"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "stated"
+msgstr ""
+
 #: src/libs/resume/section.tsx
 msgid "Statistics"
 msgstr "통계"
@@ -5803,13 +6173,25 @@ msgstr "세대 중단"
 msgid "Strengths"
 msgstr "강점"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Strengths & soft gaps"
+msgstr ""
+
 #: src/components/input/rich-input.tsx
 msgid "Strike"
 msgstr "취소선"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "strong"
+msgstr ""
+
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Strong fit"
 msgstr "높은 적합도"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "structural"
+msgstr ""
 
 #: src/features/resume/stylesheet/toolbar.tsx
 msgid "Stylesheet editor"
@@ -5853,6 +6235,10 @@ msgstr "가능한 방식으로 앱을 지원해 주세요!"
 #: src/features/homepage/page.tsx
 msgid "Support the project"
 msgstr "프로젝트 후원하기"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Supported by your resume"
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 #: src/libs/resume/ats.ts
@@ -6031,6 +6417,10 @@ msgstr "심층 점검을 완료하지 못했습니다. 다시 시도해 주세�
 msgid "The imported file could not be parsed into a valid resume."
 msgstr "가져온 파일을 유효한 이력서로 구문 분석할 수 없습니다."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "The multi-pass analysis usually takes a minute. The skill gap below is already final."
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "The order the text is stored in disagrees badly with the order it reads in."
 msgstr "텍스트가 저장된 순서가 실제로 읽히는 순서와 크게 다릅니다."
@@ -6070,6 +6460,10 @@ msgstr "제공업체가 읽을 수 없는 형식의 검토 결과를 반환했�
 #: src/features/auth/pages/error.tsx
 msgid "The provider's response could not be verified. Please start again."
 msgstr "공급자의 응답을 확인할 수 없습니다. 다시 시작해 주세요."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "The report and its archived job description snapshot will be permanently deleted."
+msgstr ""
 
 #: src/features/homepage/page.tsx
 msgid "The rest of your<0/>job search, too."
@@ -6483,6 +6877,10 @@ msgstr "토큰: {total} ({cached} 캐시됨)"
 #: src/features/homepage/resume-sculpture.tsx
 msgid "Tools"
 msgstr "도구"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Top strengths"
+msgstr ""
 
 #: src/features/homepage/community-stats.tsx
 msgid "Total unavailable"
@@ -6957,6 +7355,10 @@ msgstr "이력서치고 복구된 단어 수가 매우 적습니다."
 msgid "Very little text was recovered for this many pages."
 msgstr "이만큼의 페이지 수에 비해 복구된 텍스트가 매우 적습니다."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Via"
+msgstr ""
+
 #: src/libs/locale.ts
 msgid "Vietnamese"
 msgstr "베트남어"
@@ -7113,6 +7515,14 @@ msgstr "타임라인을 재구성할 수 있는지 여부."
 #: src/features/ats-checker/messages.ts
 msgid "Words run together when the text is extracted."
 msgstr "텍스트를 추출하면 단어들이 서로 붙어버립니다."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Work auth note"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Work authorization:"
+msgstr ""
 
 #: src/features/homepage/feature-explorer.tsx
 msgid "Work on your resume from your AI app."

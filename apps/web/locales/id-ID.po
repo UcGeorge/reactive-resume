@@ -528,6 +528,10 @@ msgstr "Sesuaikan resume Anda untuk peran yang mengutamakan kerja jarak jauh dan
 msgid "Advanced"
 msgstr "Canggih"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Advertised"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Advice for the person reading it. None of this affects the score."
 msgstr "Saran untuk orang yang membacanya. Tidak satu pun dari ini memengaruhi skor."
@@ -629,6 +633,10 @@ msgstr "Sudah tercakup"
 #: src/features/auth/pages/register.tsx
 msgid "Already have an account? <0/>"
 msgstr "Sudah punya akun? <0/>"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Already in your skills"
+msgstr ""
 
 #: src/libs/locale.ts
 msgid "Amharic"
@@ -758,6 +766,10 @@ msgstr "Dilamar"
 msgid "Applied on"
 msgstr "Dilamar pada"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Apply"
+msgstr ""
+
 #: src/routes/agent/-components/patch-approval-card.tsx
 msgid "Approve"
 msgstr "Setujui"
@@ -781,6 +793,10 @@ msgstr "Arsipkan"
 #: src/routes/dashboard/applications/index.tsx
 msgid "Archived"
 msgstr "Diarsipkan"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Archived job description"
+msgstr ""
 
 #: src/hooks/use-form-blocker.tsx
 msgid "Are you sure you want to close this dialog?"
@@ -839,6 +855,14 @@ msgstr "Tanyakan apa pun tentang resume ini."
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Aspect Ratio"
 msgstr "Rasio Aspek"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Assessment"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "At or above the 4.0 apply line."
+msgstr ""
 
 #: src/libs/resume/section.tsx
 msgid "ATS Check"
@@ -939,6 +963,10 @@ msgstr "URL Dasar"
 #: src/libs/resume/section.tsx
 msgid "Basics"
 msgstr "Dasar"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Below the 4.0 apply line."
+msgstr ""
 
 #: src/libs/locale.ts
 msgid "Bengali"
@@ -1056,6 +1084,10 @@ msgstr "Tidak dapat dipulihkan; resume telah berubah sejak perubahan ini diterap
 #: src/libs/locale.ts
 msgid "Catalan"
 msgstr "Katala"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "caution"
+msgstr ""
 
 #: src/components/input/rich-input.tsx
 msgid "Center Align"
@@ -1243,6 +1275,10 @@ msgstr "Tutup"
 msgid "Close AI assistant"
 msgstr "Tutup asisten AI"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Collapse"
+msgstr ""
+
 #: src/features/homepage/resume-sculpture.tsx
 msgid "Color"
 msgstr "Warna"
@@ -1293,9 +1329,17 @@ msgstr "Perusahaan A–Z"
 msgid "Compare this resume against this job posting URL and update the keywords without overselling anything."
 msgstr "Bandingkan resume ini dengan URL lowongan kerja ini dan perbarui kata kuncinya tanpa melebih-lebihkan apa pun."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Compensation"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Compress or remove large images to keep uploads quick."
 msgstr "Kompres atau hapus gambar besar agar pengunggahan tetap cepat."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Confidence:"
+msgstr ""
 
 #. Account deletion confirmation dialog confirm action in account settings
 #. Create API key dialog acknowledgment action after copying
@@ -1342,6 +1386,10 @@ msgstr "Koneksi gagal."
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Connection verified. The provider is ready to use."
 msgstr "Koneksi terverifikasi. Penyedia siap digunakan."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Consider"
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Contact details"
@@ -1548,13 +1596,25 @@ msgstr "Tidak dapat menambahkan lamaran. Coba lagi."
 msgid "Couldn't delete the application."
 msgstr "Tidak dapat menghapus lamaran."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Couldn't delete the evaluation."
+msgstr ""
+
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Couldn't delete the timeline entry."
 msgstr "Tidak dapat menghapus entri lini masa."
 
+#: src/features/applications/components/application-form-sheet.tsx
+msgid "Couldn't fetch that URL."
+msgstr ""
+
 #: src/features/applications/components/board.tsx
 msgid "Couldn't move the application. Please try again."
 msgstr "Tidak dapat memindahkan lamaran. Coba lagi."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Couldn't retry the evaluation."
+msgstr ""
 
 #: src/routes/builder/$resumeId/-components/header.tsx
 msgid "Couldn't save"
@@ -1567,6 +1627,11 @@ msgstr "Tidak dapat menyimpan catatan."
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Couldn't save your changes. Please try again."
 msgstr "Tidak dapat menyimpan perubahan. Coba lagi."
+
+#: src/features/applications/components/application-ai-copilot.tsx
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Couldn't start the evaluation."
+msgstr ""
 
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Couldn't update the timeline entry."
@@ -1759,6 +1824,10 @@ msgstr "Membuat API key Anda..."
 msgid "Creating your resume..."
 msgstr "Membuat resume Anda..."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "critical"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Crop and Upload"
 msgstr "Pangkas dan Unggah"
@@ -1803,6 +1872,10 @@ msgstr "Bagian Kustom"
 #: src/libs/resume/section.tsx
 msgid "Custom Styles"
 msgstr "Gaya Kustom"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Customization plan"
+msgstr ""
 
 #: src/libs/locale.ts
 msgid "Czech"
@@ -1853,6 +1926,14 @@ msgstr "Kurangi zoom"
 msgid "Deep check"
 msgstr "Pemeriksaan mendalam"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Deep JD evaluation"
+msgstr ""
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Deep report: requirements, gaps, strategy, legitimacy"
+msgstr ""
+
 #: src/features/cover-letters/library.tsx
 msgid "Default template"
 msgstr "Template default"
@@ -1871,6 +1952,7 @@ msgstr "Gelar"
 #: src/features/applications/components/application-detail-sheet.tsx
 #: src/features/applications/components/table-view.tsx
 #: src/features/cover-letters/editor-dialog.tsx
+#: src/features/evaluations/components/evaluation-panel.tsx
 #: src/features/settings/authentication/components/passkeys.tsx
 #: src/features/settings/pages/api-keys.tsx
 #: src/routes/agent/-components/agent-chat.tsx
@@ -1887,6 +1969,10 @@ msgstr "Hapus"
 #: src/features/settings/pages/account.tsx
 msgid "Delete Account"
 msgstr "Hapus Akun"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Delete evaluation"
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Delete it. Hidden keywords are treated as a deliberate attempt to game the search."
@@ -1917,6 +2003,10 @@ msgstr "Hapus lamaran ini?"
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Delete this cover letter?"
 msgstr "Hapus surat lamaran ini?"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Delete this evaluation?"
+msgstr ""
 
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Delete this timeline entry?"
@@ -2123,6 +2213,10 @@ msgstr "Buat draf surat lamaran"
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Draft a follow-up"
 msgstr "Buat draf tindak lanjut"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Draft answers"
+msgstr ""
 
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Drafting failed."
@@ -2371,9 +2465,33 @@ msgstr "Masukkan kata sandi Anda untuk menonaktifkan autentikasi dua faktor. Aku
 msgid "Error"
 msgstr "Kesalahan"
 
+#: src/features/applications/components/application-detail-sheet.tsx
+msgid "Evaluation"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Evaluation failed"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Evaluation queued…"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Evaluation running…"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "Every check passed. Nothing here should stop a parser from reading your resume."
 msgstr "Setiap pemeriksaan berlalu. "
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Evidence"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Evidence:"
+msgstr ""
 
 #: src/features/homepage/feature-explorer.tsx
 msgid "Example application"
@@ -2390,6 +2508,10 @@ msgstr "Keluar dari mode fokus"
 #: src/components/input/rich-input.tsx
 msgid "Exit Fullscreen"
 msgstr "Keluar dari Layar Penuh"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Expand"
+msgstr ""
 
 #: src/dialogs/resume/sections/custom.tsx
 #: src/features/homepage/export-playground.tsx
@@ -2640,6 +2762,14 @@ msgstr "Kesalahan fatal"
 msgid "Features"
 msgstr "Fitur"
 
+#: src/features/applications/components/application-form-sheet.tsx
+msgid "Fetch & autofill"
+msgstr ""
+
+#: src/features/applications/components/application-form-sheet.tsx
+msgid "Fetched the posting and filled in the fields."
+msgstr ""
+
 #: src/features/homepage/page.tsx
 msgid "Fifteen templates, all free. Pick one you like. You can change the type, color, and layout in the editor."
 msgstr "Lima belas template, semuanya gratis. Pilih yang kamu suka. Tipe, warna, dan tata letaknya bisa kamu ubah di editor."
@@ -2687,6 +2817,10 @@ msgstr "Sesuai untuk dilihat"
 #: src/features/homepage/feature-explorer.tsx
 msgid "Fits into your workflow"
 msgstr "Cocok dengan alur kerjamu"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "flag"
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Flatten the form so the text is part of the page."
@@ -2779,6 +2913,14 @@ msgstr "Prancis"
 msgid "From your resume and the posting"
 msgstr "Dari resume dan lowongan kamu"
 
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Full evaluation"
+msgstr ""
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Full evaluation started. Open the Evaluation tab to follow it."
+msgstr ""
+
 #: src/features/resume/export/download-dialog.tsx
 msgid "Full resume data for backup or import."
 msgstr "Data resume lengkap untuk cadangan atau impor."
@@ -2796,6 +2938,10 @@ msgstr "Layar Penuh"
 #: src/components/input/rich-input.tsx
 msgid "Fullscreen Editor"
 msgstr "Editor Layar Penuh"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Gaps & mitigations"
+msgstr ""
 
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Gaps:"
@@ -2887,6 +3033,10 @@ msgstr "Yunani"
 #: src/routes/dashboard/resumes/index.tsx
 msgid "Grid"
 msgstr "Grid"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Hard stops"
+msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/typography.tsx
 msgctxt "Headings or Titles (H1, H2, H3, H4, H5, H6)"
@@ -2997,6 +3147,10 @@ msgstr "Sembunyikan pratinjau"
 msgid "Hide Section Icons"
 msgstr "Sembunyikan Ikon Bagian"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "high"
+msgstr ""
+
 #: src/features/ats-checker/ai-review/ai-review-results.tsx
 msgid "High impact"
 msgstr "Dampak tinggi"
@@ -3013,6 +3167,10 @@ msgstr "Warna Sorot"
 msgid "Hindi"
 msgstr "Hindi"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Hint:"
+msgstr ""
+
 #: src/features/command-palette/pages/navigation.tsx
 msgid "Home"
 msgstr "Beranda"
@@ -3020,6 +3178,10 @@ msgstr "Beranda"
 #: src/features/settings/pages/api-keys.tsx
 msgid "How do I use the API?"
 msgstr "Bagaimana cara saya menggunakan API?"
+
+#: src/features/applications/components/application-form-sheet.tsx
+msgid "https://… (job posting URL)"
+msgstr ""
 
 #: src/libs/locale.ts
 msgid "Hungarian"
@@ -3087,6 +3249,10 @@ msgstr "Impor dari pustaka"
 msgid "Import JSON"
 msgstr "Impor JSON"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Importance"
+msgstr ""
+
 #. placeholder {0}: result.imported
 #: src/features/applications/components/import-applications-sheet.tsx
 msgid "Imported {0} application(s)."
@@ -3133,6 +3299,10 @@ msgstr "Perbesar zoom"
 msgid "Indonesian"
 msgstr "Indonesia"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "inferred"
+msgstr ""
+
 #: src/libs/resume/section.tsx
 msgid "Information"
 msgstr "Informasi"
@@ -3176,6 +3346,10 @@ msgstr "Minat"
 msgid "Interview"
 msgstr "Wawancara"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Interview plan"
+msgstr ""
+
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Invalid AI provider configuration."
 msgstr "Konfigurasi penyedia AI tidak valid."
@@ -3195,6 +3369,14 @@ msgstr "Miring"
 #: src/libs/locale.ts
 msgid "Japanese"
 msgstr "Jepang"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "JD signal"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "JD signal:"
+msgstr ""
 
 #: src/features/command-palette/pages/navigation.tsx
 msgid "Job"
@@ -3313,6 +3495,10 @@ msgstr "Tata letakmu tetap utuh. Siap untuk dikirim, diunggah, atau dicetak."
 msgid "Key"
 msgstr "Kunci"
 
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Keyword coverage:"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
 msgid "Keyword layout"
 msgstr "Tata letak kata kunci"
@@ -3427,6 +3613,22 @@ msgstr "Rata Kiri"
 msgid "Legal"
 msgstr "Legal"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Legitimacy signals"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Legitimacy: high confidence"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Legitimacy: proceed with caution"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Legitimacy: suspicious"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Length is not a defect, and there is no universal one-page rule. Keep the pages that earn their place."
 msgstr "Panjang bukan cacat, dan tidak ada aturan satu halaman yang berlaku universal. Pertahankan halaman yang memang pantas ada."
@@ -3445,6 +3647,10 @@ msgstr "Tingkat"
 #: src/components/level/display.tsx
 msgid "Level {level} of 5"
 msgstr "Tingkat {level} dari 5"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Level & positioning"
+msgstr ""
 
 #: src/components/ui/copyright.tsx
 msgid "Licensed under <0>MIT</0>."
@@ -3481,6 +3687,10 @@ msgstr "Tautkan Reactive Resume (disarankan)"
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Link a Reactive Resume to use AI match scoring and tailoring."
 msgstr "Tautkan sebuah Reactive Resume untuk memakai penilaian kecocokan dan penyesuaian dengan AI."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Link a resume and paste the job description (Edit) to run an evaluation."
+msgstr ""
 
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Link a resume and paste the job description (Edit) to score your fit and tailor a copy."
@@ -3564,6 +3774,7 @@ msgstr "Memuat…"
 #: src/features/applications/components/application-form-sheet.tsx
 #: src/features/applications/components/table-view.tsx
 #: src/features/ats-checker/parse-preview.tsx
+#: src/features/evaluations/components/evaluation-panel.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/basics.tsx
 msgid "Location"
 msgstr "Lokasi"
@@ -3585,9 +3796,25 @@ msgstr "Bentangan teks yang panjang ditulis dengan huruf kapital."
 msgid "Lost access to your authenticator?"
 msgstr "Kehilangan akses ke autentikator Anda?"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "low"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Low confidence — this is not a clean result"
+msgstr ""
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Low confidence — this is not a clean result:"
+msgstr ""
+
 #: src/features/ats-checker/ai-review/ai-review-results.tsx
 msgid "Low impact"
 msgstr "Dampak rendah"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "low signal"
+msgstr ""
 
 #: src/features/homepage/resume-sculpture.tsx
 msgid "Made with Reactive Resume"
@@ -3651,9 +3878,21 @@ msgstr "Margin (Vertikal)"
 msgid "Mark rejected"
 msgstr "Tandai ditolak"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Match"
+msgstr ""
+
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Match scoring failed."
 msgstr "Penilaian kecocokan gagal."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "meaningful"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "medium"
+msgstr ""
 
 #: src/features/ats-checker/ai-review/ai-review-results.tsx
 msgid "Medium impact"
@@ -3665,6 +3904,14 @@ msgstr "Dampak sedang"
 msgid "Microsoft Word"
 msgstr "Microsoft Word"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "missing"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Missing from your resume"
+msgstr ""
+
 #: src/routes/agent/-components/resume-pane.tsx
 msgid "Missing working resume"
 msgstr "Resume kerja tidak ditemukan"
@@ -3672,6 +3919,10 @@ msgstr "Resume kerja tidak ditemukan"
 #: src/features/homepage/site-footer.tsx
 msgid "MIT License"
 msgstr "Lisensi MIT"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Mitigation:"
+msgstr ""
 
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Model"
@@ -3744,6 +3995,10 @@ msgstr "Dipindahkan ke"
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom-fields.tsx
 msgid "Must start with https://"
 msgstr "Harus dimulai dengan https://"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "n/a"
+msgstr ""
 
 #. Label for full name input on registration form
 #: src/dialogs/api-key/create.tsx
@@ -3832,6 +4087,10 @@ msgstr "Utas Baru"
 #: src/features/cover-letters/library.tsx
 msgid "Next"
 msgstr "Selanjutnya"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Next action:"
+msgstr ""
 
 #: src/features/homepage/template-shelf.tsx
 msgid "Next template"
@@ -3940,6 +4199,10 @@ msgstr "Belum ada resume."
 msgid "No saved versions yet."
 msgstr "Belum ada versi yang tersimpan."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "No skill requirements were extracted from the posting."
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "No skills section was found."
 msgstr "Tidak ditemukan bagian keahlian."
@@ -3951,6 +4214,14 @@ msgstr "Belum ada data sumber."
 #: src/features/ats-checker/report/jd-coverage.tsx
 msgid "No specific terms could be pulled out of that job description, so it may be mostly boilerplate. Paste the requirements section for a more useful comparison."
 msgstr "Tidak ada istilah spesifik yang dapat diambil dari deskripsi pekerjaan itu, jadi mungkin sebagian besar berupa teks baku. Tempel bagian persyaratan untuk perbandingan yang lebih berguna."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "No sponsorship"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "No sponsorship needed"
+msgstr ""
 
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "No tested provider"
@@ -3979,6 +4250,14 @@ msgstr "Norwegia"
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Not connected"
 msgstr "Tidak terhubung"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "not evaluated"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Not evaluated:"
+msgstr ""
 
 #: src/features/ats-checker/ai-review/ai-review-results.tsx
 msgid "Not evidenced in your resume"
@@ -4029,6 +4308,10 @@ msgstr "Odia"
 #: src/features/homepage/feature-explorer.tsx
 msgid "Offer"
 msgstr "Penawaran"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "ok"
+msgstr ""
 
 #: src/features/settings/pages/api-keys.tsx
 msgid "Once deleted, the key can no longer access your data. This cannot be undone."
@@ -4163,6 +4446,10 @@ msgstr "Format tabel asli dipertahankan. Konten ini bersifat read-only karena ti
 msgid "out of 100"
 msgstr "dari 100"
 
+#: src/features/applications/components/application-detail-sheet.tsx
+msgid "Overview"
+msgstr ""
+
 #: src/libs/resume/section.tsx
 msgid "Page"
 msgstr "Halaman"
@@ -4184,6 +4471,10 @@ msgstr "Paragraf"
 #: src/components/input/rich-input.tsx
 msgid "Paragraph and heading style"
 msgstr "Gaya paragraf dan judul"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "partial"
+msgstr ""
 
 #. Authentication provider display name in account settings
 #. Label for passkey sign-in button
@@ -4399,6 +4690,10 @@ msgstr "Portugis (Portugal)"
 msgid "Position"
 msgstr "Posisi"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Positioning"
+msgstr ""
+
 #: src/libs/resume/ats.ts
 msgid "Prefer a conventional heading such as \"Work Experience\" or \"Education\"."
 msgstr "Pilih judul konvensional seperti \"Pengalaman Kerja\" atau \"Pendidikan\"."
@@ -4413,6 +4708,10 @@ msgstr "Utamakan satu kolom, atau batasi kolom samping untuk daftar pendek yang 
 #: src/routes/dashboard/settings/preferences.tsx
 msgid "Preferences"
 msgstr "Preferensi"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "preferred"
+msgstr ""
 
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Prepare a conservative patch that improves clarity without changing the story of my career."
@@ -4558,6 +4857,10 @@ msgstr "Penerbit"
 #: src/features/ats-checker/messages.ts
 msgid "Put a plain email address near the top of the first page. It is what most systems file you under."
 msgstr "Letakkan alamat email biasa di dekat bagian atas halaman pertama. Itulah yang dipakai kebanyakan sistem untuk mengelompokkan Anda."
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Quick match"
+msgstr ""
 
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Raw JSON"
@@ -4731,6 +5034,10 @@ msgstr "Daftarkan Perangkat Baru"
 msgid "Released under the <0>MIT License</0>."
 msgstr "Dirilis di bawah <0>Lisensi MIT</0>."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Reliability"
+msgstr ""
+
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Reload latest version"
 msgstr "Muat ulang versi terbaru"
@@ -4829,6 +5136,22 @@ msgstr "Laporkan Bug"
 #: src/routes/_home/-sections/footer.tsx
 msgid "Report an issue"
 msgstr "Laporkan masalah"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Reports to"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Requirement"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Requirements"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Research first"
+msgstr ""
 
 #: src/features/settings/pages/profile.tsx
 msgid "Resend verification email"
@@ -4946,6 +5269,7 @@ msgstr "Resume"
 
 #: src/features/cover-letters/editor-dialog.tsx
 #: src/features/cover-letters/library.tsx
+#: src/features/evaluations/components/evaluation-panel.tsx
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Retry"
 msgstr "Mencoba kembali"
@@ -4986,6 +5310,15 @@ msgstr "Contoh resume Rhyhorn"
 msgid "Right Align"
 msgstr "Rata Kanan"
 
+#. placeholder {0}: riskLevelLabel(blocks.riskSummary.level)
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Risk ({0}):"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Risk:"
+msgstr ""
+
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Role (optional)"
 msgstr "Peran (opsional)"
@@ -5002,6 +5335,10 @@ msgstr "Peran A–Z"
 msgid "Role Progression"
 msgstr "Perkembangan Peran"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Role summary"
+msgstr ""
+
 #: src/libs/locale.ts
 msgid "Romanian"
 msgstr "Rumania"
@@ -5010,6 +5347,7 @@ msgstr "Rumania"
 msgid "Rotation"
 msgstr "Rotasi"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "Run again"
 msgstr "Jalankan lagi"
@@ -5022,9 +5360,21 @@ msgstr "Jalankan tinjauan AI"
 msgid "Run deep check"
 msgstr "Jalankan pemeriksaan mendalam"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Run full evaluation"
+msgstr ""
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Running quick match…"
+msgstr ""
+
 #: src/routes/agent/-components/tool-part-card.tsx
 msgid "Running…"
 msgstr "Berjalan…"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Runs a multi-pass analysis of this posting against your linked resume: a requirement-by-requirement match table, level and compensation strategy, legitimacy screening, interview prep, and a 1–5 verdict where 4.0 is the apply line. The job description is archived verbatim with the report."
+msgstr ""
 
 #: src/libs/locale.ts
 msgid "Russian"
@@ -5142,14 +5492,6 @@ msgstr "Pindai kode QR di bawah ini dengan aplikasi autentikator pilihan Anda. A
 #: src/dialogs/resume/sections/education.tsx
 msgid "School"
 msgstr "Sekolah"
-
-#: src/features/applications/components/application-ai-copilot.tsx
-msgid "Score my fit"
-msgstr "Nilai kecocokanku"
-
-#: src/features/applications/components/application-ai-copilot.tsx
-msgid "Scoring your fit…"
-msgstr "Menilai kecocokanmu…"
 
 #: src/routes/dashboard/-components/sidebar.tsx
 msgid "Search"
@@ -5537,6 +5879,10 @@ msgstr "Satu kolom; rapi dan serius untuk posisi tingkat senior atau level perus
 msgid "Size"
 msgstr "Ukuran"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Skill gap"
+msgstr ""
+
 #: src/dialogs/resume/sections/custom.tsx
 #: src/features/homepage/export-playground.tsx
 #: src/features/homepage/languages-showcase.tsx
@@ -5545,6 +5891,10 @@ msgstr "Ukuran"
 #: src/libs/resume/section.tsx
 msgid "Skills"
 msgstr "Keahlian"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Skip"
+msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Skip and Upload"
@@ -5569,6 +5919,10 @@ msgstr "Slovenia"
 #: src/dialogs/resume/index.tsx
 msgid "Slug"
 msgstr "Slug"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Soft gaps"
+msgstr ""
 
 #: src/libs/resume/ats.ts
 msgid "Some application systems require one before you can submit."
@@ -5621,6 +5975,10 @@ msgstr "Lainnya…"
 #: src/components/layout/error-screen.tsx
 msgid "Something went wrong"
 msgstr "Terjadi kesalahan."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Something went wrong during the run."
+msgstr ""
 
 #: src/features/ats-checker/tool.tsx
 msgid "Something went wrong while reading that file. Please try again."
@@ -5694,6 +6052,14 @@ msgstr "Eja nama bulannya, seperti pada \"Mar 2022\"."
 #: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
 msgid "Sponsors"
 msgstr "Sponsor"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Sponsors visas"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Sponsorship unstated"
+msgstr ""
 
 #: src/features/homepage/site-footer.tsx
 #: src/routes/_home/-sections/footer.tsx
@@ -5778,6 +6144,10 @@ msgstr "Mulai resume dengan nama Anda pada barisnya sendiri."
 msgid "Start thread"
 msgstr "Mulai utas"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "stated"
+msgstr ""
+
 #: src/libs/resume/section.tsx
 msgid "Statistics"
 msgstr "Statistik"
@@ -5803,13 +6173,25 @@ msgstr "Hentikan pembangkitan"
 msgid "Strengths"
 msgstr "Kekuatan"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Strengths & soft gaps"
+msgstr ""
+
 #: src/components/input/rich-input.tsx
 msgid "Strike"
 msgstr "Coret"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "strong"
+msgstr ""
+
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Strong fit"
 msgstr "Sangat cocok"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "structural"
+msgstr ""
 
 #: src/features/resume/stylesheet/toolbar.tsx
 msgid "Stylesheet editor"
@@ -5853,6 +6235,10 @@ msgstr "Dukung aplikasi dengan melakukan apa yang Anda bisa!"
 #: src/features/homepage/page.tsx
 msgid "Support the project"
 msgstr "Dukung proyek ini"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Supported by your resume"
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 #: src/libs/resume/ats.ts
@@ -6031,6 +6417,10 @@ msgstr "Pemeriksaan mendalam tidak dapat diselesaikan. Silakan coba lagi."
 msgid "The imported file could not be parsed into a valid resume."
 msgstr "File yang diimpor tidak dapat diuraikan menjadi resume yang valid."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "The multi-pass analysis usually takes a minute. The skill gap below is already final."
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "The order the text is stored in disagrees badly with the order it reads in."
 msgstr "Urutan penyimpanan teks sangat berbeda dari urutan bacanya."
@@ -6070,6 +6460,10 @@ msgstr "Penyedia mengembalikan tinjauan yang tidak dapat dibaca. Coba lagi."
 #: src/features/auth/pages/error.tsx
 msgid "The provider's response could not be verified. Please start again."
 msgstr "Respons penyedia tidak dapat diverifikasi. Silakan mulai lagi."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "The report and its archived job description snapshot will be permanently deleted."
+msgstr ""
 
 #: src/features/homepage/page.tsx
 msgid "The rest of your<0/>job search, too."
@@ -6483,6 +6877,10 @@ msgstr "Token: {total} ({cached} di-cache)"
 #: src/features/homepage/resume-sculpture.tsx
 msgid "Tools"
 msgstr "Alat"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Top strengths"
+msgstr ""
 
 #: src/features/homepage/community-stats.tsx
 msgid "Total unavailable"
@@ -6957,6 +7355,10 @@ msgstr "Hanya sedikit kata yang berhasil dipulihkan untuk sebuah resume."
 msgid "Very little text was recovered for this many pages."
 msgstr "Hanya sedikit teks yang berhasil dipulihkan untuk sebanyak ini halaman."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Via"
+msgstr ""
+
 #: src/libs/locale.ts
 msgid "Vietnamese"
 msgstr "Vietnam"
@@ -7113,6 +7515,14 @@ msgstr "Apakah linimasa Anda dapat disusun ulang."
 #: src/features/ats-checker/messages.ts
 msgid "Words run together when the text is extracted."
 msgstr "Kata-kata menyatu ketika teksnya diekstrak."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Work auth note"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Work authorization:"
+msgstr ""
 
 #: src/features/homepage/feature-explorer.tsx
 msgid "Work on your resume from your AI app."

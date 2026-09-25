@@ -528,6 +528,10 @@ msgstr "Hãy điều chỉnh sơ yếu lý lịch cho phù hợp với vị trí
 msgid "Advanced"
 msgstr "Trình độ cao"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Advertised"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Advice for the person reading it. None of this affects the score."
 msgstr "Lời khuyên dành cho người đọc. Không có điều nào trong số này ảnh hưởng đến điểm số."
@@ -629,6 +633,10 @@ msgstr "Đã được đề cập"
 #: src/features/auth/pages/register.tsx
 msgid "Already have an account? <0/>"
 msgstr "Đã có tài khoản? <0/>"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Already in your skills"
+msgstr ""
 
 #: src/libs/locale.ts
 msgid "Amharic"
@@ -758,6 +766,10 @@ msgstr "Đã ứng tuyển"
 msgid "Applied on"
 msgstr "Đã ứng tuyển vào"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Apply"
+msgstr ""
+
 #: src/routes/agent/-components/patch-approval-card.tsx
 msgid "Approve"
 msgstr "Phê duyệt"
@@ -781,6 +793,10 @@ msgstr "Lưu trữ"
 #: src/routes/dashboard/applications/index.tsx
 msgid "Archived"
 msgstr "Đã lưu trữ"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Archived job description"
+msgstr ""
 
 #: src/hooks/use-form-blocker.tsx
 msgid "Are you sure you want to close this dialog?"
@@ -839,6 +855,14 @@ msgstr "Hãy hỏi bất cứ điều gì về sơ yếu lý lịch này."
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Aspect Ratio"
 msgstr "Tỷ lệ khung hình"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Assessment"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "At or above the 4.0 apply line."
+msgstr ""
 
 #: src/libs/resume/section.tsx
 msgid "ATS Check"
@@ -939,6 +963,10 @@ msgstr "URL cơ sở"
 #: src/libs/resume/section.tsx
 msgid "Basics"
 msgstr "Cơ bản"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Below the 4.0 apply line."
+msgstr ""
 
 #: src/libs/locale.ts
 msgid "Bengali"
@@ -1056,6 +1084,10 @@ msgstr "Không thể khôi phục; sơ yếu lý lịch đã thay đổi kể t�
 #: src/libs/locale.ts
 msgid "Catalan"
 msgstr "Tiếng Catalan"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "caution"
+msgstr ""
 
 #: src/components/input/rich-input.tsx
 msgid "Center Align"
@@ -1243,6 +1275,10 @@ msgstr "Đóng"
 msgid "Close AI assistant"
 msgstr "Đóng trợ lý AI"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Collapse"
+msgstr ""
+
 #: src/features/homepage/resume-sculpture.tsx
 msgid "Color"
 msgstr "Màu sắc"
@@ -1293,9 +1329,17 @@ msgstr "Công ty A–Z"
 msgid "Compare this resume against this job posting URL and update the keywords without overselling anything."
 msgstr "So sánh sơ yếu lý lịch này với URL tin tuyển dụng này và cập nhật các từ khóa mà không thổi phồng bất cứ điều gì."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Compensation"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Compress or remove large images to keep uploads quick."
 msgstr "Nén hoặc xóa các hình ảnh lớn để việc tải lên được nhanh chóng."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Confidence:"
+msgstr ""
 
 #. Account deletion confirmation dialog confirm action in account settings
 #. Create API key dialog acknowledgment action after copying
@@ -1342,6 +1386,10 @@ msgstr "Kết nối thất bại."
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Connection verified. The provider is ready to use."
 msgstr "Đã xác minh kết nối. Nhà cung cấp đã sẵn sàng để sử dụng."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Consider"
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Contact details"
@@ -1548,13 +1596,25 @@ msgstr "Không thể thêm hồ sơ ứng tuyển. Vui lòng thử lại."
 msgid "Couldn't delete the application."
 msgstr "Không thể xóa hồ sơ ứng tuyển."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Couldn't delete the evaluation."
+msgstr ""
+
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Couldn't delete the timeline entry."
 msgstr "Không thể xóa mục dòng thời gian."
 
+#: src/features/applications/components/application-form-sheet.tsx
+msgid "Couldn't fetch that URL."
+msgstr ""
+
 #: src/features/applications/components/board.tsx
 msgid "Couldn't move the application. Please try again."
 msgstr "Không thể di chuyển hồ sơ ứng tuyển. Vui lòng thử lại."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Couldn't retry the evaluation."
+msgstr ""
 
 #: src/routes/builder/$resumeId/-components/header.tsx
 msgid "Couldn't save"
@@ -1567,6 +1627,11 @@ msgstr "Không thể lưu ghi chú."
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Couldn't save your changes. Please try again."
 msgstr "Không thể lưu thay đổi của bạn. Vui lòng thử lại."
+
+#: src/features/applications/components/application-ai-copilot.tsx
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Couldn't start the evaluation."
+msgstr ""
 
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Couldn't update the timeline entry."
@@ -1759,6 +1824,10 @@ msgstr "Đang tạo khóa API của bạn..."
 msgid "Creating your resume..."
 msgstr "Đang tạo sơ yếu lý lịch của bạn..."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "critical"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Crop and Upload"
 msgstr "Cắt và tải ảnh lên"
@@ -1803,6 +1872,10 @@ msgstr "Các mục tùy chỉnh"
 #: src/libs/resume/section.tsx
 msgid "Custom Styles"
 msgstr "Kiểu dáng tùy chỉnh"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Customization plan"
+msgstr ""
 
 #: src/libs/locale.ts
 msgid "Czech"
@@ -1853,6 +1926,14 @@ msgstr "Giảm độ phóng to"
 msgid "Deep check"
 msgstr "Kiểm tra chuyên sâu"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Deep JD evaluation"
+msgstr ""
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Deep report: requirements, gaps, strategy, legitimacy"
+msgstr ""
+
 #: src/features/cover-letters/library.tsx
 msgid "Default template"
 msgstr "Mẫu mặc định"
@@ -1871,6 +1952,7 @@ msgstr "Bằng cấp"
 #: src/features/applications/components/application-detail-sheet.tsx
 #: src/features/applications/components/table-view.tsx
 #: src/features/cover-letters/editor-dialog.tsx
+#: src/features/evaluations/components/evaluation-panel.tsx
 #: src/features/settings/authentication/components/passkeys.tsx
 #: src/features/settings/pages/api-keys.tsx
 #: src/routes/agent/-components/agent-chat.tsx
@@ -1887,6 +1969,10 @@ msgstr "Xóa"
 #: src/features/settings/pages/account.tsx
 msgid "Delete Account"
 msgstr "Xóa tài khoản"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Delete evaluation"
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Delete it. Hidden keywords are treated as a deliberate attempt to game the search."
@@ -1917,6 +2003,10 @@ msgstr "Xóa đơn ứng tuyển này?"
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Delete this cover letter?"
 msgstr "Xóa thư xin việc này?"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Delete this evaluation?"
+msgstr ""
 
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Delete this timeline entry?"
@@ -2123,6 +2213,10 @@ msgstr "Soạn thư xin việc"
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Draft a follow-up"
 msgstr "Soạn lời nhắc theo dõi"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Draft answers"
+msgstr ""
 
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Drafting failed."
@@ -2371,9 +2465,33 @@ msgstr "Nhập mật khẩu của bạn để tắt xác thực hai yếu tố. 
 msgid "Error"
 msgstr "Lỗi"
 
+#: src/features/applications/components/application-detail-sheet.tsx
+msgid "Evaluation"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Evaluation failed"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Evaluation queued…"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Evaluation running…"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "Every check passed. Nothing here should stop a parser from reading your resume."
 msgstr "Mọi kiểm tra đều được thông qua. Không có gì ở đây có thể ngăn trình phân tích cú pháp đọc sơ yếu lý lịch của bạn."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Evidence"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Evidence:"
+msgstr ""
 
 #: src/features/homepage/feature-explorer.tsx
 msgid "Example application"
@@ -2390,6 +2508,10 @@ msgstr "Thoát chế độ lấy nét"
 #: src/components/input/rich-input.tsx
 msgid "Exit Fullscreen"
 msgstr "Thoát toàn màn hình"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Expand"
+msgstr ""
 
 #: src/dialogs/resume/sections/custom.tsx
 #: src/features/homepage/export-playground.tsx
@@ -2640,6 +2762,14 @@ msgstr "Lỗi nghiêm trọng"
 msgid "Features"
 msgstr "Tính năng"
 
+#: src/features/applications/components/application-form-sheet.tsx
+msgid "Fetch & autofill"
+msgstr ""
+
+#: src/features/applications/components/application-form-sheet.tsx
+msgid "Fetched the posting and filled in the fields."
+msgstr ""
+
 #: src/features/homepage/page.tsx
 msgid "Fifteen templates, all free. Pick one you like. You can change the type, color, and layout in the editor."
 msgstr "Mười lăm mẫu, tất cả đều miễn phí. Hãy chọn một mẫu bạn thích. Bạn có thể đổi kiểu, màu sắc và cách bố trí ngay trong trình biên tập."
@@ -2687,6 +2817,10 @@ msgstr "Phù hợp để xem"
 #: src/features/homepage/feature-explorer.tsx
 msgid "Fits into your workflow"
 msgstr "Khớp với quy trình làm việc của bạn"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "flag"
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Flatten the form so the text is part of the page."
@@ -2779,6 +2913,14 @@ msgstr "Tiếng Pháp"
 msgid "From your resume and the posting"
 msgstr "Từ sơ yếu lý lịch của bạn và tin tuyển dụng"
 
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Full evaluation"
+msgstr ""
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Full evaluation started. Open the Evaluation tab to follow it."
+msgstr ""
+
 #: src/features/resume/export/download-dialog.tsx
 msgid "Full resume data for backup or import."
 msgstr "Dữ liệu sơ yếu lý lịch đầy đủ để sao lưu hoặc nhập."
@@ -2796,6 +2938,10 @@ msgstr "Toàn màn hình"
 #: src/components/input/rich-input.tsx
 msgid "Fullscreen Editor"
 msgstr "Trình chỉnh sửa toàn màn hình"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Gaps & mitigations"
+msgstr ""
 
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Gaps:"
@@ -2887,6 +3033,10 @@ msgstr "Tiếng Hy Lạp"
 #: src/routes/dashboard/resumes/index.tsx
 msgid "Grid"
 msgstr "Lưới"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Hard stops"
+msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/typography.tsx
 msgctxt "Headings or Titles (H1, H2, H3, H4, H5, H6)"
@@ -2997,6 +3147,10 @@ msgstr "Ẩn bản xem trước"
 msgid "Hide Section Icons"
 msgstr "Ẩn biểu tượng phần"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "high"
+msgstr ""
+
 #: src/features/ats-checker/ai-review/ai-review-results.tsx
 msgid "High impact"
 msgstr "Tác động cao"
@@ -3013,6 +3167,10 @@ msgstr "Màu nổi bật"
 msgid "Hindi"
 msgstr "Tiếng Hindi"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Hint:"
+msgstr ""
+
 #: src/features/command-palette/pages/navigation.tsx
 msgid "Home"
 msgstr "Trang chủ"
@@ -3020,6 +3178,10 @@ msgstr "Trang chủ"
 #: src/features/settings/pages/api-keys.tsx
 msgid "How do I use the API?"
 msgstr "Tôi sử dụng API như thế nào?"
+
+#: src/features/applications/components/application-form-sheet.tsx
+msgid "https://… (job posting URL)"
+msgstr ""
 
 #: src/libs/locale.ts
 msgid "Hungarian"
@@ -3087,6 +3249,10 @@ msgstr "Nhập từ thư viện"
 msgid "Import JSON"
 msgstr "Nhập JSON"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Importance"
+msgstr ""
+
 #. placeholder {0}: result.imported
 #: src/features/applications/components/import-applications-sheet.tsx
 msgid "Imported {0} application(s)."
@@ -3133,6 +3299,10 @@ msgstr "Tăng độ phóng to"
 msgid "Indonesian"
 msgstr "Tiếng Indonesia"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "inferred"
+msgstr ""
+
 #: src/libs/resume/section.tsx
 msgid "Information"
 msgstr "Thông tin"
@@ -3176,6 +3346,10 @@ msgstr "Sở thích"
 msgid "Interview"
 msgstr "Phỏng vấn"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Interview plan"
+msgstr ""
+
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Invalid AI provider configuration."
 msgstr "Cấu hình nhà cung cấp AI không hợp lệ."
@@ -3195,6 +3369,14 @@ msgstr "In nghiêng"
 #: src/libs/locale.ts
 msgid "Japanese"
 msgstr "Tiếng Nhật"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "JD signal"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "JD signal:"
+msgstr ""
 
 #: src/features/command-palette/pages/navigation.tsx
 msgid "Job"
@@ -3313,6 +3495,10 @@ msgstr "Giữ nguyên cách bố trí của bạn. Sẵn sàng để gửi, tả
 msgid "Key"
 msgstr "Khóa"
 
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Keyword coverage:"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
 msgid "Keyword layout"
 msgstr "Bố cục từ khóa"
@@ -3427,6 +3613,22 @@ msgstr "Căn trái"
 msgid "Legal"
 msgstr "Pháp lý"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Legitimacy signals"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Legitimacy: high confidence"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Legitimacy: proceed with caution"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Legitimacy: suspicious"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Length is not a defect, and there is no universal one-page rule. Keep the pages that earn their place."
 msgstr "Độ dài không phải là khuyết điểm, và không có quy tắc một trang chung nào cả. Giữ lại những trang thực sự xứng đáng."
@@ -3445,6 +3647,10 @@ msgstr "Cấp độ"
 #: src/components/level/display.tsx
 msgid "Level {level} of 5"
 msgstr "Cấp độ {level} trên 5"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Level & positioning"
+msgstr ""
 
 #: src/components/ui/copyright.tsx
 msgid "Licensed under <0>MIT</0>."
@@ -3481,6 +3687,10 @@ msgstr "Liên kết Reactive Resume (được khuyến nghị)"
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Link a Reactive Resume to use AI match scoring and tailoring."
 msgstr "Liên kết một Reactive Resume để dùng tính năng chấm điểm mức độ phù hợp và tinh chỉnh bằng AI."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Link a resume and paste the job description (Edit) to run an evaluation."
+msgstr ""
 
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Link a resume and paste the job description (Edit) to score your fit and tailor a copy."
@@ -3564,6 +3774,7 @@ msgstr "Đang tải…"
 #: src/features/applications/components/application-form-sheet.tsx
 #: src/features/applications/components/table-view.tsx
 #: src/features/ats-checker/parse-preview.tsx
+#: src/features/evaluations/components/evaluation-panel.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/basics.tsx
 msgid "Location"
 msgstr "Vị trí"
@@ -3585,9 +3796,25 @@ msgstr "Có những đoạn dài được viết toàn chữ hoa."
 msgid "Lost access to your authenticator?"
 msgstr "Bạn bị mất quyền truy cập vào ứng dụng xác thực?"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "low"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Low confidence — this is not a clean result"
+msgstr ""
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Low confidence — this is not a clean result:"
+msgstr ""
+
 #: src/features/ats-checker/ai-review/ai-review-results.tsx
 msgid "Low impact"
 msgstr "Tác động thấp"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "low signal"
+msgstr ""
 
 #: src/features/homepage/resume-sculpture.tsx
 msgid "Made with Reactive Resume"
@@ -3651,9 +3878,21 @@ msgstr "Lề (Dọc)"
 msgid "Mark rejected"
 msgstr "Đánh dấu bị từ chối"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Match"
+msgstr ""
+
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Match scoring failed."
 msgstr "Chấm điểm độ phù hợp thất bại."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "meaningful"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "medium"
+msgstr ""
 
 #: src/features/ats-checker/ai-review/ai-review-results.tsx
 msgid "Medium impact"
@@ -3665,6 +3904,14 @@ msgstr "Tác động trung bình"
 msgid "Microsoft Word"
 msgstr "Microsoft Word"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "missing"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Missing from your resume"
+msgstr ""
+
 #: src/routes/agent/-components/resume-pane.tsx
 msgid "Missing working resume"
 msgstr "Hồ sơ xin việc bị thiếu"
@@ -3672,6 +3919,10 @@ msgstr "Hồ sơ xin việc bị thiếu"
 #: src/features/homepage/site-footer.tsx
 msgid "MIT License"
 msgstr "Giấy phép MIT"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Mitigation:"
+msgstr ""
 
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Model"
@@ -3744,6 +3995,10 @@ msgstr "Đã chuyển đến"
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom-fields.tsx
 msgid "Must start with https://"
 msgstr "Phải bắt đầu bằng https://"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "n/a"
+msgstr ""
 
 #. Label for full name input on registration form
 #: src/dialogs/api-key/create.tsx
@@ -3832,6 +4087,10 @@ msgstr "Chủ đề mới"
 #: src/features/cover-letters/library.tsx
 msgid "Next"
 msgstr "Tiếp theo"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Next action:"
+msgstr ""
 
 #: src/features/homepage/template-shelf.tsx
 msgid "Next template"
@@ -3940,6 +4199,10 @@ msgstr "Chưa có sơ yếu lý lịch nào."
 msgid "No saved versions yet."
 msgstr "Chưa có phiên bản nào được lưu."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "No skill requirements were extracted from the posting."
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "No skills section was found."
 msgstr "Không tìm thấy mục Kỹ năng."
@@ -3951,6 +4214,14 @@ msgstr "Chưa có dữ liệu nguồn."
 #: src/features/ats-checker/report/jd-coverage.tsx
 msgid "No specific terms could be pulled out of that job description, so it may be mostly boilerplate. Paste the requirements section for a more useful comparison."
 msgstr "Không thể trích xuất từ khóa cụ thể nào từ mô tả công việc đó, có thể phần lớn là nội dung mẫu chung chung. Hãy dán phần yêu cầu để có kết quả so sánh hữu ích hơn."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "No sponsorship"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "No sponsorship needed"
+msgstr ""
 
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "No tested provider"
@@ -3979,6 +4250,14 @@ msgstr "Na Uy"
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Not connected"
 msgstr "Không kết nối"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "not evaluated"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Not evaluated:"
+msgstr ""
 
 #: src/features/ats-checker/ai-review/ai-review-results.tsx
 msgid "Not evidenced in your resume"
@@ -4029,6 +4308,10 @@ msgstr "Odia"
 #: src/features/homepage/feature-explorer.tsx
 msgid "Offer"
 msgstr "Đề nghị"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "ok"
+msgstr ""
 
 #: src/features/settings/pages/api-keys.tsx
 msgid "Once deleted, the key can no longer access your data. This cannot be undone."
@@ -4163,6 +4446,10 @@ msgstr "Định dạng bảng gốc được giữ nguyên. Nội dung này ở 
 msgid "out of 100"
 msgstr "trên 100"
 
+#: src/features/applications/components/application-detail-sheet.tsx
+msgid "Overview"
+msgstr ""
+
 #: src/libs/resume/section.tsx
 msgid "Page"
 msgstr "Trang"
@@ -4184,6 +4471,10 @@ msgstr "Đoạn văn"
 #: src/components/input/rich-input.tsx
 msgid "Paragraph and heading style"
 msgstr "Kiểu đoạn văn và tiêu đề"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "partial"
+msgstr ""
 
 #. Authentication provider display name in account settings
 #. Label for passkey sign-in button
@@ -4399,6 +4690,10 @@ msgstr "Bồ Đào Nha (Bồ Đào Nha)"
 msgid "Position"
 msgstr "Vị trí"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Positioning"
+msgstr ""
+
 #: src/libs/resume/ats.ts
 msgid "Prefer a conventional heading such as \"Work Experience\" or \"Education\"."
 msgstr "Ưu tiên tiêu đề thông thường như \"Kinh nghiệm làm việc\" hoặc \"Học vấn\"."
@@ -4413,6 +4708,10 @@ msgstr "Ưu tiên bố cục một cột, hoặc chỉ dùng cột bên để ch
 #: src/routes/dashboard/settings/preferences.tsx
 msgid "Preferences"
 msgstr "Tùy chọn"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "preferred"
+msgstr ""
 
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Prepare a conservative patch that improves clarity without changing the story of my career."
@@ -4558,6 +4857,10 @@ msgstr "Nhà xuất bản"
 #: src/features/ats-checker/messages.ts
 msgid "Put a plain email address near the top of the first page. It is what most systems file you under."
 msgstr "Đặt một địa chỉ email đơn giản gần đầu trang một. Đây là thông tin mà hầu hết hệ thống dùng để lưu hồ sơ của bạn."
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Quick match"
+msgstr ""
 
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Raw JSON"
@@ -4731,6 +5034,10 @@ msgstr "Đăng ký thiết bị mới"
 msgid "Released under the <0>MIT License</0>."
 msgstr "Phát hành theo <0>Giấy phép MIT</0>."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Reliability"
+msgstr ""
+
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Reload latest version"
 msgstr "Tải lại phiên bản mới nhất"
@@ -4829,6 +5136,22 @@ msgstr "Báo lỗi"
 #: src/routes/_home/-sections/footer.tsx
 msgid "Report an issue"
 msgstr "Báo cáo sự cố"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Reports to"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Requirement"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Requirements"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Research first"
+msgstr ""
 
 #: src/features/settings/pages/profile.tsx
 msgid "Resend verification email"
@@ -4946,6 +5269,7 @@ msgstr "Sơ yếu lý lịch"
 
 #: src/features/cover-letters/editor-dialog.tsx
 #: src/features/cover-letters/library.tsx
+#: src/features/evaluations/components/evaluation-panel.tsx
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Retry"
 msgstr "Thử lại"
@@ -4986,6 +5310,15 @@ msgstr "Sơ yếu lý lịch mẫu Rhyhorn"
 msgid "Right Align"
 msgstr "Căn phải"
 
+#. placeholder {0}: riskLevelLabel(blocks.riskSummary.level)
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Risk ({0}):"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Risk:"
+msgstr ""
+
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Role (optional)"
 msgstr "Vai trò (không bắt buộc)"
@@ -5002,6 +5335,10 @@ msgstr "Vai trò A–Z"
 msgid "Role Progression"
 msgstr "Tiến trình vai trò"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Role summary"
+msgstr ""
+
 #: src/libs/locale.ts
 msgid "Romanian"
 msgstr "Rumani"
@@ -5010,6 +5347,7 @@ msgstr "Rumani"
 msgid "Rotation"
 msgstr "Xoay"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "Run again"
 msgstr "Chạy lại"
@@ -5022,9 +5360,21 @@ msgstr "Chạy đánh giá bằng AI"
 msgid "Run deep check"
 msgstr "Chạy kiểm tra chuyên sâu"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Run full evaluation"
+msgstr ""
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Running quick match…"
+msgstr ""
+
 #: src/routes/agent/-components/tool-part-card.tsx
 msgid "Running…"
 msgstr "Đang chạy…"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Runs a multi-pass analysis of this posting against your linked resume: a requirement-by-requirement match table, level and compensation strategy, legitimacy screening, interview prep, and a 1–5 verdict where 4.0 is the apply line. The job description is archived verbatim with the report."
+msgstr ""
 
 #: src/libs/locale.ts
 msgid "Russian"
@@ -5142,14 +5492,6 @@ msgstr "Quét mã QR bên dưới bằng ứng dụng xác thực bạn ưa thí
 #: src/dialogs/resume/sections/education.tsx
 msgid "School"
 msgstr "Trường"
-
-#: src/features/applications/components/application-ai-copilot.tsx
-msgid "Score my fit"
-msgstr "Chấm điểm độ phù hợp của tôi"
-
-#: src/features/applications/components/application-ai-copilot.tsx
-msgid "Scoring your fit…"
-msgstr "Đang chấm điểm độ phù hợp của bạn…"
 
 #: src/routes/dashboard/-components/sidebar.tsx
 msgid "Search"
@@ -5537,6 +5879,10 @@ msgstr "Một cột; chỉnh chu và nghiêm túc cho vị trí cấp cao hoặc
 msgid "Size"
 msgstr "Kích thước"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Skill gap"
+msgstr ""
+
 #: src/dialogs/resume/sections/custom.tsx
 #: src/features/homepage/export-playground.tsx
 #: src/features/homepage/languages-showcase.tsx
@@ -5545,6 +5891,10 @@ msgstr "Kích thước"
 #: src/libs/resume/section.tsx
 msgid "Skills"
 msgstr "Kỹ năng"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Skip"
+msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Skip and Upload"
@@ -5569,6 +5919,10 @@ msgstr "Tiếng Slovenia"
 #: src/dialogs/resume/index.tsx
 msgid "Slug"
 msgstr "Slug"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Soft gaps"
+msgstr ""
 
 #: src/libs/resume/ats.ts
 msgid "Some application systems require one before you can submit."
@@ -5621,6 +5975,10 @@ msgstr "Một lựa chọn khác…"
 #: src/components/layout/error-screen.tsx
 msgid "Something went wrong"
 msgstr "Đã xảy ra lỗi"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Something went wrong during the run."
+msgstr ""
 
 #: src/features/ats-checker/tool.tsx
 msgid "Something went wrong while reading that file. Please try again."
@@ -5694,6 +6052,14 @@ msgstr "Viết đầy đủ tên tháng, chẳng hạn \"Tháng 3 năm 2022\"."
 #: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
 msgid "Sponsors"
 msgstr "Nhà tài trợ"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Sponsors visas"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Sponsorship unstated"
+msgstr ""
 
 #: src/features/homepage/site-footer.tsx
 #: src/routes/_home/-sections/footer.tsx
@@ -5778,6 +6144,10 @@ msgstr "Bắt đầu sơ yếu lý lịch bằng tên của bạn trên một d�
 msgid "Start thread"
 msgstr "Bắt đầu chủ đề"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "stated"
+msgstr ""
+
 #: src/libs/resume/section.tsx
 msgid "Statistics"
 msgstr "Thống kê"
@@ -5803,13 +6173,25 @@ msgstr "Ngừng sản xuất"
 msgid "Strengths"
 msgstr "Điểm mạnh"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Strengths & soft gaps"
+msgstr ""
+
 #: src/components/input/rich-input.tsx
 msgid "Strike"
 msgstr "Gạch ngang"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "strong"
+msgstr ""
+
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Strong fit"
 msgstr "Rất phù hợp"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "structural"
+msgstr ""
 
 #: src/features/resume/stylesheet/toolbar.tsx
 msgid "Stylesheet editor"
@@ -5853,6 +6235,10 @@ msgstr "Hãy ủng hộ ứng dụng bằng cách làm bất cứ điều gì b�
 #: src/features/homepage/page.tsx
 msgid "Support the project"
 msgstr "Ủng hộ dự án"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Supported by your resume"
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 #: src/libs/resume/ats.ts
@@ -6031,6 +6417,10 @@ msgstr "Kiểm tra chuyên sâu không thể hoàn tất. Vui lòng thử lại.
 msgid "The imported file could not be parsed into a valid resume."
 msgstr "Không thể phân tích tệp đã nhập để tạo thành một bản lý lịch hợp lệ."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "The multi-pass analysis usually takes a minute. The skill gap below is already final."
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "The order the text is stored in disagrees badly with the order it reads in."
 msgstr "Thứ tự lưu trữ văn bản khác biệt nghiêm trọng so với thứ tự đọc."
@@ -6070,6 +6460,10 @@ msgstr "Nhà cung cấp đã trả về một đánh giá không thể đọc đ
 #: src/features/auth/pages/error.tsx
 msgid "The provider's response could not be verified. Please start again."
 msgstr "Không thể xác minh phản hồi của nhà cung cấp. Vui lòng bắt đầu lại."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "The report and its archived job description snapshot will be permanently deleted."
+msgstr ""
 
 #: src/features/homepage/page.tsx
 msgid "The rest of your<0/>job search, too."
@@ -6483,6 +6877,10 @@ msgstr "Token: {total} ({cached} từ bộ nhớ đệm)"
 #: src/features/homepage/resume-sculpture.tsx
 msgid "Tools"
 msgstr "Công cụ"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Top strengths"
+msgstr ""
 
 #: src/features/homepage/community-stats.tsx
 msgid "Total unavailable"
@@ -6957,6 +7355,10 @@ msgstr "Rất ít từ được khôi phục cho một sơ yếu lý lịch."
 msgid "Very little text was recovered for this many pages."
 msgstr "Rất ít văn bản được khôi phục với số lượng trang nhiều như vậy."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Via"
+msgstr ""
+
 #: src/libs/locale.ts
 msgid "Vietnamese"
 msgstr "Tiếng Việt"
@@ -7113,6 +7515,14 @@ msgstr "Liệu dòng thời gian của bạn có thể được dựng lại hay
 #: src/features/ats-checker/messages.ts
 msgid "Words run together when the text is extracted."
 msgstr "Các từ bị dính liền nhau khi văn bản được trích xuất."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Work auth note"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Work authorization:"
+msgstr ""
 
 #: src/features/homepage/feature-explorer.tsx
 msgid "Work on your resume from your AI app."

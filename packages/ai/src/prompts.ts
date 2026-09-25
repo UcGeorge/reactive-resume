@@ -47,12 +47,22 @@ const chatSystemPromptTemplate = readPrompt("chat-system.md");
 const docxParserUserPrompt = readPrompt("docx-parser-user.md");
 const pdfParserUserPrompt = readPrompt("pdf-parser-user.md");
 
+// Deep JD evaluation (career): two-pass anti-anchoring plus strategy and legitimacy passes.
+const evaluationPass1SystemPrompt = readPrompt("evaluation-pass1-system.md");
+const evaluationPass2SystemPrompt = readPrompt("evaluation-pass2-system.md");
+const evaluationStrategySystemPrompt = readPrompt("evaluation-strategy-system.md");
+const evaluationLegitimacySystemPrompt = readPrompt("evaluation-legitimacy-system.md");
+
 export {
 	atsReviewSystemPrompt,
 	atsReviewUserPromptTemplate,
 	chatSystemPromptTemplate,
 	docxParserSystemPrompt,
 	docxParserUserPrompt,
+	evaluationLegitimacySystemPrompt,
+	evaluationPass1SystemPrompt,
+	evaluationPass2SystemPrompt,
+	evaluationStrategySystemPrompt,
 	pdfParserSystemPrompt,
 	pdfParserUserPrompt,
 };

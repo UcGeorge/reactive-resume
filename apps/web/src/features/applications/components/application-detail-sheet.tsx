@@ -26,9 +26,11 @@ import {
 } from "@reactive-resume/ui/components/dialog";
 import { Input } from "@reactive-resume/ui/components/input";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@reactive-resume/ui/components/sheet";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@reactive-resume/ui/components/tabs";
 import { Textarea } from "@reactive-resume/ui/components/textarea";
 import { toast } from "@reactive-resume/ui/components/toast";
 import { cn } from "@reactive-resume/utils/style";
+import { EvaluationPanel } from "@/features/evaluations/components/evaluation-panel";
 import { useConfirm } from "@/hooks/use-confirm";
 import { orpc } from "@/libs/orpc/client";
 import { applicationsListQueryKey } from "../queries";
@@ -67,6 +69,15 @@ export function ApplicationDetailSheet({ application, onOpenChange, onEdit }: Pr
 	const queryClient = useQueryClient();
 	const confirm = useConfirm();
 	const id = application?.id;
+
+	// The sheet is split into an Overview tab (everything that existed before) and the deep
+	// Evaluation tab. Reset to Overview whenever the sheet targets a different application.
+	const [tab, setTab] = useState<"overview" | "evaluation">("overview");
+	const [tabForId, setTabForId] = useState(id ?? null);
+	if ((id ?? null) !== tabForId) {
+		setTabForId(id ?? null);
+		setTab("overview");
+	}
 
 	const { data } = useQuery({
 		...orpc.applications.getById.queryOptions({ input: { id: id ?? "" } }),
@@ -171,131 +182,156 @@ export function ApplicationDetailSheet({ application, onOpenChange, onEdit }: Pr
 					</div>
 				</SheetHeader>
 
-				<div className="flex min-h-0 flex-1 flex-col gap-5 overflow-y-auto px-4 py-4 [&>*]:shrink-0">
-					{/* key facts */}
-					<dl className="grid grid-cols-2 gap-x-4 gap-y-3 text-sm">
-						<Fact label={t`Salary`} value={current.salary} />
-						<Fact label={t`Source`} value={current.source} />
-						<Fact
-							label={t`Applied on`}
-							value={formatDate(latestStageDate(current.activity, "applied") ?? current.appliedAt)}
-						/>
-					</dl>
+				<Tabs
+					value={tab}
+					className="flex min-h-0 flex-1 flex-col"
+					onValueChange={(value) => setTab(value as "overview" | "evaluation")}
+				>
+					<TabsList className="mx-4 mt-2 flex w-auto">
+						<TabsTrigger value="overview">
+							<Trans>Overview</Trans>
+						</TabsTrigger>
+						<TabsTrigger value="evaluation">
+							<Trans>Evaluation</Trans>
+						</TabsTrigger>
+					</TabsList>
 
-					{current.sourceUrl && (
-						<a
-							href={current.sourceUrl}
-							target="_blank"
-							rel="noreferrer"
-							className="inline-flex items-center gap-1.5 text-primary text-sm hover:underline"
-						>
-							<ArrowSquareOutIcon />
-							<Trans>Job posting</Trans>
-						</a>
-					)}
+					<TabsContent value="overview" className="flex min-h-0 flex-1 flex-col overflow-hidden">
+						<div className="flex min-h-0 flex-1 flex-col gap-5 overflow-y-auto px-4 py-4 [&>*]:shrink-0">
+							{/* key facts */}
+							<dl className="grid grid-cols-2 gap-x-4 gap-y-3 text-sm">
+								<Fact label={t`Salary`} value={current.salary} />
+								<Fact label={t`Source`} value={current.source} />
+								<Fact
+									label={t`Applied on`}
+									value={formatDate(latestStageDate(current.activity, "applied") ?? current.appliedAt)}
+								/>
+							</dl>
 
-					{current.notes?.trim() && (
-						<Section title={t`Notes`}>
-							<p className="wrap-break-word whitespace-pre-wrap text-sm">{current.notes}</p>
-						</Section>
-					)}
+							{current.sourceUrl && (
+								<a
+									href={current.sourceUrl}
+									target="_blank"
+									rel="noreferrer"
+									className="inline-flex items-center gap-1.5 text-primary text-sm hover:underline"
+								>
+									<ArrowSquareOutIcon />
+									<Trans>Job posting</Trans>
+								</a>
+							)}
 
-					{/* documents: linked resume + cover letter */}
-					<Section title={t`Documents sent`}>
-						{current.resumeId ? (
-							<Link
-								to="/builder/$resumeId"
-								params={{ resumeId: current.resumeId }}
-								className="flex items-center gap-3 rounded-lg border border-border p-2.5 hover:bg-muted/50"
-							>
-								<span className="flex size-8 items-center justify-center rounded-md bg-primary/10 font-bold text-[10px] text-primary">
-									RXR
-								</span>
-								<span className="min-w-0 flex-1 truncate text-sm">
-									<Trans>Linked Reactive Resume</Trans>
-								</span>
-								<ArrowSquareOutIcon className="text-muted-foreground" />
-							</Link>
-						) : (
-							<p className="text-muted-foreground text-sm">
-								<Trans>No resume linked.</Trans>
-							</p>
-						)}
+							{current.notes?.trim() && (
+								<Section title={t`Notes`}>
+									<p className="wrap-break-word whitespace-pre-wrap text-sm">{current.notes}</p>
+								</Section>
+							)}
 
-						<FileAttachmentField
-							value={
-								current.resumeFileUrl
-									? { url: current.resumeFileUrl, name: current.resumeFileName || t`Resume file` }
-									: null
-							}
-							attachLabel={t`Attach a resume file (PDF)`}
-							disabled={update.isPending}
-							onChange={(value) =>
-								update.mutate({
-									id: current.id,
-									resumeFileUrl: value?.url ?? null,
-									resumeFileName: value?.name ?? null,
-								})
-							}
-						/>
+							{/* documents: linked resume + cover letter */}
+							<Section title={t`Documents sent`}>
+								{current.resumeId ? (
+									<Link
+										to="/builder/$resumeId"
+										params={{ resumeId: current.resumeId }}
+										className="flex items-center gap-3 rounded-lg border border-border p-2.5 hover:bg-muted/50"
+									>
+										<span className="flex size-8 items-center justify-center rounded-md bg-primary/10 font-bold text-[10px] text-primary">
+											RXR
+										</span>
+										<span className="min-w-0 flex-1 truncate text-sm">
+											<Trans>Linked Reactive Resume</Trans>
+										</span>
+										<ArrowSquareOutIcon className="text-muted-foreground" />
+									</Link>
+								) : (
+									<p className="text-muted-foreground text-sm">
+										<Trans>No resume linked.</Trans>
+									</p>
+								)}
 
-						<FileAttachmentField
-							value={
-								current.coverLetterUrl
-									? { url: current.coverLetterUrl, name: current.coverLetterName || t`Cover letter` }
-									: null
-							}
-							attachLabel={t`Attach a cover letter (PDF)`}
-							disabled={update.isPending}
-							onChange={(value) =>
-								update.mutate({
-									id: current.id,
-									coverLetterUrl: value?.url ?? null,
-									coverLetterName: value?.name ?? null,
-								})
-							}
-						/>
-					</Section>
+								<FileAttachmentField
+									value={
+										current.resumeFileUrl
+											? { url: current.resumeFileUrl, name: current.resumeFileName || t`Resume file` }
+											: null
+									}
+									attachLabel={t`Attach a resume file (PDF)`}
+									disabled={update.isPending}
+									onChange={(value) =>
+										update.mutate({
+											id: current.id,
+											resumeFileUrl: value?.url ?? null,
+											resumeFileName: value?.name ?? null,
+										})
+									}
+								/>
 
-					{/* AI copilot — placed high so it's discoverable without scrolling past the timeline */}
-					<ApplicationAiCopilot application={current} />
+								<FileAttachmentField
+									value={
+										current.coverLetterUrl
+											? { url: current.coverLetterUrl, name: current.coverLetterName || t`Cover letter` }
+											: null
+									}
+									attachLabel={t`Attach a cover letter (PDF)`}
+									disabled={update.isPending}
+									onChange={(value) =>
+										update.mutate({
+											id: current.id,
+											coverLetterUrl: value?.url ?? null,
+											coverLetterName: value?.name ?? null,
+										})
+									}
+								/>
+							</Section>
 
-					{/* contacts */}
-					<Section title={t`Contacts`}>
-						<ContactsEditor
-							key={current.id}
-							contacts={current.contacts}
-							pending={update.isPending}
-							onChange={(contacts) => update.mutate({ id: current.id, contacts })}
-						/>
-					</Section>
+							{/* AI copilot — placed high so it's discoverable without scrolling past the timeline */}
+							<ApplicationAiCopilot application={current} onOpenEvaluation={() => setTab("evaluation")} />
 
-					{/* follow-up */}
-					{current.followUpAt && (
-						<Section title={t`Follow-up`}>
-							<div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-2.5 text-sm">
-								<span className="font-medium">{new Date(current.followUpAt).toLocaleDateString()}</span>
-								{current.followUpNote ? ` — ${current.followUpNote}` : ""}
-							</div>
-						</Section>
-					)}
+							{/* contacts */}
+							<Section title={t`Contacts`}>
+								<ContactsEditor
+									key={current.id}
+									contacts={current.contacts}
+									pending={update.isPending}
+									onChange={(contacts) => update.mutate({ id: current.id, contacts })}
+								/>
+							</Section>
 
-					<ApplicationTimeline
-						key={current.id}
-						application={current}
-						pending={addNote.isPending || updateTimelineEntry.isPending || deleteTimelineEntry.isPending}
-						onAddNote={(text) => addNote.mutateAsync({ id: current.id, text })}
-						onUpdateEntry={(entryId, input) => updateTimelineEntry.mutateAsync({ id: current.id, entryId, ...input })}
-						onDeleteEntry={(entryId) => {
-							void confirm(t`Delete this timeline entry?`, {
-								description: t`This entry will be permanently deleted. This can't be undone.`,
-								confirmText: t`Delete`,
-							}).then((confirmed) => {
-								if (confirmed) deleteTimelineEntry.mutate({ id: current.id, entryId });
-							});
-						}}
-					/>
-				</div>
+							{/* follow-up */}
+							{current.followUpAt && (
+								<Section title={t`Follow-up`}>
+									<div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-2.5 text-sm">
+										<span className="font-medium">{new Date(current.followUpAt).toLocaleDateString()}</span>
+										{current.followUpNote ? ` — ${current.followUpNote}` : ""}
+									</div>
+								</Section>
+							)}
+
+							<ApplicationTimeline
+								key={current.id}
+								application={current}
+								pending={addNote.isPending || updateTimelineEntry.isPending || deleteTimelineEntry.isPending}
+								onAddNote={(text) => addNote.mutateAsync({ id: current.id, text })}
+								onUpdateEntry={(entryId, input) =>
+									updateTimelineEntry.mutateAsync({ id: current.id, entryId, ...input })
+								}
+								onDeleteEntry={(entryId) => {
+									void confirm(t`Delete this timeline entry?`, {
+										description: t`This entry will be permanently deleted. This can't be undone.`,
+										confirmText: t`Delete`,
+									}).then((confirmed) => {
+										if (confirmed) deleteTimelineEntry.mutate({ id: current.id, entryId });
+									});
+								}}
+							/>
+						</div>
+					</TabsContent>
+
+					<TabsContent value="evaluation" className="flex min-h-0 flex-1 flex-col overflow-hidden">
+						<div className="min-h-0 flex-1 overflow-y-auto px-4 py-4">
+							<EvaluationPanel application={current} />
+						</div>
+					</TabsContent>
+				</Tabs>
 
 				<div className="flex items-center gap-1 border-border border-t p-4">
 					{current.status !== "rejected" && (

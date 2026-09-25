@@ -528,6 +528,10 @@ msgstr "Прилагодите резиме за улогу која првен�
 msgid "Advanced"
 msgstr "Напредно"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Advertised"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Advice for the person reading it. None of this affects the score."
 msgstr "Савет за особу која то чита. Ништа од овога не утиче на резултат."
@@ -629,6 +633,10 @@ msgstr "Већ обухваћено"
 #: src/features/auth/pages/register.tsx
 msgid "Already have an account? <0/>"
 msgstr "Већ имате налог? <0/>"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Already in your skills"
+msgstr ""
 
 #: src/libs/locale.ts
 msgid "Amharic"
@@ -758,6 +766,10 @@ msgstr "Пријављено"
 msgid "Applied on"
 msgstr "Пријављено дана"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Apply"
+msgstr ""
+
 #: src/routes/agent/-components/patch-approval-card.tsx
 msgid "Approve"
 msgstr "Одобри"
@@ -781,6 +793,10 @@ msgstr "Архивирај"
 #: src/routes/dashboard/applications/index.tsx
 msgid "Archived"
 msgstr "Архивирано"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Archived job description"
+msgstr ""
 
 #: src/hooks/use-form-blocker.tsx
 msgid "Are you sure you want to close this dialog?"
@@ -839,6 +855,14 @@ msgstr "Питајте било шта о овом животопису"
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Aspect Ratio"
 msgstr "Однос стране"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Assessment"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "At or above the 4.0 apply line."
+msgstr ""
 
 #: src/libs/resume/section.tsx
 msgid "ATS Check"
@@ -939,6 +963,10 @@ msgstr "Основни URL"
 #: src/libs/resume/section.tsx
 msgid "Basics"
 msgstr "Основне информације"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Below the 4.0 apply line."
+msgstr ""
 
 #: src/libs/locale.ts
 msgid "Bengali"
@@ -1056,6 +1084,10 @@ msgstr "Није могуће вратити; резиме се променио
 #: src/libs/locale.ts
 msgid "Catalan"
 msgstr "Каталонски"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "caution"
+msgstr ""
 
 #: src/components/input/rich-input.tsx
 msgid "Center Align"
@@ -1243,6 +1275,10 @@ msgstr "Затвори"
 msgid "Close AI assistant"
 msgstr "Затвори AI асистент"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Collapse"
+msgstr ""
+
 #: src/features/homepage/resume-sculpture.tsx
 msgid "Color"
 msgstr "Боја"
@@ -1293,9 +1329,17 @@ msgstr "Компанија А–Ш"
 msgid "Compare this resume against this job posting URL and update the keywords without overselling anything."
 msgstr "Упоредите овај резиме са огласом за посао на овом URL-у и ажурирајте кључне речи без претеривања."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Compensation"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Compress or remove large images to keep uploads quick."
 msgstr "Компресујте или уклоните велике слике како би отпремање било брзо."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Confidence:"
+msgstr ""
 
 #. Account deletion confirmation dialog confirm action in account settings
 #. Create API key dialog acknowledgment action after copying
@@ -1342,6 +1386,10 @@ msgstr "Веза није успела."
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Connection verified. The provider is ready to use."
 msgstr "Веза је потврђена. Добављач је спреман за употребу."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Consider"
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Contact details"
@@ -1548,13 +1596,25 @@ msgstr "Није могуће додати пријаву. Покушајте п
 msgid "Couldn't delete the application."
 msgstr "Брисање пријаве није успело."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Couldn't delete the evaluation."
+msgstr ""
+
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Couldn't delete the timeline entry."
 msgstr "Није могуће избрисати унос временске линије."
 
+#: src/features/applications/components/application-form-sheet.tsx
+msgid "Couldn't fetch that URL."
+msgstr ""
+
 #: src/features/applications/components/board.tsx
 msgid "Couldn't move the application. Please try again."
 msgstr "Премештање пријаве није успело. Покушајте поново."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Couldn't retry the evaluation."
+msgstr ""
 
 #: src/routes/builder/$resumeId/-components/header.tsx
 msgid "Couldn't save"
@@ -1567,6 +1627,11 @@ msgstr "Није могуће сачувати белешку."
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Couldn't save your changes. Please try again."
 msgstr "Није могуће сачувати промене. Покушајте поново."
+
+#: src/features/applications/components/application-ai-copilot.tsx
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Couldn't start the evaluation."
+msgstr ""
 
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Couldn't update the timeline entry."
@@ -1759,6 +1824,10 @@ msgstr "Креирање вашег API кључа..."
 msgid "Creating your resume..."
 msgstr "Креирање вашег резимеа..."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "critical"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Crop and Upload"
 msgstr "Обрежи и отпреми"
@@ -1803,6 +1872,10 @@ msgstr "Прилагођени одељци"
 #: src/libs/resume/section.tsx
 msgid "Custom Styles"
 msgstr "Прилагођени стилови"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Customization plan"
+msgstr ""
 
 #: src/libs/locale.ts
 msgid "Czech"
@@ -1853,6 +1926,14 @@ msgstr "Смањи зумирање"
 msgid "Deep check"
 msgstr "Дубинска провера"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Deep JD evaluation"
+msgstr ""
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Deep report: requirements, gaps, strategy, legitimacy"
+msgstr ""
+
 #: src/features/cover-letters/library.tsx
 msgid "Default template"
 msgstr "Подразумевани шаблон"
@@ -1871,6 +1952,7 @@ msgstr "Степен"
 #: src/features/applications/components/application-detail-sheet.tsx
 #: src/features/applications/components/table-view.tsx
 #: src/features/cover-letters/editor-dialog.tsx
+#: src/features/evaluations/components/evaluation-panel.tsx
 #: src/features/settings/authentication/components/passkeys.tsx
 #: src/features/settings/pages/api-keys.tsx
 #: src/routes/agent/-components/agent-chat.tsx
@@ -1887,6 +1969,10 @@ msgstr "Обриши"
 #: src/features/settings/pages/account.tsx
 msgid "Delete Account"
 msgstr "Обриши налог"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Delete evaluation"
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Delete it. Hidden keywords are treated as a deliberate attempt to game the search."
@@ -1917,6 +2003,10 @@ msgstr "Избрисати ову пријаву?"
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Delete this cover letter?"
 msgstr "Избрисати ово пропратно писмо?"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Delete this evaluation?"
+msgstr ""
 
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Delete this timeline entry?"
@@ -2123,6 +2213,10 @@ msgstr "Нацртајте пропратно писмо"
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Draft a follow-up"
 msgstr "Нацртајте наставак"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Draft answers"
+msgstr ""
 
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Drafting failed."
@@ -2371,9 +2465,33 @@ msgstr "Унесите своју лозинку да бисте онемогу�
 msgid "Error"
 msgstr "Грешка"
 
+#: src/features/applications/components/application-detail-sheet.tsx
+msgid "Evaluation"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Evaluation failed"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Evaluation queued…"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Evaluation running…"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "Every check passed. Nothing here should stop a parser from reading your resume."
 msgstr "Свака провера је прошла. Ништа овде не би требало да спречи парсер да прочита вашу биографију."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Evidence"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Evidence:"
+msgstr ""
 
 #: src/features/homepage/feature-explorer.tsx
 msgid "Example application"
@@ -2390,6 +2508,10 @@ msgstr "Изађи из режима фокусирања"
 #: src/components/input/rich-input.tsx
 msgid "Exit Fullscreen"
 msgstr "Изађи из целог екрана"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Expand"
+msgstr ""
 
 #: src/dialogs/resume/sections/custom.tsx
 #: src/features/homepage/export-playground.tsx
@@ -2640,6 +2762,14 @@ msgstr "Фатална грешка"
 msgid "Features"
 msgstr "Функције"
 
+#: src/features/applications/components/application-form-sheet.tsx
+msgid "Fetch & autofill"
+msgstr ""
+
+#: src/features/applications/components/application-form-sheet.tsx
+msgid "Fetched the posting and filled in the fields."
+msgstr ""
+
 #: src/features/homepage/page.tsx
 msgid "Fifteen templates, all free. Pick one you like. You can change the type, color, and layout in the editor."
 msgstr "Петнаест шаблона, сви бесплатни. Изаберите онај који вам се свиђа. Тип, боју и распоред можете променити у уређивачу."
@@ -2687,6 +2817,10 @@ msgstr "Прилагоди приказу"
 #: src/features/homepage/feature-explorer.tsx
 msgid "Fits into your workflow"
 msgstr "Уклапа се у ваш ток рада"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "flag"
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Flatten the form so the text is part of the page."
@@ -2779,6 +2913,14 @@ msgstr "Француски"
 msgid "From your resume and the posting"
 msgstr "Из вашег животописа и објављивања"
 
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Full evaluation"
+msgstr ""
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Full evaluation started. Open the Evaluation tab to follow it."
+msgstr ""
+
 #: src/features/resume/export/download-dialog.tsx
 msgid "Full resume data for backup or import."
 msgstr "Потпуни подаци о животопису за резервну копију или увоз."
@@ -2796,6 +2938,10 @@ msgstr "Цео екран"
 #: src/components/input/rich-input.tsx
 msgid "Fullscreen Editor"
 msgstr "Уређивач у пуном екрану"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Gaps & mitigations"
+msgstr ""
 
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Gaps:"
@@ -2887,6 +3033,10 @@ msgstr "Грчки"
 #: src/routes/dashboard/resumes/index.tsx
 msgid "Grid"
 msgstr "Мрежа"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Hard stops"
+msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/typography.tsx
 msgctxt "Headings or Titles (H1, H2, H3, H4, H5, H6)"
@@ -2997,6 +3147,10 @@ msgstr "Сакриј преглед"
 msgid "Hide Section Icons"
 msgstr "Сакриј иконе одељака"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "high"
+msgstr ""
+
 #: src/features/ats-checker/ai-review/ai-review-results.tsx
 msgid "High impact"
 msgstr "Висок утицај"
@@ -3013,6 +3167,10 @@ msgstr "Боја истицања"
 msgid "Hindi"
 msgstr "Хинди"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Hint:"
+msgstr ""
+
 #: src/features/command-palette/pages/navigation.tsx
 msgid "Home"
 msgstr "Почетна"
@@ -3020,6 +3178,10 @@ msgstr "Почетна"
 #: src/features/settings/pages/api-keys.tsx
 msgid "How do I use the API?"
 msgstr "Како да користим API?"
+
+#: src/features/applications/components/application-form-sheet.tsx
+msgid "https://… (job posting URL)"
+msgstr ""
 
 #: src/libs/locale.ts
 msgid "Hungarian"
@@ -3087,6 +3249,10 @@ msgstr "Увези из библиотеке"
 msgid "Import JSON"
 msgstr "Увези ЈСОН"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Importance"
+msgstr ""
+
 #. placeholder {0}: result.imported
 #: src/features/applications/components/import-applications-sheet.tsx
 msgid "Imported {0} application(s)."
@@ -3133,6 +3299,10 @@ msgstr "Повећај зумирање"
 msgid "Indonesian"
 msgstr "Индонежански"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "inferred"
+msgstr ""
+
 #: src/libs/resume/section.tsx
 msgid "Information"
 msgstr "Информације"
@@ -3176,6 +3346,10 @@ msgstr "Интересовања"
 msgid "Interview"
 msgstr "Интервју"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Interview plan"
+msgstr ""
+
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Invalid AI provider configuration."
 msgstr "Неважећа конфигурација добављача вештачке интелигенције."
@@ -3195,6 +3369,14 @@ msgstr "Курзив"
 #: src/libs/locale.ts
 msgid "Japanese"
 msgstr "Јапански"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "JD signal"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "JD signal:"
+msgstr ""
 
 #: src/features/command-palette/pages/navigation.tsx
 msgid "Job"
@@ -3313,6 +3495,10 @@ msgstr "Задржите распоред нетакнутим. Спремно �
 msgid "Key"
 msgstr "Кључ"
 
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Keyword coverage:"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
 msgid "Keyword layout"
 msgstr "Изглед кључних речи"
@@ -3427,6 +3613,22 @@ msgstr "Поравнај лево"
 msgid "Legal"
 msgstr "Правне информације"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Legitimacy signals"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Legitimacy: high confidence"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Legitimacy: proceed with caution"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Legitimacy: suspicious"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Length is not a defect, and there is no universal one-page rule. Keep the pages that earn their place."
 msgstr "Дужина није мана, и не постоји универзално правило од једне странице. Задржите странице које заслужују своје место."
@@ -3445,6 +3647,10 @@ msgstr "Ниво"
 #: src/components/level/display.tsx
 msgid "Level {level} of 5"
 msgstr "Ниво {level} од 5"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Level & positioning"
+msgstr ""
 
 #: src/components/ui/copyright.tsx
 msgid "Licensed under <0>MIT</0>."
@@ -3481,6 +3687,10 @@ msgstr "Повежите Reactive Resume (препоручено)"
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Link a Reactive Resume to use AI match scoring and tailoring."
 msgstr "Повежите Reactive Resume резиме да бисте користили АИ оцењивање подударности и прилагођавање."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Link a resume and paste the job description (Edit) to run an evaluation."
+msgstr ""
 
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Link a resume and paste the job description (Edit) to score your fit and tailor a copy."
@@ -3564,6 +3774,7 @@ msgstr "Учитавање…"
 #: src/features/applications/components/application-form-sheet.tsx
 #: src/features/applications/components/table-view.tsx
 #: src/features/ats-checker/parse-preview.tsx
+#: src/features/evaluations/components/evaluation-panel.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/basics.tsx
 msgid "Location"
 msgstr "Локација"
@@ -3585,9 +3796,25 @@ msgstr "Дуги делови текста су написани великим 
 msgid "Lost access to your authenticator?"
 msgstr "Изгубили сте приступ својој апликацији за аутентификацију?"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "low"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Low confidence — this is not a clean result"
+msgstr ""
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Low confidence — this is not a clean result:"
+msgstr ""
+
 #: src/features/ats-checker/ai-review/ai-review-results.tsx
 msgid "Low impact"
 msgstr "Низак утицај"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "low signal"
+msgstr ""
 
 #: src/features/homepage/resume-sculpture.tsx
 msgid "Made with Reactive Resume"
@@ -3651,9 +3878,21 @@ msgstr "Маргина (вертикална)"
 msgid "Mark rejected"
 msgstr "Означи као одбијено"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Match"
+msgstr ""
+
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Match scoring failed."
 msgstr "Оцењивање подударности није успело."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "meaningful"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "medium"
+msgstr ""
 
 #: src/features/ats-checker/ai-review/ai-review-results.tsx
 msgid "Medium impact"
@@ -3665,6 +3904,14 @@ msgstr "Средњи утицај"
 msgid "Microsoft Word"
 msgstr "Микрософт Ворд"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "missing"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Missing from your resume"
+msgstr ""
+
 #: src/routes/agent/-components/resume-pane.tsx
 msgid "Missing working resume"
 msgstr "Недостаје радни животопис"
@@ -3672,6 +3919,10 @@ msgstr "Недостаје радни животопис"
 #: src/features/homepage/site-footer.tsx
 msgid "MIT License"
 msgstr "MIT лиценца"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Mitigation:"
+msgstr ""
 
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Model"
@@ -3744,6 +3995,10 @@ msgstr "Премештено у"
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom-fields.tsx
 msgid "Must start with https://"
 msgstr "Мора да почне са https://"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "n/a"
+msgstr ""
 
 #. Label for full name input on registration form
 #: src/dialogs/api-key/create.tsx
@@ -3832,6 +4087,10 @@ msgstr "Нова тема"
 #: src/features/cover-letters/library.tsx
 msgid "Next"
 msgstr "Следеће"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Next action:"
+msgstr ""
 
 #: src/features/homepage/template-shelf.tsx
 msgid "Next template"
@@ -3940,6 +4199,10 @@ msgstr "Још нема животописа."
 msgid "No saved versions yet."
 msgstr "Још нема сачуваних верзија."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "No skill requirements were extracted from the posting."
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "No skills section was found."
 msgstr "Није пронађен одељак за вештине."
@@ -3951,6 +4214,14 @@ msgstr "Још нема изворних података."
 #: src/features/ats-checker/report/jd-coverage.tsx
 msgid "No specific terms could be pulled out of that job description, so it may be mostly boilerplate. Paste the requirements section for a more useful comparison."
 msgstr "Из тог описа посла нису могли да се издвоје конкретни термини, па је можда углавном шаблонски текст. Налепите одељак са захтевима за кориснију упоредбу."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "No sponsorship"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "No sponsorship needed"
+msgstr ""
 
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "No tested provider"
@@ -3979,6 +4250,14 @@ msgstr "Норвешки"
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Not connected"
 msgstr "Није повезано"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "not evaluated"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Not evaluated:"
+msgstr ""
 
 #: src/features/ats-checker/ai-review/ai-review-results.tsx
 msgid "Not evidenced in your resume"
@@ -4029,6 +4308,10 @@ msgstr "Одија"
 #: src/features/homepage/feature-explorer.tsx
 msgid "Offer"
 msgstr "Понуда"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "ok"
+msgstr ""
 
 #: src/features/settings/pages/api-keys.tsx
 msgid "Once deleted, the key can no longer access your data. This cannot be undone."
@@ -4163,6 +4446,10 @@ msgstr "Оригинално обликовање табеле је сачува
 msgid "out of 100"
 msgstr "од 100"
 
+#: src/features/applications/components/application-detail-sheet.tsx
+msgid "Overview"
+msgstr ""
+
 #: src/libs/resume/section.tsx
 msgid "Page"
 msgstr "Страница"
@@ -4184,6 +4471,10 @@ msgstr "Пасус"
 #: src/components/input/rich-input.tsx
 msgid "Paragraph and heading style"
 msgstr "Стил пасуса и наслова"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "partial"
+msgstr ""
 
 #. Authentication provider display name in account settings
 #. Label for passkey sign-in button
@@ -4399,6 +4690,10 @@ msgstr "Португалски (Португал)"
 msgid "Position"
 msgstr "Позиција"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Positioning"
+msgstr ""
+
 #: src/libs/resume/ats.ts
 msgid "Prefer a conventional heading such as \"Work Experience\" or \"Education\"."
 msgstr "Дајте предност конвенционалном наслову као што је \"Радно искуство\" или \"Образовање\"."
@@ -4413,6 +4708,10 @@ msgstr "Дајте предност једној колони, или задрж
 #: src/routes/dashboard/settings/preferences.tsx
 msgid "Preferences"
 msgstr "Поставке"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "preferred"
+msgstr ""
 
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Prepare a conservative patch that improves clarity without changing the story of my career."
@@ -4558,6 +4857,10 @@ msgstr "Издавач"
 #: src/features/ats-checker/messages.ts
 msgid "Put a plain email address near the top of the first page. It is what most systems file you under."
 msgstr "Ставите обичну имејл адресу близу врха прве странице. То је оно под чим вас већина система евидентира."
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Quick match"
+msgstr ""
 
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Raw JSON"
@@ -4731,6 +5034,10 @@ msgstr "Региструјте нови уређај"
 msgid "Released under the <0>MIT License</0>."
 msgstr "Објављено под <0>MIT лиценцом</0>."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Reliability"
+msgstr ""
+
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Reload latest version"
 msgstr "Поново учитајте најновију верзију"
@@ -4829,6 +5136,22 @@ msgstr "Пријави грешку"
 #: src/routes/_home/-sections/footer.tsx
 msgid "Report an issue"
 msgstr "Пријави проблем"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Reports to"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Requirement"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Requirements"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Research first"
+msgstr ""
 
 #: src/features/settings/pages/profile.tsx
 msgid "Resend verification email"
@@ -4946,6 +5269,7 @@ msgstr "Резимеи"
 
 #: src/features/cover-letters/editor-dialog.tsx
 #: src/features/cover-letters/library.tsx
+#: src/features/evaluations/components/evaluation-panel.tsx
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Retry"
 msgstr "Покушај поново"
@@ -4986,6 +5310,15 @@ msgstr "Пример резимеа Rhyhorn"
 msgid "Right Align"
 msgstr "Поравнај десно"
 
+#. placeholder {0}: riskLevelLabel(blocks.riskSummary.level)
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Risk ({0}):"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Risk:"
+msgstr ""
+
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Role (optional)"
 msgstr "Улога (опционо)"
@@ -5002,6 +5335,10 @@ msgstr "Улога А–Ш"
 msgid "Role Progression"
 msgstr "Напредовање у улози"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Role summary"
+msgstr ""
+
 #: src/libs/locale.ts
 msgid "Romanian"
 msgstr "Румунски"
@@ -5010,6 +5347,7 @@ msgstr "Румунски"
 msgid "Rotation"
 msgstr "Ротација"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "Run again"
 msgstr "Покрени поново"
@@ -5022,9 +5360,21 @@ msgstr "Покрени АИ преглед"
 msgid "Run deep check"
 msgstr "Покрени дубинску проверу"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Run full evaluation"
+msgstr ""
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Running quick match…"
+msgstr ""
+
 #: src/routes/agent/-components/tool-part-card.tsx
 msgid "Running…"
 msgstr "У току…"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Runs a multi-pass analysis of this posting against your linked resume: a requirement-by-requirement match table, level and compensation strategy, legitimacy screening, interview prep, and a 1–5 verdict where 4.0 is the apply line. The job description is archived verbatim with the report."
+msgstr ""
 
 #: src/libs/locale.ts
 msgid "Russian"
@@ -5142,14 +5492,6 @@ msgstr "Скенирајте QR код испод својом омиљеном 
 #: src/dialogs/resume/sections/education.tsx
 msgid "School"
 msgstr "Школа"
-
-#: src/features/applications/components/application-ai-copilot.tsx
-msgid "Score my fit"
-msgstr "Оцени моје подударање"
-
-#: src/features/applications/components/application-ai-copilot.tsx
-msgid "Scoring your fit…"
-msgstr "Оцењивање вашег подударања…"
 
 #: src/routes/dashboard/-components/sidebar.tsx
 msgid "Search"
@@ -5537,6 +5879,10 @@ msgstr "Једноколонац; уштогљен и озбиљан за сен
 msgid "Size"
 msgstr "Величина"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Skill gap"
+msgstr ""
+
 #: src/dialogs/resume/sections/custom.tsx
 #: src/features/homepage/export-playground.tsx
 #: src/features/homepage/languages-showcase.tsx
@@ -5545,6 +5891,10 @@ msgstr "Величина"
 #: src/libs/resume/section.tsx
 msgid "Skills"
 msgstr "Вештине"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Skip"
+msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Skip and Upload"
@@ -5569,6 +5919,10 @@ msgstr "Словеначки"
 #: src/dialogs/resume/index.tsx
 msgid "Slug"
 msgstr "Идентификатор (slug)"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Soft gaps"
+msgstr ""
 
 #: src/libs/resume/ats.ts
 msgid "Some application systems require one before you can submit."
@@ -5621,6 +5975,10 @@ msgstr "Нешто друго…"
 #: src/components/layout/error-screen.tsx
 msgid "Something went wrong"
 msgstr "Нешто је пошло наопако"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Something went wrong during the run."
+msgstr ""
 
 #: src/features/ats-checker/tool.tsx
 msgid "Something went wrong while reading that file. Please try again."
@@ -5694,6 +6052,14 @@ msgstr "Испишите месец словима, као у „Mar 2022“."
 #: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
 msgid "Sponsors"
 msgstr "Спонзори"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Sponsors visas"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Sponsorship unstated"
+msgstr ""
 
 #: src/features/homepage/site-footer.tsx
 #: src/routes/_home/-sections/footer.tsx
@@ -5778,6 +6144,10 @@ msgstr "Почните биографију својим именом у зас�
 msgid "Start thread"
 msgstr "Покрени тему"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "stated"
+msgstr ""
+
 #: src/libs/resume/section.tsx
 msgid "Statistics"
 msgstr "Статистика"
@@ -5803,13 +6173,25 @@ msgstr "Заустави генерисање"
 msgid "Strengths"
 msgstr "Снаге"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Strengths & soft gaps"
+msgstr ""
+
 #: src/components/input/rich-input.tsx
 msgid "Strike"
 msgstr "Прецртано"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "strong"
+msgstr ""
+
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Strong fit"
 msgstr "Снажно подударање"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "structural"
+msgstr ""
 
 #: src/features/resume/stylesheet/toolbar.tsx
 msgid "Stylesheet editor"
@@ -5853,6 +6235,10 @@ msgstr "Подржите апликацију колико можете!"
 #: src/features/homepage/page.tsx
 msgid "Support the project"
 msgstr "Подржите пројекат"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Supported by your resume"
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 #: src/libs/resume/ats.ts
@@ -6031,6 +6417,10 @@ msgstr "Дубинска провера није могла да се заврш
 msgid "The imported file could not be parsed into a valid resume."
 msgstr "Увезена датотека није могла да се преобрази у важећи резиме."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "The multi-pass analysis usually takes a minute. The skill gap below is already final."
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "The order the text is stored in disagrees badly with the order it reads in."
 msgstr "Редослед у ком је текст сачуван се знатно разликује од редоследа у ком се чита."
@@ -6070,6 +6460,10 @@ msgstr "Добављач је вратио преглед који није мо
 #: src/features/auth/pages/error.tsx
 msgid "The provider's response could not be verified. Please start again."
 msgstr "Одговор добављача није могао да се потврди. Почните поново."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "The report and its archived job description snapshot will be permanently deleted."
+msgstr ""
 
 #: src/features/homepage/page.tsx
 msgid "The rest of your<0/>job search, too."
@@ -6483,6 +6877,10 @@ msgstr "Токени: {total} ({cached} кеширано)"
 #: src/features/homepage/resume-sculpture.tsx
 msgid "Tools"
 msgstr "Алати"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Top strengths"
+msgstr ""
 
 #: src/features/homepage/community-stats.tsx
 msgid "Total unavailable"
@@ -6957,6 +7355,10 @@ msgstr "Врло мало речи је извучено за биографиј
 msgid "Very little text was recovered for this many pages."
 msgstr "Врло мало текста је извучено за оволико страница."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Via"
+msgstr ""
+
 #: src/libs/locale.ts
 msgid "Vietnamese"
 msgstr "Вијетнамски"
@@ -7113,6 +7515,14 @@ msgstr "Да ли ваша временска линија може да се р
 #: src/features/ats-checker/messages.ts
 msgid "Words run together when the text is extracted."
 msgstr "Речи се спајају када се текст извуче."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Work auth note"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Work authorization:"
+msgstr ""
 
 #: src/features/homepage/feature-explorer.tsx
 msgid "Work on your resume from your AI app."

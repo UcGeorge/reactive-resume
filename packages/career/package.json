@@ -1,0 +1,34 @@
+{
+	"name": "@reactive-resume/career",
+	"version": "0.0.0",
+	"type": "module",
+	"private": true,
+	"exports": {
+		"./cadence": "./src/cadence/index.ts",
+		"./evaluation": "./src/evaluation/index.ts",
+		"./fact-gate": "./src/fact-gate/index.ts",
+		"./fingerprint": "./src/fingerprint/index.ts",
+		"./legitimacy": "./src/legitimacy/index.ts",
+		"./reuse": "./src/reuse/index.ts",
+		"./skill-gap": "./src/skill-gap/index.ts",
+		"./stories": "./src/stories/index.ts"
+	},
+	"scripts": {
+		"typecheck": "tsgo --noEmit",
+		"test": "vitest run --passWithNoTests",
+		"test:coverage": "vitest run --coverage --passWithNoTests",
+		"test:ci": "vitest run --coverage --reporter=default --reporter=github-actions --reporter=json --reporter=junit --outputFile.json=reports/vitest-results.json --outputFile.junit=reports/vitest-junit.xml --passWithNoTests",
+		"test:agent": "vitest run --reporter=agent --reporter=json --outputFile.json=reports/vitest-results.json --passWithNoTests"
+	},
+	"dependencies": {
+		"@reactive-resume/resume": "workspace:*",
+		"@reactive-resume/schema": "workspace:*",
+		"@reactive-resume/utils": "workspace:*",
+		"zod": "^4.6.5"
+	},
+	"devDependencies": {
+		"@reactive-resume/config": "workspace:*",
+		"@typescript/native-preview": "7.0.0-dev.20260707.2",
+		"typescript": "^7.0.2"
+	}
+}

@@ -528,6 +528,10 @@ msgstr "தன்னிச்சையான தகவல் தொடர்ப�
 msgid "Advanced"
 msgstr "மேம்பட்ட"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Advertised"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Advice for the person reading it. None of this affects the score."
 msgstr "இதைப் படிப்பவருக்கான ஆலோசனை. இவை எதுவும் மதிப்பெண்ணை பாதிக்காது."
@@ -629,6 +633,10 @@ msgstr "ஏற்கனவே உள்ளடக்கப்பட்டது"
 #: src/features/auth/pages/register.tsx
 msgid "Already have an account? <0/>"
 msgstr "ஏற்கனவே கணக்கு உள்ளதா? <0/>"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Already in your skills"
+msgstr ""
 
 #: src/libs/locale.ts
 msgid "Amharic"
@@ -758,6 +766,10 @@ msgstr "விண்ணப்பிக்கப்பட்டது"
 msgid "Applied on"
 msgstr "அன்று விண்ணப்பித்தது"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Apply"
+msgstr ""
+
 #: src/routes/agent/-components/patch-approval-card.tsx
 msgid "Approve"
 msgstr "அங்கீகரி"
@@ -781,6 +793,10 @@ msgstr "காப்பகப்படுத்து"
 #: src/routes/dashboard/applications/index.tsx
 msgid "Archived"
 msgstr "காப்பகப்படுத்தப்பட்டது"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Archived job description"
+msgstr ""
 
 #: src/hooks/use-form-blocker.tsx
 msgid "Are you sure you want to close this dialog?"
@@ -839,6 +855,14 @@ msgstr "இந்த ரெஸ்யூம் பற்றி எதையும
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Aspect Ratio"
 msgstr "ஒப்புத்திணைவு விகிதம்"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Assessment"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "At or above the 4.0 apply line."
+msgstr ""
 
 #: src/libs/resume/section.tsx
 msgid "ATS Check"
@@ -939,6 +963,10 @@ msgstr "அடிப்படை URL"
 #: src/libs/resume/section.tsx
 msgid "Basics"
 msgstr "அடிப்படைத் தகவல்கள்"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Below the 4.0 apply line."
+msgstr ""
 
 #: src/libs/locale.ts
 msgid "Bengali"
@@ -1056,6 +1084,10 @@ msgstr "மீட்டெடுக்க முடியாது; இந்த
 #: src/libs/locale.ts
 msgid "Catalan"
 msgstr "கட்டலான்"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "caution"
+msgstr ""
 
 #: src/components/input/rich-input.tsx
 msgid "Center Align"
@@ -1243,6 +1275,10 @@ msgstr "மூடு"
 msgid "Close AI assistant"
 msgstr "AI உதவியாளரை மூடு"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Collapse"
+msgstr ""
+
 #: src/features/homepage/resume-sculpture.tsx
 msgid "Color"
 msgstr "நிறம்"
@@ -1293,9 +1329,17 @@ msgstr "நிறுவனம் A–Z"
 msgid "Compare this resume against this job posting URL and update the keywords without overselling anything."
 msgstr "இந்த ரெஸ்யூமை இந்த வேலை அறிவிப்பு URL-உடன் ஒப்பிட்டு, எதையும் மிகைப்படுத்தாமல் முக்கிய சொற்களைப் புதுப்பிக்கவும்."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Compensation"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Compress or remove large images to keep uploads quick."
 msgstr "பதிவேற்றங்களை விரைவாக வைத்திருக்க பெரிய படங்களை சுருக்கவும் அல்லது நீக்கவும்."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Confidence:"
+msgstr ""
 
 #. Account deletion confirmation dialog confirm action in account settings
 #. Create API key dialog acknowledgment action after copying
@@ -1342,6 +1386,10 @@ msgstr "இணைப்பு தோல்வியடைந்தது."
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Connection verified. The provider is ready to use."
 msgstr "இணைப்பு சரிபார்க்கப்பட்டது. வழங்குபவரைப் பயன்படுத்தத் தயார்."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Consider"
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Contact details"
@@ -1548,13 +1596,25 @@ msgstr "பயன்பாட்டைச் சேர்க்க முடி�
 msgid "Couldn't delete the application."
 msgstr "பயன்பாட்டை நீக்க முடியவில்லை."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Couldn't delete the evaluation."
+msgstr ""
+
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Couldn't delete the timeline entry."
 msgstr "காலவரிசை உள்ளீட்டை நீக்க முடியவில்லை."
 
+#: src/features/applications/components/application-form-sheet.tsx
+msgid "Couldn't fetch that URL."
+msgstr ""
+
 #: src/features/applications/components/board.tsx
 msgid "Couldn't move the application. Please try again."
 msgstr "பயன்பாட்டை நகர்த்த முடியவில்லை. மீண்டும் முயற்சிக்கவும்."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Couldn't retry the evaluation."
+msgstr ""
 
 #: src/routes/builder/$resumeId/-components/header.tsx
 msgid "Couldn't save"
@@ -1567,6 +1627,11 @@ msgstr "குறிப்பைச் சேமிக்க முடியவ�
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Couldn't save your changes. Please try again."
 msgstr "உங்கள் மாற்றங்களைச் சேமிக்க முடியவில்லை. மீண்டும் முயற்சிக்கவும்."
+
+#: src/features/applications/components/application-ai-copilot.tsx
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Couldn't start the evaluation."
+msgstr ""
 
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Couldn't update the timeline entry."
@@ -1759,6 +1824,10 @@ msgstr "உங்கள் API விசையை உருவாக்குக
 msgid "Creating your resume..."
 msgstr "உங்கள் ரெஸ்யூமியை உருவாக்குகிறது..."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "critical"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Crop and Upload"
 msgstr "படத்தை செதுக்கி பதிவேற்றவும்"
@@ -1803,6 +1872,10 @@ msgstr "தனிப்பயன் பகுதிகள்"
 #: src/libs/resume/section.tsx
 msgid "Custom Styles"
 msgstr "தனிப்பயன் பாணிகள்"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Customization plan"
+msgstr ""
 
 #: src/libs/locale.ts
 msgid "Czech"
@@ -1853,6 +1926,14 @@ msgstr "ஜூம் அளவைக் குறைக்கவும்"
 msgid "Deep check"
 msgstr "ஆழமான சோதனை"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Deep JD evaluation"
+msgstr ""
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Deep report: requirements, gaps, strategy, legitimacy"
+msgstr ""
+
 #: src/features/cover-letters/library.tsx
 msgid "Default template"
 msgstr "இயல்புநிலை டெம்ப்ளேட்"
@@ -1871,6 +1952,7 @@ msgstr "பட்டம்"
 #: src/features/applications/components/application-detail-sheet.tsx
 #: src/features/applications/components/table-view.tsx
 #: src/features/cover-letters/editor-dialog.tsx
+#: src/features/evaluations/components/evaluation-panel.tsx
 #: src/features/settings/authentication/components/passkeys.tsx
 #: src/features/settings/pages/api-keys.tsx
 #: src/routes/agent/-components/agent-chat.tsx
@@ -1887,6 +1969,10 @@ msgstr "நீக்கு"
 #: src/features/settings/pages/account.tsx
 msgid "Delete Account"
 msgstr "கணக்கை நீக்கு"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Delete evaluation"
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Delete it. Hidden keywords are treated as a deliberate attempt to game the search."
@@ -1917,6 +2003,10 @@ msgstr "இந்த விண்ணப்பத்தை நீக்கவா?
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Delete this cover letter?"
 msgstr "இந்த அட்டை கடிதத்தை நீக்கவா?"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Delete this evaluation?"
+msgstr ""
 
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Delete this timeline entry?"
@@ -2123,6 +2213,10 @@ msgstr "ஒரு கவர் கடிதம் வரைவு"
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Draft a follow-up"
 msgstr "ஒரு பின்தொடர்தல் வரைவு"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Draft answers"
+msgstr ""
 
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Drafting failed."
@@ -2371,9 +2465,33 @@ msgstr "இரண்டு நிலை அங்கீகாரத்தை ம
 msgid "Error"
 msgstr "பிழை"
 
+#: src/features/applications/components/application-detail-sheet.tsx
+msgid "Evaluation"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Evaluation failed"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Evaluation queued…"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Evaluation running…"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "Every check passed. Nothing here should stop a parser from reading your resume."
 msgstr "ஒவ்வொரு காசோலையும் நிறைவேற்றப்பட்டது. உங்கள் பயோடேட்டாவைப் படிப்பதை இங்கு எதுவும் பாகுபடுத்துபவர் தடுக்கக்கூடாது."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Evidence"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Evidence:"
+msgstr ""
 
 #: src/features/homepage/feature-explorer.tsx
 msgid "Example application"
@@ -2390,6 +2508,10 @@ msgstr "கவனப் பயன்முறையிலிருந்து �
 #: src/components/input/rich-input.tsx
 msgid "Exit Fullscreen"
 msgstr "முழுத்திரையிலிருந்து வெளியேறு"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Expand"
+msgstr ""
 
 #: src/dialogs/resume/sections/custom.tsx
 #: src/features/homepage/export-playground.tsx
@@ -2640,6 +2762,14 @@ msgstr "கடுமையான பிழை"
 msgid "Features"
 msgstr "அம்சங்கள்"
 
+#: src/features/applications/components/application-form-sheet.tsx
+msgid "Fetch & autofill"
+msgstr ""
+
+#: src/features/applications/components/application-form-sheet.tsx
+msgid "Fetched the posting and filled in the fields."
+msgstr ""
+
 #: src/features/homepage/page.tsx
 msgid "Fifteen templates, all free. Pick one you like. You can change the type, color, and layout in the editor."
 msgstr "பதினைந்து வார்ப்புருக்கள்; அனைத்தும் இலவசம். பிடித்ததைத் தேர்ந்தெடுக்கவும். திருத்தியில் எழுத்துரு வகை, நிறம், தளவமைப்பை மாற்றலாம்."
@@ -2687,6 +2817,10 @@ msgstr "பார்வைக்கு ஏற்றது"
 #: src/features/homepage/feature-explorer.tsx
 msgid "Fits into your workflow"
 msgstr "உங்கள் பணிப்பாய்வுடன் பொருந்தும்"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "flag"
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Flatten the form so the text is part of the page."
@@ -2779,6 +2913,14 @@ msgstr "பிரெஞ்சு"
 msgid "From your resume and the posting"
 msgstr "உங்கள் ரெஸ்யூம் மற்றும் இடுகையிலிருந்து"
 
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Full evaluation"
+msgstr ""
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Full evaluation started. Open the Evaluation tab to follow it."
+msgstr ""
+
 #: src/features/resume/export/download-dialog.tsx
 msgid "Full resume data for backup or import."
 msgstr "காப்புப்பிரதி அல்லது இறக்குமதிக்கான முழு ரெஸ்யூம் தரவு."
@@ -2796,6 +2938,10 @@ msgstr "முழுத்திரை"
 #: src/components/input/rich-input.tsx
 msgid "Fullscreen Editor"
 msgstr "முழுத்திரை ஆசிரியர்"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Gaps & mitigations"
+msgstr ""
 
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Gaps:"
@@ -2887,6 +3033,10 @@ msgstr "கிரேக்கம்"
 #: src/routes/dashboard/resumes/index.tsx
 msgid "Grid"
 msgstr "கட்டம்"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Hard stops"
+msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/typography.tsx
 msgctxt "Headings or Titles (H1, H2, H3, H4, H5, H6)"
@@ -2997,6 +3147,10 @@ msgstr "முன்வருகையை மறை"
 msgid "Hide Section Icons"
 msgstr "பிரிவு சின்னங்களை மறைக்கவும்"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "high"
+msgstr ""
+
 #: src/features/ats-checker/ai-review/ai-review-results.tsx
 msgid "High impact"
 msgstr "அதிக தாக்கம்"
@@ -3013,6 +3167,10 @@ msgstr "ஹைலைட் நிறம்"
 msgid "Hindi"
 msgstr "ஹிந்தி"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Hint:"
+msgstr ""
+
 #: src/features/command-palette/pages/navigation.tsx
 msgid "Home"
 msgstr "முகப்பு"
@@ -3020,6 +3178,10 @@ msgstr "முகப்பு"
 #: src/features/settings/pages/api-keys.tsx
 msgid "How do I use the API?"
 msgstr "API-யை நான் எப்படி பயன்படுத்துவது?"
+
+#: src/features/applications/components/application-form-sheet.tsx
+msgid "https://… (job posting URL)"
+msgstr ""
 
 #: src/libs/locale.ts
 msgid "Hungarian"
@@ -3087,6 +3249,10 @@ msgstr "நூலகத்திலிருந்து இறக்கும�
 msgid "Import JSON"
 msgstr "JSON-ஐ இறக்குமதி செய்"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Importance"
+msgstr ""
+
 #. placeholder {0}: result.imported
 #: src/features/applications/components/import-applications-sheet.tsx
 msgid "Imported {0} application(s)."
@@ -3133,6 +3299,10 @@ msgstr "பெரிதாக்கத்தை அதிகரிக்கவ�
 msgid "Indonesian"
 msgstr "இந்தோனேஷியன்"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "inferred"
+msgstr ""
+
 #: src/libs/resume/section.tsx
 msgid "Information"
 msgstr "தகவல்"
@@ -3176,6 +3346,10 @@ msgstr "விருப்பங்கள்"
 msgid "Interview"
 msgstr "நேர்காணல்"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Interview plan"
+msgstr ""
+
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Invalid AI provider configuration."
 msgstr "தவறான AI வழங்குநர் உள்ளமைவு."
@@ -3195,6 +3369,14 @@ msgstr "சாய்ந்த"
 #: src/libs/locale.ts
 msgid "Japanese"
 msgstr "ஜப்பானியம்"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "JD signal"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "JD signal:"
+msgstr ""
 
 #: src/features/command-palette/pages/navigation.tsx
 msgid "Job"
@@ -3313,6 +3495,10 @@ msgstr "உங்கள் தளவமைப்பை அப்படியே 
 msgid "Key"
 msgstr "விசை"
 
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Keyword coverage:"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
 msgid "Keyword layout"
 msgstr "முக்கியச்சொல் அடுக்கு அமைப்பு"
@@ -3427,6 +3613,22 @@ msgstr "இடது சீரமை"
 msgid "Legal"
 msgstr "சட்டம்"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Legitimacy signals"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Legitimacy: high confidence"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Legitimacy: proceed with caution"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Legitimacy: suspicious"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Length is not a defect, and there is no universal one-page rule. Keep the pages that earn their place."
 msgstr "நீளம் ஒரு குறை அல்ல, ஒரு-பக்க விதி என்று உலகளாவியதாக எதுவும் இல்லை. தகுதியான பக்கங்களை மட்டும் வைத்திருங்கள்."
@@ -3445,6 +3647,10 @@ msgstr "நிலை"
 #: src/components/level/display.tsx
 msgid "Level {level} of 5"
 msgstr "5-இல் {level} ஆம் நிலை"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Level & positioning"
+msgstr ""
 
 #: src/components/ui/copyright.tsx
 msgid "Licensed under <0>MIT</0>."
@@ -3481,6 +3687,10 @@ msgstr "Reactive Resume ஒன்றை இணைக்கவும் (பர�
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Link a Reactive Resume to use AI match scoring and tailoring."
 msgstr "AI பொருத்த மதிப்பெண்ணையும் தனிப்பயனாக்கத்தையும் பயன்படுத்த ஒரு Reactive Resume ரெஸ்யூமை இணைக்கவும்."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Link a resume and paste the job description (Edit) to run an evaluation."
+msgstr ""
 
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Link a resume and paste the job description (Edit) to score your fit and tailor a copy."
@@ -3564,6 +3774,7 @@ msgstr "ஏற்றப்படுகிறது…"
 #: src/features/applications/components/application-form-sheet.tsx
 #: src/features/applications/components/table-view.tsx
 #: src/features/ats-checker/parse-preview.tsx
+#: src/features/evaluations/components/evaluation-panel.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/basics.tsx
 msgid "Location"
 msgstr "இடம்"
@@ -3585,9 +3796,25 @@ msgstr "நீண்ட பகுதிகள் பெரிய எழுத்
 msgid "Lost access to your authenticator?"
 msgstr "உங்கள் அங்கீகார செயலியை அணுக முடியவில்லையா?"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "low"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Low confidence — this is not a clean result"
+msgstr ""
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Low confidence — this is not a clean result:"
+msgstr ""
+
 #: src/features/ats-checker/ai-review/ai-review-results.tsx
 msgid "Low impact"
 msgstr "குறைந்த தாக்கம்"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "low signal"
+msgstr ""
 
 #: src/features/homepage/resume-sculpture.tsx
 msgid "Made with Reactive Resume"
@@ -3651,9 +3878,21 @@ msgstr "விளிம்பு (செங்குத்து)"
 msgid "Mark rejected"
 msgstr "மார்க் நிராகரிக்கப்பட்டது"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Match"
+msgstr ""
+
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Match scoring failed."
 msgstr "மேட்ச் ஸ்கோரிங் தோல்வி."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "meaningful"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "medium"
+msgstr ""
 
 #: src/features/ats-checker/ai-review/ai-review-results.tsx
 msgid "Medium impact"
@@ -3665,6 +3904,14 @@ msgstr "நடுத்தர தாக்கம்"
 msgid "Microsoft Word"
 msgstr "மைக்ரோசாஃப்ட் வேர்ட்"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "missing"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Missing from your resume"
+msgstr ""
+
 #: src/routes/agent/-components/resume-pane.tsx
 msgid "Missing working resume"
 msgstr "வேலைக்கான ரெஸ்யூம் காணவில்லை"
@@ -3672,6 +3919,10 @@ msgstr "வேலைக்கான ரெஸ்யூம் காணவில�
 #: src/features/homepage/site-footer.tsx
 msgid "MIT License"
 msgstr "MIT உரிமம்"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Mitigation:"
+msgstr ""
 
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Model"
@@ -3744,6 +3995,10 @@ msgstr "இதற்கு நகர்த்தப்பட்டது"
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom-fields.tsx
 msgid "Must start with https://"
 msgstr "https:// கொண்டு தொடங்க வேண்டும்"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "n/a"
+msgstr ""
 
 #. Label for full name input on registration form
 #: src/dialogs/api-key/create.tsx
@@ -3832,6 +4087,10 @@ msgstr "புதிய த்ரெட்"
 #: src/features/cover-letters/library.tsx
 msgid "Next"
 msgstr "அடுத்து"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Next action:"
+msgstr ""
 
 #: src/features/homepage/template-shelf.tsx
 msgid "Next template"
@@ -3940,6 +4199,10 @@ msgstr "இன்னும் ரெஸ்யூம்கள் இல்லை.
 msgid "No saved versions yet."
 msgstr "இன்னும் சேமிக்கப்பட்ட பதிப்புகள் இல்லை."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "No skill requirements were extracted from the posting."
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "No skills section was found."
 msgstr "திறன்கள் பிரிவு எதுவும் காணப்படவில்லை."
@@ -3951,6 +4214,14 @@ msgstr "இதுவரை ஆதார தரவு இல்லை."
 #: src/features/ats-checker/report/jd-coverage.tsx
 msgid "No specific terms could be pulled out of that job description, so it may be mostly boilerplate. Paste the requirements section for a more useful comparison."
 msgstr "அந்த பணி விவரத்திலிருந்து குறிப்பிட்ட சொற்கள் எதையும் பிரித்தெடுக்க முடியவில்லை, எனவே அது பெரும்பாலும் வழக்கமான உரையாக இருக்கலாம். மேலும் பயனுள்ள ஒப்பீட்டுக்கு தேவைகள் பிரிவை ஒட்டவும்."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "No sponsorship"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "No sponsorship needed"
+msgstr ""
 
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "No tested provider"
@@ -3979,6 +4250,14 @@ msgstr "நார்வேஜியன்"
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Not connected"
 msgstr "இணைப்பு இல்லை"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "not evaluated"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Not evaluated:"
+msgstr ""
 
 #: src/features/ats-checker/ai-review/ai-review-results.tsx
 msgid "Not evidenced in your resume"
@@ -4029,6 +4308,10 @@ msgstr "ஒடியா"
 #: src/features/homepage/feature-explorer.tsx
 msgid "Offer"
 msgstr "சலுகை"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "ok"
+msgstr ""
 
 #: src/features/settings/pages/api-keys.tsx
 msgid "Once deleted, the key can no longer access your data. This cannot be undone."
@@ -4163,6 +4446,10 @@ msgstr "அசல் அட்டவணை வடிவமைப்பு பா
 msgid "out of 100"
 msgstr "100 இல்"
 
+#: src/features/applications/components/application-detail-sheet.tsx
+msgid "Overview"
+msgstr ""
+
 #: src/libs/resume/section.tsx
 msgid "Page"
 msgstr "பக்கம்"
@@ -4184,6 +4471,10 @@ msgstr "பத்தியம்"
 #: src/components/input/rich-input.tsx
 msgid "Paragraph and heading style"
 msgstr "பத்தி மற்றும் தலைப்பு பாணி"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "partial"
+msgstr ""
 
 #. Authentication provider display name in account settings
 #. Label for passkey sign-in button
@@ -4399,6 +4690,10 @@ msgstr "போர்ச்சுகீஸ் (போர்ச்சுகல்)
 msgid "Position"
 msgstr "பதவி"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Positioning"
+msgstr ""
+
 #: src/libs/resume/ats.ts
 msgid "Prefer a conventional heading such as \"Work Experience\" or \"Education\"."
 msgstr "\"பணி அனுபவம்\" அல்லது \"கல்வி\" போன்ற வழக்கமான தலைப்பை விரும்புக."
@@ -4413,6 +4708,10 @@ msgstr "ஒற்றை நெடுவரிசையை விரும்ப�
 #: src/routes/dashboard/settings/preferences.tsx
 msgid "Preferences"
 msgstr "விருப்பங்கள்"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "preferred"
+msgstr ""
 
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Prepare a conservative patch that improves clarity without changing the story of my career."
@@ -4558,6 +4857,10 @@ msgstr "பதிப்பாளர்"
 #: src/features/ats-checker/messages.ts
 msgid "Put a plain email address near the top of the first page. It is what most systems file you under."
 msgstr "முதல் பக்கத்தின் மேற்பகுதிக்கு அருகில் ஒரு எளிய மின்னஞ்சல் முகவரியை வைக்கவும். பெரும்பாலான அமைப்புகள் இதன் கீழேயே உங்களைப் பதிவு செய்கின்றன."
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Quick match"
+msgstr ""
 
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Raw JSON"
@@ -4731,6 +5034,10 @@ msgstr "புதிய சாதனத்தைப் பதிவு செய
 msgid "Released under the <0>MIT License</0>."
 msgstr "<0>MIT உரிமத்தின்</0> கீழ் வெளியிடப்பட்டுள்ளது."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Reliability"
+msgstr ""
+
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Reload latest version"
 msgstr "சமீபத்திய பதிப்பை மீண்டும் ஏற்றுக"
@@ -4829,6 +5136,22 @@ msgstr "ஒரு பிழையை அறிவிக்கவும்"
 #: src/routes/_home/-sections/footer.tsx
 msgid "Report an issue"
 msgstr "ஒரு பிரச்சினையை அறிக்கையிடவும்"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Reports to"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Requirement"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Requirements"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Research first"
+msgstr ""
 
 #: src/features/settings/pages/profile.tsx
 msgid "Resend verification email"
@@ -4946,6 +5269,7 @@ msgstr "வாழ்க்கைக் குறிப்புகள்"
 
 #: src/features/cover-letters/editor-dialog.tsx
 #: src/features/cover-letters/library.tsx
+#: src/features/evaluations/components/evaluation-panel.tsx
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Retry"
 msgstr "மீண்டும் முயற்சிக்கவும்"
@@ -4986,6 +5310,15 @@ msgstr "Rhyhorn மாதிரி வாழ்க்கைக் குறி�
 msgid "Right Align"
 msgstr "வலது சீரமை"
 
+#. placeholder {0}: riskLevelLabel(blocks.riskSummary.level)
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Risk ({0}):"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Risk:"
+msgstr ""
+
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Role (optional)"
 msgstr "பங்கு (விரும்பினால்)"
@@ -5002,6 +5335,10 @@ msgstr "பங்கு A–Z"
 msgid "Role Progression"
 msgstr "பங்கு முன்னேற்றம்"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Role summary"
+msgstr ""
+
 #: src/libs/locale.ts
 msgid "Romanian"
 msgstr "ரோமேனியன்"
@@ -5010,6 +5347,7 @@ msgstr "ரோமேனியன்"
 msgid "Rotation"
 msgstr "சுழற்சி"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "Run again"
 msgstr "மீண்டும் இயக்கு"
@@ -5022,9 +5360,21 @@ msgstr "AI மதிப்பாய்வை இயக்கு"
 msgid "Run deep check"
 msgstr "ஆழமான சோதனையை இயக்கு"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Run full evaluation"
+msgstr ""
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Running quick match…"
+msgstr ""
+
 #: src/routes/agent/-components/tool-part-card.tsx
 msgid "Running…"
 msgstr "இயங்குகிறது…"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Runs a multi-pass analysis of this posting against your linked resume: a requirement-by-requirement match table, level and compensation strategy, legitimacy screening, interview prep, and a 1–5 verdict where 4.0 is the apply line. The job description is archived verbatim with the report."
+msgstr ""
 
 #: src/libs/locale.ts
 msgid "Russian"
@@ -5142,14 +5492,6 @@ msgstr "கீழே உள்ள QR குறியீட்டை நீங்
 #: src/dialogs/resume/sections/education.tsx
 msgid "School"
 msgstr "பள்ளி"
-
-#: src/features/applications/components/application-ai-copilot.tsx
-msgid "Score my fit"
-msgstr "என் பொருத்தத்தை மதிப்பெண்"
-
-#: src/features/applications/components/application-ai-copilot.tsx
-msgid "Scoring your fit…"
-msgstr "உங்கள் பொருத்தத்தைப் பெறுகிறது…"
 
 #: src/routes/dashboard/-components/sidebar.tsx
 msgid "Search"
@@ -5537,6 +5879,10 @@ msgstr "ஒற்றை நெடுவரிசை; மெத்தனமாக
 msgid "Size"
 msgstr "அளவு"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Skill gap"
+msgstr ""
+
 #: src/dialogs/resume/sections/custom.tsx
 #: src/features/homepage/export-playground.tsx
 #: src/features/homepage/languages-showcase.tsx
@@ -5545,6 +5891,10 @@ msgstr "அளவு"
 #: src/libs/resume/section.tsx
 msgid "Skills"
 msgstr "திறன்கள்"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Skip"
+msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Skip and Upload"
@@ -5569,6 +5919,10 @@ msgstr "ஸ்லோவேனியன்"
 #: src/dialogs/resume/index.tsx
 msgid "Slug"
 msgstr "ஸ்லக்"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Soft gaps"
+msgstr ""
 
 #: src/libs/resume/ats.ts
 msgid "Some application systems require one before you can submit."
@@ -5621,6 +5975,10 @@ msgstr "வேறு ஏதாவது…"
 #: src/components/layout/error-screen.tsx
 msgid "Something went wrong"
 msgstr "ஏதோ தவறு நடந்துவிட்டது"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Something went wrong during the run."
+msgstr ""
 
 #: src/features/ats-checker/tool.tsx
 msgid "Something went wrong while reading that file. Please try again."
@@ -5694,6 +6052,14 @@ msgstr "\"Mar 2022\" போன்று மாதத்தை எழுத்த
 #: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
 msgid "Sponsors"
 msgstr "ஆதார ஆதாரவர்கள்"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Sponsors visas"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Sponsorship unstated"
+msgstr ""
 
 #: src/features/homepage/site-footer.tsx
 #: src/routes/_home/-sections/footer.tsx
@@ -5778,6 +6144,10 @@ msgstr "ரெஸ்யூமை உங்கள் பெயருடன், �
 msgid "Start thread"
 msgstr "த்ரெட்டைத் தொடங்கு"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "stated"
+msgstr ""
+
 #: src/libs/resume/section.tsx
 msgid "Statistics"
 msgstr "புள்ளிவிபரங்கள்"
@@ -5803,13 +6173,25 @@ msgstr "நிறுத்த உருவாக்கம்"
 msgid "Strengths"
 msgstr "வலிமைகள்"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Strengths & soft gaps"
+msgstr ""
+
 #: src/components/input/rich-input.tsx
 msgid "Strike"
 msgstr "கோடு கிழித்தல்"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "strong"
+msgstr ""
+
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Strong fit"
 msgstr "வலுவான பொருத்தம்"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "structural"
+msgstr ""
 
 #: src/features/resume/stylesheet/toolbar.tsx
 msgid "Stylesheet editor"
@@ -5853,6 +6235,10 @@ msgstr "உங்களால் இயன்ற அளவு செய்து
 #: src/features/homepage/page.tsx
 msgid "Support the project"
 msgstr "திட்டத்தை ஆதரியுங்கள்"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Supported by your resume"
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 #: src/libs/resume/ats.ts
@@ -6031,6 +6417,10 @@ msgstr "ஆழமான சோதனையை முடிக்க முடி
 msgid "The imported file could not be parsed into a valid resume."
 msgstr "இறக்குமதி செய்யப்பட்ட கோப்பை ஒரு செல்லுபடியாகும் ரெஸ்யூமாகப் பிரித்தெடுக்க முடியவில்லை."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "The multi-pass analysis usually takes a minute. The skill gap below is already final."
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "The order the text is stored in disagrees badly with the order it reads in."
 msgstr "உரை சேமிக்கப்பட்டுள்ள வரிசை அது படிக்கப்படும் வரிசையுடன் பெரிதும் முரண்படுகிறது."
@@ -6070,6 +6460,10 @@ msgstr "வழங்குநர் படிக்க முடியாத ஒ
 #: src/features/auth/pages/error.tsx
 msgid "The provider's response could not be verified. Please start again."
 msgstr "வழங்குநரின் பதிலைச் சரிபார்க்க முடியவில்லை. மீண்டும் தொடங்கவும்."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "The report and its archived job description snapshot will be permanently deleted."
+msgstr ""
 
 #: src/features/homepage/page.tsx
 msgid "The rest of your<0/>job search, too."
@@ -6483,6 +6877,10 @@ msgstr "டோக்கன்கள்: {total} ({cached} கேச் செய
 #: src/features/homepage/resume-sculpture.tsx
 msgid "Tools"
 msgstr "கருவிகள்"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Top strengths"
+msgstr ""
 
 #: src/features/homepage/community-stats.tsx
 msgid "Total unavailable"
@@ -6957,6 +7355,10 @@ msgstr "ஒரு ரெஸ்யூமிற்கு மிகக் குற
 msgid "Very little text was recovered for this many pages."
 msgstr "இத்தனை பக்கங்களுக்கு மிகக் குறைவான உரையே மீட்கப்பட்டது."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Via"
+msgstr ""
+
 #: src/libs/locale.ts
 msgid "Vietnamese"
 msgstr "வியட்‌നாமீஸ்"
@@ -7113,6 +7515,14 @@ msgstr "உங்கள் காலவரிசையை மீண்டும�
 #: src/features/ats-checker/messages.ts
 msgid "Words run together when the text is extracted."
 msgstr "உரை பிரித்தெடுக்கப்படும்போது சொற்கள் ஒன்றாக இணைந்துவிடுகின்றன."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Work auth note"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Work authorization:"
+msgstr ""
 
 #: src/features/homepage/feature-explorer.tsx
 msgid "Work on your resume from your AI app."

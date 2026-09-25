@@ -528,6 +528,10 @@ msgstr "ಅಸಮಕಾಲಿಕ ಸಂವಹನ ಮತ್ತು ಮಾಲೀಕ
 msgid "Advanced"
 msgstr "ಸುಧಾರಿತ"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Advertised"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Advice for the person reading it. None of this affects the score."
 msgstr "ಇದನ್ನು ಓದುವ ವ್ಯಕ್ತಿಗೆ ಸಲಹೆ. ಇವ್ಯಾವುದೂ ಸ್ಕೋರ್ ಮೇಲೆ ಪರಿಣಾಮ ಬೀರುವುದಿಲ್ಲ."
@@ -629,6 +633,10 @@ msgstr "ಈಗಾಗಲೇ ಒಳಗೊಂಡಿದೆ"
 #: src/features/auth/pages/register.tsx
 msgid "Already have an account? <0/>"
 msgstr "ಈಗಾಗಲೇ ಖಾತೆ ಇದೆಯೇ? <0/>"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Already in your skills"
+msgstr ""
 
 #: src/libs/locale.ts
 msgid "Amharic"
@@ -758,6 +766,10 @@ msgstr "ಅರ್ಜಿ ಸಲ್ಲಿಸಲಾಗಿದೆ"
 msgid "Applied on"
 msgstr "ಅರ್ಜಿ ಸಲ್ಲಿಸಿದ ದಿನಾಂಕ"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Apply"
+msgstr ""
+
 #: src/routes/agent/-components/patch-approval-card.tsx
 msgid "Approve"
 msgstr "ಅನುಮೋದಿಸಿ"
@@ -781,6 +793,10 @@ msgstr "ಆರ್ಕೈವ್"
 #: src/routes/dashboard/applications/index.tsx
 msgid "Archived"
 msgstr "ಆರ್ಕೈವ್ ಮಾಡಲಾಗಿದೆ"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Archived job description"
+msgstr ""
 
 #: src/hooks/use-form-blocker.tsx
 msgid "Are you sure you want to close this dialog?"
@@ -839,6 +855,14 @@ msgstr "ಈ ರೆಸ್ಯೂಮ್ ಬಗ್ಗೆ ಏನಾದರೂ ಕೇ�
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Aspect Ratio"
 msgstr "ಆಕಾರ ಅನುಪಾತ"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Assessment"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "At or above the 4.0 apply line."
+msgstr ""
 
 #: src/libs/resume/section.tsx
 msgid "ATS Check"
@@ -939,6 +963,10 @@ msgstr "ಮೂಲ URL"
 #: src/libs/resume/section.tsx
 msgid "Basics"
 msgstr "ಮೂಲಭೂತಗಳು"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Below the 4.0 apply line."
+msgstr ""
 
 #: src/libs/locale.ts
 msgid "Bengali"
@@ -1056,6 +1084,10 @@ msgstr "ಪುನಃಸ್ಥಾಪಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ; 
 #: src/libs/locale.ts
 msgid "Catalan"
 msgstr "ಕ್ಯಾಟಲನ್"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "caution"
+msgstr ""
 
 #: src/components/input/rich-input.tsx
 msgid "Center Align"
@@ -1243,6 +1275,10 @@ msgstr "ಮುಚ್ಚಿ"
 msgid "Close AI assistant"
 msgstr "AI ಸಹಾಯಕವನ್ನು ಮುಚ್ಚಿ"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Collapse"
+msgstr ""
+
 #: src/features/homepage/resume-sculpture.tsx
 msgid "Color"
 msgstr "ಬಣ್ಣ"
@@ -1293,9 +1329,17 @@ msgstr "ಕಂಪನಿ A–Z"
 msgid "Compare this resume against this job posting URL and update the keywords without overselling anything."
 msgstr "ಈ ರೆಸ್ಯೂಮ್ ಅನ್ನು ಈ ಉದ್ಯೋಗ ಪ್ರಕಟಣೆಯ URL ಜೊತೆ ಹೋಲಿಸಿ, ಯಾವುದನ್ನೂ ಉತ್ಪ್ರೇಕ್ಷಿಸದೆ ಕೀವರ್ಡ್‌ಗಳನ್ನು ನವೀಕರಿಸಿ."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Compensation"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Compress or remove large images to keep uploads quick."
 msgstr "ಅಪ್‌ಲೋಡ್‌ಗಳನ್ನು ವೇಗವಾಗಿಡಲು ದೊಡ್ಡ ಚಿತ್ರಗಳನ್ನು ಸಂಕುಚಿತಗೊಳಿಸಿ ಅಥವಾ ತೆಗೆದುಹಾಕಿ."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Confidence:"
+msgstr ""
 
 #. Account deletion confirmation dialog confirm action in account settings
 #. Create API key dialog acknowledgment action after copying
@@ -1342,6 +1386,10 @@ msgstr "ಸಂಪರ್ಕ ವಿಫಲವಾಗಿದೆ."
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Connection verified. The provider is ready to use."
 msgstr "ಸಂಪರ್ಕ ಪರಿಶೀಲಿಸಲಾಗಿದೆ. ಪೂರೈಕೆದಾರ ಬಳಸಲು ಸಿದ್ಧವಾಗಿದೆ."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Consider"
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Contact details"
@@ -1548,13 +1596,25 @@ msgstr "ಅರ್ಜಿಯನ್ನು ಸೇರಿಸಲಾಗಲಿಲ್ಲ. 
 msgid "Couldn't delete the application."
 msgstr "ಅರ್ಜಿಯನ್ನು ಅಳಿಸಲಾಗಲಿಲ್ಲ."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Couldn't delete the evaluation."
+msgstr ""
+
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Couldn't delete the timeline entry."
 msgstr "ಕಾಲರೇಖೆ ನಮೂದನ್ನು ಅಳಿಸಲಾಗಲಿಲ್ಲ."
 
+#: src/features/applications/components/application-form-sheet.tsx
+msgid "Couldn't fetch that URL."
+msgstr ""
+
 #: src/features/applications/components/board.tsx
 msgid "Couldn't move the application. Please try again."
 msgstr "ಅರ್ಜಿಯನ್ನು ಸರಿಸಲಾಗಲಿಲ್ಲ. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Couldn't retry the evaluation."
+msgstr ""
 
 #: src/routes/builder/$resumeId/-components/header.tsx
 msgid "Couldn't save"
@@ -1567,6 +1627,11 @@ msgstr "ಟಿಪ್ಪಣಿಯನ್ನು ಉಳಿಸಲಾಗಲಿಲ್�
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Couldn't save your changes. Please try again."
 msgstr "ನಿಮ್ಮ ಬದಲಾವಣೆಗಳನ್ನು ಉಳಿಸಲಾಗಲಿಲ್ಲ. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ."
+
+#: src/features/applications/components/application-ai-copilot.tsx
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Couldn't start the evaluation."
+msgstr ""
 
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Couldn't update the timeline entry."
@@ -1759,6 +1824,10 @@ msgstr "ನಿಮ್ಮ API ಕೀಲಿ ರಚಿಸಲಾಗುತ್ತಿದ
 msgid "Creating your resume..."
 msgstr "ನಿಮ್ಮ ರೆಸ್ಯೂಮ್ ರಚಿಸಲಾಗುತ್ತಿದೆ..."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "critical"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Crop and Upload"
 msgstr "ಚಿತ್ರವನ್ನು ಕ್ರಾಪ್ ಮಾಡಿ ಮತ್ತು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ"
@@ -1803,6 +1872,10 @@ msgstr "ಕಸ್ಟಮ್ ವಿಭಾಗಗಳು"
 #: src/libs/resume/section.tsx
 msgid "Custom Styles"
 msgstr "ಕಸ್ಟಮ್ ಶೈಲಿಗಳು"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Customization plan"
+msgstr ""
 
 #: src/libs/locale.ts
 msgid "Czech"
@@ -1853,6 +1926,14 @@ msgstr "ಝೂಮ್ ಕಡಿಮೆ ಮಾಡಿ"
 msgid "Deep check"
 msgstr "ಆಳ ಪರಿಶೀಲನೆ"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Deep JD evaluation"
+msgstr ""
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Deep report: requirements, gaps, strategy, legitimacy"
+msgstr ""
+
 #: src/features/cover-letters/library.tsx
 msgid "Default template"
 msgstr "ಡೀಫಾಲ್ಟ್ ಟೆಂಪ್ಲೇಟ್"
@@ -1871,6 +1952,7 @@ msgstr "ಪದವಿ"
 #: src/features/applications/components/application-detail-sheet.tsx
 #: src/features/applications/components/table-view.tsx
 #: src/features/cover-letters/editor-dialog.tsx
+#: src/features/evaluations/components/evaluation-panel.tsx
 #: src/features/settings/authentication/components/passkeys.tsx
 #: src/features/settings/pages/api-keys.tsx
 #: src/routes/agent/-components/agent-chat.tsx
@@ -1887,6 +1969,10 @@ msgstr "ಅಳಿಸಿ"
 #: src/features/settings/pages/account.tsx
 msgid "Delete Account"
 msgstr "ಖಾತೆಯನ್ನು ಅಳಿಸಿ"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Delete evaluation"
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Delete it. Hidden keywords are treated as a deliberate attempt to game the search."
@@ -1917,6 +2003,10 @@ msgstr "ಈ ಅರ್ಜಿಯನ್ನು ಅಳಿಸುವುದೇ?"
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Delete this cover letter?"
 msgstr "ಈ ಕವರ್ ಲೆಟರ್ ಅನ್ನು ಅಳಿಸುವುದೇ?"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Delete this evaluation?"
+msgstr ""
 
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Delete this timeline entry?"
@@ -2123,6 +2213,10 @@ msgstr "ಕವರ್ ಲೆಟರ್ ಕರಡು ಮಾಡಿ"
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Draft a follow-up"
 msgstr "ಫಾಲೋ-ಅಪ್ ಕರಡು ಮಾಡಿ"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Draft answers"
+msgstr ""
 
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Drafting failed."
@@ -2371,9 +2465,33 @@ msgstr "ಎರಡು ಅಂಶಗಳ ದೃಢೀಕರಣವನ್ನು ನಿ
 msgid "Error"
 msgstr "ದೋಷ"
 
+#: src/features/applications/components/application-detail-sheet.tsx
+msgid "Evaluation"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Evaluation failed"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Evaluation queued…"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Evaluation running…"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "Every check passed. Nothing here should stop a parser from reading your resume."
 msgstr "ಪ್ರತಿ ಚೆಕ್ ಪಾಸ್ ಆಗಿದೆ. "
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Evidence"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Evidence:"
+msgstr ""
 
 #: src/features/homepage/feature-explorer.tsx
 msgid "Example application"
@@ -2390,6 +2508,10 @@ msgstr "ಫೋಕಸ್ ಮೋಡ್‌ನಿಂದ ನಿರ್ಗಮಿಸಿ"
 #: src/components/input/rich-input.tsx
 msgid "Exit Fullscreen"
 msgstr "ಪೂರ್ಣ ಪರದೆಯಿಂದ ನಿರ್ಗಮಿಸಿ"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Expand"
+msgstr ""
 
 #: src/dialogs/resume/sections/custom.tsx
 #: src/features/homepage/export-playground.tsx
@@ -2640,6 +2762,14 @@ msgstr "ಮಾರಕ ದೋಷ"
 msgid "Features"
 msgstr "ವೈಶಿಷ್ಟ್ಯಗಳು"
 
+#: src/features/applications/components/application-form-sheet.tsx
+msgid "Fetch & autofill"
+msgstr ""
+
+#: src/features/applications/components/application-form-sheet.tsx
+msgid "Fetched the posting and filled in the fields."
+msgstr ""
+
 #: src/features/homepage/page.tsx
 msgid "Fifteen templates, all free. Pick one you like. You can change the type, color, and layout in the editor."
 msgstr "ಹದಿನೈದು ಟೆಂಪ್ಲೇಟ್‌ಗಳು, ಎಲ್ಲವೂ ಉಚಿತ. ನಿಮಗೆ ಇಷ್ಟವಾದುದನ್ನು ಆರಿಸಿ. ಸಂಪಾದಕದಲ್ಲಿ ಅಕ್ಷರಶೈಲಿ, ಬಣ್ಣ ಮತ್ತು ವಿನ್ಯಾಸವನ್ನು ಬದಲಾಯಿಸಬಹುದು."
@@ -2687,6 +2817,10 @@ msgstr "ವೀಕ್ಷಿಸಲು ಹೊಂದಿಕೊಳ್ಳಿ"
 #: src/features/homepage/feature-explorer.tsx
 msgid "Fits into your workflow"
 msgstr "ನಿಮ್ಮ ಕಾರ್ಯಹರಿವಿಗೆ ಹೊಂದುತ್ತದೆ"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "flag"
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Flatten the form so the text is part of the page."
@@ -2779,6 +2913,14 @@ msgstr "ಫ್ರೆಂಚ್"
 msgid "From your resume and the posting"
 msgstr "ನಿಮ್ಮ ರೆಸ್ಯೂಮೆ ಮತ್ತು ಪೋಸ್ಟಿಂಗ್‌ನಿಂದ"
 
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Full evaluation"
+msgstr ""
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Full evaluation started. Open the Evaluation tab to follow it."
+msgstr ""
+
 #: src/features/resume/export/download-dialog.tsx
 msgid "Full resume data for backup or import."
 msgstr "ಬ್ಯಾಕಪ್ ಅಥವಾ ಆಮದುಗಾಗಿ ಸಂಪೂರ್ಣ ರೆಸ್ಯೂಮೆ ಡೇಟಾ."
@@ -2796,6 +2938,10 @@ msgstr "ಪೂರ್ಣ ಪರದೆ"
 #: src/components/input/rich-input.tsx
 msgid "Fullscreen Editor"
 msgstr "ಪೂರ್ಣಪರದೆ ಸಂಪಾದಕ"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Gaps & mitigations"
+msgstr ""
 
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Gaps:"
@@ -2887,6 +3033,10 @@ msgstr "ಗ್ರೀಕ್"
 #: src/routes/dashboard/resumes/index.tsx
 msgid "Grid"
 msgstr "ಗ್ರಿಡ್"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Hard stops"
+msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/typography.tsx
 msgctxt "Headings or Titles (H1, H2, H3, H4, H5, H6)"
@@ -2997,6 +3147,10 @@ msgstr "ಪೂರ್ವವೀಕ್ಷಣೆಯನ್ನು ಮರೆಮಾಡ�
 msgid "Hide Section Icons"
 msgstr "ವಿಭಾಗ ಐಕಾನ್‌ಗಳನ್ನು ಮರೆಮಾಡಿ"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "high"
+msgstr ""
+
 #: src/features/ats-checker/ai-review/ai-review-results.tsx
 msgid "High impact"
 msgstr "ಹೆಚ್ಚಿನ ಪರಿಣಾಮ"
@@ -3013,6 +3167,10 @@ msgstr "ಬಣ್ಣವನ್ನು ಹೈಲೈಟ್ ಮಾಡಿ"
 msgid "Hindi"
 msgstr "ಹಿಂದಿ"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Hint:"
+msgstr ""
+
 #: src/features/command-palette/pages/navigation.tsx
 msgid "Home"
 msgstr "ಮುಖ್ಯ ಪುಟ"
@@ -3020,6 +3178,10 @@ msgstr "ಮುಖ್ಯ ಪುಟ"
 #: src/features/settings/pages/api-keys.tsx
 msgid "How do I use the API?"
 msgstr "ನಾನು API ಅನ್ನು ಹೇಗೆ ಬಳಸಬೇಕು?"
+
+#: src/features/applications/components/application-form-sheet.tsx
+msgid "https://… (job posting URL)"
+msgstr ""
 
 #: src/libs/locale.ts
 msgid "Hungarian"
@@ -3087,6 +3249,10 @@ msgstr "ಗ್ರಂಥಾಲಯದಿಂದ ಆಮದು ಮಾಡಿಕೊಳ�
 msgid "Import JSON"
 msgstr "JSON ಆಮದು ಮಾಡಿ"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Importance"
+msgstr ""
+
 #. placeholder {0}: result.imported
 #: src/features/applications/components/import-applications-sheet.tsx
 msgid "Imported {0} application(s)."
@@ -3133,6 +3299,10 @@ msgstr "ಜೂಮ್ ಹೆಚ್ಚಿಸಿ"
 msgid "Indonesian"
 msgstr "ಇಂಡೋನೇಷಿಯನ್"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "inferred"
+msgstr ""
+
 #: src/libs/resume/section.tsx
 msgid "Information"
 msgstr "ಮಾಹಿತಿ"
@@ -3176,6 +3346,10 @@ msgstr "ಆಸಕ್ತಿಗಳು"
 msgid "Interview"
 msgstr "ಸಂದರ್ಶನ"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Interview plan"
+msgstr ""
+
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Invalid AI provider configuration."
 msgstr "ಅಮಾನ್ಯ AI ಪೂರೈಕೆದಾರರ ಕಾನ್ಫಿಗರೇಶನ್."
@@ -3195,6 +3369,14 @@ msgstr "ಇಟಾಲಿಕ್"
 #: src/libs/locale.ts
 msgid "Japanese"
 msgstr "ಜಾಪನೀಸ್"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "JD signal"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "JD signal:"
+msgstr ""
 
 #: src/features/command-palette/pages/navigation.tsx
 msgid "Job"
@@ -3313,6 +3495,10 @@ msgstr "ನಿಮ್ಮ ಲೇಔಟ್ ಹಾಗೇ ಉಳಿಯುತ್ತದ
 msgid "Key"
 msgstr "ಕೀ"
 
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Keyword coverage:"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
 msgid "Keyword layout"
 msgstr "ಕೀವರ್ಡ್ ಲೇಔಟ್"
@@ -3427,6 +3613,22 @@ msgstr "ಎಡ ಸರಿಸು"
 msgid "Legal"
 msgstr "ಕಾನೂನು"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Legitimacy signals"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Legitimacy: high confidence"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Legitimacy: proceed with caution"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Legitimacy: suspicious"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Length is not a defect, and there is no universal one-page rule. Keep the pages that earn their place."
 msgstr "ಉದ್ದವು ದೋಷವಲ್ಲ, ಮತ್ತು ಸಾರ್ವತ್ರಿಕ ಒಂದು-ಪುಟ ನಿಯಮ ಇಲ್ಲ. ತಮ್ಮ ಸ್ಥಾನವನ್ನು ಅರ್ಹಗೊಳಿಸುವ ಪುಟಗಳನ್ನು ಇರಿಸಿ."
@@ -3445,6 +3647,10 @@ msgstr "ಮಟ್ಟ"
 #: src/components/level/display.tsx
 msgid "Level {level} of 5"
 msgstr "5 ರಲ್ಲಿ {level} ನೇ ಮಟ್ಟ"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Level & positioning"
+msgstr ""
 
 #: src/components/ui/copyright.tsx
 msgid "Licensed under <0>MIT</0>."
@@ -3481,6 +3687,10 @@ msgstr "Reactive Resume ಲಿಂಕ್ ಮಾಡಿ (ಶಿಫಾರಸು)"
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Link a Reactive Resume to use AI match scoring and tailoring."
 msgstr "AI ಹೊಂದಾಣಿಕೆ ಅಂಕ ಮತ್ತು ಸೂಕ್ತಗೊಳಿಸುವಿಕೆಯನ್ನು ಬಳಸಲು ಒಂದು Reactive Resume ರೆಸ್ಯೂಮ್ ಅನ್ನು ಲಿಂಕ್ ಮಾಡಿ."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Link a resume and paste the job description (Edit) to run an evaluation."
+msgstr ""
 
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Link a resume and paste the job description (Edit) to score your fit and tailor a copy."
@@ -3564,6 +3774,7 @@ msgstr "… ಲೋಡ್ ಆಗುತ್ತಿದೆ"
 #: src/features/applications/components/application-form-sheet.tsx
 #: src/features/applications/components/table-view.tsx
 #: src/features/ats-checker/parse-preview.tsx
+#: src/features/evaluations/components/evaluation-panel.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/basics.tsx
 msgid "Location"
 msgstr "ಸ್ಥಳ"
@@ -3585,9 +3796,25 @@ msgstr "ದೀರ್ಘ ಭಾಗಗಳನ್ನು ದೊಡ್ಡಕ್ಷರ�
 msgid "Lost access to your authenticator?"
 msgstr "ನಿಮ್ಮ ದೃಢೀಕರಣ ವ್ಯವಸ್ಥೆಗೆ ಪ್ರವೇಶ ಕಳೆದುಕೊಂಡಿರಾ?"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "low"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Low confidence — this is not a clean result"
+msgstr ""
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Low confidence — this is not a clean result:"
+msgstr ""
+
 #: src/features/ats-checker/ai-review/ai-review-results.tsx
 msgid "Low impact"
 msgstr "ಕಡಿಮೆ ಪರಿಣಾಮ"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "low signal"
+msgstr ""
 
 #: src/features/homepage/resume-sculpture.tsx
 msgid "Made with Reactive Resume"
@@ -3651,9 +3878,21 @@ msgstr "ಮಾರ್ಜಿನ್ (ಲಂಬ)"
 msgid "Mark rejected"
 msgstr "ತಿರಸ್ಕೃತವೆಂದು ಗುರುತಿಸಿ"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Match"
+msgstr ""
+
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Match scoring failed."
 msgstr "ಹೊಂದಾಣಿಕೆ ಅಂಕೀಕರಣ ವಿಫಲವಾಗಿದೆ."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "meaningful"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "medium"
+msgstr ""
 
 #: src/features/ats-checker/ai-review/ai-review-results.tsx
 msgid "Medium impact"
@@ -3665,6 +3904,14 @@ msgstr "ಮಧ್ಯಮ ಪರಿಣಾಮ"
 msgid "Microsoft Word"
 msgstr "Microsoft Word"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "missing"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Missing from your resume"
+msgstr ""
+
 #: src/routes/agent/-components/resume-pane.tsx
 msgid "Missing working resume"
 msgstr "ಕೆಲಸದ ರೆಸ್ಯೂಮ್ ಕಾಣೆಯಾಗಿದೆ"
@@ -3672,6 +3919,10 @@ msgstr "ಕೆಲಸದ ರೆಸ್ಯೂಮ್ ಕಾಣೆಯಾಗಿದೆ"
 #: src/features/homepage/site-footer.tsx
 msgid "MIT License"
 msgstr "MIT ಪರವಾನಗಿ"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Mitigation:"
+msgstr ""
 
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Model"
@@ -3744,6 +3995,10 @@ msgstr "ಇದಕ್ಕೆ ಸ್ಥಳಾಂತರಿಸಲಾಗಿದೆ"
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom-fields.tsx
 msgid "Must start with https://"
 msgstr "https:// ನಿಂದ ಪ್ರಾರಂಭವಾಗಬೇಕು"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "n/a"
+msgstr ""
 
 #. Label for full name input on registration form
 #: src/dialogs/api-key/create.tsx
@@ -3832,6 +4087,10 @@ msgstr "ಹೊಸ ಥ್ರೆಡ್"
 #: src/features/cover-letters/library.tsx
 msgid "Next"
 msgstr "ಮುಂದೆ"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Next action:"
+msgstr ""
 
 #: src/features/homepage/template-shelf.tsx
 msgid "Next template"
@@ -3940,6 +4199,10 @@ msgstr "ಇನ್ನೂ ರೆಸ್ಯೂಮೆಗಳು ಇಲ್ಲ."
 msgid "No saved versions yet."
 msgstr "ಇನ್ನೂ ಯಾವುದೇ ಉಳಿಸಿದ ಆವೃತ್ತಿಗಳಿಲ್ಲ."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "No skill requirements were extracted from the posting."
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "No skills section was found."
 msgstr "ಯಾವುದೇ ಕೌಶಲ್ಯ ವಿಭಾಗ ಕಂಡುಬಂದಿಲ್ಲ."
@@ -3951,6 +4214,14 @@ msgstr "ಇನ್ನೂ ಮೂಲ ಡೇಟಾ ಇಲ್ಲ."
 #: src/features/ats-checker/report/jd-coverage.tsx
 msgid "No specific terms could be pulled out of that job description, so it may be mostly boilerplate. Paste the requirements section for a more useful comparison."
 msgstr "ಆ ಉದ್ಯೋಗ ವಿವರಣೆಯಿಂದ ಯಾವುದೇ ನಿರ್ದಿಷ್ಟ ಪದಗಳನ್ನು ಪಡೆಯಲಾಗಲಿಲ್ಲ, ಆದ್ದರಿಂದ ಇದು ಬಹುಮಟ್ಟಿಗೆ ಸಾಮಾನ್ಯ ಪಠ್ಯವಿರಬಹುದು. ಹೆಚ್ಚು ಉಪಯುಕ್ತ ಹೋಲಿಕೆಗಾಗಿ ಅಗತ್ಯತೆಗಳ ವಿಭಾಗವನ್ನು ಪೇಸ್ಟ್ ಮಾಡಿ."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "No sponsorship"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "No sponsorship needed"
+msgstr ""
 
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "No tested provider"
@@ -3979,6 +4250,14 @@ msgstr "ನಾರ್ವೇಜಿಯನ್"
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Not connected"
 msgstr "ಸಂಪರ್ಕಗೊಂಡಿಲ್ಲ"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "not evaluated"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Not evaluated:"
+msgstr ""
 
 #: src/features/ats-checker/ai-review/ai-review-results.tsx
 msgid "Not evidenced in your resume"
@@ -4029,6 +4308,10 @@ msgstr "ಒಡಿಯಾ"
 #: src/features/homepage/feature-explorer.tsx
 msgid "Offer"
 msgstr "ಆಫರ್"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "ok"
+msgstr ""
 
 #: src/features/settings/pages/api-keys.tsx
 msgid "Once deleted, the key can no longer access your data. This cannot be undone."
@@ -4163,6 +4446,10 @@ msgstr "ಮೂಲ ಟೇಬಲ್ ಫಾರ್ಮ್ಯಾಟಿಂಗ್ ಅನ
 msgid "out of 100"
 msgstr "100 ರಲ್ಲಿ"
 
+#: src/features/applications/components/application-detail-sheet.tsx
+msgid "Overview"
+msgstr ""
+
 #: src/libs/resume/section.tsx
 msgid "Page"
 msgstr "ಪುಟ"
@@ -4184,6 +4471,10 @@ msgstr "ಪ್ಯಾರಾಗ್ರಾಫ್"
 #: src/components/input/rich-input.tsx
 msgid "Paragraph and heading style"
 msgstr "ಪ್ಯಾರಾಗ್ರಾಫ್ ಮತ್ತು ಶೀರ್ಷಿಕೆ ಶೈಲಿ"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "partial"
+msgstr ""
 
 #. Authentication provider display name in account settings
 #. Label for passkey sign-in button
@@ -4399,6 +4690,10 @@ msgstr "ಪೋರ್ಚುಗೀಸ್ (ಪೋರ್ಚುಗಲ್)"
 msgid "Position"
 msgstr "ಸ್ಥಾನ"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Positioning"
+msgstr ""
+
 #: src/libs/resume/ats.ts
 msgid "Prefer a conventional heading such as \"Work Experience\" or \"Education\"."
 msgstr "\"ಕೆಲಸದ ಅನುಭವ\" ಅಥವಾ \"ಶಿಕ್ಷಣ\" ದಂತಹ ಸಾಂಪ್ರದಾಯಿಕ ಶೀರ್ಷಿಕೆಗೆ ಆದ್ಯತೆ ನೀಡಿ."
@@ -4413,6 +4708,10 @@ msgstr "ಒಂದೇ ಕಾಲಮ್ ಆಯ್ಕೆಮಾಡಿ, ಅಥವಾ �
 #: src/routes/dashboard/settings/preferences.tsx
 msgid "Preferences"
 msgstr "ಆದ್ಯತೆಗಳು"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "preferred"
+msgstr ""
 
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Prepare a conservative patch that improves clarity without changing the story of my career."
@@ -4558,6 +4857,10 @@ msgstr "ಪ್ರಕಾಶಕರು"
 #: src/features/ats-checker/messages.ts
 msgid "Put a plain email address near the top of the first page. It is what most systems file you under."
 msgstr "ಸರಳ ಇಮೇಲ್ ವಿಳಾಸವನ್ನು ಮೊದಲ ಪುಟದ ಮೇಲ್ಭಾಗದ ಬಳಿ ಇರಿಸಿ. ಹೆಚ್ಚಿನ ಸಿಸ್ಟಂಗಳು ಇದರಡಿಯಲ್ಲಿಯೇ ನಿಮ್ಮನ್ನು ಫೈಲ್ ಮಾಡುತ್ತವೆ."
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Quick match"
+msgstr ""
 
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Raw JSON"
@@ -4731,6 +5034,10 @@ msgstr "ಹೊಸ ಸಾಧನವನ್ನು ನೋಂದಾಯಿಸಿ"
 msgid "Released under the <0>MIT License</0>."
 msgstr "<0>MIT ಪರವಾನಗಿ</0> ಅಡಿಯಲ್ಲಿ ಬಿಡುಗಡೆಯಾಗಿದೆ."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Reliability"
+msgstr ""
+
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Reload latest version"
 msgstr "ಇತ್ತೀಚಿನ ಆವೃತ್ತಿಯನ್ನು ಮರುಲೋಡ್ ಮಾಡಿ"
@@ -4829,6 +5136,22 @@ msgstr "ದೋಷವನ್ನು ವರದಿ ಮಾಡಿ"
 #: src/routes/_home/-sections/footer.tsx
 msgid "Report an issue"
 msgstr "ಪ್ರಶ್ನೆಯನ್ನು ವರದಿ ಮಾಡಿ"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Reports to"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Requirement"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Requirements"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Research first"
+msgstr ""
 
 #: src/features/settings/pages/profile.tsx
 msgid "Resend verification email"
@@ -4946,6 +5269,7 @@ msgstr "ರೆಸ್ಯೂಮೇ"
 
 #: src/features/cover-letters/editor-dialog.tsx
 #: src/features/cover-letters/library.tsx
+#: src/features/evaluations/components/evaluation-panel.tsx
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Retry"
 msgstr "ಮರುಪ್ರಯತ್ನಿಸಿ"
@@ -4986,6 +5310,15 @@ msgstr "Rhyhorn ಮಾದರಿ ರೆಸ್ಯೂಮ್"
 msgid "Right Align"
 msgstr "ಬಲ ಸರಿಸು"
 
+#. placeholder {0}: riskLevelLabel(blocks.riskSummary.level)
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Risk ({0}):"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Risk:"
+msgstr ""
+
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Role (optional)"
 msgstr "ಪಾತ್ರ (ಐಚ್ಛಿಕ)"
@@ -5002,6 +5335,10 @@ msgstr "ಪಾತ್ರ A–Z"
 msgid "Role Progression"
 msgstr "ಪಾತ್ರ ಪ್ರಗತಿ"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Role summary"
+msgstr ""
+
 #: src/libs/locale.ts
 msgid "Romanian"
 msgstr "ರೊಮೇನಿಯನ್"
@@ -5010,6 +5347,7 @@ msgstr "ರೊಮೇನಿಯನ್"
 msgid "Rotation"
 msgstr "ಭ್ರಮನ"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "Run again"
 msgstr "ಮತ್ತೆ ರನ್ ಮಾಡಿ"
@@ -5022,9 +5360,21 @@ msgstr "AI ವಿಮರ್ಶೆ ರನ್ ಮಾಡಿ"
 msgid "Run deep check"
 msgstr "ಆಳ ಪರಿಶೀಲನೆ ರನ್ ಮಾಡಿ"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Run full evaluation"
+msgstr ""
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Running quick match…"
+msgstr ""
+
 #: src/routes/agent/-components/tool-part-card.tsx
 msgid "Running…"
 msgstr "ಚಾಲನೆಯಲ್ಲಿದೆ…"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Runs a multi-pass analysis of this posting against your linked resume: a requirement-by-requirement match table, level and compensation strategy, legitimacy screening, interview prep, and a 1–5 verdict where 4.0 is the apply line. The job description is archived verbatim with the report."
+msgstr ""
 
 #: src/libs/locale.ts
 msgid "Russian"
@@ -5142,14 +5492,6 @@ msgstr "ನಿಮ್ಮ ಇಷ್ಟದ ದೃಢೀಕರಣ ಆ್ಯಪ್‌
 #: src/dialogs/resume/sections/education.tsx
 msgid "School"
 msgstr "ಶಾಲೆ"
-
-#: src/features/applications/components/application-ai-copilot.tsx
-msgid "Score my fit"
-msgstr "ನನ್ನ ಹೊಂದಾಣಿಕೆಯನ್ನು ಅಂಕೀಕರಿಸಿ"
-
-#: src/features/applications/components/application-ai-copilot.tsx
-msgid "Scoring your fit…"
-msgstr "ನಿಮ್ಮ ಹೊಂದಾಣಿಕೆಯನ್ನು ಅಂಕೀಕರಿಸಲಾಗುತ್ತಿದೆ…"
 
 #: src/routes/dashboard/-components/sidebar.tsx
 msgid "Search"
@@ -5537,6 +5879,10 @@ msgstr "ಒಂದು ಕಾಲಮ್; ಹಿರಿಯ ಅಥವಾ ಎಂಟರ�
 msgid "Size"
 msgstr "ಗಾತ್ರ"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Skill gap"
+msgstr ""
+
 #: src/dialogs/resume/sections/custom.tsx
 #: src/features/homepage/export-playground.tsx
 #: src/features/homepage/languages-showcase.tsx
@@ -5545,6 +5891,10 @@ msgstr "ಗಾತ್ರ"
 #: src/libs/resume/section.tsx
 msgid "Skills"
 msgstr "ಕೌಶಲ್ಯಗಳು"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Skip"
+msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Skip and Upload"
@@ -5569,6 +5919,10 @@ msgstr "ಸ್ಲೋವೇನಿಯನ್"
 #: src/dialogs/resume/index.tsx
 msgid "Slug"
 msgstr "ಸ್ಲಗ್"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Soft gaps"
+msgstr ""
 
 #: src/libs/resume/ats.ts
 msgid "Some application systems require one before you can submit."
@@ -5621,6 +5975,10 @@ msgstr "ಬೇರೇನಾದರೂ…"
 #: src/components/layout/error-screen.tsx
 msgid "Something went wrong"
 msgstr "ಏನೋ ತಪ್ಪಾಗಿದೆ."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Something went wrong during the run."
+msgstr ""
 
 #: src/features/ats-checker/tool.tsx
 msgid "Something went wrong while reading that file. Please try again."
@@ -5694,6 +6052,14 @@ msgstr "\"Mar 2022\" ರಂತೆ ತಿಂಗಳ ಹೆಸರನ್ನು ಬ�
 #: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
 msgid "Sponsors"
 msgstr "ಪ್ರಾಯೋಜಕರು"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Sponsors visas"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Sponsorship unstated"
+msgstr ""
 
 #: src/features/homepage/site-footer.tsx
 #: src/routes/_home/-sections/footer.tsx
@@ -5778,6 +6144,10 @@ msgstr "ರೆಸ್ಯೂಮೆಯನ್ನು ನಿಮ್ಮ ಹೆಸರಿ�
 msgid "Start thread"
 msgstr "ಥ್ರೆಡ್ ಆರಂಭಿಸಿ"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "stated"
+msgstr ""
+
 #: src/libs/resume/section.tsx
 msgid "Statistics"
 msgstr "ಅಂಕಿಅಂಶಗಳು"
@@ -5803,13 +6173,25 @@ msgstr "ಪೀಳಿಗೆಯನ್ನು ನಿಲ್ಲಿಸಿ"
 msgid "Strengths"
 msgstr "ಬಲಗಳು"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Strengths & soft gaps"
+msgstr ""
+
 #: src/components/input/rich-input.tsx
 msgid "Strike"
 msgstr "ಸ್ಟ್ರೈಕ್"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "strong"
+msgstr ""
+
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Strong fit"
 msgstr "ಬಲವಾದ ಹೊಂದಾಣಿಕೆ"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "structural"
+msgstr ""
 
 #: src/features/resume/stylesheet/toolbar.tsx
 msgid "Stylesheet editor"
@@ -5853,6 +6235,10 @@ msgstr "ನೀವು ಮಾಡಬಹುದಾದುದನ್ನು ಮಾಡಿ 
 #: src/features/homepage/page.tsx
 msgid "Support the project"
 msgstr "ಯೋಜನೆಗೆ ಬೆಂಬಲ ನೀಡಿ"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Supported by your resume"
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 #: src/libs/resume/ats.ts
@@ -6031,6 +6417,10 @@ msgstr "ಆಳ ಪರಿಶೀಲನೆ ಪೂರ್ಣಗೊಳ್ಳಲಿಲ�
 msgid "The imported file could not be parsed into a valid resume."
 msgstr "ಆಮದು ಮಾಡಿದ ಫೈಲ್ ಅನ್ನು ಮಾನ್ಯ ರೆಸ್ಯೂಮ್ ಆಗಿ ಪಾರ್ಸ್ ಮಾಡಲಾಗಲಿಲ್ಲ."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "The multi-pass analysis usually takes a minute. The skill gap below is already final."
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "The order the text is stored in disagrees badly with the order it reads in."
 msgstr "ಪಠ್ಯ ಸಂಗ್ರಹವಾಗಿರುವ ಕ್ರಮವು ಅದು ಓದುವ ಕ್ರಮಕ್ಕೆ ತೀವ್ರವಾಗಿ ಹೊಂದಿಕೆಯಾಗುವುದಿಲ್ಲ."
@@ -6070,6 +6460,10 @@ msgstr "ಪೂರೈಕೆದಾರರು ಓದಲಾಗದ ವಿಮರ್ಶ�
 #: src/features/auth/pages/error.tsx
 msgid "The provider's response could not be verified. Please start again."
 msgstr "ಪೂರೈಕೆದಾರರ ಪ್ರತಿಕ್ರಿಯೆಯನ್ನು ಪರಿಶೀಲಿಸಲಾಗಲಿಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಾರಂಭಿಸಿ."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "The report and its archived job description snapshot will be permanently deleted."
+msgstr ""
 
 #: src/features/homepage/page.tsx
 msgid "The rest of your<0/>job search, too."
@@ -6483,6 +6877,10 @@ msgstr "ಟೋಕನ್‌ಗಳು: {total} ({cached} ಕ್ಯಾಶ್ ಮಾ
 #: src/features/homepage/resume-sculpture.tsx
 msgid "Tools"
 msgstr "ಪರಿಕರಗಳು"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Top strengths"
+msgstr ""
 
 #: src/features/homepage/community-stats.tsx
 msgid "Total unavailable"
@@ -6957,6 +7355,10 @@ msgstr "ರೆಸ್ಯೂಮೆಗೆ ಬಹಳ ಕಡಿಮೆ ಪದಗಳನ
 msgid "Very little text was recovered for this many pages."
 msgstr "ಇಷ್ಟು ಪುಟಗಳಿಗೆ ಬಹಳ ಕಡಿಮೆ ಪಠ್ಯವನ್ನು ಮರುಪಡೆಯಲಾಗಿದೆ."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Via"
+msgstr ""
+
 #: src/libs/locale.ts
 msgid "Vietnamese"
 msgstr "ವಿಯೆಟ್ನಾಮೀಸ್"
@@ -7113,6 +7515,14 @@ msgstr "ನಿಮ್ಮ ಟೈಮ್‌ಲೈನ್ ಅನ್ನು ಪುನರ
 #: src/features/ats-checker/messages.ts
 msgid "Words run together when the text is extracted."
 msgstr "ಪಠ್ಯ ಹೊರತೆಗೆದಾಗ ಪದಗಳು ಒಟ್ಟಿಗೆ ಸೇರಿಕೊಳ್ಳುತ್ತವೆ."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Work auth note"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Work authorization:"
+msgstr ""
 
 #: src/features/homepage/feature-explorer.tsx
 msgid "Work on your resume from your AI app."

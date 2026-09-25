@@ -6,6 +6,7 @@ import {
 	CaretRightIcon,
 	CopyIcon,
 	EnvelopeSimpleIcon,
+	GaugeIcon,
 	MagicWandIcon,
 	PaperPlaneTiltIcon,
 	SparkleIcon,
@@ -16,6 +17,7 @@ import { useCallback, useState } from "react";
 import { toast } from "@reactive-resume/ui/components/toast";
 import { cn } from "@reactive-resume/utils/style";
 import { CoverLetterEditorDialog } from "@/features/cover-letters/editor-dialog";
+import { evaluationsListQueryKey, startEvaluationMutationOptions } from "@/features/evaluations/queries";
 import { orpc } from "@/libs/orpc/client";
 import { applicationsListQueryKey } from "../queries";
 
@@ -98,9 +100,13 @@ function ActionRow({ icon, title, description, disabled, pending, onClick }: Act
 	);
 }
 
-type Props = { application: Application };
+type Props = {
+	application: Application;
+	// When the host surface has an Evaluation tab, starting a full evaluation switches to it.
+	onOpenEvaluation?: () => void;
+};
 
-export function ApplicationAiCopilot({ application }: Props) {
+export function ApplicationAiCopilot({ application, onOpenEvaluation }: Props) {
 	const queryClient = useQueryClient();
 	const [draft, setDraft] = useState<{ kind: string; text: string } | null>(null);
 	const [coverLetterId, setCoverLetterId] = useState<string | null>(null);
@@ -141,7 +147,23 @@ export function ApplicationAiCopilot({ application }: Props) {
 			onError: (error) => toast.add({ type: "error", description: error.message || t`Drafting failed.` }),
 		}),
 	);
-	const pending = matchScore.isPending || tailorResume.isPending || draftMessage.isPending;
+	const startEvaluation = useMutation(
+		startEvaluationMutationOptions({
+			onSuccess: () => {
+				void queryClient.invalidateQueries({ queryKey: evaluationsListQueryKey(application.id) });
+				if (onOpenEvaluation) {
+					onOpenEvaluation();
+				} else {
+					toast.add({
+						type: "success",
+						description: t`Full evaluation started. Open the Evaluation tab to follow it.`,
+					});
+				}
+			},
+			onError: (error) => toast.add({ type: "error", description: error.message || t`Couldn't start the evaluation.` }),
+		}),
+	);
+	const pending = matchScore.isPending || tailorResume.isPending || draftMessage.isPending || startEvaluation.isPending;
 	const canScore = !!application.resumeId && !!application.jobDescription;
 	const score = application.matchScore;
 	const gaps = aiGaps(application);
@@ -191,7 +213,7 @@ export function ApplicationAiCopilot({ application }: Props) {
 						</span>
 						<span>
 							<span className="block font-medium text-sm">
-								{matchScore.isPending ? <Trans>Scoring your fit…</Trans> : <Trans>Score my fit</Trans>}
+								{matchScore.isPending ? <Trans>Running quick match…</Trans> : <Trans>Quick match</Trans>}
 							</span>
 							<span className="block text-muted-foreground text-xs">
 								<Trans>See how this resume matches the posting</Trans>
@@ -219,6 +241,11 @@ export function ApplicationAiCopilot({ application }: Props) {
 									<ArrowsClockwiseIcon className={cn("size-3.5", matchScore.isPending && "animate-spin")} />
 								</button>
 							</div>
+							{matchScore.data?.coverage != null && (
+								<p className="mt-0.5 text-muted-foreground text-xs">
+									<Trans>Keyword coverage:</Trans> {Math.round(matchScore.data.coverage * 100)}%
+								</p>
+							)}
 							{gaps.length > 0 && (
 								<p className="mt-0.5 line-clamp-2 text-muted-foreground text-xs">
 									<Trans>Gaps:</Trans> {gaps.slice(0, 3).join(" · ")}
@@ -227,9 +254,22 @@ export function ApplicationAiCopilot({ application }: Props) {
 						</div>
 					</div>
 				)}
+				{matchScore.data?.lowConfidence && (
+					<p className="mt-2 rounded-lg border border-amber-500/40 bg-amber-500/10 p-2 text-amber-700 text-xs dark:text-amber-300">
+						<Trans>Low confidence — this is not a clean result:</Trans> {matchScore.data.lowConfidence.message}
+					</p>
+				)}
 			</div>
 
 			<div className="border-primary/10 border-t px-2 py-2">
+				<ActionRow
+					icon={<GaugeIcon />}
+					title={<Trans>Full evaluation</Trans>}
+					description={t`Deep report: requirements, gaps, strategy, legitimacy`}
+					disabled={!canScore}
+					pending={startEvaluation.isPending}
+					onClick={() => startEvaluation.mutate({ applicationId: application.id })}
+				/>
 				<ActionRow
 					icon={<MagicWandIcon />}
 					title={<Trans>Tailor my resume</Trans>}

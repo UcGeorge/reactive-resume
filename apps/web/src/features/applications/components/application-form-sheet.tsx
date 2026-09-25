@@ -3,7 +3,7 @@ import type { Application } from "../types";
 import type { FileAttachment } from "./file-attachment-field";
 import { t } from "@lingui/core/macro";
 import { Trans } from "@lingui/react/macro";
-import { SparkleIcon, XIcon } from "@phosphor-icons/react";
+import { LinkSimpleIcon, SparkleIcon, SpinnerGapIcon, XIcon } from "@phosphor-icons/react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
 import { STAGES } from "@reactive-resume/schema/applications/data";
@@ -167,6 +167,29 @@ export function ApplicationFormSheet({ open, onOpenChange, application }: Props)
 		autofill.mutate({ jobDescription: posting.slice(0, MAX_JOB_DESCRIPTION_CHARS) });
 	};
 
+	// URL half of autofill: the server fetches the posting, extracts its text, and returns the
+	// fields plus the job description. Server errors are actionable (flag disabled, page needs
+	// JavaScript, …), so they are surfaced verbatim.
+	const [postingUrl, setPostingUrl] = useState("");
+	const autofillFromUrl = useMutation(
+		orpc.applications.ai.autofillFromUrl.mutationOptions({
+			onSuccess: (result) => {
+				setForm((prev) => ({
+					...prev,
+					company: result.company || prev.company,
+					role: result.role || prev.role,
+					location: result.location || prev.location,
+					salary: result.salary || prev.salary,
+					jobDescription: result.jobDescription || prev.jobDescription,
+					sourceUrl: prev.sourceUrl || postingUrl.trim(),
+				}));
+				toast.add({ type: "success", description: t`Fetched the posting and filled in the fields.` });
+			},
+			onError: (error) => toast.add({ type: "error", description: error.message || t`Couldn't fetch that URL.` }),
+		}),
+	);
+	const canFetchUrl = postingUrl.trim().startsWith("https://");
+
 	const pending = create.isPending || update.isPending;
 
 	const submit = () => {
@@ -227,6 +250,24 @@ export function ApplicationFormSheet({ open, onOpenChange, application }: Props)
 											you and keep the text with this application for match scoring and tailoring.
 										</Trans>
 									</p>
+									<div className="flex gap-2">
+										<Input
+											type="url"
+											value={postingUrl}
+											placeholder={t`https://… (job posting URL)`}
+											onChange={(event) => setPostingUrl(event.target.value)}
+										/>
+										<Button
+											type="button"
+											variant="outline"
+											className="shrink-0"
+											disabled={!canFetchUrl || autofillFromUrl.isPending}
+											onClick={() => autofillFromUrl.mutate({ url: postingUrl.trim() })}
+										>
+											{autofillFromUrl.isPending ? <SpinnerGapIcon className="animate-spin" /> : <LinkSimpleIcon />}
+											<Trans>Fetch & autofill</Trans>
+										</Button>
+									</div>
 									<Textarea
 										// Fixed height: the accordion panel measures its content once, so a textarea that
 										// grew with the pasted text would overflow the clipped panel.

@@ -87,8 +87,20 @@ async function reapStaleAgentRuns() {
 	}
 }
 
+async function startBackgroundJobs() {
+	try {
+		const { startBackgroundJobs: start } = await import("@reactive-resume/api/features/jobs");
+		await start();
+	} catch (error) {
+		// Background workers (evaluations, scans, follow-ups) are additive; a queue failure
+		// must not block serving traffic.
+		console.error("Failed to start background jobs at boot", { error });
+	}
+}
+
 export async function runStartupChecks() {
 	await runDatabaseMigrations();
 	await validateLocalStoragePath();
 	await reapStaleAgentRuns();
+	await startBackgroundJobs();
 }

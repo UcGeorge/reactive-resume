@@ -20,6 +20,10 @@ vi.mock("@/libs/orpc/client", () => ({
 			},
 		},
 		coverLetters: { list: { key: () => ["cover-letters"] } },
+		evaluations: {
+			start: { mutationOptions: (options: object) => ({ ...options, mutationFn: mocks.other }) },
+			listByApplication: { queryKey: () => ["evaluations"] },
+		},
 	},
 }));
 vi.mock("@/features/cover-letters/editor-dialog", () => ({

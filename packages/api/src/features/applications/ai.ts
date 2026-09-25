@@ -1,7 +1,13 @@
 import { ORPCError } from "@orpc/client";
 import { APICallError, generateText, RetryError } from "ai";
 import z from "zod";
+import { computeSkillGap, resumeSkillGapTexts } from "@reactive-resume/career/skill-gap";
+import { env } from "@reactive-resume/env/server";
+import { matchJobDescription } from "@reactive-resume/resume/ats-pdf/jd";
 import { coverLetterTextToHtml } from "@reactive-resume/resume/cover-letter";
+import { createFetchContext } from "@reactive-resume/scanner/context";
+import { htmlToText } from "@reactive-resume/scanner/html-to-text";
+import { skillGapLowConfidenceSchema } from "@reactive-resume/schema/career/data";
 import { generateId, slugify } from "@reactive-resume/utils/string";
 import { protectedProcedure } from "../../context";
 import { aiRequestRateLimit } from "../../middleware/rate-limit";
@@ -92,6 +98,9 @@ export const autofillInputSchema = z.object({
 });
 
 // Tolerant of LLM variance: clamp the score, cap the lists by slicing rather than rejecting.
+// Since the deterministic upgrade the score/gaps/strengths come from the skill-gap + keyword
+// matcher rather than a prompt, but the wire shape is unchanged; the extra fields are
+// additive and optional so existing clients keep working.
 const matchScoreOutput = z.object({
 	score: z.coerce
 		.number()
@@ -105,6 +114,10 @@ const matchScoreOutput = z.object({
 		.array(z.string())
 		.catch([])
 		.transform((a) => a.slice(0, 8)),
+	/** Weighted keyword coverage 0..1 from the deterministic matcher. */
+	coverage: z.number().optional(),
+	/** Non-null when the skill-gap extraction was inconclusive — not the same as "no gaps". */
+	lowConfidence: skillGapLowConfidenceSchema.nullable().optional(),
 });
 
 const aiErrors = {
@@ -133,7 +146,69 @@ export const aiRouter = {
 			);
 		}),
 
-	// Score the linked resume against the application's job description.
+	// Fetch a job posting URL server-side, extract its text, and autofill from it. This is
+	// the URL half the paste-text `autofill` deliberately never did: it goes through the
+	// scanner's SSRF-hardened fetch context and is gated by the same operator flag as the
+	// job scanner, since both are "the server fetches URLs users typed".
+	autofillFromUrl: protectedProcedure
+		.route({
+			method: "POST",
+			path: "/applications/ai/autofill-from-url",
+			operationId: "aiAutofillApplicationFromUrl",
+			...reserved,
+		})
+		.input(
+			z.object({
+				url: z
+					.string()
+					.trim()
+					.pipe(z.url({ protocol: /^https$/ })),
+			}),
+		)
+		.use(aiRequestRateLimit)
+		.output(autofillOutput.extend({ jobDescription: z.string() }))
+		.errors(aiErrors)
+		.handler(async ({ context, input }) => {
+			if (env.FLAG_DISABLE_JOB_SCANNER) {
+				throw new ORPCError("BAD_REQUEST", {
+					message: "Fetching job posting URLs is disabled on this server (FLAG_DISABLE_JOB_SCANNER).",
+				});
+			}
+
+			const fetchContext = createFetchContext();
+			let text: string;
+			try {
+				const html = await fetchContext.fetchText(input.url);
+				text = htmlToText(html).slice(0, MAX_PASTED_JOB_DESCRIPTION_CHARS);
+			} catch (error) {
+				throw new ORPCError("BAD_REQUEST", {
+					message: "Could not fetch that URL. Paste the job description text instead.",
+					cause: error,
+				});
+			}
+			if (text.trim().length < 100) {
+				throw new ORPCError("BAD_REQUEST", {
+					message:
+						"That page returned too little readable text (it may need JavaScript). Paste the job description instead.",
+				});
+			}
+
+			const model = await resolveModel(context.user.id);
+			const fields = await generateJson(
+				model,
+				{
+					prompt: `Extract the following fields from this job posting. Return ONLY JSON with keys company, role, location, salary. Use an empty string for anything not stated.\n\nJOB POSTING:\n${text}`,
+				},
+				autofillOutput,
+			);
+
+			return { ...fields, jobDescription: text };
+		}),
+
+	// Quick match: score the linked resume against the application's job description.
+	// Deterministic since the career upgrade — the three-bucket skill gap plus the weighted
+	// keyword matcher, so it is instant, reproducible and needs NO AI provider. The deep
+	// A–H analysis lives in `evaluations.start`. Route and output shape are unchanged.
 	matchScore: protectedProcedure
 		.route({
 			method: "POST",
@@ -153,24 +228,34 @@ export const aiRouter = {
 				throw new ORPCError("BAD_REQUEST", { message: "Paste the job description into this application first." });
 			}
 
-			const [model, resume] = await Promise.all([
-				resolveModel(context.user.id),
-				resumeService.getById({ id: application.resumeId, userId: context.user.id }),
-			]);
+			const resume = await resumeService.getById({ id: application.resumeId, userId: context.user.id });
 
-			const result = await generateJson(
-				model,
-				{
-					prompt: `Compare this resume against the job description. Return ONLY JSON with keys score (integer 0-100 fit), gaps (array of short missing-qualification strings), strengths (array of short matching-strength strings).\n\nRESUME:\n${JSON.stringify(resume.data)}\n\nJOB DESCRIPTION:\n${application.jobDescription}`,
-				},
-				matchScoreOutput,
-			);
+			const skillGap = computeSkillGap({ jobDescription: application.jobDescription, resume: resume.data });
+			const texts = resumeSkillGapTexts(resume.data);
+			const report = matchJobDescription({
+				jobDescription: application.jobDescription,
+				resumeText: `${texts.namedSkillsText}\n${texts.proseText}`,
+			});
+
+			const score = Math.round(report.weightedCoverage * 100);
+			const gaps = [...new Set([...skillGap.gap, ...report.missingTerms])].slice(0, 8);
+			const strengths = [
+				...new Set([...skillGap.existing, ...skillGap.supportedByResume, ...report.matchedTerms]),
+			].slice(0, 8);
+
+			const result = {
+				score,
+				gaps,
+				strengths,
+				coverage: report.weightedCoverage,
+				lowConfidence: skillGap.lowConfidence,
+			};
 
 			await applicationService.setAiResult({
 				id: input.id,
 				userId: context.user.id,
-				matchScore: result.score,
-				aiMetadata: { matchScore: result },
+				matchScore: score,
+				aiMetadata: { ...(application.aiMetadata ?? {}), matchScore: result, skillGap },
 			});
 
 			return result;

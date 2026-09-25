@@ -550,6 +550,31 @@ export function registerTools(server: McpServer, client: RouterClient<typeof rou
 			async ({ id, kind }: { id: string; kind: "cover-letter" | "follow-up" }) =>
 				json(await client.applications.ai.draftMessage({ id, kind })),
 		],
+		[
+			T.evaluateApplication,
+			"evaluating application",
+			async ({ applicationId }: { applicationId: string }) => json(await client.evaluations.start({ applicationId })),
+		],
+		[
+			T.getApplicationEvaluation,
+			"reading application evaluation",
+			async ({ applicationId }: { applicationId: string }) => {
+				const evaluations = await client.evaluations.listByApplication({ applicationId });
+				const latest = evaluations[0];
+				if (!latest) throw new Error("This application has no evaluations yet. Run evaluate_application first.");
+				return json(latest);
+			},
+		],
+		[
+			T.getApplicationSkillGap,
+			"reading application skill gap",
+			async ({ applicationId }: { applicationId: string }) => {
+				const evaluations = await client.evaluations.listByApplication({ applicationId });
+				const latest = evaluations[0];
+				if (!latest) throw new Error("This application has no evaluations yet. Run evaluate_application first.");
+				return json({ skillGap: latest.skillGap, evaluationId: latest.id, createdAt: latest.createdAt });
+			},
+		],
 	];
 
 	for (const [name, label, handler] of coverLetterAndApplicationTools) {

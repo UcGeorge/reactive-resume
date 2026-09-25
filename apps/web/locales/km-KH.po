@@ -528,6 +528,10 @@ msgstr "កែសម្រួលប្រវត្តិរូបសង្ខេ
 msgid "Advanced"
 msgstr "កម្រិតខ្ពស់"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Advertised"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Advice for the person reading it. None of this affects the score."
 msgstr "ដំបូន្មានសម្រាប់អ្នកអានវា។ គ្មានចំណុចណាមួយនេះប៉ះពាល់ដល់ពិន្ទុទេ។"
@@ -629,6 +633,10 @@ msgstr "បានគ្របដណ្តប់រួចហើយ"
 #: src/features/auth/pages/register.tsx
 msgid "Already have an account? <0/>"
 msgstr "មានគណនីរួចហើយ? <0/>"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Already in your skills"
+msgstr ""
 
 #: src/libs/locale.ts
 msgid "Amharic"
@@ -758,6 +766,10 @@ msgstr "បានដាក់ពាក្យ"
 msgid "Applied on"
 msgstr "បានដាក់ពាក្យនៅ"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Apply"
+msgstr ""
+
 #: src/routes/agent/-components/patch-approval-card.tsx
 msgid "Approve"
 msgstr "អនុម័ត"
@@ -781,6 +793,10 @@ msgstr "ទុកក្នុងបណ្ណសារ"
 #: src/routes/dashboard/applications/index.tsx
 msgid "Archived"
 msgstr "បានទុកក្នុងបណ្ណសារ"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Archived job description"
+msgstr ""
 
 #: src/hooks/use-form-blocker.tsx
 msgid "Are you sure you want to close this dialog?"
@@ -839,6 +855,14 @@ msgstr "សួរអ្វីមួយអំពីប្រវត្តិរូ
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Aspect Ratio"
 msgstr "សមាមាត្រទ្រង់ទ្រាយ"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Assessment"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "At or above the 4.0 apply line."
+msgstr ""
 
 #: src/libs/resume/section.tsx
 msgid "ATS Check"
@@ -939,6 +963,10 @@ msgstr "URL មូលដ្ឋាន"
 #: src/libs/resume/section.tsx
 msgid "Basics"
 msgstr "មូលដ្ឋាន"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Below the 4.0 apply line."
+msgstr ""
 
 #: src/libs/locale.ts
 msgid "Bengali"
@@ -1056,6 +1084,10 @@ msgstr "មិនអាចស្ដារឡើងវិញបានទេ ប�
 #: src/libs/locale.ts
 msgid "Catalan"
 msgstr "Catalan"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "caution"
+msgstr ""
 
 #: src/components/input/rich-input.tsx
 msgid "Center Align"
@@ -1243,6 +1275,10 @@ msgstr "បិទ"
 msgid "Close AI assistant"
 msgstr "បិទជំនួយការ AI"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Collapse"
+msgstr ""
+
 #: src/features/homepage/resume-sculpture.tsx
 msgid "Color"
 msgstr "ពណ៌"
@@ -1293,9 +1329,17 @@ msgstr "ក្រុមហ៊ុន A–Z"
 msgid "Compare this resume against this job posting URL and update the keywords without overselling anything."
 msgstr "ប្រៀបធៀបប្រវត្តិរូបសង្ខេបនេះជាមួយ URL ការជ្រើសរើសបុគ្គលិកនេះ ហើយធ្វើបច្ចុប្បន្នភាពពាក្យគន្លឹះដោយមិនបំផ្លើសអ្វីឡើយ។"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Compensation"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Compress or remove large images to keep uploads quick."
 msgstr "បង្រួម ឬលុបរូបភាពធំៗ ដើម្បីរក្សាការផ្ទុកឡើងឱ្យលឿន។"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Confidence:"
+msgstr ""
 
 #. Account deletion confirmation dialog confirm action in account settings
 #. Create API key dialog acknowledgment action after copying
@@ -1342,6 +1386,10 @@ msgstr "ការតភ្ជាប់បរាជ័យ។"
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Connection verified. The provider is ready to use."
 msgstr "បានផ្ទៀងផ្ទាត់ការតភ្ជាប់។ អ្នកផ្តល់សេវាបានត្រៀមរួចរាល់ដើម្បីប្រើប្រាស់។"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Consider"
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Contact details"
@@ -1548,13 +1596,25 @@ msgstr "មិនអាចបន្ថែមពាក្យសុំបានទ
 msgid "Couldn't delete the application."
 msgstr "មិនអាចលុបពាក្យសុំបានទេ។"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Couldn't delete the evaluation."
+msgstr ""
+
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Couldn't delete the timeline entry."
 msgstr "មិនអាចលុបធាតុបន្ទាត់ពេលវេលាបានទេ។"
 
+#: src/features/applications/components/application-form-sheet.tsx
+msgid "Couldn't fetch that URL."
+msgstr ""
+
 #: src/features/applications/components/board.tsx
 msgid "Couldn't move the application. Please try again."
 msgstr "មិនអាចផ្លាស់ទីពាក្យសុំបានទេ។ សូមព្យាយាមម្តងទៀត។"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Couldn't retry the evaluation."
+msgstr ""
 
 #: src/routes/builder/$resumeId/-components/header.tsx
 msgid "Couldn't save"
@@ -1567,6 +1627,11 @@ msgstr "មិនអាចរក្សាទុកកំណត់ចំណាំ
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Couldn't save your changes. Please try again."
 msgstr "មិនអាចរក្សាទុកការផ្លាស់ប្តូររបស់អ្នកបានទេ។ សូមព្យាយាមម្តងទៀត។"
+
+#: src/features/applications/components/application-ai-copilot.tsx
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Couldn't start the evaluation."
+msgstr ""
 
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Couldn't update the timeline entry."
@@ -1759,6 +1824,10 @@ msgstr "កំពុង​បង្កើត​កូនសោ API របស់�
 msgid "Creating your resume..."
 msgstr "កំពុង​បង្កើត​ប្រវត្តិរូប​របស់​អ្នក..."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "critical"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Crop and Upload"
 msgstr "ច្រឹប និងអាប់ឡូដ"
@@ -1803,6 +1872,10 @@ msgstr "ផ្នែក​ផ្ទាល់ខ្លួន"
 #: src/libs/resume/section.tsx
 msgid "Custom Styles"
 msgstr "រចនាប័ទ្មផ្ទាល់ខ្លួន"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Customization plan"
+msgstr ""
 
 #: src/libs/locale.ts
 msgid "Czech"
@@ -1853,6 +1926,14 @@ msgstr "បន្ថយការពង្រីក"
 msgid "Deep check"
 msgstr "ការត្រួតពិនិត្យស៊ីជម្រៅ"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Deep JD evaluation"
+msgstr ""
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Deep report: requirements, gaps, strategy, legitimacy"
+msgstr ""
+
 #: src/features/cover-letters/library.tsx
 msgid "Default template"
 msgstr "គំរូលំនាំដើម"
@@ -1871,6 +1952,7 @@ msgstr "សញ្ញាប័ត្រ"
 #: src/features/applications/components/application-detail-sheet.tsx
 #: src/features/applications/components/table-view.tsx
 #: src/features/cover-letters/editor-dialog.tsx
+#: src/features/evaluations/components/evaluation-panel.tsx
 #: src/features/settings/authentication/components/passkeys.tsx
 #: src/features/settings/pages/api-keys.tsx
 #: src/routes/agent/-components/agent-chat.tsx
@@ -1887,6 +1969,10 @@ msgstr "លុប"
 #: src/features/settings/pages/account.tsx
 msgid "Delete Account"
 msgstr "លុប​គណនី"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Delete evaluation"
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Delete it. Hidden keywords are treated as a deliberate attempt to game the search."
@@ -1917,6 +2003,10 @@ msgstr "លុបពាក្យសុំនេះ?"
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Delete this cover letter?"
 msgstr "លុបលិខិតគម្របនេះ?"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Delete this evaluation?"
+msgstr ""
 
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Delete this timeline entry?"
@@ -2123,6 +2213,10 @@ msgstr "ព្រាងលិខិតអម"
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Draft a follow-up"
 msgstr "ព្រាងសារតាមដាន"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Draft answers"
+msgstr ""
 
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Drafting failed."
@@ -2371,9 +2465,33 @@ msgstr "បញ្ចូល​ពាក្យសម្ងាត់​របស់
 msgid "Error"
 msgstr "កំហុស"
 
+#: src/features/applications/components/application-detail-sheet.tsx
+msgid "Evaluation"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Evaluation failed"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Evaluation queued…"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Evaluation running…"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "Every check passed. Nothing here should stop a parser from reading your resume."
 msgstr "រាល់ការត្រួតពិនិត្យបានឆ្លងកាត់។ "
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Evidence"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Evidence:"
+msgstr ""
 
 #: src/features/homepage/feature-explorer.tsx
 msgid "Example application"
@@ -2390,6 +2508,10 @@ msgstr "ចេញពីរបៀបផ្តោតអារម្មណ៍"
 #: src/components/input/rich-input.tsx
 msgid "Exit Fullscreen"
 msgstr "ចេញពីអេក្រង់ពេញ"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Expand"
+msgstr ""
 
 #: src/dialogs/resume/sections/custom.tsx
 #: src/features/homepage/export-playground.tsx
@@ -2640,6 +2762,14 @@ msgstr "កំហុសធ្ងន់ធ្ងរ"
 msgid "Features"
 msgstr "មុខងារ"
 
+#: src/features/applications/components/application-form-sheet.tsx
+msgid "Fetch & autofill"
+msgstr ""
+
+#: src/features/applications/components/application-form-sheet.tsx
+msgid "Fetched the posting and filled in the fields."
+msgstr ""
+
 #: src/features/homepage/page.tsx
 msgid "Fifteen templates, all free. Pick one you like. You can change the type, color, and layout in the editor."
 msgstr "ពុម្ពទាំងដប់ប្រាំសុទ្ធតែឥតគិតថ្លៃ។ ជ្រើសរើសមួយដែលអ្នកចូលចិត្ត។ អ្នកអាចប្ដូរពុម្ពអក្សរ ពណ៌ និងប្លង់នៅក្នុងកម្មវិធីកែសម្រួល។"
@@ -2687,6 +2817,10 @@ msgstr "សមនឹងមើល"
 #: src/features/homepage/feature-explorer.tsx
 msgid "Fits into your workflow"
 msgstr "សមនឹងលំហូរការងាររបស់អ្នក"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "flag"
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Flatten the form so the text is part of the page."
@@ -2779,6 +2913,14 @@ msgstr "ភាសាបារាំង"
 msgid "From your resume and the posting"
 msgstr "ពីប្រវត្តិរូប និងការប្រកាសរបស់អ្នក"
 
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Full evaluation"
+msgstr ""
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Full evaluation started. Open the Evaluation tab to follow it."
+msgstr ""
+
 #: src/features/resume/export/download-dialog.tsx
 msgid "Full resume data for backup or import."
 msgstr "ទិន្នន័យប្រវត្តិរូបពេញលេញសម្រាប់បម្រុងទុក ឬនាំចូល។"
@@ -2796,6 +2938,10 @@ msgstr "អេក្រង់ពេញ"
 #: src/components/input/rich-input.tsx
 msgid "Fullscreen Editor"
 msgstr "កម្មវិធីកែសម្រួលពេញអេក្រង់"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Gaps & mitigations"
+msgstr ""
 
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Gaps:"
@@ -2887,6 +3033,10 @@ msgstr "Greek"
 #: src/routes/dashboard/resumes/index.tsx
 msgid "Grid"
 msgstr "ក្រឡារៀបចំ"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Hard stops"
+msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/typography.tsx
 msgctxt "Headings or Titles (H1, H2, H3, H4, H5, H6)"
@@ -2997,6 +3147,10 @@ msgstr "លាក់ការមើលជាមុន"
 msgid "Hide Section Icons"
 msgstr "លាក់រូបតំណាងផ្នែក"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "high"
+msgstr ""
+
 #: src/features/ats-checker/ai-review/ai-review-results.tsx
 msgid "High impact"
 msgstr "ផលប៉ះពាល់ខ្ពស់"
@@ -3013,6 +3167,10 @@ msgstr "ពណ៌​បន្លិច"
 msgid "Hindi"
 msgstr "Hindi"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Hint:"
+msgstr ""
+
 #: src/features/command-palette/pages/navigation.tsx
 msgid "Home"
 msgstr "ទំព័រដើម"
@@ -3020,6 +3178,10 @@ msgstr "ទំព័រដើម"
 #: src/features/settings/pages/api-keys.tsx
 msgid "How do I use the API?"
 msgstr "តើ​ខ្ញុំ​ប្រើ API ដោយ​របៀបណា?"
+
+#: src/features/applications/components/application-form-sheet.tsx
+msgid "https://… (job posting URL)"
+msgstr ""
 
 #: src/libs/locale.ts
 msgid "Hungarian"
@@ -3087,6 +3249,10 @@ msgstr "នាំចូលពីបណ្ណាល័យ"
 msgid "Import JSON"
 msgstr "នាំចូល JSON"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Importance"
+msgstr ""
+
 #. placeholder {0}: result.imported
 #: src/features/applications/components/import-applications-sheet.tsx
 msgid "Imported {0} application(s)."
@@ -3133,6 +3299,10 @@ msgstr "បង្កើនការពង្រីក"
 msgid "Indonesian"
 msgstr "Indonesian"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "inferred"
+msgstr ""
+
 #: src/libs/resume/section.tsx
 msgid "Information"
 msgstr "ព័ត៌មាន"
@@ -3176,6 +3346,10 @@ msgstr "ចំណាប់អារម្មណ៍"
 msgid "Interview"
 msgstr "សម្ភាសន៍"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Interview plan"
+msgstr ""
+
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Invalid AI provider configuration."
 msgstr "ការកំណត់រចនាសម្ព័ន្ធអ្នកផ្តល់សេវា AI មិនត្រឹមត្រូវ។"
@@ -3195,6 +3369,14 @@ msgstr "អក្សរ​ទ្រេត"
 #: src/libs/locale.ts
 msgid "Japanese"
 msgstr "Japanese"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "JD signal"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "JD signal:"
+msgstr ""
 
 #: src/features/command-palette/pages/navigation.tsx
 msgid "Job"
@@ -3313,6 +3495,10 @@ msgstr "រក្សាប្លង់របស់អ្នកឱ្យនៅដ
 msgid "Key"
 msgstr "សោ"
 
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Keyword coverage:"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
 msgid "Keyword layout"
 msgstr "ប្លង់ពាក្យគន្លឹះ"
@@ -3427,6 +3613,22 @@ msgstr "តម្រង់​ឆ្វេង"
 msgid "Legal"
 msgstr "ផ្នែកច្បាប់"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Legitimacy signals"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Legitimacy: high confidence"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Legitimacy: proceed with caution"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Legitimacy: suspicious"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Length is not a defect, and there is no universal one-page rule. Keep the pages that earn their place."
 msgstr "ប្រវែងមិនមែនជាកំហុសទេ ហើយគ្មានច្បាប់ទំព័រតែមួយជាសកលនោះទេ។ រក្សាទុកតែទំព័រណាដែលសមនឹងកន្លែងរបស់វា។"
@@ -3445,6 +3647,10 @@ msgstr "កម្រិត"
 #: src/components/level/display.tsx
 msgid "Level {level} of 5"
 msgstr "កម្រិត {level} ក្នុងចំណោម ៥"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Level & positioning"
+msgstr ""
 
 #: src/components/ui/copyright.tsx
 msgid "Licensed under <0>MIT</0>."
@@ -3481,6 +3687,10 @@ msgstr "ភ្ជាប់ Reactive Resume (បានណែនាំ)"
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Link a Reactive Resume to use AI match scoring and tailoring."
 msgstr "ភ្ជាប់ Reactive Resume ដើម្បីប្រើការវាយតម្លៃភាពត្រូវគ្នា និងការកែសម្រួលដោយ AI។"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Link a resume and paste the job description (Edit) to run an evaluation."
+msgstr ""
 
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Link a resume and paste the job description (Edit) to score your fit and tailor a copy."
@@ -3564,6 +3774,7 @@ msgstr "កំពុងផ្ទុក…"
 #: src/features/applications/components/application-form-sheet.tsx
 #: src/features/applications/components/table-view.tsx
 #: src/features/ats-checker/parse-preview.tsx
+#: src/features/evaluations/components/evaluation-panel.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/basics.tsx
 msgid "Location"
 msgstr "ទីតាំង"
@@ -3585,9 +3796,25 @@ msgstr "ចម្រៀកវែងៗត្រូវបានកំណត់ជ
 msgid "Lost access to your authenticator?"
 msgstr "បាត់បង់​សិទ្ធិ​ចូល​ដំណើរការ​កម្មវិធី​ផ្ទៀងផ្ទាត់​អត្តសញ្ញាណ​របស់​អ្នក​ឬ?"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "low"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Low confidence — this is not a clean result"
+msgstr ""
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Low confidence — this is not a clean result:"
+msgstr ""
+
 #: src/features/ats-checker/ai-review/ai-review-results.tsx
 msgid "Low impact"
 msgstr "ផលប៉ះពាល់ទាប"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "low signal"
+msgstr ""
 
 #: src/features/homepage/resume-sculpture.tsx
 msgid "Made with Reactive Resume"
@@ -3651,9 +3878,21 @@ msgstr "រឹម (បញ្ឈរ)"
 msgid "Mark rejected"
 msgstr "សម្គាល់ថាត្រូវបានបដិសេធ"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Match"
+msgstr ""
+
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Match scoring failed."
 msgstr "ការដាក់ពិន្ទុភាពសមស្របបរាជ័យ។"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "meaningful"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "medium"
+msgstr ""
 
 #: src/features/ats-checker/ai-review/ai-review-results.tsx
 msgid "Medium impact"
@@ -3665,6 +3904,14 @@ msgstr "ផលប៉ះពាល់មធ្យម"
 msgid "Microsoft Word"
 msgstr "Microsoft Word"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "missing"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Missing from your resume"
+msgstr ""
+
 #: src/routes/agent/-components/resume-pane.tsx
 msgid "Missing working resume"
 msgstr "បាត់ប្រវត្តិរូបសង្ខេបការងារ"
@@ -3672,6 +3919,10 @@ msgstr "បាត់ប្រវត្តិរូបសង្ខេបការ
 #: src/features/homepage/site-footer.tsx
 msgid "MIT License"
 msgstr "អាជ្ញាប័ណ្ណ MIT"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Mitigation:"
+msgstr ""
 
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Model"
@@ -3744,6 +3995,10 @@ msgstr "បានផ្លាស់ទីទៅ"
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom-fields.tsx
 msgid "Must start with https://"
 msgstr "ត្រូវតែចាប់ផ្តើមដោយ https://"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "n/a"
+msgstr ""
 
 #. Label for full name input on registration form
 #: src/dialogs/api-key/create.tsx
@@ -3832,6 +4087,10 @@ msgstr "ខ្សែស្រឡាយថ្មី"
 #: src/features/cover-letters/library.tsx
 msgid "Next"
 msgstr "បន្ទាប់"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Next action:"
+msgstr ""
 
 #: src/features/homepage/template-shelf.tsx
 msgid "Next template"
@@ -3940,6 +4199,10 @@ msgstr "មិនទាន់មានប្រវត្តិរូបទេ។
 msgid "No saved versions yet."
 msgstr "មិនទាន់មានកំណែដែលបានរក្សាទុកនៅឡើយទេ។"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "No skill requirements were extracted from the posting."
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "No skills section was found."
 msgstr "រកមិនឃើញផ្នែកជំនាញទេ។"
@@ -3951,6 +4214,14 @@ msgstr "មិនទាន់មានទិន្នន័យប្រភពទ
 #: src/features/ats-checker/report/jd-coverage.tsx
 msgid "No specific terms could be pulled out of that job description, so it may be mostly boilerplate. Paste the requirements section for a more useful comparison."
 msgstr "មិនអាចទាញយកពាក្យជាក់លាក់ណាមួយចេញពីការពិពណ៌នាការងារនោះបានទេ ដូច្នេះវាប្រហែលជាអត្ថបទគំរូភាគច្រើន។ សូមបិទភ្ជាប់ផ្នែកតម្រូវការ ដើម្បីទទួលបានការប្រៀបធៀបដែលមានប្រយោជន៍ជាង។"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "No sponsorship"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "No sponsorship needed"
+msgstr ""
 
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "No tested provider"
@@ -3979,6 +4250,14 @@ msgstr "Norwegian"
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Not connected"
 msgstr "មិនបានភ្ជាប់"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "not evaluated"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Not evaluated:"
+msgstr ""
 
 #: src/features/ats-checker/ai-review/ai-review-results.tsx
 msgid "Not evidenced in your resume"
@@ -4029,6 +4308,10 @@ msgstr "Odia"
 #: src/features/homepage/feature-explorer.tsx
 msgid "Offer"
 msgstr "ផ្តល់ការងារ"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "ok"
+msgstr ""
 
 #: src/features/settings/pages/api-keys.tsx
 msgid "Once deleted, the key can no longer access your data. This cannot be undone."
@@ -4163,6 +4446,10 @@ msgstr "ទម្រង់តារាងដើមត្រូវបានរក
 msgid "out of 100"
 msgstr "ក្នុងចំណោម 100"
 
+#: src/features/applications/components/application-detail-sheet.tsx
+msgid "Overview"
+msgstr ""
+
 #: src/libs/resume/section.tsx
 msgid "Page"
 msgstr "ទំព័រ"
@@ -4184,6 +4471,10 @@ msgstr "កថាខណ្ឌ"
 #: src/components/input/rich-input.tsx
 msgid "Paragraph and heading style"
 msgstr "រចនាប័ទ្មកថាខណ្ឌ និងចំណងជើង"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "partial"
+msgstr ""
 
 #. Authentication provider display name in account settings
 #. Label for passkey sign-in button
@@ -4399,6 +4690,10 @@ msgstr "Portuguese (Portugal)"
 msgid "Position"
 msgstr "តួនាទី"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Positioning"
+msgstr ""
+
 #: src/libs/resume/ats.ts
 msgid "Prefer a conventional heading such as \"Work Experience\" or \"Education\"."
 msgstr "ចូលចិត្តចំណងជើងធម្មតាដូចជា \"បទពិសោធន៍ការងារ\" ឬ \"ការអប់រំ\" ។"
@@ -4413,6 +4708,10 @@ msgstr "ចូលចិត្តជួរឈរតែមួយ ឬរក្ស�
 #: src/routes/dashboard/settings/preferences.tsx
 msgid "Preferences"
 msgstr "ចំណង់ចំណូលចិត្ត"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "preferred"
+msgstr ""
 
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Prepare a conservative patch that improves clarity without changing the story of my career."
@@ -4558,6 +4857,10 @@ msgstr "អ្នកបោះពុម្ពផ្សាយ"
 #: src/features/ats-checker/messages.ts
 msgid "Put a plain email address near the top of the first page. It is what most systems file you under."
 msgstr "ដាក់អាសយដ្ឋានអ៊ីមែលធម្មតានៅជិតផ្នែកខាងលើនៃទំព័រទីមួយ។ វាជាអ្វីដែលប្រព័ន្ធភាគច្រើនប្រើដើម្បីរៀបចំឯកសាររបស់អ្នក។"
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Quick match"
+msgstr ""
 
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Raw JSON"
@@ -4731,6 +5034,10 @@ msgstr "ចុះឈ្មោះឧបករណ៍ថ្មី"
 msgid "Released under the <0>MIT License</0>."
 msgstr "ចេញផ្សាយក្រោម <0>អាជ្ញាប័ណ្ណ MIT</0>។"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Reliability"
+msgstr ""
+
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Reload latest version"
 msgstr "ផ្ទុកកំណែចុងក្រោយបំផុតឡើងវិញ"
@@ -4829,6 +5136,22 @@ msgstr "រាយការណ៍​កំហុស"
 #: src/routes/_home/-sections/footer.tsx
 msgid "Report an issue"
 msgstr "រាយការណ៍បញ្ហា"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Reports to"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Requirement"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Requirements"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Research first"
+msgstr ""
 
 #: src/features/settings/pages/profile.tsx
 msgid "Resend verification email"
@@ -4946,6 +5269,7 @@ msgstr "ប្រវត្តិរូបសង្ខេប"
 
 #: src/features/cover-letters/editor-dialog.tsx
 #: src/features/cover-letters/library.tsx
+#: src/features/evaluations/components/evaluation-panel.tsx
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Retry"
 msgstr "សាកល្បងម្តងទៀត"
@@ -4986,6 +5310,15 @@ msgstr "ប្រវត្តិរូបសង្ខេបគំរូ Rhyhorn"
 msgid "Right Align"
 msgstr "តម្រង់​ស្ដាំ"
 
+#. placeholder {0}: riskLevelLabel(blocks.riskSummary.level)
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Risk ({0}):"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Risk:"
+msgstr ""
+
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Role (optional)"
 msgstr "តួនាទី (ស្រេចចិត្ត)"
@@ -5002,6 +5335,10 @@ msgstr "តួនាទី A–Z"
 msgid "Role Progression"
 msgstr "ការរីកចម្រើនតួនាទី"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Role summary"
+msgstr ""
+
 #: src/libs/locale.ts
 msgid "Romanian"
 msgstr "Romanian"
@@ -5010,6 +5347,7 @@ msgstr "Romanian"
 msgid "Rotation"
 msgstr "មុំ​បង្វែរ"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "Run again"
 msgstr "ដំណើរការម្តងទៀត"
@@ -5022,9 +5360,21 @@ msgstr "ដំណើរការការពិនិត្យ AI"
 msgid "Run deep check"
 msgstr "ដំណើរការការត្រួតពិនិត្យស៊ីជម្រៅ"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Run full evaluation"
+msgstr ""
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Running quick match…"
+msgstr ""
+
 #: src/routes/agent/-components/tool-part-card.tsx
 msgid "Running…"
 msgstr "កំពុងដំណើរការ…"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Runs a multi-pass analysis of this posting against your linked resume: a requirement-by-requirement match table, level and compensation strategy, legitimacy screening, interview prep, and a 1–5 verdict where 4.0 is the apply line. The job description is archived verbatim with the report."
+msgstr ""
 
 #: src/libs/locale.ts
 msgid "Russian"
@@ -5142,14 +5492,6 @@ msgstr "ស្កេន​កូដ QR ខាងក្រោម​ដោយ​�
 #: src/dialogs/resume/sections/education.tsx
 msgid "School"
 msgstr "សាលា"
-
-#: src/features/applications/components/application-ai-copilot.tsx
-msgid "Score my fit"
-msgstr "ដាក់ពិន្ទុភាពសមស្របរបស់ខ្ញុំ"
-
-#: src/features/applications/components/application-ai-copilot.tsx
-msgid "Scoring your fit…"
-msgstr "កំពុងដាក់ពិន្ទុភាពសមស្របរបស់អ្នក…"
 
 #: src/routes/dashboard/-components/sidebar.tsx
 msgid "Search"
@@ -5537,6 +5879,10 @@ msgstr "ជួរឈរ​តែមួយ រូបរាង​រលោង ន�
 msgid "Size"
 msgstr "ទំហំ"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Skill gap"
+msgstr ""
+
 #: src/dialogs/resume/sections/custom.tsx
 #: src/features/homepage/export-playground.tsx
 #: src/features/homepage/languages-showcase.tsx
@@ -5545,6 +5891,10 @@ msgstr "ទំហំ"
 #: src/libs/resume/section.tsx
 msgid "Skills"
 msgstr "ជំនាញ"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Skip"
+msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Skip and Upload"
@@ -5569,6 +5919,10 @@ msgstr "ស្លូវេនី"
 #: src/dialogs/resume/index.tsx
 msgid "Slug"
 msgstr "Slug"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Soft gaps"
+msgstr ""
 
 #: src/libs/resume/ats.ts
 msgid "Some application systems require one before you can submit."
@@ -5621,6 +5975,10 @@ msgstr "អ្វីផ្សេងទៀត…"
 #: src/components/layout/error-screen.tsx
 msgid "Something went wrong"
 msgstr "មានអ្វីមួយខុសប្រក្រតី"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Something went wrong during the run."
+msgstr ""
 
 #: src/features/ats-checker/tool.tsx
 msgid "Something went wrong while reading that file. Please try again."
@@ -5694,6 +6052,14 @@ msgstr "សរសេរឈ្មោះខែ ដូចជា \"មីនា 2022
 #: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
 msgid "Sponsors"
 msgstr "អ្នកឧបត្ថម្ភ"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Sponsors visas"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Sponsorship unstated"
+msgstr ""
 
 #: src/features/homepage/site-footer.tsx
 #: src/routes/_home/-sections/footer.tsx
@@ -5778,6 +6144,10 @@ msgstr "ចាប់ផ្តើមប្រវត្តិរូបសង្ខ
 msgid "Start thread"
 msgstr "ចាប់ផ្តើមខ្សែស្រឡាយ"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "stated"
+msgstr ""
+
 #: src/libs/resume/section.tsx
 msgid "Statistics"
 msgstr "ស្ថិតិ"
@@ -5803,13 +6173,25 @@ msgstr "បញ្ឈប់ការបង្កើត"
 msgid "Strengths"
 msgstr "ចំណុចខ្លាំង"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Strengths & soft gaps"
+msgstr ""
+
 #: src/components/input/rich-input.tsx
 msgid "Strike"
 msgstr "អក្សរ​ឆូត"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "strong"
+msgstr ""
+
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Strong fit"
 msgstr "សមស្របខ្លាំង"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "structural"
+msgstr ""
 
 #: src/features/resume/stylesheet/toolbar.tsx
 msgid "Stylesheet editor"
@@ -5853,6 +6235,10 @@ msgstr "គាំទ្រ​កម្មវិធី ដោយ​ធ្វើ�
 #: src/features/homepage/page.tsx
 msgid "Support the project"
 msgstr "គាំទ្រគម្រោង"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Supported by your resume"
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 #: src/libs/resume/ats.ts
@@ -6031,6 +6417,10 @@ msgstr "ការត្រួតពិនិត្យស៊ីជម្រៅម
 msgid "The imported file could not be parsed into a valid resume."
 msgstr "ឯកសារដែលបាននាំចូលមិនអាចបម្លែងទៅជាប្រវត្តិរូបត្រឹមត្រូវបានទេ។"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "The multi-pass analysis usually takes a minute. The skill gap below is already final."
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "The order the text is stored in disagrees badly with the order it reads in."
 msgstr "លំដាប់ដែលអត្ថបទត្រូវបានផ្ទុកខុសគ្នាយ៉ាងខ្លាំងពីលំដាប់ដែលវាអាន។"
@@ -6070,6 +6460,10 @@ msgstr "អ្នកផ្តល់សេវាបានឆ្លើយតបន
 #: src/features/auth/pages/error.tsx
 msgid "The provider's response could not be verified. Please start again."
 msgstr "មិនអាចផ្ទៀងផ្ទាត់ការឆ្លើយតបរបស់អ្នកផ្តល់សេវាបានទេ។ សូមចាប់ផ្តើមម្តងទៀត។"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "The report and its archived job description snapshot will be permanently deleted."
+msgstr ""
 
 #: src/features/homepage/page.tsx
 msgid "The rest of your<0/>job search, too."
@@ -6483,6 +6877,10 @@ msgstr "ថូខឹន៖ {total} ({cached} ក្នុងឃ្លាំង�
 #: src/features/homepage/resume-sculpture.tsx
 msgid "Tools"
 msgstr "ឧបករណ៍"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Top strengths"
+msgstr ""
 
 #: src/features/homepage/community-stats.tsx
 msgid "Total unavailable"
@@ -6957,6 +7355,10 @@ msgstr "មានពាក្យតិចតួចណាស់ត្រូវប
 msgid "Very little text was recovered for this many pages."
 msgstr "មានអត្ថបទតិចតួចណាស់ត្រូវបានទាញយកមកវិញសម្រាប់ចំនួនទំព័រច្រើនប៉ុណ្ណេះ។"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Via"
+msgstr ""
+
 #: src/libs/locale.ts
 msgid "Vietnamese"
 msgstr "Vietnamese"
@@ -7113,6 +7515,14 @@ msgstr "តើបន្ទាត់ពេលវេលារបស់អ្នក
 #: src/features/ats-checker/messages.ts
 msgid "Words run together when the text is extracted."
 msgstr "ពាក្យរត់បញ្ចូលគ្នានៅពេលអត្ថបទត្រូវបានស្រង់ចេញ។"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Work auth note"
+msgstr ""
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Work authorization:"
+msgstr ""
 
 #: src/features/homepage/feature-explorer.tsx
 msgid "Work on your resume from your AI app."

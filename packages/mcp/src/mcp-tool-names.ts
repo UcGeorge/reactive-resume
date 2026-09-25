@@ -42,4 +42,7 @@ export const MCP_TOOL_NAME = {
 	scoreApplicationMatch: "score_application_match",
 	tailorResumeForApplication: "tailor_resume_for_application",
 	draftApplicationMessage: "draft_application_message",
+	evaluateApplication: "evaluate_application",
+	getApplicationEvaluation: "get_application_evaluation",
+	getApplicationSkillGap: "get_application_skill_gap",
 } as const;

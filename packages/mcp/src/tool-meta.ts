@@ -594,9 +594,30 @@ export const TOOL_META = {
 	[T.scoreApplicationMatch]: {
 		title: "Score Application Match",
 		description:
-			"Send the full linked resume and job description to your configured AI provider to score their match. Requires an enabled, tested default AI provider, a linked resume, and a job description. Overwrites the application's saved match score and AI metadata.",
+			"Deterministically score the linked resume against the job description (three-bucket skill gap plus weighted keyword coverage; no AI provider involved). Requires a linked resume and a job description. Overwrites the application's saved match score and AI metadata. For the deep A-H analysis use evaluate_application.",
 		inputSchema: z.object({ id: applicationIdSchema }),
-		annotations: { ...WRITE_NON_IDEMPOTENT, destructiveHint: true, openWorldHint: true },
+		annotations: { ...WRITE_NON_IDEMPOTENT, destructiveHint: true, openWorldHint: false },
+	},
+	[T.evaluateApplication]: {
+		title: "Evaluate Application",
+		description:
+			"Start a deep evaluation of an application's job description against its linked resume: two-pass requirement analysis with frozen importance, level/comp strategy, interview plan, posting-legitimacy signals, and a 1-5 score (4.0 is the apply line). Requires an enabled, tested default AI provider, a linked resume, and a job description. The JD is archived verbatim and the LLM passes run in the background - poll get_application_evaluation for the finished report.",
+		inputSchema: z.object({ applicationId: applicationIdSchema }),
+		annotations: { ...WRITE_NON_IDEMPOTENT, openWorldHint: true },
+	},
+	[T.getApplicationEvaluation]: {
+		title: "Get Application Evaluation",
+		description:
+			"Read the most recent evaluation for an application: status, 1-5 score, requirement table, strategy blocks, legitimacy signals, deterministic skill gap, and the archived job description. Returns the newest evaluation whatever its status; a pending/running one is still being generated.",
+		inputSchema: z.object({ applicationId: applicationIdSchema }),
+		annotations: READ_IDEMPOTENT,
+	},
+	[T.getApplicationSkillGap]: {
+		title: "Get Application Skill Gap",
+		description:
+			"Read the deterministic three-bucket skill gap (existing / supported-by-resume / gap) from the application's most recent evaluation. Skills under 'gap' have no trace in the resume and must never be added as claims. A non-null lowConfidence means the extraction was inconclusive - not the same as no gaps.",
+		inputSchema: z.object({ applicationId: applicationIdSchema }),
+		annotations: READ_IDEMPOTENT,
 	},
 	[T.tailorResumeForApplication]: {
 		title: "Tailor Resume For Application",

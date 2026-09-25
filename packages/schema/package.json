@@ -6,6 +6,7 @@
 	"exports": {
 		"./cover-letter/data": "./src/cover-letter/data.ts",
 		"./applications/*": "./src/applications/*.ts",
+		"./career/*": "./src/career/*.ts",
 		"./icons": "./src/icons.ts",
 		"./resume/stylesheet": "./src/resume/stylesheet.ts",
 		"./resume/*": "./src/resume/*.ts",

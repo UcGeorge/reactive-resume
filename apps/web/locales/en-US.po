@@ -523,6 +523,10 @@ msgstr "Adjust the resume for a remote-first role that values async communicatio
 msgid "Advanced"
 msgstr "Advanced"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Advertised"
+msgstr "Advertised"
+
 #: src/features/ats-checker/messages.ts
 msgid "Advice for the person reading it. None of this affects the score."
 msgstr "Advice for the person reading it. None of this affects the score."
@@ -624,6 +628,10 @@ msgstr "Already covered"
 #: src/features/auth/pages/register.tsx
 msgid "Already have an account? <0/>"
 msgstr "Already have an account? <0/>"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Already in your skills"
+msgstr "Already in your skills"
 
 #: src/libs/locale.ts
 msgid "Amharic"
@@ -753,6 +761,10 @@ msgstr "Applied"
 msgid "Applied on"
 msgstr "Applied on"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Apply"
+msgstr "Apply"
+
 #: src/routes/agent/-components/patch-approval-card.tsx
 msgid "Approve"
 msgstr "Approve"
@@ -776,6 +788,10 @@ msgstr "Archive"
 #: src/routes/dashboard/applications/index.tsx
 msgid "Archived"
 msgstr "Archived"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Archived job description"
+msgstr "Archived job description"
 
 #: src/hooks/use-form-blocker.tsx
 msgid "Are you sure you want to close this dialog?"
@@ -834,6 +850,14 @@ msgstr "Ask anything about this resume"
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Aspect Ratio"
 msgstr "Aspect Ratio"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Assessment"
+msgstr "Assessment"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "At or above the 4.0 apply line."
+msgstr "At or above the 4.0 apply line."
 
 #: src/libs/resume/section.tsx
 msgid "ATS Check"
@@ -934,6 +958,10 @@ msgstr "Base URL"
 #: src/libs/resume/section.tsx
 msgid "Basics"
 msgstr "Basics"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Below the 4.0 apply line."
+msgstr "Below the 4.0 apply line."
 
 #: src/libs/locale.ts
 msgid "Bengali"
@@ -1051,6 +1079,10 @@ msgstr "Cannot restore; the resume has changed since this edit was applied."
 #: src/libs/locale.ts
 msgid "Catalan"
 msgstr "Catalan"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "caution"
+msgstr "caution"
 
 #: src/components/input/rich-input.tsx
 msgid "Center Align"
@@ -1238,6 +1270,10 @@ msgstr "Close"
 msgid "Close AI assistant"
 msgstr "Close AI assistant"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Collapse"
+msgstr "Collapse"
+
 #: src/features/homepage/resume-sculpture.tsx
 msgid "Color"
 msgstr "Color"
@@ -1288,9 +1324,17 @@ msgstr "Company A–Z"
 msgid "Compare this resume against this job posting URL and update the keywords without overselling anything."
 msgstr "Compare this resume against this job posting URL and update the keywords without overselling anything."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Compensation"
+msgstr "Compensation"
+
 #: src/features/ats-checker/messages.ts
 msgid "Compress or remove large images to keep uploads quick."
 msgstr "Compress or remove large images to keep uploads quick."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Confidence:"
+msgstr "Confidence:"
 
 #. Account deletion confirmation dialog confirm action in account settings
 #. Create API key dialog acknowledgment action after copying
@@ -1337,6 +1381,10 @@ msgstr "Connection failed."
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Connection verified. The provider is ready to use."
 msgstr "Connection verified. The provider is ready to use."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Consider"
+msgstr "Consider"
 
 #: src/features/ats-checker/messages.ts
 msgid "Contact details"
@@ -1543,13 +1591,25 @@ msgstr "Couldn't add the application. Please try again."
 msgid "Couldn't delete the application."
 msgstr "Couldn't delete the application."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Couldn't delete the evaluation."
+msgstr "Couldn't delete the evaluation."
+
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Couldn't delete the timeline entry."
 msgstr "Couldn't delete the timeline entry."
 
+#: src/features/applications/components/application-form-sheet.tsx
+msgid "Couldn't fetch that URL."
+msgstr "Couldn't fetch that URL."
+
 #: src/features/applications/components/board.tsx
 msgid "Couldn't move the application. Please try again."
 msgstr "Couldn't move the application. Please try again."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Couldn't retry the evaluation."
+msgstr "Couldn't retry the evaluation."
 
 #: src/routes/builder/$resumeId/-components/header.tsx
 msgid "Couldn't save"
@@ -1562,6 +1622,11 @@ msgstr "Couldn't save the note."
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Couldn't save your changes. Please try again."
 msgstr "Couldn't save your changes. Please try again."
+
+#: src/features/applications/components/application-ai-copilot.tsx
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Couldn't start the evaluation."
+msgstr "Couldn't start the evaluation."
 
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Couldn't update the timeline entry."
@@ -1754,6 +1819,10 @@ msgstr "Creating your API key..."
 msgid "Creating your resume..."
 msgstr "Creating your resume..."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "critical"
+msgstr "critical"
+
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Crop and Upload"
 msgstr "Crop and Upload"
@@ -1798,6 +1867,10 @@ msgstr "Custom Sections"
 #: src/libs/resume/section.tsx
 msgid "Custom Styles"
 msgstr "Custom Styles"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Customization plan"
+msgstr "Customization plan"
 
 #: src/libs/locale.ts
 msgid "Czech"
@@ -1848,6 +1921,14 @@ msgstr "Decrease zoom"
 msgid "Deep check"
 msgstr "Deep check"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Deep JD evaluation"
+msgstr "Deep JD evaluation"
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Deep report: requirements, gaps, strategy, legitimacy"
+msgstr "Deep report: requirements, gaps, strategy, legitimacy"
+
 #: src/features/cover-letters/library.tsx
 msgid "Default template"
 msgstr "Default template"
@@ -1866,6 +1947,7 @@ msgstr "Degree"
 #: src/features/applications/components/application-detail-sheet.tsx
 #: src/features/applications/components/table-view.tsx
 #: src/features/cover-letters/editor-dialog.tsx
+#: src/features/evaluations/components/evaluation-panel.tsx
 #: src/features/settings/authentication/components/passkeys.tsx
 #: src/features/settings/pages/api-keys.tsx
 #: src/routes/agent/-components/agent-chat.tsx
@@ -1882,6 +1964,10 @@ msgstr "Delete"
 #: src/features/settings/pages/account.tsx
 msgid "Delete Account"
 msgstr "Delete Account"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Delete evaluation"
+msgstr "Delete evaluation"
 
 #: src/features/ats-checker/messages.ts
 msgid "Delete it. Hidden keywords are treated as a deliberate attempt to game the search."
@@ -1912,6 +1998,10 @@ msgstr "Delete this application?"
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Delete this cover letter?"
 msgstr "Delete this cover letter?"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Delete this evaluation?"
+msgstr "Delete this evaluation?"
 
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Delete this timeline entry?"
@@ -2118,6 +2208,10 @@ msgstr "Draft a cover letter"
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Draft a follow-up"
 msgstr "Draft a follow-up"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Draft answers"
+msgstr "Draft answers"
 
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Drafting failed."
@@ -2366,9 +2460,33 @@ msgstr "Enter your password to disable two-factor authentication. Your account w
 msgid "Error"
 msgstr "Error"
 
+#: src/features/applications/components/application-detail-sheet.tsx
+msgid "Evaluation"
+msgstr "Evaluation"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Evaluation failed"
+msgstr "Evaluation failed"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Evaluation queued…"
+msgstr "Evaluation queued…"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Evaluation running…"
+msgstr "Evaluation running…"
+
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "Every check passed. Nothing here should stop a parser from reading your resume."
 msgstr "Every check passed. Nothing here should stop a parser from reading your resume."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Evidence"
+msgstr "Evidence"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Evidence:"
+msgstr "Evidence:"
 
 #: src/features/homepage/feature-explorer.tsx
 msgid "Example application"
@@ -2385,6 +2503,10 @@ msgstr "Exit focus mode"
 #: src/components/input/rich-input.tsx
 msgid "Exit Fullscreen"
 msgstr "Exit Fullscreen"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Expand"
+msgstr "Expand"
 
 #: src/dialogs/resume/sections/custom.tsx
 #: src/features/homepage/export-playground.tsx
@@ -2635,6 +2757,14 @@ msgstr "Fatal error"
 msgid "Features"
 msgstr "Features"
 
+#: src/features/applications/components/application-form-sheet.tsx
+msgid "Fetch & autofill"
+msgstr "Fetch & autofill"
+
+#: src/features/applications/components/application-form-sheet.tsx
+msgid "Fetched the posting and filled in the fields."
+msgstr "Fetched the posting and filled in the fields."
+
 #: src/features/homepage/page.tsx
 msgid "Fifteen templates, all free. Pick one you like. You can change the type, color, and layout in the editor."
 msgstr "Fifteen templates, all free. Pick one you like. You can change the type, color, and layout in the editor."
@@ -2682,6 +2812,10 @@ msgstr "Fit to view"
 #: src/features/homepage/feature-explorer.tsx
 msgid "Fits into your workflow"
 msgstr "Fits into your workflow"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "flag"
+msgstr "flag"
 
 #: src/features/ats-checker/messages.ts
 msgid "Flatten the form so the text is part of the page."
@@ -2774,6 +2908,14 @@ msgstr "French"
 msgid "From your resume and the posting"
 msgstr "From your resume and the posting"
 
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Full evaluation"
+msgstr "Full evaluation"
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Full evaluation started. Open the Evaluation tab to follow it."
+msgstr "Full evaluation started. Open the Evaluation tab to follow it."
+
 #: src/features/resume/export/download-dialog.tsx
 msgid "Full resume data for backup or import."
 msgstr "Full resume data for backup or import."
@@ -2791,6 +2933,10 @@ msgstr "Fullscreen"
 #: src/components/input/rich-input.tsx
 msgid "Fullscreen Editor"
 msgstr "Fullscreen Editor"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Gaps & mitigations"
+msgstr "Gaps & mitigations"
 
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Gaps:"
@@ -2882,6 +3028,10 @@ msgstr "Greek"
 #: src/routes/dashboard/resumes/index.tsx
 msgid "Grid"
 msgstr "Grid"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Hard stops"
+msgstr "Hard stops"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/typography.tsx
 msgctxt "Headings or Titles (H1, H2, H3, H4, H5, H6)"
@@ -2992,6 +3142,10 @@ msgstr "Hide preview"
 msgid "Hide Section Icons"
 msgstr "Hide Section Icons"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "high"
+msgstr "high"
+
 #: src/features/ats-checker/ai-review/ai-review-results.tsx
 msgid "High impact"
 msgstr "High impact"
@@ -3008,6 +3162,10 @@ msgstr "Highlight Color"
 msgid "Hindi"
 msgstr "Hindi"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Hint:"
+msgstr "Hint:"
+
 #: src/features/command-palette/pages/navigation.tsx
 msgid "Home"
 msgstr "Home"
@@ -3015,6 +3173,10 @@ msgstr "Home"
 #: src/features/settings/pages/api-keys.tsx
 msgid "How do I use the API?"
 msgstr "How do I use the API?"
+
+#: src/features/applications/components/application-form-sheet.tsx
+msgid "https://… (job posting URL)"
+msgstr "https://… (job posting URL)"
 
 #: src/libs/locale.ts
 msgid "Hungarian"
@@ -3082,6 +3244,10 @@ msgstr "Import from library"
 msgid "Import JSON"
 msgstr "Import JSON"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Importance"
+msgstr "Importance"
+
 #. placeholder {0}: result.imported
 #: src/features/applications/components/import-applications-sheet.tsx
 msgid "Imported {0} application(s)."
@@ -3128,6 +3294,10 @@ msgstr "Increase zoom"
 msgid "Indonesian"
 msgstr "Indonesian"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "inferred"
+msgstr "inferred"
+
 #: src/libs/resume/section.tsx
 msgid "Information"
 msgstr "Information"
@@ -3171,6 +3341,10 @@ msgstr "Interests"
 msgid "Interview"
 msgstr "Interview"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Interview plan"
+msgstr "Interview plan"
+
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Invalid AI provider configuration."
 msgstr "Invalid AI provider configuration."
@@ -3190,6 +3364,14 @@ msgstr "Italic"
 #: src/libs/locale.ts
 msgid "Japanese"
 msgstr "Japanese"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "JD signal"
+msgstr "JD signal"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "JD signal:"
+msgstr "JD signal:"
 
 #: src/features/command-palette/pages/navigation.tsx
 msgid "Job"
@@ -3308,6 +3490,10 @@ msgstr "Keep your layout intact. Ready to send, upload, or print."
 msgid "Key"
 msgstr "Key"
 
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Keyword coverage:"
+msgstr "Keyword coverage:"
+
 #: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
 msgid "Keyword layout"
 msgstr "Keyword layout"
@@ -3422,6 +3608,22 @@ msgstr "Left Align"
 msgid "Legal"
 msgstr "Legal"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Legitimacy signals"
+msgstr "Legitimacy signals"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Legitimacy: high confidence"
+msgstr "Legitimacy: high confidence"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Legitimacy: proceed with caution"
+msgstr "Legitimacy: proceed with caution"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Legitimacy: suspicious"
+msgstr "Legitimacy: suspicious"
+
 #: src/features/ats-checker/messages.ts
 msgid "Length is not a defect, and there is no universal one-page rule. Keep the pages that earn their place."
 msgstr "Length is not a defect, and there is no universal one-page rule. Keep the pages that earn their place."
@@ -3440,6 +3642,10 @@ msgstr "Level"
 #: src/components/level/display.tsx
 msgid "Level {level} of 5"
 msgstr "Level {level} of 5"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Level & positioning"
+msgstr "Level & positioning"
 
 #: src/components/ui/copyright.tsx
 msgid "Licensed under <0>MIT</0>."
@@ -3476,6 +3682,10 @@ msgstr "Link a Reactive Resume (recommended)"
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Link a Reactive Resume to use AI match scoring and tailoring."
 msgstr "Link a Reactive Resume to use AI match scoring and tailoring."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Link a resume and paste the job description (Edit) to run an evaluation."
+msgstr "Link a resume and paste the job description (Edit) to run an evaluation."
 
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Link a resume and paste the job description (Edit) to score your fit and tailor a copy."
@@ -3559,6 +3769,7 @@ msgstr "Loading…"
 #: src/features/applications/components/application-form-sheet.tsx
 #: src/features/applications/components/table-view.tsx
 #: src/features/ats-checker/parse-preview.tsx
+#: src/features/evaluations/components/evaluation-panel.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/basics.tsx
 msgid "Location"
 msgstr "Location"
@@ -3580,9 +3791,25 @@ msgstr "Long stretches are set in capitals."
 msgid "Lost access to your authenticator?"
 msgstr "Lost access to your authenticator?"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "low"
+msgstr "low"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Low confidence — this is not a clean result"
+msgstr "Low confidence — this is not a clean result"
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Low confidence — this is not a clean result:"
+msgstr "Low confidence — this is not a clean result:"
+
 #: src/features/ats-checker/ai-review/ai-review-results.tsx
 msgid "Low impact"
 msgstr "Low impact"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "low signal"
+msgstr "low signal"
 
 #: src/features/homepage/resume-sculpture.tsx
 msgid "Made with Reactive Resume"
@@ -3646,9 +3873,21 @@ msgstr "Margin (Vertical)"
 msgid "Mark rejected"
 msgstr "Mark rejected"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Match"
+msgstr "Match"
+
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Match scoring failed."
 msgstr "Match scoring failed."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "meaningful"
+msgstr "meaningful"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "medium"
+msgstr "medium"
 
 #: src/features/ats-checker/ai-review/ai-review-results.tsx
 msgid "Medium impact"
@@ -3660,6 +3899,14 @@ msgstr "Medium impact"
 msgid "Microsoft Word"
 msgstr "Microsoft Word"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "missing"
+msgstr "missing"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Missing from your resume"
+msgstr "Missing from your resume"
+
 #: src/routes/agent/-components/resume-pane.tsx
 msgid "Missing working resume"
 msgstr "Missing working resume"
@@ -3667,6 +3914,10 @@ msgstr "Missing working resume"
 #: src/features/homepage/site-footer.tsx
 msgid "MIT License"
 msgstr "MIT License"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Mitigation:"
+msgstr "Mitigation:"
 
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Model"
@@ -3739,6 +3990,10 @@ msgstr "Moved to"
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom-fields.tsx
 msgid "Must start with https://"
 msgstr "Must start with https://"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "n/a"
+msgstr "n/a"
 
 #. Label for full name input on registration form
 #: src/dialogs/api-key/create.tsx
@@ -3827,6 +4082,10 @@ msgstr "New Thread"
 #: src/features/cover-letters/library.tsx
 msgid "Next"
 msgstr "Next"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Next action:"
+msgstr "Next action:"
 
 #: src/features/homepage/template-shelf.tsx
 msgid "Next template"
@@ -3935,6 +4194,10 @@ msgstr "No resumes yet."
 msgid "No saved versions yet."
 msgstr "No saved versions yet."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "No skill requirements were extracted from the posting."
+msgstr "No skill requirements were extracted from the posting."
+
 #: src/features/ats-checker/messages.ts
 msgid "No skills section was found."
 msgstr "No skills section was found."
@@ -3946,6 +4209,14 @@ msgstr "No source data yet."
 #: src/features/ats-checker/report/jd-coverage.tsx
 msgid "No specific terms could be pulled out of that job description, so it may be mostly boilerplate. Paste the requirements section for a more useful comparison."
 msgstr "No specific terms could be pulled out of that job description, so it may be mostly boilerplate. Paste the requirements section for a more useful comparison."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "No sponsorship"
+msgstr "No sponsorship"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "No sponsorship needed"
+msgstr "No sponsorship needed"
 
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "No tested provider"
@@ -3974,6 +4245,14 @@ msgstr "Norwegian"
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Not connected"
 msgstr "Not connected"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "not evaluated"
+msgstr "not evaluated"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Not evaluated:"
+msgstr "Not evaluated:"
 
 #: src/features/ats-checker/ai-review/ai-review-results.tsx
 msgid "Not evidenced in your resume"
@@ -4024,6 +4303,10 @@ msgstr "Odia"
 #: src/features/homepage/feature-explorer.tsx
 msgid "Offer"
 msgstr "Offer"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "ok"
+msgstr "ok"
 
 #: src/features/settings/pages/api-keys.tsx
 msgid "Once deleted, the key can no longer access your data. This cannot be undone."
@@ -4158,6 +4441,10 @@ msgstr "Original table formatting is preserved. This content is read-only becaus
 msgid "out of 100"
 msgstr "out of 100"
 
+#: src/features/applications/components/application-detail-sheet.tsx
+msgid "Overview"
+msgstr "Overview"
+
 #: src/libs/resume/section.tsx
 msgid "Page"
 msgstr "Page"
@@ -4179,6 +4466,10 @@ msgstr "Paragraph"
 #: src/components/input/rich-input.tsx
 msgid "Paragraph and heading style"
 msgstr "Paragraph and heading style"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "partial"
+msgstr "partial"
 
 #. Authentication provider display name in account settings
 #. Label for passkey sign-in button
@@ -4394,6 +4685,10 @@ msgstr "Portuguese (Portugal)"
 msgid "Position"
 msgstr "Position"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Positioning"
+msgstr "Positioning"
+
 #: src/libs/resume/ats.ts
 msgid "Prefer a conventional heading such as \"Work Experience\" or \"Education\"."
 msgstr "Prefer a conventional heading such as \"Work Experience\" or \"Education\"."
@@ -4408,6 +4703,10 @@ msgstr "Prefer a single column, or keep the side column to short, self-contained
 #: src/routes/dashboard/settings/preferences.tsx
 msgid "Preferences"
 msgstr "Preferences"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "preferred"
+msgstr "preferred"
 
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Prepare a conservative patch that improves clarity without changing the story of my career."
@@ -4553,6 +4852,10 @@ msgstr "Publisher"
 #: src/features/ats-checker/messages.ts
 msgid "Put a plain email address near the top of the first page. It is what most systems file you under."
 msgstr "Put a plain email address near the top of the first page. It is what most systems file you under."
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Quick match"
+msgstr "Quick match"
 
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Raw JSON"
@@ -4726,6 +5029,10 @@ msgstr "Register New Device"
 msgid "Released under the <0>MIT License</0>."
 msgstr "Released under the <0>MIT License</0>."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Reliability"
+msgstr "Reliability"
+
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Reload latest version"
 msgstr "Reload latest version"
@@ -4824,6 +5131,22 @@ msgstr "Report a Bug"
 #: src/routes/_home/-sections/footer.tsx
 msgid "Report an issue"
 msgstr "Report an issue"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Reports to"
+msgstr "Reports to"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Requirement"
+msgstr "Requirement"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Requirements"
+msgstr "Requirements"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Research first"
+msgstr "Research first"
 
 #: src/features/settings/pages/profile.tsx
 msgid "Resend verification email"
@@ -4941,6 +5264,7 @@ msgstr "Resumes"
 
 #: src/features/cover-letters/editor-dialog.tsx
 #: src/features/cover-letters/library.tsx
+#: src/features/evaluations/components/evaluation-panel.tsx
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Retry"
 msgstr "Retry"
@@ -4981,6 +5305,15 @@ msgstr "Rhyhorn sample resume"
 msgid "Right Align"
 msgstr "Right Align"
 
+#. placeholder {0}: riskLevelLabel(blocks.riskSummary.level)
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Risk ({0}):"
+msgstr "Risk ({0}):"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Risk:"
+msgstr "Risk:"
+
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Role (optional)"
 msgstr "Role (optional)"
@@ -4997,6 +5330,10 @@ msgstr "Role A–Z"
 msgid "Role Progression"
 msgstr "Role Progression"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Role summary"
+msgstr "Role summary"
+
 #: src/libs/locale.ts
 msgid "Romanian"
 msgstr "Romanian"
@@ -5005,6 +5342,7 @@ msgstr "Romanian"
 msgid "Rotation"
 msgstr "Rotation"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "Run again"
 msgstr "Run again"
@@ -5017,9 +5355,21 @@ msgstr "Run AI review"
 msgid "Run deep check"
 msgstr "Run deep check"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Run full evaluation"
+msgstr "Run full evaluation"
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Running quick match…"
+msgstr "Running quick match…"
+
 #: src/routes/agent/-components/tool-part-card.tsx
 msgid "Running…"
 msgstr "Running…"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Runs a multi-pass analysis of this posting against your linked resume: a requirement-by-requirement match table, level and compensation strategy, legitimacy screening, interview prep, and a 1–5 verdict where 4.0 is the apply line. The job description is archived verbatim with the report."
+msgstr "Runs a multi-pass analysis of this posting against your linked resume: a requirement-by-requirement match table, level and compensation strategy, legitimacy screening, interview prep, and a 1–5 verdict where 4.0 is the apply line. The job description is archived verbatim with the report."
 
 #: src/libs/locale.ts
 msgid "Russian"
@@ -5137,14 +5487,6 @@ msgstr "Scan the QR code below with your preferred authenticator app. You can al
 #: src/dialogs/resume/sections/education.tsx
 msgid "School"
 msgstr "School"
-
-#: src/features/applications/components/application-ai-copilot.tsx
-msgid "Score my fit"
-msgstr "Score my fit"
-
-#: src/features/applications/components/application-ai-copilot.tsx
-msgid "Scoring your fit…"
-msgstr "Scoring your fit…"
 
 #: src/routes/dashboard/-components/sidebar.tsx
 msgid "Search"
@@ -5532,6 +5874,10 @@ msgstr "Single-column; polished and serious for senior or enterprise-level posit
 msgid "Size"
 msgstr "Size"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Skill gap"
+msgstr "Skill gap"
+
 #: src/dialogs/resume/sections/custom.tsx
 #: src/features/homepage/export-playground.tsx
 #: src/features/homepage/languages-showcase.tsx
@@ -5540,6 +5886,10 @@ msgstr "Size"
 #: src/libs/resume/section.tsx
 msgid "Skills"
 msgstr "Skills"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Skip"
+msgstr "Skip"
 
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Skip and Upload"
@@ -5564,6 +5914,10 @@ msgstr "Slovenian"
 #: src/dialogs/resume/index.tsx
 msgid "Slug"
 msgstr "Slug"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Soft gaps"
+msgstr "Soft gaps"
 
 #: src/libs/resume/ats.ts
 msgid "Some application systems require one before you can submit."
@@ -5616,6 +5970,10 @@ msgstr "Something else…"
 #: src/components/layout/error-screen.tsx
 msgid "Something went wrong"
 msgstr "Something went wrong"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Something went wrong during the run."
+msgstr "Something went wrong during the run."
 
 #: src/features/ats-checker/tool.tsx
 msgid "Something went wrong while reading that file. Please try again."
@@ -5689,6 +6047,14 @@ msgstr "Spell the month, as in \"Mar 2022\"."
 #: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
 msgid "Sponsors"
 msgstr "Sponsors"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Sponsors visas"
+msgstr "Sponsors visas"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Sponsorship unstated"
+msgstr "Sponsorship unstated"
 
 #: src/features/homepage/site-footer.tsx
 #: src/routes/_home/-sections/footer.tsx
@@ -5773,6 +6139,10 @@ msgstr "Start the resume with your name on its own line."
 msgid "Start thread"
 msgstr "Start thread"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "stated"
+msgstr "stated"
+
 #: src/libs/resume/section.tsx
 msgid "Statistics"
 msgstr "Statistics"
@@ -5798,13 +6168,25 @@ msgstr "Stop generation"
 msgid "Strengths"
 msgstr "Strengths"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Strengths & soft gaps"
+msgstr "Strengths & soft gaps"
+
 #: src/components/input/rich-input.tsx
 msgid "Strike"
 msgstr "Strike"
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "strong"
+msgstr "strong"
+
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Strong fit"
 msgstr "Strong fit"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "structural"
+msgstr "structural"
 
 #: src/features/resume/stylesheet/toolbar.tsx
 msgid "Stylesheet editor"
@@ -5848,6 +6230,10 @@ msgstr "Support the app by doing what you can!"
 #: src/features/homepage/page.tsx
 msgid "Support the project"
 msgstr "Support the project"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Supported by your resume"
+msgstr "Supported by your resume"
 
 #: src/features/ats-checker/messages.ts
 #: src/libs/resume/ats.ts
@@ -6026,6 +6412,10 @@ msgstr "The deep check could not finish. Please try again."
 msgid "The imported file could not be parsed into a valid resume."
 msgstr "The imported file could not be parsed into a valid resume."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "The multi-pass analysis usually takes a minute. The skill gap below is already final."
+msgstr "The multi-pass analysis usually takes a minute. The skill gap below is already final."
+
 #: src/features/ats-checker/messages.ts
 msgid "The order the text is stored in disagrees badly with the order it reads in."
 msgstr "The order the text is stored in disagrees badly with the order it reads in."
@@ -6065,6 +6455,10 @@ msgstr "The provider returned a review that could not be read. Try again."
 #: src/features/auth/pages/error.tsx
 msgid "The provider's response could not be verified. Please start again."
 msgstr "The provider's response could not be verified. Please start again."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "The report and its archived job description snapshot will be permanently deleted."
+msgstr "The report and its archived job description snapshot will be permanently deleted."
 
 #: src/features/homepage/page.tsx
 msgid "The rest of your<0/>job search, too."
@@ -6478,6 +6872,10 @@ msgstr "Tokens: {total} ({cached} cached)"
 #: src/features/homepage/resume-sculpture.tsx
 msgid "Tools"
 msgstr "Tools"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Top strengths"
+msgstr "Top strengths"
 
 #: src/features/homepage/community-stats.tsx
 msgid "Total unavailable"
@@ -6952,6 +7350,10 @@ msgstr "Very few words were recovered for a resume."
 msgid "Very little text was recovered for this many pages."
 msgstr "Very little text was recovered for this many pages."
 
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Via"
+msgstr "Via"
+
 #: src/libs/locale.ts
 msgid "Vietnamese"
 msgstr "Vietnamese"
@@ -7108,6 +7510,14 @@ msgstr "Whether your timeline can be reconstructed."
 #: src/features/ats-checker/messages.ts
 msgid "Words run together when the text is extracted."
 msgstr "Words run together when the text is extracted."
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Work auth note"
+msgstr "Work auth note"
+
+#: src/features/evaluations/components/evaluation-panel.tsx
+msgid "Work authorization:"
+msgstr "Work authorization:"
 
 #: src/features/homepage/feature-explorer.tsx
 msgid "Work on your resume from your AI app."

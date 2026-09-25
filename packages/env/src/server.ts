@@ -88,6 +88,11 @@ export const env = createEnv({
 		FLAG_DISABLE_API_RATE_LIMIT: z.stringbool().default(false),
 		FLAG_ALLOW_UNSAFE_AI_BASE_URL: z.stringbool().default(false),
 		FLAG_ALLOW_UNSAFE_OAUTH_REDIRECT_URI: z.stringbool().default(false),
+		// Career features: the in-process pg-boss worker (evaluations, scans, follow-ups) and
+		// the server-side fetching of job boards / posting URLs. Both are opt-outs for
+		// operators who do not want background work or outbound fetches from the server.
+		FLAG_DISABLE_BACKGROUND_JOBS: z.stringbool().default(false),
+		FLAG_DISABLE_JOB_SCANNER: z.stringbool().default(false),
 	},
 	runtimeEnv: process.env,
 	emptyStringAsUndefined: true,
