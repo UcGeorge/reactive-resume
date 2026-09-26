@@ -4,14 +4,14 @@ Operational runbook for the `career-ops` fork deployed on Vercel. The Docker (dh
 
 ## Deployment overview
 
-| | |
-| --- | --- |
-| Vercel project | `reactive-resume` (team `petegeorge20005-9028s-projects`, Hobby) |
-| Source | `github.com/UcGeorge/reactive-resume`, branch `career-ops`, deployed via CLI from the local checkout |
-| Runtime | One Node 24 Function (max 300 s) + static web assets on the CDN; region `iad1` |
-| Postgres | Neon `neon-red-ladder` (Free) → `DATABASE_URL` + unpooled variants |
-| Redis | Upstash `upstash-kv-coffee-pocket` (Free) → `REDIS_URL` / `KV_URL` |
-| Files | Vercel Blob `reactive-resume-files` (private) → `BLOB_READ_WRITE_TOKEN` |
+|                |                                                                                                      |
+| -------------- | ---------------------------------------------------------------------------------------------------- |
+| Vercel project | `reactive-resume` (team `petegeorge20005-9028s-projects`, Hobby)                                     |
+| Source         | `github.com/UcGeorge/reactive-resume`, branch `career-ops`, deployed via CLI from the local checkout |
+| Runtime        | One Node 24 Function (max 300 s) + static web assets on the CDN; region `iad1`                       |
+| Postgres       | Neon `neon-red-ladder` (Free) → `DATABASE_URL` + unpooled variants                                   |
+| Redis          | Upstash `upstash-kv-coffee-pocket` (Free) → `REDIS_URL` / `KV_URL`                                   |
+| Files          | Vercel Blob `reactive-resume-files` (private) → `BLOB_READ_WRITE_TOKEN`                              |
 
 Git auto-deploy is not connected. To enable it: Vercel dashboard → Project → Settings → Git → connect the GitHub repo and set **Production Branch** to `career-ops`.
 
@@ -63,13 +63,13 @@ Both cron endpoints refuse every request when `CRON_SECRET` is unset.
 
 ## Career features: Vercel vs Docker
 
-| Feature | Docker (dh) | Vercel |
-| --- | --- | --- |
-| Evaluations / tailoring | pg-boss queue, retries | in-request via `waitUntil`; ≤ 300 s; manual retry |
-| Scheduled scanning | every 6 h (`SCANNER_INTERVAL_HOURS`) | off — manual Scan now only |
-| Follow-ups materialize / digest | in-process daily crons | daily Vercel cron; digest inert without SMTP |
-| Queue persistence & retries | yes (pg-boss) | no |
-| In-app follow-up queue | fresh (recomputes on read) | fresh (same) |
+| Feature                         | Docker (dh)                          | Vercel                                            |
+| ------------------------------- | ------------------------------------ | ------------------------------------------------- |
+| Evaluations / tailoring         | pg-boss queue, retries               | in-request via `waitUntil`; ≤ 300 s; manual retry |
+| Scheduled scanning              | every 6 h (`SCANNER_INTERVAL_HOURS`) | off — manual Scan now only                        |
+| Follow-ups materialize / digest | in-process daily crons               | daily Vercel cron; digest inert without SMTP      |
+| Queue persistence & retries     | yes (pg-boss)                        | no                                                |
+| In-app follow-up queue          | fresh (recomputes on read)           | fresh (same)                                      |
 
 ## Troubleshooting
 
