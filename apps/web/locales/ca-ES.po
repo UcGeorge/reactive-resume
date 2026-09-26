@@ -47,6 +47,11 @@ msgstr ""
 msgid "{0, plural, one {# item} other {# items}}"
 msgstr "{0, plural, one {# element} other {# elements}}"
 
+#. placeholder {0}: selected.size
+#: src/features/discovery/components/inbox-view.tsx
+msgid "{0, plural, one {# job selected} other {# jobs selected}}"
+msgstr ""
+
 #. placeholder {0}: item.roles.length
 #: src/routes/builder/$resumeId/-sidebar/left/sections/experience.tsx
 msgid "{0, plural, one {# role} other {# roles}}"
@@ -55,6 +60,16 @@ msgstr "{0, plural, one {# càrrec} other {# càrrecs}}"
 #. placeholder {0}: report.warnings.length
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "{0, plural, one {# warning} other {# warnings}}"
+msgstr ""
+
+#. placeholder {0}: companies.length
+#: src/features/discovery/components/companies-view.tsx
+msgid "{0, plural, one {# watched company} other {# watched companies}}"
+msgstr ""
+
+#. placeholder {0}: result.dismissed
+#: src/features/discovery/components/inbox-view.tsx
+msgid "{0, plural, one {Dismissed # job.} other {Dismissed # jobs.}}"
 msgstr ""
 
 #. placeholder {0}: report.violations.length
@@ -131,6 +146,22 @@ msgstr "{0} per corregir"
 msgid "{column, plural, one {# Column} other {# Columns}}"
 msgstr "{column, plural, one {# columna} other {# columnes}}"
 
+#. placeholder {0}: result.error ?? t`scan failed.`
+#: src/features/discovery/components/companies-view.tsx
+msgid "{companyName}: {0}"
+msgstr ""
+
+#. placeholder {0}: result.fetched
+#. placeholder {1}: result.matched
+#. placeholder {2}: result.added
+#: src/features/discovery/components/companies-view.tsx
+msgid "{companyName}: fetched {0} postings, {1} matched, {2} new."
+msgstr ""
+
+#: src/features/discovery/components/companies-view.tsx
+msgid "{companyName}: this careers site isn't supported yet."
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "{count, plural, one {# error} other {# errors}}"
 msgstr "{count, plural, one {# error} other {# errors}}"
@@ -154,6 +185,10 @@ msgstr "{passedRules} de {totalRules} comprovacions aprovades"
 #: src/libs/resume/ats.ts
 msgid "{sectionTitle} · Item {itemNumber}"
 msgstr "{sectionTitle} · Element {itemNumber}"
+
+#: src/routes/dashboard/discover/index.tsx
+msgid "{watchedCount, plural, one {Watching # company} other {Watching # companies}}"
+msgstr ""
 
 #: src/features/homepage/page.tsx
 msgid "<0>Free forever and open source.</0><1/>No ads, paywalls, or tracking."
@@ -362,6 +397,10 @@ msgstr "Mida real (100%)"
 msgid "Add"
 msgstr "Afegeix"
 
+#: src/features/discovery/components/settings-view.tsx
+msgid "Add a company name…"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom-fields.tsx
 msgid "Add a custom field"
 msgstr "Afegeix un camp personalitzat"
@@ -369,6 +408,10 @@ msgstr "Afegeix un camp personalitzat"
 #: src/routes/dashboard/applications/index.tsx
 msgid "Add a job you're applying to and link the resume you sent. Move it across the board as you hear back."
 msgstr "Afegeix una feina a la qual t'estàs presentant i enllaça el currículum que vas enviar. Mou-la pel tauler a mesura que rebis respostes."
+
+#: src/features/discovery/components/keyword-list-field.tsx
+msgid "Add a keyword and press Enter…"
+msgstr ""
 
 #: src/components/input/chip-input.tsx
 msgid "Add a keyword..."
@@ -629,6 +672,10 @@ msgstr "Tots els idiomes de l'aplicació"
 msgid "All applications (including archived)"
 msgstr "Totes les candidatures (incloses les arxivades)"
 
+#: src/features/discovery/components/settings-view.tsx
+msgid "Allow"
+msgstr ""
+
 #: src/features/auth/pages/consent.tsx
 msgid "Allow access"
 msgstr "Permet l'accés"
@@ -651,6 +698,14 @@ msgstr "Ja teniu un compte? <0/>"
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Already in your skills"
+msgstr ""
+
+#: src/features/discovery/components/settings-view.tsx
+msgid "Also drop postings whose location doesn't match any allow entry, instead of keeping them."
+msgstr ""
+
+#: src/features/discovery/components/settings-view.tsx
+msgid "Always allow"
 msgstr ""
 
 #: src/libs/locale.ts
@@ -1004,6 +1059,10 @@ msgstr "Ideal per a candidatures, compartició i impressió."
 msgid "Blank draft"
 msgstr "Esborrany en blanc"
 
+#: src/features/discovery/components/settings-view.tsx
+msgid "Block"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Blocker"
 msgstr "Bloquejant"
@@ -1054,6 +1113,10 @@ msgstr "Búlgar"
 msgid "Bulk delete failed. Please try again."
 msgstr "L'eliminació massiva ha fallat. Torna-ho a provar."
 
+#: src/features/discovery/components/inbox-view.tsx
+msgid "Bulk dismiss failed."
+msgstr ""
+
 #: src/features/applications/components/table-view.tsx
 msgid "Bulk update failed. Please try again."
 msgstr "L'actualització massiva ha fallat. Torna-ho a provar."
@@ -1090,6 +1153,7 @@ msgstr "De la comunitat i per a la comunitat."
 #: src/features/applications/components/application-form-sheet.tsx
 #: src/features/applications/components/export-applications-sheet.tsx
 #: src/features/applications/components/import-applications-sheet.tsx
+#: src/features/discovery/components/watch-company-dialog.tsx
 #: src/features/homepage/ats-playground.tsx
 #: src/features/resume/builder/password-dialog.tsx
 #: src/features/settings/integrations/components/ai-section.tsx
@@ -1108,6 +1172,10 @@ msgstr "Cancel·la"
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Cannot restore; the resume has changed since this edit was applied."
 msgstr "No es pot restaurar; el currículum ha canviat des que s'ha aplicat aquesta edició."
+
+#: src/features/discovery/components/watch-company-dialog.tsx
+msgid "Careers page URL"
+msgstr ""
 
 #: src/libs/locale.ts
 msgid "Catalan"
@@ -1279,6 +1347,7 @@ msgstr "Argila"
 #. Clear the text color
 #: src/components/input/rich-input.tsx
 #: src/features/applications/components/table-view.tsx
+#: src/features/discovery/components/inbox-view.tsx
 msgid "Clear"
 msgstr "Esborra"
 
@@ -1307,6 +1376,7 @@ msgstr "Tanca"
 msgid "Close AI assistant"
 msgstr "Tanca l'assistent d'IA"
 
+#: src/features/discovery/components/inbox-view.tsx
 #: src/features/evaluations/components/evaluation-panel.tsx
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Collapse"
@@ -1345,6 +1415,14 @@ msgstr "Comunitat"
 msgid "Compact"
 msgstr "Compacte"
 
+#: src/routes/dashboard/discover/index.tsx
+msgid "Companies"
+msgstr ""
+
+#: src/features/discovery/components/settings-view.tsx
+msgid "Companies that never surface in your inbox (a do-not-apply list)."
+msgstr ""
+
 #: src/dialogs/resume/sections/experience.tsx
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Company"
@@ -1357,6 +1435,18 @@ msgstr "Empresa / Rol"
 #: src/routes/dashboard/applications/index.tsx
 msgid "Company A–Z"
 msgstr "Empresa A–Z"
+
+#: src/features/discovery/components/settings-view.tsx
+msgid "Company blacklist"
+msgstr ""
+
+#: src/features/discovery/components/watch-company-dialog.tsx
+msgid "Company name"
+msgstr ""
+
+#: src/features/discovery/components/companies-view.tsx
+msgid "Company removed from your watches."
+msgstr ""
 
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Compare this resume against this job posting URL and update the keywords without overselling anything."
@@ -1445,6 +1535,10 @@ msgstr "Contenir"
 #: src/features/cover-letters/editor.tsx
 msgid "Content"
 msgstr "Contingut"
+
+#: src/features/discovery/components/settings-view.tsx
+msgid "Content excludes"
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Content is laid out in a grid."
@@ -1641,8 +1735,16 @@ msgstr ""
 msgid "Couldn't delete the timeline entry."
 msgstr "No s'ha pogut suprimir l'entrada de la cronologia."
 
+#: src/features/discovery/components/companies-view.tsx
+msgid "Couldn't delete the watch."
+msgstr ""
+
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Couldn't discard the tailored resume."
+msgstr ""
+
+#: src/features/discovery/components/inbox-view.tsx
+msgid "Couldn't dismiss the job."
 msgstr ""
 
 #: src/features/applications/components/application-form-sheet.tsx
@@ -1665,6 +1767,10 @@ msgstr "No s'ha pogut desar"
 msgid "Couldn't save the note."
 msgstr "No s'ha pogut desar la nota."
 
+#: src/features/discovery/components/settings-view.tsx
+msgid "Couldn't save the settings."
+msgstr ""
+
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Couldn't save your changes. Please try again."
 msgstr "No s'han pogut desar els canvis. Torna-ho a provar."
@@ -1678,9 +1784,17 @@ msgstr ""
 msgid "Couldn't update the timeline entry."
 msgstr "No s'ha pogut actualitzar l'entrada de la cronologia."
 
+#: src/features/discovery/components/companies-view.tsx
+msgid "Couldn't update the watch."
+msgstr ""
+
 #: src/features/applications/components/file-attachment-field.tsx
 msgid "Couldn't upload the file. Please try again."
 msgstr "No s'ha pogut carregar el fitxer. Torna-ho a intentar."
+
+#: src/features/discovery/components/watch-company-dialog.tsx
+msgid "Couldn't watch the company."
+msgstr ""
 
 #: src/features/applications/components/insights-view.tsx
 msgid "Count by source"
@@ -1878,6 +1992,10 @@ msgstr "Retalla i puja"
 msgid "Crop picture"
 msgstr "Retallar imatge"
 
+#: src/features/discovery/components/inbox-view.tsx
+msgid "Cross-listed"
+msgstr ""
+
 #: src/features/applications/components/import-applications-sheet.tsx
 msgid "CSV data"
 msgstr "Dades CSV"
@@ -1960,6 +2078,10 @@ msgstr "Data de sol·licitud"
 msgid "Dates"
 msgstr "Dates"
 
+#: src/features/discovery/components/settings-view.tsx
+msgid "days"
+msgstr ""
+
 #: src/components/input/rich-input.tsx
 msgid "Decrease indent"
 msgstr "Reduir la sagnia"
@@ -1998,6 +2120,7 @@ msgstr "Titulació"
 #: src/features/applications/components/application-detail-sheet.tsx
 #: src/features/applications/components/table-view.tsx
 #: src/features/cover-letters/editor-dialog.tsx
+#: src/features/discovery/components/companies-view.tsx
 #: src/features/evaluations/components/evaluation-panel.tsx
 #: src/features/settings/authentication/components/passkeys.tsx
 #: src/features/settings/pages/api-keys.tsx
@@ -2061,6 +2184,10 @@ msgstr "Vols suprimir aquesta entrada de la cronologia?"
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Delete timeline entry"
 msgstr "Suprimeix l'entrada de la cronologia"
+
+#: src/features/discovery/components/companies-view.tsx
+msgid "Delete watch"
+msgstr ""
 
 #. placeholder {0}: result.deleted
 #: src/features/applications/components/table-view.tsx
@@ -2170,9 +2297,24 @@ msgstr "Desconnecta"
 msgid "Discord"
 msgstr "Discord"
 
+#: src/features/command-palette/pages/navigation.tsx
+#: src/routes/dashboard/-components/sidebar.tsx
+#: src/routes/dashboard/discover/index.tsx
+msgid "Discover"
+msgstr ""
+
 #: src/features/applications/components/application-ai-copilot.tsx
+#: src/features/discovery/components/inbox-view.tsx
 msgid "Dismiss"
 msgstr "Ignora"
+
+#: src/features/discovery/components/inbox-view.tsx
+msgid "Dismiss selected"
+msgstr ""
+
+#: src/features/discovery/components/inbox-view.tsx
+msgid "Dismissed"
+msgstr ""
 
 #: src/features/homepage/page.tsx
 msgid "Docs"
@@ -2192,6 +2334,10 @@ msgstr "Documents enviats"
 msgid "Don't have an account? <0/>"
 msgstr "No teniu compte? <0/>"
 
+#: src/features/discovery/components/settings-view.tsx
+msgid "Don't re-surface a company + title you already applied to within this window."
+msgstr ""
+
 #: src/components/ui/donation-toast.tsx
 msgid "Donate"
 msgstr "Donar"
@@ -2200,6 +2346,7 @@ msgstr "Donar"
 msgid "Donate to Reactive Resume"
 msgstr "Fes una donació a Reactive Resume"
 
+#: src/features/discovery/components/watch-company-dialog.tsx
 #: src/routes/agent/-components/tool-part-card.tsx
 msgid "Done"
 msgstr "Fet"
@@ -2320,6 +2467,26 @@ msgstr "S’està duplicant el currículum..."
 #: src/libs/locale.ts
 msgid "Dutch"
 msgstr "Neerlandès"
+
+#: src/features/discovery/components/settings-view.tsx
+msgid "e.g. engineer, word:go, backend+senior"
+msgstr ""
+
+#: src/features/discovery/components/settings-view.tsx
+msgid "e.g. intern, staffing"
+msgstr ""
+
+#: src/features/discovery/components/settings-view.tsx
+msgid "e.g. On-site, US only"
+msgstr ""
+
+#: src/features/discovery/components/settings-view.tsx
+msgid "e.g. Remote, Berlin, EU"
+msgstr ""
+
+#: src/features/discovery/components/settings-view.tsx
+msgid "e.g. security clearance"
+msgstr ""
 
 #: src/routes/builder/$resumeId/-components/version-history.tsx
 msgid "Earlier versions are kept; the builder's undo history is reset."
@@ -2443,6 +2610,11 @@ msgstr "Activa l’A2F"
 msgid "Enable editing"
 msgstr "Activa l'edició"
 
+#. placeholder {0}: company.name
+#: src/features/discovery/components/companies-view.tsx
+msgid "Enable scanning for {0}"
+msgstr ""
+
 #: src/dialogs/auth/enable-two-factor.tsx
 msgid "Enable Two-Factor Authentication"
 msgstr "Activa l’autenticació en dos passos"
@@ -2512,6 +2684,10 @@ msgstr "Introdueix la teva contrasenya per confirmar la configuració de l'auten
 msgid "Enter your password to disable two-factor authentication. Your account will be less secure without 2FA enabled."
 msgstr "Introdueix la contrasenya per desactivar l’autenticació en dos passos. El compte serà menys segur sense l’A2F activada."
 
+#: src/features/discovery/components/companies-view.tsx
+msgid "error"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "Error"
 msgstr "Error"
@@ -2552,6 +2728,11 @@ msgstr "Exemple de candidatura"
 msgid "Example edit"
 msgstr "Exemple de modificació"
 
+#: src/features/discovery/components/settings-view.tsx
+#: src/features/discovery/components/watch-company-dialog.tsx
+msgid "Exclude titles matching"
+msgstr ""
+
 #: src/features/resume/stylesheet/toolbar.tsx
 msgid "Exit focus mode"
 msgstr "Surt del mode d'enfocament"
@@ -2560,6 +2741,7 @@ msgstr "Surt del mode d'enfocament"
 msgid "Exit Fullscreen"
 msgstr "Surt de la pantalla completa"
 
+#: src/features/discovery/components/inbox-view.tsx
 #: src/features/evaluations/components/evaluation-panel.tsx
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Expand"
@@ -2574,6 +2756,10 @@ msgstr ""
 #: src/libs/resume/section.tsx
 msgid "Experience"
 msgstr "Experiència"
+
+#: src/features/discovery/components/inbox-view.tsx
+msgid "Expired"
+msgstr ""
 
 #: src/dialogs/api-key/create.tsx
 msgid "Expires in"
@@ -2874,6 +3060,11 @@ msgstr "Troba'ns a GitHub"
 msgid "Finnish"
 msgstr "Finès"
 
+#. placeholder {0}: formatRelativeTime(job.firstSeenAt, relativeTimeFormatter)
+#: src/features/discovery/components/inbox-view.tsx
+msgid "First seen {0}"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Fit"
 msgstr "Ajust"
@@ -2977,6 +3168,11 @@ msgstr "Forma lliure"
 msgid "French"
 msgstr "Francès"
 
+#. placeholder {0}: format(salary.min)
+#: src/features/discovery/components/inbox-view.tsx
+msgid "From {0}"
+msgstr ""
+
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "From your resume and the posting"
 msgstr "Del teu currículum i de la publicació"
@@ -3067,6 +3263,10 @@ msgstr "Torna enrere"
 msgid "Go home"
 msgstr "Torna a casa"
 
+#: src/features/discovery/components/inbox-view.tsx
+msgid "Go to Companies"
+msgstr ""
+
 #: src/components/layout/error-screen.tsx
 #: src/components/layout/not-found-screen.tsx
 #: src/routes/_home/-sections/header.tsx
@@ -3105,6 +3305,10 @@ msgstr "Grec"
 #: src/routes/dashboard/resumes/index.tsx
 msgid "Grid"
 msgstr "Graella"
+
+#: src/features/discovery/components/settings-view.tsx
+msgid "Hard block"
+msgstr ""
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Hard stops"
@@ -3308,6 +3512,10 @@ msgstr "Importa el JSON de la carta de presentació"
 msgid "Import CSV"
 msgstr "Importa el fitxer CSV"
 
+#: src/features/discovery/components/inbox-view.tsx
+msgid "Import failed."
+msgstr ""
+
 #: src/features/applications/components/import-applications-sheet.tsx
 msgid "Import failed. Check the CSV and try again."
 msgstr "La importació ha fallat. Revisa el CSV i torna-ho a provar."
@@ -3325,14 +3533,26 @@ msgstr "Importa de la biblioteca"
 msgid "Import JSON"
 msgstr "Importa el JSON"
 
+#: src/features/discovery/components/inbox-view.tsx
+msgid "Import to Applications"
+msgstr ""
+
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Importance"
+msgstr ""
+
+#: src/features/discovery/components/inbox-view.tsx
+msgid "Imported"
 msgstr ""
 
 #. placeholder {0}: result.imported
 #: src/features/applications/components/import-applications-sheet.tsx
 msgid "Imported {0} application(s)."
 msgstr "S'han importat {0} candidatures."
+
+#: src/features/discovery/components/inbox-view.tsx
+msgid "Imported to Applications."
+msgstr ""
 
 #: src/dialogs/resume/import.tsx
 msgid "Importing from Word requires a connected AI provider."
@@ -3351,9 +3571,18 @@ msgstr "Important…"
 msgid "In {0}"
 msgstr "A {0}"
 
+#: src/routes/dashboard/discover/index.tsx
+msgid "Inbox"
+msgstr ""
+
 #: src/features/resume/export/download-dialog.tsx
 msgid "Include resume header"
 msgstr "Inclou la capçalera del currículum"
+
+#: src/features/discovery/components/settings-view.tsx
+#: src/features/discovery/components/watch-company-dialog.tsx
+msgid "Include titles matching"
+msgstr ""
 
 #: src/components/input/rich-input.tsx
 msgid "Increase indent"
@@ -3479,6 +3708,10 @@ msgstr "Oferta de feina"
 msgid "Job posting link"
 msgstr "Enllaç de l'oferta de feina"
 
+#: src/features/command-palette/pages/navigation.tsx
+msgid "Job scanner"
+msgstr ""
+
 #: src/features/applications/components/insights-view.tsx
 msgid "Job search pipeline"
 msgstr "Procés de cerca de feina"
@@ -3592,6 +3825,10 @@ msgstr "Disposició de les paraules clau"
 msgid "Keywords"
 msgstr "Paraules clau"
 
+#: src/features/discovery/components/settings-view.tsx
+msgid "Keywords match job titles as substrings. Prefix a keyword with word: for whole-word matching or stem: for stem matching, and join keywords with + to require all of them at once (an AND-group)."
+msgstr ""
+
 #: src/libs/locale.ts
 msgid "Khmer"
 msgstr "Khmer"
@@ -3636,6 +3873,13 @@ msgstr "Idiomes"
 #: src/routes/builder/$resumeId/-sidebar/right/sections/statistics.tsx
 msgid "Last downloaded on {0}"
 msgstr "Última baixada el {0}"
+
+#. placeholder {0}: formatRelativeTime(company.lastScanAt, relativeTimeFormatter)
+#. placeholder {0}: formatRelativeTime(lastScanAt, relativeTimeFormatter)
+#: src/features/discovery/components/companies-view.tsx
+#: src/routes/dashboard/discover/index.tsx
+msgid "last scan {0}"
+msgstr ""
 
 #: src/routes/dashboard/applications/index.tsx
 msgid "Last updated"
@@ -3866,6 +4110,10 @@ msgstr "S'està carregant…"
 #: src/routes/builder/$resumeId/-sidebar/left/sections/basics.tsx
 msgid "Location"
 msgstr "Ubicació"
+
+#: src/features/discovery/components/settings-view.tsx
+msgid "Location filter"
+msgstr ""
 
 #. Resume card context menu action to prevent edits
 #. Resume card dropdown action to prevent edits
@@ -4130,6 +4378,14 @@ msgstr "Xarxa"
 msgid "Never expires"
 msgstr "No caduca mai"
 
+#: src/features/discovery/components/companies-view.tsx
+msgid "never scanned"
+msgstr ""
+
+#: src/features/discovery/components/inbox-view.tsx
+msgid "New"
+msgstr ""
+
 #: src/features/auth/pages/error.tsx
 msgid "New account sign-ups are currently disabled on this server."
 msgstr "El registre de comptes nous està desactivat actualment en aquest servidor."
@@ -4226,6 +4482,10 @@ msgstr "No es van retornar dades del proveïdor d'IA."
 msgid "No dates were found."
 msgstr "No s'ha trobat cap data."
 
+#: src/features/discovery/components/inbox-view.tsx
+msgid "No description was captured for this posting — open the link for details."
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "No education section was found."
 msgstr "No s'ha trobat cap secció d'educació."
@@ -4233,6 +4493,10 @@ msgstr "No s'ha trobat cap secció d'educació."
 #: src/features/ats-checker/messages.ts
 msgid "No email address was found."
 msgstr "No s'ha trobat cap adreça de correu electrònic."
+
+#: src/features/discovery/components/inbox-view.tsx
+msgid "No jobs with this status."
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "No lines look like a job title paired with an employer."
@@ -4286,6 +4550,10 @@ msgstr "Encara no hi ha currículums."
 #: src/routes/builder/$resumeId/-components/version-history.tsx
 msgid "No saved versions yet."
 msgstr "Encara no hi ha versions desades."
+
+#: src/routes/dashboard/discover/index.tsx
+msgid "no scans yet"
+msgstr ""
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "No skill requirements were extracted from the posting."
@@ -4377,6 +4645,10 @@ msgstr "Nota"
 msgid "Notes"
 msgstr "Notes"
 
+#: src/features/discovery/components/inbox-view.tsx
+msgid "Nothing here"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Nothing marks a role as ongoing."
 msgstr "Res indica que un rol estigui en curs."
@@ -4401,6 +4673,7 @@ msgstr "Odia"
 msgid "Offer"
 msgstr "Oferta"
 
+#: src/features/discovery/components/companies-view.tsx
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "ok"
 msgstr ""
@@ -4417,6 +4690,10 @@ msgstr "Autoritza només les aplicacions en què confiïs. Aquesta aplicació po
 #: src/routes/builder/$resumeId/-sidebar/right/sections/layout/pages.tsx
 msgid "Only applies when the section fits on a single page."
 msgstr "Només s'aplica quan la secció cap en una sola pàgina."
+
+#: src/features/discovery/components/watch-company-dialog.tsx
+msgid "Only for this company, replacing your global title filter. Keywords match as substrings; prefix with word: or stem: for whole-word or stem matching, and join keywords with + to require all of them."
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Only one recognisable section heading was found."
@@ -4449,6 +4726,10 @@ msgstr "Obre l'agent d'IA"
 #: src/routes/builder/$resumeId/-components/ai-assistant.tsx
 msgid "Open AI assistant"
 msgstr "Obre l'assistent d'IA"
+
+#: src/features/discovery/components/inbox-view.tsx
+msgid "Open application"
+msgstr ""
 
 #: src/features/homepage/resume-sculpture.tsx
 msgid "Open design library"
@@ -4631,6 +4912,10 @@ msgstr "Cal una contrasenya"
 msgid "Passwords do not match."
 msgstr "Les contrasenyes no coincideixen."
 
+#: src/features/discovery/components/companies-view.tsx
+msgid "Paste a careers page URL and the scanner will check it for new postings that match your filters."
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "Paste a posting to see which of its terms already appear in your resume."
 msgstr "Enganxa una oferta per veure quins dels seus termes ja apareixen al teu currículum."
@@ -4780,6 +5065,10 @@ msgstr "Si us plau, pugeu un fitxer PDF."
 msgid "Plum"
 msgstr "Pruna"
 
+#: src/features/discovery/components/watch-company-dialog.tsx
+msgid "Point the scanner at a careers page. It's tested immediately so you know the board works before the background scans start."
+msgstr ""
+
 #: src/libs/locale.ts
 msgid "Polish"
 msgstr "Polonès"
@@ -4804,6 +5093,15 @@ msgstr "Càrrec"
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Positioning"
+msgstr ""
+
+#. placeholder {0}: formatRelativeTime(job.postedAt, relativeTimeFormatter)
+#: src/features/discovery/components/inbox-view.tsx
+msgid "Posted {0}"
+msgstr ""
+
+#: src/features/discovery/components/settings-view.tsx
+msgid "Postings are kept when their location matches an allow entry and dropped on a block entry. Hard blocks always win, and always-allow entries rescue a posting even when it was blocked."
 msgstr ""
 
 #: src/libs/resume/ats.ts
@@ -5199,6 +5497,10 @@ msgstr "Elimina el camp personalitzat"
 msgid "Remove file"
 msgstr "Elimina el fitxer"
 
+#: src/features/discovery/components/keyword-list-field.tsx
+msgid "Remove keyword"
+msgstr ""
+
 #: src/components/input/rich-input.tsx
 msgid "Remove link"
 msgstr "Elimina l'enllaç"
@@ -5230,6 +5532,10 @@ msgstr "Reordena"
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom-fields.tsx
 msgid "Reorder custom field"
 msgstr "Reordena el camp personalitzat"
+
+#: src/features/discovery/components/settings-view.tsx
+msgid "Repeat cooldown"
+msgstr ""
 
 #. placeholder {0}: jd.stuffedTerms.join(", ")
 #: src/features/ats-checker/report/jd-coverage.tsx
@@ -5267,6 +5573,10 @@ msgstr "Informa d’un problema"
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Reports to"
+msgstr ""
+
+#: src/features/discovery/components/inbox-view.tsx
+msgid "Repost"
 msgstr ""
 
 #: src/features/evaluations/components/evaluation-panel.tsx
@@ -5508,6 +5818,10 @@ msgstr "Romanès"
 msgid "Rotation"
 msgstr "Rotació"
 
+#: src/features/discovery/components/inbox-view.tsx
+msgid "Run a scan, or loosen the title and location filters in Settings."
+msgstr ""
+
 #: src/features/evaluations/components/evaluation-panel.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "Run again"
@@ -5634,6 +5948,10 @@ msgstr "Desa el model"
 msgid "Save resume changes before copying its content or styling."
 msgstr "Desa els canvis del currículum abans de copiar-ne el contingut o l'estil."
 
+#: src/features/discovery/components/settings-view.tsx
+msgid "Save settings"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Save the file with every page upright."
 msgstr "Desa el fitxer amb totes les pàgines dretes."
@@ -5654,9 +5972,33 @@ msgstr "Desant…"
 msgid "Say what you actually did."
 msgstr "Digues què vas fer de debò."
 
+#: src/features/discovery/components/companies-view.tsx
+msgid "Scan"
+msgstr ""
+
+#: src/routes/dashboard/discover/index.tsx
+msgid "Scan complete — {matched} matched, {added} new."
+msgstr ""
+
+#: src/features/discovery/components/companies-view.tsx
+msgid "scan failed."
+msgstr ""
+
+#: src/routes/dashboard/discover/index.tsx
+msgid "Scan now"
+msgstr ""
+
 #: src/dialogs/auth/enable-two-factor.tsx
 msgid "Scan the QR code below with your preferred authenticator app. You can also copy the secret below and paste it into your app."
 msgstr "Escaneja el codi QR següent amb l’aplicació autenticadora preferida. També pots copiar el secret següent i enganxar-lo a l’aplicació."
+
+#: src/features/discovery/components/settings-view.tsx
+msgid "Scanner settings saved."
+msgstr ""
+
+#: src/routes/dashboard/discover/index.tsx
+msgid "Scanning…"
+msgstr ""
 
 #: src/dialogs/resume/sections/education.tsx
 msgid "School"
@@ -5744,6 +6086,10 @@ msgstr "Mira què<0/>llegeix el programari."
 msgid "See whether your PDF has readable text. Read a sample or try your own PDF. Everything runs in your browser, so your file stays with you."
 msgstr "Comprova si el teu PDF té text llegible. Llegeix una mostra o prova el teu propi PDF. Tot s'executa al teu navegador, de manera que el fitxer es queda amb tu."
 
+#: src/features/discovery/components/inbox-view.tsx
+msgid "Seen"
+msgstr ""
+
 #. placeholder {0}: app.company
 #: src/features/applications/components/table-view.tsx
 msgid "Select {0}"
@@ -5768,6 +6114,10 @@ msgstr "Seleccioneu un model d'agent"
 #: src/features/settings/integrations/components/ai-provider-picker.tsx
 msgid "Select an AI provider"
 msgstr "Seleccioneu un proveïdor d'IA"
+
+#: src/features/discovery/components/inbox-view.tsx
+msgid "Select job"
+msgstr ""
 
 #: src/components/ui/combobox.tsx
 msgid "Select..."
@@ -5868,6 +6218,7 @@ msgstr "Configura un proveïdor d'IA per xatejar sobre aquest currículum i apli
 #: src/features/command-palette/pages/navigation.tsx
 #: src/routes/agent/-components/new-thread-setup.tsx
 #: src/routes/dashboard/-components/sidebar.tsx
+#: src/routes/dashboard/discover/index.tsx
 msgid "Settings"
 msgstr "Configuració"
 
@@ -6072,6 +6423,10 @@ msgstr ""
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Skip and Upload"
 msgstr "Omet i puja"
+
+#: src/features/discovery/components/settings-view.tsx
+msgid "Skip postings whose description contains any of these phrases (e.g. security clearance requirements)."
+msgstr ""
 
 #: src/features/homepage/page.tsx
 #: src/routes/_home/route.tsx
@@ -6343,12 +6698,25 @@ msgstr "Encara esperant {provider}… {elapsedSeconds}s"
 msgid "Stop generation"
 msgstr "Atura la generació"
 
+#. placeholder {0}: company.name
+#: src/features/discovery/components/companies-view.tsx
+msgid "Stop watching {0}?"
+msgstr ""
+
 #: src/features/ats-checker/ai-review/ai-review-results.tsx
 msgid "Strengths"
 msgstr "Fortaleses"
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Strengths & soft gaps"
+msgstr ""
+
+#: src/features/discovery/components/settings-view.tsx
+msgid "Strict"
+msgstr ""
+
+#: src/features/discovery/components/settings-view.tsx
+msgid "Strict location filtering"
 msgstr ""
 
 #: src/components/input/rich-input.tsx
@@ -6521,9 +6889,14 @@ msgstr "Galeria de plantilles"
 msgid "Templates"
 msgstr "Plantilles"
 
+#: src/features/discovery/components/companies-view.tsx
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Test"
 msgstr "Prova"
+
+#: src/features/discovery/components/watch-company-dialog.tsx
+msgid "Testing the board — this does a live fetch and can take a few seconds…"
+msgstr ""
 
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Testing…"
@@ -6607,6 +6980,13 @@ msgstr "L'aplicació que t'ha enviat aquí ha fet una sol·licitud d'autoritzaci
 msgid "The audit failed."
 msgstr ""
 
+#. placeholder {0}: result.fetched
+#. placeholder {1}: result.matched
+#. placeholder {2}: result.added
+#: src/features/discovery/components/watch-company-dialog.tsx
+msgid "The board works — fetched {0} postings, {1} matched your filters, {2} added to your inbox."
+msgstr ""
+
 #: src/features/ats-checker/ai-review/ai-review-card.tsx
 msgid "The checks above are mechanical. This asks a language model what a reader would think of your bullets, and suggests rewrites. It produces no score."
 msgstr "Les comprovacions anteriors són mecàniques. Aquesta pregunta a un model de llenguatge què en pensaria un lector de les teves vinyetes i suggereix reescriptures. No genera cap puntuació."
@@ -6624,8 +7004,20 @@ msgstr ""
 msgid "The imported file could not be parsed into a valid resume."
 msgstr "El fitxer importat no es va poder analitzar per convertir-lo en un currículum vàlid."
 
+#: src/routes/dashboard/discover/index.tsx
+msgid "The job scanner is disabled on this server"
+msgstr ""
+
+#: src/features/discovery/components/companies-view.tsx
+msgid "The last scan failed."
+msgstr ""
+
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "The multi-pass analysis usually takes a minute. The skill gap below is already final."
+msgstr ""
+
+#: src/routes/dashboard/discover/index.tsx
+msgid "The operator turned the scanner off with the FLAG_DISABLE_JOB_SCANNER flag. Ask them to enable it to watch company careers pages and discover new postings here."
 msgstr ""
 
 #: src/features/ats-checker/messages.ts
@@ -6688,6 +7080,19 @@ msgstr ""
 msgid "The same line repeats on every page."
 msgstr "La mateixa línia es repeteix a cada pàgina."
 
+#: src/features/discovery/components/companies-view.tsx
+#: src/routes/dashboard/discover/index.tsx
+msgid "The scan failed."
+msgstr ""
+
+#: src/features/discovery/components/inbox-view.tsx
+msgid "The scanner checks the careers pages of companies you watch and surfaces new postings that match your filters."
+msgstr ""
+
+#: src/features/discovery/components/inbox-view.tsx
+msgid "The scanner hasn't matched anything yet"
+msgstr ""
+
 #. placeholder {0}: getPdfFindingMessage(cap).title
 #: src/features/ats-checker/report/score-header.tsx
 msgid "The score is capped because of a blocking problem: {0}"
@@ -6695,6 +7100,14 @@ msgstr "La puntuació està limitada a causa d'un problema bloquejant: {0}"
 
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "The tailored copy will be permanently deleted, the application will be linked back to the source resume, and this run will be marked rejected. This can't be undone."
+msgstr ""
+
+#: src/features/discovery/components/companies-view.tsx
+msgid "The test failed."
+msgstr ""
+
+#: src/features/discovery/components/watch-company-dialog.tsx
+msgid "The test scan failed."
 msgstr ""
 
 #: src/features/ats-checker/messages.ts
@@ -6708,6 +7121,10 @@ msgstr "La part superior de la primera pàgina no sembla un nom."
 #: src/components/input/rich-input.tsx
 msgid "The URL you entered is not valid."
 msgstr "L’URL que has introduït no és vàlida."
+
+#: src/features/discovery/components/companies-view.tsx
+msgid "The watch and its scan history are removed. Jobs already discovered stay in your inbox."
+msgstr ""
 
 #: src/routes/agent/-components/resume-pane.tsx
 msgid "The working resume was deleted. This thread is read-only."
@@ -6772,6 +7189,10 @@ msgstr "Aquesta acció no es pot desfer. Suprimeix els missatges del fil i els f
 #: src/routes/builder/$resumeId/-components/ai-assistant.tsx
 msgid "This assistant could not be opened."
 msgstr "No s'ha pogut obrir aquest assistent."
+
+#: src/features/discovery/components/watch-company-dialog.tsx
+msgid "This careers site isn't supported yet. The watch is saved, so it will start working if support for the board is added."
+msgstr ""
 
 #: src/features/auth/pages/consent.tsx
 msgid "This connection request is invalid or has expired."
@@ -7050,6 +7471,14 @@ msgstr "Consell"
 msgid "Title"
 msgstr "Títol"
 
+#: src/features/discovery/components/settings-view.tsx
+msgid "Title filter"
+msgstr ""
+
+#: src/features/discovery/components/watch-company-dialog.tsx
+msgid "Title filter override (advanced)"
+msgstr ""
+
 #: src/features/settings/pages/account.tsx
 msgid "To delete your account, type the confirmation text below, then click the button."
 msgstr "Per suprimir el teu compte, escriu el text de confirmació de sota i després fes clic al botó."
@@ -7274,9 +7703,18 @@ msgstr "Desbloqueja"
 msgid "Unnamed passkey"
 msgstr "Clau d'accés sense nom"
 
+#: src/features/discovery/components/companies-view.tsx
+msgid "unsupported board"
+msgstr ""
+
 #: src/features/settings/pages/profile.tsx
 msgid "Unverified"
 msgstr "Sense verificar"
+
+#. placeholder {0}: format(salary.max)
+#: src/features/discovery/components/inbox-view.tsx
+msgid "Up to {0}"
+msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-item.tsx
@@ -7616,6 +8054,23 @@ msgstr "Vols una segona opinió sobre la redacció?"
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "Warning"
 msgstr "Avís"
+
+#: src/features/discovery/components/watch-company-dialog.tsx
+msgid "Watch & test"
+msgstr ""
+
+#: src/features/discovery/components/companies-view.tsx
+#: src/features/discovery/components/watch-company-dialog.tsx
+msgid "Watch a company"
+msgstr ""
+
+#: src/features/discovery/components/inbox-view.tsx
+msgid "Watch a company to start discovering jobs"
+msgstr ""
+
+#: src/features/discovery/components/companies-view.tsx
+msgid "Watch your first company"
+msgstr ""
 
 #: src/dialogs/resume/import.tsx
 msgid "We couldn't detect the format automatically. Choose it above."

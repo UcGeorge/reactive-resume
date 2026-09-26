@@ -47,6 +47,11 @@ msgstr ""
 msgid "{0, plural, one {# item} other {# items}}"
 msgstr "{0, plural, one {# वस्तु} other {# वस्तुहरू}}"
 
+#. placeholder {0}: selected.size
+#: src/features/discovery/components/inbox-view.tsx
+msgid "{0, plural, one {# job selected} other {# jobs selected}}"
+msgstr ""
+
 #. placeholder {0}: item.roles.length
 #: src/routes/builder/$resumeId/-sidebar/left/sections/experience.tsx
 msgid "{0, plural, one {# role} other {# roles}}"
@@ -55,6 +60,16 @@ msgstr "{0, plural, one {# भूमिका} other {# भूमिकाहर
 #. placeholder {0}: report.warnings.length
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "{0, plural, one {# warning} other {# warnings}}"
+msgstr ""
+
+#. placeholder {0}: companies.length
+#: src/features/discovery/components/companies-view.tsx
+msgid "{0, plural, one {# watched company} other {# watched companies}}"
+msgstr ""
+
+#. placeholder {0}: result.dismissed
+#: src/features/discovery/components/inbox-view.tsx
+msgid "{0, plural, one {Dismissed # job.} other {Dismissed # jobs.}}"
 msgstr ""
 
 #. placeholder {0}: report.violations.length
@@ -131,6 +146,22 @@ msgstr "सुधार्न {0}"
 msgid "{column, plural, one {# Column} other {# Columns}}"
 msgstr "{column, plural, one {# स्तम्भ} other {# स्तम्भहरू}}"
 
+#. placeholder {0}: result.error ?? t`scan failed.`
+#: src/features/discovery/components/companies-view.tsx
+msgid "{companyName}: {0}"
+msgstr ""
+
+#. placeholder {0}: result.fetched
+#. placeholder {1}: result.matched
+#. placeholder {2}: result.added
+#: src/features/discovery/components/companies-view.tsx
+msgid "{companyName}: fetched {0} postings, {1} matched, {2} new."
+msgstr ""
+
+#: src/features/discovery/components/companies-view.tsx
+msgid "{companyName}: this careers site isn't supported yet."
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "{count, plural, one {# error} other {# errors}}"
 msgstr "{count, plural, one {# त्रुटि} other {# त्रुटिहरू}}"
@@ -154,6 +185,10 @@ msgstr "{passedRules} चेकहरू मध्ये {totalRules} पास 
 #: src/libs/resume/ats.ts
 msgid "{sectionTitle} · Item {itemNumber}"
 msgstr "{sectionTitle} · वस्तु {itemNumber}"
+
+#: src/routes/dashboard/discover/index.tsx
+msgid "{watchedCount, plural, one {Watching # company} other {Watching # companies}}"
+msgstr ""
 
 #: src/features/homepage/page.tsx
 msgid "<0>Free forever and open source.</0><1/>No ads, paywalls, or tracking."
@@ -362,6 +397,10 @@ msgstr "वास्तविक आकार (१००%)"
 msgid "Add"
 msgstr "थप्नुहोस्"
 
+#: src/features/discovery/components/settings-view.tsx
+msgid "Add a company name…"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom-fields.tsx
 msgid "Add a custom field"
 msgstr "अनुकूल (custom) फाँट थप्नुहोस्"
@@ -369,6 +408,10 @@ msgstr "अनुकूल (custom) फाँट थप्नुहोस्"
 #: src/routes/dashboard/applications/index.tsx
 msgid "Add a job you're applying to and link the resume you sent. Move it across the board as you hear back."
 msgstr "तपाईंले आवेदन दिइरहनुभएको काम थप्नुहोस् र पठाएको बायोडाटा लिङ्क गर्नुहोस्। जवाफ आउँदै जाँदा त्यसलाई बोर्डमा अगाडि सार्दै जानुहोस्।"
+
+#: src/features/discovery/components/keyword-list-field.tsx
+msgid "Add a keyword and press Enter…"
+msgstr ""
 
 #: src/components/input/chip-input.tsx
 msgid "Add a keyword..."
@@ -629,6 +672,10 @@ msgstr "एपका सबै भाषाहरू"
 msgid "All applications (including archived)"
 msgstr "सबै अनुप्रयोगहरू (संग्रहित सहित)"
 
+#: src/features/discovery/components/settings-view.tsx
+msgid "Allow"
+msgstr ""
+
 #: src/features/auth/pages/consent.tsx
 msgid "Allow access"
 msgstr "पहुँच अनुमति दिनुहोस्"
@@ -651,6 +698,14 @@ msgstr "पहिले नै खाता छ? <0/>"
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Already in your skills"
+msgstr ""
+
+#: src/features/discovery/components/settings-view.tsx
+msgid "Also drop postings whose location doesn't match any allow entry, instead of keeping them."
+msgstr ""
+
+#: src/features/discovery/components/settings-view.tsx
+msgid "Always allow"
 msgstr ""
 
 #: src/libs/locale.ts
@@ -1004,6 +1059,10 @@ msgstr "आवेदनहरू, साझेदारी, र मुद्र�
 msgid "Blank draft"
 msgstr "खाली मस्यौदा"
 
+#: src/features/discovery/components/settings-view.tsx
+msgid "Block"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Blocker"
 msgstr "अवरोधक"
@@ -1054,6 +1113,10 @@ msgstr "बुल्गेरियन"
 msgid "Bulk delete failed. Please try again."
 msgstr "बल्क मेटाउनुहोस् failed। कृपया again प्रयास गर्नुहोस्।"
 
+#: src/features/discovery/components/inbox-view.tsx
+msgid "Bulk dismiss failed."
+msgstr ""
+
 #: src/features/applications/components/table-view.tsx
 msgid "Bulk update failed. Please try again."
 msgstr "बल्क अपडेट failed। कृपया again प्रयास गर्नुहोस्।"
@@ -1090,6 +1153,7 @@ msgstr "समुदायबाट, समुदायकै लागि।"
 #: src/features/applications/components/application-form-sheet.tsx
 #: src/features/applications/components/export-applications-sheet.tsx
 #: src/features/applications/components/import-applications-sheet.tsx
+#: src/features/discovery/components/watch-company-dialog.tsx
 #: src/features/homepage/ats-playground.tsx
 #: src/features/resume/builder/password-dialog.tsx
 #: src/features/settings/integrations/components/ai-section.tsx
@@ -1108,6 +1172,10 @@ msgstr "रद्द गर्नुहोस्"
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Cannot restore; the resume has changed since this edit was applied."
 msgstr "पुनर्स्थापना गर्न सकिँदैन; यो सम्पादन लागू भएदेखि रिजुमे परिवर्तन भएको छ।"
+
+#: src/features/discovery/components/watch-company-dialog.tsx
+msgid "Careers page URL"
+msgstr ""
 
 #: src/libs/locale.ts
 msgid "Catalan"
@@ -1279,6 +1347,7 @@ msgstr "माटो"
 #. Clear the text color
 #: src/components/input/rich-input.tsx
 #: src/features/applications/components/table-view.tsx
+#: src/features/discovery/components/inbox-view.tsx
 msgid "Clear"
 msgstr "खाली गर्नुहोस्"
 
@@ -1307,6 +1376,7 @@ msgstr "बन्द गर्नुहोस्"
 msgid "Close AI assistant"
 msgstr "एआई सहायक बन्द गर्नुहोस्"
 
+#: src/features/discovery/components/inbox-view.tsx
 #: src/features/evaluations/components/evaluation-panel.tsx
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Collapse"
@@ -1345,6 +1415,14 @@ msgstr "समुदाय"
 msgid "Compact"
 msgstr "संक्षिप्त"
 
+#: src/routes/dashboard/discover/index.tsx
+msgid "Companies"
+msgstr ""
+
+#: src/features/discovery/components/settings-view.tsx
+msgid "Companies that never surface in your inbox (a do-not-apply list)."
+msgstr ""
+
 #: src/dialogs/resume/sections/experience.tsx
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Company"
@@ -1357,6 +1435,18 @@ msgstr "कम्पनी / भूमिका"
 #: src/routes/dashboard/applications/index.tsx
 msgid "Company A–Z"
 msgstr "कम्पनी A–Z"
+
+#: src/features/discovery/components/settings-view.tsx
+msgid "Company blacklist"
+msgstr ""
+
+#: src/features/discovery/components/watch-company-dialog.tsx
+msgid "Company name"
+msgstr ""
+
+#: src/features/discovery/components/companies-view.tsx
+msgid "Company removed from your watches."
+msgstr ""
 
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Compare this resume against this job posting URL and update the keywords without overselling anything."
@@ -1445,6 +1535,10 @@ msgstr "नियन्त्रण गर्नुहोस्"
 #: src/features/cover-letters/editor.tsx
 msgid "Content"
 msgstr "सामग्री"
+
+#: src/features/discovery/components/settings-view.tsx
+msgid "Content excludes"
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Content is laid out in a grid."
@@ -1641,8 +1735,16 @@ msgstr ""
 msgid "Couldn't delete the timeline entry."
 msgstr "समयरेखा प्रविष्टि मेटाउन सकिएन।"
 
+#: src/features/discovery/components/companies-view.tsx
+msgid "Couldn't delete the watch."
+msgstr ""
+
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Couldn't discard the tailored resume."
+msgstr ""
+
+#: src/features/discovery/components/inbox-view.tsx
+msgid "Couldn't dismiss the job."
 msgstr ""
 
 #: src/features/applications/components/application-form-sheet.tsx
@@ -1665,6 +1767,10 @@ msgstr "सुरक्षित गर्न सकिएन"
 msgid "Couldn't save the note."
 msgstr "नोट सुरक्षित गर्न सकिएन।"
 
+#: src/features/discovery/components/settings-view.tsx
+msgid "Couldn't save the settings."
+msgstr ""
+
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Couldn't save your changes. Please try again."
 msgstr "तपाईंका परिवर्तनहरू सुरक्षित गर्न सकिएन। कृपया again प्रयास गर्नुहोस्।"
@@ -1678,9 +1784,17 @@ msgstr ""
 msgid "Couldn't update the timeline entry."
 msgstr "समयरेखा प्रविष्टि अद्यावधिक गर्न सकिएन।"
 
+#: src/features/discovery/components/companies-view.tsx
+msgid "Couldn't update the watch."
+msgstr ""
+
 #: src/features/applications/components/file-attachment-field.tsx
 msgid "Couldn't upload the file. Please try again."
 msgstr "फाइल अपलोड गर्न सकिएन। कृपया again प्रयास गर्नुहोस्।"
+
+#: src/features/discovery/components/watch-company-dialog.tsx
+msgid "Couldn't watch the company."
+msgstr ""
 
 #: src/features/applications/components/insights-view.tsx
 msgid "Count by source"
@@ -1878,6 +1992,10 @@ msgstr "छाँट्नुहोस् र अपलोड गर्नुह
 msgid "Crop picture"
 msgstr "तस्बिर क्रप गर्नुहोस्"
 
+#: src/features/discovery/components/inbox-view.tsx
+msgid "Cross-listed"
+msgstr ""
+
 #: src/features/applications/components/import-applications-sheet.tsx
 msgid "CSV data"
 msgstr "CSV डाटा"
@@ -1960,6 +2078,10 @@ msgstr "आवेदन गरेको मिति"
 msgid "Dates"
 msgstr "मितिहरू"
 
+#: src/features/discovery/components/settings-view.tsx
+msgid "days"
+msgstr ""
+
 #: src/components/input/rich-input.tsx
 msgid "Decrease indent"
 msgstr "इन्डेन्ट घटाउनुहोस्"
@@ -1998,6 +2120,7 @@ msgstr "डिग्री"
 #: src/features/applications/components/application-detail-sheet.tsx
 #: src/features/applications/components/table-view.tsx
 #: src/features/cover-letters/editor-dialog.tsx
+#: src/features/discovery/components/companies-view.tsx
 #: src/features/evaluations/components/evaluation-panel.tsx
 #: src/features/settings/authentication/components/passkeys.tsx
 #: src/features/settings/pages/api-keys.tsx
@@ -2061,6 +2184,10 @@ msgstr "यो समयरेखा प्रविष्टि मेटाउ
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Delete timeline entry"
 msgstr "समयरेखा प्रविष्टि मेटाउनुहोस्"
+
+#: src/features/discovery/components/companies-view.tsx
+msgid "Delete watch"
+msgstr ""
 
 #. placeholder {0}: result.deleted
 #: src/features/applications/components/table-view.tsx
@@ -2170,9 +2297,24 @@ msgstr "विच्छेद गर्नुहोस्"
 msgid "Discord"
 msgstr "डिस्कोर्ड"
 
+#: src/features/command-palette/pages/navigation.tsx
+#: src/routes/dashboard/-components/sidebar.tsx
+#: src/routes/dashboard/discover/index.tsx
+msgid "Discover"
+msgstr ""
+
 #: src/features/applications/components/application-ai-copilot.tsx
+#: src/features/discovery/components/inbox-view.tsx
 msgid "Dismiss"
 msgstr "खारेज गर्नुहोस्"
+
+#: src/features/discovery/components/inbox-view.tsx
+msgid "Dismiss selected"
+msgstr ""
+
+#: src/features/discovery/components/inbox-view.tsx
+msgid "Dismissed"
+msgstr ""
 
 #: src/features/homepage/page.tsx
 msgid "Docs"
@@ -2192,6 +2334,10 @@ msgstr "कागजातहरू पठाइयो"
 msgid "Don't have an account? <0/>"
 msgstr "खाता छैन? <0/>"
 
+#: src/features/discovery/components/settings-view.tsx
+msgid "Don't re-surface a company + title you already applied to within this window."
+msgstr ""
+
 #: src/components/ui/donation-toast.tsx
 msgid "Donate"
 msgstr "दान गर्नुहोस्"
@@ -2200,6 +2346,7 @@ msgstr "दान गर्नुहोस्"
 msgid "Donate to Reactive Resume"
 msgstr "Reactive Resume लाई दान गर्नुहोस्"
 
+#: src/features/discovery/components/watch-company-dialog.tsx
 #: src/routes/agent/-components/tool-part-card.tsx
 msgid "Done"
 msgstr "सम्पन्न भयो"
@@ -2320,6 +2467,26 @@ msgstr "तपाईंको बायोडाटा नक्कल हुँ
 #: src/libs/locale.ts
 msgid "Dutch"
 msgstr "डच"
+
+#: src/features/discovery/components/settings-view.tsx
+msgid "e.g. engineer, word:go, backend+senior"
+msgstr ""
+
+#: src/features/discovery/components/settings-view.tsx
+msgid "e.g. intern, staffing"
+msgstr ""
+
+#: src/features/discovery/components/settings-view.tsx
+msgid "e.g. On-site, US only"
+msgstr ""
+
+#: src/features/discovery/components/settings-view.tsx
+msgid "e.g. Remote, Berlin, EU"
+msgstr ""
+
+#: src/features/discovery/components/settings-view.tsx
+msgid "e.g. security clearance"
+msgstr ""
 
 #: src/routes/builder/$resumeId/-components/version-history.tsx
 msgid "Earlier versions are kept; the builder's undo history is reset."
@@ -2443,6 +2610,11 @@ msgstr "२FA सक्रिय गर्नुहोस्"
 msgid "Enable editing"
 msgstr "सम्पादन सक्षम पार्नुहोस्"
 
+#. placeholder {0}: company.name
+#: src/features/discovery/components/companies-view.tsx
+msgid "Enable scanning for {0}"
+msgstr ""
+
 #: src/dialogs/auth/enable-two-factor.tsx
 msgid "Enable Two-Factor Authentication"
 msgstr "दुई-कारक प्रमाणीकरण सक्रिय गर्नुहोस्"
@@ -2512,6 +2684,10 @@ msgstr "दुई-कारक प्रमाणीकरण सेटअप �
 msgid "Enter your password to disable two-factor authentication. Your account will be less secure without 2FA enabled."
 msgstr "दुई-कारक प्रमाणीकरण अक्षम गर्न आफ्नो पासवर्ड प्रविष्ट गर्नुहोस्। २FA सक्रिय नभएको अवस्थामा तपाईंको खाता कम सुरक्षित हुनेछ।"
 
+#: src/features/discovery/components/companies-view.tsx
+msgid "error"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "Error"
 msgstr "त्रुटि"
@@ -2552,6 +2728,11 @@ msgstr "नमुना आवेदन"
 msgid "Example edit"
 msgstr "नमुना सम्पादन"
 
+#: src/features/discovery/components/settings-view.tsx
+#: src/features/discovery/components/watch-company-dialog.tsx
+msgid "Exclude titles matching"
+msgstr ""
+
 #: src/features/resume/stylesheet/toolbar.tsx
 msgid "Exit focus mode"
 msgstr "फोकस मोडबाट बाहिर निस्कनुहोस्"
@@ -2560,6 +2741,7 @@ msgstr "फोकस मोडबाट बाहिर निस्कनुह
 msgid "Exit Fullscreen"
 msgstr "पूर्ण स्क्रिनबाट बाहिर निस्कनुहोस्"
 
+#: src/features/discovery/components/inbox-view.tsx
 #: src/features/evaluations/components/evaluation-panel.tsx
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Expand"
@@ -2574,6 +2756,10 @@ msgstr ""
 #: src/libs/resume/section.tsx
 msgid "Experience"
 msgstr "अनुभव"
+
+#: src/features/discovery/components/inbox-view.tsx
+msgid "Expired"
+msgstr ""
 
 #: src/dialogs/api-key/create.tsx
 msgid "Expires in"
@@ -2874,6 +3060,11 @@ msgstr "GitHub मा हामीलाई भेट्नुहोस्"
 msgid "Finnish"
 msgstr "फिनिस"
 
+#. placeholder {0}: formatRelativeTime(job.firstSeenAt, relativeTimeFormatter)
+#: src/features/discovery/components/inbox-view.tsx
+msgid "First seen {0}"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Fit"
 msgstr "फिट"
@@ -2977,6 +3168,11 @@ msgstr "फ्री-फर्म"
 msgid "French"
 msgstr "फ्रान्सेली"
 
+#. placeholder {0}: format(salary.min)
+#: src/features/discovery/components/inbox-view.tsx
+msgid "From {0}"
+msgstr ""
+
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "From your resume and the posting"
 msgstr "तपाईंको बायोडाटा र पोस्टिंगबाट"
@@ -3067,6 +3263,10 @@ msgstr "फर्कनुहोस्"
 msgid "Go home"
 msgstr "घर जानुहोस्"
 
+#: src/features/discovery/components/inbox-view.tsx
+msgid "Go to Companies"
+msgstr ""
+
 #: src/components/layout/error-screen.tsx
 #: src/components/layout/not-found-screen.tsx
 #: src/routes/_home/-sections/header.tsx
@@ -3105,6 +3305,10 @@ msgstr "ग्रीक"
 #: src/routes/dashboard/resumes/index.tsx
 msgid "Grid"
 msgstr "ग्रिड"
+
+#: src/features/discovery/components/settings-view.tsx
+msgid "Hard block"
+msgstr ""
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Hard stops"
@@ -3308,6 +3512,10 @@ msgstr "आवरण पत्र JSON आयात गर्नुहोस्"
 msgid "Import CSV"
 msgstr "CSV आयात गर्नुहोस्"
 
+#: src/features/discovery/components/inbox-view.tsx
+msgid "Import failed."
+msgstr ""
+
 #: src/features/applications/components/import-applications-sheet.tsx
 msgid "Import failed. Check the CSV and try again."
 msgstr "failed आयात गर्नुहोस्। CSV जाँच गर्नुहोस् र again प्रयास गर्नुहोस्।"
@@ -3325,14 +3533,26 @@ msgstr "पुस्तकालयबाट आयात गर्नुहो�
 msgid "Import JSON"
 msgstr "JSON आयात गर्नुहोस्"
 
+#: src/features/discovery/components/inbox-view.tsx
+msgid "Import to Applications"
+msgstr ""
+
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Importance"
+msgstr ""
+
+#: src/features/discovery/components/inbox-view.tsx
+msgid "Imported"
 msgstr ""
 
 #. placeholder {0}: result.imported
 #: src/features/applications/components/import-applications-sheet.tsx
 msgid "Imported {0} application(s)."
 msgstr "आयातित {0} आवेदन(हरू)।"
+
+#: src/features/discovery/components/inbox-view.tsx
+msgid "Imported to Applications."
+msgstr ""
 
 #: src/dialogs/resume/import.tsx
 msgid "Importing from Word requires a connected AI provider."
@@ -3351,9 +3571,18 @@ msgstr "आयात गर्दै…"
 msgid "In {0}"
 msgstr "{0} मा"
 
+#: src/routes/dashboard/discover/index.tsx
+msgid "Inbox"
+msgstr ""
+
 #: src/features/resume/export/download-dialog.tsx
 msgid "Include resume header"
 msgstr "रिजुमे हेडर समावेश गर्नुहोस्"
+
+#: src/features/discovery/components/settings-view.tsx
+#: src/features/discovery/components/watch-company-dialog.tsx
+msgid "Include titles matching"
+msgstr ""
 
 #: src/components/input/rich-input.tsx
 msgid "Increase indent"
@@ -3479,6 +3708,10 @@ msgstr "नौकरी पोस्टिंग"
 msgid "Job posting link"
 msgstr "नौकरी पोस्टिंग लिङ्क"
 
+#: src/features/command-palette/pages/navigation.tsx
+msgid "Job scanner"
+msgstr ""
+
 #: src/features/applications/components/insights-view.tsx
 msgid "Job search pipeline"
 msgstr "रोजगार खोज पाइपलाइन"
@@ -3592,6 +3825,10 @@ msgstr "कीवर्ड लेआउट"
 msgid "Keywords"
 msgstr "कुञ्जी शब्दहरू (Keywords)"
 
+#: src/features/discovery/components/settings-view.tsx
+msgid "Keywords match job titles as substrings. Prefix a keyword with word: for whole-word matching or stem: for stem matching, and join keywords with + to require all of them at once (an AND-group)."
+msgstr ""
+
 #: src/libs/locale.ts
 msgid "Khmer"
 msgstr "खमेर"
@@ -3636,6 +3873,13 @@ msgstr "भाषाहरू"
 #: src/routes/builder/$resumeId/-sidebar/right/sections/statistics.tsx
 msgid "Last downloaded on {0}"
 msgstr "अन्तिम पटक {0} मा डाउनलोड गरिएको"
+
+#. placeholder {0}: formatRelativeTime(company.lastScanAt, relativeTimeFormatter)
+#. placeholder {0}: formatRelativeTime(lastScanAt, relativeTimeFormatter)
+#: src/features/discovery/components/companies-view.tsx
+#: src/routes/dashboard/discover/index.tsx
+msgid "last scan {0}"
+msgstr ""
 
 #: src/routes/dashboard/applications/index.tsx
 msgid "Last updated"
@@ -3866,6 +4110,10 @@ msgstr "लोड हुँदै…"
 #: src/routes/builder/$resumeId/-sidebar/left/sections/basics.tsx
 msgid "Location"
 msgstr "स्थान"
+
+#: src/features/discovery/components/settings-view.tsx
+msgid "Location filter"
+msgstr ""
 
 #. Resume card context menu action to prevent edits
 #. Resume card dropdown action to prevent edits
@@ -4130,6 +4378,14 @@ msgstr "नेटवर्क"
 msgid "Never expires"
 msgstr "कहिल्यै म्याद समाप्त हुँदैन"
 
+#: src/features/discovery/components/companies-view.tsx
+msgid "never scanned"
+msgstr ""
+
+#: src/features/discovery/components/inbox-view.tsx
+msgid "New"
+msgstr ""
+
 #: src/features/auth/pages/error.tsx
 msgid "New account sign-ups are currently disabled on this server."
 msgstr "यो सर्भरमा नयाँ खाता दर्ता हाल बन्द छ।"
@@ -4226,6 +4482,10 @@ msgstr "AI प्रदायकबाट कुनै डाटा फिर्
 msgid "No dates were found."
 msgstr "कुनै मिति फेला परेन।"
 
+#: src/features/discovery/components/inbox-view.tsx
+msgid "No description was captured for this posting — open the link for details."
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "No education section was found."
 msgstr "कुनै शिक्षा खण्ड फेला परेन।"
@@ -4233,6 +4493,10 @@ msgstr "कुनै शिक्षा खण्ड फेला परेन�
 #: src/features/ats-checker/messages.ts
 msgid "No email address was found."
 msgstr "कुनै इमेल ठेगाना फेला परेन।"
+
+#: src/features/discovery/components/inbox-view.tsx
+msgid "No jobs with this status."
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "No lines look like a job title paired with an employer."
@@ -4286,6 +4550,10 @@ msgstr "अझै रिजुम छैन।"
 #: src/routes/builder/$resumeId/-components/version-history.tsx
 msgid "No saved versions yet."
 msgstr "अहिलेसम्म कुनै पनि सुरक्षित संस्करणहरू छैनन्।"
+
+#: src/routes/dashboard/discover/index.tsx
+msgid "no scans yet"
+msgstr ""
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "No skill requirements were extracted from the posting."
@@ -4377,6 +4645,10 @@ msgstr "नोट"
 msgid "Notes"
 msgstr "नोटहरू"
 
+#: src/features/discovery/components/inbox-view.tsx
+msgid "Nothing here"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Nothing marks a role as ongoing."
 msgstr "कुनै पनि कुराले भूमिका जारी रहेको जनाउँदैन।"
@@ -4401,6 +4673,7 @@ msgstr "ओडिया"
 msgid "Offer"
 msgstr "प्रस्ताव"
 
+#: src/features/discovery/components/companies-view.tsx
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "ok"
 msgstr ""
@@ -4417,6 +4690,10 @@ msgstr "तपाईंले विश्वास गर्ने अनुप
 #: src/routes/builder/$resumeId/-sidebar/right/sections/layout/pages.tsx
 msgid "Only applies when the section fits on a single page."
 msgstr "खण्ड एउटै पृष्ठमा मिल्दा मात्र लागू हुन्छ।"
+
+#: src/features/discovery/components/watch-company-dialog.tsx
+msgid "Only for this company, replacing your global title filter. Keywords match as substrings; prefix with word: or stem: for whole-word or stem matching, and join keywords with + to require all of them."
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Only one recognisable section heading was found."
@@ -4449,6 +4726,10 @@ msgstr "एआई एजेन्ट खोल्नुहोस्"
 #: src/routes/builder/$resumeId/-components/ai-assistant.tsx
 msgid "Open AI assistant"
 msgstr "एआई सहायक खोल्नुहोस्"
+
+#: src/features/discovery/components/inbox-view.tsx
+msgid "Open application"
+msgstr ""
 
 #: src/features/homepage/resume-sculpture.tsx
 msgid "Open design library"
@@ -4631,6 +4912,10 @@ msgstr "पासवर्ड आवश्यक"
 msgid "Passwords do not match."
 msgstr "पासवर्डहरू मेल खाँदैनन्।"
 
+#: src/features/discovery/components/companies-view.tsx
+msgid "Paste a careers page URL and the scanner will check it for new postings that match your filters."
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "Paste a posting to see which of its terms already appear in your resume."
 msgstr "काम पोस्टिङ टाँस्नुहोस् र यसका कुन शब्द तपाईंको बायोडाटामा पहिल्यै छन् हेर्नुहोस्।"
@@ -4780,6 +5065,10 @@ msgstr "कृपया PDF फाइल अपलोड गर्नुहो�
 msgid "Plum"
 msgstr "Plum"
 
+#: src/features/discovery/components/watch-company-dialog.tsx
+msgid "Point the scanner at a careers page. It's tested immediately so you know the board works before the background scans start."
+msgstr ""
+
 #: src/libs/locale.ts
 msgid "Polish"
 msgstr "पोलिस"
@@ -4804,6 +5093,15 @@ msgstr "पद"
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Positioning"
+msgstr ""
+
+#. placeholder {0}: formatRelativeTime(job.postedAt, relativeTimeFormatter)
+#: src/features/discovery/components/inbox-view.tsx
+msgid "Posted {0}"
+msgstr ""
+
+#: src/features/discovery/components/settings-view.tsx
+msgid "Postings are kept when their location matches an allow entry and dropped on a block entry. Hard blocks always win, and always-allow entries rescue a posting even when it was blocked."
 msgstr ""
 
 #: src/libs/resume/ats.ts
@@ -5199,6 +5497,10 @@ msgstr "आफू अनुकूल क्षेत्र हटाउनुह
 msgid "Remove file"
 msgstr "फाइल हटाउनुहोस्"
 
+#: src/features/discovery/components/keyword-list-field.tsx
+msgid "Remove keyword"
+msgstr ""
+
 #: src/components/input/rich-input.tsx
 msgid "Remove link"
 msgstr "लिङ्क हटाउनुहोस्"
@@ -5230,6 +5532,10 @@ msgstr "पुनःक्रम गर्नुहोस्"
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom-fields.tsx
 msgid "Reorder custom field"
 msgstr "आफू अनुकूल क्षेत्र पुन: क्रमबद्ध गर्नुहोस्"
+
+#: src/features/discovery/components/settings-view.tsx
+msgid "Repeat cooldown"
+msgstr ""
 
 #. placeholder {0}: jd.stuffedTerms.join(", ")
 #: src/features/ats-checker/report/jd-coverage.tsx
@@ -5267,6 +5573,10 @@ msgstr "समस्या रिपोर्ट गर्नुहोस्"
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Reports to"
+msgstr ""
+
+#: src/features/discovery/components/inbox-view.tsx
+msgid "Repost"
 msgstr ""
 
 #: src/features/evaluations/components/evaluation-panel.tsx
@@ -5508,6 +5818,10 @@ msgstr "रुमानियन"
 msgid "Rotation"
 msgstr "घुमाउने कोण (Rotation)"
 
+#: src/features/discovery/components/inbox-view.tsx
+msgid "Run a scan, or loosen the title and location filters in Settings."
+msgstr ""
+
 #: src/features/evaluations/components/evaluation-panel.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "Run again"
@@ -5634,6 +5948,10 @@ msgstr "मोडेल सेभ गर्नुहोस्"
 msgid "Save resume changes before copying its content or styling."
 msgstr "यसको सामग्री वा स्टाइल प्रतिलिपि गर्नु अघि पुन: सुरु परिवर्तनहरू बचत गर्नुहोस्।"
 
+#: src/features/discovery/components/settings-view.tsx
+msgid "Save settings"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Save the file with every page upright."
 msgstr "हरेक पृष्ठ सीधा राखेर फाइल सुरक्षित गर्नुहोस्।"
@@ -5654,9 +5972,33 @@ msgstr "बचत गर्दै…"
 msgid "Say what you actually did."
 msgstr "तपाईंले वास्तवमा के गर्नुभयो, त्यही भन्नुहोस्।"
 
+#: src/features/discovery/components/companies-view.tsx
+msgid "Scan"
+msgstr ""
+
+#: src/routes/dashboard/discover/index.tsx
+msgid "Scan complete — {matched} matched, {added} new."
+msgstr ""
+
+#: src/features/discovery/components/companies-view.tsx
+msgid "scan failed."
+msgstr ""
+
+#: src/routes/dashboard/discover/index.tsx
+msgid "Scan now"
+msgstr ""
+
 #: src/dialogs/auth/enable-two-factor.tsx
 msgid "Scan the QR code below with your preferred authenticator app. You can also copy the secret below and paste it into your app."
 msgstr "तलको QR कोड तपाईंको मनपर्ने authenticator एपबाट स्क्यान गर्नुहोस्। तपाईंले चाहनु भएमा तलको गोप्य कोड प्रतिलिपि गरेर आफ्नो एपमा टाँस्न पनि सक्नुहुन्छ।"
+
+#: src/features/discovery/components/settings-view.tsx
+msgid "Scanner settings saved."
+msgstr ""
+
+#: src/routes/dashboard/discover/index.tsx
+msgid "Scanning…"
+msgstr ""
 
 #: src/dialogs/resume/sections/education.tsx
 msgid "School"
@@ -5744,6 +6086,10 @@ msgstr "सफ्टवेयरले के पढ्छ<0/>हेर्नु
 msgid "See whether your PDF has readable text. Read a sample or try your own PDF. Everything runs in your browser, so your file stays with you."
 msgstr "तपाईंको PDF मा पढ्न मिल्ने पाठ छ कि छैन हेर्नुहोस्। नमुना पढ्नुहोस् वा आफ्नै PDF प्रयास गर्नुहोस्। सबै काम तपाईंकै ब्राउजरमा हुन्छ, त्यसैले फाइल तपाईंसँगै रहन्छ।"
 
+#: src/features/discovery/components/inbox-view.tsx
+msgid "Seen"
+msgstr ""
+
 #. placeholder {0}: app.company
 #: src/features/applications/components/table-view.tsx
 msgid "Select {0}"
@@ -5768,6 +6114,10 @@ msgstr "एजेन्ट मोडेल चयन गर्नुहोस्
 #: src/features/settings/integrations/components/ai-provider-picker.tsx
 msgid "Select an AI provider"
 msgstr "एआई प्रदायक छान्नुहोस्"
+
+#: src/features/discovery/components/inbox-view.tsx
+msgid "Select job"
+msgstr ""
 
 #: src/components/ui/combobox.tsx
 msgid "Select..."
@@ -5868,6 +6218,7 @@ msgstr "यो रिजुमेको बारेमा कुराकान
 #: src/features/command-palette/pages/navigation.tsx
 #: src/routes/agent/-components/new-thread-setup.tsx
 #: src/routes/dashboard/-components/sidebar.tsx
+#: src/routes/dashboard/discover/index.tsx
 msgid "Settings"
 msgstr "सेटिङहरू"
 
@@ -6072,6 +6423,10 @@ msgstr ""
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Skip and Upload"
 msgstr "छोडेर अपलोड गर्नुहोस्"
+
+#: src/features/discovery/components/settings-view.tsx
+msgid "Skip postings whose description contains any of these phrases (e.g. security clearance requirements)."
+msgstr ""
 
 #: src/features/homepage/page.tsx
 #: src/routes/_home/route.tsx
@@ -6343,12 +6698,25 @@ msgstr "अझै पनि {provider}… {elapsedSeconds}को लागि �
 msgid "Stop generation"
 msgstr "उत्पादन रोक्नुहोस्"
 
+#. placeholder {0}: company.name
+#: src/features/discovery/components/companies-view.tsx
+msgid "Stop watching {0}?"
+msgstr ""
+
 #: src/features/ats-checker/ai-review/ai-review-results.tsx
 msgid "Strengths"
 msgstr "शक्तिहरू"
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Strengths & soft gaps"
+msgstr ""
+
+#: src/features/discovery/components/settings-view.tsx
+msgid "Strict"
+msgstr ""
+
+#: src/features/discovery/components/settings-view.tsx
+msgid "Strict location filtering"
 msgstr ""
 
 #: src/components/input/rich-input.tsx
@@ -6521,9 +6889,14 @@ msgstr "ढाँचा ग्यालरी"
 msgid "Templates"
 msgstr "टेम्प्लेटहरू"
 
+#: src/features/discovery/components/companies-view.tsx
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Test"
 msgstr "परीक्षण"
+
+#: src/features/discovery/components/watch-company-dialog.tsx
+msgid "Testing the board — this does a live fetch and can take a few seconds…"
+msgstr ""
 
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Testing…"
@@ -6607,6 +6980,13 @@ msgstr "तपाईंलाई यहाँ पठाउने एप्लि
 msgid "The audit failed."
 msgstr ""
 
+#. placeholder {0}: result.fetched
+#. placeholder {1}: result.matched
+#. placeholder {2}: result.added
+#: src/features/discovery/components/watch-company-dialog.tsx
+msgid "The board works — fetched {0} postings, {1} matched your filters, {2} added to your inbox."
+msgstr ""
+
 #: src/features/ats-checker/ai-review/ai-review-card.tsx
 msgid "The checks above are mechanical. This asks a language model what a reader would think of your bullets, and suggests rewrites. It produces no score."
 msgstr "माथिका चेकहरू यान्त्रिक हुन्। यसले भाषा मोडेललाई तपाईंका बुलेटबारे पाठकले के सोच्ला भनी सोध्छ, र पुनर्लेखन सुझाव दिन्छ। यसले कुनै स्कोर उत्पादन गर्दैन।"
@@ -6624,8 +7004,20 @@ msgstr ""
 msgid "The imported file could not be parsed into a valid resume."
 msgstr "आयात गरिएको फाइललाई मान्य रिजुमेमा पार्स गर्न सकिएन।"
 
+#: src/routes/dashboard/discover/index.tsx
+msgid "The job scanner is disabled on this server"
+msgstr ""
+
+#: src/features/discovery/components/companies-view.tsx
+msgid "The last scan failed."
+msgstr ""
+
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "The multi-pass analysis usually takes a minute. The skill gap below is already final."
+msgstr ""
+
+#: src/routes/dashboard/discover/index.tsx
+msgid "The operator turned the scanner off with the FLAG_DISABLE_JOB_SCANNER flag. Ask them to enable it to watch company careers pages and discover new postings here."
 msgstr ""
 
 #: src/features/ats-checker/messages.ts
@@ -6688,6 +7080,19 @@ msgstr ""
 msgid "The same line repeats on every page."
 msgstr "उही लाइन हरेक पृष्ठमा दोहोरिन्छ।"
 
+#: src/features/discovery/components/companies-view.tsx
+#: src/routes/dashboard/discover/index.tsx
+msgid "The scan failed."
+msgstr ""
+
+#: src/features/discovery/components/inbox-view.tsx
+msgid "The scanner checks the careers pages of companies you watch and surfaces new postings that match your filters."
+msgstr ""
+
+#: src/features/discovery/components/inbox-view.tsx
+msgid "The scanner hasn't matched anything yet"
+msgstr ""
+
 #. placeholder {0}: getPdfFindingMessage(cap).title
 #: src/features/ats-checker/report/score-header.tsx
 msgid "The score is capped because of a blocking problem: {0}"
@@ -6695,6 +7100,14 @@ msgstr "अवरोधक समस्याका कारण स्कोर
 
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "The tailored copy will be permanently deleted, the application will be linked back to the source resume, and this run will be marked rejected. This can't be undone."
+msgstr ""
+
+#: src/features/discovery/components/companies-view.tsx
+msgid "The test failed."
+msgstr ""
+
+#: src/features/discovery/components/watch-company-dialog.tsx
+msgid "The test scan failed."
 msgstr ""
 
 #: src/features/ats-checker/messages.ts
@@ -6708,6 +7121,10 @@ msgstr "पहिलो पृष्ठको माथिल्लो भाग
 #: src/components/input/rich-input.tsx
 msgid "The URL you entered is not valid."
 msgstr "तपाईंले प्रविष्ट गरेको URL मान्य छैन।"
+
+#: src/features/discovery/components/companies-view.tsx
+msgid "The watch and its scan history are removed. Jobs already discovered stay in your inbox."
+msgstr ""
 
 #: src/routes/agent/-components/resume-pane.tsx
 msgid "The working resume was deleted. This thread is read-only."
@@ -6772,6 +7189,10 @@ msgstr "यो कार्य उल्ट्याउन सकिँदैन
 #: src/routes/builder/$resumeId/-components/ai-assistant.tsx
 msgid "This assistant could not be opened."
 msgstr "यो सहायक खोल्न सकिएन।"
+
+#: src/features/discovery/components/watch-company-dialog.tsx
+msgid "This careers site isn't supported yet. The watch is saved, so it will start working if support for the board is added."
+msgstr ""
 
 #: src/features/auth/pages/consent.tsx
 msgid "This connection request is invalid or has expired."
@@ -7050,6 +7471,14 @@ msgstr "सुझाव"
 msgid "Title"
 msgstr "शीर्षक"
 
+#: src/features/discovery/components/settings-view.tsx
+msgid "Title filter"
+msgstr ""
+
+#: src/features/discovery/components/watch-company-dialog.tsx
+msgid "Title filter override (advanced)"
+msgstr ""
+
 #: src/features/settings/pages/account.tsx
 msgid "To delete your account, type the confirmation text below, then click the button."
 msgstr "आफ्नो खाता मेटाउन, तल पुष्टि गर्ने पाठ टाइप गर्नुहोस्, अनि बटनमा क्लिक गर्नुहोस्।"
@@ -7274,9 +7703,18 @@ msgstr "अनलक गर्नुहोस्"
 msgid "Unnamed passkey"
 msgstr "अनाम पासकी"
 
+#: src/features/discovery/components/companies-view.tsx
+msgid "unsupported board"
+msgstr ""
+
 #: src/features/settings/pages/profile.tsx
 msgid "Unverified"
 msgstr "यकिन नगरिएको (Unverified)"
+
+#. placeholder {0}: format(salary.max)
+#: src/features/discovery/components/inbox-view.tsx
+msgid "Up to {0}"
+msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-item.tsx
@@ -7616,6 +8054,23 @@ msgstr "लेखनमा दोस्रो राय चाहनुहुन
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "Warning"
 msgstr "चेतावनी"
+
+#: src/features/discovery/components/watch-company-dialog.tsx
+msgid "Watch & test"
+msgstr ""
+
+#: src/features/discovery/components/companies-view.tsx
+#: src/features/discovery/components/watch-company-dialog.tsx
+msgid "Watch a company"
+msgstr ""
+
+#: src/features/discovery/components/inbox-view.tsx
+msgid "Watch a company to start discovering jobs"
+msgstr ""
+
+#: src/features/discovery/components/companies-view.tsx
+msgid "Watch your first company"
+msgstr ""
 
 #: src/dialogs/resume/import.tsx
 msgid "We couldn't detect the format automatically. Choose it above."

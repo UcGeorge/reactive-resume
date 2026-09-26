@@ -258,12 +258,83 @@ export const auditReportSchema = z.object({
 
 export type AuditReport = z.infer<typeof auditReportSchema>;
 
+// --- Job discovery (scanner) --------------------------------------------------------
+
+/** Positive entries may be AND-groups; entries understand the `word:` / `stem:` matching
+ * prefixes. Semantics live in @reactive-resume/career/scan-filters. */
+export const titleFilterConfigSchema = z.object({
+	positive: z.array(z.string()),
+	negative: z.array(z.string()),
+});
+
+export type TitleFilterConfig = z.infer<typeof titleFilterConfigSchema>;
+
+export const locationFilterConfigSchema = z.object({
+	allow: z.array(z.string()),
+	block: z.array(z.string()),
+	blockHard: z.array(z.string()),
+	alwaysAllow: z.array(z.string()),
+	strict: z.boolean(),
+});
+
+export type LocationFilterConfig = z.infer<typeof locationFilterConfigSchema>;
+
+/** Per-user scanner settings, stored on the career profile. Stored resolved (no partials);
+ * DEFAULT_SCANNER_SETTINGS is the starting point before the user changes anything. */
+export const scannerSettingsSchema = z.object({
+	titleFilter: titleFilterConfigSchema,
+	locationFilter: locationFilterConfigSchema,
+	/** Substring excludes over the posting description. */
+	contentExclude: z.array(z.string()),
+	/** Skip re-surfacing a company+title the user applied to within this window. */
+	cooldownDays: z.number().int().min(0).max(365),
+	/** Companies never to surface (do-not-apply list). */
+	blacklist: z.array(z.string()),
+});
+
+export type ScannerSettings = z.infer<typeof scannerSettingsSchema>;
+
+export const DEFAULT_SCANNER_SETTINGS: ScannerSettings = {
+	titleFilter: { positive: [], negative: [] },
+	locationFilter: { allow: [], block: [], blockHard: [], alwaysAllow: [], strict: false },
+	contentExclude: [],
+	cooldownDays: 90,
+	blacklist: [],
+};
+
+export const discoveredJobStatusSchema = z.enum(["new", "seen", "dismissed", "imported", "expired"]);
+
+export type DiscoveredJobStatus = z.infer<typeof discoveredJobStatusSchema>;
+
+export const discoveredJobFlagsSchema = z.object({
+	/** Same company re-posted a near-identical body within the window. */
+	repost: z.boolean(),
+	/** A different company carries a near-identical body — agency cross-listing smell. */
+	crosslist: z.boolean(),
+	note: z.string().nullable(),
+});
+
+export type DiscoveredJobFlags = z.infer<typeof discoveredJobFlagsSchema>;
+
+export const discoveredJobSalarySchema = z.object({
+	min: z.number().optional(),
+	max: z.number().optional(),
+	currency: z.string().optional(),
+});
+
+export type DiscoveredJobSalary = z.infer<typeof discoveredJobSalarySchema>;
+
+/** Last scan outcome summary kept on the watched company row. */
+export const watchedCompanyStatusSchema = z.enum(["ok", "error", "unsupported"]);
+
+export type WatchedCompanyStatus = z.infer<typeof watchedCompanyStatusSchema>;
+
 // --- Career profile ----------------------------------------------------------------
 
 export const careerWorkAuthProfileSchema = z.object({
 	/** Countries / regions the user is authorized to work in, free text ("EU", "United States"). */
-	authorizedIn: z.array(z.string()).default([]),
-	needsSponsorship: z.boolean().default(false),
+	authorizedIn: z.array(z.string()),
+	needsSponsorship: z.boolean(),
 });
 
 export type CareerWorkAuthProfile = z.infer<typeof careerWorkAuthProfileSchema>;
@@ -271,10 +342,10 @@ export type CareerWorkAuthProfile = z.infer<typeof careerWorkAuthProfileSchema>;
 /** Per-user facts allowlist consumed by the fact gate: claims the gate should accept even
  * when the source resume does not carry them, and phrases it must always block or flag. */
 export const careerFactsProfileSchema = z.object({
-	allowMetrics: z.array(z.string()).default([]),
-	allowFacts: z.array(z.string()).default([]),
-	forbiddenPhrases: z.array(z.string()).default([]),
-	warnPhrases: z.array(z.string()).default([]),
+	allowMetrics: z.array(z.string()),
+	allowFacts: z.array(z.string()),
+	forbiddenPhrases: z.array(z.string()),
+	warnPhrases: z.array(z.string()),
 });
 
 export type CareerFactsProfile = z.infer<typeof careerFactsProfileSchema>;

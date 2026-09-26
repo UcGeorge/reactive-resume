@@ -597,6 +597,44 @@ export function registerTools(server: McpServer, client: RouterClient<typeof rou
 			"fact checking resume",
 			async ({ resumeId }: { resumeId: string }) => json(await client.evaluations.factCheck({ resumeId })),
 		],
+		[
+			T.listWatchedCompanies,
+			"listing watched companies",
+			async () => json(await client.discovery.watchedCompanies.list({})),
+		],
+		[
+			T.watchCompany,
+			"watching company",
+			async ({ name, careersUrl }: { name: string; careersUrl: string }) =>
+				json(await client.discovery.watchedCompanies.create({ name, careersUrl })),
+		],
+		[
+			T.unwatchCompany,
+			"unwatching company",
+			async ({ id }: { id: string }) => json(await client.discovery.watchedCompanies.delete({ id })),
+		],
+		[
+			T.scanJobBoards,
+			"scanning job boards",
+			async ({ watchedCompanyId }: { watchedCompanyId?: string }) =>
+				json(await client.discovery.scanNow(watchedCompanyId ? { watchedCompanyId } : {})),
+		],
+		[
+			T.listDiscoveredJobs,
+			"listing discovered jobs",
+			async (params: { status?: "new" | "seen" | "dismissed" | "imported" | "expired"; limit?: number }) =>
+				json(await client.discovery.jobs.list(params)),
+		],
+		[
+			T.importDiscoveredJob,
+			"importing discovered job",
+			async ({ id }: { id: string }) => json(await client.discovery.jobs.import({ id })),
+		],
+		[
+			T.dismissDiscoveredJob,
+			"dismissing discovered job",
+			async ({ id }: { id: string }) => json(await client.discovery.jobs.dismiss({ id })),
+		],
 	];
 
 	for (const [name, label, handler] of coverLetterAndApplicationTools) {

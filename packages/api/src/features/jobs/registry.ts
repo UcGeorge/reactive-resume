@@ -8,6 +8,8 @@ import z from "zod";
 
 export const JOB_NAMES = {
 	evaluationRun: "evaluation.run",
+	scannerScanUser: "scanner.scan-user",
+	scannerCron: "scanner.cron",
 } as const;
 
 export type JobName = (typeof JOB_NAMES)[keyof typeof JOB_NAMES];
@@ -20,6 +22,14 @@ export const evaluationRunPayloadSchema = z.object({
 });
 
 export type EvaluationRunPayload = z.infer<typeof evaluationRunPayloadSchema>;
+
+export const scannerScanUserPayloadSchema = z.object({
+	userId: z.string(),
+	/** Restrict the pass to one company (the "Scan now" on a single row / the `test` call). */
+	watchedCompanyId: z.string().optional(),
+});
+
+export type ScannerScanUserPayload = z.infer<typeof scannerScanUserPayloadSchema>;
 
 /** All queues the boot pass must create before any send or work call runs. */
 export const ALL_JOB_NAMES: readonly JobName[] = Object.values(JOB_NAMES);

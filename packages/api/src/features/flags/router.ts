@@ -6,6 +6,7 @@ export type FeatureFlags = {
 	disableSignups: boolean;
 	disableEmailAuth: boolean;
 	smtpEnabled: boolean;
+	jobScannerEnabled: boolean;
 };
 
 // Mirrors isSmtpEnabled() in packages/email/src/transport.ts (kept local to avoid an api -> email dependency).
@@ -28,6 +29,9 @@ export const flagsRouter = {
 				disableSignups: z.boolean().describe("Whether new user signups are disabled on this instance."),
 				disableEmailAuth: z.boolean().describe("Whether email-based authentication is disabled on this instance."),
 				smtpEnabled: z.boolean().describe("Whether outbound email (SMTP) is configured on this instance."),
+				jobScannerEnabled: z
+					.boolean()
+					.describe("Whether the job scanner (server-side fetching of job boards) is enabled on this instance."),
 			}),
 		)
 		.handler(
@@ -35,6 +39,7 @@ export const flagsRouter = {
 				disableSignups: env.FLAG_DISABLE_SIGNUPS,
 				disableEmailAuth: env.FLAG_DISABLE_EMAIL_AUTH,
 				smtpEnabled: isSmtpEnabled(),
+				jobScannerEnabled: !env.FLAG_DISABLE_JOB_SCANNER,
 			}),
 		),
 };

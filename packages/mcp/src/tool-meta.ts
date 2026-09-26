@@ -647,6 +647,61 @@ export const TOOL_META = {
 		inputSchema: z.object({ resumeId: z.string().describe("The tailored resume's ID.") }),
 		annotations: READ_NON_IDEMPOTENT,
 	},
+	[T.listWatchedCompanies]: {
+		title: "List Watched Companies",
+		description:
+			"List the companies whose job boards the background scanner watches for this user, with each board's last scan status.",
+		inputSchema: z.object({}),
+		annotations: READ_IDEMPOTENT,
+	},
+	[T.watchCompany]: {
+		title: "Watch Company",
+		description:
+			"Add a company's careers board to the background job scanner. The board's ATS (Greenhouse, Ashby, Lever, Workable, SmartRecruiters) is auto-detected from the URL; unsupported boards are reported as such. Fails when the operator disabled the scanner.",
+		inputSchema: z.object({
+			name: z.string().min(1).describe("The company name."),
+			careersUrl: z.string().describe("The https careers/board URL."),
+		}),
+		annotations: { ...WRITE_NON_IDEMPOTENT, openWorldHint: true },
+	},
+	[T.unwatchCompany]: {
+		title: "Unwatch Company",
+		description: "Remove a watched company from the background job scanner. Already-discovered jobs remain.",
+		inputSchema: z.object({ id: z.string().describe("The watched company's ID.") }),
+		annotations: { ...WRITE_DESTRUCTIVE },
+	},
+	[T.scanJobBoards]: {
+		title: "Scan Job Boards",
+		description:
+			"Run a scan of the user's watched job boards right now (all of them, or one by watched company ID). Deterministic and zero-LLM: fetches each board's public API, applies the user's title/location/content filters, blacklist and re-apply cooldown, flags reposts and cross-listings by content fingerprint, and files matches into the discovery inbox. Rate limited; fetches external sites server-side.",
+		inputSchema: z.object({
+			watchedCompanyId: z.string().optional().describe("Scan only this watched company."),
+		}),
+		annotations: { ...WRITE_NON_IDEMPOTENT, openWorldHint: true },
+	},
+	[T.listDiscoveredJobs]: {
+		title: "List Discovered Jobs",
+		description:
+			"List the discovery inbox: jobs the scanner surfaced, newest-first, with repost/cross-listing flags and lifecycle status (new, seen, dismissed, imported, expired).",
+		inputSchema: z.object({
+			status: z.enum(["new", "seen", "dismissed", "imported", "expired"]).optional(),
+			limit: z.number().int().min(1).max(500).optional(),
+		}),
+		annotations: READ_IDEMPOTENT,
+	},
+	[T.importDiscoveredJob]: {
+		title: "Import Discovered Job",
+		description:
+			"Import a discovered job into the application tracker: creates an application (status saved, source Job scanner) carrying the posting's URL and description, and back-links it. Idempotent for already-imported jobs.",
+		inputSchema: z.object({ id: z.string().describe("The discovered job's ID.") }),
+		annotations: WRITE_NON_IDEMPOTENT,
+	},
+	[T.dismissDiscoveredJob]: {
+		title: "Dismiss Discovered Job",
+		description: "Dismiss a discovered job from the inbox. It will not resurface unless the posting changes.",
+		inputSchema: z.object({ id: z.string().describe("The discovered job's ID.") }),
+		annotations: WRITE_NON_IDEMPOTENT,
+	},
 	[T.tailorResumeForApplication]: {
 		title: "Tailor Resume For Application",
 		description:

@@ -10,6 +10,7 @@
 		"./fingerprint": "./src/fingerprint/index.ts",
 		"./legitimacy": "./src/legitimacy/index.ts",
 		"./reuse": "./src/reuse/index.ts",
+		"./scan-filters": "./src/scan-filters/index.ts",
 		"./skill-gap": "./src/skill-gap/index.ts",
 		"./stories": "./src/stories/index.ts"
 	},

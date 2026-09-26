@@ -2,6 +2,9 @@ import type {
 	AuditReport,
 	CareerFactsProfile,
 	CareerWorkAuthProfile,
+	DiscoveredJobFlags,
+	DiscoveredJobSalary,
+	DiscoveredJobStatus,
 	EvaluationBlocks,
 	EvaluationRequirement,
 	EvaluationStatus,
@@ -9,10 +12,13 @@ import type {
 	FactGateReportData,
 	LegitimacyTier,
 	ReuseDecision,
+	ScannerSettings,
 	SkillGapResult,
 	TailoringChange,
 	TailoringOperation,
 	TailoringStatus,
+	TitleFilterConfig,
+	WatchedCompanyStatus,
 } from "@reactive-resume/schema/career/data";
 import * as pg from "drizzle-orm/pg-core";
 import { generateId } from "@reactive-resume/utils/string";
@@ -37,6 +43,7 @@ export const careerProfile = pg.pgTable(
 			.references(() => user.id, { onDelete: "cascade" }),
 		workAuth: pg.jsonb("work_auth").$type<CareerWorkAuthProfile>(),
 		facts: pg.jsonb("facts").$type<CareerFactsProfile>(),
+		scanner: pg.jsonb("scanner").$type<ScannerSettings>(),
 		createdAt: pg.timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
 		updatedAt: pg
 			.timestamp("updated_at", { withTimezone: true })
@@ -100,6 +107,90 @@ export const evaluation = pg.pgTable(
 			.$onUpdate(() => /* @__PURE__ */ new Date()),
 	},
 	(t) => [pg.index().on(t.userId), pg.index().on(t.userId, t.applicationId, t.createdAt.desc())],
+);
+
+// A company whose job board the background scanner watches for this user. `careersUrl` is
+// what the user pastes; the provider is auto-detected from it (or pinned explicitly).
+export const watchedCompany = pg.pgTable(
+	"watched_company",
+	{
+		id: pg
+			.text("id")
+			.notNull()
+			.primaryKey()
+			.$defaultFn(() => generateId()),
+		userId: pg
+			.text("user_id")
+			.notNull()
+			.references(() => user.id, { onDelete: "cascade" }),
+		name: pg.text("name").notNull(),
+		careersUrl: pg.text("careers_url").notNull(),
+		/** Pinned provider id; null = auto-detect on each scan. */
+		provider: pg.text("provider"),
+		enabled: pg.boolean("enabled").notNull().default(true),
+		/** Widens/narrows the user's global title filter for this one company. */
+		titleFilterOverride: pg.jsonb("title_filter_override").$type<TitleFilterConfig>(),
+		lastScanAt: pg.timestamp("last_scan_at", { withTimezone: true }),
+		lastStatus: pg.text("last_status").$type<WatchedCompanyStatus>(),
+		lastError: pg.text("last_error"),
+		/** Consecutive failures; scans back off on persistent breakage instead of hammering. */
+		failCount: pg.integer("fail_count").notNull().default(0),
+		createdAt: pg.timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+		updatedAt: pg
+			.timestamp("updated_at", { withTimezone: true })
+			.notNull()
+			.defaultNow()
+			.$onUpdate(() => /* @__PURE__ */ new Date()),
+	},
+	(t) => [pg.index().on(t.userId, t.enabled)],
+);
+
+// A job the scanner surfaced. Its own inbox, deliberately NOT a new application status:
+// scan volume would drown the board, the pipeline enum is upstream-shared, and the
+// seen/expired lifecycle is scanner-domain. "Import" creates a real application and
+// back-links it, and every evaluation/tailoring feature applies from there.
+export const discoveredJob = pg.pgTable(
+	"discovered_job",
+	{
+		id: pg
+			.text("id")
+			.notNull()
+			.primaryKey()
+			.$defaultFn(() => generateId()),
+		userId: pg
+			.text("user_id")
+			.notNull()
+			.references(() => user.id, { onDelete: "cascade" }),
+		watchedCompanyId: pg.text("watched_company_id").references(() => watchedCompany.id, { onDelete: "set null" }),
+		company: pg.text("company").notNull(),
+		title: pg.text("title").notNull(),
+		url: pg.text("url").notNull(),
+		/** Provider dedup key or normalized URL — one row per posting per user. */
+		dedupKey: pg.text("dedup_key").notNull(),
+		location: pg.text("location"),
+		description: pg.text("description"),
+		/** 16-hex SimHash of the description when one was available. */
+		fingerprint: pg.text("fingerprint"),
+		salary: pg.jsonb("salary").$type<DiscoveredJobSalary>(),
+		postedAt: pg.timestamp("posted_at", { withTimezone: true }),
+		firstSeenAt: pg.timestamp("first_seen_at", { withTimezone: true }).notNull().defaultNow(),
+		lastSeenAt: pg.timestamp("last_seen_at", { withTimezone: true }).notNull().defaultNow(),
+		status: pg.text("status").$type<DiscoveredJobStatus>().notNull().default("new"),
+		/** Back-link once imported into the tracker. */
+		applicationId: pg.text("application_id").references(() => application.id, { onDelete: "set null" }),
+		flags: pg.jsonb("flags").$type<DiscoveredJobFlags>(),
+		createdAt: pg.timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+		updatedAt: pg
+			.timestamp("updated_at", { withTimezone: true })
+			.notNull()
+			.defaultNow()
+			.$onUpdate(() => /* @__PURE__ */ new Date()),
+	},
+	(t) => [
+		pg.unique().on(t.userId, t.dedupKey),
+		pg.index().on(t.userId, t.status, t.firstSeenAt.desc()),
+		pg.index().on(t.userId, t.lastSeenAt.desc()),
+	],
 );
 
 // One tailoring run per attempt: the career-ops per-application bundle mapped onto this

@@ -41,6 +41,8 @@ export const rateLimitConfig = {
 		resumePassword: { maxRequests: 5, window: 10 * 60 * 1000 },
 		pdfExport: { maxRequests: 5, window: 60 * 1000 },
 		aiRequest: { maxRequests: 20, window: 60 * 1000 },
+		// Manual board scans fetch external sites server-side; keep the human-triggered rate modest.
+		scannerRequest: { maxRequests: 6, window: 60 * 1000 },
 		storageUpload: { maxRequests: 20, window: 60 * 1000 },
 		storageDelete: { maxRequests: 30, window: 60 * 1000 },
 		resumeMutations: { maxRequests: 300, window: 60 * 1000 },

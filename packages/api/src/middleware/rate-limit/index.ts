@@ -66,6 +66,7 @@ const resumePasswordLimiter = new MemoryRatelimiter(rateLimitConfig.orpc.resumeP
 const pdfLimiter = new MemoryRatelimiter(rateLimitConfig.orpc.pdfExport);
 const resumeDownloadLimiter = new MemoryRatelimiter(rateLimitConfig.orpc.pdfExport);
 const aiLimiter = new MemoryRatelimiter(rateLimitConfig.orpc.aiRequest);
+const scannerLimiter = new MemoryRatelimiter(rateLimitConfig.orpc.scannerRequest);
 const storageUploadLimiter = new MemoryRatelimiter(rateLimitConfig.orpc.storageUpload);
 const storageDeleteLimiter = new MemoryRatelimiter(rateLimitConfig.orpc.storageDelete);
 const resumeMutationLimiter = new MemoryRatelimiter(rateLimitConfig.orpc.resumeMutations);
@@ -104,6 +105,11 @@ export const resumeDownloadRateLimit = createRatelimitMiddleware<
 export const aiRequestRateLimit = createRatelimitMiddleware<ContextWithHeaders, unknown>({
 	limiter: productionLimiter(aiLimiter),
 	key: ({ context }, input) => `ai-request:${getUserKey(context)}:${getInputKeyPart(input)}`,
+});
+
+export const scannerRateLimit = createRatelimitMiddleware<ContextWithHeaders, unknown>({
+	limiter: productionLimiter(scannerLimiter),
+	key: ({ context }) => `scanner:${getUserKey(context)}`,
 });
 
 export const storageUploadRateLimit = createRatelimitMiddleware<ContextWithHeaders, unknown>({

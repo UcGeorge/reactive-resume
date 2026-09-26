@@ -93,6 +93,8 @@ export const env = createEnv({
 		// operators who do not want background work or outbound fetches from the server.
 		FLAG_DISABLE_BACKGROUND_JOBS: z.stringbool().default(false),
 		FLAG_DISABLE_JOB_SCANNER: z.stringbool().default(false),
+		/** Hours between background scans of watched companies. */
+		SCANNER_INTERVAL_HOURS: z.coerce.number().int().min(1).max(168).default(6),
 	},
 	runtimeEnv: process.env,
 	emptyStringAsUndefined: true,

@@ -6,6 +6,7 @@ import type {
 	EvaluationStatus,
 	EvaluationWorkAuth,
 	LegitimacyTier,
+	ScannerSettings,
 	SkillGapResult,
 } from "@reactive-resume/schema/career/data";
 import { ORPCError } from "@orpc/client";
@@ -112,6 +113,7 @@ export const evaluationsService = {
 		userId: string;
 		workAuth?: CareerWorkAuthProfile | null | undefined;
 		facts?: CareerFactsProfile | null | undefined;
+		scanner?: ScannerSettings | null | undefined;
 	}) => {
 		const { userId, ...fields } = input;
 		const [row] = await db

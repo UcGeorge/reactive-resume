@@ -12,6 +12,7 @@ import {
 	factGateReportSchema,
 	legitimacyTierSchema,
 	reuseDecisionSchema,
+	scannerSettingsSchema,
 	skillGapResultSchema,
 	tailoringChangeSchema,
 	tailoringOperationSchema,
@@ -46,6 +47,7 @@ const careerProfileSchema = createSelectSchema(schema.careerProfile, {
 	id: z.string(),
 	workAuth: careerWorkAuthProfileSchema.nullable(),
 	facts: careerFactsProfileSchema.nullable(),
+	scanner: scannerSettingsSchema.nullable(),
 	createdAt: z.date(),
 	updatedAt: z.date(),
 });

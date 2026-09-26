@@ -4,6 +4,7 @@ import { aiProvidersRouter } from "../features/ai-providers/router";
 import { applicationsRouter } from "../features/applications/router";
 import { authRouter } from "../features/auth/router";
 import { coverLettersRouter } from "../features/cover-letters/router";
+import { discoveryRouter } from "../features/discovery/router";
 import { evaluationsRouter } from "../features/evaluations/router";
 import { flagsRouter } from "../features/flags/router";
 import { resumeRouter } from "../features/resume/router";
@@ -17,6 +18,7 @@ export default {
 	applications: applicationsRouter,
 	auth: authRouter,
 	coverLetters: coverLettersRouter,
+	discovery: discoveryRouter,
 	evaluations: evaluationsRouter,
 	flags: flagsRouter,
 	resume: resumeRouter,

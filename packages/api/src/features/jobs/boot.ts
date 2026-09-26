@@ -1,7 +1,8 @@
 import { env } from "@reactive-resume/env/server";
+import { fanOutScans, scanUser } from "../discovery/scan";
 import { runEvaluation } from "../evaluations/pipeline";
-import { registerWorker } from "./queue";
-import { evaluationRunPayloadSchema, JOB_NAMES } from "./registry";
+import { enqueueJob, registerWorker, scheduleCron } from "./queue";
+import { evaluationRunPayloadSchema, JOB_NAMES, scannerScanUserPayloadSchema } from "./registry";
 
 /**
  * Starts the in-process background workers. Called once at server boot, after migrations,
@@ -22,4 +23,19 @@ export async function startBackgroundJobs(): Promise<void> {
 		const payload = evaluationRunPayloadSchema.parse(data);
 		await runEvaluation(payload);
 	});
+
+	if (!env.FLAG_DISABLE_JOB_SCANNER) {
+		await registerWorker(JOB_NAMES.scannerScanUser, async (data) => {
+			const payload = scannerScanUserPayloadSchema.parse(data);
+			await scanUser(payload);
+		});
+		// The recurring pass: one lightweight cron job that fans out per-user scan jobs,
+		// deduped by singleton key so an already-queued user is never double-scanned.
+		await registerWorker(JOB_NAMES.scannerCron, async () => {
+			await fanOutScans(async (userId) => {
+				await enqueueJob(JOB_NAMES.scannerScanUser, { userId }, { singletonKey: userId });
+			});
+		});
+		await scheduleCron(JOB_NAMES.scannerCron, `0 */${env.SCANNER_INTERVAL_HOURS} * * *`);
+	}
 }

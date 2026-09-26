@@ -49,4 +49,11 @@ export const MCP_TOOL_NAME = {
 	getTailoringRun: "get_tailoring_run",
 	auditTailoredResume: "audit_tailored_resume",
 	factCheckResume: "fact_check_resume",
+	listWatchedCompanies: "list_watched_companies",
+	watchCompany: "watch_company",
+	unwatchCompany: "unwatch_company",
+	scanJobBoards: "scan_job_boards",
+	listDiscoveredJobs: "list_discovered_jobs",
+	importDiscoveredJob: "import_discovered_job",
+	dismissDiscoveredJob: "dismiss_discovered_job",
 } as const;

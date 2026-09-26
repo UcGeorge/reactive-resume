@@ -74,6 +74,16 @@ export async function registerWorker<Data>(
 	});
 }
 
+/** Register a cron schedule for a job. pg-boss persists schedules in Postgres, so this is
+ * idempotent across restarts — re-scheduling the same name replaces the previous cron. */
+export async function scheduleCron(name: JobName, cron: string, data: object = {}): Promise<void> {
+	const boss = await getBoss();
+	await boss.createQueue(name).catch(() => {
+		// Queue already exists.
+	});
+	await boss.schedule(name, cron, data);
+}
+
 /** Stop the queue (used by tests and graceful shutdown; the web process normally never stops it). */
 export async function stopBoss(): Promise<void> {
 	if (!bossPromise) return;

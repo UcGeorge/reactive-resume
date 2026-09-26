@@ -10,8 +10,11 @@ export type FactGateSource = {
 
 /** Per-user allowlist, same semantics as career-ops' `config/cv-facts.json`: allowMetrics /
  * allowFacts accept specific claims absent from the sources; forbiddenPhrases always block;
- * warnPhrases flag without blocking. */
-export type FactGateAllowlist = z.input<typeof careerFactsProfileSchema>;
+ * warnPhrases flag without blocking. Every list is optional — an absent list allows nothing
+ * (and forbids/warns on nothing). */
+export type FactGateAllowlist = {
+	[K in keyof z.infer<typeof careerFactsProfileSchema>]?: z.infer<typeof careerFactsProfileSchema>[K] | undefined;
+};
 
 export type FactGateInput = {
 	/** The tailored resume's full text (caller flattens ResumeData, e.g. via resumeDataToFactTexts). */
