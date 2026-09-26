@@ -12,6 +12,10 @@ Operational runbook for the `career-ops` fork deployed on Vercel. The Docker (dh
 | Postgres       | Neon `neon-red-ladder` (Free) → `DATABASE_URL` + unpooled variants                                   |
 | Redis          | Upstash `upstash-kv-coffee-pocket` (Free) → `REDIS_URL` / `KV_URL`                                   |
 | Files          | Vercel Blob `reactive-resume-files` (private) → `BLOB_READ_WRITE_TOKEN`                              |
+| Production URL | https://reactive-resume-psi.vercel.app (the team-scoped `*-projects.vercel.app` alias is SSO-walled)  |
+| MCP endpoint   | https://reactive-resume-psi.vercel.app/mcp (OAuth — sign in with your Reactive Resume account)        |
+
+Connect Claude Code: `claude mcp add --transport http reactive-resume https://reactive-resume-psi.vercel.app/mcp`, then `/mcp` → reactive-resume → authenticate.
 
 Git auto-deploy is not connected. To enable it: Vercel dashboard → Project → Settings → Git → connect the GitHub repo and set **Production Branch** to `career-ops`.
 
