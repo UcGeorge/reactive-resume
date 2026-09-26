@@ -3,6 +3,7 @@ import z from "zod";
 import * as schema from "@reactive-resume/db/schema";
 import {
 	auditReportSchema,
+	cadenceSettingsSchema,
 	careerFactsProfileSchema,
 	careerWorkAuthProfileSchema,
 	evaluationBlocksSchema,
@@ -48,6 +49,9 @@ const careerProfileSchema = createSelectSchema(schema.careerProfile, {
 	workAuth: careerWorkAuthProfileSchema.nullable(),
 	facts: careerFactsProfileSchema.nullable(),
 	scanner: scannerSettingsSchema.nullable(),
+	cadence: cadenceSettingsSchema.nullable(),
+	voiceNotes: z.string().nullable(),
+	emailDigest: z.boolean(),
 	createdAt: z.date(),
 	updatedAt: z.date(),
 });
@@ -137,6 +141,9 @@ export const evaluationDto = {
 		input: z.object({
 			workAuth: careerWorkAuthProfileSchema.nullable().optional(),
 			facts: careerFactsProfileSchema.nullable().optional(),
+			cadence: cadenceSettingsSchema.nullable().optional(),
+			voiceNotes: z.string().trim().max(2000).nullable().optional(),
+			emailDigest: z.boolean().optional(),
 		}),
 		output: careerProfileOutput,
 	},

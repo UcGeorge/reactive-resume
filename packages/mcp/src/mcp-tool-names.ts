@@ -56,4 +56,13 @@ export const MCP_TOOL_NAME = {
 	listDiscoveredJobs: "list_discovered_jobs",
 	importDiscoveredJob: "import_discovered_job",
 	dismissDiscoveredJob: "dismiss_discovered_job",
+	listDueFollowUps: "list_due_follow_ups",
+	completeFollowUp: "complete_follow_up",
+	snoozeFollowUp: "snooze_follow_up",
+	draftFollowUpMessage: "draft_follow_up_message",
+	listStories: "list_stories",
+	readStory: "read_story",
+	createStory: "create_story",
+	updateStory: "update_story",
+	matchStoryToQuestion: "match_story_to_question",
 } as const;

@@ -878,6 +878,9 @@ importers:
       '@reactive-resume/db':
         specifier: workspace:*
         version: link:../db
+      '@reactive-resume/email':
+        specifier: workspace:*
+        version: link:../email
       '@reactive-resume/env':
         specifier: workspace:*
         version: link:../env

@@ -32,6 +32,16 @@ msgstr "\"{0} · {1}\" e tutta la sua cronologia verranno eliminati definitivame
 msgid "(opens in new tab)"
 msgstr "(apre in una nuova scheda)"
 
+#. placeholder {0}: suggestions.achievements.length
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "{0, plural, one {# achievement candidate} other {# achievement candidates}}"
+msgstr ""
+
+#. placeholder {0}: selected.length
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "{0, plural, one {# achievement selected} other {# achievements selected}}"
+msgstr ""
+
 #. placeholder {0}: selected.length
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "{0, plural, one {# application to export} other {# applications to export}}"
@@ -42,6 +52,11 @@ msgstr "{0, plural, one {# candidatura da esportare} other {# candidature da esp
 msgid "{0, plural, one {# fact violation} other {# fact violations}}"
 msgstr ""
 
+#. placeholder {0}: suggestions.gaps.length
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "{0, plural, one {# gap} other {# gaps}}"
+msgstr ""
+
 #. placeholder {0}: section.items.length
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 msgid "{0, plural, one {# item} other {# items}}"
@@ -50,6 +65,16 @@ msgstr "{0, plural, one {# elemento} other {# elementi}}"
 #. placeholder {0}: selected.size
 #: src/features/discovery/components/inbox-view.tsx
 msgid "{0, plural, one {# job selected} other {# jobs selected}}"
+msgstr ""
+
+#. placeholder {0}: selected.length
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "{0, plural, one {# keyword selected} other {# keywords selected}}"
+msgstr ""
+
+#. placeholder {0}: suggestions.keywords.length
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "{0, plural, one {# keyword} other {# keywords}}"
 msgstr ""
 
 #. placeholder {0}: item.roles.length
@@ -65,6 +90,11 @@ msgstr ""
 #. placeholder {0}: companies.length
 #: src/features/discovery/components/companies-view.tsx
 msgid "{0, plural, one {# watched company} other {# watched companies}}"
+msgstr ""
+
+#. placeholder {0}: result.words
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "{0, plural, one {# word} other {# words}}"
 msgstr ""
 
 #. placeholder {0}: result.dismissed
@@ -182,6 +212,10 @@ msgstr "{label} negli ultimi 30 giorni"
 msgid "{passedRules} of {totalRules} checks passed"
 msgstr "{passedRules} di {totalRules} controlli superati"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "{remaining, plural, one {At least a sentence — # more character to go.} other {At least a sentence — # more characters to go.}}"
+msgstr ""
+
 #: src/libs/resume/ats.ts
 msgid "{sectionTitle} · Item {itemNumber}"
 msgstr "{sectionTitle} · Articolo {itemNumber}"
@@ -214,9 +248,17 @@ msgstr "<ul><li>Ho guidato la ricerca e la progettazione dell'interfaccia per un
 msgid "1 Column / Inline"
 msgstr "1 colonna / In linea"
 
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "1 day"
+msgstr ""
+
 #: src/dialogs/api-key/create.tsx
 msgid "1 month"
 msgstr "1 mese"
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "1 week"
+msgstr ""
 
 #: src/dialogs/api-key/create.tsx
 msgid "1 year"
@@ -237,6 +279,10 @@ msgstr "2022 - Oggi"
 #: src/features/homepage/resume-sculpture.tsx
 msgid "2022 to now"
 msgstr "dal 2022 a oggi"
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "3 days"
+msgstr ""
 
 #: src/dialogs/api-key/create.tsx
 msgid "3 months"
@@ -380,6 +426,10 @@ msgstr "Account"
 msgid "Account menu"
 msgstr "Menu dell'account"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Achievements"
+msgstr ""
+
 #: src/features/applications/components/table-view.tsx
 msgid "Actions"
 msgstr "Azioni"
@@ -394,6 +444,7 @@ msgstr "Dimensioni reali (100%)"
 
 #: src/features/applications/components/application-detail-sheet.tsx
 #: src/features/applications/components/table-view.tsx
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
 msgid "Add"
 msgstr "Aggiungi"
 
@@ -578,6 +629,14 @@ msgstr "Aggiungi due o tre righe in alto che descrivano cosa fai."
 msgid "Add your full name under Basics."
 msgstr "Aggiungi il tuo nome completo in Nozioni di base."
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Add your own keyword…"
+msgstr ""
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Address head-on"
+msgstr ""
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Adjust the resume for a remote-first role that values async communication and ownership."
 msgstr "Adatta il curriculum per un ruolo che predilige il lavoro da remoto, valorizzando la comunicazione asincrona e l'autonomia."
@@ -728,6 +787,18 @@ msgstr "Si è verificato un errore imprevisto che ha impedito il caricamento di 
 #: src/dialogs/resume/import.tsx
 msgid "An unknown error occurred while importing your resume."
 msgstr "Si è verificato un errore sconosciuto durante l'importazione del tuo curriculum."
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Analyzing the posting and your resume…"
+msgstr ""
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Answer a few prompts — you approve every word"
+msgstr ""
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Answer a few short prompts about this role. The letter is drafted only from your answers and from bullet points taken verbatim from your linked resume — and nothing is saved until you approve it at the end."
+msgstr ""
 
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Answer in your own words"
@@ -1011,6 +1082,10 @@ msgstr "Azerbaigiano"
 msgid "BA"
 msgstr "BA"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Back"
+msgstr ""
+
 #. Action returning a signed-in user to the page where they manage linked providers
 #: src/features/auth/pages/error.tsx
 msgid "Back to authentication settings"
@@ -1237,6 +1312,10 @@ msgstr "Controlla di nuovo"
 msgid "Check the exported file contains everything you expect, and that all of it is selectable text."
 msgstr "Controlla che il file esportato contenga tutto ciò che ti aspetti e che sia interamente testo selezionabile."
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Check these claims before saving"
+msgstr ""
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Check what an applicant tracking system would miss, and only add keywords you're sure about."
 msgstr "Controlla che cosa sfuggirebbe a un sistema di tracciamento dei candidati e aggiungi solo le parole chiave di cui sei sicuro."
@@ -1260,6 +1339,10 @@ msgstr "Controllo"
 #: src/features/resume/stylesheet/status.tsx
 msgid "Checking draft"
 msgstr "Controllo della bozza"
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Checking your applications and computing the follow-up cadence…"
+msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "Checking…"
@@ -1369,6 +1452,7 @@ msgstr "ID client"
 
 #: src/features/cover-letters/editor-dialog.tsx
 #: src/features/cover-letters/editor.tsx
+#: src/features/follow-ups/components/follow-ups-view.tsx
 msgid "Close"
 msgstr "Chiudi"
 
@@ -1448,6 +1532,10 @@ msgstr ""
 msgid "Company removed from your watches."
 msgstr ""
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Company research"
+msgstr ""
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Compare this resume against this job posting URL and update the keywords without overselling anything."
 msgstr "Confronta questo curriculum con l'URL di questo annuncio di lavoro e aggiorna le parole chiave senza esagerare."
@@ -1458,6 +1546,10 @@ msgstr ""
 
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "complete"
+msgstr ""
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Complete"
 msgstr ""
 
 #: src/features/ats-checker/messages.ts
@@ -1480,6 +1572,10 @@ msgstr "Conferma"
 #: src/features/resume/builder/password-dialog.tsx
 msgid "Confirm Password"
 msgstr "Confermi la password"
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Confirm the terms the letter should speak to. Deselect anything that doesn't apply to you — keep at least one."
+msgstr ""
 
 #. Authentication settings action to link a social login provider
 #: src/features/settings/authentication/components/social-provider.tsx
@@ -1578,6 +1674,7 @@ msgid "Converted stylesheet draft"
 msgstr "Bozza del foglio di stile convertito"
 
 #: src/features/applications/components/application-ai-copilot.tsx
+#: src/features/follow-ups/components/follow-ups-view.tsx
 msgid "Copied to clipboard."
 msgstr "Copiato negli appunti."
 
@@ -1633,6 +1730,10 @@ msgstr "Copia il testo dal file esportato e leggilo per intero; correggi tutto c
 msgid "Copy this secret key and use it in your applications to access your data."
 msgstr "Copia questa chiave segreta e usala nelle tue applicazioni per accedere ai tuoi dati."
 
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Copy to clipboard"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-components/dock.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
 msgid "Copy URL"
@@ -1656,6 +1757,7 @@ msgid "Could not complete this connection. Restart the connection from your clie
 msgstr "Impossibile completare questa connessione. Riavvia la connessione dal tuo client e riprova."
 
 #: src/features/applications/components/application-ai-copilot.tsx
+#: src/features/follow-ups/components/follow-ups-view.tsx
 msgid "Could not copy to clipboard. Please copy the text manually."
 msgstr "Impossibile copiare negli appunti. Copia il testo manualmente."
 
@@ -1722,6 +1824,10 @@ msgstr "Impossibile verificare la connessione. Controllare la chiave API, il mod
 msgid "Couldn't add the application. Please try again."
 msgstr "Impossibile aggiungere la candidatura. Riprova."
 
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Couldn't complete this follow-up."
+msgstr ""
+
 #: src/features/applications/components/application-actions-menu.tsx
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Couldn't delete the application."
@@ -1747,6 +1853,10 @@ msgstr ""
 msgid "Couldn't dismiss the job."
 msgstr ""
 
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Couldn't dismiss this follow-up."
+msgstr ""
+
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Couldn't fetch that URL."
 msgstr ""
@@ -1763,6 +1873,10 @@ msgstr ""
 msgid "Couldn't save"
 msgstr "Impossibile salvare"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Couldn't save the cover letter."
+msgstr ""
+
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Couldn't save the note."
 msgstr "Impossibile salvare la nota."
@@ -1774,6 +1888,10 @@ msgstr ""
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Couldn't save your changes. Please try again."
 msgstr "Impossibile salvare le modifiche. Riprova."
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Couldn't snooze this follow-up."
+msgstr ""
 
 #: src/features/applications/components/application-ai-copilot.tsx
 #: src/features/evaluations/components/evaluation-panel.tsx
@@ -1827,6 +1945,10 @@ msgstr "Lettera di presentazione"
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Cover letter draft"
 msgstr "Bozza lettera di presentazione"
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Cover letter saved."
+msgstr ""
 
 #: src/routes/dashboard/-components/sidebar.tsx
 #: src/routes/dashboard/cover-letters.tsx
@@ -2017,6 +2139,7 @@ msgid "Currently available for German resumes. Uses the language set in Page."
 msgstr "Attualmente disponibile per i curriculum in lingua tedesca. Utilizza la lingua impostata nella pagina."
 
 #: src/components/input/color-picker.tsx
+#: src/features/follow-ups/components/follow-ups-view.tsx
 msgid "Custom"
 msgstr "Personalizzato"
 
@@ -2305,6 +2428,7 @@ msgstr ""
 
 #: src/features/applications/components/application-ai-copilot.tsx
 #: src/features/discovery/components/inbox-view.tsx
+#: src/features/follow-ups/components/follow-ups-view.tsx
 msgid "Dismiss"
 msgstr "Congedare"
 
@@ -2404,6 +2528,10 @@ msgstr "Scarica PDF di esempio"
 msgid "Downloads"
 msgstr "Download"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Draft"
+msgstr ""
+
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Draft a cover letter"
 msgstr "Prepara una lettera di presentazione"
@@ -2416,9 +2544,26 @@ msgstr "Prepara un follow-up"
 msgid "Draft answers"
 msgstr ""
 
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Draft message"
+msgstr ""
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Draft the letter"
+msgstr ""
+
 #: src/features/applications/components/application-ai-copilot.tsx
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
 msgid "Drafting failed."
 msgstr "Creazione della bozza non riuscita."
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Drafting your letter…"
+msgstr ""
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Drafting your message…"
+msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/layout/pages.tsx
 msgid "Drag and drop sections here to move them between columns"
@@ -2435,6 +2580,10 @@ msgstr "Trascina per sfogliare le pagine"
 #: src/features/ats-checker/messages.ts
 msgid "Drop the pronouns and start from the verb. That is the convention in most markets."
 msgstr "Ometti i pronomi e parti dal verbo. È la convenzione nella maggior parte dei mercati."
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Due today"
+msgstr ""
 
 #. Resume card context menu action to create a copy
 #. Resume card dropdown action to create a copy
@@ -2468,12 +2617,20 @@ msgstr "Duplicazione del tuo curriculum in corso..."
 msgid "Dutch"
 msgstr "Olandese"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "e.g. direct and technical"
+msgstr ""
+
 #: src/features/discovery/components/settings-view.tsx
 msgid "e.g. engineer, word:go, backend+senior"
 msgstr ""
 
 #: src/features/discovery/components/settings-view.tsx
 msgid "e.g. intern, staffing"
+msgstr ""
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "e.g. Jane Doe, Head of Engineering"
 msgstr ""
 
 #: src/features/discovery/components/settings-view.tsx
@@ -3060,6 +3217,10 @@ msgstr "Seguici su GitHub"
 msgid "Finnish"
 msgstr "Finlandese"
 
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "First check-in"
+msgstr ""
+
 #. placeholder {0}: formatRelativeTime(job.firstSeenAt, relativeTimeFormatter)
 #: src/features/discovery/components/inbox-view.tsx
 msgid "First seen {0}"
@@ -3101,9 +3262,21 @@ msgstr "Data follow-up"
 msgid "Follow-up draft"
 msgstr "Bozza follow-up"
 
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Follow-up message"
+msgstr ""
+
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Follow-up note"
 msgstr "Nota follow-up"
+
+#: src/routes/dashboard/applications/index.tsx
+msgid "Follow-ups"
+msgstr ""
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Follow-ups appear automatically after you mark an application applied — a first check-in about a week later, another one after that, and a thank-you note once you interview. Snoozed follow-ups resurface when their snooze lapses."
+msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/typography.tsx
 msgid "Font Family"
@@ -3159,6 +3332,10 @@ msgstr "Formato"
 msgid "Format stylesheet"
 msgstr "Formato foglio di stile"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "found. Continue when you're ready."
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/right/sections/page.tsx
 msgid "Free-form"
 msgstr "Forma libera"
@@ -3203,6 +3380,10 @@ msgstr "A schermo intero"
 msgid "Fullscreen Editor"
 msgstr "Editor a schermo intero"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Gaps"
+msgstr ""
+
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Gaps & mitigations"
 msgstr ""
@@ -3236,6 +3417,10 @@ msgstr "Ricevi un secondo parere su ciò che scrivi, condividi il tuo curriculum
 #: src/features/homepage/site-footer.tsx
 msgid "Get Started"
 msgstr "Per iniziare"
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Getting ready"
+msgstr ""
 
 #. Authentication provider display name in account settings
 #. Brand name label for GitHub social sign-in button
@@ -3305,6 +3490,11 @@ msgstr "Greco"
 #: src/routes/dashboard/resumes/index.tsx
 msgid "Grid"
 msgstr "Griglia"
+
+#: src/features/applications/components/application-ai-copilot.tsx
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Guided cover letter"
+msgstr ""
 
 #: src/features/discovery/components/settings-view.tsx
 msgid "Hard block"
@@ -3458,6 +3648,10 @@ msgstr "Home"
 #: src/features/settings/pages/api-keys.tsx
 msgid "How do I use the API?"
 msgstr "Come faccio a usare l'API?"
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "How would you approach it?"
+msgstr ""
 
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "https://… (job posting URL)"
@@ -3822,6 +4016,7 @@ msgstr "Disposizione parole chiave"
 
 #: src/dialogs/resume/sections/interest.tsx
 #: src/dialogs/resume/sections/skill.tsx
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
 msgid "Keywords"
 msgstr "Parole chiave"
 
@@ -3912,6 +4107,10 @@ msgstr "Disponi il testo orizzontalmente. I tratti ruotati vengono spesso persi 
 msgid "Layout"
 msgstr "Disposizione"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Lead with adjacent experience"
+msgstr ""
+
 #: src/features/homepage/feature-explorer.tsx
 msgid "Lead with the work. Add a concrete detail so someone can picture it."
 msgstr "Parti dal lavoro svolto. Aggiungi un dettaglio concreto per permettere a chi legge di immaginarlo."
@@ -3928,6 +4127,10 @@ msgstr "Lascia almeno un centimetro e mezzo intorno alla pagina."
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
 msgid "Leave empty to reset the title to the original."
 msgstr "Lascia vuoto per ripristinare il titolo originale."
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Leave it out"
+msgstr ""
 
 #: src/dialogs/resume/import.tsx
 msgid "Leave to set up an AI provider?"
@@ -4026,6 +4229,10 @@ msgstr "Collega un curriculum e incolla la descrizione del lavoro (Modificare) p
 
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Link a resume and paste the job description (Edit) to tailor a copy for this job."
+msgstr ""
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Link a resume and paste the job description first"
 msgstr ""
 
 #: src/features/applications/components/application-detail-sheet.tsx
@@ -4428,6 +4635,7 @@ msgstr "Nuovo thread"
 msgid "New Thread"
 msgstr "Nuovo thread"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
 #: src/features/cover-letters/library.tsx
 msgid "Next"
 msgstr "Avanti"
@@ -4459,6 +4667,10 @@ msgstr "Nessuna candidatura per ora. Aggiungine qualcuna per vedere il tuo funne
 #: src/features/ats-checker/messages.ts
 msgid "No bullet lists were found."
 msgstr "Non sono stati trovati elenchi puntati."
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "No bullet points were found in the linked resume. Add achievement bullets to the resume first — the letter can only cite what the resume states."
+msgstr ""
 
 #. Empty-state message when no command palette results match the search query
 #: src/features/command-palette/index.tsx
@@ -4493,6 +4705,14 @@ msgstr "Non è stata trovata una sezione istruzione."
 #: src/features/ats-checker/messages.ts
 msgid "No email address was found."
 msgstr "Non è stato trovato alcun indirizzo email."
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "No follow-ups due"
+msgstr ""
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "No gaps surfaced between the posting and your resume — continue to the next step."
+msgstr ""
 
 #: src/features/discovery/components/inbox-view.tsx
 msgid "No jobs with this status."
@@ -4731,6 +4951,10 @@ msgstr "Apri assistente AI"
 msgid "Open application"
 msgstr ""
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Open Cover Letters"
+msgstr ""
+
 #: src/features/homepage/resume-sculpture.tsx
 msgid "Open design library"
 msgstr "Apri la libreria di progettazione"
@@ -4782,6 +5006,10 @@ msgstr "Si apre in una nuova scheda"
 msgid "opens in new tab"
 msgstr "apre in una nuova scheda"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Optional — paste a line from their blog, a recent launch, a funding note…"
+msgstr ""
+
 #: src/routes/agent/-components/patch-approval-card.tsx
 msgid "Optional note for the agent"
 msgstr "Nota facoltativa per l'agente"
@@ -4789,6 +5017,10 @@ msgstr "Nota facoltativa per l'agente"
 #: src/routes/agent/-components/patch-approval-card.tsx
 msgid "Optional note for the agent…"
 msgstr "Nota facoltativa per l'agente…"
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Optional, but it makes the opening concrete: a letter grounded in something the company actually shipped or announced beats a generic introduction. Paste a sentence or two — only what you paste here is used."
+msgstr ""
 
 #: src/routes/_home/ats-checker.tsx
 msgid "Optionally, which terms from a job posting already appear."
@@ -4822,6 +5054,10 @@ msgstr "La formattazione originale della tabella viene mantenuta. Questo contenu
 #: src/features/ats-checker/report/score-header.tsx
 msgid "out of 100"
 msgstr "su 100"
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Overdue"
+msgstr ""
 
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Overview"
@@ -5024,6 +5260,10 @@ msgstr "Scegli un'icona"
 #: src/features/ats-checker/messages.ts
 msgid "Pick one format and use it everywhere."
 msgstr "Scegli un formato e usalo ovunque."
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Pick the bullet points the letter may cite — taken word-for-word from your linked resume, so it can't claim anything you didn't. Select at least one."
+msgstr ""
 
 #: src/libs/resume/section.tsx
 msgid "Picture"
@@ -5418,6 +5658,10 @@ msgstr "Pronto a metterci il tuo nome?"
 msgid "Recipient"
 msgstr "Destinatario"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Recipient (optional)"
+msgstr ""
+
 #: src/components/level/combobox.tsx
 msgid "Rectangle"
 msgstr "Rettangolo"
@@ -5433,6 +5677,10 @@ msgstr "Rifare"
 #: src/features/resume/stylesheet/toolbar.tsx
 msgid "Redo stylesheet edit"
 msgstr "Riesegui la modifica del foglio di stile"
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Redraft"
+msgstr ""
 
 #: src/dialogs/resume/sections/custom.tsx
 #: src/libs/resume/section-title.ts
@@ -5557,6 +5805,10 @@ msgstr "Sostituisci le tabelle con paragrafi ed elenchi semplici. Le celle vengo
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Replace the attached cover letter?"
 msgstr "Sostituire la lettera di presentazione allegata?"
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Reply follow-up"
+msgstr ""
 
 #: src/features/homepage/page.tsx
 msgid "Report a bug"
@@ -5956,6 +6208,10 @@ msgstr ""
 msgid "Save the file with every page upright."
 msgstr "Salva il file con ogni pagina orientata correttamente."
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Save to Cover Letters"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-components/header.tsx
 msgid "Saved"
 msgstr "Salvato"
@@ -6012,6 +6268,10 @@ msgstr ""
 msgid "Search"
 msgstr "Ricerca"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Search achievements…"
+msgstr ""
+
 #: src/routes/dashboard/applications/index.tsx
 msgid "Search applications…"
 msgstr "Cerca candidature…"
@@ -6051,6 +6311,10 @@ msgstr "Cerca..."
 #: src/features/command-palette/index.tsx
 msgid "Search…"
 msgstr "Cerca…"
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Second check-in"
+msgstr ""
 
 #: src/dialogs/auth/enable-two-factor.tsx
 msgid "Secret copied to clipboard."
@@ -6448,6 +6712,10 @@ msgstr "Sloveno"
 msgid "Slug"
 msgstr "Slug"
 
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Snooze"
+msgstr ""
+
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Soft gaps"
 msgstr ""
@@ -6689,6 +6957,11 @@ msgstr "Rimani"
 #: src/features/homepage/ats-playground.tsx
 msgid "Stays in your browser"
 msgstr "Resta nel tuo browser"
+
+#. placeholder {0}: step + 1
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Step {0} of {STEP_COUNT}"
+msgstr ""
 
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Still waiting for {provider}… {elapsedSeconds}s"
@@ -6935,6 +7208,10 @@ msgstr "Thai"
 msgid "Thank you for helping keep it free."
 msgstr "Grazie per aiutarci a mantenerlo gratuito."
 
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Thank-you note"
+msgstr ""
+
 #: src/features/ats-checker/tool.tsx
 msgid "That file could not be read as a PDF."
 msgstr "Quel file non è stato leggibile come PDF."
@@ -6963,6 +7240,10 @@ msgstr "Quel provider di accesso non è più disponibile su questo server."
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "The agent needs your input."
 msgstr "L'agente ha bisogno del tuo contributo."
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "The analysis failed."
+msgstr ""
 
 #: src/features/settings/pages/api-keys.tsx
 msgid "The API documentation shows how to connect Reactive Resume to your own applications. It covers the endpoints, the request format, and authentication."
@@ -6997,6 +7278,10 @@ msgstr "Il controllo approfondito non è riuscito a terminare. Riprova."
 
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "The fact check failed."
+msgstr ""
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "The fact check flagged lines it couldn't trace back to your resume. You approve the letter by saving it — edit your answers and redraft, or save anyway if you know a claim is true."
 msgstr ""
 
 #. Error shown when AI parsing returns invalid resume structure during import
@@ -7043,6 +7328,10 @@ msgstr "La password inserita non è corretta"
 #: src/routes/_home/ats-checker.tsx
 msgid "The PDF is read by code running in this tab. Nothing is uploaded, nothing is stored, and no account is needed. Open your browser's network tab and watch, if you like."
 msgstr "Il PDF viene letto da codice eseguito in questa scheda. Niente viene caricato, niente viene memorizzato e non serve alcun account. Apri pure la scheda rete del tuo browser e osserva, se vuoi."
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "The posting asks for things your resume doesn't show. Decide how the letter should handle each one."
+msgstr ""
 
 #: src/features/auth/pages/error.tsx
 msgid "The provider didn't share an email address, which is required to sign in."
@@ -7209,6 +7498,10 @@ msgstr "Questo crea una nuova chiave API, che consente ad altri programmi di leg
 #: src/libs/resume/ats.ts
 msgid "This date will not be read correctly."
 msgstr "Questa data non verrà letta correttamente."
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "This draft isn't saved yet — it becomes a cover letter only when you save it below."
+msgstr ""
 
 #: src/routes/agent/-components/patch-approval-card.tsx
 msgid "This edit request can no longer be answered."
@@ -7522,6 +7815,10 @@ msgstr "Token: {total}"
 msgid "Tokens: {total} ({cached} cached)"
 msgstr "Token: {total} ({cached} in cache)"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Tone"
+msgstr ""
+
 #: src/features/homepage/resume-sculpture.tsx
 msgid "Tools"
 msgstr "Strumenti"
@@ -7561,6 +7858,8 @@ msgid "Translations"
 msgstr "Traduzioni"
 
 #: src/components/layout/error-screen.tsx
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+#: src/features/follow-ups/components/follow-ups-view.tsx
 #: src/features/homepage/ats-playground.tsx
 msgid "Try again"
 msgstr "Riprova"
@@ -7714,6 +8013,10 @@ msgstr "Non verificato"
 #. placeholder {0}: format(salary.max)
 #: src/features/discovery/components/inbox-view.tsx
 msgid "Up to {0}"
+msgstr ""
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Upcoming"
 msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
@@ -8133,6 +8436,14 @@ msgstr "Cosa vuoi fare?"
 msgid "What do you want to rename this section to?"
 msgstr "Come vuoi rinominare questa sezione?"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "What is this company working on right now?"
+msgstr ""
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "What problem would you solve for them?"
+msgstr ""
+
 #: src/routes/_home/ats-checker.tsx
 msgid "What this checks"
 msgstr "Cosa controlla questo strumento"
@@ -8192,6 +8503,10 @@ msgstr "Se la tua cronologia può essere ricostruita."
 
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Why"
+msgstr ""
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Why this company?"
 msgstr ""
 
 #: src/features/ats-checker/messages.ts
@@ -8303,6 +8618,10 @@ msgstr "La tua app IA"
 #: src/features/ats-checker/ai-review/ai-review-card.tsx
 msgid "Your AI provider could not be reached. Check its settings and try again."
 msgstr "Non è stato possibile raggiungere il tuo provider AI. Controlla le sue impostazioni e riprova."
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Your answers"
+msgstr ""
 
 #: src/dialogs/api-key/create.tsx
 msgid "Your API key has been copied to the clipboard."

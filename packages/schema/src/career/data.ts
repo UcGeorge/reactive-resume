@@ -329,6 +329,48 @@ export const watchedCompanyStatusSchema = z.enum(["ok", "error", "unsupported"])
 
 export type WatchedCompanyStatus = z.infer<typeof watchedCompanyStatusSchema>;
 
+// --- Follow-ups --------------------------------------------------------------------
+
+export const followUpKindSchema = z.enum([
+	"applied_first",
+	"applied_subsequent",
+	"post_interview_thanks",
+	"responded",
+	"custom",
+]);
+
+export type FollowUpKind = z.infer<typeof followUpKindSchema>;
+
+export const followUpStatusSchema = z.enum(["pending", "done", "snoozed", "dismissed"]);
+
+export type FollowUpStatus = z.infer<typeof followUpStatusSchema>;
+
+/** Per-user cadence overrides; anything omitted falls back to the career defaults. */
+export const cadenceSettingsSchema = z.object({
+	appliedFirstDays: z.number().int().min(1).max(60).optional(),
+	appliedSubsequentDays: z.number().int().min(1).max(60).optional(),
+	maxApplied: z.number().int().min(0).max(10).optional(),
+	respondedInitialDays: z.number().int().min(1).max(60).optional(),
+	respondedSubsequentDays: z.number().int().min(1).max(60).optional(),
+	interviewThankYouDays: z.number().int().min(1).max(14).optional(),
+});
+
+export type CadenceSettings = z.infer<typeof cadenceSettingsSchema>;
+
+// --- Story bank --------------------------------------------------------------------
+
+/** Provenance of a story's claims. `derived-unverified` is the default for unmarked
+ * numeric claims; `user-cannot-confirm` is durable — it never auto-changes, because "I can
+ * no longer verify this number" is information, not a gap to paper over. */
+export const storyProvenanceSchema = z.enum([
+	"resume-verified",
+	"user-confirmed",
+	"derived-unverified",
+	"user-cannot-confirm",
+]);
+
+export type StoryProvenance = z.infer<typeof storyProvenanceSchema>;
+
 // --- Career profile ----------------------------------------------------------------
 
 export const careerWorkAuthProfileSchema = z.object({

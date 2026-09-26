@@ -702,6 +702,85 @@ export const TOOL_META = {
 		inputSchema: z.object({ id: z.string().describe("The discovered job's ID.") }),
 		annotations: WRITE_NON_IDEMPOTENT,
 	},
+	[T.listDueFollowUps]: {
+		title: "List Due Follow-ups",
+		description:
+			"The follow-up queue: due and upcoming follow-ups across active applications, computed from the cadence rules (first check-in after applying, later check-ins, post-interview thank-you) plus custom ones. Reading recomputes the queue, so it is always current.",
+		inputSchema: z.object({ horizonDays: z.number().int().min(1).max(90).optional() }),
+		annotations: READ_NON_IDEMPOTENT,
+	},
+	[T.completeFollowUp]: {
+		title: "Complete Follow-up",
+		description: "Mark a follow-up done. The cadence may later schedule the next one in its sequence.",
+		inputSchema: z.object({ id: z.string().describe("The follow-up's ID.") }),
+		annotations: WRITE_NON_IDEMPOTENT,
+	},
+	[T.snoozeFollowUp]: {
+		title: "Snooze Follow-up",
+		description: "Snooze a follow-up until a future date; it resurfaces in the queue then.",
+		inputSchema: z.object({ id: z.string(), until: z.string().describe("ISO date-time to resurface at.") }),
+		annotations: WRITE_NON_IDEMPOTENT,
+	},
+	[T.draftFollowUpMessage]: {
+		title: "Draft Follow-up Message",
+		description:
+			"Send the follow-up's cadence context (kind of touch, days elapsed, known contact) to your configured AI provider to draft the message. Returns text only; nothing is sent to anyone.",
+		inputSchema: z.object({ id: z.string().describe("The follow-up's ID.") }),
+		annotations: { ...READ_NON_IDEMPOTENT, openWorldHint: true },
+	},
+	[T.listStories]: {
+		title: "List Stories",
+		description:
+			"List the interview story bank: STAR+Reflection stories with themes, routing tags and provenance (resume-verified / user-confirmed / derived-unverified / user-cannot-confirm).",
+		inputSchema: z.object({}),
+		annotations: READ_IDEMPOTENT,
+	},
+	[T.readStory]: {
+		title: "Read Story",
+		description: "Read one story's full STAR+Reflection content.",
+		inputSchema: z.object({ id: z.string().describe("The story's ID.") }),
+		annotations: READ_IDEMPOTENT,
+	},
+	[T.createStory]: {
+		title: "Create Story",
+		description:
+			"Save a STAR+Reflection story to the bank. Never invent numbers, employers or scope the user did not state; stories default to derived-unverified provenance until the user confirms them.",
+		inputSchema: z.object({
+			title: z.string().min(1),
+			theme: z.string().optional(),
+			situation: z.string().optional(),
+			task: z.string().optional(),
+			action: z.string().optional(),
+			result: z.string().optional(),
+			reflection: z.string().optional(),
+			tags: z.array(z.string()).optional(),
+		}),
+		annotations: WRITE_NON_IDEMPOTENT,
+	},
+	[T.updateStory]: {
+		title: "Update Story",
+		description:
+			"Update a story's fields. Provenance changes are the user's call: never set resume-verified or user-confirmed on your own initiative, and never change user-cannot-confirm.",
+		inputSchema: z.object({
+			id: z.string(),
+			title: z.string().optional(),
+			theme: z.string().optional(),
+			situation: z.string().optional(),
+			task: z.string().optional(),
+			action: z.string().optional(),
+			result: z.string().optional(),
+			reflection: z.string().optional(),
+			tags: z.array(z.string()).optional(),
+		}),
+		annotations: WRITE_NON_IDEMPOTENT,
+	},
+	[T.matchStoryToQuestion]: {
+		title: "Match Story To Question",
+		description:
+			"Deterministically rank the story bank against an interview question (tag hits, token overlap, optional JD-term boost from the application's evaluation). Returns ranked candidates with reasons.",
+		inputSchema: z.object({ question: z.string().min(3), applicationId: z.string().optional() }),
+		annotations: READ_IDEMPOTENT,
+	},
 	[T.tailorResumeForApplication]: {
 		title: "Tailor Resume For Application",
 		description:

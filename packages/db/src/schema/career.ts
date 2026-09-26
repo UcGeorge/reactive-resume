@@ -1,5 +1,6 @@
 import type {
 	AuditReport,
+	CadenceSettings,
 	CareerFactsProfile,
 	CareerWorkAuthProfile,
 	DiscoveredJobFlags,
@@ -10,10 +11,13 @@ import type {
 	EvaluationStatus,
 	EvaluationWorkAuth,
 	FactGateReportData,
+	FollowUpKind,
+	FollowUpStatus,
 	LegitimacyTier,
 	ReuseDecision,
 	ScannerSettings,
 	SkillGapResult,
+	StoryProvenance,
 	TailoringChange,
 	TailoringOperation,
 	TailoringStatus,
@@ -44,6 +48,12 @@ export const careerProfile = pg.pgTable(
 		workAuth: pg.jsonb("work_auth").$type<CareerWorkAuthProfile>(),
 		facts: pg.jsonb("facts").$type<CareerFactsProfile>(),
 		scanner: pg.jsonb("scanner").$type<ScannerSettings>(),
+		cadence: pg.jsonb("cadence").$type<CadenceSettings>(),
+		// Optional abstract voice descriptors for candidate-facing prose (cover letters,
+		// outreach) — style, never content. The anti-slop tier applies regardless.
+		voiceNotes: pg.text("voice_notes"),
+		// Daily follow-up email digest (only when the instance has SMTP configured).
+		emailDigest: pg.boolean("email_digest").notNull().default(false),
 		createdAt: pg.timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
 		updatedAt: pg
 			.timestamp("updated_at", { withTimezone: true })
@@ -107,6 +117,43 @@ export const evaluation = pg.pgTable(
 			.$onUpdate(() => /* @__PURE__ */ new Date()),
 	},
 	(t) => [pg.index().on(t.userId), pg.index().on(t.userId, t.applicationId, t.createdAt.desc())],
+);
+
+// A scheduled follow-up on one application. Materialized from the cadence rules (or
+// created custom by the user), surfaced as an in-app queue and an optional email digest.
+// The display-only followUpAt/followUpNote fields on the application row remain what they
+// were; the queue reads them as a user-pinned custom entry.
+export const followUp = pg.pgTable(
+	"follow_up",
+	{
+		id: pg
+			.text("id")
+			.notNull()
+			.primaryKey()
+			.$defaultFn(() => generateId()),
+		userId: pg
+			.text("user_id")
+			.notNull()
+			.references(() => user.id, { onDelete: "cascade" }),
+		applicationId: pg
+			.text("application_id")
+			.notNull()
+			.references(() => application.id, { onDelete: "cascade" }),
+		kind: pg.text("kind").$type<FollowUpKind>().notNull(),
+		dueAt: pg.timestamp("due_at", { withTimezone: true }).notNull(),
+		status: pg.text("status").$type<FollowUpStatus>().notNull().default("pending"),
+		note: pg.text("note"),
+		completedAt: pg.timestamp("completed_at", { withTimezone: true }),
+		snoozedUntil: pg.timestamp("snoozed_until", { withTimezone: true }),
+		emailNotifiedAt: pg.timestamp("email_notified_at", { withTimezone: true }),
+		createdAt: pg.timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+		updatedAt: pg
+			.timestamp("updated_at", { withTimezone: true })
+			.notNull()
+			.defaultNow()
+			.$onUpdate(() => /* @__PURE__ */ new Date()),
+	},
+	(t) => [pg.index().on(t.userId, t.status, t.dueAt), pg.index().on(t.applicationId)],
 );
 
 // A company whose job board the background scanner watches for this user. `careersUrl` is
@@ -191,6 +238,45 @@ export const discoveredJob = pg.pgTable(
 		pg.index().on(t.userId, t.status, t.firstSeenAt.desc()),
 		pg.index().on(t.userId, t.lastSeenAt.desc()),
 	],
+);
+
+// A STAR+Reflection story in the interview bank. Provenance is the load-bearing column:
+// a compact story card is exactly the surface where an unverified number gets laundered
+// into an established fact, so every story carries how its claims are backed.
+export const story = pg.pgTable(
+	"story",
+	{
+		id: pg
+			.text("id")
+			.notNull()
+			.primaryKey()
+			.$defaultFn(() => generateId()),
+		userId: pg
+			.text("user_id")
+			.notNull()
+			.references(() => user.id, { onDelete: "cascade" }),
+		title: pg.text("title").notNull(),
+		theme: pg.text("theme").notNull().default(""),
+		situation: pg.text("situation").notNull().default(""),
+		task: pg.text("task").notNull().default(""),
+		action: pg.text("action").notNull().default(""),
+		result: pg.text("result").notNull().default(""),
+		reflection: pg.text("reflection").notNull().default(""),
+		provenance: pg.text("provenance").$type<StoryProvenance>().notNull().default("derived-unverified"),
+		/** "Best for questions about …" routing tags. */
+		tags: pg.text("tags").array().notNull().default([]),
+		sourceResumeId: pg.text("source_resume_id").references(() => resume.id, { onDelete: "set null" }),
+		sourceApplicationId: pg.text("source_application_id").references(() => application.id, { onDelete: "set null" }),
+		lastUsedAt: pg.timestamp("last_used_at", { withTimezone: true }),
+		timesUsed: pg.integer("times_used").notNull().default(0),
+		createdAt: pg.timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+		updatedAt: pg
+			.timestamp("updated_at", { withTimezone: true })
+			.notNull()
+			.defaultNow()
+			.$onUpdate(() => /* @__PURE__ */ new Date()),
+	},
+	(t) => [pg.index().on(t.userId, t.updatedAt.desc())],
 );
 
 // One tailoring run per attempt: the career-ops per-application bundle mapped onto this

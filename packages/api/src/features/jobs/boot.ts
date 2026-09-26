@@ -38,4 +38,17 @@ export async function startBackgroundJobs(): Promise<void> {
 		});
 		await scheduleCron(JOB_NAMES.scannerCron, `0 */${env.SCANNER_INTERVAL_HOURS} * * *`);
 	}
+
+	// Follow-ups: one daily materialize sweep (08:00 UTC) and, right after it, the opt-in
+	// email digest (which no-ops when SMTP is not configured).
+	await registerWorker(JOB_NAMES.followUpsMaterialize, async () => {
+		const { materializeAllFollowUps } = await import("../follow-ups/jobs");
+		await materializeAllFollowUps();
+	});
+	await registerWorker(JOB_NAMES.followUpsDigest, async () => {
+		const { sendFollowUpDigests } = await import("../follow-ups/jobs");
+		await sendFollowUpDigests();
+	});
+	await scheduleCron(JOB_NAMES.followUpsMaterialize, "0 8 * * *");
+	await scheduleCron(JOB_NAMES.followUpsDigest, "10 8 * * *");
 }

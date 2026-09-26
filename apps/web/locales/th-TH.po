@@ -32,6 +32,16 @@ msgstr "\"{0} · {1}\" และไทม์ไลน์ทั้งหมดจ
 msgid "(opens in new tab)"
 msgstr "(เปิดในแท็บใหม่)"
 
+#. placeholder {0}: suggestions.achievements.length
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "{0, plural, one {# achievement candidate} other {# achievement candidates}}"
+msgstr ""
+
+#. placeholder {0}: selected.length
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "{0, plural, one {# achievement selected} other {# achievements selected}}"
+msgstr ""
+
 #. placeholder {0}: selected.length
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "{0, plural, one {# application to export} other {# applications to export}}"
@@ -42,6 +52,11 @@ msgstr "{0, plural, one {# แอปพลิเคชันเพื่อส�
 msgid "{0, plural, one {# fact violation} other {# fact violations}}"
 msgstr ""
 
+#. placeholder {0}: suggestions.gaps.length
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "{0, plural, one {# gap} other {# gaps}}"
+msgstr ""
+
 #. placeholder {0}: section.items.length
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 msgid "{0, plural, one {# item} other {# items}}"
@@ -50,6 +65,16 @@ msgstr "{0, plural, one {# รายการ} other {# รายการ}}"
 #. placeholder {0}: selected.size
 #: src/features/discovery/components/inbox-view.tsx
 msgid "{0, plural, one {# job selected} other {# jobs selected}}"
+msgstr ""
+
+#. placeholder {0}: selected.length
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "{0, plural, one {# keyword selected} other {# keywords selected}}"
+msgstr ""
+
+#. placeholder {0}: suggestions.keywords.length
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "{0, plural, one {# keyword} other {# keywords}}"
 msgstr ""
 
 #. placeholder {0}: item.roles.length
@@ -65,6 +90,11 @@ msgstr ""
 #. placeholder {0}: companies.length
 #: src/features/discovery/components/companies-view.tsx
 msgid "{0, plural, one {# watched company} other {# watched companies}}"
+msgstr ""
+
+#. placeholder {0}: result.words
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "{0, plural, one {# word} other {# words}}"
 msgstr ""
 
 #. placeholder {0}: result.dismissed
@@ -182,6 +212,10 @@ msgstr "{label} ในช่วง 30 วันที่ผ่านมา"
 msgid "{passedRules} of {totalRules} checks passed"
 msgstr "ผ่านการตรวจสอบ {passedRules} จาก {totalRules} รายการ"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "{remaining, plural, one {At least a sentence — # more character to go.} other {At least a sentence — # more characters to go.}}"
+msgstr ""
+
 #: src/libs/resume/ats.ts
 msgid "{sectionTitle} · Item {itemNumber}"
 msgstr "{sectionTitle} · รายการ {itemNumber}"
@@ -214,9 +248,17 @@ msgstr "<ul><li>นำการวิจัยและออกแบบอิ�
 msgid "1 Column / Inline"
 msgstr "1 คอลัมน์ / อินไลน์"
 
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "1 day"
+msgstr ""
+
 #: src/dialogs/api-key/create.tsx
 msgid "1 month"
 msgstr "1 เดือน"
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "1 week"
+msgstr ""
 
 #: src/dialogs/api-key/create.tsx
 msgid "1 year"
@@ -237,6 +279,10 @@ msgstr "2022 - ปัจจุบัน"
 #: src/features/homepage/resume-sculpture.tsx
 msgid "2022 to now"
 msgstr "2022 ถึงปัจจุบัน"
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "3 days"
+msgstr ""
 
 #: src/dialogs/api-key/create.tsx
 msgid "3 months"
@@ -380,6 +426,10 @@ msgstr "บัญชี"
 msgid "Account menu"
 msgstr "เมนูบัญชี"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Achievements"
+msgstr ""
+
 #: src/features/applications/components/table-view.tsx
 msgid "Actions"
 msgstr "การดำเนินการ"
@@ -394,6 +444,7 @@ msgstr "ขนาดจริง (100%)"
 
 #: src/features/applications/components/application-detail-sheet.tsx
 #: src/features/applications/components/table-view.tsx
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
 msgid "Add"
 msgstr "เพิ่ม"
 
@@ -578,6 +629,14 @@ msgstr "เพิ่มสองถึงสามบรรทัดด้าน
 msgid "Add your full name under Basics."
 msgstr "เพิ่มชื่อเต็มของคุณใต้ข้อมูลพื้นฐาน"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Add your own keyword…"
+msgstr ""
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Address head-on"
+msgstr ""
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Adjust the resume for a remote-first role that values async communication and ownership."
 msgstr "ปรับเรซูเม่ให้เหมาะสมกับตำแหน่งงานที่เน้นการทำงานจากระยะไกลเป็นหลัก ซึ่งให้ความสำคัญกับการสื่อสารแบบไม่พร้อมกันและความรับผิดชอบ"
@@ -728,6 +787,18 @@ msgstr "เกิดข้อผิดพลาดที่ไม่คาดค
 #: src/dialogs/resume/import.tsx
 msgid "An unknown error occurred while importing your resume."
 msgstr "เกิดข้อผิดพลาดที่ไม่ทราบระหว่างนำเข้าเรซูเม่ของคุณ"
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Analyzing the posting and your resume…"
+msgstr ""
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Answer a few prompts — you approve every word"
+msgstr ""
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Answer a few short prompts about this role. The letter is drafted only from your answers and from bullet points taken verbatim from your linked resume — and nothing is saved until you approve it at the end."
+msgstr ""
 
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Answer in your own words"
@@ -1011,6 +1082,10 @@ msgstr "อาเซอร์ไบจาน"
 msgid "BA"
 msgstr "BA"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Back"
+msgstr ""
+
 #. Action returning a signed-in user to the page where they manage linked providers
 #: src/features/auth/pages/error.tsx
 msgid "Back to authentication settings"
@@ -1237,6 +1312,10 @@ msgstr "ตรวจสอบอีกครั้ง"
 msgid "Check the exported file contains everything you expect, and that all of it is selectable text."
 msgstr "ตรวจสอบว่าไฟล์ที่ส่งออกมีข้อมูลครบตามที่คาดไว้ และทั้งหมดเป็นข้อความที่เลือกได้"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Check these claims before saving"
+msgstr ""
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Check what an applicant tracking system would miss, and only add keywords you're sure about."
 msgstr "ตรวจดูว่าระบบติดตามผู้สมัครงานจะพลาดอะไรไปบ้าง และเพิ่มเฉพาะคีย์เวิร์ดที่คุณมั่นใจ"
@@ -1260,6 +1339,10 @@ msgstr "กำลังตรวจสอบ"
 #: src/features/resume/stylesheet/status.tsx
 msgid "Checking draft"
 msgstr "ตรวจสอบร่าง"
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Checking your applications and computing the follow-up cadence…"
+msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "Checking…"
@@ -1369,6 +1452,7 @@ msgstr "รหัสลูกค้า"
 
 #: src/features/cover-letters/editor-dialog.tsx
 #: src/features/cover-letters/editor.tsx
+#: src/features/follow-ups/components/follow-ups-view.tsx
 msgid "Close"
 msgstr "ปิด"
 
@@ -1448,6 +1532,10 @@ msgstr ""
 msgid "Company removed from your watches."
 msgstr ""
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Company research"
+msgstr ""
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Compare this resume against this job posting URL and update the keywords without overselling anything."
 msgstr "เปรียบเทียบเรซูเม่นี้กับ URL ประกาศงานนี้ แล้วปรับคีย์เวิร์ดโดยไม่กล่าวเกินจริง"
@@ -1458,6 +1546,10 @@ msgstr ""
 
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "complete"
+msgstr ""
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Complete"
 msgstr ""
 
 #: src/features/ats-checker/messages.ts
@@ -1480,6 +1572,10 @@ msgstr "ยืนยัน"
 #: src/features/resume/builder/password-dialog.tsx
 msgid "Confirm Password"
 msgstr "ยืนยันรหัสผ่าน"
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Confirm the terms the letter should speak to. Deselect anything that doesn't apply to you — keep at least one."
+msgstr ""
 
 #. Authentication settings action to link a social login provider
 #: src/features/settings/authentication/components/social-provider.tsx
@@ -1578,6 +1674,7 @@ msgid "Converted stylesheet draft"
 msgstr "แปลงร่างสไตล์ชีตแล้ว"
 
 #: src/features/applications/components/application-ai-copilot.tsx
+#: src/features/follow-ups/components/follow-ups-view.tsx
 msgid "Copied to clipboard."
 msgstr "คัดลอกไปยังคลิปบอร์ดแล้ว"
 
@@ -1633,6 +1730,10 @@ msgstr "คัดลอกข้อความจากไฟล์ที่ส
 msgid "Copy this secret key and use it in your applications to access your data."
 msgstr "คัดลอกคีย์ลับนี้และใช้ในแอปพลิเคชันของคุณเพื่อเข้าถึงข้อมูลของคุณ"
 
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Copy to clipboard"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-components/dock.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
 msgid "Copy URL"
@@ -1656,6 +1757,7 @@ msgid "Could not complete this connection. Restart the connection from your clie
 msgstr "ไม่สามารถทำการเชื่อมต่อนี้ให้เสร็จสิ้นได้ เริ่มการเชื่อมต่อใหม่จากไคลเอนต์ของคุณแล้วลองอีกครั้ง"
 
 #: src/features/applications/components/application-ai-copilot.tsx
+#: src/features/follow-ups/components/follow-ups-view.tsx
 msgid "Could not copy to clipboard. Please copy the text manually."
 msgstr "ไม่สามารถคัดลอกไปยังคลิปบอร์ดได้ กรุณาคัดลอกข้อความด้วยตนเอง"
 
@@ -1722,6 +1824,10 @@ msgstr "ไม่สามารถตรวจสอบการเชื่อ
 msgid "Couldn't add the application. Please try again."
 msgstr "เพิ่มใบสมัครไม่ได้ โปรดลองอีกครั้ง"
 
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Couldn't complete this follow-up."
+msgstr ""
+
 #: src/features/applications/components/application-actions-menu.tsx
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Couldn't delete the application."
@@ -1747,6 +1853,10 @@ msgstr ""
 msgid "Couldn't dismiss the job."
 msgstr ""
 
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Couldn't dismiss this follow-up."
+msgstr ""
+
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Couldn't fetch that URL."
 msgstr ""
@@ -1763,6 +1873,10 @@ msgstr ""
 msgid "Couldn't save"
 msgstr "ไม่สามารถบันทึกได้"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Couldn't save the cover letter."
+msgstr ""
+
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Couldn't save the note."
 msgstr "บันทึกโน้ตไม่ได้"
@@ -1774,6 +1888,10 @@ msgstr ""
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Couldn't save your changes. Please try again."
 msgstr "บันทึกการเปลี่ยนแปลงไม่ได้ โปรดลองอีกครั้ง"
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Couldn't snooze this follow-up."
+msgstr ""
 
 #: src/features/applications/components/application-ai-copilot.tsx
 #: src/features/evaluations/components/evaluation-panel.tsx
@@ -1827,6 +1945,10 @@ msgstr "จดหมายสมัครงาน"
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Cover letter draft"
 msgstr "ร่างจดหมายสมัครงาน"
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Cover letter saved."
+msgstr ""
 
 #: src/routes/dashboard/-components/sidebar.tsx
 #: src/routes/dashboard/cover-letters.tsx
@@ -2017,6 +2139,7 @@ msgid "Currently available for German resumes. Uses the language set in Page."
 msgstr "ปัจจุบันรองรับเรซูเม่ภาษาเยอรมัน ใช้ภาษาที่ตั้งค่าไว้ในหน้า"
 
 #: src/components/input/color-picker.tsx
+#: src/features/follow-ups/components/follow-ups-view.tsx
 msgid "Custom"
 msgstr "กำหนดเอง"
 
@@ -2305,6 +2428,7 @@ msgstr ""
 
 #: src/features/applications/components/application-ai-copilot.tsx
 #: src/features/discovery/components/inbox-view.tsx
+#: src/features/follow-ups/components/follow-ups-view.tsx
 msgid "Dismiss"
 msgstr "อนุญาตให้ออกไป"
 
@@ -2404,6 +2528,10 @@ msgstr "ดาวน์โหลด PDF ตัวอย่าง"
 msgid "Downloads"
 msgstr "ยอดดาวน์โหลด"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Draft"
+msgstr ""
+
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Draft a cover letter"
 msgstr "ร่างจดหมายสมัครงาน"
@@ -2416,9 +2544,26 @@ msgstr "ร่างข้อความติดตามผล"
 msgid "Draft answers"
 msgstr ""
 
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Draft message"
+msgstr ""
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Draft the letter"
+msgstr ""
+
 #: src/features/applications/components/application-ai-copilot.tsx
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
 msgid "Drafting failed."
 msgstr "ร่างไม่สำเร็จ"
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Drafting your letter…"
+msgstr ""
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Drafting your message…"
+msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/layout/pages.tsx
 msgid "Drag and drop sections here to move them between columns"
@@ -2435,6 +2580,10 @@ msgstr "ลากเพื่อพลิกหน้า"
 #: src/features/ats-checker/messages.ts
 msgid "Drop the pronouns and start from the verb. That is the convention in most markets."
 msgstr "ตัดคำสรรพนามออกแล้วเริ่มต้นด้วยคำกริยา นี่คือธรรมเนียมปฏิบัติในตลาดส่วนใหญ่"
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Due today"
+msgstr ""
 
 #. Resume card context menu action to create a copy
 #. Resume card dropdown action to create a copy
@@ -2468,12 +2617,20 @@ msgstr "กำลังคัดลอกเรซูเม่ของคุณ
 msgid "Dutch"
 msgstr "ดัตช์"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "e.g. direct and technical"
+msgstr ""
+
 #: src/features/discovery/components/settings-view.tsx
 msgid "e.g. engineer, word:go, backend+senior"
 msgstr ""
 
 #: src/features/discovery/components/settings-view.tsx
 msgid "e.g. intern, staffing"
+msgstr ""
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "e.g. Jane Doe, Head of Engineering"
 msgstr ""
 
 #: src/features/discovery/components/settings-view.tsx
@@ -3060,6 +3217,10 @@ msgstr "พบกับเราบน GitHub"
 msgid "Finnish"
 msgstr "ฟินแลนด์"
 
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "First check-in"
+msgstr ""
+
 #. placeholder {0}: formatRelativeTime(job.firstSeenAt, relativeTimeFormatter)
 #: src/features/discovery/components/inbox-view.tsx
 msgid "First seen {0}"
@@ -3101,9 +3262,21 @@ msgstr "วันที่ติดตามผล"
 msgid "Follow-up draft"
 msgstr "ร่างติดตามผล"
 
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Follow-up message"
+msgstr ""
+
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Follow-up note"
 msgstr "โน้ตติดตามผล"
+
+#: src/routes/dashboard/applications/index.tsx
+msgid "Follow-ups"
+msgstr ""
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Follow-ups appear automatically after you mark an application applied — a first check-in about a week later, another one after that, and a thank-you note once you interview. Snoozed follow-ups resurface when their snooze lapses."
+msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/typography.tsx
 msgid "Font Family"
@@ -3159,6 +3332,10 @@ msgstr "รูปแบบ"
 msgid "Format stylesheet"
 msgstr "จัดรูปแบบสไตล์ชีต"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "found. Continue when you're ready."
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/right/sections/page.tsx
 msgid "Free-form"
 msgstr "รูปแบบอิสระ"
@@ -3203,6 +3380,10 @@ msgstr "เต็มหน้าจอ"
 msgid "Fullscreen Editor"
 msgstr "โปรแกรมแก้ไขแบบเต็มหน้าจอ"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Gaps"
+msgstr ""
+
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Gaps & mitigations"
 msgstr ""
@@ -3236,6 +3417,10 @@ msgstr "ขอความเห็นเพิ่มเติมเกี่ย
 #: src/features/homepage/site-footer.tsx
 msgid "Get Started"
 msgstr "เริ่มใช้งาน"
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Getting ready"
+msgstr ""
 
 #. Authentication provider display name in account settings
 #. Brand name label for GitHub social sign-in button
@@ -3305,6 +3490,11 @@ msgstr "กรีก"
 #: src/routes/dashboard/resumes/index.tsx
 msgid "Grid"
 msgstr "ตาราง"
+
+#: src/features/applications/components/application-ai-copilot.tsx
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Guided cover letter"
+msgstr ""
 
 #: src/features/discovery/components/settings-view.tsx
 msgid "Hard block"
@@ -3458,6 +3648,10 @@ msgstr "หน้าแรก"
 #: src/features/settings/pages/api-keys.tsx
 msgid "How do I use the API?"
 msgstr "ฉันจะใช้ API ได้อย่างไร?"
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "How would you approach it?"
+msgstr ""
 
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "https://… (job posting URL)"
@@ -3822,6 +4016,7 @@ msgstr "เค้าโครงคำหลัก"
 
 #: src/dialogs/resume/sections/interest.tsx
 #: src/dialogs/resume/sections/skill.tsx
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
 msgid "Keywords"
 msgstr "คีย์เวิร์ด"
 
@@ -3912,6 +4107,10 @@ msgstr "จัดวางข้อความตามแนวนอน ข�
 msgid "Layout"
 msgstr "เค้าโครง"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Lead with adjacent experience"
+msgstr ""
+
 #: src/features/homepage/feature-explorer.tsx
 msgid "Lead with the work. Add a concrete detail so someone can picture it."
 msgstr "เริ่มด้วยสิ่งที่คุณทำ เพิ่มรายละเอียดที่ชัดเจนให้คนอื่นเห็นภาพ"
@@ -3928,6 +4127,10 @@ msgstr "เว้นระยะขอบอย่างน้อยครึ่
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
 msgid "Leave empty to reset the title to the original."
 msgstr "เว้นว่างไว้เพื่อรีเซ็ตชื่อกลับเป็นค่าเดิม"
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Leave it out"
+msgstr ""
 
 #: src/dialogs/resume/import.tsx
 msgid "Leave to set up an AI provider?"
@@ -4026,6 +4229,10 @@ msgstr "เชื่อมโยงเรซูเม่และวางคำ
 
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Link a resume and paste the job description (Edit) to tailor a copy for this job."
+msgstr ""
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Link a resume and paste the job description first"
 msgstr ""
 
 #: src/features/applications/components/application-detail-sheet.tsx
@@ -4428,6 +4635,7 @@ msgstr "กระทู้ใหม่"
 msgid "New Thread"
 msgstr "กระทู้ใหม่"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
 #: src/features/cover-letters/library.tsx
 msgid "Next"
 msgstr "ถัดไป"
@@ -4459,6 +4667,10 @@ msgstr "ยังไม่มีใบสมัคร เพิ่มสัก�
 #: src/features/ats-checker/messages.ts
 msgid "No bullet lists were found."
 msgstr "ไม่พบรายการหัวข้อย่อย"
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "No bullet points were found in the linked resume. Add achievement bullets to the resume first — the letter can only cite what the resume states."
+msgstr ""
 
 #. Empty-state message when no command palette results match the search query
 #: src/features/command-palette/index.tsx
@@ -4493,6 +4705,14 @@ msgstr "ไม่พบส่วนการศึกษา"
 #: src/features/ats-checker/messages.ts
 msgid "No email address was found."
 msgstr "ไม่พบที่อยู่อีเมล"
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "No follow-ups due"
+msgstr ""
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "No gaps surfaced between the posting and your resume — continue to the next step."
+msgstr ""
 
 #: src/features/discovery/components/inbox-view.tsx
 msgid "No jobs with this status."
@@ -4731,6 +4951,10 @@ msgstr "เปิดผู้ช่วย AI"
 msgid "Open application"
 msgstr ""
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Open Cover Letters"
+msgstr ""
+
 #: src/features/homepage/resume-sculpture.tsx
 msgid "Open design library"
 msgstr "เปิดคลังการออกแบบ"
@@ -4782,6 +5006,10 @@ msgstr "เปิดในแท็บใหม่"
 msgid "opens in new tab"
 msgstr "เปิดในแท็บใหม่"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Optional — paste a line from their blog, a recent launch, a funding note…"
+msgstr ""
+
 #: src/routes/agent/-components/patch-approval-card.tsx
 msgid "Optional note for the agent"
 msgstr "หมายเหตุถึงตัวแทน (ไม่บังคับ)"
@@ -4789,6 +5017,10 @@ msgstr "หมายเหตุถึงตัวแทน (ไม่บัง�
 #: src/routes/agent/-components/patch-approval-card.tsx
 msgid "Optional note for the agent…"
 msgstr "หมายเหตุถึงตัวแทน (ไม่บังคับ)…"
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Optional, but it makes the opening concrete: a letter grounded in something the company actually shipped or announced beats a generic introduction. Paste a sentence or two — only what you paste here is used."
+msgstr ""
 
 #: src/routes/_home/ats-checker.tsx
 msgid "Optionally, which terms from a job posting already appear."
@@ -4822,6 +5054,10 @@ msgstr "การจัดรูปแบบตารางดั้งเดิ
 #: src/features/ats-checker/report/score-header.tsx
 msgid "out of 100"
 msgstr "จาก 100"
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Overdue"
+msgstr ""
 
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Overview"
@@ -5024,6 +5260,10 @@ msgstr "เลือกไอคอน"
 #: src/features/ats-checker/messages.ts
 msgid "Pick one format and use it everywhere."
 msgstr "เลือกรูปแบบเดียวแล้วใช้ให้เหมือนกันทุกที่"
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Pick the bullet points the letter may cite — taken word-for-word from your linked resume, so it can't claim anything you didn't. Select at least one."
+msgstr ""
 
 #: src/libs/resume/section.tsx
 msgid "Picture"
@@ -5418,6 +5658,10 @@ msgstr "พร้อมใส่ชื่อของคุณแล้วหร
 msgid "Recipient"
 msgstr "ผู้รับ"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Recipient (optional)"
+msgstr ""
+
 #: src/components/level/combobox.tsx
 msgid "Rectangle"
 msgstr "สี่เหลี่ยมผืนผ้า"
@@ -5433,6 +5677,10 @@ msgstr "ทำซ้ำ"
 #: src/features/resume/stylesheet/toolbar.tsx
 msgid "Redo stylesheet edit"
 msgstr "แก้ไขสไตล์ชีตใหม่"
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Redraft"
+msgstr ""
 
 #: src/dialogs/resume/sections/custom.tsx
 #: src/libs/resume/section-title.ts
@@ -5557,6 +5805,10 @@ msgstr "แทนที่ตารางด้วยย่อหน้าแล
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Replace the attached cover letter?"
 msgstr "แทนที่จดหมายปะหน้าที่แนบมา?"
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Reply follow-up"
+msgstr ""
 
 #: src/features/homepage/page.tsx
 msgid "Report a bug"
@@ -5956,6 +6208,10 @@ msgstr ""
 msgid "Save the file with every page upright."
 msgstr "บันทึกไฟล์โดยให้ทุกหน้าตั้งตรง"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Save to Cover Letters"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-components/header.tsx
 msgid "Saved"
 msgstr "บันทึกแล้ว"
@@ -6012,6 +6268,10 @@ msgstr ""
 msgid "Search"
 msgstr "ค้นหา"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Search achievements…"
+msgstr ""
+
 #: src/routes/dashboard/applications/index.tsx
 msgid "Search applications…"
 msgstr "ค้นหาใบสมัคร…"
@@ -6051,6 +6311,10 @@ msgstr "ค้นหา..."
 #: src/features/command-palette/index.tsx
 msgid "Search…"
 msgstr "ค้นหา…"
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Second check-in"
+msgstr ""
 
 #: src/dialogs/auth/enable-two-factor.tsx
 msgid "Secret copied to clipboard."
@@ -6448,6 +6712,10 @@ msgstr "ภาษาสโลวีเนีย"
 msgid "Slug"
 msgstr "ชื่อ"
 
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Snooze"
+msgstr ""
+
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Soft gaps"
 msgstr ""
@@ -6689,6 +6957,11 @@ msgstr "อยู่ต่อ"
 #: src/features/homepage/ats-playground.tsx
 msgid "Stays in your browser"
 msgstr "อยู่ในเบราว์เซอร์ของคุณ"
+
+#. placeholder {0}: step + 1
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Step {0} of {STEP_COUNT}"
+msgstr ""
 
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Still waiting for {provider}… {elapsedSeconds}s"
@@ -6935,6 +7208,10 @@ msgstr "ไทย"
 msgid "Thank you for helping keep it free."
 msgstr "ขอบคุณที่ช่วยให้เราเปิดให้ใช้ฟรีต่อไป"
 
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Thank-you note"
+msgstr ""
+
 #: src/features/ats-checker/tool.tsx
 msgid "That file could not be read as a PDF."
 msgstr "ไม่สามารถอ่านไฟล์นั้นเป็น PDF ได้"
@@ -6963,6 +7240,10 @@ msgstr "ผู้ให้บริการลงชื่อเข้าใช
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "The agent needs your input."
 msgstr "ตัวแทนต้องการข้อมูลจากคุณ"
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "The analysis failed."
+msgstr ""
 
 #: src/features/settings/pages/api-keys.tsx
 msgid "The API documentation shows how to connect Reactive Resume to your own applications. It covers the endpoints, the request format, and authentication."
@@ -6997,6 +7278,10 @@ msgstr "การตรวจสอบเชิงลึกทำงานไม
 
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "The fact check failed."
+msgstr ""
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "The fact check flagged lines it couldn't trace back to your resume. You approve the letter by saving it — edit your answers and redraft, or save anyway if you know a claim is true."
 msgstr ""
 
 #. Error shown when AI parsing returns invalid resume structure during import
@@ -7043,6 +7328,10 @@ msgstr "รหัสผ่านที่คุณกรอกไม่ถูก
 #: src/routes/_home/ats-checker.tsx
 msgid "The PDF is read by code running in this tab. Nothing is uploaded, nothing is stored, and no account is needed. Open your browser's network tab and watch, if you like."
 msgstr "PDF ถูกอ่านโดยโค้ดที่ทำงานอยู่ในแท็บนี้ ไม่มีการอัปโหลด ไม่มีการจัดเก็บ และไม่ต้องมีบัญชี คุณสามารถเปิดแท็บเครือข่ายของเบราว์เซอร์ดูได้หากต้องการ"
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "The posting asks for things your resume doesn't show. Decide how the letter should handle each one."
+msgstr ""
 
 #: src/features/auth/pages/error.tsx
 msgid "The provider didn't share an email address, which is required to sign in."
@@ -7209,6 +7498,10 @@ msgstr "การทำเช่นนี้จะสร้างคีย์ AP
 #: src/libs/resume/ats.ts
 msgid "This date will not be read correctly."
 msgstr "วันที่นี้จะอ่านไม่ถูกต้อง"
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "This draft isn't saved yet — it becomes a cover letter only when you save it below."
+msgstr ""
 
 #: src/routes/agent/-components/patch-approval-card.tsx
 msgid "This edit request can no longer be answered."
@@ -7522,6 +7815,10 @@ msgstr "โทเค็น: {total}"
 msgid "Tokens: {total} ({cached} cached)"
 msgstr "โทเค็น: {total} ({cached} จากแคช)"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Tone"
+msgstr ""
+
 #: src/features/homepage/resume-sculpture.tsx
 msgid "Tools"
 msgstr "เครื่องมือ"
@@ -7561,6 +7858,8 @@ msgid "Translations"
 msgstr "การแปลภาษา"
 
 #: src/components/layout/error-screen.tsx
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+#: src/features/follow-ups/components/follow-ups-view.tsx
 #: src/features/homepage/ats-playground.tsx
 msgid "Try again"
 msgstr "ลองอีกครั้ง"
@@ -7714,6 +8013,10 @@ msgstr "ยังไม่ยืนยัน"
 #. placeholder {0}: format(salary.max)
 #: src/features/discovery/components/inbox-view.tsx
 msgid "Up to {0}"
+msgstr ""
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Upcoming"
 msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
@@ -8133,6 +8436,14 @@ msgstr "คุณต้องการทำอะไร?"
 msgid "What do you want to rename this section to?"
 msgstr "คุณต้องการเปลี่ยนชื่อส่วนนี้เป็นอะไร?"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "What is this company working on right now?"
+msgstr ""
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "What problem would you solve for them?"
+msgstr ""
+
 #: src/routes/_home/ats-checker.tsx
 msgid "What this checks"
 msgstr "สิ่งที่ตรวจสอบ"
@@ -8192,6 +8503,10 @@ msgstr "ไทม์ไลน์ของคุณสามารถสร้า
 
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Why"
+msgstr ""
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Why this company?"
 msgstr ""
 
 #: src/features/ats-checker/messages.ts
@@ -8303,6 +8618,10 @@ msgstr "แอป AI ของคุณ"
 #: src/features/ats-checker/ai-review/ai-review-card.tsx
 msgid "Your AI provider could not be reached. Check its settings and try again."
 msgstr "ไม่สามารถเชื่อมต่อผู้ให้บริการ AI ของคุณได้ ตรวจสอบการตั้งค่าแล้วลองใหม่"
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Your answers"
+msgstr ""
 
 #: src/dialogs/api-key/create.tsx
 msgid "Your API key has been copied to the clipboard."

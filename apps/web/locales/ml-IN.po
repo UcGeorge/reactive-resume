@@ -32,6 +32,16 @@ msgstr "\"{0} · {1}\" എന്നതും അതിന്റെ പൂർണ�
 msgid "(opens in new tab)"
 msgstr "(പുതിയ ടാബിൽ തുറക്കും)"
 
+#. placeholder {0}: suggestions.achievements.length
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "{0, plural, one {# achievement candidate} other {# achievement candidates}}"
+msgstr ""
+
+#. placeholder {0}: selected.length
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "{0, plural, one {# achievement selected} other {# achievements selected}}"
+msgstr ""
+
 #. placeholder {0}: selected.length
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "{0, plural, one {# application to export} other {# applications to export}}"
@@ -42,6 +52,11 @@ msgstr "{0, plural, one {കയറ്റുമതി ചെയ്യാനുള
 msgid "{0, plural, one {# fact violation} other {# fact violations}}"
 msgstr ""
 
+#. placeholder {0}: suggestions.gaps.length
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "{0, plural, one {# gap} other {# gaps}}"
+msgstr ""
+
 #. placeholder {0}: section.items.length
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 msgid "{0, plural, one {# item} other {# items}}"
@@ -50,6 +65,16 @@ msgstr "{0, plural, one {# ഇനം} other {# ഇനങ്ങൾ}}"
 #. placeholder {0}: selected.size
 #: src/features/discovery/components/inbox-view.tsx
 msgid "{0, plural, one {# job selected} other {# jobs selected}}"
+msgstr ""
+
+#. placeholder {0}: selected.length
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "{0, plural, one {# keyword selected} other {# keywords selected}}"
+msgstr ""
+
+#. placeholder {0}: suggestions.keywords.length
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "{0, plural, one {# keyword} other {# keywords}}"
 msgstr ""
 
 #. placeholder {0}: item.roles.length
@@ -65,6 +90,11 @@ msgstr ""
 #. placeholder {0}: companies.length
 #: src/features/discovery/components/companies-view.tsx
 msgid "{0, plural, one {# watched company} other {# watched companies}}"
+msgstr ""
+
+#. placeholder {0}: result.words
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "{0, plural, one {# word} other {# words}}"
 msgstr ""
 
 #. placeholder {0}: result.dismissed
@@ -182,6 +212,10 @@ msgstr "കഴിഞ്ഞ 30 ദിവസങ്ങളിലായി {label}"
 msgid "{passedRules} of {totalRules} checks passed"
 msgstr "{passedRules} ചെക്കുകളിൽ {totalRules} പാസായി"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "{remaining, plural, one {At least a sentence — # more character to go.} other {At least a sentence — # more characters to go.}}"
+msgstr ""
+
 #: src/libs/resume/ats.ts
 msgid "{sectionTitle} · Item {itemNumber}"
 msgstr "{sectionTitle} · ഇനം {itemNumber}"
@@ -214,9 +248,17 @@ msgstr "<ul><li>സഹകരണ ആസൂത്രണ ഉപകരണത്ത�
 msgid "1 Column / Inline"
 msgstr "1 നിര / ഇൻലൈൻ"
 
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "1 day"
+msgstr ""
+
 #: src/dialogs/api-key/create.tsx
 msgid "1 month"
 msgstr "1 മാസം"
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "1 week"
+msgstr ""
 
 #: src/dialogs/api-key/create.tsx
 msgid "1 year"
@@ -237,6 +279,10 @@ msgstr "2022 - ഇപ്പോൾ"
 #: src/features/homepage/resume-sculpture.tsx
 msgid "2022 to now"
 msgstr "2022 മുതൽ ഇപ്പോൾ വരെ"
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "3 days"
+msgstr ""
 
 #: src/dialogs/api-key/create.tsx
 msgid "3 months"
@@ -380,6 +426,10 @@ msgstr "അക്കൗണ്ട്"
 msgid "Account menu"
 msgstr "അക്കൗണ്ട് മെനു"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Achievements"
+msgstr ""
+
 #: src/features/applications/components/table-view.tsx
 msgid "Actions"
 msgstr "പ്രവർത്തനങ്ങൾ"
@@ -394,6 +444,7 @@ msgstr "യഥാർത്ഥ വലുപ്പം (100%)"
 
 #: src/features/applications/components/application-detail-sheet.tsx
 #: src/features/applications/components/table-view.tsx
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
 msgid "Add"
 msgstr "ചേർക്കുക"
 
@@ -578,6 +629,14 @@ msgstr "നിങ്ങൾ ചെയ്യുന്നത് വിവരിക�
 msgid "Add your full name under Basics."
 msgstr "അടിസ്ഥാനങ്ങൾക്ക് കീഴിൽ നിങ്ങളുടെ മുഴുവൻ പേര് ചേർക്കുക."
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Add your own keyword…"
+msgstr ""
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Address head-on"
+msgstr ""
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Adjust the resume for a remote-first role that values async communication and ownership."
 msgstr "അസമന്വിത ആശയവിനിമയത്തിനും ഉടമസ്ഥതയ്ക്കും പ്രാധാന്യം നൽകുന്ന ഒരു റിമോട്ട്-ഫസ്റ്റ് റോളിനായി റെസ്യൂമെ ക്രമീകരിക്കുക."
@@ -728,6 +787,18 @@ msgstr "ഒരു അപ്രതീക്ഷിത പിശക് ഈ പേ�
 #: src/dialogs/resume/import.tsx
 msgid "An unknown error occurred while importing your resume."
 msgstr "നിങ്ങളുടെ റിസ്യൂം ഇംപോർട്ട് ചെയ്യുന്നതിനിടെ അജ്ഞാതമായ ഒരു പിശക് സംഭവിച്ചു."
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Analyzing the posting and your resume…"
+msgstr ""
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Answer a few prompts — you approve every word"
+msgstr ""
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Answer a few short prompts about this role. The letter is drafted only from your answers and from bullet points taken verbatim from your linked resume — and nothing is saved until you approve it at the end."
+msgstr ""
 
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Answer in your own words"
@@ -1011,6 +1082,10 @@ msgstr "അസർബൈജാനി"
 msgid "BA"
 msgstr "ബി.എ."
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Back"
+msgstr ""
+
 #. Action returning a signed-in user to the page where they manage linked providers
 #: src/features/auth/pages/error.tsx
 msgid "Back to authentication settings"
@@ -1237,6 +1312,10 @@ msgstr "വീണ്ടും പരിശോധിക്കുക"
 msgid "Check the exported file contains everything you expect, and that all of it is selectable text."
 msgstr "എക്സ്പോർട്ട് ചെയ്ത ഫയലിൽ നിങ്ങൾ പ്രതീക്ഷിക്കുന്നതെല്ലാം ഉണ്ടെന്നും അത് മുഴുവൻ തിരഞ്ഞെടുക്കാവുന്ന ടെക്സ്റ്റ് ആണെന്നും പരിശോധിക്കുക."
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Check these claims before saving"
+msgstr ""
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Check what an applicant tracking system would miss, and only add keywords you're sure about."
 msgstr "ഒരു അപ്ലിക്കന്റ് ട്രാക്കിംഗ് സിസ്റ്റം എന്തൊക്കെ വിട്ടുപോകും എന്ന് പരിശോധിക്കുക, ഉറപ്പുള്ള കീവേഡുകൾ മാത്രം ചേർക്കുക."
@@ -1260,6 +1339,10 @@ msgstr "പരിശോധിക്കുന്നു"
 #: src/features/resume/stylesheet/status.tsx
 msgid "Checking draft"
 msgstr "ഡ്രാഫ്റ്റ് പരിശോധിക്കുന്നു"
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Checking your applications and computing the follow-up cadence…"
+msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "Checking…"
@@ -1369,6 +1452,7 @@ msgstr "ക്ലയൻ്റ് ഐഡി"
 
 #: src/features/cover-letters/editor-dialog.tsx
 #: src/features/cover-letters/editor.tsx
+#: src/features/follow-ups/components/follow-ups-view.tsx
 msgid "Close"
 msgstr "അടയ്ക്കുക"
 
@@ -1448,6 +1532,10 @@ msgstr ""
 msgid "Company removed from your watches."
 msgstr ""
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Company research"
+msgstr ""
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Compare this resume against this job posting URL and update the keywords without overselling anything."
 msgstr "ഈ റിസ്യൂം ഈ ജോലി പരസ്യത്തിന്റെ URL മായി താരതമ്യം ചെയ്ത്, ഒന്നും പെരുപ്പിച്ചു കാട്ടാതെ കീവേഡുകൾ പുതുക്കുക."
@@ -1458,6 +1546,10 @@ msgstr ""
 
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "complete"
+msgstr ""
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Complete"
 msgstr ""
 
 #: src/features/ats-checker/messages.ts
@@ -1480,6 +1572,10 @@ msgstr "സ്ഥിരീകരിക്കുക"
 #: src/features/resume/builder/password-dialog.tsx
 msgid "Confirm Password"
 msgstr "പാസ്‌വേഡ് സ്ഥിരീകരിക്കുക"
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Confirm the terms the letter should speak to. Deselect anything that doesn't apply to you — keep at least one."
+msgstr ""
 
 #. Authentication settings action to link a social login provider
 #: src/features/settings/authentication/components/social-provider.tsx
@@ -1578,6 +1674,7 @@ msgid "Converted stylesheet draft"
 msgstr "പരിവർത്തനം ചെയ്ത സ്റ്റൈൽഷീറ്റ് ഡ്രാഫ്റ്റ്"
 
 #: src/features/applications/components/application-ai-copilot.tsx
+#: src/features/follow-ups/components/follow-ups-view.tsx
 msgid "Copied to clipboard."
 msgstr "ക്ലിപ്പ്ബോർഡിലേക്ക് പകർത്തി."
 
@@ -1633,6 +1730,10 @@ msgstr "എക്സ്പോർട്ട് ചെയ്ത ഫയലിൽ ന
 msgid "Copy this secret key and use it in your applications to access your data."
 msgstr "ഈ സീക്രട്ട് കീ പകർത്തി, നിങ്ങളുടെ ആപ്പ്ലിക്കേഷനുകളിൽ നിങ്ങൾക്കുള്ള ഡാറ്റ ആക്സ്സ് ചെയ്യുന്നതിനായി ഉപയോഗിക്കുക."
 
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Copy to clipboard"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-components/dock.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
 msgid "Copy URL"
@@ -1656,6 +1757,7 @@ msgid "Could not complete this connection. Restart the connection from your clie
 msgstr "ഈ കണക്ഷൻ പൂർത്തിയാക്കാൻ കഴിഞ്ഞില്ല. നിങ്ങളുടെ ക്ലയൻ്റിൽ നിന്ന് കണക്ഷൻ പുനരാരംഭിച്ച് വീണ്ടും ശ്രമിക്കുക."
 
 #: src/features/applications/components/application-ai-copilot.tsx
+#: src/features/follow-ups/components/follow-ups-view.tsx
 msgid "Could not copy to clipboard. Please copy the text manually."
 msgstr "ക്ലിപ്പ്ബോർഡിലേക്ക് പകർത്താനായില്ല. വാചകം സ്വമേധയാ പകർത്തുക."
 
@@ -1722,6 +1824,10 @@ msgstr "കണക്ഷൻ പരിശോധിക്കാൻ കഴിഞ്�
 msgid "Couldn't add the application. Please try again."
 msgstr "ആപ്ലിക്കേഷൻ ചേർക്കാൻ കഴിഞ്ഞില്ല. ദയവായി again ശ്രമിക്കുക."
 
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Couldn't complete this follow-up."
+msgstr ""
+
 #: src/features/applications/components/application-actions-menu.tsx
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Couldn't delete the application."
@@ -1747,6 +1853,10 @@ msgstr ""
 msgid "Couldn't dismiss the job."
 msgstr ""
 
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Couldn't dismiss this follow-up."
+msgstr ""
+
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Couldn't fetch that URL."
 msgstr ""
@@ -1763,6 +1873,10 @@ msgstr ""
 msgid "Couldn't save"
 msgstr "സംരക്ഷിക്കാനായില്ല"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Couldn't save the cover letter."
+msgstr ""
+
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Couldn't save the note."
 msgstr "കുറിപ്പ് സംരക്ഷിക്കാനായില്ല."
@@ -1774,6 +1888,10 @@ msgstr ""
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Couldn't save your changes. Please try again."
 msgstr "നിങ്ങളുടെ മാറ്റങ്ങൾ സംരക്ഷിക്കാൻ കഴിഞ്ഞില്ല. ദയവായി again ശ്രമിക്കുക."
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Couldn't snooze this follow-up."
+msgstr ""
 
 #: src/features/applications/components/application-ai-copilot.tsx
 #: src/features/evaluations/components/evaluation-panel.tsx
@@ -1827,6 +1945,10 @@ msgstr "കവർ ലെറ്റർ"
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Cover letter draft"
 msgstr "കവർ ലെറ്റർ ഡ്രാഫ്റ്റ്"
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Cover letter saved."
+msgstr ""
 
 #: src/routes/dashboard/-components/sidebar.tsx
 #: src/routes/dashboard/cover-letters.tsx
@@ -2017,6 +2139,7 @@ msgid "Currently available for German resumes. Uses the language set in Page."
 msgstr "നിലവിൽ ജർമ്മൻ റെസ്യൂമുകൾക്കായി ലഭ്യമാണ്. പേജിൽ സജ്ജീകരിച്ച ഭാഷയാണ് ഇത് ഉപയോഗിക്കുന്നത്."
 
 #: src/components/input/color-picker.tsx
+#: src/features/follow-ups/components/follow-ups-view.tsx
 msgid "Custom"
 msgstr "ഇഷ്ടാനുസൃതം"
 
@@ -2305,6 +2428,7 @@ msgstr ""
 
 #: src/features/applications/components/application-ai-copilot.tsx
 #: src/features/discovery/components/inbox-view.tsx
+#: src/features/follow-ups/components/follow-ups-view.tsx
 msgid "Dismiss"
 msgstr "നിരസിക്കുക"
 
@@ -2404,6 +2528,10 @@ msgstr "മാതൃകാ PDF ഡൗൺലോഡ് ചെയ്യൂ"
 msgid "Downloads"
 msgstr "ഡൗൺലോഡുകൾ"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Draft"
+msgstr ""
+
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Draft a cover letter"
 msgstr "ഒരു കവർ ലെറ്റർ തയ്യാറാക്കുക"
@@ -2416,9 +2544,26 @@ msgstr "ഒരു ഫോളോ-അപ്പ് തയ്യാറാക്കു
 msgid "Draft answers"
 msgstr ""
 
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Draft message"
+msgstr ""
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Draft the letter"
+msgstr ""
+
 #: src/features/applications/components/application-ai-copilot.tsx
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
 msgid "Drafting failed."
 msgstr "ഡ്രാഫ്റ്റിംഗ് failed."
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Drafting your letter…"
+msgstr ""
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Drafting your message…"
+msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/layout/pages.tsx
 msgid "Drag and drop sections here to move them between columns"
@@ -2435,6 +2580,10 @@ msgstr "പേജുകൾ മറിക്കാൻ വലിച്ചുനീ�
 #: src/features/ats-checker/messages.ts
 msgid "Drop the pronouns and start from the verb. That is the convention in most markets."
 msgstr "സർവ്വനാമങ്ങൾ ഒഴിവാക്കി ക്രിയയിൽ നിന്ന് തുടങ്ങുക. മിക്ക വിപണികളിലും ഇതാണ് കീഴ്‌വഴക്കം."
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Due today"
+msgstr ""
 
 #. Resume card context menu action to create a copy
 #. Resume card dropdown action to create a copy
@@ -2468,12 +2617,20 @@ msgstr "നിങ്ങളുടെ റിസ്യൂം ഡൂപ്ലിക�
 msgid "Dutch"
 msgstr "ഡച്ച്"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "e.g. direct and technical"
+msgstr ""
+
 #: src/features/discovery/components/settings-view.tsx
 msgid "e.g. engineer, word:go, backend+senior"
 msgstr ""
 
 #: src/features/discovery/components/settings-view.tsx
 msgid "e.g. intern, staffing"
+msgstr ""
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "e.g. Jane Doe, Head of Engineering"
 msgstr ""
 
 #: src/features/discovery/components/settings-view.tsx
@@ -3060,6 +3217,10 @@ msgstr "GitHub-ൽ ഞങ്ങളെ കണ്ടെത്തൂ"
 msgid "Finnish"
 msgstr "ഫിന്നിഷ്"
 
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "First check-in"
+msgstr ""
+
 #. placeholder {0}: formatRelativeTime(job.firstSeenAt, relativeTimeFormatter)
 #: src/features/discovery/components/inbox-view.tsx
 msgid "First seen {0}"
@@ -3101,9 +3262,21 @@ msgstr "ഫോളോ-അപ്പ് തീയതി"
 msgid "Follow-up draft"
 msgstr "ഫോളോ-അപ്പ് ഡ്രാഫ്റ്റ്"
 
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Follow-up message"
+msgstr ""
+
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Follow-up note"
 msgstr "ഫോളോ-അപ്പ് കുറിപ്പ്"
+
+#: src/routes/dashboard/applications/index.tsx
+msgid "Follow-ups"
+msgstr ""
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Follow-ups appear automatically after you mark an application applied — a first check-in about a week later, another one after that, and a thank-you note once you interview. Snoozed follow-ups resurface when their snooze lapses."
+msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/typography.tsx
 msgid "Font Family"
@@ -3159,6 +3332,10 @@ msgstr "ഫോർമാറ്റ്"
 msgid "Format stylesheet"
 msgstr "സ്റ്റൈൽഷീറ്റ് ഫോർമാറ്റ് ചെയ്യുക"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "found. Continue when you're ready."
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/right/sections/page.tsx
 msgid "Free-form"
 msgstr "ഫ്രീ-ഫോം"
@@ -3203,6 +3380,10 @@ msgstr "മുഴുവൻ സ്ക്രീൻ"
 msgid "Fullscreen Editor"
 msgstr "ഫുൾസ്ക്രീൻ എഡിറ്റർ"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Gaps"
+msgstr ""
+
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Gaps & mitigations"
 msgstr ""
@@ -3236,6 +3417,10 @@ msgstr "നിങ്ങളുടെ എഴുത്തിനെക്കുറ�
 #: src/features/homepage/site-footer.tsx
 msgid "Get Started"
 msgstr "ആരംഭിക്കൂ"
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Getting ready"
+msgstr ""
 
 #. Authentication provider display name in account settings
 #. Brand name label for GitHub social sign-in button
@@ -3305,6 +3490,11 @@ msgstr "ഗ്രീക്ക്"
 #: src/routes/dashboard/resumes/index.tsx
 msgid "Grid"
 msgstr "ഗ്രിഡ്"
+
+#: src/features/applications/components/application-ai-copilot.tsx
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Guided cover letter"
+msgstr ""
 
 #: src/features/discovery/components/settings-view.tsx
 msgid "Hard block"
@@ -3458,6 +3648,10 @@ msgstr "ഹോം"
 #: src/features/settings/pages/api-keys.tsx
 msgid "How do I use the API?"
 msgstr "API എങ്ങനെ ഉപയോഗിക്കാം?"
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "How would you approach it?"
+msgstr ""
 
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "https://… (job posting URL)"
@@ -3822,6 +4016,7 @@ msgstr "കീവേഡ് ലേഔട്ട്"
 
 #: src/dialogs/resume/sections/interest.tsx
 #: src/dialogs/resume/sections/skill.tsx
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
 msgid "Keywords"
 msgstr "കീവേഡുകൾ"
 
@@ -3912,6 +4107,10 @@ msgstr "ടെക്സ്റ്റ് തിരശ്ചീനമായി ക�
 msgid "Layout"
 msgstr "ലേയൗട്ട്"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Lead with adjacent experience"
+msgstr ""
+
 #: src/features/homepage/feature-explorer.tsx
 msgid "Lead with the work. Add a concrete detail so someone can picture it."
 msgstr "ചെയ്ത ജോലി ആദ്യം പറയൂ. വായിക്കുന്നയാൾക്ക് ചിത്രം കിട്ടാൻ വ്യക്തമായ ഒരു വിശദാംശം ചേർക്കൂ."
@@ -3928,6 +4127,10 @@ msgstr "പേജിന് ചുറ്റും കുറഞ്ഞത് അര
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
 msgid "Leave empty to reset the title to the original."
 msgstr "ശീർഷകം ആദ്ധ്യത്തിലേതിലേക്ക് റീസെറ്റ് ചെയ്യാൻ, ഇത് ശൂന്യമാക്കി വിടുക."
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Leave it out"
+msgstr ""
 
 #: src/dialogs/resume/import.tsx
 msgid "Leave to set up an AI provider?"
@@ -4026,6 +4229,10 @@ msgstr "നിങ്ങളുടെ യോജിപ്പ് സ്കോർ ച
 
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Link a resume and paste the job description (Edit) to tailor a copy for this job."
+msgstr ""
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Link a resume and paste the job description first"
 msgstr ""
 
 #: src/features/applications/components/application-detail-sheet.tsx
@@ -4428,6 +4635,7 @@ msgstr "പുതിയ ത്രെഡ്"
 msgid "New Thread"
 msgstr "പുതിയ ത്രെഡ്"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
 #: src/features/cover-letters/library.tsx
 msgid "Next"
 msgstr "അടുത്തത്"
@@ -4459,6 +4667,10 @@ msgstr "ഇതുവരെ അപേക്ഷകളൊന്നുമില്�
 #: src/features/ats-checker/messages.ts
 msgid "No bullet lists were found."
 msgstr "ബുള്ളറ്റ് ലിസ്റ്റുകളൊന്നും കണ്ടെത്തിയില്ല."
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "No bullet points were found in the linked resume. Add achievement bullets to the resume first — the letter can only cite what the resume states."
+msgstr ""
 
 #. Empty-state message when no command palette results match the search query
 #: src/features/command-palette/index.tsx
@@ -4493,6 +4705,14 @@ msgstr "വിദ്യാഭ്യാസ വിഭാഗം കണ്ടെത�
 #: src/features/ats-checker/messages.ts
 msgid "No email address was found."
 msgstr "ഇമെയിൽ വിലാസം കണ്ടെത്തിയില്ല."
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "No follow-ups due"
+msgstr ""
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "No gaps surfaced between the posting and your resume — continue to the next step."
+msgstr ""
 
 #: src/features/discovery/components/inbox-view.tsx
 msgid "No jobs with this status."
@@ -4731,6 +4951,10 @@ msgstr "AI അസിസ്റ്റന്റ് തുറക്കുക"
 msgid "Open application"
 msgstr ""
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Open Cover Letters"
+msgstr ""
+
 #: src/features/homepage/resume-sculpture.tsx
 msgid "Open design library"
 msgstr "ഓപ്പൺ ഡിസൈൻ ലൈബ്രറി"
@@ -4782,6 +5006,10 @@ msgstr "പുതിയ ടാബിൽ തുറക്കുന്നു"
 msgid "opens in new tab"
 msgstr "പുതിയ ടാബിൽ തുറക്കും"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Optional — paste a line from their blog, a recent launch, a funding note…"
+msgstr ""
+
 #: src/routes/agent/-components/patch-approval-card.tsx
 msgid "Optional note for the agent"
 msgstr "ഏജന്റിനുള്ള ഓപ്ഷണൽ കുറിപ്പ്"
@@ -4789,6 +5017,10 @@ msgstr "ഏജന്റിനുള്ള ഓപ്ഷണൽ കുറിപ്�
 #: src/routes/agent/-components/patch-approval-card.tsx
 msgid "Optional note for the agent…"
 msgstr "ഏജന്റിനുള്ള ഓപ്ഷണൽ കുറിപ്പ്…"
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Optional, but it makes the opening concrete: a letter grounded in something the company actually shipped or announced beats a generic introduction. Paste a sentence or two — only what you paste here is used."
+msgstr ""
 
 #: src/routes/_home/ats-checker.tsx
 msgid "Optionally, which terms from a job posting already appear."
@@ -4822,6 +5054,10 @@ msgstr "യഥാർത്ഥ പട്ടിക ഫോർമാറ്റിം�
 #: src/features/ats-checker/report/score-header.tsx
 msgid "out of 100"
 msgstr "100-ൽ"
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Overdue"
+msgstr ""
 
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Overview"
@@ -5024,6 +5260,10 @@ msgstr "ഒരു ഐക്കൺ തിരഞ്ഞെടുക്കുക"
 #: src/features/ats-checker/messages.ts
 msgid "Pick one format and use it everywhere."
 msgstr "ഒരു ഫോർമാറ്റ് തിരഞ്ഞെടുത്ത് എല്ലായിടത്തും ഉപയോഗിക്കുക."
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Pick the bullet points the letter may cite — taken word-for-word from your linked resume, so it can't claim anything you didn't. Select at least one."
+msgstr ""
 
 #: src/libs/resume/section.tsx
 msgid "Picture"
@@ -5418,6 +5658,10 @@ msgstr "ഇതിൽ നിങ്ങളുടെ പേര് ചേർക്ക
 msgid "Recipient"
 msgstr "സ്വീകർത്താവ്"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Recipient (optional)"
+msgstr ""
+
 #: src/components/level/combobox.tsx
 msgid "Rectangle"
 msgstr "ചതുരാകൃതി"
@@ -5433,6 +5677,10 @@ msgstr "വീണ്ടും ചെയ്യുക"
 #: src/features/resume/stylesheet/toolbar.tsx
 msgid "Redo stylesheet edit"
 msgstr "സ്റ്റൈൽഷീറ്റ് എഡിറ്റ് വീണ്ടും ചെയ്യുക"
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Redraft"
+msgstr ""
 
 #: src/dialogs/resume/sections/custom.tsx
 #: src/libs/resume/section-title.ts
@@ -5557,6 +5805,10 @@ msgstr "ടേബിളുകൾക്ക് പകരം സാധാരണ ഖ
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Replace the attached cover letter?"
 msgstr "അറ്റാച്ച് ചെയ്ത കവർ ലെറ്റർ മാറ്റിസ്ഥാപിക്കണോ?"
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Reply follow-up"
+msgstr ""
 
 #: src/features/homepage/page.tsx
 msgid "Report a bug"
@@ -5956,6 +6208,10 @@ msgstr ""
 msgid "Save the file with every page upright."
 msgstr "എല്ലാ പേജും നിവർന്ന നിലയിൽ ഫയൽ സേവ് ചെയ്യുക."
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Save to Cover Letters"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-components/header.tsx
 msgid "Saved"
 msgstr "സംരക്ഷിച്ചു"
@@ -6012,6 +6268,10 @@ msgstr ""
 msgid "Search"
 msgstr "തിരയുക"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Search achievements…"
+msgstr ""
+
 #: src/routes/dashboard/applications/index.tsx
 msgid "Search applications…"
 msgstr "ആപ്ലിക്കേഷനുകൾ തിരയുക..."
@@ -6051,6 +6311,10 @@ msgstr "തിരയുക..."
 #: src/features/command-palette/index.tsx
 msgid "Search…"
 msgstr "… തിരയുക"
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Second check-in"
+msgstr ""
 
 #: src/dialogs/auth/enable-two-factor.tsx
 msgid "Secret copied to clipboard."
@@ -6448,6 +6712,10 @@ msgstr "സ്ലോവേനിയൻ"
 msgid "Slug"
 msgstr "സ്ലഗ്"
 
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Snooze"
+msgstr ""
+
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Soft gaps"
 msgstr ""
@@ -6689,6 +6957,11 @@ msgstr "തുടരുക"
 #: src/features/homepage/ats-playground.tsx
 msgid "Stays in your browser"
 msgstr "നിങ്ങളുടെ ബ്രൗസറിൽ തന്നെ ഇരിക്കും"
+
+#. placeholder {0}: step + 1
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Step {0} of {STEP_COUNT}"
+msgstr ""
 
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Still waiting for {provider}… {elapsedSeconds}s"
@@ -6935,6 +7208,10 @@ msgstr "തായ്"
 msgid "Thank you for helping keep it free."
 msgstr "ഇത് സൗജന്യമായി നിലനിർത്താൻ സഹായിക്കുന്നതിന് നന്ദി."
 
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Thank-you note"
+msgstr ""
+
 #: src/features/ats-checker/tool.tsx
 msgid "That file could not be read as a PDF."
 msgstr "ആ ഫയൽ ഒരു PDF ആയി വായിക്കാൻ കഴിഞ്ഞില്ല."
@@ -6963,6 +7240,10 @@ msgstr "ആ സൈൻ-ഇൻ ദാതാവ് ഈ സെർവറിൽ ഇന
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "The agent needs your input."
 msgstr "ഏജന്റിന് നിങ്ങളുടെ അഭിപ്രായം ആവശ്യമാണ്."
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "The analysis failed."
+msgstr ""
 
 #: src/features/settings/pages/api-keys.tsx
 msgid "The API documentation shows how to connect Reactive Resume to your own applications. It covers the endpoints, the request format, and authentication."
@@ -6997,6 +7278,10 @@ msgstr "വിശദ പരിശോധന പൂർത്തിയാക്ക�
 
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "The fact check failed."
+msgstr ""
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "The fact check flagged lines it couldn't trace back to your resume. You approve the letter by saving it — edit your answers and redraft, or save anyway if you know a claim is true."
 msgstr ""
 
 #. Error shown when AI parsing returns invalid resume structure during import
@@ -7043,6 +7328,10 @@ msgstr "നിങ്ങൾ നൽകിയ പാസ്‌വേഡ് തെറ
 #: src/routes/_home/ats-checker.tsx
 msgid "The PDF is read by code running in this tab. Nothing is uploaded, nothing is stored, and no account is needed. Open your browser's network tab and watch, if you like."
 msgstr "ഈ ടാബിൽ പ്രവർത്തിക്കുന്ന കോഡ് വഴിയാണ് PDF വായിക്കുന്നത്. ഒന്നും അപ്‌ലോഡ് ചെയ്യുന്നില്ല, ഒന്നും സംഭരിക്കുന്നില്ല, അക്കൗണ്ടും ആവശ്യമില്ല. താൽപ്പര്യമുണ്ടെങ്കിൽ നിങ്ങളുടെ ബ്രൗസറിന്റെ നെറ്റ്‌വർക്ക് ടാബ് തുറന്ന് നിരീക്ഷിക്കാം."
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "The posting asks for things your resume doesn't show. Decide how the letter should handle each one."
+msgstr ""
 
 #: src/features/auth/pages/error.tsx
 msgid "The provider didn't share an email address, which is required to sign in."
@@ -7209,6 +7498,10 @@ msgstr "ഇത് ഒരു പുതിയ API കീ ഉണ്ടാക്ക�
 #: src/libs/resume/ats.ts
 msgid "This date will not be read correctly."
 msgstr "ഈ തീയതി ശരിയായി വായിക്കില്ല."
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "This draft isn't saved yet — it becomes a cover letter only when you save it below."
+msgstr ""
 
 #: src/routes/agent/-components/patch-approval-card.tsx
 msgid "This edit request can no longer be answered."
@@ -7522,6 +7815,10 @@ msgstr "ടോക്കണുകൾ: {total}"
 msgid "Tokens: {total} ({cached} cached)"
 msgstr "ടോക്കണുകൾ: {total} ({cached} കാഷെ ചെയ്‌തത്)"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Tone"
+msgstr ""
+
 #: src/features/homepage/resume-sculpture.tsx
 msgid "Tools"
 msgstr "ഉപകരണങ്ങൾ"
@@ -7561,6 +7858,8 @@ msgid "Translations"
 msgstr "തർജ്ജമകൾ"
 
 #: src/components/layout/error-screen.tsx
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+#: src/features/follow-ups/components/follow-ups-view.tsx
 #: src/features/homepage/ats-playground.tsx
 msgid "Try again"
 msgstr "വീണ്ടും ശ്രമിക്കുക"
@@ -7714,6 +8013,10 @@ msgstr "സ്ഥിരീകരിച്ചിട്ടില്ല"
 #. placeholder {0}: format(salary.max)
 #: src/features/discovery/components/inbox-view.tsx
 msgid "Up to {0}"
+msgstr ""
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Upcoming"
 msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
@@ -8133,6 +8436,14 @@ msgstr "നിങ്ങൾക്ക് എന്താണ് ചെയ്യേ�
 msgid "What do you want to rename this section to?"
 msgstr "ഈ സെക്ഷന് എന്ത് പേരാക്കി പുനർനാമകരണം ചെയ്യണമെന്ന് നിങ്ങൾ ആഗ്രഹിക്കുന്നു?"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "What is this company working on right now?"
+msgstr ""
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "What problem would you solve for them?"
+msgstr ""
+
 #: src/routes/_home/ats-checker.tsx
 msgid "What this checks"
 msgstr "ഇത് എന്താണ് പരിശോധിക്കുന്നത്"
@@ -8192,6 +8503,10 @@ msgstr "നിങ്ങളുടെ ടൈംലൈൻ പുനർനിർമ�
 
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Why"
+msgstr ""
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Why this company?"
 msgstr ""
 
 #: src/features/ats-checker/messages.ts
@@ -8303,6 +8618,10 @@ msgstr "നിങ്ങളുടെ AI ആപ്പ്"
 #: src/features/ats-checker/ai-review/ai-review-card.tsx
 msgid "Your AI provider could not be reached. Check its settings and try again."
 msgstr "നിങ്ങളുടെ AI ദാതാവിനെ ബന്ധപ്പെടാൻ കഴിഞ്ഞില്ല. അതിന്റെ സെറ്റിംഗുകൾ പരിശോധിച്ച് വീണ്ടും ശ്രമിക്കുക."
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Your answers"
+msgstr ""
 
 #: src/dialogs/api-key/create.tsx
 msgid "Your API key has been copied to the clipboard."

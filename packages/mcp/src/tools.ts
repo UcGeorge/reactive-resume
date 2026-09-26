@@ -635,6 +635,44 @@ export function registerTools(server: McpServer, client: RouterClient<typeof rou
 			"dismissing discovered job",
 			async ({ id }: { id: string }) => json(await client.discovery.jobs.dismiss({ id })),
 		],
+		[
+			T.listDueFollowUps,
+			"listing due follow-ups",
+			async (params: { horizonDays?: number }) => json(await client.followUps.queue(params)),
+		],
+		[
+			T.completeFollowUp,
+			"completing follow-up",
+			async ({ id }: { id: string }) => json(await client.followUps.complete({ id })),
+		],
+		[
+			T.snoozeFollowUp,
+			"snoozing follow-up",
+			async ({ id, until }: { id: string; until: string }) =>
+				json(await client.followUps.snooze({ id, until: new Date(until) })),
+		],
+		[
+			T.draftFollowUpMessage,
+			"drafting follow-up message",
+			async ({ id }: { id: string }) => json(await client.followUps.draft({ id })),
+		],
+		[T.listStories, "listing stories", async () => json(await client.stories.list({}))],
+		[T.readStory, "reading story", async ({ id }: { id: string }) => json(await client.stories.get({ id }))],
+		[
+			T.createStory,
+			"creating story",
+			async (params: { title: string } & Record<string, unknown>) => json(await client.stories.create(params as never)),
+		],
+		[
+			T.updateStory,
+			"updating story",
+			async (params: { id: string } & Record<string, unknown>) => json(await client.stories.update(params as never)),
+		],
+		[
+			T.matchStoryToQuestion,
+			"matching story to question",
+			async (params: { question: string; applicationId?: string }) => json(await client.stories.match(params)),
+		],
 	];
 
 	for (const [name, label, handler] of coverLetterAndApplicationTools) {

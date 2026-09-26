@@ -57,10 +57,14 @@ const evaluationLegitimacySystemPrompt = readPrompt("evaluation-legitimacy-syste
 const tailoringPlanSystemPrompt = readPrompt("tailoring-plan-system.md");
 const hmAuditSystemPrompt = readPrompt("hm-audit-system.md");
 
+// Guided cover letters (career): the gated four-prompt drafting pass.
+const coverLetterGuidedSystemPrompt = readPrompt("cover-letter-guided-system.md");
+
 export {
 	atsReviewSystemPrompt,
 	atsReviewUserPromptTemplate,
 	chatSystemPromptTemplate,
+	coverLetterGuidedSystemPrompt,
 	docxParserSystemPrompt,
 	docxParserUserPrompt,
 	evaluationLegitimacySystemPrompt,

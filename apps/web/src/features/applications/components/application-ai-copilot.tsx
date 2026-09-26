@@ -4,6 +4,7 @@ import { Trans } from "@lingui/react/macro";
 import {
 	ArrowsClockwiseIcon,
 	CaretRightIcon,
+	CompassIcon,
 	CopyIcon,
 	EnvelopeSimpleIcon,
 	GaugeIcon,
@@ -17,6 +18,7 @@ import { useCallback, useState } from "react";
 import { toast } from "@reactive-resume/ui/components/toast";
 import { cn } from "@reactive-resume/utils/style";
 import { CoverLetterEditorDialog } from "@/features/cover-letters/editor-dialog";
+import { GuidedCoverLetterWizard } from "@/features/cover-letters/guided/guided-cover-letter-wizard";
 import { evaluationsListQueryKey, startEvaluationMutationOptions } from "@/features/evaluations/queries";
 import { orpc } from "@/libs/orpc/client";
 import { applicationsListQueryKey } from "../queries";
@@ -110,6 +112,10 @@ export function ApplicationAiCopilot({ application, onOpenEvaluation }: Props) {
 	const queryClient = useQueryClient();
 	const [draft, setDraft] = useState<{ kind: string; text: string } | null>(null);
 	const [coverLetterId, setCoverLetterId] = useState<string | null>(null);
+	// The guided wizard mounts on first open and stays mounted while the host surface lives,
+	// so accidentally closing the dialog doesn't throw the user's answers away.
+	const [guidedOpen, setGuidedOpen] = useState(false);
+	const [guidedMounted, setGuidedMounted] = useState(false);
 
 	const invalidate = () => {
 		void queryClient.invalidateQueries({ queryKey: applicationsListQueryKey() });
@@ -287,6 +293,20 @@ export function ApplicationAiCopilot({ application, onOpenEvaluation }: Props) {
 					onClick={() => draftMessage.mutate({ id: application.id, kind: "cover-letter" })}
 				/>
 				<ActionRow
+					icon={<CompassIcon />}
+					title={<Trans>Guided cover letter</Trans>}
+					description={
+						canScore
+							? t`Answer a few prompts — you approve every word`
+							: t`Link a resume and paste the job description first`
+					}
+					disabled={!canScore}
+					onClick={() => {
+						setGuidedMounted(true);
+						setGuidedOpen(true);
+					}}
+				/>
+				<ActionRow
 					icon={<PaperPlaneTiltIcon />}
 					title={<Trans>Draft a follow-up</Trans>}
 					description={t`A friendly nudge for the recruiter`}
@@ -325,6 +345,9 @@ export function ApplicationAiCopilot({ application, onOpenEvaluation }: Props) {
 				</div>
 			)}
 			{coverLetterId && <CoverLetterEditorDialog letterId={coverLetterId} onClose={() => setCoverLetterId(null)} />}
+			{guidedMounted && (
+				<GuidedCoverLetterWizard application={application} open={guidedOpen} onOpenChange={setGuidedOpen} />
+			)}
 		</section>
 	);
 }

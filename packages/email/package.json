@@ -5,7 +5,8 @@
 	"private": true,
 	"exports": {
 		"./transport": "./src/transport.ts",
-		"./templates/auth": "./src/templates/auth.tsx"
+		"./templates/auth": "./src/templates/auth.tsx",
+		"./templates/follow-up-digest": "./src/templates/follow-up-digest.tsx"
 	},
 	"scripts": {
 		"dev": "email dev --dir src/templates --port 3002",

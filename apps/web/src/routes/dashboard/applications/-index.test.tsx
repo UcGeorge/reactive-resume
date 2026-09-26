@@ -16,6 +16,9 @@ vi.mock("@/libs/orpc/client", () => ({
 			list: { queryOptions: () => ({ queryKey: ["applications"], queryFn: mocks.list }) },
 			tags: { queryOptions: () => ({ queryKey: ["tags"], queryFn: async () => [] }) },
 		},
+		followUps: {
+			dueCount: { queryOptions: () => ({ queryKey: ["follow-ups", "due-count"], queryFn: async () => ({ due: 0 }) }) },
+		},
 	},
 }));
 vi.mock("@/features/applications/components/application-detail-sheet", () => ({ ApplicationDetailSheet: () => null }));

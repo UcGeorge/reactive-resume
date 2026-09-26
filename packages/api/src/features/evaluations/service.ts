@@ -1,4 +1,5 @@
 import type {
+	CadenceSettings,
 	CareerFactsProfile,
 	CareerWorkAuthProfile,
 	EvaluationBlocks,
@@ -114,6 +115,9 @@ export const evaluationsService = {
 		workAuth?: CareerWorkAuthProfile | null | undefined;
 		facts?: CareerFactsProfile | null | undefined;
 		scanner?: ScannerSettings | null | undefined;
+		cadence?: CadenceSettings | null | undefined;
+		voiceNotes?: string | null | undefined;
+		emailDigest?: boolean | undefined;
 	}) => {
 		const { userId, ...fields } = input;
 		const [row] = await db

@@ -29,6 +29,9 @@ type BuildAgentToolsInput = {
 		readAttachment: (attachmentId: string) => Promise<unknown>;
 		applyResumePatch: (input: ApplyResumePatchToolInput) => Promise<unknown>;
 	};
+	/** Additional tools merged into the set — the seam career features (story bank, interview
+	 * practice) use without this module knowing about them. */
+	extraTools?: ToolSet | undefined;
 };
 
 function buildProviderNativeAgentTools(provider: AgentProviderConfig): ToolSet {
@@ -103,5 +106,6 @@ export function buildAgentTools(input: BuildAgentToolsInput): ToolSet {
 			...(input.options?.requirePatchApproval ? { needsApproval: true } : {}),
 			execute: (toolInput) => input.handlers.applyResumePatch(toolInput),
 		}),
+		...(input.extraTools ?? {}),
 	};
 }

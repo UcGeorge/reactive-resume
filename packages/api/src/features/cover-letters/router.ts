@@ -1,5 +1,6 @@
 import { protectedProcedure } from "../../context";
 import { coverLetterDto } from "../../dto/cover-letter";
+import { guidedCoverLetterRouter } from "./guided";
 import { coverLetterService } from "./service";
 
 export const coverLettersRouter = {
@@ -134,4 +135,5 @@ export const coverLettersRouter = {
 		.input(coverLetterDto.import.input)
 		.output(coverLetterDto.import.output)
 		.handler(({ context, input }) => coverLetterService.import({ ...input, userId: context.user.id })),
+	guided: guidedCoverLetterRouter,
 };

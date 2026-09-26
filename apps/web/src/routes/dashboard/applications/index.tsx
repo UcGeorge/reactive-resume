@@ -4,6 +4,7 @@ import { useLingui } from "@lingui/react";
 import { Trans } from "@lingui/react/macro";
 import {
 	ArchiveIcon,
+	BellIcon,
 	BriefcaseIcon,
 	ChartBarIcon,
 	DownloadSimpleIcon,
@@ -32,6 +33,8 @@ import { ImportApplicationsSheet } from "@/features/applications/components/impo
 import { ApplicationInsights } from "@/features/applications/components/insights-view";
 import { ApplicationTable } from "@/features/applications/components/table-view";
 import { applicationsListQueryOptions } from "@/features/applications/queries";
+import { FollowUpsView } from "@/features/follow-ups/components/follow-ups-view";
+import { useFollowUpsDueCount } from "@/features/follow-ups/use-due-count";
 import { orpc } from "@/libs/orpc/client";
 import { DashboardHeader } from "../-components/header";
 
@@ -46,7 +49,7 @@ type SortKey = (typeof SORT_OPTIONS)[number]["value"];
 
 const searchSchema = z.object({
 	search: z.string().default(""),
-	view: z.enum(["board", "table", "insights"]).default("board"),
+	view: z.enum(["board", "table", "insights", "followups"]).default("board"),
 	tags: z.array(z.string()).default([]),
 	sort: z.enum(["updated", "applied", "company", "role"]).default("updated"),
 	archived: z.boolean().default(false),
@@ -89,6 +92,10 @@ function RouteComponent() {
 
 	const { data: applications } = useQuery(applicationsListQueryOptions());
 	const { data: allTags } = useQuery(orpc.applications.tags.queryOptions());
+	const dueCount = useFollowUpsDueCount();
+
+	// The search/tag/sort/archived filters only apply to the pipeline views.
+	const isPipelineView = view === "board" || view === "table";
 
 	useEffect(() => {
 		if (!applicationId || !applications) return;
@@ -177,7 +184,7 @@ function RouteComponent() {
 							/>
 						)}
 
-						{view !== "insights" && (
+						{isPipelineView && (
 							<Combobox
 								className="w-40 min-w-0 shrink max-sm:hidden"
 								value={sort}
@@ -187,7 +194,7 @@ function RouteComponent() {
 							/>
 						)}
 
-						{archivedCount > 0 && view !== "insights" && (
+						{archivedCount > 0 && isPipelineView && (
 							<Button
 								size="sm"
 								variant={archived ? "secondary" : "outline"}
@@ -200,7 +207,7 @@ function RouteComponent() {
 						)}
 
 						{/* Mobile-only: one button holds every filter so the row never overflows on a phone. */}
-						{view !== "insights" && (
+						{isPipelineView && (
 							<Popover>
 								<PopoverTrigger
 									render={
@@ -283,12 +290,27 @@ function RouteComponent() {
 									<ChartBarIcon />
 									<span className="sr-only">{i18n.t(msg`Insights`)}</span>
 								</TabsTrigger>
+								<TabsTrigger
+									value="followups"
+									className="relative"
+									title={i18n.t(msg`Follow-ups`)}
+									nativeButton={false}
+									render={<Link to="." search={(p: Search) => ({ ...p, view: "followups" })} />}
+								>
+									<BellIcon />
+									<span className="sr-only">{i18n.t(msg`Follow-ups`)}</span>
+									{dueCount > 0 && (
+										<span className="absolute -end-1 -top-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-primary px-1 font-medium text-[10px] text-primary-foreground tabular-nums">
+											{dueCount}
+										</span>
+									)}
+								</TabsTrigger>
 							</TabsList>
 						</Tabs>
 					</div>
 
 					<div className="flex min-h-0 flex-1 flex-col">
-						{view !== "insights" && filtered.length === 0 ? (
+						{isPipelineView && filtered.length === 0 ? (
 							<div className="flex flex-1 flex-col items-center justify-center gap-2 text-center">
 								<p className="font-medium text-sm">
 									<Trans>No applications match your filters.</Trans>
@@ -313,6 +335,7 @@ function RouteComponent() {
 									<ApplicationTable applications={filtered} onOpen={setSelected} onEdit={setEditing} />
 								)}
 								{view === "insights" && <ApplicationInsights applications={applications ?? []} />}
+								{view === "followups" && <FollowUpsView />}
 							</>
 						)}
 					</div>

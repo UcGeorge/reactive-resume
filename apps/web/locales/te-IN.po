@@ -32,6 +32,16 @@ msgstr "\"{0} · {1}\" మరియు దాని పూర్తి టైమ
 msgid "(opens in new tab)"
 msgstr "(కొత్త ట్యాబ్‌లో తెరవబడుతుంది)"
 
+#. placeholder {0}: suggestions.achievements.length
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "{0, plural, one {# achievement candidate} other {# achievement candidates}}"
+msgstr ""
+
+#. placeholder {0}: selected.length
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "{0, plural, one {# achievement selected} other {# achievements selected}}"
+msgstr ""
+
 #. placeholder {0}: selected.length
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "{0, plural, one {# application to export} other {# applications to export}}"
@@ -42,6 +52,11 @@ msgstr "{0, plural, one {ఎగుమతి చేయడానికి # అప
 msgid "{0, plural, one {# fact violation} other {# fact violations}}"
 msgstr ""
 
+#. placeholder {0}: suggestions.gaps.length
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "{0, plural, one {# gap} other {# gaps}}"
+msgstr ""
+
 #. placeholder {0}: section.items.length
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 msgid "{0, plural, one {# item} other {# items}}"
@@ -50,6 +65,16 @@ msgstr "{0, plural, one {# అంశం} other {# అంశాలు}}"
 #. placeholder {0}: selected.size
 #: src/features/discovery/components/inbox-view.tsx
 msgid "{0, plural, one {# job selected} other {# jobs selected}}"
+msgstr ""
+
+#. placeholder {0}: selected.length
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "{0, plural, one {# keyword selected} other {# keywords selected}}"
+msgstr ""
+
+#. placeholder {0}: suggestions.keywords.length
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "{0, plural, one {# keyword} other {# keywords}}"
 msgstr ""
 
 #. placeholder {0}: item.roles.length
@@ -65,6 +90,11 @@ msgstr ""
 #. placeholder {0}: companies.length
 #: src/features/discovery/components/companies-view.tsx
 msgid "{0, plural, one {# watched company} other {# watched companies}}"
+msgstr ""
+
+#. placeholder {0}: result.words
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "{0, plural, one {# word} other {# words}}"
 msgstr ""
 
 #. placeholder {0}: result.dismissed
@@ -182,6 +212,10 @@ msgstr "గత 30 రోజులలో {label}"
 msgid "{passedRules} of {totalRules} checks passed"
 msgstr "{passedRules} {totalRules} చెక్కులు ఆమోదించబడ్డాయి"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "{remaining, plural, one {At least a sentence — # more character to go.} other {At least a sentence — # more characters to go.}}"
+msgstr ""
+
 #: src/libs/resume/ats.ts
 msgid "{sectionTitle} · Item {itemNumber}"
 msgstr "{sectionTitle} · అంశం {itemNumber} "
@@ -214,9 +248,17 @@ msgstr "<ul><li>సహకార ప్లానింగ్ టూల్ కో�
 msgid "1 Column / Inline"
 msgstr "1 కాలమ్ / ఇన్‌లైన్"
 
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "1 day"
+msgstr ""
+
 #: src/dialogs/api-key/create.tsx
 msgid "1 month"
 msgstr "1 నెల"
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "1 week"
+msgstr ""
 
 #: src/dialogs/api-key/create.tsx
 msgid "1 year"
@@ -237,6 +279,10 @@ msgstr "2022 - ప్రస్తుతం"
 #: src/features/homepage/resume-sculpture.tsx
 msgid "2022 to now"
 msgstr "2022 నుండి ఇప్పటి వరకు"
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "3 days"
+msgstr ""
 
 #: src/dialogs/api-key/create.tsx
 msgid "3 months"
@@ -380,6 +426,10 @@ msgstr "ఖాతా"
 msgid "Account menu"
 msgstr "ఖాతా మెనూ"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Achievements"
+msgstr ""
+
 #: src/features/applications/components/table-view.tsx
 msgid "Actions"
 msgstr "చర్యలు"
@@ -394,6 +444,7 @@ msgstr "వాస్తవ పరిమాణం (100%)"
 
 #: src/features/applications/components/application-detail-sheet.tsx
 #: src/features/applications/components/table-view.tsx
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
 msgid "Add"
 msgstr "జోడించు"
 
@@ -578,6 +629,14 @@ msgstr "మీరు ఏమి చేస్తారో వివరిస్త
 msgid "Add your full name under Basics."
 msgstr "బేసిక్స్ కింద మీ పూర్తి పేరుని జోడించండి."
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Add your own keyword…"
+msgstr ""
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Address head-on"
+msgstr ""
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Adjust the resume for a remote-first role that values async communication and ownership."
 msgstr "అసింక్ కమ్యూనికేషన్ మరియు యాజమాన్యానికి విలువనిచ్చే రిమోట్-ఫస్ట్ ఉద్యోగానికి అనుగుణంగా రెజ్యూమెను సర్దుబాటు చేసుకోండి."
@@ -728,6 +787,18 @@ msgstr "ఊహించని లోపం కారణంగా ఈ పేజ�
 #: src/dialogs/resume/import.tsx
 msgid "An unknown error occurred while importing your resume."
 msgstr "మీ రిజ్యూమ్‌ను దిగుమతి చేసేటప్పుడు తెలియని లోపం సంభవించింది."
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Analyzing the posting and your resume…"
+msgstr ""
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Answer a few prompts — you approve every word"
+msgstr ""
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Answer a few short prompts about this role. The letter is drafted only from your answers and from bullet points taken verbatim from your linked resume — and nothing is saved until you approve it at the end."
+msgstr ""
 
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Answer in your own words"
@@ -1011,6 +1082,10 @@ msgstr "అజర్బైజానీ"
 msgid "BA"
 msgstr "BA"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Back"
+msgstr ""
+
 #. Action returning a signed-in user to the page where they manage linked providers
 #: src/features/auth/pages/error.tsx
 msgid "Back to authentication settings"
@@ -1237,6 +1312,10 @@ msgstr "మళ్లీ చెక్ చేయండి"
 msgid "Check the exported file contains everything you expect, and that all of it is selectable text."
 msgstr "ఎగుమతి చేసిన ఫైల్‌లో మీరు ఆశించేదంతా ఉందా, మరియు అది మొత్తం ఎంపిక చేయగల టెక్స్ట్‌గా ఉందా అని చెక్ చేయండి."
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Check these claims before saving"
+msgstr ""
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Check what an applicant tracking system would miss, and only add keywords you're sure about."
 msgstr "అప్లికెంట్ ట్రాకింగ్ సిస్టమ్ దేన్ని వదిలేస్తుందో చూసుకుని, మీకు ఖచ్చితంగా తెలిసిన కీవర్డ్స్‌ను మాత్రమే జోడించండి."
@@ -1260,6 +1339,10 @@ msgstr "తనిఖీ"
 #: src/features/resume/stylesheet/status.tsx
 msgid "Checking draft"
 msgstr "డ్రాఫ్ట్‌ను తనిఖీ చేయడం"
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Checking your applications and computing the follow-up cadence…"
+msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "Checking…"
@@ -1369,6 +1452,7 @@ msgstr "క్లయింట్ ID"
 
 #: src/features/cover-letters/editor-dialog.tsx
 #: src/features/cover-letters/editor.tsx
+#: src/features/follow-ups/components/follow-ups-view.tsx
 msgid "Close"
 msgstr "మూసివేయి"
 
@@ -1448,6 +1532,10 @@ msgstr ""
 msgid "Company removed from your watches."
 msgstr ""
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Company research"
+msgstr ""
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Compare this resume against this job posting URL and update the keywords without overselling anything."
 msgstr "ఈ రెజ్యూమ్‌ను ఈ ఉద్యోగ ప్రకటన URL తో పోల్చి, దేన్నీ ఎక్కువ చేసి చెప్పకుండా కీవర్డ్స్‌ను నవీకరించండి."
@@ -1458,6 +1546,10 @@ msgstr ""
 
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "complete"
+msgstr ""
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Complete"
 msgstr ""
 
 #: src/features/ats-checker/messages.ts
@@ -1480,6 +1572,10 @@ msgstr "నిర్ధారించండి"
 #: src/features/resume/builder/password-dialog.tsx
 msgid "Confirm Password"
 msgstr "పాస్‌వర్డ్‌ను నిర్ధారించండి"
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Confirm the terms the letter should speak to. Deselect anything that doesn't apply to you — keep at least one."
+msgstr ""
 
 #. Authentication settings action to link a social login provider
 #: src/features/settings/authentication/components/social-provider.tsx
@@ -1578,6 +1674,7 @@ msgid "Converted stylesheet draft"
 msgstr "మార్చబడిన స్టైల్‌షీట్ డ్రాఫ్ట్"
 
 #: src/features/applications/components/application-ai-copilot.tsx
+#: src/features/follow-ups/components/follow-ups-view.tsx
 msgid "Copied to clipboard."
 msgstr "క్లిప్‌బోర్డ్‌కు కాపీ చేయబడింది."
 
@@ -1633,6 +1730,10 @@ msgstr "ఎగుమతి చేసిన ఫైల్ నుండి టె�
 msgid "Copy this secret key and use it in your applications to access your data."
 msgstr "ఈ సీక్రెట్ కీని కాపీ చేసి మీ యాప్‌లలో మీరు మీ డేటాను యాక్సెస్ చేయడానికి ఉపయోగించండి."
 
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Copy to clipboard"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-components/dock.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
 msgid "Copy URL"
@@ -1656,6 +1757,7 @@ msgid "Could not complete this connection. Restart the connection from your clie
 msgstr "ఈ కనెక్షన్‌ని పూర్తి చేయడం సాధ్యపడలేదు. మీ క్లయింట్ నుండి కనెక్షన్‌ని పునఃప్రారంభించి, మళ్లీ ప్రయత్నించండి."
 
 #: src/features/applications/components/application-ai-copilot.tsx
+#: src/features/follow-ups/components/follow-ups-view.tsx
 msgid "Could not copy to clipboard. Please copy the text manually."
 msgstr "క్లిప్‌బోర్డ్‌కి కాపీ చేయడం సాధ్యపడలేదు. దయచేసి వచనాన్ని మాన్యువల్‌గా కాపీ చేయండి."
 
@@ -1722,6 +1824,10 @@ msgstr "కనెక్షన్‌ను ధృవీకరించలేక�
 msgid "Couldn't add the application. Please try again."
 msgstr "దరఖాస్తును జోడించలేకపోయాం. దయచేసి మళ్లీ ప్రయత్నించండి."
 
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Couldn't complete this follow-up."
+msgstr ""
+
 #: src/features/applications/components/application-actions-menu.tsx
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Couldn't delete the application."
@@ -1747,6 +1853,10 @@ msgstr ""
 msgid "Couldn't dismiss the job."
 msgstr ""
 
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Couldn't dismiss this follow-up."
+msgstr ""
+
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Couldn't fetch that URL."
 msgstr ""
@@ -1763,6 +1873,10 @@ msgstr ""
 msgid "Couldn't save"
 msgstr "సేవ్ చేయలేకపోయారు"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Couldn't save the cover letter."
+msgstr ""
+
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Couldn't save the note."
 msgstr "గమనికను సేవ్ చేయలేకపోయాం."
@@ -1774,6 +1888,10 @@ msgstr ""
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Couldn't save your changes. Please try again."
 msgstr "మీ మార్పులను సేవ్ చేయలేకపోయాం. దయచేసి మళ్లీ ప్రయత్నించండి."
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Couldn't snooze this follow-up."
+msgstr ""
 
 #: src/features/applications/components/application-ai-copilot.tsx
 #: src/features/evaluations/components/evaluation-panel.tsx
@@ -1827,6 +1945,10 @@ msgstr "కవర్ లెటర్"
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Cover letter draft"
 msgstr "కవర్ లెటర్ ముసాయిదా"
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Cover letter saved."
+msgstr ""
 
 #: src/routes/dashboard/-components/sidebar.tsx
 #: src/routes/dashboard/cover-letters.tsx
@@ -2017,6 +2139,7 @@ msgid "Currently available for German resumes. Uses the language set in Page."
 msgstr "ప్రస్తుతం జర్మన్ రెస్యూమ్‌ల కోసం అందుబాటులో ఉంది. పేజీలో సెట్ చేసిన భాషను ఉపయోగిస్తుంది."
 
 #: src/components/input/color-picker.tsx
+#: src/features/follow-ups/components/follow-ups-view.tsx
 msgid "Custom"
 msgstr "స్వంతం"
 
@@ -2305,6 +2428,7 @@ msgstr ""
 
 #: src/features/applications/components/application-ai-copilot.tsx
 #: src/features/discovery/components/inbox-view.tsx
+#: src/features/follow-ups/components/follow-ups-view.tsx
 msgid "Dismiss"
 msgstr "కొట్టివేయండి"
 
@@ -2404,6 +2528,10 @@ msgstr "నమూనా PDF డౌన్‌లోడ్ చేయండి"
 msgid "Downloads"
 msgstr "డౌన్‌లోడ్‌లు"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Draft"
+msgstr ""
+
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Draft a cover letter"
 msgstr "కవర్ లెటర్ ముసాయిదా తయారు చేయండి"
@@ -2416,9 +2544,26 @@ msgstr "ఫాలో-అప్ ముసాయిదా తయారు చే�
 msgid "Draft answers"
 msgstr ""
 
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Draft message"
+msgstr ""
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Draft the letter"
+msgstr ""
+
 #: src/features/applications/components/application-ai-copilot.tsx
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
 msgid "Drafting failed."
 msgstr "ముసాయిదా తయారీ విఫలమైంది."
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Drafting your letter…"
+msgstr ""
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Drafting your message…"
+msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/layout/pages.tsx
 msgid "Drag and drop sections here to move them between columns"
@@ -2435,6 +2580,10 @@ msgstr "పేజీలు తిప్పడానికి లాగండి"
 #: src/features/ats-checker/messages.ts
 msgid "Drop the pronouns and start from the verb. That is the convention in most markets."
 msgstr "సర్వనామాలను తొలగించి క్రియతో ప్రారంభించండి. చాలా మార్కెట్లలో ఇదే ఆనవాయితీ."
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Due today"
+msgstr ""
 
 #. Resume card context menu action to create a copy
 #. Resume card dropdown action to create a copy
@@ -2468,12 +2617,20 @@ msgstr "మీ రిజ్యూమ్‌ను నకిలీ చేస్త
 msgid "Dutch"
 msgstr "డచ్"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "e.g. direct and technical"
+msgstr ""
+
 #: src/features/discovery/components/settings-view.tsx
 msgid "e.g. engineer, word:go, backend+senior"
 msgstr ""
 
 #: src/features/discovery/components/settings-view.tsx
 msgid "e.g. intern, staffing"
+msgstr ""
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "e.g. Jane Doe, Head of Engineering"
 msgstr ""
 
 #: src/features/discovery/components/settings-view.tsx
@@ -3060,6 +3217,10 @@ msgstr "GitHub లో మమ్మల్ని చూడండి"
 msgid "Finnish"
 msgstr "ఫిన్నిష్"
 
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "First check-in"
+msgstr ""
+
 #. placeholder {0}: formatRelativeTime(job.firstSeenAt, relativeTimeFormatter)
 #: src/features/discovery/components/inbox-view.tsx
 msgid "First seen {0}"
@@ -3101,9 +3262,21 @@ msgstr "ఫాలో-అప్ తేదీ"
 msgid "Follow-up draft"
 msgstr "ఫాలో-అప్ ముసాయిదా"
 
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Follow-up message"
+msgstr ""
+
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Follow-up note"
 msgstr "ఫాలో-అప్ గమనిక"
+
+#: src/routes/dashboard/applications/index.tsx
+msgid "Follow-ups"
+msgstr ""
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Follow-ups appear automatically after you mark an application applied — a first check-in about a week later, another one after that, and a thank-you note once you interview. Snoozed follow-ups resurface when their snooze lapses."
+msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/typography.tsx
 msgid "Font Family"
@@ -3159,6 +3332,10 @@ msgstr "ఫార్మాట్"
 msgid "Format stylesheet"
 msgstr "ఫార్మాట్ స్టైల్‌షీట్"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "found. Continue when you're ready."
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/right/sections/page.tsx
 msgid "Free-form"
 msgstr "స్వేచ్ఛా రూపం"
@@ -3203,6 +3380,10 @@ msgstr "పూర్తి స్క్రీన్"
 msgid "Fullscreen Editor"
 msgstr "పూర్తిస్క్రీన్ ఎడిటర్"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Gaps"
+msgstr ""
+
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Gaps & mitigations"
 msgstr ""
@@ -3236,6 +3417,10 @@ msgstr "మీ రాతపై మరో అభిప్రాయం పొం�
 #: src/features/homepage/site-footer.tsx
 msgid "Get Started"
 msgstr "స్టార్ట్ చేయండి"
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Getting ready"
+msgstr ""
 
 #. Authentication provider display name in account settings
 #. Brand name label for GitHub social sign-in button
@@ -3305,6 +3490,11 @@ msgstr "గ్రీకు"
 #: src/routes/dashboard/resumes/index.tsx
 msgid "Grid"
 msgstr "గ్రిడ్"
+
+#: src/features/applications/components/application-ai-copilot.tsx
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Guided cover letter"
+msgstr ""
 
 #: src/features/discovery/components/settings-view.tsx
 msgid "Hard block"
@@ -3458,6 +3648,10 @@ msgstr "హోమ్"
 #: src/features/settings/pages/api-keys.tsx
 msgid "How do I use the API?"
 msgstr "నేను APIని ఎలా ఉపయోగిస్తాను?"
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "How would you approach it?"
+msgstr ""
 
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "https://… (job posting URL)"
@@ -3822,6 +4016,7 @@ msgstr "కీవర్డ్ లేఅవుట్"
 
 #: src/dialogs/resume/sections/interest.tsx
 #: src/dialogs/resume/sections/skill.tsx
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
 msgid "Keywords"
 msgstr "కీవర్డ్స్"
 
@@ -3912,6 +4107,10 @@ msgstr "టెక్స్ట్‌ను హారిజాంటల్‌గ�
 msgid "Layout"
 msgstr "విన్యాసం"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Lead with adjacent experience"
+msgstr ""
+
 #: src/features/homepage/feature-explorer.tsx
 msgid "Lead with the work. Add a concrete detail so someone can picture it."
 msgstr "ముందుగా పని గురించి చెప్పండి. ఎవరైనా ఊహించుకోగలిగేలా ఒక కచ్చితమైన వివరాన్ని జోడించండి."
@@ -3928,6 +4127,10 @@ msgstr "పేజీ చుట్టూ కనీసం అర అంగుళ�
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
 msgid "Leave empty to reset the title to the original."
 msgstr "ప్రధాన శీర్షికను పునఃస్థాపించడానికి ఖాళీగా వదిలేయండి."
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Leave it out"
+msgstr ""
 
 #: src/dialogs/resume/import.tsx
 msgid "Leave to set up an AI provider?"
@@ -4026,6 +4229,10 @@ msgstr "మీ సరిపోలికను స్కోర్ చేయడా
 
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Link a resume and paste the job description (Edit) to tailor a copy for this job."
+msgstr ""
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Link a resume and paste the job description first"
 msgstr ""
 
 #: src/features/applications/components/application-detail-sheet.tsx
@@ -4428,6 +4635,7 @@ msgstr "కొత్త థ్రెడ్"
 msgid "New Thread"
 msgstr "కొత్త థ్రెడ్"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
 #: src/features/cover-letters/library.tsx
 msgid "Next"
 msgstr "తదుపరి"
@@ -4459,6 +4667,10 @@ msgstr "ఇంకా దరఖాస్తులేవీ లేవు. మీ �
 #: src/features/ats-checker/messages.ts
 msgid "No bullet lists were found."
 msgstr "బుల్లెట్ జాబితాలు కనుగొనబడలేదు."
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "No bullet points were found in the linked resume. Add achievement bullets to the resume first — the letter can only cite what the resume states."
+msgstr ""
 
 #. Empty-state message when no command palette results match the search query
 #: src/features/command-palette/index.tsx
@@ -4493,6 +4705,14 @@ msgstr "ఎడ్యుకేషన్ విభాగం కనుగొనబ�
 #: src/features/ats-checker/messages.ts
 msgid "No email address was found."
 msgstr "ఇమెయిల్ చిరునామా కనుగొనబడలేదు."
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "No follow-ups due"
+msgstr ""
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "No gaps surfaced between the posting and your resume — continue to the next step."
+msgstr ""
 
 #: src/features/discovery/components/inbox-view.tsx
 msgid "No jobs with this status."
@@ -4731,6 +4951,10 @@ msgstr "AI అసిస్టెంట్‌ను తెరవండి"
 msgid "Open application"
 msgstr ""
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Open Cover Letters"
+msgstr ""
+
 #: src/features/homepage/resume-sculpture.tsx
 msgid "Open design library"
 msgstr "డిజైన్ లైబ్రరీని తెరవండి"
@@ -4782,6 +5006,10 @@ msgstr "కొత్త ట్యాబ్‌లో తెరుచుకుం�
 msgid "opens in new tab"
 msgstr "కొత్త ట్యాబ్‌లో తెరవబడుతుంది"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Optional — paste a line from their blog, a recent launch, a funding note…"
+msgstr ""
+
 #: src/routes/agent/-components/patch-approval-card.tsx
 msgid "Optional note for the agent"
 msgstr "ఏజెంట్ కోసం ఐచ్ఛిక గమనిక"
@@ -4789,6 +5017,10 @@ msgstr "ఏజెంట్ కోసం ఐచ్ఛిక గమనిక"
 #: src/routes/agent/-components/patch-approval-card.tsx
 msgid "Optional note for the agent…"
 msgstr "ఏజెంట్ కోసం ఐచ్ఛిక గమనిక…"
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Optional, but it makes the opening concrete: a letter grounded in something the company actually shipped or announced beats a generic introduction. Paste a sentence or two — only what you paste here is used."
+msgstr ""
 
 #: src/routes/_home/ats-checker.tsx
 msgid "Optionally, which terms from a job posting already appear."
@@ -4822,6 +5054,10 @@ msgstr "అసలు టేబుల్ ఫార్మాటింగ్ భద
 #: src/features/ats-checker/report/score-header.tsx
 msgid "out of 100"
 msgstr "100లో"
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Overdue"
+msgstr ""
 
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Overview"
@@ -5024,6 +5260,10 @@ msgstr "ఒక చిహ్నాన్ని ఎంచుకోండి"
 #: src/features/ats-checker/messages.ts
 msgid "Pick one format and use it everywhere."
 msgstr "ఒక ఫార్మాట్‌ను ఎంచుకుని దాన్ని ప్రతిచోటా వాడండి."
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Pick the bullet points the letter may cite — taken word-for-word from your linked resume, so it can't claim anything you didn't. Select at least one."
+msgstr ""
 
 #: src/libs/resume/section.tsx
 msgid "Picture"
@@ -5418,6 +5658,10 @@ msgstr "దీనిపై మీ పేరు పెట్టడానికి
 msgid "Recipient"
 msgstr "గ్రహీత"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Recipient (optional)"
+msgstr ""
+
 #: src/components/level/combobox.tsx
 msgid "Rectangle"
 msgstr "ఆయతం"
@@ -5433,6 +5677,10 @@ msgstr "మళ్ళీ చేయండి"
 #: src/features/resume/stylesheet/toolbar.tsx
 msgid "Redo stylesheet edit"
 msgstr "స్టైల్‌షీట్ సవరణను మళ్లీ చేయండి"
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Redraft"
+msgstr ""
 
 #: src/dialogs/resume/sections/custom.tsx
 #: src/libs/resume/section-title.ts
@@ -5557,6 +5805,10 @@ msgstr "టేబుల్‌లను సాదా పేరాగ్రాఫ�
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Replace the attached cover letter?"
 msgstr "జోడించిన కవర్ లేఖను భర్తీ చేయాలా?"
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Reply follow-up"
+msgstr ""
 
 #: src/features/homepage/page.tsx
 msgid "Report a bug"
@@ -5956,6 +6208,10 @@ msgstr ""
 msgid "Save the file with every page upright."
 msgstr "ప్రతి పేజీ నిటారుగా ఉండేలా ఫైల్‌ను సేవ్ చేయండి."
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Save to Cover Letters"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-components/header.tsx
 msgid "Saved"
 msgstr "సేవ్ చేయబడింది"
@@ -6012,6 +6268,10 @@ msgstr ""
 msgid "Search"
 msgstr "శోధన"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Search achievements…"
+msgstr ""
+
 #: src/routes/dashboard/applications/index.tsx
 msgid "Search applications…"
 msgstr "దరఖాస్తులను శోధించండి…"
@@ -6051,6 +6311,10 @@ msgstr "వెతుకు..."
 #: src/features/command-palette/index.tsx
 msgid "Search…"
 msgstr "శోధన…"
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Second check-in"
+msgstr ""
 
 #: src/dialogs/auth/enable-two-factor.tsx
 msgid "Secret copied to clipboard."
@@ -6448,6 +6712,10 @@ msgstr "స్లోవేనియన్"
 msgid "Slug"
 msgstr "స్లగ్"
 
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Snooze"
+msgstr ""
+
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Soft gaps"
 msgstr ""
@@ -6689,6 +6957,11 @@ msgstr "ఉండు"
 #: src/features/homepage/ats-playground.tsx
 msgid "Stays in your browser"
 msgstr "మీ బ్రౌజర్‌లోనే ఉంటుంది"
+
+#. placeholder {0}: step + 1
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Step {0} of {STEP_COUNT}"
+msgstr ""
 
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Still waiting for {provider}… {elapsedSeconds}s"
@@ -6935,6 +7208,10 @@ msgstr "థాయ్"
 msgid "Thank you for helping keep it free."
 msgstr "దీన్ని ఉచితంగా ఉంచడంలో సాయపడినందుకు ధన్యవాదాలు."
 
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Thank-you note"
+msgstr ""
+
 #: src/features/ats-checker/tool.tsx
 msgid "That file could not be read as a PDF."
 msgstr "ఆ ఫైల్‌ను PDFగా చదవలేకపోయాం."
@@ -6963,6 +7240,10 @@ msgstr "ఆ సైన్-ఇన్ ప్రొవైడర్ ఈ సర్వ�
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "The agent needs your input."
 msgstr "ఏజెంట్‌కు మీ సమాచారం అవసరం."
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "The analysis failed."
+msgstr ""
 
 #: src/features/settings/pages/api-keys.tsx
 msgid "The API documentation shows how to connect Reactive Resume to your own applications. It covers the endpoints, the request format, and authentication."
@@ -6997,6 +7278,10 @@ msgstr "డీప్ చెక్ పూర్తి కాలేదు. దయ�
 
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "The fact check failed."
+msgstr ""
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "The fact check flagged lines it couldn't trace back to your resume. You approve the letter by saving it — edit your answers and redraft, or save anyway if you know a claim is true."
 msgstr ""
 
 #. Error shown when AI parsing returns invalid resume structure during import
@@ -7043,6 +7328,10 @@ msgstr "మీరు నమోదు చేసిన పాస్‌వర్డ
 #: src/routes/_home/ats-checker.tsx
 msgid "The PDF is read by code running in this tab. Nothing is uploaded, nothing is stored, and no account is needed. Open your browser's network tab and watch, if you like."
 msgstr "ఈ ట్యాబ్‌లో నడుస్తున్న కోడ్ ద్వారా PDF చదవబడుతుంది. ఏదీ అప్‌లోడ్ చేయబడదు, ఏదీ నిల్వ చేయబడదు, ఖాతా కూడా అవసరం లేదు. మీకు నచ్చితే మీ బ్రౌజర్ నెట్‌వర్క్ ట్యాబ్‌ను తెరిచి చూడండి."
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "The posting asks for things your resume doesn't show. Decide how the letter should handle each one."
+msgstr ""
 
 #: src/features/auth/pages/error.tsx
 msgid "The provider didn't share an email address, which is required to sign in."
@@ -7209,6 +7498,10 @@ msgstr "ఇది కొత్త API కీని సృష్టిస్త�
 #: src/libs/resume/ats.ts
 msgid "This date will not be read correctly."
 msgstr "ఈ తేదీ సరిగ్గా చదవబడదు."
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "This draft isn't saved yet — it becomes a cover letter only when you save it below."
+msgstr ""
 
 #: src/routes/agent/-components/patch-approval-card.tsx
 msgid "This edit request can no longer be answered."
@@ -7522,6 +7815,10 @@ msgstr "టోకెన్లు: {total}"
 msgid "Tokens: {total} ({cached} cached)"
 msgstr "టోకెన్లు: {total} ({cached} కాష్ చేయబడినవి)"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Tone"
+msgstr ""
+
 #: src/features/homepage/resume-sculpture.tsx
 msgid "Tools"
 msgstr "టూల్స్"
@@ -7561,6 +7858,8 @@ msgid "Translations"
 msgstr "ทรాన్స్‌లేషన్స్"
 
 #: src/components/layout/error-screen.tsx
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+#: src/features/follow-ups/components/follow-ups-view.tsx
 #: src/features/homepage/ats-playground.tsx
 msgid "Try again"
 msgstr "మళ్ళీ ప్రయత్నించండి"
@@ -7714,6 +8013,10 @@ msgstr "అన్‌వెరిఫైడ్"
 #. placeholder {0}: format(salary.max)
 #: src/features/discovery/components/inbox-view.tsx
 msgid "Up to {0}"
+msgstr ""
+
+#: src/features/follow-ups/components/follow-ups-view.tsx
+msgid "Upcoming"
 msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
@@ -8133,6 +8436,14 @@ msgstr "మీరు ఏమి చేయాలనుకుంటున్నా�
 msgid "What do you want to rename this section to?"
 msgstr "ఈ విభాగాన్ని మీరు కొత్తగా ఏ పేరుతో మార్చదలుచుకున్నారు?"
 
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "What is this company working on right now?"
+msgstr ""
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "What problem would you solve for them?"
+msgstr ""
+
 #: src/routes/_home/ats-checker.tsx
 msgid "What this checks"
 msgstr "ఇది ఏమి చెక్ చేస్తుంది"
@@ -8192,6 +8503,10 @@ msgstr "మీ టైమ్‌లైన్‌ను పునర్నిర్�
 
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Why"
+msgstr ""
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Why this company?"
 msgstr ""
 
 #: src/features/ats-checker/messages.ts
@@ -8303,6 +8618,10 @@ msgstr "మీ AI యాప్"
 #: src/features/ats-checker/ai-review/ai-review-card.tsx
 msgid "Your AI provider could not be reached. Check its settings and try again."
 msgstr "మీ AI ప్రొవైడర్‌ను చేరుకోలేకపోయాం. దాని సెట్టింగ్‌లను చెక్ చేసి మళ్లీ ప్రయత్నించండి."
+
+#: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
+msgid "Your answers"
+msgstr ""
 
 #: src/dialogs/api-key/create.tsx
 msgid "Your API key has been copied to the clipboard."
