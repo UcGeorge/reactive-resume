@@ -142,10 +142,11 @@ Explicit variables take precedence over the Marketplace aliases listed here.
 Vercel Functions run only while serving a request, so the in-process background worker that Docker starts at boot never runs here. The career features adapt:
 
 - Evaluations and tailoring run inside the request, kept alive past the response with `waitUntil`. Each run must finish within the Function's five-minute limit; a run cut off by the limit can be retried from the evaluation panel.
-- Scheduled scanning of watched companies runs **once per day** via Vercel Cron (`/api/cron/scanner`), not every `SCANNER_INTERVAL_HOURS`. Hobby allows daily crons only, and the exact hour is not guaranteed. Manual **Scan now** works at any time.
-- Follow-up materialization and the opt-in email digest also run once per day (`/api/cron/follow-ups`). The in-app follow-up queue is always fresh — it recomputes on read.
-- Set `CRON_SECRET` or neither cron endpoint will accept invocations.
+- **Scheduled scanning is off on Vercel.** Scanner pacing and fail-skip state are in-memory (reset every invocation), fetches leave from Vercel's shared egress IPs, and a whole sweep must fit one Function window — so only manual **Scan now** runs here. `/api/cron/scanner` exists for operators who accept those trade-offs and schedule it externally. Set `FLAG_DISABLE_JOB_SCANNER=true` outright if signups are open on your instance.
+- Follow-up materialization and the opt-in email digest run once per day via Vercel Cron (`/api/cron/follow-ups`). Without SMTP the digest is a no-op; the in-app follow-up queue is always fresh either way — it recomputes on read.
+- Set `CRON_SECRET` or the cron endpoints refuse every invocation.
 - Job retries and queue persistence (pg-boss) do not apply on Vercel; failed background work is surfaced in the UI for manual retry.
+- Recommended for a personal deployment: `FLAG_DISABLE_SIGNUPS=true`, set **after** you create your own account.
 
 For SMTP, OAuth providers, and feature flags, use the same variables as Docker. See [Self-hosting with Docker](/self-hosting/docker).
 

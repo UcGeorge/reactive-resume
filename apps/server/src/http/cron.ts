@@ -6,6 +6,12 @@ import { env } from "@reactive-resume/env/server";
  * crons hit these paths instead. Vercel sends `Authorization: Bearer ${CRON_SECRET}` with
  * every invocation — without a configured CRON_SECRET the endpoints refuse outright, so
  * they are never publicly triggerable.
+ *
+ * Only /api/cron/follow-ups is scheduled in vercel.json. The scanner endpoint is
+ * deliberately unscheduled on Vercel: per-host pacing and fail-skip state are in-memory
+ * (cold per invocation), fetches leave from shared egress IPs, and a whole sweep must fit
+ * one Function window — manual "Scan now" remains, and an operator who accepts those
+ * trade-offs can schedule this path externally.
  */
 
 function authorized(request: Request): boolean {
