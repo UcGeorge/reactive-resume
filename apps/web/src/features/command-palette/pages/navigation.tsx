@@ -3,7 +3,9 @@ import { Trans } from "@lingui/react/macro";
 import {
 	BinocularsIcon,
 	BriefcaseIcon,
+	ChartLineUpIcon,
 	ChatCircleDotsIcon,
+	ChatsCircleIcon,
 	GearIcon,
 	HouseSimpleIcon,
 	KeyIcon,
@@ -79,6 +81,26 @@ export function NavigationCommandGroup() {
 				>
 					<BinocularsIcon />
 					<Trans>Discover</Trans>
+				</CommandItem>
+
+				<CommandItem
+					disabled={!session}
+					keywords={[t`Interviews`, t`Stories`, t`Story bank`, t`Practice`]}
+					value="navigation.interviews"
+					onSelect={() => onNavigate("/dashboard/interviews")}
+				>
+					<ChatsCircleIcon />
+					<Trans>Interviews</Trans>
+				</CommandItem>
+
+				<CommandItem
+					disabled={!session}
+					keywords={[t`Insights`, t`Calibration`, t`Learning loop`, t`Analytics`]}
+					value="navigation.insights"
+					onSelect={() => onNavigate("/dashboard/insights")}
+				>
+					<ChartLineUpIcon />
+					<Trans>Insights</Trans>
 				</CommandItem>
 
 				<CommandItem

@@ -42,10 +42,20 @@ msgstr ""
 msgid "{0, plural, one {# achievement selected} other {# achievements selected}}"
 msgstr ""
 
+#. placeholder {0}: data.excludedInFlight
+#: src/features/career-insights/components/calibration-card.tsx
+msgid "{0, plural, one {# application still in play — not counted.} other {# applications still in play — not counted.}}"
+msgstr ""
+
 #. placeholder {0}: selected.length
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "{0, plural, one {# application to export} other {# applications to export}}"
 msgstr "{0, plural, one {ରପ୍ତାନି ପାଇଁ # ପ୍ରୟୋଗ |} other {ରପ୍ତାନି ପାଇଁ # ପ୍ରୟୋଗଗୁଡ଼ିକ |}}"
+
+#. placeholder {0}: row.count
+#: src/features/career-insights/components/rejection-patterns-card.tsx
+msgid "{0, plural, one {# drop} other {# drops}}"
+msgstr ""
 
 #. placeholder {0}: report.violations.length
 #: src/features/tailoring/components/tailoring-panel.tsx
@@ -77,6 +87,11 @@ msgstr ""
 msgid "{0, plural, one {# keyword} other {# keywords}}"
 msgstr ""
 
+#. placeholder {0}: row.count
+#: src/features/career-insights/components/funnel-velocity-card.tsx
+msgid "{0, plural, one {# move} other {# moves}}"
+msgstr ""
+
 #. placeholder {0}: item.roles.length
 #: src/routes/builder/$resumeId/-sidebar/left/sections/experience.tsx
 msgid "{0, plural, one {# role} other {# roles}}"
@@ -105,6 +120,21 @@ msgstr ""
 #. placeholder {0}: report.violations.length
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "{0, plural, one {Fact check found # violation.} other {Fact check found # violations.}}"
+msgstr ""
+
+#. placeholder {0}: Math.round(row.medianDays * 10) / 10
+#: src/features/career-insights/components/funnel-velocity-card.tsx
+msgid "{0, plural, one {median # day} other {median # days}}"
+msgstr ""
+
+#. placeholder {0}: data.evaluations
+#: src/features/career-insights/components/gap-heatmap-card.tsx
+msgid "{0, plural, one {Recurring skill gaps across # evaluation} other {Recurring skill gaps across # evaluations}}"
+msgstr ""
+
+#. placeholder {0}: story.timesUsed
+#: src/features/stories/components/story-card.tsx
+msgid "{0, plural, one {Used # time} other {Used # times}}"
 msgstr ""
 
 #. placeholder {0}: insights.total
@@ -171,6 +201,13 @@ msgstr "{0} ସ୍କିପ୍ ହୋଇଛି (ଅବ alid ଧ କିମ୍ବ�
 msgid "{0} to fix"
 msgstr "{0}ଟି ଠିକ୍ କରିବାକୁ ଅଛି"
 
+#. placeholder {0}: band.total
+#. placeholder {1}: band.interviews
+#. placeholder {2}: band.offers
+#: src/features/career-insights/components/calibration-card.tsx
+msgid "{0} total · {1} interviews · {2} offers"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
 msgid "{column, plural, one {# Column} other {# Columns}}"
@@ -203,6 +240,10 @@ msgstr "{count, plural, one {# ଟିପ୍ପଣୀ} other {# ଟିପ୍ପ�
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "{count, plural, one {# warning} other {# warnings}}"
 msgstr "{count, plural, one {# ସତର୍କତା} other {# ସତର୍କତାଗୁଡ଼ିକ}}"
+
+#: src/features/stories/components/suggest-from-resume-dialog.tsx
+msgid "{created, plural, one {# story drafted from the resume — review and confirm its numbers.} other {# stories drafted from the resume — review and confirm their numbers.}}"
+msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/statistics.tsx
 msgid "{label} over the last 30 days"
@@ -303,6 +344,10 @@ msgstr "ଏକ ତାରିଖ ପରିସର ଆରମ୍ଭ ହେବା ପ�
 #: src/features/ats-checker/messages.ts
 msgid "A date range is written in a form most software cannot read."
 msgstr "ଏକ ତାରିଖ ପରିସର ଏପରି ଫର୍ମରେ ଲେଖାଯାଇଛି ଯାହା ଅଧିକାଂଶ ସଫ୍ଟୱେର୍ ପଢ଼ିପାରେ ନାହିଁ।"
+
+#: src/features/stories/components/provenance-check-dialog.tsx
+msgid "A deterministic re-check of this story's numeric claims against its linked source resume. Nothing is changed unless you apply the suggestion."
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "A font is referenced but not embedded."
@@ -430,6 +475,10 @@ msgstr "ଆକାଉଣ୍ଟ ମେନୁ"
 msgid "Achievements"
 msgstr ""
 
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "Action"
+msgstr ""
+
 #: src/features/applications/components/table-view.tsx
 msgid "Actions"
 msgstr "କାର୍ଯ୍ୟଗୁଡ଼ିକ"
@@ -547,6 +596,7 @@ msgid "Add a section headed \"Experience\" or \"Work Experience\". It is the fie
 msgstr "\"Experience\" କିମ୍ବା \"Work Experience\" ଶୀର୍ଷକ ସହିତ ଏକ ବିଭାଗ ଯୋଡନ୍ତୁ। ଏହା ସେହି ଫିଲ୍ଡ ଯାହା ଉପରେ ଅଧିକାଂଶ ସିଷ୍ଟମ ର୍ୟାଙ୍କ କରନ୍ତି।"
 
 #: src/features/applications/components/application-form-sheet.tsx
+#: src/features/stories/components/tag-list-field.tsx
 msgid "Add a tag and press Enter…"
 msgstr "ଏକ ଟ୍ୟାଗ୍ ଯୋଗ କରନ୍ତୁ ଏବଂ Enter ଦବାନ୍ତୁ…"
 
@@ -613,6 +663,10 @@ msgstr "ଭୂମିକା ଯୋଡ଼ନ୍ତୁ"
 msgid "Add some whitespace between sections so a person can skim it."
 msgstr "ବିଭାଗଗୁଡ଼ିକ ମଧ୍ୟରେ କିଛି ଖାଲି ସ୍ଥାନ ଯୋଡନ୍ତୁ ଯାହା ଦ୍ୱାରା ଜଣେ ବ୍ୟକ୍ତି ଏହାକୁ ଶୀଘ୍ର ଦେଖିପାରିବେ।"
 
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "Add story"
+msgstr ""
+
 #: src/features/applications/components/table-view.tsx
 msgid "Add tag"
 msgstr "ଟ୍ୟାଗ୍ ଯୋଡନ୍ତୁ |"
@@ -640,6 +694,10 @@ msgstr ""
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Adjust the resume for a remote-first role that values async communication and ownership."
 msgstr "ଅସମକାୟ ଯୋଗାଯୋଗ ଏବଂ ମାଲିକାନା ମୂଲ୍ୟ ଦେଉଥିବା ଏକ ରିମୋଟ୍-ଫାଷ୍ଟ ଭୂମିକା ପାଇଁ ରିଜ୍ୟୁମ୍ ଆଡଜଷ୍ଟ କରନ୍ତୁ।"
+
+#: src/features/career-insights/components/channels-card.tsx
+msgid "Advance rate"
+msgstr ""
 
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Advanced"
@@ -690,6 +748,10 @@ msgstr "REDIS_URL ଏବଂ ENCRYPTION_SECRET କନଫିଗର୍ ନହେବ
 msgid "AI assistant"
 msgstr "AI ଆସିଷ୍ଟାଣ୍ଟ"
 
+#: src/features/stories/components/suggest-from-resume-dialog.tsx
+msgid "AI extracts STAR+R candidates grounded in the resume's real projects. They arrive as derived-unverified drafts — nothing counts as a fact until you confirm it."
+msgstr ""
+
 #: src/features/ats-checker/ai-review/ai-review-card.tsx
 msgid "AI provider"
 msgstr "AI ପ୍ରଦାତା"
@@ -721,6 +783,10 @@ msgstr "AI, ଯେତେବେଳେ ଆପଣ ଚାହାଁନ୍ତି"
 #: src/libs/locale.ts
 msgid "Albanian"
 msgstr "ଆଲବାନିଆନ୍"
+
+#: src/features/career-insights/components/channels-card.tsx
+msgid "All"
+msgstr ""
 
 #: src/features/homepage/languages-showcase.test.tsx
 #: src/features/homepage/languages-showcase.tsx
@@ -787,6 +853,10 @@ msgstr "ଏକ ଅପ୍ରତ୍ୟାଶିତ ତ୍ରୁଟି ଏହି �
 #: src/dialogs/resume/import.tsx
 msgid "An unknown error occurred while importing your resume."
 msgstr "ଆପଣଙ୍କ ରେଜ୍ୟୁମେକୁ ଆୟାତ କରିବା ସମୟରେ ଅଜଣା ତ୍ରୁଟି ହୋଇଛି।"
+
+#: src/features/command-palette/pages/navigation.tsx
+msgid "Analytics"
+msgstr ""
 
 #: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
 msgid "Analyzing the posting and your resume…"
@@ -913,6 +983,10 @@ msgstr "ପ୍ରୟୋଗ ହୋଇଛି |"
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Apply"
+msgstr ""
+
+#: src/features/stories/components/provenance-check-dialog.tsx
+msgid "Apply suggested"
 msgstr ""
 
 #: src/routes/agent/-components/patch-approval-card.tsx
@@ -1214,6 +1288,11 @@ msgstr "ବୁଲେଟେଡ୍ ତାଲିକା |"
 msgid "By the community, for the community."
 msgstr "ସମୁଦାୟ ଦ୍ୱାରା, ସମୁଦାୟ ପାଇଁ।"
 
+#: src/features/career-insights/components/calibration-card.tsx
+#: src/features/command-palette/pages/navigation.tsx
+msgid "Calibration"
+msgstr ""
+
 #. API key deletion confirmation dialog cancel action in settings
 #. Account deletion confirmation dialog cancel action in account settings
 #. Confirmation dialog button label to abort deleting a custom section in resume builder
@@ -1235,6 +1314,9 @@ msgstr "ସମୁଦାୟ ଦ୍ୱାରା, ସମୁଦାୟ ପାଇଁ�
 #: src/features/settings/pages/account.tsx
 #: src/features/settings/pages/api-keys.tsx
 #: src/features/settings/pages/profile.tsx
+#: src/features/stories/components/practice-dialog.tsx
+#: src/features/stories/components/story-editor-dialog.tsx
+#: src/features/stories/components/suggest-from-resume-dialog.tsx
 #: src/hooks/use-prompt.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
@@ -1299,6 +1381,14 @@ msgstr ""
 msgid "Changes are shared between your library and the resume builder."
 msgstr "ପରିବର୍ତ୍ତନଗୁଡ଼ିକ ତୁମର ଲାଇବ୍ରେରୀ ଏବଂ ରିଜ୍ୟୁମ୍ ବିଲଡର୍ ମଧ୍ୟରେ ଅଂଶୀଦାର |"
 
+#: src/features/career-insights/components/channels-card.tsx
+msgid "Channel"
+msgstr ""
+
+#: src/features/career-insights/components/channels-card.tsx
+msgid "Channels"
+msgstr ""
+
 #: src/routes/agent/-components/agent-chat.tsx
 #: src/routes/agent/$threadId.tsx
 msgid "Chat"
@@ -1307,6 +1397,11 @@ msgstr "ଚାଟ୍ କରନ୍ତୁ"
 #: src/features/ats-checker/tool.tsx
 msgid "Check again"
 msgstr "ପୁନର୍ବାର ଯାଞ୍ଚ କରନ୍ତୁ"
+
+#: src/features/stories/components/provenance-check-dialog.tsx
+#: src/features/stories/components/story-card.tsx
+msgid "Check provenance"
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Check the exported file contains everything you expect, and that all of it is selectable text."
@@ -1385,6 +1480,8 @@ msgstr "ଏକ preset କିମ୍ବା custom shade ବାଛନ୍ତୁ।"
 
 #: src/features/cover-letters/editor-dialog.tsx
 #: src/features/cover-letters/library.tsx
+#: src/features/stories/components/story-editor-dialog.tsx
+#: src/features/stories/components/suggest-from-resume-dialog.tsx
 #: src/routes/agent/-components/new-thread-setup.tsx
 msgid "Choose a resume"
 msgstr "ଏକ ରିଜ୍ୟୁମ୍ ବାଛନ୍ତୁ"
@@ -1453,6 +1550,7 @@ msgstr "କ୍ଲାଏଣ୍ଟ ID"
 #: src/features/cover-letters/editor-dialog.tsx
 #: src/features/cover-letters/editor.tsx
 #: src/features/follow-ups/components/follow-ups-view.tsx
+#: src/features/stories/components/provenance-check-dialog.tsx
 msgid "Close"
 msgstr "ବନ୍ଦ"
 
@@ -1675,6 +1773,7 @@ msgstr "ରୂପାନ୍ତରିତ ଷ୍ଟାଇଲସିଟ୍ ଡ୍ର�
 
 #: src/features/applications/components/application-ai-copilot.tsx
 #: src/features/follow-ups/components/follow-ups-view.tsx
+#: src/features/stories/components/practice-dialog.tsx
 msgid "Copied to clipboard."
 msgstr "କ୍ଲିପବୋର୍ଡରେ କପି କରାଯାଇଛି |"
 
@@ -1704,6 +1803,10 @@ msgstr "ରିଜ୍ୟୁମରୁ କପି କରନ୍ତୁ |"
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Copy JSON"
 msgstr "JSON କପି କରନ୍ତୁ"
+
+#: src/features/stories/components/practice-dialog.tsx
+msgid "Copy prompt"
+msgstr ""
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Copy saved to your cover-letter library."
@@ -1758,6 +1861,7 @@ msgstr "ଏହି ସଂଯୋଗ ସଂପୂର୍ଣ୍ଣ କରିପାର
 
 #: src/features/applications/components/application-ai-copilot.tsx
 #: src/features/follow-ups/components/follow-ups-view.tsx
+#: src/features/stories/components/practice-dialog.tsx
 msgid "Could not copy to clipboard. Please copy the text manually."
 msgstr "କ୍ଲିପବୋର୍ଡକୁ କପି କରିପାରିଲା ନାହିଁ | ଦୟାକରି ପାଠକୁ କପି କରନ୍ତୁ |"
 
@@ -1824,6 +1928,10 @@ msgstr "ସଂଯୋଗ ଯାଞ୍ଚ କରିପାରିଲା ନାହି
 msgid "Couldn't add the application. Please try again."
 msgstr "ଆବେଦନ ଯୋଗ କରିପାରିବ ନାହିଁ | ଦୟାକରି again ଚେଷ୍ଟା କରନ୍ତୁ |"
 
+#: src/features/stories/components/provenance-check-dialog.tsx
+msgid "Couldn't apply the suggestion."
+msgstr ""
+
 #: src/features/follow-ups/components/follow-ups-view.tsx
 msgid "Couldn't complete this follow-up."
 msgstr ""
@@ -1835,6 +1943,10 @@ msgstr "ଆବେଦନ ବିଲୋପ କରିପାରିଲା ନାହି
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Couldn't delete the evaluation."
+msgstr ""
+
+#: src/routes/dashboard/interviews/index.tsx
+msgid "Couldn't delete the story."
 msgstr ""
 
 #: src/features/applications/components/application-detail-sheet.tsx
@@ -1861,6 +1973,10 @@ msgstr ""
 msgid "Couldn't fetch that URL."
 msgstr ""
 
+#: src/features/stories/components/find-story-box.tsx
+msgid "Couldn't match stories."
+msgstr ""
+
 #: src/features/applications/components/board.tsx
 msgid "Couldn't move the application. Please try again."
 msgstr "ଆବେଦନ ଘୁଞ୍ଚାଇ ପାରିଲା ନାହିଁ | ଦୟାକରି again ଚେଷ୍ଟା କରନ୍ତୁ |"
@@ -1885,6 +2001,10 @@ msgstr "ନୋଟ୍ ସେଭ୍ କରିପାରିଲା ନାହିଁ |"
 msgid "Couldn't save the settings."
 msgstr ""
 
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "Couldn't save the story."
+msgstr ""
+
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Couldn't save your changes. Please try again."
 msgstr "ଆପଣଙ୍କର ପରିବର୍ତ୍ତନଗୁଡିକ ସଞ୍ଚୟ କରିପାରିଲା ନାହିଁ | ଦୟାକରି again ଚେଷ୍ଟା କରନ୍ତୁ |"
@@ -1896,6 +2016,10 @@ msgstr ""
 #: src/features/applications/components/application-ai-copilot.tsx
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Couldn't start the evaluation."
+msgstr ""
+
+#: src/features/stories/components/suggest-from-resume-dialog.tsx
+msgid "Couldn't suggest stories from the resume."
 msgstr ""
 
 #: src/features/applications/components/application-detail-sheet.tsx
@@ -2122,6 +2246,10 @@ msgstr ""
 msgid "CSV data"
 msgstr "CSV ତଥ୍ୟ |"
 
+#: src/features/stories/components/provenance-check-dialog.tsx
+msgid "Current"
+msgstr ""
+
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Current filters"
 msgstr "ସାମ୍ପ୍ରତିକ ଫିଲ୍ଟର୍ |"
@@ -2252,10 +2380,16 @@ msgstr "ଡିଗ୍ରୀ"
 #: src/routes/builder/$resumeId/-components/header.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-item.tsx
+#: src/routes/dashboard/interviews/index.tsx
 #: src/routes/dashboard/resumes/-components/menus/context-menu.tsx
 #: src/routes/dashboard/resumes/-components/menus/dropdown-menu.tsx
 msgid "Delete"
 msgstr "ବିଲୋପ କରନ୍ତୁ"
+
+#. placeholder {0}: story.title
+#: src/routes/dashboard/interviews/index.tsx
+msgid "Delete \"{0}\"?"
+msgstr ""
 
 #: src/features/command-palette/pages/navigation.tsx
 #: src/features/settings/pages/account.tsx
@@ -2281,6 +2415,10 @@ msgstr "ଛବି ବିଲୋପ କରନ୍ତୁ"
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Delete provider"
 msgstr "ପ୍ରଦାନକାରୀଙ୍କୁ ଡିଲିଟ୍ କରନ୍ତୁ"
+
+#: src/features/stories/components/story-card.tsx
+msgid "Delete story"
+msgstr ""
 
 #: src/routes/agent/-components/agent-chat.tsx
 #: src/routes/agent/-components/thread-sidebar.tsx
@@ -2338,6 +2476,11 @@ msgstr "ପ୍ରତ୍ୟାଖ୍ୟାନ, ଏଜେଣ୍ଟଙ୍କ ପା
 #: src/routes/agent/-components/patch-approval-card.tsx
 msgid "Deny"
 msgstr "ଅସ୍ୱୀକାର କରନ୍ତୁ"
+
+#: src/features/stories/components/provenance-chip.tsx
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "derived-unverified"
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Describe each role with short bullets. Solid paragraphs are harder to skim and to segment."
@@ -2577,6 +2720,10 @@ msgstr "ଅପଲୋଡ୍ କରିବା ପୂର୍ବରୁ ପୁନଃସ
 msgid "Drag to turn the pages"
 msgstr "ପୃଷ୍ଠା ଓଲଟାଇବାକୁ ଟାଣନ୍ତୁ"
 
+#: src/features/career-insights/components/rejection-patterns-card.tsx
+msgid "Drop by stage"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Drop the pronouns and start from the verb. That is the convention in most markets."
 msgstr "ସର୍ବନାମ ହଟାନ୍ତୁ ଏବଂ କ୍ରିୟାଠାରୁ ଆରମ୍ଭ କରନ୍ତୁ। ଅଧିକାଂଶ ବଜାରରେ ଏହା ପ୍ରଚଳନ ଅଟେ।"
@@ -2633,6 +2780,10 @@ msgstr ""
 msgid "e.g. Jane Doe, Head of Engineering"
 msgstr ""
 
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "e.g. leadership, incident response…"
+msgstr ""
+
 #: src/features/discovery/components/settings-view.tsx
 msgid "e.g. On-site, US only"
 msgstr ""
@@ -2643,6 +2794,10 @@ msgstr ""
 
 #: src/features/discovery/components/settings-view.tsx
 msgid "e.g. security clearance"
+msgstr ""
+
+#: src/features/stories/components/find-story-box.tsx
+msgid "e.g. Tell me about a time you disagreed with a decision…"
 msgstr ""
 
 #: src/routes/builder/$resumeId/-components/version-history.tsx
@@ -2711,6 +2866,11 @@ msgstr "ମଡେଲ୍ ସମ୍ପାଦନ କରନ୍ତୁ"
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Edit note"
 msgstr "ନୋଟ୍ ସମ୍ପାଦନ କରନ୍ତୁ"
+
+#: src/features/stories/components/story-card.tsx
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "Edit story"
+msgstr ""
 
 #: src/features/resume/export/download-dialog.tsx
 msgid "Editable in Word, Google Docs, and Pages."
@@ -2865,9 +3025,17 @@ msgstr ""
 msgid "Evaluation running…"
 msgstr ""
 
+#: src/features/career-insights/components/calibration-card.tsx
+msgid "Evaluation score bands vs interviews and offers, settled applications only"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "Every check passed. Nothing here should stop a parser from reading your resume."
 msgstr "ସମସ୍ତ ଯାଞ୍ଚ ସଫଳ ହୋଇଛି। ଏଠାରେ କିଛି ମଧ୍ୟ ପାର୍ସରକୁ ଆପଣଙ୍କ ରେଜ୍ୟୁମେ ପଢ଼ିବାରେ ବାଧା ଦେବା ଉଚିତ ନୁହେଁ।"
+
+#: src/features/stories/components/provenance-chip.tsx
+msgid "Every numeric claim in this story traces back to the linked resume's text."
+msgstr ""
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Evidence"
@@ -2978,6 +3146,10 @@ msgstr "ରପ୍ତାନି ହୋଇଥିବା ପାଇପଲାଇନ-ପ
 #: src/features/homepage/ats-playground.tsx
 msgid "Extracted text"
 msgstr "ନିଷ୍କାସିତ ଟେକ୍ସଟ୍"
+
+#: src/features/stories/components/suggest-from-resume-dialog.tsx
+msgid "Extracting…"
+msgstr ""
 
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Fact check passed — every claim is backed by the source resume."
@@ -3205,6 +3377,10 @@ msgstr "ଏହା ଦ୍ୱାରା ଫିଲ୍ଟର୍ କରନ୍ତୁ"
 msgid "Filter by tags"
 msgstr "ଟ୍ୟାଗ୍ ଅନୁଯାୟୀ ଫିଲ୍ଟର୍ କରନ୍ତୁ"
 
+#: src/features/stories/components/find-story-box.tsx
+msgid "Find a story"
+msgstr ""
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Find the weak bullet points and rewrite them with stronger outcomes, numbers, scope, and sharper verbs."
 msgstr "ଦୁର୍ବଳ ବୁଲେଟ୍ ପଏଣ୍ଟଗୁଡିକ ଖୋଜି ବାହାର କରନ୍ତୁ ଏବଂ ଅଧିକ ଶକ୍ତିଶାଳୀ ଫଳାଫଳ, ସଂଖ୍ୟା, ପରିସର ଓ ତୀକ୍ଷ୍ଣ କ୍ରିୟାପଦ ସହିତ ସେଗୁଡିକୁ ପୁଣି ଲେଖନ୍ତୁ।"
@@ -3379,6 +3555,14 @@ msgstr "ପୂର୍ଣ୍ଣ ସ୍କ୍ରିନ"
 #: src/components/input/rich-input.tsx
 msgid "Fullscreen Editor"
 msgstr "ପୂର୍ଣ୍ଣପର୍ଦ୍ଦା ସମ୍ପାଦକ"
+
+#: src/features/career-insights/components/funnel-velocity-card.tsx
+msgid "Funnel velocity"
+msgstr ""
+
+#: src/features/career-insights/components/gap-heatmap-card.tsx
+msgid "Gap heatmap"
+msgstr ""
 
 #: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
 msgid "Gaps"
@@ -3645,6 +3829,10 @@ msgstr ""
 msgid "Home"
 msgstr "ହୋମ୍"
 
+#: src/features/career-insights/components/rejection-patterns-card.tsx
+msgid "How and where rejections cluster"
+msgstr ""
+
 #: src/features/settings/pages/api-keys.tsx
 msgid "How do I use the API?"
 msgstr "ମୁଁ API କିପରି ବ୍ୟବହାର କରିବି?"
@@ -3814,7 +4002,10 @@ msgstr "ଇନଲାଇନ"
 msgid "Inline Code"
 msgstr "ଇନ୍ଲାଇନ୍ କୋଡ୍"
 
+#: src/features/command-palette/pages/navigation.tsx
+#: src/routes/dashboard/-components/sidebar.tsx
 #: src/routes/dashboard/applications/index.tsx
+#: src/routes/dashboard/insights/index.tsx
 msgid "Insights"
 msgstr "ଅନ୍ତର୍ଦୃଷ୍ଟି |"
 
@@ -3823,6 +4014,10 @@ msgstr "ଅନ୍ତର୍ଦୃଷ୍ଟି |"
 #: src/features/ats-checker/tool.tsx
 msgid "Inspecting page {0} of {1}…"
 msgstr "ପୃଷ୍ଠା {0} / {1} ନିରୀକ୍ଷଣ ହେଉଛି…"
+
+#: src/features/career-insights/components/channels-card.tsx
+msgid "Int"
+msgstr ""
 
 #: src/features/command-palette/pages/navigation.tsx
 #: src/routes/dashboard/-components/sidebar.tsx
@@ -3847,6 +4042,12 @@ msgstr "ସାକ୍ଷାତକାର"
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Interview plan"
+msgstr ""
+
+#: src/features/command-palette/pages/navigation.tsx
+#: src/routes/dashboard/-components/sidebar.tsx
+#: src/routes/dashboard/interviews/index.tsx
+msgid "Interviews"
 msgstr ""
 
 #: src/features/settings/integrations/components/ai-section.tsx
@@ -4089,6 +4290,11 @@ msgstr "ଶେଷ ଅଦ୍ୟତନ କରାଯାଇଛି"
 msgid "Last updated on {updatedAt}"
 msgstr "{updatedAt} ରେ ଶେଷ ଅଦ୍ୟତନ ହୋଇଛି"
 
+#. placeholder {0}: formatRelativeTime(story.lastUsedAt, relativeTimeFormatter)
+#: src/features/stories/components/story-card.tsx
+msgid "last used {0}"
+msgstr ""
+
 #. placeholder {0}: statistics.lastViewedAt.toDateString()
 #: src/routes/builder/$resumeId/-sidebar/right/sections/statistics.tsx
 msgid "Last viewed on {0}"
@@ -4114,6 +4320,10 @@ msgstr ""
 #: src/features/homepage/feature-explorer.tsx
 msgid "Lead with the work. Add a concrete detail so someone can picture it."
 msgstr "କାମରୁ ଆରମ୍ଭ କରନ୍ତୁ। ଏକ ନିର୍ଦ୍ଦିଷ୍ଟ ବିବରଣୀ ଯୋଡନ୍ତୁ ଯାହା ଦ୍ୱାରା କେହି ଏହାକୁ କଳ୍ପନା କରିପାରିବ।"
+
+#: src/features/command-palette/pages/navigation.tsx
+msgid "Learning loop"
+msgstr ""
 
 #: src/dialogs/resume/import.tsx
 #: src/hooks/use-form-blocker.tsx
@@ -4286,6 +4496,8 @@ msgid "Loading providers…"
 msgstr "ପ୍ରଦାନକାରୀମାନଙ୍କୁ ଲୋଡ୍ କରାଯାଉଛି…"
 
 #: src/features/command-palette/pages/resumes.tsx
+#: src/features/stories/components/story-editor-dialog.tsx
+#: src/features/stories/components/suggest-from-resume-dialog.tsx
 #: src/routes/agent/-components/new-thread-setup.tsx
 msgid "Loading resumes…"
 msgstr "ରିଜ୍ୟୁମ୍ ଲୋଡ୍ ହେଉଛି…"
@@ -4422,6 +4634,7 @@ msgid "Mark rejected"
 msgstr "ମାର୍କ ପ୍ରତ୍ୟାଖ୍ୟାନ କଲେ |"
 
 #: src/features/evaluations/components/evaluation-panel.tsx
+#: src/features/stories/components/find-story-box.tsx
 msgid "Match"
 msgstr ""
 
@@ -4431,6 +4644,14 @@ msgstr "MZ ସ୍କୋରିଂ failed |"
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "meaningful"
+msgstr ""
+
+#: src/features/career-insights/components/funnel-velocity-card.tsx
+msgid "Median days between stage transitions"
+msgstr ""
+
+#: src/features/career-insights/components/rejection-patterns-card.tsx
+msgid "Median days to rejection"
 msgstr ""
 
 #: src/features/evaluations/components/evaluation-panel.tsx
@@ -4621,6 +4842,11 @@ msgstr "ନୂତନ ପାସୱାର୍ଡ"
 msgid "New Section"
 msgstr "ନୂତନ ବିଭାଗ"
 
+#: src/features/stories/components/story-editor-dialog.tsx
+#: src/routes/dashboard/interviews/index.tsx
+msgid "New story"
+msgstr ""
+
 #: src/features/applications/components/table-view.tsx
 msgid "New tag…"
 msgstr "ନୂଆ ଟ୍ୟାଗ୍…"
@@ -4672,6 +4898,10 @@ msgstr "କୌଣସି ବୁଲେଟ୍ ତାଲିକା ମିଳିଲା
 msgid "No bullet points were found in the linked resume. Add achievement bullets to the resume first — the letter can only cite what the resume states."
 msgstr ""
 
+#: src/features/career-insights/components/channels-card.tsx
+msgid "No channel data yet — set a source on your applications to compare them here."
+msgstr ""
+
 #. Empty-state message when no command palette results match the search query
 #: src/features/command-palette/index.tsx
 msgid "No commands match that search."
@@ -4684,6 +4914,10 @@ msgstr "କୌଣସି ପାରମ୍ପରିକ ବିଭାଗ ଶୀର୍
 #: src/features/cover-letters/library.tsx
 msgid "No cover letters found. Create one or import an existing letter."
 msgstr "କଭର ଅକ୍ଷର ମିଳିଲା ନାହିଁ | ଗୋଟିଏ ସୃଷ୍ଟି କରନ୍ତୁ କିମ୍ବା ଏକ ବିଦ୍ୟମାନ ଅକ୍ଷର ଆମଦାନି କରନ୍ତୁ |"
+
+#: src/features/career-insights/components/channels-card.tsx
+msgid "no data"
+msgstr ""
 
 #. Error shown when AI import endpoint returns no parsed resume data
 #: src/dialogs/resume/import.tsx
@@ -4710,8 +4944,16 @@ msgstr "କୌଣସି ଇମେଲ୍ ଠିକଣା ମିଳିଲା ନ�
 msgid "No follow-ups due"
 msgstr ""
 
+#: src/features/career-insights/components/gap-heatmap-card.tsx
+msgid "No gaps mapped yet — run evaluations to build your gap map."
+msgstr ""
+
 #: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
 msgid "No gaps surfaced between the posting and your resume — continue to the next step."
+msgstr ""
+
+#: src/features/career-insights/components/calibration-card.tsx
+msgid "no interview data"
 msgstr ""
 
 #: src/features/discovery/components/inbox-view.tsx
@@ -4746,6 +4988,10 @@ msgstr "କୌଣସି ପୂର୍ବ ଡାଟା ନାହିଁ"
 msgid "No readable text found. This PDF may contain scanned images. Export a PDF with selectable text and try again."
 msgstr "କୌଣସି ପଠନଯୋଗ୍ୟ ଟେକ୍ସଟ୍ ମିଳିଲା ନାହିଁ। ଏହି PDF ରେ ସ୍କାନ୍ ହୋଇଥିବା ଛବି ଥାଇପାରେ। ଚୟନଯୋଗ୍ୟ ଟେକ୍ସଟ୍ ସହିତ ଏକ PDF ରପ୍ତାନି କରି ପୁଣି ଚେଷ୍ଟା କରନ୍ତୁ।"
 
+#: src/features/career-insights/components/rejection-patterns-card.tsx
+msgid "No rejections recorded — nothing to learn from here yet."
+msgstr ""
+
 #: src/routes/_home/ats-checker.tsx
 msgid "No repeating the claim that most resumes are thrown out automatically."
 msgstr "ଅଧିକାଂଶ ରେଜ୍ୟୁମେ ସ୍ୱୟଂଚାଳିତ ଭାବରେ ବାତିଲ ହୁଏ ବୋଲି ଦାବିର କୌଣସି ପୁନରାବୃତ୍ତି ନାହିଁ।"
@@ -4775,6 +5021,10 @@ msgstr "ଏପର୍ଯ୍ୟନ୍ତ କୌଣସି ସେଭ୍ କରାଯ
 msgid "no scans yet"
 msgstr ""
 
+#: src/features/career-insights/components/calibration-card.tsx
+msgid "No settled applications with evaluations yet — calibration starts once outcomes land."
+msgstr ""
+
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "No skill requirements were extracted from the posting."
 msgstr ""
@@ -4787,6 +5037,10 @@ msgstr "କୌଣସି ଦକ୍ଷତା ବିଭାଗ ମିଳିଲା �
 msgid "No source data yet."
 msgstr "ଏପର୍ଯ୍ୟନ୍ତ କ source ଣସି ଉତ୍ସ ତଥ୍ୟ ନାହିଁ |"
 
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "No source resume"
+msgstr ""
+
 #: src/features/ats-checker/report/jd-coverage.tsx
 msgid "No specific terms could be pulled out of that job description, so it may be mostly boilerplate. Paste the requirements section for a more useful comparison."
 msgstr "ସେହି କାର୍ଯ୍ୟ ବର୍ଣ୍ଣନାରୁ କୌଣସି ନିର୍ଦ୍ଦିଷ୍ଟ ଶବ୍ଦ ବାହାର କରାଯାଇପାରିଲା ନାହିଁ, ତେଣୁ ଏହା ଅଧିକାଂଶ ସାଧାରଣ ପାଠ୍ୟ ହୋଇପାରେ। ଏକ ଅଧିକ ଉପଯୋଗୀ ତୁଳନା ପାଇଁ ଆବଶ୍ୟକତା ବିଭାଗ ପେଷ୍ଟ କରନ୍ତୁ।"
@@ -4797,6 +5051,18 @@ msgstr ""
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "No sponsorship needed"
+msgstr ""
+
+#: src/features/career-insights/components/funnel-velocity-card.tsx
+msgid "No stage transitions recorded yet — velocity appears as applications move through stages."
+msgstr ""
+
+#: src/features/stories/components/suggest-from-resume-dialog.tsx
+msgid "No story candidates were found in that resume."
+msgstr ""
+
+#: src/features/stories/components/find-story-box.tsx
+msgid "No story in your bank matches that question yet."
 msgstr ""
 
 #: src/features/tailoring/components/tailoring-panel.tsx
@@ -4819,6 +5085,10 @@ msgstr "କୌଣସି ଟେକ୍ସଟ୍ ମିଳିଲା ନାହିଁ
 msgid "No threads yet."
 msgstr "ଏପର୍ଯ୍ୟନ୍ତ କୌଣସି ଥ୍ରେଡ୍ ନାହିଁ।"
 
+#: src/features/career-insights/components/funnel-velocity-card.tsx
+msgid "no timing data"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "No work-experience section was found."
 msgstr "କୌଣସି କାର୍ଯ୍ୟ-ଅଭିଜ୍ଞତା ବିଭାଗ ମିଳିଲା ନାହିଁ।"
@@ -4830,6 +5100,11 @@ msgstr "ନରୱେଜିଆନ୍"
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Not connected"
 msgstr "ସଂଯୁକ୍ତ ହୋଇନାହିଁ"
+
+#: src/features/career-insights/components/calibration-card.tsx
+#: src/features/career-insights/components/channels-card.tsx
+msgid "not enough data yet (n < 5)"
+msgstr ""
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "not evaluated"
@@ -4861,6 +5136,7 @@ msgstr "ଟିପ୍ପଣୀ"
 
 #: src/features/applications/components/application-detail-sheet.tsx
 #: src/features/applications/components/application-form-sheet.tsx
+#: src/features/stories/components/provenance-check-dialog.tsx
 #: src/libs/resume/section.tsx
 msgid "Notes"
 msgstr "ଟିପ୍ପଣୀ"
@@ -4885,9 +5161,17 @@ msgstr "ଠିକ୍ କରିବାକୁ କିଛି ନାହିଁ। ବ�
 msgid "Nothing to suggest."
 msgstr "ପରାମର୍ଶ ଦେବାକୁ କିଛି ନାହିଁ।"
 
+#: src/features/career-insights/components/gap-heatmap-card.tsx
+msgid "now covered"
+msgstr ""
+
 #: src/libs/locale.ts
 msgid "Odia"
 msgstr "ଓଡ଼ିଆ"
+
+#: src/features/career-insights/components/channels-card.tsx
+msgid "Off"
+msgstr ""
 
 #: src/features/homepage/feature-explorer.tsx
 msgid "Offer"
@@ -4901,6 +5185,10 @@ msgstr ""
 #: src/features/settings/pages/api-keys.tsx
 msgid "Once deleted, the key can no longer access your data. This cannot be undone."
 msgstr "ବିଲୋପ ହେବା ପରେ, ସେହି କି ଆଉ ଆପଣଙ୍କ ତଥ୍ୟ ଆକ୍ସେସ୍ କରିପାରିବ ନାହିଁ। ଏହାକୁ ପୂର୍ବାବସ୍ଥାକୁ ଫେରାଯାଇପାରିବ ନାହିଁ।"
+
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "One real project or role per story, told as Situation, Task, Action, Result and Reflection. Never invent numbers — mark anything unconfirmed as derived-unverified."
+msgstr ""
 
 #: src/features/auth/pages/consent.tsx
 msgid "Only allow applications you trust. This application will be able to:"
@@ -4934,6 +5222,7 @@ msgstr "କେବଳ ପ୍ରଥମ ପୃଷ୍ଠାଗୁଡ଼ିକ ଯା
 
 #. Resume card context menu action to open the resume editor
 #. Resume card dropdown action to open the resume editor
+#: src/features/stories/components/find-story-box.tsx
 #: src/routes/dashboard/resumes/-components/menus/context-menu.tsx
 #: src/routes/dashboard/resumes/-components/menus/dropdown-menu.tsx
 msgid "Open"
@@ -4983,6 +5272,10 @@ msgstr ""
 #: src/features/homepage/template-shelf.tsx
 msgid "Open template PDF"
 msgstr "ଟେମ୍ପଲେଟ୍ PDF ଖୋଲନ୍ତୁ"
+
+#: src/features/stories/components/practice-dialog.tsx
+msgid "Open the agent"
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Open the exported file and confirm you can select and copy every part of it."
@@ -5155,6 +5448,10 @@ msgstr ""
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "Paste a posting to see which of its terms already appear in your resume."
 msgstr "ଆପଣଙ୍କ ରେଜ୍ୟୁମେରେ ଏହାର କେଉଁ ଶବ୍ଦ ପୂର୍ବରୁ ଦେଖାଯାଏ ଦେଖିବାକୁ ଏକ ପୋଷ୍ଟିଙ୍ଗ ପେଷ୍ଟ କରନ୍ତୁ।"
+
+#: src/features/stories/components/find-story-box.tsx
+msgid "Paste an interview question and get your bank ranked against it."
+msgstr ""
 
 #: src/features/applications/components/import-applications-sheet.tsx
 msgid "Paste rows or upload a .csv. We map columns like Company, Role, Stage, Stage Date, Salary, Source, Tags, Contact Name, Contact Email and Contact Phone."
@@ -5344,6 +5641,15 @@ msgstr ""
 msgid "Postings are kept when their location matches an allow entry and dropped on a block entry. Hard blocks always win, and always-allow entries rescue a posting even when it was blocked."
 msgstr ""
 
+#: src/features/command-palette/pages/navigation.tsx
+#: src/routes/dashboard/interviews/index.tsx
+msgid "Practice"
+msgstr ""
+
+#: src/features/stories/components/practice-dialog.tsx
+msgid "Practice an interview"
+msgstr ""
+
 #: src/libs/resume/ats.ts
 msgid "Prefer a conventional heading such as \"Work Experience\" or \"Education\"."
 msgstr "“କାର୍ଯ୍ୟ ଅଭିଜ୍ଞତା” କିମ୍ବା “ଶିକ୍ଷା” ପରି ପ୍ରଚଳିତ ଶିରୋନାମା ବ୍ୟବହାର କରନ୍ତୁ।"
@@ -5477,6 +5783,14 @@ msgstr "ଆପଣଙ୍କ ରେଜ୍ୟୁମେକୁ ପାସୱାର୍�
 #: src/features/homepage/resume-sculpture.tsx
 msgid "Prototyping"
 msgstr "ପ୍ରୋଟୋଟାଇପିଂ"
+
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "Provenance"
+msgstr ""
+
+#: src/features/stories/components/provenance-check-dialog.tsx
+msgid "Provenance updated."
+msgstr ""
 
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Provider"
@@ -5670,6 +5984,10 @@ msgstr "ଆୟାତାକାର"
 msgid "Rectangle (Full Width)"
 msgstr "ଆୟାତାକାର (ପୁରା ପ୍ରସ୍ଥ)"
 
+#: src/features/career-insights/components/gap-heatmap-card.tsx
+msgid "Recurring skill gaps across your evaluations"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-components/dock.tsx
 msgid "Redo"
 msgstr "ପୁନଃକରିଦିଅନ୍ତୁ"
@@ -5692,6 +6010,10 @@ msgstr "ସନ୍ଦର୍ଭଗୁଡିକ"
 msgid "Referred by…, things to emphasize, etc."
 msgstr "ଦ୍ fer ାରା ସୂଚିତ, ଜୋର ଦେବା ପାଇଁ ଜିନିଷ ଇତ୍ୟାଦି |"
 
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "Reflection"
+msgstr ""
+
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "regenerated"
 msgstr ""
@@ -5702,6 +6024,18 @@ msgstr "ନୂତନ ଡିଭାଇସ୍ ରେଜିଷ୍ଟର କରନ୍
 
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "rejected"
+msgstr ""
+
+#: src/features/career-insights/components/rejection-patterns-card.tsx
+msgid "Rejected before screening"
+msgstr ""
+
+#: src/features/career-insights/components/rejection-patterns-card.tsx
+msgid "Rejection patterns"
+msgstr ""
+
+#: src/features/career-insights/components/rejection-patterns-card.tsx
+msgid "Rejections"
 msgstr ""
 
 #: src/features/homepage/site-footer.tsx
@@ -5758,6 +6092,7 @@ msgid "Remove Password"
 msgstr "ପାସୱାର୍ଡ ଅପସାରଣ କରନ୍ତୁ"
 
 #: src/features/applications/components/application-form-sheet.tsx
+#: src/features/stories/components/tag-list-field.tsx
 msgid "Remove tag"
 msgstr "ଟ୍ୟାଗ୍ ହଟାନ୍ତୁ"
 
@@ -5896,8 +6231,13 @@ msgstr "ଏହି ପ୍ୟାଚ୍ ପୂର୍ବର ଅବସ୍ଥାକୁ
 msgid "Restore this version?"
 msgstr "ଏହି ସଂସ୍କରଣକୁ ପୁନଃସ୍ଥାପନ କରିବେ?"
 
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "Result"
+msgstr ""
+
 #: src/features/applications/components/application-form-sheet.tsx
 #: src/features/resume/export/download-dialog.tsx
+#: src/features/stories/components/suggest-from-resume-dialog.tsx
 #: src/routes/agent/-components/resume-pane.tsx
 #: src/routes/agent/$threadId.tsx
 msgid "Resume"
@@ -5947,6 +6287,11 @@ msgstr "ରେଜ୍ୟୁମେ ଟେମ୍ପଲେଟ୍‌ଗୁଡିକ"
 #: src/dialogs/resume/template/gallery.tsx
 msgid "Resume templates for different professions and tastes. Pick the one that suits you."
 msgstr "ଭିନ୍ନ ଭିନ୍ନ ବୃତ୍ତି ଓ ରୁଚି ପାଇଁ ରେଜ୍ୟୁମେ ଟେମ୍ପ୍ଲେଟ୍‌ଗୁଡିକ। ଆପଣଙ୍କୁ ମାନୁଥିବା ଟିକୁ ବାଛନ୍ତୁ।"
+
+#: src/features/stories/components/provenance-chip.tsx
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "resume-verified"
+msgstr ""
 
 #: src/features/command-palette/pages/navigation.tsx
 #: src/features/command-palette/pages/resumes.tsx
@@ -6083,6 +6428,10 @@ msgstr "ପୁନର୍ବାର ଚଲାନ୍ତୁ"
 msgid "Run AI review"
 msgstr "AI ସମୀକ୍ଷା ଚଲାନ୍ତୁ"
 
+#: src/features/stories/components/practice-dialog.tsx
+msgid "Run an interview practice session with me for [role] at [company]. Ask one question at a time, listen, then give structured feedback against the posting's vocabulary. Use my story bank (list_stories / match_story_to_question) to suggest which story fits each question, and save_story anything new we uncover — never invent numbers."
+msgstr ""
+
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Run audit"
 msgstr ""
@@ -6159,6 +6508,7 @@ msgid "Save an unprotected copy, with no password and no permissions restriction
 msgstr "କୌଣସି ପାସୱାର୍ଡ କିମ୍ବା ଅନୁମତି ପ୍ରତିବନ୍ଧକ ବିନା ଏକ ଅସୁରକ୍ଷିତ କପି ସେଭ୍ କରନ୍ତୁ।"
 
 #: src/features/applications/components/application-form-sheet.tsx
+#: src/features/stories/components/story-editor-dialog.tsx
 msgid "Save changes"
 msgstr "ପରିବର୍ତ୍ତନଗୁଡିକ ସଞ୍ଚୟ କରନ୍ତୁ |"
 
@@ -6262,6 +6612,15 @@ msgstr "ବିଦ୍ୟାଳୟ"
 
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Scope read"
+msgstr ""
+
+#. placeholder {0}: result.score
+#: src/features/stories/components/find-story-box.tsx
+msgid "score {0}"
+msgstr ""
+
+#: src/features/career-insights/components/channels-card.tsx
+msgid "Scr"
 msgstr ""
 
 #: src/routes/dashboard/-components/sidebar.tsx
@@ -6663,6 +7022,10 @@ msgstr "ପ୍ରତ୍ୟେକ ପୃଷ୍ଠାରେ ବଡ଼ ଅକ୍ଷ
 msgid "Single-column; polished and serious for senior or enterprise-level positions."
 msgstr "ଏକକ‑କଲମ୍; ବରିଷ୍ଠ କିମ୍ବା ଉଦ୍ୟମ‑ସ୍ତରର ପଦବୀମାନଙ୍କ ପାଇଁ ମଜାଇଦାର ଏବଂ ଗୁଭୀର।"
 
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "Situation"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Size"
 msgstr "ଆକାର"
@@ -6711,6 +7074,10 @@ msgstr "ସ୍ଲୋଭେନିଆନ୍"
 #: src/dialogs/resume/index.tsx
 msgid "Slug"
 msgstr "ସ୍ଲଗ୍"
+
+#: src/features/career-insights/components/rejection-patterns-card.tsx
+msgid "Small sample (n < 5) — read these as anecdotes, not patterns yet."
+msgstr ""
 
 #: src/features/follow-ups/components/follow-ups-view.tsx
 msgid "Snooze"
@@ -6820,6 +7187,10 @@ msgstr "ଉତ୍ସ"
 #: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
 msgid "Source Code"
 msgstr "ସୋର୍ସ କୋଡ୍"
+
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "Source resume"
+msgstr ""
 
 #. placeholder {0}: operation.from
 #: src/routes/agent/-components/patch-approval-card.tsx
@@ -6976,6 +7347,30 @@ msgstr "ପିଢ଼ିବା ବନ୍ଦ କରନ୍ତୁ"
 msgid "Stop watching {0}?"
 msgstr ""
 
+#: src/features/command-palette/pages/navigation.tsx
+msgid "Stories"
+msgstr ""
+
+#: src/routes/dashboard/interviews/index.tsx
+msgid "Stories are reusable STAR+R answers grounded in what you actually did. Add one yourself or extract drafts from a resume — every draft stays derived-unverified until you confirm its numbers, and a number you can't confirm stays marked that way for good."
+msgstr ""
+
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "Story added to your bank."
+msgstr ""
+
+#: src/features/command-palette/pages/navigation.tsx
+msgid "Story bank"
+msgstr ""
+
+#: src/routes/dashboard/interviews/index.tsx
+msgid "Story deleted."
+msgstr ""
+
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "Story updated."
+msgstr ""
+
 #: src/features/ats-checker/ai-review/ai-review-results.tsx
 msgid "Strengths"
 msgstr "ଶକ୍ତିଗୁଡିକ"
@@ -7028,6 +7423,22 @@ msgstr "ମନୋନୀତ ରିଜ୍ୟୁମରୁ ଷ୍ଟାଇଲିଂ 
 #: src/routes/_home/-sections/footer.tsx
 msgid "Subreddit"
 msgstr "ସବ୍ରେଡିଟ୍ (Subreddit)"
+
+#: src/routes/dashboard/interviews/index.tsx
+msgid "Suggest from resume"
+msgstr ""
+
+#: src/features/stories/components/suggest-from-resume-dialog.tsx
+msgid "Suggest stories"
+msgstr ""
+
+#: src/features/stories/components/suggest-from-resume-dialog.tsx
+msgid "Suggest stories from a resume"
+msgstr ""
+
+#: src/features/stories/components/provenance-check-dialog.tsx
+msgid "Suggested"
+msgstr ""
 
 #: src/features/ats-checker/ai-review/ai-review-results.tsx
 msgid "Suggestions"
@@ -7088,6 +7499,7 @@ msgstr "ସାରଣୀ"
 #: src/dialogs/resume/index.tsx
 #: src/features/applications/components/application-form-sheet.tsx
 #: src/features/applications/components/table-view.tsx
+#: src/features/stories/components/story-editor-dialog.tsx
 msgid "Tags"
 msgstr "ଟ୍ୟାଗଗୁଡିକ"
 
@@ -7143,6 +7555,10 @@ msgstr "ଏହାକୁ ସାଙ୍ଗରେ<0/>ନେଇଯାଆନ୍ତୁ�
 #: src/libs/locale.ts
 msgid "Tamil"
 msgstr "ତାମିଲ"
+
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "Task"
+msgstr ""
 
 #: src/libs/locale.ts
 msgid "Telugu"
@@ -7237,6 +7653,10 @@ msgstr "ସେହି ପ୍ରଦାନକାରୀ ଆକାଉଣ୍ଟ ଆପ
 msgid "That sign-in provider is no longer available on this server."
 msgstr "ସେହି ସାଇନ୍-ଇନ୍ ପ୍ରଦାନକାରୀ ଏହି ସର୍ଭରରେ ଆଉ ଉପଲବ୍ଧ ନାହାଁନ୍ତି।"
 
+#: src/features/stories/components/practice-dialog.tsx
+msgid "The agent already knows your story bank. Fill in the role and company, copy the prompt, then paste it as the first message of a new thread."
+msgstr ""
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "The agent needs your input."
 msgstr "ଏଜେଣ୍ଟଙ୍କୁ ଆପଣଙ୍କ ମତାମତ ଆବଶ୍ୟକ।"
@@ -7272,9 +7692,21 @@ msgstr ""
 msgid "The checks above are mechanical. This asks a language model what a reader would think of your bullets, and suggests rewrites. It produces no score."
 msgstr "ଉପରୋକ୍ତ ଯାଞ୍ଚଗୁଡ଼ିକ ଯାନ୍ତ୍ରିକ। ଏହା ଏକ ଭାଷା ମଡେଲକୁ ପଚାରେ ଯେ ଜଣେ ପାଠକ ଆପଣଙ୍କ ବୁଲେଟ୍ ବିଷୟରେ କଣ ଭାବିବେ, ଏବଂ ପୁନଃଲେଖନ ପରାମର୍ଶ ଦିଏ। ଏହା କୌଣସି ସ୍କୋର ଉତ୍ପନ୍ନ କରେ ନାହିଁ।"
 
+#: src/features/stories/components/provenance-chip.tsx
+msgid "The claims exist only in this story and haven't been confirmed yet — treat the numbers as drafts."
+msgstr ""
+
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "The context — team, product, constraint…"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "The deep check could not finish. Please try again."
 msgstr "ଗଭୀର ଯାଞ୍ଚ ସମାପ୍ତ ହୋଇପାରିଲା ନାହିଁ। ଦୟାକରି ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ।"
+
+#: src/features/stories/components/provenance-check-dialog.tsx
+msgid "The differing suggestion is informational only — downgrades are never applied from here."
+msgstr ""
 
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "The fact check failed."
@@ -7333,6 +7765,14 @@ msgstr "PDF ଏହି ଟ୍ୟାବ୍‌ରେ ଚାଲୁଥିବା କ�
 msgid "The posting asks for things your resume doesn't show. Decide how the letter should handle each one."
 msgstr ""
 
+#: src/features/stories/components/provenance-check-dialog.tsx
+msgid "The provenance check failed."
+msgstr ""
+
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "The provenance check verifies numeric claims against this resume."
+msgstr ""
+
 #: src/features/auth/pages/error.tsx
 msgid "The provider didn't share an email address, which is required to sign in."
 msgstr "ପ୍ରଦାନକାରୀ ଇମେଲ୍ ଠିକଣା ସେୟାର୍ କରିନାହାଁନ୍ତି, ଯାହା ସାଇନ୍ ଇନ୍ କରିବା ପାଇଁ ଆବଶ୍ୟକ।"
@@ -7387,6 +7827,10 @@ msgstr ""
 msgid "The score is capped because of a blocking problem: {0}"
 msgstr "ଏକ ଅବରୋଧକ ସମସ୍ୟା ହେତୁ ସ୍କୋର ସୀମିତ କରାଯାଇଛି: {0}"
 
+#: src/routes/dashboard/interviews/index.tsx
+msgid "The story is removed from your bank. This cannot be undone."
+msgstr ""
+
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "The tailored copy will be permanently deleted, the application will be linked back to the source resume, and this run will be marked rejected. This can't be undone."
 msgstr ""
@@ -7422,6 +7866,7 @@ msgstr "କାର୍ଯ୍ୟ କରୁଥିବା ରିଜ୍ୟୁମକୁ 
 #. Menu item that opens appearance theme selection submenu
 #: src/features/command-palette/pages/preferences/theme.tsx
 #: src/features/settings/pages/preferences.tsx
+#: src/features/stories/components/story-editor-dialog.tsx
 #: src/features/user/dropdown-menu.tsx
 msgid "Theme"
 msgstr "ଥିମ୍"
@@ -7761,6 +8206,7 @@ msgstr "ପରାମର୍ଶ"
 #: src/dialogs/resume/sections/certification.tsx
 #: src/dialogs/resume/sections/custom.tsx
 #: src/dialogs/resume/sections/publication.tsx
+#: src/features/stories/components/story-editor-dialog.tsx
 msgid "Title"
 msgstr "ଶିରୋନାମା"
 
@@ -7825,6 +8271,10 @@ msgstr "ଉପକରଣ"
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Top strengths"
+msgstr ""
+
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "Topics this story answers best — \"conflict\", \"scaling\"…"
 msgstr ""
 
 #: src/features/homepage/community-stats.tsx
@@ -8009,6 +8459,10 @@ msgstr ""
 #: src/features/settings/pages/profile.tsx
 msgid "Unverified"
 msgstr "ଅସତ୍ୟାପିତ"
+
+#: src/features/stories/components/provenance-check-dialog.tsx
+msgid "Unverified claims"
+msgstr ""
 
 #. placeholder {0}: format(salary.max)
 #: src/features/discovery/components/inbox-view.tsx
@@ -8230,6 +8684,20 @@ msgstr "ଆପଣଙ୍କ ଏଡିଟରର ସାଧାରଣ ବୁଲେଟ
 msgid "User research"
 msgstr "ଉପଯୋଗକର୍ତ୍ତା ଗବେଷଣା"
 
+#: src/features/stories/components/provenance-chip.tsx
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "user-cannot-confirm"
+msgstr ""
+
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "user-cannot-confirm is durable — the check never changes it."
+msgstr ""
+
+#: src/features/stories/components/provenance-chip.tsx
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "user-confirmed"
+msgstr ""
+
 #. Label for username input on registration form
 #: src/dialogs/resume/sections/profile.tsx
 #: src/features/auth/pages/register.tsx
@@ -8276,6 +8744,10 @@ msgstr ""
 #: src/features/settings/pages/profile.tsx
 msgid "Verified"
 msgstr "ସତ୍ୟାପିତ"
+
+#: src/features/stories/components/provenance-check-dialog.tsx
+msgid "Verified claims"
+msgstr ""
 
 #. Primary action button to submit 2FA code
 #. Primary action button to submit backup code
@@ -8428,6 +8900,10 @@ msgstr "ଏକ ପାର୍ସର୍ କଣ ପଢ଼େ"
 msgid "What a person sees"
 msgstr "ଜଣେ ବ୍ୟକ୍ତି କଣ ଦେଖନ୍ତି"
 
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "What changed — outcomes, numbers you can stand behind…"
+msgstr ""
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "What do you want to do?"
 msgstr "ତୁମେ କଣ କରିବାକୁ ଚାହୁଁଛ?"
@@ -8452,6 +8928,22 @@ msgstr "ଏହା କଣ ଯାଞ୍ଚ କରେ"
 msgid "What this does not do"
 msgstr "ଏହା କଣ କରେ ନାହିଁ"
 
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "What you actually did, step by step…"
+msgstr ""
+
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "What you learned or would do differently…"
+msgstr ""
+
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "What you were responsible for…"
+msgstr ""
+
+#: src/routes/dashboard/insights/index.tsx
+msgid "What your search is teaching you — advisory only, nothing here changes how anything is scored."
+msgstr ""
+
 #: src/routes/builder/$resumeId/-components/header.tsx
 #: src/routes/dashboard/resumes/-components/menus/use-resume-menu-actions.ts
 msgid "When locked, the resume cannot be updated or deleted."
@@ -8460,6 +8952,10 @@ msgstr "ଲକ୍ ହେଉଥିବା ବେଳେ, ରେଜ୍ୟୁମେ�
 #: src/features/applications/components/insights-view.tsx
 msgid "Where applications come from"
 msgstr "ଯେଉଁଠାରେ ଆବେଦନଗୁଡ଼ିକ ଆସେ |"
+
+#: src/features/career-insights/components/channels-card.tsx
+msgid "Where applications come from, and which sources advance"
+msgstr ""
 
 #: src/features/applications/components/insights-view.tsx
 msgid "Where your applications went"
@@ -8590,9 +9086,17 @@ msgstr "ଆପଣ ସର୍ବଦା ମୂଳଟିକୁ ଫେରିପାର
 msgid "You cancelled the sign-in before it finished."
 msgstr "ସମ୍ପୂର୍ଣ୍ଣ ହେବା ପୂର୍ବରୁ ଆପଣ ସାଇନ୍ ଇନ୍ ବାତିଲ୍ କରିଦେଲେ।"
 
+#: src/features/stories/components/provenance-chip.tsx
+msgid "You explicitly confirmed the figures in this story yourself."
+msgstr ""
+
 #: src/hooks/use-form-blocker.tsx
 msgid "You have unsaved changes that will be lost."
 msgstr "ଆପଣଙ୍କର ସଞ୍ଚୟ ନହୋଇଥିବା ପରିବର୍ତ୍ତନ ହରାଇ ଯିବ।"
+
+#: src/features/stories/components/provenance-chip.tsx
+msgid "You said these figures can no longer be verified. This state is durable — use the story as narrative texture, never as a quantified claim."
+msgstr ""
 
 #: src/dialogs/resume/import.tsx
 msgid "You'll be taken to the Integrations page. The file you selected won't be imported."
@@ -8789,6 +9293,10 @@ msgstr "ଆପଣଙ୍କର ସଞ୍ଚିତ କଭର ଅକ୍ଷର ଅ�
 #: src/features/homepage/ats-playground.tsx
 msgid "Your selected file"
 msgstr "ଆପଣ ବାଛିଥିବା ଫାଇଲ୍"
+
+#: src/routes/dashboard/interviews/index.tsx
+msgid "Your story bank is empty"
+msgstr ""
 
 #: src/features/homepage/feature-explorer.tsx
 msgid "Your tools, connected"

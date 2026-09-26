@@ -42,10 +42,20 @@ msgstr ""
 msgid "{0, plural, one {# achievement selected} other {# achievements selected}}"
 msgstr ""
 
+#. placeholder {0}: data.excludedInFlight
+#: src/features/career-insights/components/calibration-card.tsx
+msgid "{0, plural, one {# application still in play — not counted.} other {# applications still in play — not counted.}}"
+msgstr ""
+
 #. placeholder {0}: selected.length
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "{0, plural, one {# application to export} other {# applications to export}}"
 msgstr "{0, plural, one {# đơn xin xuất khẩu} other {# ứng dụng để xuất}}"
+
+#. placeholder {0}: row.count
+#: src/features/career-insights/components/rejection-patterns-card.tsx
+msgid "{0, plural, one {# drop} other {# drops}}"
+msgstr ""
 
 #. placeholder {0}: report.violations.length
 #: src/features/tailoring/components/tailoring-panel.tsx
@@ -77,6 +87,11 @@ msgstr ""
 msgid "{0, plural, one {# keyword} other {# keywords}}"
 msgstr ""
 
+#. placeholder {0}: row.count
+#: src/features/career-insights/components/funnel-velocity-card.tsx
+msgid "{0, plural, one {# move} other {# moves}}"
+msgstr ""
+
 #. placeholder {0}: item.roles.length
 #: src/routes/builder/$resumeId/-sidebar/left/sections/experience.tsx
 msgid "{0, plural, one {# role} other {# roles}}"
@@ -105,6 +120,21 @@ msgstr ""
 #. placeholder {0}: report.violations.length
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "{0, plural, one {Fact check found # violation.} other {Fact check found # violations.}}"
+msgstr ""
+
+#. placeholder {0}: Math.round(row.medianDays * 10) / 10
+#: src/features/career-insights/components/funnel-velocity-card.tsx
+msgid "{0, plural, one {median # day} other {median # days}}"
+msgstr ""
+
+#. placeholder {0}: data.evaluations
+#: src/features/career-insights/components/gap-heatmap-card.tsx
+msgid "{0, plural, one {Recurring skill gaps across # evaluation} other {Recurring skill gaps across # evaluations}}"
+msgstr ""
+
+#. placeholder {0}: story.timesUsed
+#: src/features/stories/components/story-card.tsx
+msgid "{0, plural, one {Used # time} other {Used # times}}"
 msgstr ""
 
 #. placeholder {0}: insights.total
@@ -171,6 +201,13 @@ msgstr "{0} bị bỏ qua (dữ liệu không hợp lệ hoặc bị thiếu)"
 msgid "{0} to fix"
 msgstr "{0} cần khắc phục"
 
+#. placeholder {0}: band.total
+#. placeholder {1}: band.interviews
+#. placeholder {2}: band.offers
+#: src/features/career-insights/components/calibration-card.tsx
+msgid "{0} total · {1} interviews · {2} offers"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
 msgid "{column, plural, one {# Column} other {# Columns}}"
@@ -203,6 +240,10 @@ msgstr "{count, plural, other {# ghi chú}}"
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "{count, plural, one {# warning} other {# warnings}}"
 msgstr "{count, plural, other {# cảnh báo}}"
+
+#: src/features/stories/components/suggest-from-resume-dialog.tsx
+msgid "{created, plural, one {# story drafted from the resume — review and confirm its numbers.} other {# stories drafted from the resume — review and confirm their numbers.}}"
+msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/statistics.tsx
 msgid "{label} over the last 30 days"
@@ -303,6 +344,10 @@ msgstr "Một khoảng thời gian kết thúc trước khi bắt đầu."
 #: src/features/ats-checker/messages.ts
 msgid "A date range is written in a form most software cannot read."
 msgstr "Một khoảng thời gian được viết theo định dạng mà hầu hết phần mềm không đọc được."
+
+#: src/features/stories/components/provenance-check-dialog.tsx
+msgid "A deterministic re-check of this story's numeric claims against its linked source resume. Nothing is changed unless you apply the suggestion."
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "A font is referenced but not embedded."
@@ -430,6 +475,10 @@ msgstr "Menu tài khoản"
 msgid "Achievements"
 msgstr ""
 
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "Action"
+msgstr ""
+
 #: src/features/applications/components/table-view.tsx
 msgid "Actions"
 msgstr "Hành động"
@@ -547,6 +596,7 @@ msgid "Add a section headed \"Experience\" or \"Work Experience\". It is the fie
 msgstr "Thêm một mục có tiêu đề \"Kinh nghiệm\" hoặc \"Kinh nghiệm làm việc\". Đây là trường mà hầu hết hệ thống dùng để xếp hạng."
 
 #: src/features/applications/components/application-form-sheet.tsx
+#: src/features/stories/components/tag-list-field.tsx
 msgid "Add a tag and press Enter…"
 msgstr "Thêm thẻ và nhấn Enter…"
 
@@ -613,6 +663,10 @@ msgstr "Thêm vai trò"
 msgid "Add some whitespace between sections so a person can skim it."
 msgstr "Thêm khoảng trắng giữa các phần để người đọc có thể lướt qua dễ dàng."
 
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "Add story"
+msgstr ""
+
 #: src/features/applications/components/table-view.tsx
 msgid "Add tag"
 msgstr "Thêm thẻ"
@@ -640,6 +694,10 @@ msgstr ""
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Adjust the resume for a remote-first role that values async communication and ownership."
 msgstr "Hãy điều chỉnh sơ yếu lý lịch cho phù hợp với vị trí làm việc từ xa, coi trọng giao tiếp bất đồng bộ và tinh thần trách nhiệm."
+
+#: src/features/career-insights/components/channels-card.tsx
+msgid "Advance rate"
+msgstr ""
 
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Advanced"
@@ -690,6 +748,10 @@ msgstr "Việc thiết lập tác nhân AI sẽ không khả dụng cho đến k
 msgid "AI assistant"
 msgstr "Trợ lý AI"
 
+#: src/features/stories/components/suggest-from-resume-dialog.tsx
+msgid "AI extracts STAR+R candidates grounded in the resume's real projects. They arrive as derived-unverified drafts — nothing counts as a fact until you confirm it."
+msgstr ""
+
 #: src/features/ats-checker/ai-review/ai-review-card.tsx
 msgid "AI provider"
 msgstr "Nhà cung cấp AI"
@@ -721,6 +783,10 @@ msgstr "AI khi bạn cần"
 #: src/libs/locale.ts
 msgid "Albanian"
 msgstr "Tiếng Albania"
+
+#: src/features/career-insights/components/channels-card.tsx
+msgid "All"
+msgstr ""
 
 #: src/features/homepage/languages-showcase.test.tsx
 #: src/features/homepage/languages-showcase.tsx
@@ -787,6 +853,10 @@ msgstr "Đã xảy ra lỗi không mong muốn khiến trang này không thể t
 #: src/dialogs/resume/import.tsx
 msgid "An unknown error occurred while importing your resume."
 msgstr "Đã xảy ra lỗi không xác định khi nhập sơ yếu lý lịch của bạn."
+
+#: src/features/command-palette/pages/navigation.tsx
+msgid "Analytics"
+msgstr ""
 
 #: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
 msgid "Analyzing the posting and your resume…"
@@ -913,6 +983,10 @@ msgstr "Đã ứng tuyển vào"
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Apply"
+msgstr ""
+
+#: src/features/stories/components/provenance-check-dialog.tsx
+msgid "Apply suggested"
 msgstr ""
 
 #: src/routes/agent/-components/patch-approval-card.tsx
@@ -1214,6 +1288,11 @@ msgstr "Danh sách có dấu đầu dòng"
 msgid "By the community, for the community."
 msgstr "Bởi cộng đồng, vì cộng đồng."
 
+#: src/features/career-insights/components/calibration-card.tsx
+#: src/features/command-palette/pages/navigation.tsx
+msgid "Calibration"
+msgstr ""
+
 #. API key deletion confirmation dialog cancel action in settings
 #. Account deletion confirmation dialog cancel action in account settings
 #. Confirmation dialog button label to abort deleting a custom section in resume builder
@@ -1235,6 +1314,9 @@ msgstr "Bởi cộng đồng, vì cộng đồng."
 #: src/features/settings/pages/account.tsx
 #: src/features/settings/pages/api-keys.tsx
 #: src/features/settings/pages/profile.tsx
+#: src/features/stories/components/practice-dialog.tsx
+#: src/features/stories/components/story-editor-dialog.tsx
+#: src/features/stories/components/suggest-from-resume-dialog.tsx
 #: src/hooks/use-prompt.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
@@ -1299,6 +1381,14 @@ msgstr ""
 msgid "Changes are shared between your library and the resume builder."
 msgstr "Các thay đổi được chia sẻ giữa thư viện của bạn và trình tạo sơ yếu lý lịch."
 
+#: src/features/career-insights/components/channels-card.tsx
+msgid "Channel"
+msgstr ""
+
+#: src/features/career-insights/components/channels-card.tsx
+msgid "Channels"
+msgstr ""
+
 #: src/routes/agent/-components/agent-chat.tsx
 #: src/routes/agent/$threadId.tsx
 msgid "Chat"
@@ -1307,6 +1397,11 @@ msgstr "Trò chuyện"
 #: src/features/ats-checker/tool.tsx
 msgid "Check again"
 msgstr "Kiểm tra lại"
+
+#: src/features/stories/components/provenance-check-dialog.tsx
+#: src/features/stories/components/story-card.tsx
+msgid "Check provenance"
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Check the exported file contains everything you expect, and that all of it is selectable text."
@@ -1385,6 +1480,8 @@ msgstr "Chọn một màu có sẵn hoặc màu tùy chỉnh."
 
 #: src/features/cover-letters/editor-dialog.tsx
 #: src/features/cover-letters/library.tsx
+#: src/features/stories/components/story-editor-dialog.tsx
+#: src/features/stories/components/suggest-from-resume-dialog.tsx
 #: src/routes/agent/-components/new-thread-setup.tsx
 msgid "Choose a resume"
 msgstr "Chọn một bản sơ yếu lý lịch"
@@ -1453,6 +1550,7 @@ msgstr "ID khách hàng"
 #: src/features/cover-letters/editor-dialog.tsx
 #: src/features/cover-letters/editor.tsx
 #: src/features/follow-ups/components/follow-ups-view.tsx
+#: src/features/stories/components/provenance-check-dialog.tsx
 msgid "Close"
 msgstr "Đóng"
 
@@ -1675,6 +1773,7 @@ msgstr "Bản nháp bảng định kiểu đã chuyển đổi"
 
 #: src/features/applications/components/application-ai-copilot.tsx
 #: src/features/follow-ups/components/follow-ups-view.tsx
+#: src/features/stories/components/practice-dialog.tsx
 msgid "Copied to clipboard."
 msgstr "Đã sao chép vào bảng nhớ tạm."
 
@@ -1704,6 +1803,10 @@ msgstr "Sao chép từ sơ yếu lý lịch"
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Copy JSON"
 msgstr "Sao chép JSON"
+
+#: src/features/stories/components/practice-dialog.tsx
+msgid "Copy prompt"
+msgstr ""
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Copy saved to your cover-letter library."
@@ -1758,6 +1861,7 @@ msgstr "Không thể hoàn thành kết nối này. Khởi động lại kết n
 
 #: src/features/applications/components/application-ai-copilot.tsx
 #: src/features/follow-ups/components/follow-ups-view.tsx
+#: src/features/stories/components/practice-dialog.tsx
 msgid "Could not copy to clipboard. Please copy the text manually."
 msgstr "Không thể sao chép vào clipboard. Vui lòng sao chép văn bản theo cách thủ công."
 
@@ -1824,6 +1928,10 @@ msgstr "Không thể xác minh kết nối. Vui lòng kiểm tra khóa API, mô 
 msgid "Couldn't add the application. Please try again."
 msgstr "Không thể thêm hồ sơ ứng tuyển. Vui lòng thử lại."
 
+#: src/features/stories/components/provenance-check-dialog.tsx
+msgid "Couldn't apply the suggestion."
+msgstr ""
+
 #: src/features/follow-ups/components/follow-ups-view.tsx
 msgid "Couldn't complete this follow-up."
 msgstr ""
@@ -1835,6 +1943,10 @@ msgstr "Không thể xóa hồ sơ ứng tuyển."
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Couldn't delete the evaluation."
+msgstr ""
+
+#: src/routes/dashboard/interviews/index.tsx
+msgid "Couldn't delete the story."
 msgstr ""
 
 #: src/features/applications/components/application-detail-sheet.tsx
@@ -1861,6 +1973,10 @@ msgstr ""
 msgid "Couldn't fetch that URL."
 msgstr ""
 
+#: src/features/stories/components/find-story-box.tsx
+msgid "Couldn't match stories."
+msgstr ""
+
 #: src/features/applications/components/board.tsx
 msgid "Couldn't move the application. Please try again."
 msgstr "Không thể di chuyển hồ sơ ứng tuyển. Vui lòng thử lại."
@@ -1885,6 +2001,10 @@ msgstr "Không thể lưu ghi chú."
 msgid "Couldn't save the settings."
 msgstr ""
 
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "Couldn't save the story."
+msgstr ""
+
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Couldn't save your changes. Please try again."
 msgstr "Không thể lưu thay đổi của bạn. Vui lòng thử lại."
@@ -1896,6 +2016,10 @@ msgstr ""
 #: src/features/applications/components/application-ai-copilot.tsx
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Couldn't start the evaluation."
+msgstr ""
+
+#: src/features/stories/components/suggest-from-resume-dialog.tsx
+msgid "Couldn't suggest stories from the resume."
 msgstr ""
 
 #: src/features/applications/components/application-detail-sheet.tsx
@@ -2122,6 +2246,10 @@ msgstr ""
 msgid "CSV data"
 msgstr "Dữ liệu CSV"
 
+#: src/features/stories/components/provenance-check-dialog.tsx
+msgid "Current"
+msgstr ""
+
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Current filters"
 msgstr "Bộ lọc hiện tại"
@@ -2252,10 +2380,16 @@ msgstr "Bằng cấp"
 #: src/routes/builder/$resumeId/-components/header.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-item.tsx
+#: src/routes/dashboard/interviews/index.tsx
 #: src/routes/dashboard/resumes/-components/menus/context-menu.tsx
 #: src/routes/dashboard/resumes/-components/menus/dropdown-menu.tsx
 msgid "Delete"
 msgstr "Xóa"
+
+#. placeholder {0}: story.title
+#: src/routes/dashboard/interviews/index.tsx
+msgid "Delete \"{0}\"?"
+msgstr ""
 
 #: src/features/command-palette/pages/navigation.tsx
 #: src/features/settings/pages/account.tsx
@@ -2281,6 +2415,10 @@ msgstr "Xóa ảnh"
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Delete provider"
 msgstr "Xóa nhà cung cấp"
+
+#: src/features/stories/components/story-card.tsx
+msgid "Delete story"
+msgstr ""
 
 #: src/routes/agent/-components/agent-chat.tsx
 #: src/routes/agent/-components/thread-sidebar.tsx
@@ -2338,6 +2476,11 @@ msgstr "Đã từ chối, đang chờ tác nhân…"
 #: src/routes/agent/-components/patch-approval-card.tsx
 msgid "Deny"
 msgstr "Từ chối"
+
+#: src/features/stories/components/provenance-chip.tsx
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "derived-unverified"
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Describe each role with short bullets. Solid paragraphs are harder to skim and to segment."
@@ -2577,6 +2720,10 @@ msgstr "Kéo chuột để định vị lại và sử dụng thanh trượt đ�
 msgid "Drag to turn the pages"
 msgstr "Kéo để lật trang"
 
+#: src/features/career-insights/components/rejection-patterns-card.tsx
+msgid "Drop by stage"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Drop the pronouns and start from the verb. That is the convention in most markets."
 msgstr "Bỏ đại từ nhân xưng và bắt đầu bằng động từ. Đó là quy ước phổ biến ở hầu hết thị trường."
@@ -2633,6 +2780,10 @@ msgstr ""
 msgid "e.g. Jane Doe, Head of Engineering"
 msgstr ""
 
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "e.g. leadership, incident response…"
+msgstr ""
+
 #: src/features/discovery/components/settings-view.tsx
 msgid "e.g. On-site, US only"
 msgstr ""
@@ -2643,6 +2794,10 @@ msgstr ""
 
 #: src/features/discovery/components/settings-view.tsx
 msgid "e.g. security clearance"
+msgstr ""
+
+#: src/features/stories/components/find-story-box.tsx
+msgid "e.g. Tell me about a time you disagreed with a decision…"
 msgstr ""
 
 #: src/routes/builder/$resumeId/-components/version-history.tsx
@@ -2711,6 +2866,11 @@ msgstr "Chỉnh sửa mô hình"
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Edit note"
 msgstr "Sửa ghi chú"
+
+#: src/features/stories/components/story-card.tsx
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "Edit story"
+msgstr ""
 
 #: src/features/resume/export/download-dialog.tsx
 msgid "Editable in Word, Google Docs, and Pages."
@@ -2865,9 +3025,17 @@ msgstr ""
 msgid "Evaluation running…"
 msgstr ""
 
+#: src/features/career-insights/components/calibration-card.tsx
+msgid "Evaluation score bands vs interviews and offers, settled applications only"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "Every check passed. Nothing here should stop a parser from reading your resume."
 msgstr "Mọi kiểm tra đều được thông qua. Không có gì ở đây có thể ngăn trình phân tích cú pháp đọc sơ yếu lý lịch của bạn."
+
+#: src/features/stories/components/provenance-chip.tsx
+msgid "Every numeric claim in this story traces back to the linked resume's text."
+msgstr ""
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Evidence"
@@ -2978,6 +3146,10 @@ msgstr "Đã xuất pipeline-flow.png"
 #: src/features/homepage/ats-playground.tsx
 msgid "Extracted text"
 msgstr "Văn bản được trích xuất"
+
+#: src/features/stories/components/suggest-from-resume-dialog.tsx
+msgid "Extracting…"
+msgstr ""
 
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Fact check passed — every claim is backed by the source resume."
@@ -3205,6 +3377,10 @@ msgstr "Lọc theo"
 msgid "Filter by tags"
 msgstr "Lọc theo thẻ"
 
+#: src/features/stories/components/find-story-box.tsx
+msgid "Find a story"
+msgstr ""
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Find the weak bullet points and rewrite them with stronger outcomes, numbers, scope, and sharper verbs."
 msgstr "Tìm những gạch đầu dòng còn yếu và viết lại chúng với kết quả rõ hơn, có số liệu, phạm vi và động từ sắc bén hơn."
@@ -3379,6 +3555,14 @@ msgstr "Toàn màn hình"
 #: src/components/input/rich-input.tsx
 msgid "Fullscreen Editor"
 msgstr "Trình chỉnh sửa toàn màn hình"
+
+#: src/features/career-insights/components/funnel-velocity-card.tsx
+msgid "Funnel velocity"
+msgstr ""
+
+#: src/features/career-insights/components/gap-heatmap-card.tsx
+msgid "Gap heatmap"
+msgstr ""
 
 #: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
 msgid "Gaps"
@@ -3645,6 +3829,10 @@ msgstr ""
 msgid "Home"
 msgstr "Trang chủ"
 
+#: src/features/career-insights/components/rejection-patterns-card.tsx
+msgid "How and where rejections cluster"
+msgstr ""
+
 #: src/features/settings/pages/api-keys.tsx
 msgid "How do I use the API?"
 msgstr "Tôi sử dụng API như thế nào?"
@@ -3814,7 +4002,10 @@ msgstr "Nội tuyến"
 msgid "Inline Code"
 msgstr "Mã nội tuyến"
 
+#: src/features/command-palette/pages/navigation.tsx
+#: src/routes/dashboard/-components/sidebar.tsx
 #: src/routes/dashboard/applications/index.tsx
+#: src/routes/dashboard/insights/index.tsx
 msgid "Insights"
 msgstr "Thông tin chi tiết"
 
@@ -3823,6 +4014,10 @@ msgstr "Thông tin chi tiết"
 #: src/features/ats-checker/tool.tsx
 msgid "Inspecting page {0} of {1}…"
 msgstr "Đang kiểm tra trang {0} trên {1}…"
+
+#: src/features/career-insights/components/channels-card.tsx
+msgid "Int"
+msgstr ""
 
 #: src/features/command-palette/pages/navigation.tsx
 #: src/routes/dashboard/-components/sidebar.tsx
@@ -3847,6 +4042,12 @@ msgstr "Phỏng vấn"
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Interview plan"
+msgstr ""
+
+#: src/features/command-palette/pages/navigation.tsx
+#: src/routes/dashboard/-components/sidebar.tsx
+#: src/routes/dashboard/interviews/index.tsx
+msgid "Interviews"
 msgstr ""
 
 #: src/features/settings/integrations/components/ai-section.tsx
@@ -4089,6 +4290,11 @@ msgstr "Cập nhật lần cuối"
 msgid "Last updated on {updatedAt}"
 msgstr "Cập nhật lần cuối {updatedAt}"
 
+#. placeholder {0}: formatRelativeTime(story.lastUsedAt, relativeTimeFormatter)
+#: src/features/stories/components/story-card.tsx
+msgid "last used {0}"
+msgstr ""
+
 #. placeholder {0}: statistics.lastViewedAt.toDateString()
 #: src/routes/builder/$resumeId/-sidebar/right/sections/statistics.tsx
 msgid "Last viewed on {0}"
@@ -4114,6 +4320,10 @@ msgstr ""
 #: src/features/homepage/feature-explorer.tsx
 msgid "Lead with the work. Add a concrete detail so someone can picture it."
 msgstr "Bắt đầu bằng kết quả công việc. Thêm một chi tiết cụ thể để người đọc hình dung được."
+
+#: src/features/command-palette/pages/navigation.tsx
+msgid "Learning loop"
+msgstr ""
 
 #: src/dialogs/resume/import.tsx
 #: src/hooks/use-form-blocker.tsx
@@ -4286,6 +4496,8 @@ msgid "Loading providers…"
 msgstr "Đang tải nhà cung cấp…"
 
 #: src/features/command-palette/pages/resumes.tsx
+#: src/features/stories/components/story-editor-dialog.tsx
+#: src/features/stories/components/suggest-from-resume-dialog.tsx
 #: src/routes/agent/-components/new-thread-setup.tsx
 msgid "Loading resumes…"
 msgstr "Đang tải sơ yếu lý lịch…"
@@ -4422,6 +4634,7 @@ msgid "Mark rejected"
 msgstr "Đánh dấu bị từ chối"
 
 #: src/features/evaluations/components/evaluation-panel.tsx
+#: src/features/stories/components/find-story-box.tsx
 msgid "Match"
 msgstr ""
 
@@ -4431,6 +4644,14 @@ msgstr "Chấm điểm độ phù hợp thất bại."
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "meaningful"
+msgstr ""
+
+#: src/features/career-insights/components/funnel-velocity-card.tsx
+msgid "Median days between stage transitions"
+msgstr ""
+
+#: src/features/career-insights/components/rejection-patterns-card.tsx
+msgid "Median days to rejection"
 msgstr ""
 
 #: src/features/evaluations/components/evaluation-panel.tsx
@@ -4621,6 +4842,11 @@ msgstr "Mật khẩu mới"
 msgid "New Section"
 msgstr "Phần mới"
 
+#: src/features/stories/components/story-editor-dialog.tsx
+#: src/routes/dashboard/interviews/index.tsx
+msgid "New story"
+msgstr ""
+
 #: src/features/applications/components/table-view.tsx
 msgid "New tag…"
 msgstr "Thẻ mới…"
@@ -4672,6 +4898,10 @@ msgstr "Không tìm thấy danh sách gạch đầu dòng nào."
 msgid "No bullet points were found in the linked resume. Add achievement bullets to the resume first — the letter can only cite what the resume states."
 msgstr ""
 
+#: src/features/career-insights/components/channels-card.tsx
+msgid "No channel data yet — set a source on your applications to compare them here."
+msgstr ""
+
 #. Empty-state message when no command palette results match the search query
 #: src/features/command-palette/index.tsx
 msgid "No commands match that search."
@@ -4684,6 +4914,10 @@ msgstr "Không tìm thấy tiêu đề mục thông thường nào."
 #: src/features/cover-letters/library.tsx
 msgid "No cover letters found. Create one or import an existing letter."
 msgstr "Không tìm thấy thư xin việc. Tạo một hoặc nhập một chữ cái hiện có."
+
+#: src/features/career-insights/components/channels-card.tsx
+msgid "no data"
+msgstr ""
 
 #. Error shown when AI import endpoint returns no parsed resume data
 #: src/dialogs/resume/import.tsx
@@ -4710,8 +4944,16 @@ msgstr "Không tìm thấy địa chỉ email nào."
 msgid "No follow-ups due"
 msgstr ""
 
+#: src/features/career-insights/components/gap-heatmap-card.tsx
+msgid "No gaps mapped yet — run evaluations to build your gap map."
+msgstr ""
+
 #: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
 msgid "No gaps surfaced between the posting and your resume — continue to the next step."
+msgstr ""
+
+#: src/features/career-insights/components/calibration-card.tsx
+msgid "no interview data"
 msgstr ""
 
 #: src/features/discovery/components/inbox-view.tsx
@@ -4746,6 +4988,10 @@ msgstr "Không có dữ liệu trước đó"
 msgid "No readable text found. This PDF may contain scanned images. Export a PDF with selectable text and try again."
 msgstr "Không tìm thấy văn bản có thể đọc được. PDF này có thể chứa ảnh quét. Hãy xuất một PDF có văn bản chọn được rồi thử lại."
 
+#: src/features/career-insights/components/rejection-patterns-card.tsx
+msgid "No rejections recorded — nothing to learn from here yet."
+msgstr ""
+
 #: src/routes/_home/ats-checker.tsx
 msgid "No repeating the claim that most resumes are thrown out automatically."
 msgstr "Không lặp lại tuyên bố rằng hầu hết sơ yếu lý lịch đều bị loại tự động."
@@ -4775,6 +5021,10 @@ msgstr "Chưa có phiên bản nào được lưu."
 msgid "no scans yet"
 msgstr ""
 
+#: src/features/career-insights/components/calibration-card.tsx
+msgid "No settled applications with evaluations yet — calibration starts once outcomes land."
+msgstr ""
+
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "No skill requirements were extracted from the posting."
 msgstr ""
@@ -4787,6 +5037,10 @@ msgstr "Không tìm thấy mục Kỹ năng."
 msgid "No source data yet."
 msgstr "Chưa có dữ liệu nguồn."
 
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "No source resume"
+msgstr ""
+
 #: src/features/ats-checker/report/jd-coverage.tsx
 msgid "No specific terms could be pulled out of that job description, so it may be mostly boilerplate. Paste the requirements section for a more useful comparison."
 msgstr "Không thể trích xuất từ khóa cụ thể nào từ mô tả công việc đó, có thể phần lớn là nội dung mẫu chung chung. Hãy dán phần yêu cầu để có kết quả so sánh hữu ích hơn."
@@ -4797,6 +5051,18 @@ msgstr ""
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "No sponsorship needed"
+msgstr ""
+
+#: src/features/career-insights/components/funnel-velocity-card.tsx
+msgid "No stage transitions recorded yet — velocity appears as applications move through stages."
+msgstr ""
+
+#: src/features/stories/components/suggest-from-resume-dialog.tsx
+msgid "No story candidates were found in that resume."
+msgstr ""
+
+#: src/features/stories/components/find-story-box.tsx
+msgid "No story in your bank matches that question yet."
 msgstr ""
 
 #: src/features/tailoring/components/tailoring-panel.tsx
@@ -4819,6 +5085,10 @@ msgstr "Không tìm thấy văn bản"
 msgid "No threads yet."
 msgstr "Chưa có chủ đề nào."
 
+#: src/features/career-insights/components/funnel-velocity-card.tsx
+msgid "no timing data"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "No work-experience section was found."
 msgstr "Không tìm thấy mục Kinh nghiệm làm việc."
@@ -4830,6 +5100,11 @@ msgstr "Na Uy"
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Not connected"
 msgstr "Không kết nối"
+
+#: src/features/career-insights/components/calibration-card.tsx
+#: src/features/career-insights/components/channels-card.tsx
+msgid "not enough data yet (n < 5)"
+msgstr ""
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "not evaluated"
@@ -4861,6 +5136,7 @@ msgstr "Lưu ý"
 
 #: src/features/applications/components/application-detail-sheet.tsx
 #: src/features/applications/components/application-form-sheet.tsx
+#: src/features/stories/components/provenance-check-dialog.tsx
 #: src/libs/resume/section.tsx
 msgid "Notes"
 msgstr "Ghi chú"
@@ -4885,9 +5161,17 @@ msgstr "Không có gì cần khắc phục. Các trang còn lại đơn giản l
 msgid "Nothing to suggest."
 msgstr "Không có gợi ý nào."
 
+#: src/features/career-insights/components/gap-heatmap-card.tsx
+msgid "now covered"
+msgstr ""
+
 #: src/libs/locale.ts
 msgid "Odia"
 msgstr "Odia"
+
+#: src/features/career-insights/components/channels-card.tsx
+msgid "Off"
+msgstr ""
 
 #: src/features/homepage/feature-explorer.tsx
 msgid "Offer"
@@ -4901,6 +5185,10 @@ msgstr ""
 #: src/features/settings/pages/api-keys.tsx
 msgid "Once deleted, the key can no longer access your data. This cannot be undone."
 msgstr "Sau khi xóa, khóa này sẽ không thể truy cập dữ liệu của bạn nữa. Không thể hoàn tác."
+
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "One real project or role per story, told as Situation, Task, Action, Result and Reflection. Never invent numbers — mark anything unconfirmed as derived-unverified."
+msgstr ""
 
 #: src/features/auth/pages/consent.tsx
 msgid "Only allow applications you trust. This application will be able to:"
@@ -4934,6 +5222,7 @@ msgstr "Chỉ những trang đầu tiên được kiểm tra."
 
 #. Resume card context menu action to open the resume editor
 #. Resume card dropdown action to open the resume editor
+#: src/features/stories/components/find-story-box.tsx
 #: src/routes/dashboard/resumes/-components/menus/context-menu.tsx
 #: src/routes/dashboard/resumes/-components/menus/dropdown-menu.tsx
 msgid "Open"
@@ -4983,6 +5272,10 @@ msgstr ""
 #: src/features/homepage/template-shelf.tsx
 msgid "Open template PDF"
 msgstr "Mở PDF của mẫu"
+
+#: src/features/stories/components/practice-dialog.tsx
+msgid "Open the agent"
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Open the exported file and confirm you can select and copy every part of it."
@@ -5155,6 +5448,10 @@ msgstr ""
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "Paste a posting to see which of its terms already appear in your resume."
 msgstr "Dán một tin tuyển dụng để xem những từ khóa nào trong đó đã xuất hiện trong sơ yếu lý lịch của bạn."
+
+#: src/features/stories/components/find-story-box.tsx
+msgid "Paste an interview question and get your bank ranked against it."
+msgstr ""
 
 #: src/features/applications/components/import-applications-sheet.tsx
 msgid "Paste rows or upload a .csv. We map columns like Company, Role, Stage, Stage Date, Salary, Source, Tags, Contact Name, Contact Email and Contact Phone."
@@ -5344,6 +5641,15 @@ msgstr ""
 msgid "Postings are kept when their location matches an allow entry and dropped on a block entry. Hard blocks always win, and always-allow entries rescue a posting even when it was blocked."
 msgstr ""
 
+#: src/features/command-palette/pages/navigation.tsx
+#: src/routes/dashboard/interviews/index.tsx
+msgid "Practice"
+msgstr ""
+
+#: src/features/stories/components/practice-dialog.tsx
+msgid "Practice an interview"
+msgstr ""
+
 #: src/libs/resume/ats.ts
 msgid "Prefer a conventional heading such as \"Work Experience\" or \"Education\"."
 msgstr "Ưu tiên tiêu đề thông thường như \"Kinh nghiệm làm việc\" hoặc \"Học vấn\"."
@@ -5477,6 +5783,14 @@ msgstr "Bảo vệ sơ yếu lý lịch của bạn bằng mật khẩu"
 #: src/features/homepage/resume-sculpture.tsx
 msgid "Prototyping"
 msgstr "Xây dựng bản mẫu"
+
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "Provenance"
+msgstr ""
+
+#: src/features/stories/components/provenance-check-dialog.tsx
+msgid "Provenance updated."
+msgstr ""
 
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Provider"
@@ -5670,6 +5984,10 @@ msgstr "Hình chữ nhật"
 msgid "Rectangle (Full Width)"
 msgstr "Hình chữ nhật (Toàn bộ chiều rộng)"
 
+#: src/features/career-insights/components/gap-heatmap-card.tsx
+msgid "Recurring skill gaps across your evaluations"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-components/dock.tsx
 msgid "Redo"
 msgstr "Làm lại"
@@ -5692,6 +6010,10 @@ msgstr "Người tham khảo"
 msgid "Referred by…, things to emphasize, etc."
 msgstr "Người giới thiệu…, những điểm cần nhấn mạnh, v.v."
 
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "Reflection"
+msgstr ""
+
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "regenerated"
 msgstr ""
@@ -5702,6 +6024,18 @@ msgstr "Đăng ký thiết bị mới"
 
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "rejected"
+msgstr ""
+
+#: src/features/career-insights/components/rejection-patterns-card.tsx
+msgid "Rejected before screening"
+msgstr ""
+
+#: src/features/career-insights/components/rejection-patterns-card.tsx
+msgid "Rejection patterns"
+msgstr ""
+
+#: src/features/career-insights/components/rejection-patterns-card.tsx
+msgid "Rejections"
 msgstr ""
 
 #: src/features/homepage/site-footer.tsx
@@ -5758,6 +6092,7 @@ msgid "Remove Password"
 msgstr "Xóa mật khẩu"
 
 #: src/features/applications/components/application-form-sheet.tsx
+#: src/features/stories/components/tag-list-field.tsx
 msgid "Remove tag"
 msgstr "Xóa thẻ"
 
@@ -5896,8 +6231,13 @@ msgstr "Khôi phục sơ yếu lý lịch về trạng thái trước bản vá 
 msgid "Restore this version?"
 msgstr "Khôi phục phiên bản này?"
 
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "Result"
+msgstr ""
+
 #: src/features/applications/components/application-form-sheet.tsx
 #: src/features/resume/export/download-dialog.tsx
+#: src/features/stories/components/suggest-from-resume-dialog.tsx
 #: src/routes/agent/-components/resume-pane.tsx
 #: src/routes/agent/$threadId.tsx
 msgid "Resume"
@@ -5947,6 +6287,11 @@ msgstr "Mẫu sơ yếu lý lịch"
 #: src/dialogs/resume/template/gallery.tsx
 msgid "Resume templates for different professions and tastes. Pick the one that suits you."
 msgstr "Mẫu sơ yếu lý lịch cho nhiều ngành nghề và gu thẩm mỹ khác nhau. Hãy chọn mẫu hợp với bạn."
+
+#: src/features/stories/components/provenance-chip.tsx
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "resume-verified"
+msgstr ""
 
 #: src/features/command-palette/pages/navigation.tsx
 #: src/features/command-palette/pages/resumes.tsx
@@ -6083,6 +6428,10 @@ msgstr "Chạy lại"
 msgid "Run AI review"
 msgstr "Chạy đánh giá bằng AI"
 
+#: src/features/stories/components/practice-dialog.tsx
+msgid "Run an interview practice session with me for [role] at [company]. Ask one question at a time, listen, then give structured feedback against the posting's vocabulary. Use my story bank (list_stories / match_story_to_question) to suggest which story fits each question, and save_story anything new we uncover — never invent numbers."
+msgstr ""
+
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Run audit"
 msgstr ""
@@ -6159,6 +6508,7 @@ msgid "Save an unprotected copy, with no password and no permissions restriction
 msgstr "Lưu một bản không bảo vệ, không mật khẩu và không hạn chế quyền."
 
 #: src/features/applications/components/application-form-sheet.tsx
+#: src/features/stories/components/story-editor-dialog.tsx
 msgid "Save changes"
 msgstr "Lưu thay đổi"
 
@@ -6262,6 +6612,15 @@ msgstr "Trường"
 
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Scope read"
+msgstr ""
+
+#. placeholder {0}: result.score
+#: src/features/stories/components/find-story-box.tsx
+msgid "score {0}"
+msgstr ""
+
+#: src/features/career-insights/components/channels-card.tsx
+msgid "Scr"
 msgstr ""
 
 #: src/routes/dashboard/-components/sidebar.tsx
@@ -6663,6 +7022,10 @@ msgstr "Sơ yếu lý lịch một cột với tiêu đề phần viết hoa và
 msgid "Single-column; polished and serious for senior or enterprise-level positions."
 msgstr "Một cột; chỉnh chu và nghiêm túc cho vị trí cấp cao hoặc doanh nghiệp."
 
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "Situation"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Size"
 msgstr "Kích thước"
@@ -6711,6 +7074,10 @@ msgstr "Tiếng Slovenia"
 #: src/dialogs/resume/index.tsx
 msgid "Slug"
 msgstr "Slug"
+
+#: src/features/career-insights/components/rejection-patterns-card.tsx
+msgid "Small sample (n < 5) — read these as anecdotes, not patterns yet."
+msgstr ""
 
 #: src/features/follow-ups/components/follow-ups-view.tsx
 msgid "Snooze"
@@ -6820,6 +7187,10 @@ msgstr "Nguồn"
 #: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
 msgid "Source Code"
 msgstr "Mã nguồn"
+
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "Source resume"
+msgstr ""
 
 #. placeholder {0}: operation.from
 #: src/routes/agent/-components/patch-approval-card.tsx
@@ -6976,6 +7347,30 @@ msgstr "Ngừng sản xuất"
 msgid "Stop watching {0}?"
 msgstr ""
 
+#: src/features/command-palette/pages/navigation.tsx
+msgid "Stories"
+msgstr ""
+
+#: src/routes/dashboard/interviews/index.tsx
+msgid "Stories are reusable STAR+R answers grounded in what you actually did. Add one yourself or extract drafts from a resume — every draft stays derived-unverified until you confirm its numbers, and a number you can't confirm stays marked that way for good."
+msgstr ""
+
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "Story added to your bank."
+msgstr ""
+
+#: src/features/command-palette/pages/navigation.tsx
+msgid "Story bank"
+msgstr ""
+
+#: src/routes/dashboard/interviews/index.tsx
+msgid "Story deleted."
+msgstr ""
+
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "Story updated."
+msgstr ""
+
 #: src/features/ats-checker/ai-review/ai-review-results.tsx
 msgid "Strengths"
 msgstr "Điểm mạnh"
@@ -7028,6 +7423,22 @@ msgstr "Chi tiết về kiểu dáng và người gửi được làm mới từ
 #: src/routes/_home/-sections/footer.tsx
 msgid "Subreddit"
 msgstr "Subreddit"
+
+#: src/routes/dashboard/interviews/index.tsx
+msgid "Suggest from resume"
+msgstr ""
+
+#: src/features/stories/components/suggest-from-resume-dialog.tsx
+msgid "Suggest stories"
+msgstr ""
+
+#: src/features/stories/components/suggest-from-resume-dialog.tsx
+msgid "Suggest stories from a resume"
+msgstr ""
+
+#: src/features/stories/components/provenance-check-dialog.tsx
+msgid "Suggested"
+msgstr ""
 
 #: src/features/ats-checker/ai-review/ai-review-results.tsx
 msgid "Suggestions"
@@ -7088,6 +7499,7 @@ msgstr "Bảng"
 #: src/dialogs/resume/index.tsx
 #: src/features/applications/components/application-form-sheet.tsx
 #: src/features/applications/components/table-view.tsx
+#: src/features/stories/components/story-editor-dialog.tsx
 msgid "Tags"
 msgstr "Thẻ"
 
@@ -7143,6 +7555,10 @@ msgstr "Mang nó<0/>theo bạn."
 #: src/libs/locale.ts
 msgid "Tamil"
 msgstr "Tamil"
+
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "Task"
+msgstr ""
 
 #: src/libs/locale.ts
 msgid "Telugu"
@@ -7237,6 +7653,10 @@ msgstr "Tài khoản nhà cung cấp đó dùng địa chỉ email khác với t
 msgid "That sign-in provider is no longer available on this server."
 msgstr "Nhà cung cấp đăng nhập đó không còn khả dụng trên máy chủ này."
 
+#: src/features/stories/components/practice-dialog.tsx
+msgid "The agent already knows your story bank. Fill in the role and company, copy the prompt, then paste it as the first message of a new thread."
+msgstr ""
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "The agent needs your input."
 msgstr "Nhân viên cần thông tin đầu vào từ bạn."
@@ -7272,9 +7692,21 @@ msgstr ""
 msgid "The checks above are mechanical. This asks a language model what a reader would think of your bullets, and suggests rewrites. It produces no score."
 msgstr "Các kiểm tra ở trên mang tính máy móc. Tính năng này hỏi một mô hình ngôn ngữ xem người đọc sẽ nghĩ gì về các gạch đầu dòng của bạn, và đề xuất cách viết lại. Nó không tạo ra điểm số."
 
+#: src/features/stories/components/provenance-chip.tsx
+msgid "The claims exist only in this story and haven't been confirmed yet — treat the numbers as drafts."
+msgstr ""
+
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "The context — team, product, constraint…"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "The deep check could not finish. Please try again."
 msgstr "Kiểm tra chuyên sâu không thể hoàn tất. Vui lòng thử lại."
+
+#: src/features/stories/components/provenance-check-dialog.tsx
+msgid "The differing suggestion is informational only — downgrades are never applied from here."
+msgstr ""
 
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "The fact check failed."
@@ -7333,6 +7765,14 @@ msgstr "PDF được đọc bởi mã chạy ngay trong tab này. Không có gì
 msgid "The posting asks for things your resume doesn't show. Decide how the letter should handle each one."
 msgstr ""
 
+#: src/features/stories/components/provenance-check-dialog.tsx
+msgid "The provenance check failed."
+msgstr ""
+
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "The provenance check verifies numeric claims against this resume."
+msgstr ""
+
 #: src/features/auth/pages/error.tsx
 msgid "The provider didn't share an email address, which is required to sign in."
 msgstr "Nhà cung cấp không chia sẻ địa chỉ email, vốn là bắt buộc để đăng nhập."
@@ -7387,6 +7827,10 @@ msgstr ""
 msgid "The score is capped because of a blocking problem: {0}"
 msgstr "Điểm số bị giới hạn do một vấn đề nghiêm trọng: {0}"
 
+#: src/routes/dashboard/interviews/index.tsx
+msgid "The story is removed from your bank. This cannot be undone."
+msgstr ""
+
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "The tailored copy will be permanently deleted, the application will be linked back to the source resume, and this run will be marked rejected. This can't be undone."
 msgstr ""
@@ -7422,6 +7866,7 @@ msgstr "Hồ sơ xin việc đã bị xóa. Chủ đề này chỉ có thể đ�
 #. Menu item that opens appearance theme selection submenu
 #: src/features/command-palette/pages/preferences/theme.tsx
 #: src/features/settings/pages/preferences.tsx
+#: src/features/stories/components/story-editor-dialog.tsx
 #: src/features/user/dropdown-menu.tsx
 msgid "Theme"
 msgstr "Chủ đề"
@@ -7761,6 +8206,7 @@ msgstr "Mẹo"
 #: src/dialogs/resume/sections/certification.tsx
 #: src/dialogs/resume/sections/custom.tsx
 #: src/dialogs/resume/sections/publication.tsx
+#: src/features/stories/components/story-editor-dialog.tsx
 msgid "Title"
 msgstr "Tiêu đề"
 
@@ -7825,6 +8271,10 @@ msgstr "Công cụ"
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Top strengths"
+msgstr ""
+
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "Topics this story answers best — \"conflict\", \"scaling\"…"
 msgstr ""
 
 #: src/features/homepage/community-stats.tsx
@@ -8009,6 +8459,10 @@ msgstr ""
 #: src/features/settings/pages/profile.tsx
 msgid "Unverified"
 msgstr "Chưa xác minh"
+
+#: src/features/stories/components/provenance-check-dialog.tsx
+msgid "Unverified claims"
+msgstr ""
 
 #. placeholder {0}: format(salary.max)
 #: src/features/discovery/components/inbox-view.tsx
@@ -8230,6 +8684,20 @@ msgstr "Sử dụng chức năng danh sách gạch đầu dòng thông thường
 msgid "User research"
 msgstr "Nghiên cứu người dùng"
 
+#: src/features/stories/components/provenance-chip.tsx
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "user-cannot-confirm"
+msgstr ""
+
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "user-cannot-confirm is durable — the check never changes it."
+msgstr ""
+
+#: src/features/stories/components/provenance-chip.tsx
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "user-confirmed"
+msgstr ""
+
 #. Label for username input on registration form
 #: src/dialogs/resume/sections/profile.tsx
 #: src/features/auth/pages/register.tsx
@@ -8276,6 +8744,10 @@ msgstr ""
 #: src/features/settings/pages/profile.tsx
 msgid "Verified"
 msgstr "Đã xác minh"
+
+#: src/features/stories/components/provenance-check-dialog.tsx
+msgid "Verified claims"
+msgstr ""
 
 #. Primary action button to submit 2FA code
 #. Primary action button to submit backup code
@@ -8428,6 +8900,10 @@ msgstr "Những gì trình phân tích cú pháp đọc được"
 msgid "What a person sees"
 msgstr "Những gì con người nhìn thấy"
 
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "What changed — outcomes, numbers you can stand behind…"
+msgstr ""
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "What do you want to do?"
 msgstr "Bạn muốn làm gì?"
@@ -8452,6 +8928,22 @@ msgstr "Những gì công cụ này kiểm tra"
 msgid "What this does not do"
 msgstr "Những gì công cụ này không làm"
 
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "What you actually did, step by step…"
+msgstr ""
+
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "What you learned or would do differently…"
+msgstr ""
+
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "What you were responsible for…"
+msgstr ""
+
+#: src/routes/dashboard/insights/index.tsx
+msgid "What your search is teaching you — advisory only, nothing here changes how anything is scored."
+msgstr ""
+
 #: src/routes/builder/$resumeId/-components/header.tsx
 #: src/routes/dashboard/resumes/-components/menus/use-resume-menu-actions.ts
 msgid "When locked, the resume cannot be updated or deleted."
@@ -8460,6 +8952,10 @@ msgstr "Khi bị khoá, resume không thể được cập nhật hoặc xóa."
 #: src/features/applications/components/insights-view.tsx
 msgid "Where applications come from"
 msgstr "Hồ sơ ứng tuyển đến từ đâu"
+
+#: src/features/career-insights/components/channels-card.tsx
+msgid "Where applications come from, and which sources advance"
+msgstr ""
 
 #: src/features/applications/components/insights-view.tsx
 msgid "Where your applications went"
@@ -8590,9 +9086,17 @@ msgstr "Bạn luôn có thể quay lại văn bản gốc."
 msgid "You cancelled the sign-in before it finished."
 msgstr "Bạn đã hủy đăng nhập trước khi hoàn tất."
 
+#: src/features/stories/components/provenance-chip.tsx
+msgid "You explicitly confirmed the figures in this story yourself."
+msgstr ""
+
 #: src/hooks/use-form-blocker.tsx
 msgid "You have unsaved changes that will be lost."
 msgstr "Bạn có thay đổi chưa lưu sẽ bị mất."
+
+#: src/features/stories/components/provenance-chip.tsx
+msgid "You said these figures can no longer be verified. This state is durable — use the story as narrative texture, never as a quantified claim."
+msgstr ""
 
 #: src/dialogs/resume/import.tsx
 msgid "You'll be taken to the Integrations page. The file you selected won't be imported."
@@ -8789,6 +9293,10 @@ msgstr "Thư xin việc đã lưu của bạn sẽ không thay đổi."
 #: src/features/homepage/ats-playground.tsx
 msgid "Your selected file"
 msgstr "Tệp bạn đã chọn"
+
+#: src/routes/dashboard/interviews/index.tsx
+msgid "Your story bank is empty"
+msgstr ""
 
 #: src/features/homepage/feature-explorer.tsx
 msgid "Your tools, connected"

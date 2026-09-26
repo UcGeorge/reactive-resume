@@ -37,9 +37,19 @@ msgstr ""
 msgid "{0, plural, one {# achievement selected} other {# achievements selected}}"
 msgstr ""
 
+#. placeholder {0}: data.excludedInFlight
+#: src/features/career-insights/components/calibration-card.tsx
+msgid "{0, plural, one {# application still in play — not counted.} other {# applications still in play — not counted.}}"
+msgstr ""
+
 #. placeholder {0}: selected.length
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "{0, plural, one {# application to export} other {# applications to export}}"
+msgstr ""
+
+#. placeholder {0}: row.count
+#: src/features/career-insights/components/rejection-patterns-card.tsx
+msgid "{0, plural, one {# drop} other {# drops}}"
 msgstr ""
 
 #. placeholder {0}: report.violations.length
@@ -72,6 +82,11 @@ msgstr ""
 msgid "{0, plural, one {# keyword} other {# keywords}}"
 msgstr ""
 
+#. placeholder {0}: row.count
+#: src/features/career-insights/components/funnel-velocity-card.tsx
+msgid "{0, plural, one {# move} other {# moves}}"
+msgstr ""
+
 #. placeholder {0}: item.roles.length
 #: src/routes/builder/$resumeId/-sidebar/left/sections/experience.tsx
 msgid "{0, plural, one {# role} other {# roles}}"
@@ -100,6 +115,21 @@ msgstr ""
 #. placeholder {0}: report.violations.length
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "{0, plural, one {Fact check found # violation.} other {Fact check found # violations.}}"
+msgstr ""
+
+#. placeholder {0}: Math.round(row.medianDays * 10) / 10
+#: src/features/career-insights/components/funnel-velocity-card.tsx
+msgid "{0, plural, one {median # day} other {median # days}}"
+msgstr ""
+
+#. placeholder {0}: data.evaluations
+#: src/features/career-insights/components/gap-heatmap-card.tsx
+msgid "{0, plural, one {Recurring skill gaps across # evaluation} other {Recurring skill gaps across # evaluations}}"
+msgstr ""
+
+#. placeholder {0}: story.timesUsed
+#: src/features/stories/components/story-card.tsx
+msgid "{0, plural, one {Used # time} other {Used # times}}"
 msgstr ""
 
 #. placeholder {0}: insights.total
@@ -166,6 +196,13 @@ msgstr ""
 msgid "{0} to fix"
 msgstr ""
 
+#. placeholder {0}: band.total
+#. placeholder {1}: band.interviews
+#. placeholder {2}: band.offers
+#: src/features/career-insights/components/calibration-card.tsx
+msgid "{0} total · {1} interviews · {2} offers"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
 msgid "{column, plural, one {# Column} other {# Columns}}"
@@ -197,6 +234,10 @@ msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "{count, plural, one {# warning} other {# warnings}}"
+msgstr ""
+
+#: src/features/stories/components/suggest-from-resume-dialog.tsx
+msgid "{created, plural, one {# story drafted from the resume — review and confirm its numbers.} other {# stories drafted from the resume — review and confirm their numbers.}}"
 msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/statistics.tsx
@@ -297,6 +338,10 @@ msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "A date range is written in a form most software cannot read."
+msgstr ""
+
+#: src/features/stories/components/provenance-check-dialog.tsx
+msgid "A deterministic re-check of this story's numeric claims against its linked source resume. Nothing is changed unless you apply the suggestion."
 msgstr ""
 
 #: src/features/ats-checker/messages.ts
@@ -425,6 +470,10 @@ msgstr ""
 msgid "Achievements"
 msgstr ""
 
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "Action"
+msgstr ""
+
 #: src/features/applications/components/table-view.tsx
 msgid "Actions"
 msgstr ""
@@ -542,6 +591,7 @@ msgid "Add a section headed \"Experience\" or \"Work Experience\". It is the fie
 msgstr ""
 
 #: src/features/applications/components/application-form-sheet.tsx
+#: src/features/stories/components/tag-list-field.tsx
 msgid "Add a tag and press Enter…"
 msgstr ""
 
@@ -608,6 +658,10 @@ msgstr ""
 msgid "Add some whitespace between sections so a person can skim it."
 msgstr ""
 
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "Add story"
+msgstr ""
+
 #: src/features/applications/components/table-view.tsx
 msgid "Add tag"
 msgstr ""
@@ -634,6 +688,10 @@ msgstr ""
 
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Adjust the resume for a remote-first role that values async communication and ownership."
+msgstr ""
+
+#: src/features/career-insights/components/channels-card.tsx
+msgid "Advance rate"
 msgstr ""
 
 #: src/features/settings/integrations/components/ai-section.tsx
@@ -685,6 +743,10 @@ msgstr ""
 msgid "AI assistant"
 msgstr ""
 
+#: src/features/stories/components/suggest-from-resume-dialog.tsx
+msgid "AI extracts STAR+R candidates grounded in the resume's real projects. They arrive as derived-unverified drafts — nothing counts as a fact until you confirm it."
+msgstr ""
+
 #: src/features/ats-checker/ai-review/ai-review-card.tsx
 msgid "AI provider"
 msgstr ""
@@ -715,6 +777,10 @@ msgstr ""
 
 #: src/libs/locale.ts
 msgid "Albanian"
+msgstr ""
+
+#: src/features/career-insights/components/channels-card.tsx
+msgid "All"
 msgstr ""
 
 #: src/features/homepage/languages-showcase.test.tsx
@@ -781,6 +847,10 @@ msgstr ""
 #. Fallback toast when importing a resume fails for an unknown reason
 #: src/dialogs/resume/import.tsx
 msgid "An unknown error occurred while importing your resume."
+msgstr ""
+
+#: src/features/command-palette/pages/navigation.tsx
+msgid "Analytics"
 msgstr ""
 
 #: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
@@ -908,6 +978,10 @@ msgstr ""
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Apply"
+msgstr ""
+
+#: src/features/stories/components/provenance-check-dialog.tsx
+msgid "Apply suggested"
 msgstr ""
 
 #: src/routes/agent/-components/patch-approval-card.tsx
@@ -1209,6 +1283,11 @@ msgstr ""
 msgid "By the community, for the community."
 msgstr ""
 
+#: src/features/career-insights/components/calibration-card.tsx
+#: src/features/command-palette/pages/navigation.tsx
+msgid "Calibration"
+msgstr ""
+
 #. API key deletion confirmation dialog cancel action in settings
 #. Account deletion confirmation dialog cancel action in account settings
 #. Confirmation dialog button label to abort deleting a custom section in resume builder
@@ -1230,6 +1309,9 @@ msgstr ""
 #: src/features/settings/pages/account.tsx
 #: src/features/settings/pages/api-keys.tsx
 #: src/features/settings/pages/profile.tsx
+#: src/features/stories/components/practice-dialog.tsx
+#: src/features/stories/components/story-editor-dialog.tsx
+#: src/features/stories/components/suggest-from-resume-dialog.tsx
 #: src/hooks/use-prompt.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
@@ -1294,6 +1376,14 @@ msgstr ""
 msgid "Changes are shared between your library and the resume builder."
 msgstr ""
 
+#: src/features/career-insights/components/channels-card.tsx
+msgid "Channel"
+msgstr ""
+
+#: src/features/career-insights/components/channels-card.tsx
+msgid "Channels"
+msgstr ""
+
 #: src/routes/agent/-components/agent-chat.tsx
 #: src/routes/agent/$threadId.tsx
 msgid "Chat"
@@ -1301,6 +1391,11 @@ msgstr ""
 
 #: src/features/ats-checker/tool.tsx
 msgid "Check again"
+msgstr ""
+
+#: src/features/stories/components/provenance-check-dialog.tsx
+#: src/features/stories/components/story-card.tsx
+msgid "Check provenance"
 msgstr ""
 
 #: src/features/ats-checker/messages.ts
@@ -1380,6 +1475,8 @@ msgstr ""
 
 #: src/features/cover-letters/editor-dialog.tsx
 #: src/features/cover-letters/library.tsx
+#: src/features/stories/components/story-editor-dialog.tsx
+#: src/features/stories/components/suggest-from-resume-dialog.tsx
 #: src/routes/agent/-components/new-thread-setup.tsx
 msgid "Choose a resume"
 msgstr ""
@@ -1448,6 +1545,7 @@ msgstr ""
 #: src/features/cover-letters/editor-dialog.tsx
 #: src/features/cover-letters/editor.tsx
 #: src/features/follow-ups/components/follow-ups-view.tsx
+#: src/features/stories/components/provenance-check-dialog.tsx
 msgid "Close"
 msgstr ""
 
@@ -1670,6 +1768,7 @@ msgstr ""
 
 #: src/features/applications/components/application-ai-copilot.tsx
 #: src/features/follow-ups/components/follow-ups-view.tsx
+#: src/features/stories/components/practice-dialog.tsx
 msgid "Copied to clipboard."
 msgstr ""
 
@@ -1698,6 +1797,10 @@ msgstr ""
 
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Copy JSON"
+msgstr ""
+
+#: src/features/stories/components/practice-dialog.tsx
+msgid "Copy prompt"
 msgstr ""
 
 #: src/features/cover-letters/editor-dialog.tsx
@@ -1753,6 +1856,7 @@ msgstr ""
 
 #: src/features/applications/components/application-ai-copilot.tsx
 #: src/features/follow-ups/components/follow-ups-view.tsx
+#: src/features/stories/components/practice-dialog.tsx
 msgid "Could not copy to clipboard. Please copy the text manually."
 msgstr ""
 
@@ -1819,6 +1923,10 @@ msgstr ""
 msgid "Couldn't add the application. Please try again."
 msgstr ""
 
+#: src/features/stories/components/provenance-check-dialog.tsx
+msgid "Couldn't apply the suggestion."
+msgstr ""
+
 #: src/features/follow-ups/components/follow-ups-view.tsx
 msgid "Couldn't complete this follow-up."
 msgstr ""
@@ -1830,6 +1938,10 @@ msgstr ""
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Couldn't delete the evaluation."
+msgstr ""
+
+#: src/routes/dashboard/interviews/index.tsx
+msgid "Couldn't delete the story."
 msgstr ""
 
 #: src/features/applications/components/application-detail-sheet.tsx
@@ -1856,6 +1968,10 @@ msgstr ""
 msgid "Couldn't fetch that URL."
 msgstr ""
 
+#: src/features/stories/components/find-story-box.tsx
+msgid "Couldn't match stories."
+msgstr ""
+
 #: src/features/applications/components/board.tsx
 msgid "Couldn't move the application. Please try again."
 msgstr ""
@@ -1880,6 +1996,10 @@ msgstr ""
 msgid "Couldn't save the settings."
 msgstr ""
 
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "Couldn't save the story."
+msgstr ""
+
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Couldn't save your changes. Please try again."
 msgstr ""
@@ -1891,6 +2011,10 @@ msgstr ""
 #: src/features/applications/components/application-ai-copilot.tsx
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Couldn't start the evaluation."
+msgstr ""
+
+#: src/features/stories/components/suggest-from-resume-dialog.tsx
+msgid "Couldn't suggest stories from the resume."
 msgstr ""
 
 #: src/features/applications/components/application-detail-sheet.tsx
@@ -2117,6 +2241,10 @@ msgstr ""
 msgid "CSV data"
 msgstr ""
 
+#: src/features/stories/components/provenance-check-dialog.tsx
+msgid "Current"
+msgstr ""
+
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Current filters"
 msgstr ""
@@ -2247,9 +2375,15 @@ msgstr ""
 #: src/routes/builder/$resumeId/-components/header.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-item.tsx
+#: src/routes/dashboard/interviews/index.tsx
 #: src/routes/dashboard/resumes/-components/menus/context-menu.tsx
 #: src/routes/dashboard/resumes/-components/menus/dropdown-menu.tsx
 msgid "Delete"
+msgstr ""
+
+#. placeholder {0}: story.title
+#: src/routes/dashboard/interviews/index.tsx
+msgid "Delete \"{0}\"?"
 msgstr ""
 
 #: src/features/command-palette/pages/navigation.tsx
@@ -2275,6 +2409,10 @@ msgstr ""
 
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Delete provider"
+msgstr ""
+
+#: src/features/stories/components/story-card.tsx
+msgid "Delete story"
 msgstr ""
 
 #: src/routes/agent/-components/agent-chat.tsx
@@ -2332,6 +2470,11 @@ msgstr ""
 #: src/features/auth/pages/consent.tsx
 #: src/routes/agent/-components/patch-approval-card.tsx
 msgid "Deny"
+msgstr ""
+
+#: src/features/stories/components/provenance-chip.tsx
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "derived-unverified"
 msgstr ""
 
 #: src/features/ats-checker/messages.ts
@@ -2572,6 +2715,10 @@ msgstr ""
 msgid "Drag to turn the pages"
 msgstr ""
 
+#: src/features/career-insights/components/rejection-patterns-card.tsx
+msgid "Drop by stage"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Drop the pronouns and start from the verb. That is the convention in most markets."
 msgstr ""
@@ -2628,6 +2775,10 @@ msgstr ""
 msgid "e.g. Jane Doe, Head of Engineering"
 msgstr ""
 
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "e.g. leadership, incident response…"
+msgstr ""
+
 #: src/features/discovery/components/settings-view.tsx
 msgid "e.g. On-site, US only"
 msgstr ""
@@ -2638,6 +2789,10 @@ msgstr ""
 
 #: src/features/discovery/components/settings-view.tsx
 msgid "e.g. security clearance"
+msgstr ""
+
+#: src/features/stories/components/find-story-box.tsx
+msgid "e.g. Tell me about a time you disagreed with a decision…"
 msgstr ""
 
 #: src/routes/builder/$resumeId/-components/version-history.tsx
@@ -2705,6 +2860,11 @@ msgstr ""
 
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Edit note"
+msgstr ""
+
+#: src/features/stories/components/story-card.tsx
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "Edit story"
 msgstr ""
 
 #: src/features/resume/export/download-dialog.tsx
@@ -2860,8 +3020,16 @@ msgstr ""
 msgid "Evaluation running…"
 msgstr ""
 
+#: src/features/career-insights/components/calibration-card.tsx
+msgid "Evaluation score bands vs interviews and offers, settled applications only"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "Every check passed. Nothing here should stop a parser from reading your resume."
+msgstr ""
+
+#: src/features/stories/components/provenance-chip.tsx
+msgid "Every numeric claim in this story traces back to the linked resume's text."
 msgstr ""
 
 #: src/features/evaluations/components/evaluation-panel.tsx
@@ -2972,6 +3140,10 @@ msgstr ""
 
 #: src/features/homepage/ats-playground.tsx
 msgid "Extracted text"
+msgstr ""
+
+#: src/features/stories/components/suggest-from-resume-dialog.tsx
+msgid "Extracting…"
 msgstr ""
 
 #: src/features/tailoring/components/tailoring-panel.tsx
@@ -3200,6 +3372,10 @@ msgstr ""
 msgid "Filter by tags"
 msgstr ""
 
+#: src/features/stories/components/find-story-box.tsx
+msgid "Find a story"
+msgstr ""
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Find the weak bullet points and rewrite them with stronger outcomes, numbers, scope, and sharper verbs."
 msgstr ""
@@ -3373,6 +3549,14 @@ msgstr ""
 #. Screen reader title for the fullscreen rich-text editor dialog
 #: src/components/input/rich-input.tsx
 msgid "Fullscreen Editor"
+msgstr ""
+
+#: src/features/career-insights/components/funnel-velocity-card.tsx
+msgid "Funnel velocity"
+msgstr ""
+
+#: src/features/career-insights/components/gap-heatmap-card.tsx
+msgid "Gap heatmap"
 msgstr ""
 
 #: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
@@ -3640,6 +3824,10 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
+#: src/features/career-insights/components/rejection-patterns-card.tsx
+msgid "How and where rejections cluster"
+msgstr ""
+
 #: src/features/settings/pages/api-keys.tsx
 msgid "How do I use the API?"
 msgstr ""
@@ -3809,7 +3997,10 @@ msgstr ""
 msgid "Inline Code"
 msgstr ""
 
+#: src/features/command-palette/pages/navigation.tsx
+#: src/routes/dashboard/-components/sidebar.tsx
 #: src/routes/dashboard/applications/index.tsx
+#: src/routes/dashboard/insights/index.tsx
 msgid "Insights"
 msgstr ""
 
@@ -3817,6 +4008,10 @@ msgstr ""
 #. placeholder {1}: progress.pageCount
 #: src/features/ats-checker/tool.tsx
 msgid "Inspecting page {0} of {1}…"
+msgstr ""
+
+#: src/features/career-insights/components/channels-card.tsx
+msgid "Int"
 msgstr ""
 
 #: src/features/command-palette/pages/navigation.tsx
@@ -3842,6 +4037,12 @@ msgstr ""
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Interview plan"
+msgstr ""
+
+#: src/features/command-palette/pages/navigation.tsx
+#: src/routes/dashboard/-components/sidebar.tsx
+#: src/routes/dashboard/interviews/index.tsx
+msgid "Interviews"
 msgstr ""
 
 #: src/features/settings/integrations/components/ai-section.tsx
@@ -4084,6 +4285,11 @@ msgstr ""
 msgid "Last updated on {updatedAt}"
 msgstr ""
 
+#. placeholder {0}: formatRelativeTime(story.lastUsedAt, relativeTimeFormatter)
+#: src/features/stories/components/story-card.tsx
+msgid "last used {0}"
+msgstr ""
+
 #. placeholder {0}: statistics.lastViewedAt.toDateString()
 #: src/routes/builder/$resumeId/-sidebar/right/sections/statistics.tsx
 msgid "Last viewed on {0}"
@@ -4108,6 +4314,10 @@ msgstr ""
 
 #: src/features/homepage/feature-explorer.tsx
 msgid "Lead with the work. Add a concrete detail so someone can picture it."
+msgstr ""
+
+#: src/features/command-palette/pages/navigation.tsx
+msgid "Learning loop"
 msgstr ""
 
 #: src/dialogs/resume/import.tsx
@@ -4281,6 +4491,8 @@ msgid "Loading providers…"
 msgstr ""
 
 #: src/features/command-palette/pages/resumes.tsx
+#: src/features/stories/components/story-editor-dialog.tsx
+#: src/features/stories/components/suggest-from-resume-dialog.tsx
 #: src/routes/agent/-components/new-thread-setup.tsx
 msgid "Loading resumes…"
 msgstr ""
@@ -4417,6 +4629,7 @@ msgid "Mark rejected"
 msgstr ""
 
 #: src/features/evaluations/components/evaluation-panel.tsx
+#: src/features/stories/components/find-story-box.tsx
 msgid "Match"
 msgstr ""
 
@@ -4426,6 +4639,14 @@ msgstr ""
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "meaningful"
+msgstr ""
+
+#: src/features/career-insights/components/funnel-velocity-card.tsx
+msgid "Median days between stage transitions"
+msgstr ""
+
+#: src/features/career-insights/components/rejection-patterns-card.tsx
+msgid "Median days to rejection"
 msgstr ""
 
 #: src/features/evaluations/components/evaluation-panel.tsx
@@ -4616,6 +4837,11 @@ msgstr ""
 msgid "New Section"
 msgstr ""
 
+#: src/features/stories/components/story-editor-dialog.tsx
+#: src/routes/dashboard/interviews/index.tsx
+msgid "New story"
+msgstr ""
+
 #: src/features/applications/components/table-view.tsx
 msgid "New tag…"
 msgstr ""
@@ -4667,6 +4893,10 @@ msgstr ""
 msgid "No bullet points were found in the linked resume. Add achievement bullets to the resume first — the letter can only cite what the resume states."
 msgstr ""
 
+#: src/features/career-insights/components/channels-card.tsx
+msgid "No channel data yet — set a source on your applications to compare them here."
+msgstr ""
+
 #. Empty-state message when no command palette results match the search query
 #: src/features/command-palette/index.tsx
 msgid "No commands match that search."
@@ -4678,6 +4908,10 @@ msgstr ""
 
 #: src/features/cover-letters/library.tsx
 msgid "No cover letters found. Create one or import an existing letter."
+msgstr ""
+
+#: src/features/career-insights/components/channels-card.tsx
+msgid "no data"
 msgstr ""
 
 #. Error shown when AI import endpoint returns no parsed resume data
@@ -4705,8 +4939,16 @@ msgstr ""
 msgid "No follow-ups due"
 msgstr ""
 
+#: src/features/career-insights/components/gap-heatmap-card.tsx
+msgid "No gaps mapped yet — run evaluations to build your gap map."
+msgstr ""
+
 #: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
 msgid "No gaps surfaced between the posting and your resume — continue to the next step."
+msgstr ""
+
+#: src/features/career-insights/components/calibration-card.tsx
+msgid "no interview data"
 msgstr ""
 
 #: src/features/discovery/components/inbox-view.tsx
@@ -4741,6 +4983,10 @@ msgstr ""
 msgid "No readable text found. This PDF may contain scanned images. Export a PDF with selectable text and try again."
 msgstr ""
 
+#: src/features/career-insights/components/rejection-patterns-card.tsx
+msgid "No rejections recorded — nothing to learn from here yet."
+msgstr ""
+
 #: src/routes/_home/ats-checker.tsx
 msgid "No repeating the claim that most resumes are thrown out automatically."
 msgstr ""
@@ -4770,6 +5016,10 @@ msgstr ""
 msgid "no scans yet"
 msgstr ""
 
+#: src/features/career-insights/components/calibration-card.tsx
+msgid "No settled applications with evaluations yet — calibration starts once outcomes land."
+msgstr ""
+
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "No skill requirements were extracted from the posting."
 msgstr ""
@@ -4782,6 +5032,10 @@ msgstr ""
 msgid "No source data yet."
 msgstr ""
 
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "No source resume"
+msgstr ""
+
 #: src/features/ats-checker/report/jd-coverage.tsx
 msgid "No specific terms could be pulled out of that job description, so it may be mostly boilerplate. Paste the requirements section for a more useful comparison."
 msgstr ""
@@ -4792,6 +5046,18 @@ msgstr ""
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "No sponsorship needed"
+msgstr ""
+
+#: src/features/career-insights/components/funnel-velocity-card.tsx
+msgid "No stage transitions recorded yet — velocity appears as applications move through stages."
+msgstr ""
+
+#: src/features/stories/components/suggest-from-resume-dialog.tsx
+msgid "No story candidates were found in that resume."
+msgstr ""
+
+#: src/features/stories/components/find-story-box.tsx
+msgid "No story in your bank matches that question yet."
 msgstr ""
 
 #: src/features/tailoring/components/tailoring-panel.tsx
@@ -4814,6 +5080,10 @@ msgstr ""
 msgid "No threads yet."
 msgstr ""
 
+#: src/features/career-insights/components/funnel-velocity-card.tsx
+msgid "no timing data"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "No work-experience section was found."
 msgstr ""
@@ -4824,6 +5094,11 @@ msgstr ""
 
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Not connected"
+msgstr ""
+
+#: src/features/career-insights/components/calibration-card.tsx
+#: src/features/career-insights/components/channels-card.tsx
+msgid "not enough data yet (n < 5)"
 msgstr ""
 
 #: src/features/evaluations/components/evaluation-panel.tsx
@@ -4856,6 +5131,7 @@ msgstr ""
 
 #: src/features/applications/components/application-detail-sheet.tsx
 #: src/features/applications/components/application-form-sheet.tsx
+#: src/features/stories/components/provenance-check-dialog.tsx
 #: src/libs/resume/section.tsx
 msgid "Notes"
 msgstr ""
@@ -4880,8 +5156,16 @@ msgstr ""
 msgid "Nothing to suggest."
 msgstr ""
 
+#: src/features/career-insights/components/gap-heatmap-card.tsx
+msgid "now covered"
+msgstr ""
+
 #: src/libs/locale.ts
 msgid "Odia"
+msgstr ""
+
+#: src/features/career-insights/components/channels-card.tsx
+msgid "Off"
 msgstr ""
 
 #: src/features/homepage/feature-explorer.tsx
@@ -4895,6 +5179,10 @@ msgstr ""
 
 #: src/features/settings/pages/api-keys.tsx
 msgid "Once deleted, the key can no longer access your data. This cannot be undone."
+msgstr ""
+
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "One real project or role per story, told as Situation, Task, Action, Result and Reflection. Never invent numbers — mark anything unconfirmed as derived-unverified."
 msgstr ""
 
 #: src/features/auth/pages/consent.tsx
@@ -4929,6 +5217,7 @@ msgstr ""
 
 #. Resume card context menu action to open the resume editor
 #. Resume card dropdown action to open the resume editor
+#: src/features/stories/components/find-story-box.tsx
 #: src/routes/dashboard/resumes/-components/menus/context-menu.tsx
 #: src/routes/dashboard/resumes/-components/menus/dropdown-menu.tsx
 msgid "Open"
@@ -4977,6 +5266,10 @@ msgstr ""
 
 #: src/features/homepage/template-shelf.tsx
 msgid "Open template PDF"
+msgstr ""
+
+#: src/features/stories/components/practice-dialog.tsx
+msgid "Open the agent"
 msgstr ""
 
 #: src/features/ats-checker/messages.ts
@@ -5149,6 +5442,10 @@ msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "Paste a posting to see which of its terms already appear in your resume."
+msgstr ""
+
+#: src/features/stories/components/find-story-box.tsx
+msgid "Paste an interview question and get your bank ranked against it."
 msgstr ""
 
 #: src/features/applications/components/import-applications-sheet.tsx
@@ -5339,6 +5636,15 @@ msgstr ""
 msgid "Postings are kept when their location matches an allow entry and dropped on a block entry. Hard blocks always win, and always-allow entries rescue a posting even when it was blocked."
 msgstr ""
 
+#: src/features/command-palette/pages/navigation.tsx
+#: src/routes/dashboard/interviews/index.tsx
+msgid "Practice"
+msgstr ""
+
+#: src/features/stories/components/practice-dialog.tsx
+msgid "Practice an interview"
+msgstr ""
+
 #: src/libs/resume/ats.ts
 msgid "Prefer a conventional heading such as \"Work Experience\" or \"Education\"."
 msgstr ""
@@ -5471,6 +5777,14 @@ msgstr ""
 #: src/features/homepage/export-playground.tsx
 #: src/features/homepage/resume-sculpture.tsx
 msgid "Prototyping"
+msgstr ""
+
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "Provenance"
+msgstr ""
+
+#: src/features/stories/components/provenance-check-dialog.tsx
+msgid "Provenance updated."
 msgstr ""
 
 #: src/features/settings/integrations/components/ai-section.tsx
@@ -5665,6 +5979,10 @@ msgstr ""
 msgid "Rectangle (Full Width)"
 msgstr ""
 
+#: src/features/career-insights/components/gap-heatmap-card.tsx
+msgid "Recurring skill gaps across your evaluations"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-components/dock.tsx
 msgid "Redo"
 msgstr ""
@@ -5687,6 +6005,10 @@ msgstr ""
 msgid "Referred by…, things to emphasize, etc."
 msgstr ""
 
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "Reflection"
+msgstr ""
+
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "regenerated"
 msgstr ""
@@ -5697,6 +6019,18 @@ msgstr ""
 
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "rejected"
+msgstr ""
+
+#: src/features/career-insights/components/rejection-patterns-card.tsx
+msgid "Rejected before screening"
+msgstr ""
+
+#: src/features/career-insights/components/rejection-patterns-card.tsx
+msgid "Rejection patterns"
+msgstr ""
+
+#: src/features/career-insights/components/rejection-patterns-card.tsx
+msgid "Rejections"
 msgstr ""
 
 #: src/features/homepage/site-footer.tsx
@@ -5753,6 +6087,7 @@ msgid "Remove Password"
 msgstr ""
 
 #: src/features/applications/components/application-form-sheet.tsx
+#: src/features/stories/components/tag-list-field.tsx
 msgid "Remove tag"
 msgstr ""
 
@@ -5891,8 +6226,13 @@ msgstr ""
 msgid "Restore this version?"
 msgstr ""
 
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "Result"
+msgstr ""
+
 #: src/features/applications/components/application-form-sheet.tsx
 #: src/features/resume/export/download-dialog.tsx
+#: src/features/stories/components/suggest-from-resume-dialog.tsx
 #: src/routes/agent/-components/resume-pane.tsx
 #: src/routes/agent/$threadId.tsx
 msgid "Resume"
@@ -5941,6 +6281,11 @@ msgstr ""
 
 #: src/dialogs/resume/template/gallery.tsx
 msgid "Resume templates for different professions and tastes. Pick the one that suits you."
+msgstr ""
+
+#: src/features/stories/components/provenance-chip.tsx
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "resume-verified"
 msgstr ""
 
 #: src/features/command-palette/pages/navigation.tsx
@@ -6078,6 +6423,10 @@ msgstr ""
 msgid "Run AI review"
 msgstr ""
 
+#: src/features/stories/components/practice-dialog.tsx
+msgid "Run an interview practice session with me for [role] at [company]. Ask one question at a time, listen, then give structured feedback against the posting's vocabulary. Use my story bank (list_stories / match_story_to_question) to suggest which story fits each question, and save_story anything new we uncover — never invent numbers."
+msgstr ""
+
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Run audit"
 msgstr ""
@@ -6154,6 +6503,7 @@ msgid "Save an unprotected copy, with no password and no permissions restriction
 msgstr ""
 
 #: src/features/applications/components/application-form-sheet.tsx
+#: src/features/stories/components/story-editor-dialog.tsx
 msgid "Save changes"
 msgstr ""
 
@@ -6257,6 +6607,15 @@ msgstr ""
 
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Scope read"
+msgstr ""
+
+#. placeholder {0}: result.score
+#: src/features/stories/components/find-story-box.tsx
+msgid "score {0}"
+msgstr ""
+
+#: src/features/career-insights/components/channels-card.tsx
+msgid "Scr"
 msgstr ""
 
 #: src/routes/dashboard/-components/sidebar.tsx
@@ -6658,6 +7017,10 @@ msgstr ""
 msgid "Single-column; polished and serious for senior or enterprise-level positions."
 msgstr ""
 
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "Situation"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Size"
 msgstr ""
@@ -6705,6 +7068,10 @@ msgstr ""
 
 #: src/dialogs/resume/index.tsx
 msgid "Slug"
+msgstr ""
+
+#: src/features/career-insights/components/rejection-patterns-card.tsx
+msgid "Small sample (n < 5) — read these as anecdotes, not patterns yet."
 msgstr ""
 
 #: src/features/follow-ups/components/follow-ups-view.tsx
@@ -6814,6 +7181,10 @@ msgstr ""
 #: src/routes/_home/-sections/footer.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
 msgid "Source Code"
+msgstr ""
+
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "Source resume"
 msgstr ""
 
 #. placeholder {0}: operation.from
@@ -6971,6 +7342,30 @@ msgstr ""
 msgid "Stop watching {0}?"
 msgstr ""
 
+#: src/features/command-palette/pages/navigation.tsx
+msgid "Stories"
+msgstr ""
+
+#: src/routes/dashboard/interviews/index.tsx
+msgid "Stories are reusable STAR+R answers grounded in what you actually did. Add one yourself or extract drafts from a resume — every draft stays derived-unverified until you confirm its numbers, and a number you can't confirm stays marked that way for good."
+msgstr ""
+
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "Story added to your bank."
+msgstr ""
+
+#: src/features/command-palette/pages/navigation.tsx
+msgid "Story bank"
+msgstr ""
+
+#: src/routes/dashboard/interviews/index.tsx
+msgid "Story deleted."
+msgstr ""
+
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "Story updated."
+msgstr ""
+
 #: src/features/ats-checker/ai-review/ai-review-results.tsx
 msgid "Strengths"
 msgstr ""
@@ -7022,6 +7417,22 @@ msgstr ""
 #: src/features/homepage/site-footer.tsx
 #: src/routes/_home/-sections/footer.tsx
 msgid "Subreddit"
+msgstr ""
+
+#: src/routes/dashboard/interviews/index.tsx
+msgid "Suggest from resume"
+msgstr ""
+
+#: src/features/stories/components/suggest-from-resume-dialog.tsx
+msgid "Suggest stories"
+msgstr ""
+
+#: src/features/stories/components/suggest-from-resume-dialog.tsx
+msgid "Suggest stories from a resume"
+msgstr ""
+
+#: src/features/stories/components/provenance-check-dialog.tsx
+msgid "Suggested"
 msgstr ""
 
 #: src/features/ats-checker/ai-review/ai-review-results.tsx
@@ -7083,6 +7494,7 @@ msgstr ""
 #: src/dialogs/resume/index.tsx
 #: src/features/applications/components/application-form-sheet.tsx
 #: src/features/applications/components/table-view.tsx
+#: src/features/stories/components/story-editor-dialog.tsx
 msgid "Tags"
 msgstr ""
 
@@ -7137,6 +7549,10 @@ msgstr ""
 
 #: src/libs/locale.ts
 msgid "Tamil"
+msgstr ""
+
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "Task"
 msgstr ""
 
 #: src/libs/locale.ts
@@ -7232,6 +7648,10 @@ msgstr ""
 msgid "That sign-in provider is no longer available on this server."
 msgstr ""
 
+#: src/features/stories/components/practice-dialog.tsx
+msgid "The agent already knows your story bank. Fill in the role and company, copy the prompt, then paste it as the first message of a new thread."
+msgstr ""
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "The agent needs your input."
 msgstr ""
@@ -7267,8 +7687,20 @@ msgstr ""
 msgid "The checks above are mechanical. This asks a language model what a reader would think of your bullets, and suggests rewrites. It produces no score."
 msgstr ""
 
+#: src/features/stories/components/provenance-chip.tsx
+msgid "The claims exist only in this story and haven't been confirmed yet — treat the numbers as drafts."
+msgstr ""
+
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "The context — team, product, constraint…"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "The deep check could not finish. Please try again."
+msgstr ""
+
+#: src/features/stories/components/provenance-check-dialog.tsx
+msgid "The differing suggestion is informational only — downgrades are never applied from here."
 msgstr ""
 
 #: src/features/tailoring/components/tailoring-panel.tsx
@@ -7328,6 +7760,14 @@ msgstr ""
 msgid "The posting asks for things your resume doesn't show. Decide how the letter should handle each one."
 msgstr ""
 
+#: src/features/stories/components/provenance-check-dialog.tsx
+msgid "The provenance check failed."
+msgstr ""
+
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "The provenance check verifies numeric claims against this resume."
+msgstr ""
+
 #: src/features/auth/pages/error.tsx
 msgid "The provider didn't share an email address, which is required to sign in."
 msgstr ""
@@ -7382,6 +7822,10 @@ msgstr ""
 msgid "The score is capped because of a blocking problem: {0}"
 msgstr ""
 
+#: src/routes/dashboard/interviews/index.tsx
+msgid "The story is removed from your bank. This cannot be undone."
+msgstr ""
+
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "The tailored copy will be permanently deleted, the application will be linked back to the source resume, and this run will be marked rejected. This can't be undone."
 msgstr ""
@@ -7417,6 +7861,7 @@ msgstr ""
 #. Menu item that opens appearance theme selection submenu
 #: src/features/command-palette/pages/preferences/theme.tsx
 #: src/features/settings/pages/preferences.tsx
+#: src/features/stories/components/story-editor-dialog.tsx
 #: src/features/user/dropdown-menu.tsx
 msgid "Theme"
 msgstr ""
@@ -7756,6 +8201,7 @@ msgstr ""
 #: src/dialogs/resume/sections/certification.tsx
 #: src/dialogs/resume/sections/custom.tsx
 #: src/dialogs/resume/sections/publication.tsx
+#: src/features/stories/components/story-editor-dialog.tsx
 msgid "Title"
 msgstr ""
 
@@ -7820,6 +8266,10 @@ msgstr ""
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Top strengths"
+msgstr ""
+
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "Topics this story answers best — \"conflict\", \"scaling\"…"
 msgstr ""
 
 #: src/features/homepage/community-stats.tsx
@@ -8003,6 +8453,10 @@ msgstr ""
 
 #: src/features/settings/pages/profile.tsx
 msgid "Unverified"
+msgstr ""
+
+#: src/features/stories/components/provenance-check-dialog.tsx
+msgid "Unverified claims"
 msgstr ""
 
 #. placeholder {0}: format(salary.max)
@@ -8225,6 +8679,20 @@ msgstr ""
 msgid "User research"
 msgstr ""
 
+#: src/features/stories/components/provenance-chip.tsx
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "user-cannot-confirm"
+msgstr ""
+
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "user-cannot-confirm is durable — the check never changes it."
+msgstr ""
+
+#: src/features/stories/components/provenance-chip.tsx
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "user-confirmed"
+msgstr ""
+
 #. Label for username input on registration form
 #: src/dialogs/resume/sections/profile.tsx
 #: src/features/auth/pages/register.tsx
@@ -8270,6 +8738,10 @@ msgstr ""
 
 #: src/features/settings/pages/profile.tsx
 msgid "Verified"
+msgstr ""
+
+#: src/features/stories/components/provenance-check-dialog.tsx
+msgid "Verified claims"
 msgstr ""
 
 #. Primary action button to submit 2FA code
@@ -8423,6 +8895,10 @@ msgstr ""
 msgid "What a person sees"
 msgstr ""
 
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "What changed — outcomes, numbers you can stand behind…"
+msgstr ""
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "What do you want to do?"
 msgstr ""
@@ -8447,6 +8923,22 @@ msgstr ""
 msgid "What this does not do"
 msgstr ""
 
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "What you actually did, step by step…"
+msgstr ""
+
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "What you learned or would do differently…"
+msgstr ""
+
+#: src/features/stories/components/story-editor-dialog.tsx
+msgid "What you were responsible for…"
+msgstr ""
+
+#: src/routes/dashboard/insights/index.tsx
+msgid "What your search is teaching you — advisory only, nothing here changes how anything is scored."
+msgstr ""
+
 #: src/routes/builder/$resumeId/-components/header.tsx
 #: src/routes/dashboard/resumes/-components/menus/use-resume-menu-actions.ts
 msgid "When locked, the resume cannot be updated or deleted."
@@ -8454,6 +8946,10 @@ msgstr ""
 
 #: src/features/applications/components/insights-view.tsx
 msgid "Where applications come from"
+msgstr ""
+
+#: src/features/career-insights/components/channels-card.tsx
+msgid "Where applications come from, and which sources advance"
 msgstr ""
 
 #: src/features/applications/components/insights-view.tsx
@@ -8585,8 +9081,16 @@ msgstr ""
 msgid "You cancelled the sign-in before it finished."
 msgstr ""
 
+#: src/features/stories/components/provenance-chip.tsx
+msgid "You explicitly confirmed the figures in this story yourself."
+msgstr ""
+
 #: src/hooks/use-form-blocker.tsx
 msgid "You have unsaved changes that will be lost."
+msgstr ""
+
+#: src/features/stories/components/provenance-chip.tsx
+msgid "You said these figures can no longer be verified. This state is durable — use the story as narrative texture, never as a quantified claim."
 msgstr ""
 
 #: src/dialogs/resume/import.tsx
@@ -8783,6 +9287,10 @@ msgstr ""
 
 #: src/features/homepage/ats-playground.tsx
 msgid "Your selected file"
+msgstr ""
+
+#: src/routes/dashboard/interviews/index.tsx
+msgid "Your story bank is empty"
 msgstr ""
 
 #: src/features/homepage/feature-explorer.tsx

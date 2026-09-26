@@ -6,7 +6,9 @@ import {
 	BinocularsIcon,
 	BrainIcon,
 	BriefcaseIcon,
+	ChartLineUpIcon,
 	ChatCircleDotsIcon,
+	ChatsCircleIcon,
 	EnvelopeSimpleIcon,
 	GearSixIcon,
 	KeyIcon,
@@ -68,6 +70,16 @@ const appSidebarItems = [
 		icon: <BinocularsIcon />,
 		label: msg`Discover`,
 		href: "/dashboard/discover",
+	},
+	{
+		icon: <ChatsCircleIcon />,
+		label: msg`Interviews`,
+		href: "/dashboard/interviews",
+	},
+	{
+		icon: <ChartLineUpIcon />,
+		label: msg`Insights`,
+		href: "/dashboard/insights",
 	},
 	{
 		icon: <ChatCircleDotsIcon />,
