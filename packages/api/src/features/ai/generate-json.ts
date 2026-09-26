@@ -19,10 +19,12 @@ export async function generateJson<T>(
 	model: LanguageModel,
 	{ system, prompt }: GenerateJsonPrompt,
 	schema: z.ZodType<T>,
+	options: { abortSignal?: AbortSignal | undefined } = {},
 ): Promise<T> {
 	const { text } = await generateText({
 		model,
 		...(system ? { system } : {}),
+		...(options.abortSignal ? { abortSignal: options.abortSignal } : {}),
 		messages: [{ role: "user", content: prompt }],
 	});
 

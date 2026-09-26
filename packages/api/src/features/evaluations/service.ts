@@ -11,7 +11,7 @@ import type {
 	SkillGapResult,
 } from "@reactive-resume/schema/career/data";
 import { ORPCError } from "@orpc/client";
-import { and, desc, eq } from "drizzle-orm";
+import { and, desc, eq, inArray, lt } from "drizzle-orm";
 import { db } from "@reactive-resume/db/client";
 import * as schema from "@reactive-resume/db/schema";
 
@@ -22,8 +22,31 @@ function stripUserId<T extends { userId: string }>(row: T): Omit<T, "userId"> {
 	return rest;
 }
 
+/** A pending/running evaluation untouched for this long can no longer finish: on serverless
+ * the Function hosting it was killed at its duration cap (so the pipeline's own catch never
+ * ran); under the queue worker, pg-boss retries have long since given up. */
+const STALE_EVALUATION_MS = process.env.VERCEL === "1" ? 6 * 60 * 1000 : 30 * 60 * 1000;
+
+export const STALE_EVALUATION_MESSAGE =
+	"The evaluation stopped before finishing — the AI provider was likely too slow. Run it again, or switch to a faster model.";
+
+/** Lazily fail the user's evaluations that were orphaned mid-run, so none spins forever. */
+async function failStaleEvaluations(userId: string): Promise<void> {
+	await db
+		.update(schema.evaluation)
+		.set({ status: "failed", error: STALE_EVALUATION_MESSAGE })
+		.where(
+			and(
+				eq(schema.evaluation.userId, userId),
+				inArray(schema.evaluation.status, ["pending", "running"]),
+				lt(schema.evaluation.updatedAt, new Date(Date.now() - STALE_EVALUATION_MS)),
+			),
+		);
+}
+
 export const evaluationsService = {
 	getById: async (input: { id: string; userId: string }) => {
+		await failStaleEvaluations(input.userId);
 		const [row] = await db
 			.select()
 			.from(schema.evaluation)
@@ -34,6 +57,7 @@ export const evaluationsService = {
 	},
 
 	listByApplication: async (input: { applicationId: string; userId: string }) => {
+		await failStaleEvaluations(input.userId);
 		const rows = await db
 			.select()
 			.from(schema.evaluation)

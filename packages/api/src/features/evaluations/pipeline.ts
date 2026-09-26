@@ -172,6 +172,14 @@ const NOT_EVALUATED_SIGNALS = [
 	"interview-experience reports",
 ] as const;
 
+// Wall-clock budget for all LLM calls of one run. On Vercel the Function is killed at 300 s
+// (which also skips the catch below), so the budget leaves room for the start request and
+// the final writes; the queue worker has no such cap.
+const EVALUATION_BUDGET_MS = process.env.VERCEL === "1" ? 240 * 1000 : 10 * 60 * 1000;
+
+const BUDGET_EXCEEDED_MESSAGE =
+	"The evaluation ran out of time — the AI provider was too slow. Run it again, or switch to a faster model.";
+
 // --- Helpers ------------------------------------------------------------------------
 
 function localeLine(locale: string): string {
@@ -287,6 +295,8 @@ export async function runEvaluation(input: RunEvaluationInput): Promise<void> {
 	const evaluation = await evaluationsService.getById({ id: evaluationId, userId });
 	if (evaluation.status === "complete") return; // retried delivery of a finished job
 
+	const abortSignal = AbortSignal.timeout(EVALUATION_BUDGET_MS);
+
 	try {
 		await evaluationsService.update({ id: evaluationId, userId, status: "running", error: null });
 
@@ -306,6 +316,19 @@ export async function runEvaluation(input: RunEvaluationInput): Promise<void> {
 		const jd = evaluation.jdArchived;
 		const workAuthProfile = profile?.workAuth ?? { authorizedIn: [], needsSponsorship: false };
 
+		// Legitimacy reads the posting text only, so it runs alongside pass 1 instead of after
+		// strategy — one fewer call on the critical path. Its failure is caught below with the rest.
+		const legitimacyPromise = generateJson(
+			model,
+			{
+				system: evaluationLegitimacySystemPrompt,
+				prompt: [localeLine(locale), `JOB POSTING:\n${jd}`].join("\n\n"),
+			},
+			legitimacyOutput,
+			{ abortSignal },
+		);
+		legitimacyPromise.catch(() => undefined);
+
 		// Pass 1 — JD only. The resume is deliberately absent from this context.
 		const passOne = passOneOutput.parse(
 			await generateJson(
@@ -322,6 +345,7 @@ export async function runEvaluation(input: RunEvaluationInput): Promise<void> {
 					].join("\n\n"),
 				},
 				passOneOutput,
+				{ abortSignal },
 			),
 		);
 
@@ -351,6 +375,7 @@ export async function runEvaluation(input: RunEvaluationInput): Promise<void> {
 					].join("\n\n"),
 				},
 				passTwoOutput,
+				{ abortSignal },
 			),
 		);
 
@@ -386,20 +411,11 @@ export async function runEvaluation(input: RunEvaluationInput): Promise<void> {
 					].join("\n\n"),
 				},
 				strategyOutput,
+				{ abortSignal },
 			),
 		);
 
-		// Legitimacy pass — posting text only.
-		const legitimacy = legitimacyOutput.parse(
-			await generateJson(
-				model,
-				{
-					system: evaluationLegitimacySystemPrompt,
-					prompt: [localeLine(locale), `JOB POSTING:\n${jd}`].join("\n\n"),
-				},
-				legitimacyOutput,
-			),
-		);
+		const legitimacy = legitimacyOutput.parse(await legitimacyPromise);
 
 		const legitimacySignals: EvaluationBlocks["legitimacySignals"] = [
 			...legitimacy.signals.map((signal) => ({ ...signal })),
@@ -482,7 +498,11 @@ export async function runEvaluation(input: RunEvaluationInput): Promise<void> {
 			text: `Evaluated: ${strategy.score.toFixed(1)}/5 — ${strategy.finalDecision.replace("_", " ")}`,
 		});
 	} catch (error) {
-		const message = error instanceof Error ? error.message : "The evaluation failed.";
+		const message = abortSignal.aborted
+			? BUDGET_EXCEEDED_MESSAGE
+			: error instanceof Error
+				? error.message
+				: "The evaluation failed.";
 		await evaluationsService
 			.update({ id: evaluationId, userId, status: "failed", error: message })
 			.catch(() => undefined);
