@@ -80,6 +80,7 @@ Both cron endpoints refuse every request when `CRON_SECRET` is unset.
 - Logs: `vercel logs <deployment-url>`, or dashboard → Logs.
 - Health: `GET /api/health`.
 - Evaluation fails with "ran out of time" / "stopped before finishing": the AI provider was too slow for the 240 s budget (Vercel kills Functions at 300 s). Use **Run again**, or switch the default AI provider to a faster model. A run orphaned by a kill is auto-marked failed after 6 min. Find kills with `vercel logs --environment production --since 2h --query "Task timed out"`.
+- Tailoring shows "already in progress": one run per application at a time; follow it in the Tailoring tab. A run orphaned mid-flight is auto-marked failed after 6 min (Vercel) / 15 min (Docker).
 - First request after idle is slow / fails: Neon free tier sleeps; retry.
 - `413` on large uploads: the web app stages through Blob automatically; API clients must use the large-RPC-requests protocol (`docs/guides/large-rpc-requests`).
 - Stray marketplace resources: `vercel integration add <slug>` **provisions a new database on every call** — never retry it blindly. List in dashboard → Storage; delete strays with `vercel integration resource remove <name> --yes`. Keep only: `neon-red-ladder`, `upstash-kv-coffee-pocket`, `reactive-resume-files`.
