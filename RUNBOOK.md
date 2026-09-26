@@ -8,6 +8,7 @@ Operational runbook for the `career-ops` fork deployed on Vercel. The Docker (dh
 | -------------- | ---------------------------------------------------------------------------------------------------- |
 | Vercel project | `reactive-resume` (team `petegeorge20005-9028s-projects`, Hobby)                                     |
 | Source         | `github.com/UcGeorge/reactive-resume`, branch `career-ops`, deployed via CLI from the local checkout |
+| Local checkout | `/Volumes/Nebula/dev/UcGeorge/reactive-resume` (Nebula must be mounted); the dh stack runs it via the wrapper in `~/dockerholicks/reactive-resume/` |
 | Runtime        | One Node 24 Function (max 300 s) + static web assets on the CDN; region `iad1`                       |
 | Postgres       | Neon `neon-red-ladder` (Free) → `DATABASE_URL` + unpooled variants                                   |
 | Redis          | Upstash `upstash-kv-coffee-pocket` (Free) → `REDIS_URL` / `KV_URL`                                   |
@@ -22,7 +23,7 @@ Git auto-deploy is not connected. To enable it: Vercel dashboard → Project →
 ## Deploying
 
 ```bash
-cd ~/dockerholicks/reactive-resume
+cd /Volumes/Nebula/dev/UcGeorge/reactive-resume
 vercel deploy --prod --yes
 ```
 
