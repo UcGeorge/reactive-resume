@@ -32,6 +32,11 @@ msgstr "(opens in new tab)"
 msgid "{0, plural, one {# application to export} other {# applications to export}}"
 msgstr "{0, plural, one {# application to export} other {# applications to export}}"
 
+#. placeholder {0}: report.violations.length
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "{0, plural, one {# fact violation} other {# fact violations}}"
+msgstr "{0, plural, one {# fact violation} other {# fact violations}}"
+
 #. placeholder {0}: section.items.length
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 msgid "{0, plural, one {# item} other {# items}}"
@@ -41,6 +46,16 @@ msgstr "{0, plural, one {# item} other {# items}}"
 #: src/routes/builder/$resumeId/-sidebar/left/sections/experience.tsx
 msgid "{0, plural, one {# role} other {# roles}}"
 msgstr "{0, plural, one {# role} other {# roles}}"
+
+#. placeholder {0}: report.warnings.length
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "{0, plural, one {# warning} other {# warnings}}"
+msgstr "{0, plural, one {# warning} other {# warnings}}"
+
+#. placeholder {0}: report.violations.length
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "{0, plural, one {Fact check found # violation.} other {Fact check found # violations.}}"
+msgstr "{0, plural, one {Fact check found # violation.} other {Fact check found # violations.}}"
 
 #. placeholder {0}: insights.total
 #: src/features/applications/components/insights-view.tsx
@@ -637,6 +652,10 @@ msgstr "Already in your skills"
 msgid "Amharic"
 msgstr "Amharic"
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "An adversarial hiring-manager review of every bullet — this can take up to a minute."
+msgstr "An adversarial hiring-manager review of every bullet — this can take up to a minute."
+
 #: src/features/ats-checker/messages.ts
 msgid "An embedded font could not be read."
 msgstr "An embedded font could not be read."
@@ -790,6 +809,7 @@ msgid "Archived"
 msgstr "Archived"
 
 #: src/features/evaluations/components/evaluation-panel.tsx
+#: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Archived job description"
 msgstr "Archived job description"
 
@@ -893,6 +913,10 @@ msgstr "Attachment"
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Attachment uploaded."
 msgstr "Attachment uploaded."
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "audit"
+msgstr "audit"
 
 #: src/features/command-palette/pages/navigation.tsx
 #: src/routes/dashboard/-components/sidebar.tsx
@@ -1029,6 +1053,10 @@ msgstr "Bulk delete failed. Please try again."
 msgid "Bulk update failed. Please try again."
 msgstr "Bulk update failed. Please try again."
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Bullet"
+msgstr "Bullet"
+
 #: src/components/input/rich-input.tsx
 msgid "Bullet List"
 msgstr "Bullet List"
@@ -1114,6 +1142,10 @@ msgstr "Changed your mind? Rename your resume to something more descriptive."
 #: src/routes/_home/-sections/footer.tsx
 msgid "Changelog"
 msgstr "Changelog"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Changes"
+msgstr "Changes"
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Changes are shared between your library and the resume builder."
@@ -1271,6 +1303,7 @@ msgid "Close AI assistant"
 msgstr "Close AI assistant"
 
 #: src/features/evaluations/components/evaluation-panel.tsx
+#: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Collapse"
 msgstr "Collapse"
 
@@ -1327,6 +1360,10 @@ msgstr "Compare this resume against this job posting URL and update the keywords
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Compensation"
 msgstr "Compensation"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "complete"
+msgstr "complete"
 
 #: src/features/ats-checker/messages.ts
 msgid "Compress or remove large images to keep uploads quick."
@@ -1599,6 +1636,10 @@ msgstr "Couldn't delete the evaluation."
 msgid "Couldn't delete the timeline entry."
 msgstr "Couldn't delete the timeline entry."
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Couldn't discard the tailored resume."
+msgstr "Couldn't discard the tailored resume."
+
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Couldn't fetch that URL."
 msgstr "Couldn't fetch that URL."
@@ -1808,6 +1849,7 @@ msgstr "Created"
 
 #. placeholder {0}: result.name
 #: src/features/applications/components/application-ai-copilot.tsx
+#: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Created \"{0}\" and linked it to this application."
 msgstr "Created \"{0}\" and linked it to this application."
 
@@ -1871,6 +1913,10 @@ msgstr "Custom Styles"
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Customization plan"
 msgstr "Customization plan"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "cut"
+msgstr "cut"
 
 #: src/libs/locale.ts
 msgid "Czech"
@@ -2097,8 +2143,13 @@ msgid "Disabling two-factor authentication..."
 msgstr "Disabling two-factor authentication..."
 
 #: src/features/cover-letters/editor-dialog.tsx
+#: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Discard"
 msgstr "Discard"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Discard this tailored resume?"
+msgstr "Discard this tailored resume?"
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Discard unsaved changes?"
@@ -2505,6 +2556,7 @@ msgid "Exit Fullscreen"
 msgstr "Exit Fullscreen"
 
 #: src/features/evaluations/components/evaluation-panel.tsx
+#: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Expand"
 msgstr "Expand"
 
@@ -2578,6 +2630,22 @@ msgstr "Exported pipeline-flow.png"
 #: src/features/homepage/ats-playground.tsx
 msgid "Extracted text"
 msgstr "Extracted text"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Fact check passed — every claim is backed by the source resume."
+msgstr "Fact check passed — every claim is backed by the source resume."
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "fact gate"
+msgstr "fact gate"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Fact gate"
+msgstr "Fact gate"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "failed"
+msgstr "failed"
 
 #: src/routes/agent/-components/tool-part-card.tsx
 msgid "Failed"
@@ -2942,6 +3010,10 @@ msgstr "Gaps & mitigations"
 msgid "Gaps:"
 msgstr "Gaps:"
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "gated"
+msgstr "gated"
+
 #: src/dialogs/resume/index.tsx
 msgid "Generate a random name"
 msgstr "Generate a random name"
@@ -3166,6 +3238,10 @@ msgstr "Hindi"
 msgid "Hint:"
 msgstr "Hint:"
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Hiring-manager audit"
+msgstr "Hiring-manager audit"
+
 #: src/features/command-palette/pages/navigation.tsx
 msgid "Home"
 msgstr "Home"
@@ -3373,6 +3449,10 @@ msgstr "JD signal"
 msgid "JD signal:"
 msgstr "JD signal:"
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "JD similarity:"
+msgstr "JD similarity:"
+
 #: src/features/command-palette/pages/navigation.tsx
 msgid "Job"
 msgstr "Job"
@@ -3428,6 +3508,10 @@ msgstr "Justify Align"
 #: src/libs/locale.ts
 msgid "Kannada"
 msgstr "Kannada"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "keep"
+msgstr "keep"
 
 #: src/features/homepage/export-playground.tsx
 msgid "Keep a backup of your content and settings. Import it into Reactive Resume later."
@@ -3690,6 +3774,10 @@ msgstr "Link a resume and paste the job description (Edit) to run an evaluation.
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Link a resume and paste the job description (Edit) to score your fit and tailor a copy."
 msgstr "Link a resume and paste the job description (Edit) to score your fit and tailor a copy."
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Link a resume and paste the job description (Edit) to tailor a copy for this job."
+msgstr "Link a resume and paste the job description (Edit) to tailor a copy for this job."
 
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Linked Reactive Resume"
@@ -4218,6 +4306,10 @@ msgstr "No sponsorship"
 msgid "No sponsorship needed"
 msgstr "No sponsorship needed"
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "No tailoring runs yet. Each run appears here as a new version."
+msgstr "No tailoring runs yet. Each run appears here as a new version."
+
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "No tested provider"
 msgstr "No tested provider"
@@ -4374,6 +4466,10 @@ msgstr "Open in builder"
 msgid "Open Integrations Settings"
 msgstr "Open Integrations Settings"
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Open tailored resume"
+msgstr "Open tailored resume"
+
 #: src/features/homepage/template-shelf.tsx
 msgid "Open template PDF"
 msgstr "Open template PDF"
@@ -4470,6 +4566,10 @@ msgstr "Paragraph and heading style"
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "partial"
 msgstr "partial"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Passed — every claim in the tailored resume is backed by the source resume."
+msgstr "Passed — every claim in the tailored resume is backed by the source resume."
 
 #. Authentication provider display name in account settings
 #. Label for passkey sign-in button
@@ -4586,6 +4686,10 @@ msgstr "PDF text layer"
 msgid "PDFs already attached to applications will remain available."
 msgstr "PDFs already attached to applications will remain available."
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "pending"
+msgstr "pending"
+
 #: src/dialogs/resume/sections/education.tsx
 #: src/dialogs/resume/sections/experience.tsx
 #: src/dialogs/resume/sections/project.tsx
@@ -4596,6 +4700,10 @@ msgstr "Period"
 #: src/libs/locale.ts
 msgid "Persian"
 msgstr "Persian"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Persona:"
+msgstr "Persona:"
 
 #: src/dialogs/resume/sections/reference.tsx
 #: src/features/ats-checker/parse-preview.tsx
@@ -4646,6 +4754,10 @@ msgstr "Place it on a page from the Layout panel, or hide it if you meant to par
 #: src/features/resume/export/download-dialog.tsx
 msgid "Plain text, for AI tools and quick edits."
 msgstr "Plain text, for AI tools and quick edits."
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "planned"
+msgstr "planned"
 
 #: src/features/homepage/feature-explorer.tsx
 msgid "Play data flow animation"
@@ -4861,6 +4973,10 @@ msgstr "Quick match"
 msgid "Raw JSON"
 msgstr "Raw JSON"
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Re-check facts"
+msgstr "Re-check facts"
+
 #: src/features/ats-checker/messages.ts
 msgid "Re-export from a single-column layout, then copy the text out and check it reads top to bottom."
 msgstr "Re-export from a single-column layout, then copy the text out and check it reads top to bottom."
@@ -4884,6 +5000,10 @@ msgstr "Re-export with fonts embedded, and check the text copies out cleanly."
 #: src/features/ats-checker/messages.ts
 msgid "Re-export with fonts embedded, then open the file and check that the text copies out cleanly."
 msgstr "Re-export with fonts embedded, then open the file and check that the text copies out cleanly."
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Re-run audit"
+msgstr "Re-run audit"
 
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Re-score"
@@ -5021,9 +5141,17 @@ msgstr "References"
 msgid "Referred by…, things to emphasize, etc."
 msgstr "Referred by…, things to emphasize, etc."
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "regenerated"
+msgstr "regenerated"
+
 #: src/features/settings/authentication/components/passkeys.tsx
 msgid "Register New Device"
 msgstr "Register New Device"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "rejected"
+msgstr "rejected"
 
 #: src/features/homepage/site-footer.tsx
 msgid "Released under the <0>MIT License</0>."
@@ -5269,6 +5397,23 @@ msgstr "Resumes"
 msgid "Retry"
 msgstr "Retry"
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Reuse decision"
+msgstr "Reuse decision"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "reused"
+msgstr "reused"
+
+#. placeholder {0}: result.name
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Reused \"{0}\" — the posting still matches the existing tailored resume."
+msgstr "Reused \"{0}\" — the posting still matches the existing tailored resume."
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "reused with edits"
+msgstr "reused with edits"
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Review edits"
 msgstr "Review edits"
@@ -5289,6 +5434,18 @@ msgstr "Review this edit"
 msgid "Reviewing…"
 msgstr "Reviewing…"
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Rewords your real experience toward this posting under strict constraints — nothing is invented, every claim must pass a hard fact gate against your source resume, and each run is kept as a numbered version for this application."
+msgstr "Rewords your real experience toward this posting under strict constraints — nothing is invented, every claim must pass a hard fact gate against your source resume, and each run is kept as a numbered version for this application."
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "rewrite"
+msgstr "rewrite"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Rewrite"
+msgstr "Rewrite"
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Rewrite the summary for a senior engineering manager role, and keep it specific."
 msgstr "Rewrite the summary for a senior engineering manager role, and keep it specific."
@@ -5296,6 +5453,10 @@ msgstr "Rewrite the summary for a senior engineering manager role, and keep it s
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Rewrite this resume for a startup founder moving into a product lead role, and show the business impact."
 msgstr "Rewrite this resume for a startup founder moving into a product lead role, and show the business impact."
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Rewrite:"
+msgstr "Rewrite:"
 
 #: src/features/homepage/ats-playground.tsx
 msgid "Rhyhorn sample resume"
@@ -5351,6 +5512,10 @@ msgstr "Run again"
 msgid "Run AI review"
 msgstr "Run AI review"
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Run audit"
+msgstr "Run audit"
+
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "Run deep check"
 msgstr "Run deep check"
@@ -5362,6 +5527,10 @@ msgstr "Run full evaluation"
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Running quick match…"
 msgstr "Running quick match…"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Running the full pipeline — reuse check, plan, compile, fact gate. This is a single long request and can take a minute or two; keep this tab open."
+msgstr "Running the full pipeline — reuse check, plan, compile, fact gate. This is a single long request and can take a minute or two; keep this tab open."
 
 #: src/routes/agent/-components/tool-part-card.tsx
 msgid "Running…"
@@ -5487,6 +5656,10 @@ msgstr "Scan the QR code below with your preferred authenticator app. You can al
 #: src/dialogs/resume/sections/education.tsx
 msgid "School"
 msgstr "School"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Scope read"
+msgstr "Scope read"
 
 #: src/routes/dashboard/-components/sidebar.tsx
 msgid "Search"
@@ -5972,6 +6145,7 @@ msgid "Something went wrong"
 msgstr "Something went wrong"
 
 #: src/features/evaluations/components/evaluation-panel.tsx
+#: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Something went wrong during the run."
 msgstr "Something went wrong during the run."
 
@@ -6283,13 +6457,38 @@ msgstr "Tags give software an explicit reading order. Enable them when exporting
 msgid "Tailor my resume"
 msgstr "Tailor my resume"
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Tailor resume"
+msgstr "Tailor resume"
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Tailor this resume to a product manager job description, and emphasize roadmap ownership, stakeholder communication, and measurable launch outcomes."
 msgstr "Tailor this resume to a product manager job description, and emphasize roadmap ownership, stakeholder communication, and measurable launch outcomes."
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Tailored resume discarded — the source resume is linked again."
+msgstr "Tailored resume discarded — the source resume is linked again."
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Tailored resumes"
+msgstr "Tailored resumes"
+
+#: src/features/applications/components/application-detail-sheet.tsx
+msgid "Tailoring"
+msgstr "Tailoring"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Tailoring failed"
+msgstr "Tailoring failed"
+
 #: src/features/applications/components/application-ai-copilot.tsx
+#: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Tailoring failed."
 msgstr "Tailoring failed."
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Tailoring…"
+msgstr "Tailoring…"
 
 #: src/features/homepage/page.tsx
 msgid "Take it<0/>with you."
@@ -6399,6 +6598,10 @@ msgstr "The API key has been deleted."
 msgid "The application that sent you here made an invalid authorization request."
 msgstr "The application that sent you here made an invalid authorization request."
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "The audit failed."
+msgstr "The audit failed."
+
 #: src/features/ats-checker/ai-review/ai-review-card.tsx
 msgid "The checks above are mechanical. This asks a language model what a reader would think of your bullets, and suggests rewrites. It produces no score."
 msgstr "The checks above are mechanical. This asks a language model what a reader would think of your bullets, and suggests rewrites. It produces no score."
@@ -6406,6 +6609,10 @@ msgstr "The checks above are mechanical. This asks a language model what a reade
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "The deep check could not finish. Please try again."
 msgstr "The deep check could not finish. Please try again."
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "The fact check failed."
+msgstr "The fact check failed."
 
 #. Error shown when AI parsing returns invalid resume structure during import
 #: src/dialogs/resume/import.tsx
@@ -6468,6 +6675,10 @@ msgstr "The rest of your<0/>job search, too."
 msgid "The resume preview could not be updated. The last valid preview is still shown."
 msgstr "The resume preview could not be updated. The last valid preview is still shown."
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "The reviewer returned fewer rows than bullets — this is a partial audit."
+msgstr "The reviewer returned fewer rows than bullets — this is a partial audit."
+
 #: src/features/ats-checker/messages.ts
 msgid "The same line repeats on every page."
 msgstr "The same line repeats on every page."
@@ -6476,6 +6687,10 @@ msgstr "The same line repeats on every page."
 #: src/features/ats-checker/report/score-header.tsx
 msgid "The score is capped because of a blocking problem: {0}"
 msgstr "The score is capped because of a blocking problem: {0}"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "The tailored copy will be permanently deleted, the application will be linked back to the source resume, and this run will be marked rejected. This can't be undone."
+msgstr "The tailored copy will be permanently deleted, the application will be linked back to the source resume, and this run will be marked rejected. This can't be undone."
 
 #: src/features/ats-checker/messages.ts
 msgid "The text comes out unreadable."
@@ -6806,6 +7021,10 @@ msgstr "Thread deleted."
 #: src/routes/agent/$threadId.tsx
 msgid "Threads"
 msgstr "Threads"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "tier"
+msgstr "tier"
 
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Tighten the skills section so it supports the target role instead of reading like a keyword dump."
@@ -7304,6 +7523,10 @@ msgstr "Valid with warnings"
 msgid "Vary the openings so the section does not read as boilerplate."
 msgstr "Vary the openings so the section does not read as boilerplate."
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Verdict"
+msgstr "Verdict"
+
 #: src/features/settings/pages/profile.tsx
 msgid "Verified"
 msgstr "Verified"
@@ -7507,6 +7730,10 @@ msgstr "Whether your name, email, phone and dates survive intact."
 msgid "Whether your timeline can be reconstructed."
 msgstr "Whether your timeline can be reconstructed."
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Why"
+msgstr "Why"
+
 #: src/features/ats-checker/messages.ts
 msgid "Words run together when the text is extracted."
 msgstr "Words run together when the text is extracted."
@@ -7538,6 +7765,14 @@ msgstr "Working…"
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Worth a shot"
 msgstr "Worth a shot"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Would advance: no"
+msgstr "Would advance: no"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Would advance: yes"
+msgstr "Would advance: yes"
 
 #: src/features/ats-checker/messages.ts
 msgid "Write \"Present\" as the end date of your current role."

@@ -45,4 +45,8 @@ export const MCP_TOOL_NAME = {
 	evaluateApplication: "evaluate_application",
 	getApplicationEvaluation: "get_application_evaluation",
 	getApplicationSkillGap: "get_application_skill_gap",
+	listTailoringRuns: "list_tailoring_runs",
+	getTailoringRun: "get_tailoring_run",
+	auditTailoredResume: "audit_tailored_resume",
+	factCheckResume: "fact_check_resume",
 } as const;

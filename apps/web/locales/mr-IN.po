@@ -37,6 +37,11 @@ msgstr "(नवीन टॅबमध्ये उघडतो)"
 msgid "{0, plural, one {# application to export} other {# applications to export}}"
 msgstr "{0, plural, one {निर्यात करण्यासाठी # अनुप्रयोग} other {निर्यात करण्यासाठी # अनुप्रयोग}}"
 
+#. placeholder {0}: report.violations.length
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "{0, plural, one {# fact violation} other {# fact violations}}"
+msgstr ""
+
 #. placeholder {0}: section.items.length
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 msgid "{0, plural, one {# item} other {# items}}"
@@ -46,6 +51,16 @@ msgstr "{0, plural, one {# वस्तू} other {# वस्तू}}"
 #: src/routes/builder/$resumeId/-sidebar/left/sections/experience.tsx
 msgid "{0, plural, one {# role} other {# roles}}"
 msgstr "{0, plural, one {# भूमिका} other {# भूमिका}}"
+
+#. placeholder {0}: report.warnings.length
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "{0, plural, one {# warning} other {# warnings}}"
+msgstr ""
+
+#. placeholder {0}: report.violations.length
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "{0, plural, one {Fact check found # violation.} other {Fact check found # violations.}}"
+msgstr ""
 
 #. placeholder {0}: insights.total
 #: src/features/applications/components/insights-view.tsx
@@ -642,6 +657,10 @@ msgstr ""
 msgid "Amharic"
 msgstr "अम्हारिक"
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "An adversarial hiring-manager review of every bullet — this can take up to a minute."
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "An embedded font could not be read."
 msgstr "एम्बेड केलेला फाँट वाचता आला नाही."
@@ -795,6 +814,7 @@ msgid "Archived"
 msgstr "संग्रहित"
 
 #: src/features/evaluations/components/evaluation-panel.tsx
+#: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Archived job description"
 msgstr ""
 
@@ -898,6 +918,10 @@ msgstr "संलग्नक"
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Attachment uploaded."
 msgstr "संलग्नक अपलोड केले आहे."
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "audit"
+msgstr ""
 
 #: src/features/command-palette/pages/navigation.tsx
 #: src/routes/dashboard/-components/sidebar.tsx
@@ -1034,6 +1058,10 @@ msgstr "मोठ्या प्रमाणात हटवणे अयशस
 msgid "Bulk update failed. Please try again."
 msgstr "मोठ्या प्रमाणात अपडेट अयशस्वी झाले. कृपया पुन्हा प्रयत्न करा."
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Bullet"
+msgstr ""
+
 #: src/components/input/rich-input.tsx
 msgid "Bullet List"
 msgstr "बुलेट यादी"
@@ -1119,6 +1147,10 @@ msgstr "मत बदलले आहे का? तुमच्या रेझ
 #: src/routes/_home/-sections/footer.tsx
 msgid "Changelog"
 msgstr "बदलांचा इतिहास"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Changes"
+msgstr ""
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Changes are shared between your library and the resume builder."
@@ -1276,6 +1308,7 @@ msgid "Close AI assistant"
 msgstr "एआय सहाय्यक बंद करा"
 
 #: src/features/evaluations/components/evaluation-panel.tsx
+#: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Collapse"
 msgstr ""
 
@@ -1331,6 +1364,10 @@ msgstr "हा रेझ्युमे या नोकरीच्या प�
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Compensation"
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "complete"
 msgstr ""
 
 #: src/features/ats-checker/messages.ts
@@ -1604,6 +1641,10 @@ msgstr ""
 msgid "Couldn't delete the timeline entry."
 msgstr "टाइमलाइन नोंद हटवता आली नाही."
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Couldn't discard the tailored resume."
+msgstr ""
+
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Couldn't fetch that URL."
 msgstr ""
@@ -1813,6 +1854,7 @@ msgstr "तयार केले"
 
 #. placeholder {0}: result.name
 #: src/features/applications/components/application-ai-copilot.tsx
+#: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Created \"{0}\" and linked it to this application."
 msgstr "\"{0}\" तयार केले आणि या अर्जाशी लिंक केले."
 
@@ -1875,6 +1917,10 @@ msgstr "सानुकूल शैली"
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Customization plan"
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "cut"
 msgstr ""
 
 #: src/libs/locale.ts
@@ -2102,8 +2148,13 @@ msgid "Disabling two-factor authentication..."
 msgstr "दुहेरी घटक ओथेंटिकेशन अक्षम केले जात आहे..."
 
 #: src/features/cover-letters/editor-dialog.tsx
+#: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Discard"
 msgstr "टाकून द्या"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Discard this tailored resume?"
+msgstr ""
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Discard unsaved changes?"
@@ -2510,6 +2561,7 @@ msgid "Exit Fullscreen"
 msgstr "पूर्ण स्क्रीनमधून बाहेर पडा"
 
 #: src/features/evaluations/components/evaluation-panel.tsx
+#: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Expand"
 msgstr ""
 
@@ -2583,6 +2635,22 @@ msgstr "निर्यात केलेली pipeline-flow.png"
 #: src/features/homepage/ats-playground.tsx
 msgid "Extracted text"
 msgstr "काढलेला मजकूर"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Fact check passed — every claim is backed by the source resume."
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "fact gate"
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Fact gate"
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "failed"
+msgstr ""
 
 #: src/routes/agent/-components/tool-part-card.tsx
 msgid "Failed"
@@ -2947,6 +3015,10 @@ msgstr ""
 msgid "Gaps:"
 msgstr "अंतर:"
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "gated"
+msgstr ""
+
 #: src/dialogs/resume/index.tsx
 msgid "Generate a random name"
 msgstr "एखादे रँडम नाव तयार करा"
@@ -3171,6 +3243,10 @@ msgstr "हिंदी"
 msgid "Hint:"
 msgstr ""
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Hiring-manager audit"
+msgstr ""
+
 #: src/features/command-palette/pages/navigation.tsx
 msgid "Home"
 msgstr "होम"
@@ -3378,6 +3454,10 @@ msgstr ""
 msgid "JD signal:"
 msgstr ""
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "JD similarity:"
+msgstr ""
+
 #: src/features/command-palette/pages/navigation.tsx
 msgid "Job"
 msgstr "नोकरी"
@@ -3433,6 +3513,10 @@ msgstr "समसमान जुळवा"
 #: src/libs/locale.ts
 msgid "Kannada"
 msgstr "कन्नड"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "keep"
+msgstr ""
 
 #: src/features/homepage/export-playground.tsx
 msgid "Keep a backup of your content and settings. Import it into Reactive Resume later."
@@ -3695,6 +3779,10 @@ msgstr ""
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Link a resume and paste the job description (Edit) to score your fit and tailor a copy."
 msgstr "तुमची जुळणी तपासण्यासाठी आणि सानुकूल प्रत तयार करण्यासाठी रेझ्युमे जोडा आणि नोकरीचे वर्णन पेस्ट करा (संपादन करा)."
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Link a resume and paste the job description (Edit) to tailor a copy for this job."
+msgstr ""
 
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Linked Reactive Resume"
@@ -4223,6 +4311,10 @@ msgstr ""
 msgid "No sponsorship needed"
 msgstr ""
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "No tailoring runs yet. Each run appears here as a new version."
+msgstr ""
+
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "No tested provider"
 msgstr "कोणताही तपासलेला प्रदाता नाही"
@@ -4379,6 +4471,10 @@ msgstr "बिल्डरमध्ये उघडा"
 msgid "Open Integrations Settings"
 msgstr "इंटीग्रेशन सेटिंग्ज उघडा"
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Open tailored resume"
+msgstr ""
+
 #: src/features/homepage/template-shelf.tsx
 msgid "Open template PDF"
 msgstr "टेम्पलेट PDF उघडा"
@@ -4474,6 +4570,10 @@ msgstr "परिच्छेद आणि शीर्षक शैली"
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "partial"
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Passed — every claim in the tailored resume is backed by the source resume."
 msgstr ""
 
 #. Authentication provider display name in account settings
@@ -4591,6 +4691,10 @@ msgstr "PDF मजकूर स्तर"
 msgid "PDFs already attached to applications will remain available."
 msgstr "अर्जामध्ये आधीच संलग्न केलेल्या PDF फाइल्स उपलब्ध राहतील."
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "pending"
+msgstr ""
+
 #: src/dialogs/resume/sections/education.tsx
 #: src/dialogs/resume/sections/experience.tsx
 #: src/dialogs/resume/sections/project.tsx
@@ -4601,6 +4705,10 @@ msgstr "कालावधी"
 #: src/libs/locale.ts
 msgid "Persian"
 msgstr "फारसी"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Persona:"
+msgstr ""
 
 #: src/dialogs/resume/sections/reference.tsx
 #: src/features/ats-checker/parse-preview.tsx
@@ -4651,6 +4759,10 @@ msgstr "लेआउट पॅनेलमधील पृष्ठावर त
 #: src/features/resume/export/download-dialog.tsx
 msgid "Plain text, for AI tools and quick edits."
 msgstr "साधा मजकूर, AI साधनांसाठी आणि झटपट बदलांसाठी."
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "planned"
+msgstr ""
 
 #: src/features/homepage/feature-explorer.tsx
 msgid "Play data flow animation"
@@ -4866,6 +4978,10 @@ msgstr ""
 msgid "Raw JSON"
 msgstr "रॉ JSON"
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Re-check facts"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Re-export from a single-column layout, then copy the text out and check it reads top to bottom."
 msgstr "एकल-स्तंभ मांडणीतून पुन्हा निर्यात करा, नंतर मजकूर कॉपी करून तो वरपासून खालपर्यंत वाचला जातो का ते तपासा."
@@ -4889,6 +5005,10 @@ msgstr "फाँट्स एम्बेड करून पुन्हा �
 #: src/features/ats-checker/messages.ts
 msgid "Re-export with fonts embedded, then open the file and check that the text copies out cleanly."
 msgstr "फाँट्स एम्बेड करून पुन्हा निर्यात करा, नंतर फाइल उघडून मजकूर व्यवस्थित कॉपी होतो का ते तपासा."
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Re-run audit"
+msgstr ""
 
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Re-score"
@@ -5026,9 +5146,17 @@ msgstr "रेफरन्सेस"
 msgid "Referred by…, things to emphasize, etc."
 msgstr "द्वारे संदर्भित…, महत्वाच्या गोष्टी इ."
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "regenerated"
+msgstr ""
+
 #: src/features/settings/authentication/components/passkeys.tsx
 msgid "Register New Device"
 msgstr "नवीन उपकरण नोंदवा"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "rejected"
+msgstr ""
 
 #: src/features/homepage/site-footer.tsx
 msgid "Released under the <0>MIT License</0>."
@@ -5274,6 +5402,23 @@ msgstr "रेझ्युमे"
 msgid "Retry"
 msgstr "पुन्हा प्रयत्न करा"
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Reuse decision"
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "reused"
+msgstr ""
+
+#. placeholder {0}: result.name
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Reused \"{0}\" — the posting still matches the existing tailored resume."
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "reused with edits"
+msgstr ""
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Review edits"
 msgstr "संपादनांचे पुनरावलोकन करा"
@@ -5294,6 +5439,18 @@ msgstr "या संपादनाचे पुनरावलोकन कर
 msgid "Reviewing…"
 msgstr "पुनरावलोकन करत आहे…"
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Rewords your real experience toward this posting under strict constraints — nothing is invented, every claim must pass a hard fact gate against your source resume, and each run is kept as a numbered version for this application."
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "rewrite"
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Rewrite"
+msgstr ""
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Rewrite the summary for a senior engineering manager role, and keep it specific."
 msgstr "वरिष्ठ इंजिनिअरिंग मॅनेजर पदासाठी सारांश पुन्हा लिहा, आणि तो नेमका ठेवा."
@@ -5301,6 +5458,10 @@ msgstr "वरिष्ठ इंजिनिअरिंग मॅनेजर 
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Rewrite this resume for a startup founder moving into a product lead role, and show the business impact."
 msgstr "प्रॉडक्ट लीड भूमिकेकडे वळणाऱ्या स्टार्टअप संस्थापकासाठी हा रेझ्युमे पुन्हा लिहा, आणि व्यवसायावरील परिणाम दाखवा."
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Rewrite:"
+msgstr ""
 
 #: src/features/homepage/ats-playground.tsx
 msgid "Rhyhorn sample resume"
@@ -5356,6 +5517,10 @@ msgstr "पुन्हा चालवा"
 msgid "Run AI review"
 msgstr "AI पुनरावलोकन चालवा"
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Run audit"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "Run deep check"
 msgstr "सखोल तपासणी चालवा"
@@ -5366,6 +5531,10 @@ msgstr ""
 
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Running quick match…"
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Running the full pipeline — reuse check, plan, compile, fact gate. This is a single long request and can take a minute or two; keep this tab open."
 msgstr ""
 
 #: src/routes/agent/-components/tool-part-card.tsx
@@ -5492,6 +5661,10 @@ msgstr "खालील QR कोड तुमच्या पसंतीच्
 #: src/dialogs/resume/sections/education.tsx
 msgid "School"
 msgstr "शाळा"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Scope read"
+msgstr ""
 
 #: src/routes/dashboard/-components/sidebar.tsx
 msgid "Search"
@@ -5977,6 +6150,7 @@ msgid "Something went wrong"
 msgstr "काहीतरी चूक झाली."
 
 #: src/features/evaluations/components/evaluation-panel.tsx
+#: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Something went wrong during the run."
 msgstr ""
 
@@ -6288,13 +6462,38 @@ msgstr "टॅग्स सॉफ्टवेअरला स्पष्ट व
 msgid "Tailor my resume"
 msgstr "माझा रेझ्युमे अनुकूलित करा"
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Tailor resume"
+msgstr ""
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Tailor this resume to a product manager job description, and emphasize roadmap ownership, stakeholder communication, and measurable launch outcomes."
 msgstr "हा रेझ्युमे प्रॉडक्ट मॅनेजरच्या नोकरी वर्णनानुसार जुळवा, आणि रोडमॅपची जबाबदारी, भागधारकांशी संवाद व मोजता येण्याजोगे लाँच परिणाम यावर भर द्या."
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Tailored resume discarded — the source resume is linked again."
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Tailored resumes"
+msgstr ""
+
+#: src/features/applications/components/application-detail-sheet.tsx
+msgid "Tailoring"
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Tailoring failed"
+msgstr ""
+
 #: src/features/applications/components/application-ai-copilot.tsx
+#: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Tailoring failed."
 msgstr "अनुकूलन अयशस्वी झाले."
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Tailoring…"
+msgstr ""
 
 #: src/features/homepage/page.tsx
 msgid "Take it<0/>with you."
@@ -6404,6 +6603,10 @@ msgstr "API Key हटवली आहे."
 msgid "The application that sent you here made an invalid authorization request."
 msgstr "ज्या अ‍ॅप्लिकेशनने तुम्हाला येथे पाठवले त्याने अवैध प्राधिकरण विनंती केली."
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "The audit failed."
+msgstr ""
+
 #: src/features/ats-checker/ai-review/ai-review-card.tsx
 msgid "The checks above are mechanical. This asks a language model what a reader would think of your bullets, and suggests rewrites. It produces no score."
 msgstr "वरील तपासण्या यांत्रिक आहेत. हे भाषा मॉडेलला विचारते की वाचकाला तुमच्या बुलेट्सबद्दल काय वाटेल, आणि पुनर्लेखन सुचवते. यातून कोणताही स्कोअर मिळत नाही."
@@ -6411,6 +6614,10 @@ msgstr "वरील तपासण्या यांत्रिक आहे
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "The deep check could not finish. Please try again."
 msgstr "सखोल तपासणी पूर्ण होऊ शकली नाही. कृपया पुन्हा प्रयत्न करा."
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "The fact check failed."
+msgstr ""
 
 #. Error shown when AI parsing returns invalid resume structure during import
 #: src/dialogs/resume/import.tsx
@@ -6473,6 +6680,10 @@ msgstr "तुमचा उरलेला<0/>नोकरीशोधसुद�
 msgid "The resume preview could not be updated. The last valid preview is still shown."
 msgstr "रेझ्युमेचा प्रिव्ह्यू अद्ययावत करता आला नाही. शेवटचा वैध प्रिव्ह्यूच अजूनही दाखवला जात आहे."
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "The reviewer returned fewer rows than bullets — this is a partial audit."
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "The same line repeats on every page."
 msgstr "तीच ओळ प्रत्येक पानावर पुनरावृत्त होते."
@@ -6481,6 +6692,10 @@ msgstr "तीच ओळ प्रत्येक पानावर पुन�
 #: src/features/ats-checker/report/score-header.tsx
 msgid "The score is capped because of a blocking problem: {0}"
 msgstr "अडथळा निर्माण करणाऱ्या समस्येमुळे स्कोअर मर्यादित केला आहे: {0}"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "The tailored copy will be permanently deleted, the application will be linked back to the source resume, and this run will be marked rejected. This can't be undone."
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "The text comes out unreadable."
@@ -6811,6 +7026,10 @@ msgstr "थ्रेड हटवला."
 #: src/routes/agent/$threadId.tsx
 msgid "Threads"
 msgstr "थ्रेड्स"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "tier"
+msgstr ""
 
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Tighten the skills section so it supports the target role instead of reading like a keyword dump."
@@ -7309,6 +7528,10 @@ msgstr "चेतावण्यांसह वैध"
 msgid "Vary the openings so the section does not read as boilerplate."
 msgstr "विभाग साचेबद्ध वाटू नये म्हणून सुरुवाती वेगवेगळ्या ठेवा."
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Verdict"
+msgstr ""
+
 #: src/features/settings/pages/profile.tsx
 msgid "Verified"
 msgstr "पडताळलेले"
@@ -7512,6 +7735,10 @@ msgstr "तुमचे नाव, ईमेल, फोन आणि तार�
 msgid "Whether your timeline can be reconstructed."
 msgstr "तुमची टाइमलाइन पुन्हा तयार करता येते का."
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Why"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Words run together when the text is extracted."
 msgstr "मजकूर काढल्यावर शब्द एकत्र चिकटतात."
@@ -7543,6 +7770,14 @@ msgstr "कार्यरत…"
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Worth a shot"
 msgstr "एक शॉट वाचतो"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Would advance: no"
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Would advance: yes"
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Write \"Present\" as the end date of your current role."

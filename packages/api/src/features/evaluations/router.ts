@@ -3,12 +3,15 @@ import { fingerprintText } from "@reactive-resume/career/fingerprint";
 import { computeSkillGap } from "@reactive-resume/career/skill-gap";
 import { env } from "@reactive-resume/env/server";
 import { protectedProcedure } from "../../context";
-import { evaluationDto } from "../../dto/evaluation";
+import { evaluationDto, tailoringDto } from "../../dto/evaluation";
 import { aiRequestRateLimit } from "../../middleware/rate-limit";
 import { applicationService } from "../applications/service";
 import { enqueueJob } from "../jobs/queue";
 import { JOB_NAMES } from "../jobs/registry";
 import { resumeService } from "../resume/service";
+import { runHmAudit } from "../tailoring/audit";
+import { discardTailoringRun } from "../tailoring/pipeline";
+import { tailoringService } from "../tailoring/service";
 import { runEvaluation } from "./pipeline";
 import { evaluationsService } from "./service";
 
@@ -148,4 +151,90 @@ export const evaluationsRouter = {
 		.output(evaluationDto.updateCareerProfile.output)
 		.errors(evaluationErrors)
 		.handler(({ context, input }) => evaluationsService.upsertCareerProfile({ userId: context.user.id, ...input })),
+
+	// The versioned per-application tailoring bundle: reads, discard, the opt-in
+	// hiring-manager audit, and the standalone fact check. Tailoring itself starts through
+	// the existing `applications.ai.tailorResume` procedure.
+	tailoringRuns: {
+		list: protectedProcedure
+			.route({
+				method: "GET",
+				path: "/applications/{applicationId}/tailoring-runs",
+				operationId: "listTailoringRuns",
+				...reserved,
+			})
+			.input(tailoringDto.list.input)
+			.output(tailoringDto.list.output)
+			.errors(evaluationErrors)
+			.handler(({ context, input }) =>
+				tailoringService.listByApplication({ applicationId: input.applicationId, userId: context.user.id }),
+			),
+
+		get: protectedProcedure
+			.route({ method: "GET", path: "/tailoring-runs/{id}", operationId: "getTailoringRun", ...reserved })
+			.input(tailoringDto.get.input)
+			.output(tailoringDto.get.output)
+			.errors(evaluationErrors)
+			.handler(({ context, input }) => tailoringService.getById({ id: input.id, userId: context.user.id })),
+
+		discard: protectedProcedure
+			.route({
+				method: "POST",
+				path: "/tailoring-runs/{id}/discard",
+				operationId: "discardTailoringRun",
+				...reserved,
+			})
+			.input(tailoringDto.discard.input)
+			.output(tailoringDto.discard.output)
+			.errors(evaluationErrors)
+			.handler(async ({ context, input }) => {
+				await discardTailoringRun({ id: input.id, userId: context.user.id });
+			}),
+
+		audit: protectedProcedure
+			.route({
+				method: "POST",
+				path: "/tailoring-runs/{tailoringRunId}/audit",
+				operationId: "auditTailoringRun",
+				...reserved,
+			})
+			.input(tailoringDto.audit.input)
+			.use(aiRequestRateLimit)
+			.output(tailoringDto.audit.output)
+			.errors(evaluationErrors)
+			.handler(({ context, input }) =>
+				runHmAudit({ tailoringRunId: input.tailoringRunId, userId: context.user.id, locale: context.locale }),
+			),
+	},
+
+	// Deterministic fact check of a tailored resume against its recorded source — the
+	// builder badge's backend. A resume with no tailoring run has no source to check against.
+	factCheck: protectedProcedure
+		.route({ method: "POST", path: "/resumes/{resumeId}/fact-check", operationId: "factCheckResume", ...reserved })
+		.input(tailoringDto.factCheck.input)
+		.output(tailoringDto.factCheck.output)
+		.errors(evaluationErrors)
+		.handler(async ({ context, input }) => {
+			const run = await tailoringService.findByTailoredResume({
+				resumeId: input.resumeId,
+				userId: context.user.id,
+			});
+			if (!run?.sourceResumeId) {
+				throw new ORPCError("BAD_REQUEST", {
+					message: "This resume has no recorded tailoring source to check against.",
+				});
+			}
+			const [{ resumeDataToFactTexts, verifyFacts }, source, tailored, profile] = await Promise.all([
+				import("@reactive-resume/career/fact-gate"),
+				resumeService.getById({ id: run.sourceResumeId, userId: context.user.id }),
+				resumeService.getById({ id: input.resumeId, userId: context.user.id }),
+				evaluationsService.getCareerProfile({ userId: context.user.id }),
+			]);
+			const report = verifyFacts({
+				candidate: resumeDataToFactTexts(tailored.data),
+				sources: [{ label: "source resume", text: resumeDataToFactTexts(source.data) }],
+				...(profile?.facts ? { allow: profile.facts } : {}),
+			});
+			return { ...report, sourceResumeId: run.sourceResumeId, tailoringRunId: run.id };
+		}),
 };

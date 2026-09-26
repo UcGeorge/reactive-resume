@@ -619,6 +619,34 @@ export const TOOL_META = {
 		inputSchema: z.object({ applicationId: applicationIdSchema }),
 		annotations: READ_IDEMPOTENT,
 	},
+	[T.listTailoringRuns]: {
+		title: "List Tailoring Runs",
+		description:
+			"List an application's tailoring runs newest-first: version, status, reuse decision, human changelog, fact-gate report, and the tailored resume link. Each run archives the exact job description it tailored against.",
+		inputSchema: z.object({ applicationId: applicationIdSchema }),
+		annotations: READ_IDEMPOTENT,
+	},
+	[T.getTailoringRun]: {
+		title: "Get Tailoring Run",
+		description:
+			"Read one tailoring run in full: the constrained plan, the compiled JSON Patch actually applied, the changelog, the fact-gate report, the optional hiring-manager audit, and the archived job description.",
+		inputSchema: z.object({ id: z.string().describe("The tailoring run ID.") }),
+		annotations: READ_IDEMPOTENT,
+	},
+	[T.auditTailoredResume]: {
+		title: "Audit Tailored Resume",
+		description:
+			"Send the tailored resume's bullets and the archived job description to your configured AI provider for an adversarial hiring-manager audit (a synthesized tier-C reviewer): per-bullet keep/cut/rewrite verdicts, a scope/seniority read, and a blunt would-advance-to-screen call. The audit may recommend cutting, never inventing. Stores the report on the run.",
+		inputSchema: z.object({ tailoringRunId: z.string().describe("The tailoring run ID (must be complete).") }),
+		annotations: { ...WRITE_NON_IDEMPOTENT, openWorldHint: true },
+	},
+	[T.factCheckResume]: {
+		title: "Fact Check Resume",
+		description:
+			"Deterministically verify a tailored resume's claims (metrics, employers, titles, delegated authorship) against its recorded source resume plus the user's facts allowlist. No AI provider involved. Fails for resumes with no recorded tailoring source.",
+		inputSchema: z.object({ resumeId: z.string().describe("The tailored resume's ID.") }),
+		annotations: READ_NON_IDEMPOTENT,
+	},
 	[T.tailorResumeForApplication]: {
 		title: "Tailor Resume For Application",
 		description:

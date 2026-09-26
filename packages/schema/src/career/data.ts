@@ -162,6 +162,102 @@ export const evaluationStatusSchema = z.enum(["pending", "running", "complete", 
 
 export type EvaluationStatus = z.infer<typeof evaluationStatusSchema>;
 
+// --- Tailoring ---------------------------------------------------------------------
+
+export const tailoringStatusSchema = z.enum(["pending", "planned", "gated", "complete", "failed", "rejected"]);
+
+export type TailoringStatus = z.infer<typeof tailoringStatusSchema>;
+
+/** The JD-vs-JD reuse decision taken before any tokens are spent. */
+export const reuseDecisionSchema = z.object({
+	decision: z.enum(["reuse", "reuse-with-edits", "regenerate"]),
+	score: z.number(),
+	reason: z.string(),
+});
+
+export type ReuseDecision = z.infer<typeof reuseDecisionSchema>;
+
+/** One constrained mutation the tailoring plan may propose. The compiler enforces the path
+ * allowlist and the skills-source rule; anything outside it is dropped and recorded. */
+export const tailoringOperationSchema = z.discriminatedUnion("kind", [
+	z.object({
+		kind: z.literal("set"),
+		path: z.string(),
+		value: z.string(),
+		rationale: z.string(),
+	}),
+	z.object({
+		kind: z.literal("move"),
+		arrayPath: z.string(),
+		from: z.number().int().min(0),
+		to: z.number().int().min(0),
+		rationale: z.string(),
+	}),
+	z.object({
+		kind: z.literal("hide"),
+		path: z.string(),
+		rationale: z.string(),
+	}),
+	z.object({
+		kind: z.literal("add-skill"),
+		name: z.string(),
+		keywords: z.array(z.string()).default([]),
+		rationale: z.string(),
+	}),
+]);
+
+export type TailoringOperation = z.infer<typeof tailoringOperationSchema>;
+
+/** Human-readable changelog entry — the bundle's "changes.md" as data. */
+export const tailoringChangeSchema = z.object({
+	section: z.string(),
+	change: z.string(),
+	why: z.string(),
+});
+
+export type TailoringChange = z.infer<typeof tailoringChangeSchema>;
+
+export const factViolationSchema = z.object({
+	kind: z.string(),
+	claim: z.string(),
+	detail: z.string(),
+});
+
+export const factGateReportSchema = z.object({
+	passed: z.boolean(),
+	violations: z.array(factViolationSchema),
+	warnings: z.array(factViolationSchema),
+});
+
+export type FactGateReportData = z.infer<typeof factGateReportSchema>;
+
+/** The adversarial hiring-manager audit verdict, one row per audited bullet. */
+export const auditVerdictSchema = z.enum(["keep", "cut", "rewrite"]);
+
+export const auditRowSchema = z.object({
+	index: z.number().int(),
+	bullet: z.string(),
+	verdict: auditVerdictSchema,
+	why: z.string(),
+	rewrite: z.string().nullable(),
+});
+
+export const auditReportSchema = z.object({
+	/** How the reviewer persona was grounded. This pipeline synthesizes from the JD alone
+	 * (tier C); a research-backed tier A/B needs provider web search. */
+	tier: z.enum(["A", "B", "C"]),
+	persona: z.string(),
+	rows: z.array(auditRowSchema),
+	scopeRead: z.string(),
+	wouldAdvance: z.boolean(),
+	reason: z.string(),
+	/** True when the reviewer returned fewer rows than bullets — a partial audit, said out loud. */
+	incomplete: z.boolean(),
+	createdAt: z.string(),
+});
+
+export type AuditReport = z.infer<typeof auditReportSchema>;
+
 // --- Career profile ----------------------------------------------------------------
 
 export const careerWorkAuthProfileSchema = z.object({

@@ -37,6 +37,11 @@ msgstr "(새 탭에서 열림)"
 msgid "{0, plural, one {# application to export} other {# applications to export}}"
 msgstr "{0, plural, one {# 수출 신청} other {# 내보낼 애플리케이션}}"
 
+#. placeholder {0}: report.violations.length
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "{0, plural, one {# fact violation} other {# fact violations}}"
+msgstr ""
+
 #. placeholder {0}: section.items.length
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 msgid "{0, plural, one {# item} other {# items}}"
@@ -46,6 +51,16 @@ msgstr "{0, plural, one {# 아이템} other {# 아이템}}"
 #: src/routes/builder/$resumeId/-sidebar/left/sections/experience.tsx
 msgid "{0, plural, one {# role} other {# roles}}"
 msgstr "{0, plural, one {# 역할} other {# 역할}}"
+
+#. placeholder {0}: report.warnings.length
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "{0, plural, one {# warning} other {# warnings}}"
+msgstr ""
+
+#. placeholder {0}: report.violations.length
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "{0, plural, one {Fact check found # violation.} other {Fact check found # violations.}}"
+msgstr ""
 
 #. placeholder {0}: insights.total
 #: src/features/applications/components/insights-view.tsx
@@ -642,6 +657,10 @@ msgstr ""
 msgid "Amharic"
 msgstr "암하라어"
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "An adversarial hiring-manager review of every bullet — this can take up to a minute."
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "An embedded font could not be read."
 msgstr "임베드된 폰트를 읽을 수 없습니다."
@@ -795,6 +814,7 @@ msgid "Archived"
 msgstr "보관됨"
 
 #: src/features/evaluations/components/evaluation-panel.tsx
+#: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Archived job description"
 msgstr ""
 
@@ -898,6 +918,10 @@ msgstr "부착"
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Attachment uploaded."
 msgstr "첨부파일이 업로드되었습니다."
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "audit"
+msgstr ""
 
 #: src/features/command-palette/pages/navigation.tsx
 #: src/routes/dashboard/-components/sidebar.tsx
@@ -1034,6 +1058,10 @@ msgstr "일괄 삭제에 실패했습니다. 다시 시도하세요."
 msgid "Bulk update failed. Please try again."
 msgstr "일괄 업데이트에 실패했습니다. 다시 시도하세요."
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Bullet"
+msgstr ""
+
 #: src/components/input/rich-input.tsx
 msgid "Bullet List"
 msgstr "글머리 기호 목록"
@@ -1119,6 +1147,10 @@ msgstr "생각이 바뀌셨나요? 이력서 이름을 더 잘 설명하는 이�
 #: src/routes/_home/-sections/footer.tsx
 msgid "Changelog"
 msgstr "변경 로그"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Changes"
+msgstr ""
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Changes are shared between your library and the resume builder."
@@ -1276,6 +1308,7 @@ msgid "Close AI assistant"
 msgstr "AI 비서 닫기"
 
 #: src/features/evaluations/components/evaluation-panel.tsx
+#: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Collapse"
 msgstr ""
 
@@ -1331,6 +1364,10 @@ msgstr "이 이력서를 이 채용 공고 URL과 비교하고, 과장하지 않
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Compensation"
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "complete"
 msgstr ""
 
 #: src/features/ats-checker/messages.ts
@@ -1604,6 +1641,10 @@ msgstr ""
 msgid "Couldn't delete the timeline entry."
 msgstr "타임라인 항목을 삭제할 수 없습니다."
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Couldn't discard the tailored resume."
+msgstr ""
+
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Couldn't fetch that URL."
 msgstr ""
@@ -1813,6 +1854,7 @@ msgstr "생성일"
 
 #. placeholder {0}: result.name
 #: src/features/applications/components/application-ai-copilot.tsx
+#: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Created \"{0}\" and linked it to this application."
 msgstr "\"{0}\"을(를) 만들고 이 지원에 연결했습니다."
 
@@ -1875,6 +1917,10 @@ msgstr "사용자 지정 스타일"
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Customization plan"
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "cut"
 msgstr ""
 
 #: src/libs/locale.ts
@@ -2102,8 +2148,13 @@ msgid "Disabling two-factor authentication..."
 msgstr "2단계 인증을 비활성화하는 중입니다..."
 
 #: src/features/cover-letters/editor-dialog.tsx
+#: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Discard"
 msgstr "버리기"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Discard this tailored resume?"
+msgstr ""
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Discard unsaved changes?"
@@ -2510,6 +2561,7 @@ msgid "Exit Fullscreen"
 msgstr "전체 화면 종료"
 
 #: src/features/evaluations/components/evaluation-panel.tsx
+#: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Expand"
 msgstr ""
 
@@ -2583,6 +2635,22 @@ msgstr "pipeline-flow.png를 내보냈습니다"
 #: src/features/homepage/ats-playground.tsx
 msgid "Extracted text"
 msgstr "추출된 텍스트"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Fact check passed — every claim is backed by the source resume."
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "fact gate"
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Fact gate"
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "failed"
+msgstr ""
 
 #: src/routes/agent/-components/tool-part-card.tsx
 msgid "Failed"
@@ -2947,6 +3015,10 @@ msgstr ""
 msgid "Gaps:"
 msgstr "부족한 점:"
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "gated"
+msgstr ""
+
 #: src/dialogs/resume/index.tsx
 msgid "Generate a random name"
 msgstr "무작위 이름 생성"
@@ -3171,6 +3243,10 @@ msgstr "힌디어"
 msgid "Hint:"
 msgstr ""
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Hiring-manager audit"
+msgstr ""
+
 #: src/features/command-palette/pages/navigation.tsx
 msgid "Home"
 msgstr "홈"
@@ -3378,6 +3454,10 @@ msgstr ""
 msgid "JD signal:"
 msgstr ""
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "JD similarity:"
+msgstr ""
+
 #: src/features/command-palette/pages/navigation.tsx
 msgid "Job"
 msgstr "직업"
@@ -3433,6 +3513,10 @@ msgstr "양쪽 정렬"
 #: src/libs/locale.ts
 msgid "Kannada"
 msgstr "칸나다어"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "keep"
+msgstr ""
 
 #: src/features/homepage/export-playground.tsx
 msgid "Keep a backup of your content and settings. Import it into Reactive Resume later."
@@ -3695,6 +3779,10 @@ msgstr ""
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Link a resume and paste the job description (Edit) to score your fit and tailor a copy."
 msgstr "이력서를 연결하고 직무 설명을 붙여넣으면(편집) 적합도를 평가하고 맞춤 사본을 만들 수 있습니다."
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Link a resume and paste the job description (Edit) to tailor a copy for this job."
+msgstr ""
 
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Linked Reactive Resume"
@@ -4223,6 +4311,10 @@ msgstr ""
 msgid "No sponsorship needed"
 msgstr ""
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "No tailoring runs yet. Each run appears here as a new version."
+msgstr ""
+
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "No tested provider"
 msgstr "검증되지 않은 제공업체"
@@ -4379,6 +4471,10 @@ msgstr "빌더에서 열기"
 msgid "Open Integrations Settings"
 msgstr "통합 설정 열기"
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Open tailored resume"
+msgstr ""
+
 #: src/features/homepage/template-shelf.tsx
 msgid "Open template PDF"
 msgstr "템플릿 PDF 열기"
@@ -4474,6 +4570,10 @@ msgstr "단락 및 제목 스타일"
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "partial"
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Passed — every claim in the tailored resume is backed by the source resume."
 msgstr ""
 
 #. Authentication provider display name in account settings
@@ -4591,6 +4691,10 @@ msgstr "PDF 텍스트 레이어"
 msgid "PDFs already attached to applications will remain available."
 msgstr "이미 지원 내역에 첨부된 PDF는 계속 사용할 수 있습니다."
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "pending"
+msgstr ""
+
 #: src/dialogs/resume/sections/education.tsx
 #: src/dialogs/resume/sections/experience.tsx
 #: src/dialogs/resume/sections/project.tsx
@@ -4601,6 +4705,10 @@ msgstr "기간"
 #: src/libs/locale.ts
 msgid "Persian"
 msgstr "페르시아어"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Persona:"
+msgstr ""
 
 #: src/dialogs/resume/sections/reference.tsx
 #: src/features/ats-checker/parse-preview.tsx
@@ -4651,6 +4759,10 @@ msgstr "레이아웃 패널에서 페이지에 배치하거나, ​​파킹하�
 #: src/features/resume/export/download-dialog.tsx
 msgid "Plain text, for AI tools and quick edits."
 msgstr "AI 도구와 빠른 편집에 적합한 일반 텍스트입니다."
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "planned"
+msgstr ""
 
 #: src/features/homepage/feature-explorer.tsx
 msgid "Play data flow animation"
@@ -4866,6 +4978,10 @@ msgstr ""
 msgid "Raw JSON"
 msgstr "원시 JSON"
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Re-check facts"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Re-export from a single-column layout, then copy the text out and check it reads top to bottom."
 msgstr "단일 열 레이아웃으로 다시 내보낸 뒤, 텍스트를 복사해 위에서 아래로 순서대로 읽히는지 확인하세요."
@@ -4889,6 +5005,10 @@ msgstr "폰트를 임베드하여 다시 내보낸 뒤, 텍스트가 깔끔하�
 #: src/features/ats-checker/messages.ts
 msgid "Re-export with fonts embedded, then open the file and check that the text copies out cleanly."
 msgstr "폰트를 임베드하여 다시 내보낸 뒤 파일을 열어 텍스트가 깔끔하게 복사되는지 확인하세요."
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Re-run audit"
+msgstr ""
 
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Re-score"
@@ -5026,9 +5146,17 @@ msgstr "추천인"
 msgid "Referred by…, things to emphasize, etc."
 msgstr "추천인…, 강조할 내용 등"
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "regenerated"
+msgstr ""
+
 #: src/features/settings/authentication/components/passkeys.tsx
 msgid "Register New Device"
 msgstr "새 장치 등록"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "rejected"
+msgstr ""
 
 #: src/features/homepage/site-footer.tsx
 msgid "Released under the <0>MIT License</0>."
@@ -5274,6 +5402,23 @@ msgstr "이력서"
 msgid "Retry"
 msgstr "다시 해 보다"
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Reuse decision"
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "reused"
+msgstr ""
+
+#. placeholder {0}: result.name
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Reused \"{0}\" — the posting still matches the existing tailored resume."
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "reused with edits"
+msgstr ""
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Review edits"
 msgstr "편집 검토"
@@ -5294,6 +5439,18 @@ msgstr "이 편집 검토"
 msgid "Reviewing…"
 msgstr "검토 중…"
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Rewords your real experience toward this posting under strict constraints — nothing is invented, every claim must pass a hard fact gate against your source resume, and each run is kept as a numbered version for this application."
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "rewrite"
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Rewrite"
+msgstr ""
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Rewrite the summary for a senior engineering manager role, and keep it specific."
 msgstr "시니어 엔지니어링 매니저 직무에 맞게 요약을 다시 쓰되, 구체적으로 써 주세요."
@@ -5301,6 +5458,10 @@ msgstr "시니어 엔지니어링 매니저 직무에 맞게 요약을 다시 �
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Rewrite this resume for a startup founder moving into a product lead role, and show the business impact."
 msgstr "스타트업 창업자가 프로덕트 리드로 옮기는 상황에 맞게 이 이력서를 다시 쓰고, 비즈니스 성과가 드러나게 해 주세요."
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Rewrite:"
+msgstr ""
 
 #: src/features/homepage/ats-playground.tsx
 msgid "Rhyhorn sample resume"
@@ -5356,6 +5517,10 @@ msgstr "다시 실행"
 msgid "Run AI review"
 msgstr "AI 검토 실행"
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Run audit"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "Run deep check"
 msgstr "심층 점검 실행"
@@ -5366,6 +5531,10 @@ msgstr ""
 
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Running quick match…"
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Running the full pipeline — reuse check, plan, compile, fact gate. This is a single long request and can take a minute or two; keep this tab open."
 msgstr ""
 
 #: src/routes/agent/-components/tool-part-card.tsx
@@ -5492,6 +5661,10 @@ msgstr "아래 QR 코드를 선호하는 인증 앱으로 스캔하세요. 아�
 #: src/dialogs/resume/sections/education.tsx
 msgid "School"
 msgstr "학교"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Scope read"
+msgstr ""
 
 #: src/routes/dashboard/-components/sidebar.tsx
 msgid "Search"
@@ -5977,6 +6150,7 @@ msgid "Something went wrong"
 msgstr "뭔가 잘못됐어요"
 
 #: src/features/evaluations/components/evaluation-panel.tsx
+#: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Something went wrong during the run."
 msgstr ""
 
@@ -6288,13 +6462,38 @@ msgstr "태그는 소프트웨어에 명확한 읽기 순서를 제공합니다.
 msgid "Tailor my resume"
 msgstr "내 이력서 맞춤 조정"
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Tailor resume"
+msgstr ""
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Tailor this resume to a product manager job description, and emphasize roadmap ownership, stakeholder communication, and measurable launch outcomes."
 msgstr "이 이력서를 프로덕트 매니저 채용 공고에 맞게 다듬고, 로드맵 주도, 이해관계자 커뮤니케이션, 측정 가능한 출시 성과를 강조해 주세요."
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Tailored resume discarded — the source resume is linked again."
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Tailored resumes"
+msgstr ""
+
+#: src/features/applications/components/application-detail-sheet.tsx
+msgid "Tailoring"
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Tailoring failed"
+msgstr ""
+
 #: src/features/applications/components/application-ai-copilot.tsx
+#: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Tailoring failed."
 msgstr "맞춤 조정에 실패했습니다."
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Tailoring…"
+msgstr ""
 
 #: src/features/homepage/page.tsx
 msgid "Take it<0/>with you."
@@ -6404,6 +6603,10 @@ msgstr "API 키를 삭제했습니다."
 msgid "The application that sent you here made an invalid authorization request."
 msgstr "회원님을 여기로 보낸 애플리케이션이 잘못된 인증 요청을 보냈습니다."
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "The audit failed."
+msgstr ""
+
 #: src/features/ats-checker/ai-review/ai-review-card.tsx
 msgid "The checks above are mechanical. This asks a language model what a reader would think of your bullets, and suggests rewrites. It produces no score."
 msgstr "위의 점검은 기계적인 검사입니다. 이 기능은 언어 모델에게 독자가 항목들을 어떻게 볼지 물어보고 수정안을 제안합니다. 점수를 산출하지는 않습니다."
@@ -6411,6 +6614,10 @@ msgstr "위의 점검은 기계적인 검사입니다. 이 기능은 언어 모�
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "The deep check could not finish. Please try again."
 msgstr "심층 점검을 완료하지 못했습니다. 다시 시도해 주세요."
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "The fact check failed."
+msgstr ""
 
 #. Error shown when AI parsing returns invalid resume structure during import
 #: src/dialogs/resume/import.tsx
@@ -6473,6 +6680,10 @@ msgstr "구직 과정의 나머지도<0/>여기에서."
 msgid "The resume preview could not be updated. The last valid preview is still shown."
 msgstr "이력서 미리보기를 업데이트할 수 없습니다. 마지막으로 유효했던 미리보기가 여전히 표시됩니다."
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "The reviewer returned fewer rows than bullets — this is a partial audit."
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "The same line repeats on every page."
 msgstr "같은 줄이 모든 페이지에 반복됩니다."
@@ -6481,6 +6692,10 @@ msgstr "같은 줄이 모든 페이지에 반복됩니다."
 #: src/features/ats-checker/report/score-header.tsx
 msgid "The score is capped because of a blocking problem: {0}"
 msgstr "차단 문제로 인해 점수가 제한됩니다: {0}"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "The tailored copy will be permanently deleted, the application will be linked back to the source resume, and this run will be marked rejected. This can't be undone."
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "The text comes out unreadable."
@@ -6811,6 +7026,10 @@ msgstr "스레드가 삭제되었습니다."
 #: src/routes/agent/$threadId.tsx
 msgid "Threads"
 msgstr "스레드"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "tier"
+msgstr ""
 
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Tighten the skills section so it supports the target role instead of reading like a keyword dump."
@@ -7309,6 +7528,10 @@ msgstr "유효함(경고 있음)"
 msgid "Vary the openings so the section does not read as boilerplate."
 msgstr "시작 문구를 다양하게 하여 섹션이 정형화되어 보이지 않게 하세요."
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Verdict"
+msgstr ""
+
 #: src/features/settings/pages/profile.tsx
 msgid "Verified"
 msgstr "인증됨"
@@ -7512,6 +7735,10 @@ msgstr "이름, 이메일, 전화번호, 날짜가 손상 없이 유지되는지
 msgid "Whether your timeline can be reconstructed."
 msgstr "타임라인을 재구성할 수 있는지 여부."
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Why"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Words run together when the text is extracted."
 msgstr "텍스트를 추출하면 단어들이 서로 붙어버립니다."
@@ -7543,6 +7770,14 @@ msgstr "작업 중…"
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Worth a shot"
 msgstr "시도해 볼 만함"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Would advance: no"
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Would advance: yes"
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Write \"Present\" as the end date of your current role."

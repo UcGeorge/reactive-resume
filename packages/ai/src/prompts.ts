@@ -53,6 +53,10 @@ const evaluationPass2SystemPrompt = readPrompt("evaluation-pass2-system.md");
 const evaluationStrategySystemPrompt = readPrompt("evaluation-strategy-system.md");
 const evaluationLegitimacySystemPrompt = readPrompt("evaluation-legitimacy-system.md");
 
+// Tailoring (career): the constrained mutation plan and the adversarial reviewer audit.
+const tailoringPlanSystemPrompt = readPrompt("tailoring-plan-system.md");
+const hmAuditSystemPrompt = readPrompt("hm-audit-system.md");
+
 export {
 	atsReviewSystemPrompt,
 	atsReviewUserPromptTemplate,
@@ -63,6 +67,8 @@ export {
 	evaluationPass1SystemPrompt,
 	evaluationPass2SystemPrompt,
 	evaluationStrategySystemPrompt,
+	hmAuditSystemPrompt,
 	pdfParserSystemPrompt,
 	pdfParserUserPrompt,
+	tailoringPlanSystemPrompt,
 };

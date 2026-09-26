@@ -575,6 +575,28 @@ export function registerTools(server: McpServer, client: RouterClient<typeof rou
 				return json({ skillGap: latest.skillGap, evaluationId: latest.id, createdAt: latest.createdAt });
 			},
 		],
+		[
+			T.listTailoringRuns,
+			"listing tailoring runs",
+			async ({ applicationId }: { applicationId: string }) =>
+				json(await client.evaluations.tailoringRuns.list({ applicationId })),
+		],
+		[
+			T.getTailoringRun,
+			"reading tailoring run",
+			async ({ id }: { id: string }) => json(await client.evaluations.tailoringRuns.get({ id })),
+		],
+		[
+			T.auditTailoredResume,
+			"auditing tailored resume",
+			async ({ tailoringRunId }: { tailoringRunId: string }) =>
+				json(await client.evaluations.tailoringRuns.audit({ tailoringRunId })),
+		],
+		[
+			T.factCheckResume,
+			"fact checking resume",
+			async ({ resumeId }: { resumeId: string }) => json(await client.evaluations.factCheck({ resumeId })),
+		],
 	];
 
 	for (const [name, label, handler] of coverLetterAndApplicationTools) {

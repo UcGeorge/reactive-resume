@@ -31,6 +31,7 @@ import { Textarea } from "@reactive-resume/ui/components/textarea";
 import { toast } from "@reactive-resume/ui/components/toast";
 import { cn } from "@reactive-resume/utils/style";
 import { EvaluationPanel } from "@/features/evaluations/components/evaluation-panel";
+import { TailoringPanel } from "@/features/tailoring/components/tailoring-panel";
 import { useConfirm } from "@/hooks/use-confirm";
 import { orpc } from "@/libs/orpc/client";
 import { applicationsListQueryKey } from "../queries";
@@ -71,8 +72,9 @@ export function ApplicationDetailSheet({ application, onOpenChange, onEdit }: Pr
 	const id = application?.id;
 
 	// The sheet is split into an Overview tab (everything that existed before) and the deep
-	// Evaluation tab. Reset to Overview whenever the sheet targets a different application.
-	const [tab, setTab] = useState<"overview" | "evaluation">("overview");
+	// Evaluation and Tailoring tabs. Reset to Overview whenever the sheet targets a different
+	// application.
+	const [tab, setTab] = useState<"overview" | "evaluation" | "tailoring">("overview");
 	const [tabForId, setTabForId] = useState(id ?? null);
 	if ((id ?? null) !== tabForId) {
 		setTabForId(id ?? null);
@@ -185,7 +187,7 @@ export function ApplicationDetailSheet({ application, onOpenChange, onEdit }: Pr
 				<Tabs
 					value={tab}
 					className="flex min-h-0 flex-1 flex-col"
-					onValueChange={(value) => setTab(value as "overview" | "evaluation")}
+					onValueChange={(value) => setTab(value as "overview" | "evaluation" | "tailoring")}
 				>
 					<TabsList className="mx-4 mt-2 flex w-auto">
 						<TabsTrigger value="overview">
@@ -193,6 +195,9 @@ export function ApplicationDetailSheet({ application, onOpenChange, onEdit }: Pr
 						</TabsTrigger>
 						<TabsTrigger value="evaluation">
 							<Trans>Evaluation</Trans>
+						</TabsTrigger>
+						<TabsTrigger value="tailoring">
+							<Trans>Tailoring</Trans>
 						</TabsTrigger>
 					</TabsList>
 
@@ -329,6 +334,17 @@ export function ApplicationDetailSheet({ application, onOpenChange, onEdit }: Pr
 					<TabsContent value="evaluation" className="flex min-h-0 flex-1 flex-col overflow-hidden">
 						<div className="min-h-0 flex-1 overflow-y-auto px-4 py-4">
 							<EvaluationPanel application={current} />
+						</div>
+					</TabsContent>
+
+					<TabsContent value="tailoring" className="flex min-h-0 flex-1 flex-col overflow-hidden">
+						<div className="min-h-0 flex-1 overflow-y-auto px-4 py-4">
+							<TailoringPanel
+								id={current.id}
+								resumeId={current.resumeId}
+								jobDescription={current.jobDescription}
+								onResumeChanged={invalidate}
+							/>
 						</div>
 					</TabsContent>
 				</Tabs>

@@ -1,12 +1,18 @@
 import type {
+	AuditReport,
 	CareerFactsProfile,
 	CareerWorkAuthProfile,
 	EvaluationBlocks,
 	EvaluationRequirement,
 	EvaluationStatus,
 	EvaluationWorkAuth,
+	FactGateReportData,
 	LegitimacyTier,
+	ReuseDecision,
 	SkillGapResult,
+	TailoringChange,
+	TailoringOperation,
+	TailoringStatus,
 } from "@reactive-resume/schema/career/data";
 import * as pg from "drizzle-orm/pg-core";
 import { generateId } from "@reactive-resume/utils/string";
@@ -86,6 +92,53 @@ export const evaluation = pg.pgTable(
 		jdFingerprint: pg.text("jd_fingerprint"),
 		provider: pg.text("provider"),
 		model: pg.text("model"),
+		createdAt: pg.timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+		updatedAt: pg
+			.timestamp("updated_at", { withTimezone: true })
+			.notNull()
+			.defaultNow()
+			.$onUpdate(() => /* @__PURE__ */ new Date()),
+	},
+	(t) => [pg.index().on(t.userId), pg.index().on(t.userId, t.applicationId, t.createdAt.desc())],
+);
+
+// One tailoring run per attempt: the career-ops per-application bundle mapped onto this
+// app's primitives. The tailored CV is a real resume row plus a resume_version snapshot;
+// this row carries everything around it — the reuse decision, the constrained plan, the
+// compiled JSON Patch, the human changelog, the fact-gate report, and the optional
+// hiring-manager audit — so a run stays auditable after the resume itself moves on.
+export const tailoringRun = pg.pgTable(
+	"tailoring_run",
+	{
+		id: pg
+			.text("id")
+			.notNull()
+			.primaryKey()
+			.$defaultFn(() => generateId()),
+		userId: pg
+			.text("user_id")
+			.notNull()
+			.references(() => user.id, { onDelete: "cascade" }),
+		applicationId: pg
+			.text("application_id")
+			.notNull()
+			.references(() => application.id, { onDelete: "cascade" }),
+		evaluationId: pg.text("evaluation_id").references(() => evaluation.id, { onDelete: "set null" }),
+		sourceResumeId: pg.text("source_resume_id").references(() => resume.id, { onDelete: "set null" }),
+		tailoredResumeId: pg.text("tailored_resume_id").references(() => resume.id, { onDelete: "set null" }),
+		// 1..N per application — career-ops' v001..vNNN.
+		version: pg.integer("version").notNull().default(1),
+		status: pg.text("status").$type<TailoringStatus>().notNull().default("pending"),
+		error: pg.text("error"),
+		reuseDecision: pg.jsonb("reuse_decision").$type<ReuseDecision>(),
+		plan: pg.jsonb("plan").$type<TailoringOperation[]>(),
+		// The JSON Patch actually applied, after the compiler's allowlist and the fact gate's
+		// strip-and-retry — may be smaller than the plan.
+		operations: pg.jsonb("operations").$type<unknown[]>(),
+		changes: pg.jsonb("changes").$type<TailoringChange[]>(),
+		factGateReport: pg.jsonb("fact_gate_report").$type<FactGateReportData>(),
+		auditReport: pg.jsonb("audit_report").$type<AuditReport>(),
+		jdArchived: pg.text("jd_archived").notNull(),
 		createdAt: pg.timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
 		updatedAt: pg
 			.timestamp("updated_at", { withTimezone: true })

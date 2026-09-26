@@ -2,14 +2,20 @@ import { createSelectSchema } from "drizzle-zod";
 import z from "zod";
 import * as schema from "@reactive-resume/db/schema";
 import {
+	auditReportSchema,
 	careerFactsProfileSchema,
 	careerWorkAuthProfileSchema,
 	evaluationBlocksSchema,
 	evaluationRequirementSchema,
 	evaluationStatusSchema,
 	evaluationWorkAuthSchema,
+	factGateReportSchema,
 	legitimacyTierSchema,
+	reuseDecisionSchema,
 	skillGapResultSchema,
+	tailoringChangeSchema,
+	tailoringOperationSchema,
+	tailoringStatusSchema,
 } from "@reactive-resume/schema/career/data";
 
 const evaluationSchema = createSelectSchema(schema.evaluation, {
@@ -45,6 +51,54 @@ const careerProfileSchema = createSelectSchema(schema.careerProfile, {
 });
 
 const careerProfileOutput = careerProfileSchema.omit({ userId: true });
+
+const tailoringRunSchema = createSelectSchema(schema.tailoringRun, {
+	id: z.string(),
+	applicationId: z.string(),
+	evaluationId: z.string().nullable(),
+	sourceResumeId: z.string().nullable(),
+	tailoredResumeId: z.string().nullable(),
+	version: z.number().int().min(1),
+	status: tailoringStatusSchema,
+	error: z.string().nullable(),
+	reuseDecision: reuseDecisionSchema.nullable(),
+	plan: z.array(tailoringOperationSchema).nullable(),
+	operations: z.array(z.unknown()).nullable(),
+	changes: z.array(tailoringChangeSchema).nullable(),
+	factGateReport: factGateReportSchema.nullable(),
+	auditReport: auditReportSchema.nullable(),
+	jdArchived: z.string(),
+	createdAt: z.date(),
+	updatedAt: z.date(),
+});
+
+const tailoringRunOutput = tailoringRunSchema.omit({ userId: true });
+
+export const tailoringDto = {
+	list: {
+		input: z.object({ applicationId: z.string() }),
+		output: z.array(tailoringRunOutput),
+	},
+	get: {
+		input: z.object({ id: z.string() }),
+		output: tailoringRunOutput,
+	},
+	discard: {
+		input: z.object({ id: z.string() }),
+		output: z.void(),
+	},
+	audit: {
+		input: z.object({ tailoringRunId: z.string() }),
+		output: auditReportSchema,
+	},
+	factCheck: {
+		input: z.object({ resumeId: z.string() }),
+		output: factGateReportSchema.extend({
+			sourceResumeId: z.string(),
+			tailoringRunId: z.string(),
+		}),
+	},
+};
 
 export const evaluationDto = {
 	start: {

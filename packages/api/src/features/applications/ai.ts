@@ -7,8 +7,7 @@ import { matchJobDescription } from "@reactive-resume/resume/ats-pdf/jd";
 import { coverLetterTextToHtml } from "@reactive-resume/resume/cover-letter";
 import { createFetchContext } from "@reactive-resume/scanner/context";
 import { htmlToText } from "@reactive-resume/scanner/html-to-text";
-import { skillGapLowConfidenceSchema } from "@reactive-resume/schema/career/data";
-import { generateId, slugify } from "@reactive-resume/utils/string";
+import { factGateReportSchema, skillGapLowConfidenceSchema } from "@reactive-resume/schema/career/data";
 import { protectedProcedure } from "../../context";
 import { aiRequestRateLimit } from "../../middleware/rate-limit";
 import { generateJson as sharedGenerateJson } from "../ai/generate-json";
@@ -299,7 +298,10 @@ export const aiRouter = {
 			return { text, coverLetterId: letter.id };
 		}),
 
-	// Create a tailored copy of the linked resume (job-specific summary) and link it to the application.
+	// Create a tailored copy of the linked resume and link it to the application. Since the
+	// career upgrade this is the full pipeline — reuse gate, constrained plan, deterministic
+	// compile, hard fact gate, versioned run — not a summary-only rewrite. Route and the
+	// original output fields are unchanged; the extras are additive.
 	tailorResume: protectedProcedure
 		.route({
 			method: "POST",
@@ -309,49 +311,27 @@ export const aiRouter = {
 		})
 		.input(z.object({ id: z.string() }))
 		.use(aiRequestRateLimit)
-		.output(z.object({ resumeId: z.string(), name: z.string() }))
+		.output(
+			z.object({
+				resumeId: z.string(),
+				name: z.string(),
+				tailoringRunId: z.string().optional(),
+				reused: z.boolean().optional(),
+				factGate: factGateReportSchema.nullable().optional(),
+			}),
+		)
 		.errors(aiErrors)
 		.handler(async ({ context, input }) => {
-			const application = await applicationService.getById({ id: input.id, userId: context.user.id });
-			if (!application.resumeId)
-				throw new ORPCError("BAD_REQUEST", { message: "Link a resume to this application first." });
-			if (!application.jobDescription) {
-				throw new ORPCError("BAD_REQUEST", { message: "Paste the job description into this application first." });
+			const { runTailoring } = await import("../tailoring/pipeline");
+			try {
+				return await runTailoring({
+					applicationId: input.id,
+					userId: context.user.id,
+					locale: context.locale,
+				});
+			} catch (error) {
+				if (isAiProviderGatewayError(error)) throwAiProviderGatewayError(error);
+				throw error;
 			}
-
-			const [model, resume] = await Promise.all([
-				resolveModel(context.user.id),
-				resumeService.getById({ id: application.resumeId, userId: context.user.id }),
-			]);
-
-			const { summary } = await generateJson(
-				model,
-				{
-					prompt: `Rewrite this candidate's professional summary to target the job below. Return ONLY JSON { "summary": "<one to two sentence HTML paragraph, e.g. <p>…</p>>" }. Keep it truthful to the resume.\n\nRESUME:\n${JSON.stringify(resume.data)}\n\nJOB:\n${application.role} at ${application.company}\n${application.jobDescription}`,
-				},
-				z.object({ summary: z.string() }),
-			);
-
-			const name = `Tailored — ${application.company} · ${application.role}`.slice(0, 60);
-			const tailoredData = { ...resume.data, summary: { ...resume.data.summary, content: summary } };
-
-			const newResumeId = await resumeService.create({
-				userId: context.user.id,
-				name,
-				slug: `${slugify(name)}-${generateId().slice(0, 6)}`,
-				tags: [...resume.tags, "tailored"],
-				data: tailoredData,
-				locale: context.locale,
-			});
-
-			// Point the application at the tailored copy and log it on the timeline.
-			await applicationService.update({ id: input.id, userId: context.user.id, resumeId: newResumeId });
-			await applicationService.addNote({
-				id: input.id,
-				userId: context.user.id,
-				text: `AI tailored a resume: ${name}`,
-			});
-
-			return { resumeId: newResumeId, name };
 		}),
 };

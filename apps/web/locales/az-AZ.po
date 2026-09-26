@@ -37,6 +37,11 @@ msgstr "(yeni vərəqdə açılır)"
 msgid "{0, plural, one {# application to export} other {# applications to export}}"
 msgstr "{0, plural, one {İxrac etmək üçün # tətbiqi} other {İxrac etmək üçün # tətbiqləri}}"
 
+#. placeholder {0}: report.violations.length
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "{0, plural, one {# fact violation} other {# fact violations}}"
+msgstr ""
+
 #. placeholder {0}: section.items.length
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 msgid "{0, plural, one {# item} other {# items}}"
@@ -46,6 +51,16 @@ msgstr "{0, plural, one {# element} other {# element}}"
 #: src/routes/builder/$resumeId/-sidebar/left/sections/experience.tsx
 msgid "{0, plural, one {# role} other {# roles}}"
 msgstr "{0, plural, one {# rol} other {# rol}}"
+
+#. placeholder {0}: report.warnings.length
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "{0, plural, one {# warning} other {# warnings}}"
+msgstr ""
+
+#. placeholder {0}: report.violations.length
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "{0, plural, one {Fact check found # violation.} other {Fact check found # violations.}}"
+msgstr ""
 
 #. placeholder {0}: insights.total
 #: src/features/applications/components/insights-view.tsx
@@ -642,6 +657,10 @@ msgstr ""
 msgid "Amharic"
 msgstr "Amharca"
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "An adversarial hiring-manager review of every bullet — this can take up to a minute."
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "An embedded font could not be read."
 msgstr "Daxil edilmiş şrift oxuna bilmədi."
@@ -795,6 +814,7 @@ msgid "Archived"
 msgstr "Arxivləşdirilib"
 
 #: src/features/evaluations/components/evaluation-panel.tsx
+#: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Archived job description"
 msgstr ""
 
@@ -898,6 +918,10 @@ msgstr "Əlavə"
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Attachment uploaded."
 msgstr "Əlavə yükləndi."
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "audit"
+msgstr ""
 
 #: src/features/command-palette/pages/navigation.tsx
 #: src/routes/dashboard/-components/sidebar.tsx
@@ -1034,6 +1058,10 @@ msgstr "Toplu silmə uğursuz oldu. Yenidən cəhd edin."
 msgid "Bulk update failed. Please try again."
 msgstr "Toplu yeniləmə uğursuz oldu. Yenidən cəhd edin."
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Bullet"
+msgstr ""
+
 #: src/components/input/rich-input.tsx
 msgid "Bullet List"
 msgstr "Markerlə Siyahı"
@@ -1119,6 +1147,10 @@ msgstr "Fikriniz dəyişdi? Özgeçmişinizi daha təsviri bir adla yenidən adl
 #: src/routes/_home/-sections/footer.tsx
 msgid "Changelog"
 msgstr "Dəyişikliklər jurnalı"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Changes"
+msgstr ""
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Changes are shared between your library and the resume builder."
@@ -1276,6 +1308,7 @@ msgid "Close AI assistant"
 msgstr "Süni intellekt köməkçisini bağlayın"
 
 #: src/features/evaluations/components/evaluation-panel.tsx
+#: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Collapse"
 msgstr ""
 
@@ -1331,6 +1364,10 @@ msgstr "Bu CV-ni həmin vakansiya elanının URL-i ilə müqayisə edin və aça
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Compensation"
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "complete"
 msgstr ""
 
 #: src/features/ats-checker/messages.ts
@@ -1604,6 +1641,10 @@ msgstr ""
 msgid "Couldn't delete the timeline entry."
 msgstr "Xronologiya qeydi silinə bilmədi."
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Couldn't discard the tailored resume."
+msgstr ""
+
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Couldn't fetch that URL."
 msgstr ""
@@ -1813,6 +1854,7 @@ msgstr "Yaradılıb"
 
 #. placeholder {0}: result.name
 #: src/features/applications/components/application-ai-copilot.tsx
+#: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Created \"{0}\" and linked it to this application."
 msgstr "\"{0}\" yaratdı və onu bu müraciətə əlaqələndirdi."
 
@@ -1875,6 +1917,10 @@ msgstr "Xüsusi Stillər"
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Customization plan"
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "cut"
 msgstr ""
 
 #: src/libs/locale.ts
@@ -2102,8 +2148,13 @@ msgid "Disabling two-factor authentication..."
 msgstr "İki mərhələli autentifikasiyanı deaktiv etmə prosesi gedir..."
 
 #: src/features/cover-letters/editor-dialog.tsx
+#: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Discard"
 msgstr "Atın"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Discard this tailored resume?"
+msgstr ""
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Discard unsaved changes?"
@@ -2510,6 +2561,7 @@ msgid "Exit Fullscreen"
 msgstr "Tam ekrandan çıx"
 
 #: src/features/evaluations/components/evaluation-panel.tsx
+#: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Expand"
 msgstr ""
 
@@ -2583,6 +2635,22 @@ msgstr "pipeline-flow.png ixrac edildi"
 #: src/features/homepage/ats-playground.tsx
 msgid "Extracted text"
 msgstr "Çıxarılmış mətn"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Fact check passed — every claim is backed by the source resume."
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "fact gate"
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Fact gate"
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "failed"
+msgstr ""
 
 #: src/routes/agent/-components/tool-part-card.tsx
 msgid "Failed"
@@ -2947,6 +3015,10 @@ msgstr ""
 msgid "Gaps:"
 msgstr "Boşluqlar:"
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "gated"
+msgstr ""
+
 #: src/dialogs/resume/index.tsx
 msgid "Generate a random name"
 msgstr "Təsadüfi ad yarat"
@@ -3171,6 +3243,10 @@ msgstr "Hind"
 msgid "Hint:"
 msgstr ""
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Hiring-manager audit"
+msgstr ""
+
 #: src/features/command-palette/pages/navigation.tsx
 msgid "Home"
 msgstr "Əsas səhifə"
@@ -3378,6 +3454,10 @@ msgstr ""
 msgid "JD signal:"
 msgstr ""
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "JD similarity:"
+msgstr ""
+
 #: src/features/command-palette/pages/navigation.tsx
 msgid "Job"
 msgstr "İş"
@@ -3433,6 +3513,10 @@ msgstr "Tam Kənarlaşdır"
 #: src/libs/locale.ts
 msgid "Kannada"
 msgstr "Kannada"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "keep"
+msgstr ""
 
 #: src/features/homepage/export-playground.tsx
 msgid "Keep a backup of your content and settings. Import it into Reactive Resume later."
@@ -3695,6 +3779,10 @@ msgstr ""
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Link a resume and paste the job description (Edit) to score your fit and tailor a copy."
 msgstr "Uyğunluğunuzu qiymətləndirmək və nüsxəni uyğunlaşdırmaq üçün CV bağlayın və iş təsvirini (Redaktə edin) yapışdırın."
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Link a resume and paste the job description (Edit) to tailor a copy for this job."
+msgstr ""
 
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Linked Reactive Resume"
@@ -4223,6 +4311,10 @@ msgstr ""
 msgid "No sponsorship needed"
 msgstr ""
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "No tailoring runs yet. Each run appears here as a new version."
+msgstr ""
+
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "No tested provider"
 msgstr "Test edilmiş provayder yoxdur"
@@ -4379,6 +4471,10 @@ msgstr "Redaktorda açın"
 msgid "Open Integrations Settings"
 msgstr "İnteqrasiyalar parametrlərini açın"
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Open tailored resume"
+msgstr ""
+
 #: src/features/homepage/template-shelf.tsx
 msgid "Open template PDF"
 msgstr "Şablon PDF-ni açın"
@@ -4474,6 +4570,10 @@ msgstr "Abzas və başlıq tərzi"
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "partial"
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Passed — every claim in the tailored resume is backed by the source resume."
 msgstr ""
 
 #. Authentication provider display name in account settings
@@ -4591,6 +4691,10 @@ msgstr "PDF mətn qatı"
 msgid "PDFs already attached to applications will remain available."
 msgstr "Artıq tətbiqlərə əlavə edilmiş PDF sənədləri əlçatan qalacaq."
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "pending"
+msgstr ""
+
 #: src/dialogs/resume/sections/education.tsx
 #: src/dialogs/resume/sections/experience.tsx
 #: src/dialogs/resume/sections/project.tsx
@@ -4601,6 +4705,10 @@ msgstr "Müddət"
 #: src/libs/locale.ts
 msgid "Persian"
 msgstr "Fars"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Persona:"
+msgstr ""
 
 #: src/dialogs/resume/sections/reference.tsx
 #: src/features/ats-checker/parse-preview.tsx
@@ -4651,6 +4759,10 @@ msgstr "Onu Layout panelindən bir səhifəyə yerləşdirin və ya park etmək 
 #: src/features/resume/export/download-dialog.tsx
 msgid "Plain text, for AI tools and quick edits."
 msgstr "Düz mətn, süni intellekt alətləri və sürətli redaktələr üçün."
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "planned"
+msgstr ""
 
 #: src/features/homepage/feature-explorer.tsx
 msgid "Play data flow animation"
@@ -4866,6 +4978,10 @@ msgstr ""
 msgid "Raw JSON"
 msgstr "Xam JSON"
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Re-check facts"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Re-export from a single-column layout, then copy the text out and check it reads top to bottom."
 msgstr "Tək sütunlu düzəndən yenidən ixrac edin, sonra mətni kopyalayıb yuxarıdan aşağıya oxunduğunu yoxlayın."
@@ -4889,6 +5005,10 @@ msgstr "Şriftləri daxil edərək yenidən ixrac edin və mətnin təmiz kopyal
 #: src/features/ats-checker/messages.ts
 msgid "Re-export with fonts embedded, then open the file and check that the text copies out cleanly."
 msgstr "Şriftləri daxil edərək yenidən ixrac edin, sonra faylı açıb mətnin təmiz kopyalandığını yoxlayın."
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Re-run audit"
+msgstr ""
 
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Re-score"
@@ -5026,9 +5146,17 @@ msgstr "Referanslar"
 msgid "Referred by…, things to emphasize, etc."
 msgstr "…tərəfindən istinad edilən, vurğulanmalı məqamlar və s."
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "regenerated"
+msgstr ""
+
 #: src/features/settings/authentication/components/passkeys.tsx
 msgid "Register New Device"
 msgstr "Yeni cihazı qeydiyyatdan keçirin"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "rejected"
+msgstr ""
 
 #: src/features/homepage/site-footer.tsx
 msgid "Released under the <0>MIT License</0>."
@@ -5274,6 +5402,23 @@ msgstr "Özgeçmişlər"
 msgid "Retry"
 msgstr "Təkrar cəhd edin"
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Reuse decision"
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "reused"
+msgstr ""
+
+#. placeholder {0}: result.name
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Reused \"{0}\" — the posting still matches the existing tailored resume."
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "reused with edits"
+msgstr ""
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Review edits"
 msgstr "Redaktələri nəzərdən keçir"
@@ -5294,6 +5439,18 @@ msgstr "Bu redaktəni nəzərdən keçir"
 msgid "Reviewing…"
 msgstr "Nəzərdən keçirilir…"
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Rewords your real experience toward this posting under strict constraints — nothing is invented, every claim must pass a hard fact gate against your source resume, and each run is kept as a numbered version for this application."
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "rewrite"
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Rewrite"
+msgstr ""
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Rewrite the summary for a senior engineering manager role, and keep it specific."
 msgstr "Xülasəni baş mühəndislik meneceri vəzifəsi üçün yenidən yazın və konkret saxlayın."
@@ -5301,6 +5458,10 @@ msgstr "Xülasəni baş mühəndislik meneceri vəzifəsi üçün yenidən yazı
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Rewrite this resume for a startup founder moving into a product lead role, and show the business impact."
 msgstr "Bu CV-ni məhsul rəhbəri vəzifəsinə keçən startap qurucusu üçün yenidən yazın və biznes təsirini göstərin."
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Rewrite:"
+msgstr ""
 
 #: src/features/homepage/ats-playground.tsx
 msgid "Rhyhorn sample resume"
@@ -5356,6 +5517,10 @@ msgstr "Yenidən işə sal"
 msgid "Run AI review"
 msgstr "AI rəyini işə sal"
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Run audit"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "Run deep check"
 msgstr "Dərin yoxlamanı işə sal"
@@ -5366,6 +5531,10 @@ msgstr ""
 
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Running quick match…"
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Running the full pipeline — reuse check, plan, compile, fact gate. This is a single long request and can take a minute or two; keep this tab open."
 msgstr ""
 
 #: src/routes/agent/-components/tool-part-card.tsx
@@ -5492,6 +5661,10 @@ msgstr "Sevimli autentifikator tətbiqinizlə aşağıdakı QR kodu skan edin. H
 #: src/dialogs/resume/sections/education.tsx
 msgid "School"
 msgstr "Məktəb"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Scope read"
+msgstr ""
 
 #: src/routes/dashboard/-components/sidebar.tsx
 msgid "Search"
@@ -5977,6 +6150,7 @@ msgid "Something went wrong"
 msgstr "Nəsə səhv getdi"
 
 #: src/features/evaluations/components/evaluation-panel.tsx
+#: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Something went wrong during the run."
 msgstr ""
 
@@ -6288,13 +6462,38 @@ msgstr "Teqlər proqrama aydın oxunma ardıcıllığı verir. Alətiniz bunu t�
 msgid "Tailor my resume"
 msgstr "CV-mi uyğunlaşdırın"
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Tailor resume"
+msgstr ""
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Tailor this resume to a product manager job description, and emphasize roadmap ownership, stakeholder communication, and measurable launch outcomes."
 msgstr "Bu CV-ni məhsul meneceri iş təsvirinə uyğunlaşdırın və yol xəritəsinə sahiblik, maraqlı tərəflərlə ünsiyyət və ölçülə bilən buraxılış nəticələrini vurğulayın."
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Tailored resume discarded — the source resume is linked again."
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Tailored resumes"
+msgstr ""
+
+#: src/features/applications/components/application-detail-sheet.tsx
+msgid "Tailoring"
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Tailoring failed"
+msgstr ""
+
 #: src/features/applications/components/application-ai-copilot.tsx
+#: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Tailoring failed."
 msgstr "Dərzilik uğursuz oldu."
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Tailoring…"
+msgstr ""
 
 #: src/features/homepage/page.tsx
 msgid "Take it<0/>with you."
@@ -6404,6 +6603,10 @@ msgstr "API açarı silindi."
 msgid "The application that sent you here made an invalid authorization request."
 msgstr "Sizi bura göndərən tətbiq yanlış avtorizasiya sorğusu göndərdi."
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "The audit failed."
+msgstr ""
+
 #: src/features/ats-checker/ai-review/ai-review-card.tsx
 msgid "The checks above are mechanical. This asks a language model what a reader would think of your bullets, and suggests rewrites. It produces no score."
 msgstr "Yuxarıdakı yoxlamalar mexanikidir. Bu isə bir dil modelindən oxucunun ifadələriniz haqqında nə düşünəcəyini soruşur və yenidən yazma təklif edir. Heç bir bal yaratmır."
@@ -6411,6 +6614,10 @@ msgstr "Yuxarıdakı yoxlamalar mexanikidir. Bu isə bir dil modelindən oxucunu
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "The deep check could not finish. Please try again."
 msgstr "Dərin yoxlama tamamlana bilmədi. Zəhmət olmasa yenidən cəhd edin."
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "The fact check failed."
+msgstr ""
 
 #. Error shown when AI parsing returns invalid resume structure during import
 #: src/dialogs/resume/import.tsx
@@ -6473,6 +6680,10 @@ msgstr "İş axtarışınızın<0/>qalan hissəsi də."
 msgid "The resume preview could not be updated. The last valid preview is still shown."
 msgstr "CV önizləməsi yenilənə bilmədi. Son etibarlı önizləmə hələ də göstərilir."
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "The reviewer returned fewer rows than bullets — this is a partial audit."
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "The same line repeats on every page."
 msgstr "Eyni sətir hər səhifədə təkrarlanır."
@@ -6481,6 +6692,10 @@ msgstr "Eyni sətir hər səhifədə təkrarlanır."
 #: src/features/ats-checker/report/score-header.tsx
 msgid "The score is capped because of a blocking problem: {0}"
 msgstr "Əngəlləyici problem səbəbindən bal məhdudlaşdırılıb: {0}"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "The tailored copy will be permanently deleted, the application will be linked back to the source resume, and this run will be marked rejected. This can't be undone."
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "The text comes out unreadable."
@@ -6811,6 +7026,10 @@ msgstr "Mövzu silindi."
 #: src/routes/agent/$threadId.tsx
 msgid "Threads"
 msgstr "Mövzular"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "tier"
+msgstr ""
 
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Tighten the skills section so it supports the target role instead of reading like a keyword dump."
@@ -7309,6 +7528,10 @@ msgstr "Düzgün, xəbərdarlıqlarla"
 msgid "Vary the openings so the section does not read as boilerplate."
 msgstr "Başlanğıcları müxtəlifləşdirin ki, bölmə şablon kimi oxunmasın."
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Verdict"
+msgstr ""
+
 #: src/features/settings/pages/profile.tsx
 msgid "Verified"
 msgstr "Təsdiqlənib"
@@ -7512,6 +7735,10 @@ msgstr "Adınızın, e-poçtunuzun, telefonunuzun və tarixlərinizin toxunulmaz
 msgid "Whether your timeline can be reconstructed."
 msgstr "Zaman xəttinizin bərpa edilə bilib-bilmədiyi."
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Why"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Words run together when the text is extracted."
 msgstr "Mətn çıxarıldıqda sözlər bir-birinə qarışır."
@@ -7543,6 +7770,14 @@ msgstr "… işləyir"
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Worth a shot"
 msgstr "Bir cəhd etməyə dəyər"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Would advance: no"
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Would advance: yes"
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Write \"Present\" as the end date of your current role."
