@@ -143,9 +143,16 @@ describe("tool annotations", () => {
 			MCP_TOOL_NAME.bulkDeleteApplications,
 			MCP_TOOL_NAME.deleteCoverLetter,
 			MCP_TOOL_NAME.autofillApplicationFromJob,
-			MCP_TOOL_NAME.scoreApplicationMatch,
+			// score_application_match is deterministic (skill gap + keyword coverage, no AI call), so
+			// it is closed-world.
 			MCP_TOOL_NAME.tailorResumeForApplication,
 			MCP_TOOL_NAME.draftApplicationMessage,
+			// Career tools that call the AI provider or fetch external job boards.
+			MCP_TOOL_NAME.evaluateApplication,
+			MCP_TOOL_NAME.auditTailoredResume,
+			MCP_TOOL_NAME.draftFollowUpMessage,
+			MCP_TOOL_NAME.watchCompany,
+			MCP_TOOL_NAME.scanJobBoards,
 		]);
 		for (const [name, { annotations }] of Object.entries(TOOL_META)) {
 			expect(annotations.openWorldHint, name).toBe(openWorldTools.has(name));

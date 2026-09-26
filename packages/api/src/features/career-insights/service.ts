@@ -12,7 +12,7 @@ import { canonicalize, normalizeForMatching } from "@reactive-resume/resume/ats-
  */
 
 /** No percentage below this sample size — a 2-of-3 "success rate" is noise wearing a suit. */
-export const SAMPLE_FLOOR = 5;
+const SAMPLE_FLOOR = 5;
 
 const STAGE_ORDER = ["saved", "applied", "screening", "interview", "offer"] as const;
 
@@ -68,7 +68,7 @@ type EvaluationRow = {
 };
 
 async function loadApplications(userId: string): Promise<ApplicationRow[]> {
-	return db
+	return await db
 		.select({
 			id: schema.application.id,
 			status: schema.application.status,
@@ -81,7 +81,7 @@ async function loadApplications(userId: string): Promise<ApplicationRow[]> {
 }
 
 async function loadCompleteEvaluations(userId: string): Promise<EvaluationRow[]> {
-	return db
+	return await db
 		.select({
 			applicationId: schema.evaluation.applicationId,
 			score: schema.evaluation.score,

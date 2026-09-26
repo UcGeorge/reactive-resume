@@ -27,9 +27,5 @@ export const snoozeFollowUpMutationOptions = (...args: Parameters<typeof orpc.fo
 export const dismissFollowUpMutationOptions = (...args: Parameters<typeof orpc.followUps.dismiss.mutationOptions>) =>
 	orpc.followUps.dismiss.mutationOptions(...args);
 
-export const createCustomFollowUpMutationOptions = (
-	...args: Parameters<typeof orpc.followUps.createCustom.mutationOptions>
-) => orpc.followUps.createCustom.mutationOptions(...args);
-
 export const draftFollowUpMutationOptions = (...args: Parameters<typeof orpc.followUps.draft.mutationOptions>) =>
 	orpc.followUps.draft.mutationOptions(...args);

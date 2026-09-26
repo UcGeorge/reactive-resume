@@ -115,7 +115,7 @@ export function buildOfficeMap(json: unknown): Map<unknown, Set<string>> {
  * DOUBLE-encoded HTML (the JSON string carries entity-escaped markup); the shared pipeline in
  * html-to-text.ts owns the two-pass decode. This wrapper keeps greenhouse's tested export name.
  */
-export function contentToText(content: unknown): string {
+function contentToText(content: unknown): string {
 	return htmlToText(content);
 }
 

@@ -55,6 +55,7 @@
 				"node-html-parser",
 				"nodemailer",
 				"ollama-ai-provider-v2",
+				"pg-boss",
 				"phosphor-icons-react-pdf",
 				"react-email",
 				"react-pdf-html",
@@ -64,7 +65,8 @@
 				"tokenx",
 				"ts-pattern",
 				"unique-names-generator",
-				"uuid"
+				"uuid",
+				"wink-porter2-stemmer"
 			]
 		},
 		"tooling": {

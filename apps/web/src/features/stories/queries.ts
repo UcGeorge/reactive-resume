@@ -3,8 +3,6 @@ import { orpc } from "@/libs/orpc/client";
 
 export type Story = RouterOutput["stories"]["list"][number];
 export type StoryProvenance = Story["provenance"];
-export type ProvenanceCheck = RouterOutput["stories"]["checkProvenance"];
-export type StoryMatch = RouterOutput["stories"]["match"][number];
 
 // A single source of truth for the story-bank list so the key stays identical between the
 // Interviews page's grid, the matcher results, and any future surface (same pattern as discovery).

@@ -24,7 +24,6 @@
 	"dependencies": {
 		"@reactive-resume/resume": "workspace:*",
 		"@reactive-resume/schema": "workspace:*",
-		"@reactive-resume/utils": "workspace:*",
 		"zod": "^4.6.5"
 	},
 	"devDependencies": {

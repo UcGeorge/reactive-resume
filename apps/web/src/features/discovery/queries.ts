@@ -1,7 +1,6 @@
 import type { RouterOutput } from "@/libs/orpc/client";
 import { orpc } from "@/libs/orpc/client";
 
-export type DiscoveryStatus = RouterOutput["discovery"]["status"];
 export type WatchedCompany = RouterOutput["discovery"]["watchedCompanies"]["list"][number];
 export type DiscoveredJob = RouterOutput["discovery"]["jobs"]["list"][number];
 export type DiscoveredJobStatus = DiscoveredJob["status"];

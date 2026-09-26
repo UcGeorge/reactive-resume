@@ -1060,9 +1060,6 @@ importers:
       '@reactive-resume/schema':
         specifier: workspace:*
         version: link:../schema
-      '@reactive-resume/utils':
-        specifier: workspace:*
-        version: link:../utils
       zod:
         specifier: ^4.6.5
         version: 4.6.5

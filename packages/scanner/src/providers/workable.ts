@@ -47,7 +47,7 @@ function assertWorkableUrl(url: string): string {
 }
 
 /** Account slug from the entry's careers URL, or null when the URL is not a Workable board. */
-export function resolveWorkableSlug(entry: PortalEntry): string | null {
+function resolveWorkableSlug(entry: PortalEntry): string | null {
 	let parsed: URL;
 	try {
 		parsed = new URL(entry.url);

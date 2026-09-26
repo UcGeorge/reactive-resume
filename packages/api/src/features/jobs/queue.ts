@@ -40,7 +40,7 @@ export function backgroundJobsAvailable(): boolean {
 }
 
 /** The running queue instance, started lazily on first use. */
-export function getBoss(): Promise<PgBoss> {
+function getBoss(): Promise<PgBoss> {
 	bossPromise ??= createBoss();
 	return bossPromise;
 }
@@ -89,12 +89,4 @@ export async function scheduleCron(name: JobName, cron: string, data: object = {
 		// Queue already exists.
 	});
 	await boss.schedule(name, cron, data);
-}
-
-/** Stop the queue (used by tests and graceful shutdown; the web process normally never stops it). */
-export async function stopBoss(): Promise<void> {
-	if (!bossPromise) return;
-	const boss = await bossPromise;
-	bossPromise = null;
-	await boss.stop({ graceful: true });
 }

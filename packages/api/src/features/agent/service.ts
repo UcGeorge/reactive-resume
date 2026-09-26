@@ -24,8 +24,8 @@ import { getAgentModel } from "../ai/service";
 import { aiProvidersService } from "../ai-providers/service";
 import { resumeService } from "../resume/service";
 import { getStorageService, inferContentType } from "../storage/service";
-import { buildCareerAgentTools } from "./career-tools";
 import { isRunAlive, monitorRunCancellation, requestRunCancellation } from "./cancellation";
+import { buildCareerAgentTools } from "./career-tools";
 import { pruneAgentModelContext } from "./context";
 import { mergeClientToolResponses } from "./messages-merge";
 import {

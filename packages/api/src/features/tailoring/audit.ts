@@ -27,7 +27,7 @@ const MAX_AUDIT_BULLETS = 40;
 type AuditBullet = { index: number; text: string; where: string };
 
 /** Bullets from the tailored resume's experience and project descriptions, numbered. */
-export function collectAuditBullets(data: ResumeData): AuditBullet[] {
+function collectAuditBullets(data: ResumeData): AuditBullet[] {
 	const bullets: AuditBullet[] = [];
 	const push = (markdown: string, where: string) => {
 		for (const line of markdown.split("\n")) {

@@ -32,6 +32,3 @@ export const scannerScanUserPayloadSchema = z.object({
 });
 
 export type ScannerScanUserPayload = z.infer<typeof scannerScanUserPayloadSchema>;
-
-/** All queues the boot pass must create before any send or work call runs. */
-export const ALL_JOB_NAMES: readonly JobName[] = Object.values(JOB_NAMES);

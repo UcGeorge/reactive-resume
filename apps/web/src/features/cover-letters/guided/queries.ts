@@ -2,7 +2,6 @@ import type { RouterOutput } from "@/libs/orpc/client";
 import { orpc } from "@/libs/orpc/client";
 
 export type GuidedSuggestions = RouterOutput["coverLetters"]["guided"]["suggestAngles"];
-export type GuidedDraft = RouterOutput["coverLetters"]["guided"]["draft"];
 export type GapHandling = "address" | "adjacent" | "omit";
 
 // Mutations keep the repo pattern of passing TanStack callbacks at the call site; these

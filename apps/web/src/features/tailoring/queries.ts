@@ -5,7 +5,7 @@ export type TailoringRun = RouterOutput["evaluations"]["tailoringRuns"]["get"];
 
 // A single source of truth for the per-application tailoring runs list so the query key stays
 // identical between the panel and any future surface (same pattern as the evaluations feature).
-export const tailoringRunsListQueryOptions = (applicationId: string) =>
+const tailoringRunsListQueryOptions = (applicationId: string) =>
 	orpc.evaluations.tailoringRuns.list.queryOptions({ input: { applicationId } });
 
 export const tailoringRunsListQueryKey = (applicationId: string) =>
@@ -31,11 +31,6 @@ export const tailoringRunsLiveQueryOptions = (
 			? TAILORING_POLL_INTERVAL_MS
 			: false,
 });
-
-export const tailoringRunQueryOptions = (id: string) =>
-	orpc.evaluations.tailoringRuns.get.queryOptions({ input: { id } });
-
-export const tailoringRunQueryKey = (id: string) => orpc.evaluations.tailoringRuns.get.queryKey({ input: { id } });
 
 // Mutations keep the repo pattern of passing TanStack callbacks at the call site; these
 // wrappers only pin the procedure so feature code never spells the namespace twice. Callers
