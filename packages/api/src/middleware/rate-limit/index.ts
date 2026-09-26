@@ -1,6 +1,7 @@
+import type { Ratelimiter } from "@orpc/experimental-ratelimit";
 import { createRatelimitMiddleware } from "@orpc/experimental-ratelimit";
-import { MemoryRatelimiter } from "@orpc/experimental-ratelimit/memory";
 import { rateLimitConfig, TRUSTED_IP_HEADERS } from "@reactive-resume/utils/rate-limit";
+import { createRateLimiter } from "../../redis";
 
 const isRateLimitEnabled = process.env.NODE_ENV === "production";
 
@@ -62,14 +63,14 @@ function getInputKeyPart(input: unknown): string {
 	return "no-id";
 }
 
-const resumePasswordLimiter = new MemoryRatelimiter(rateLimitConfig.orpc.resumePassword);
-const pdfLimiter = new MemoryRatelimiter(rateLimitConfig.orpc.pdfExport);
-const resumeDownloadLimiter = new MemoryRatelimiter(rateLimitConfig.orpc.pdfExport);
-const aiLimiter = new MemoryRatelimiter(rateLimitConfig.orpc.aiRequest);
-const scannerLimiter = new MemoryRatelimiter(rateLimitConfig.orpc.scannerRequest);
-const storageUploadLimiter = new MemoryRatelimiter(rateLimitConfig.orpc.storageUpload);
-const storageDeleteLimiter = new MemoryRatelimiter(rateLimitConfig.orpc.storageDelete);
-const resumeMutationLimiter = new MemoryRatelimiter(rateLimitConfig.orpc.resumeMutations);
+const resumePasswordLimiter = createRateLimiter("resumePasswordLimiter", rateLimitConfig.orpc.resumePassword);
+const pdfLimiter = createRateLimiter("pdfLimiter", rateLimitConfig.orpc.pdfExport);
+const resumeDownloadLimiter = createRateLimiter("resumeDownloadLimiter", rateLimitConfig.orpc.pdfExport);
+const aiLimiter = createRateLimiter("aiLimiter", rateLimitConfig.orpc.aiRequest);
+const scannerLimiter = createRateLimiter("scannerLimiter", rateLimitConfig.orpc.scannerRequest);
+const storageUploadLimiter = createRateLimiter("storageUploadLimiter", rateLimitConfig.orpc.storageUpload);
+const storageDeleteLimiter = createRateLimiter("storageDeleteLimiter", rateLimitConfig.orpc.storageDelete);
+const resumeMutationLimiter = createRateLimiter("resumeMutationLimiter", rateLimitConfig.orpc.resumeMutations);
 const disabledLimiter = {
 	limit: async () => ({
 		success: true,
@@ -78,7 +79,7 @@ const disabledLimiter = {
 	}),
 };
 
-const productionLimiter = (limiter: MemoryRatelimiter) => (isRateLimitEnabled ? limiter : disabledLimiter);
+const productionLimiter = (limiter: Ratelimiter) => (isRateLimitEnabled ? limiter : disabledLimiter);
 
 export const resumePasswordRateLimit = createRatelimitMiddleware<
 	ContextWithHeaders,

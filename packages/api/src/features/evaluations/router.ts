@@ -1,12 +1,11 @@
 import { ORPCError } from "@orpc/client";
 import { fingerprintText } from "@reactive-resume/career/fingerprint";
 import { computeSkillGap } from "@reactive-resume/career/skill-gap";
-import { env } from "@reactive-resume/env/server";
 import { protectedProcedure } from "../../context";
 import { evaluationDto, tailoringDto } from "../../dto/evaluation";
 import { aiRequestRateLimit } from "../../middleware/rate-limit";
 import { applicationService } from "../applications/service";
-import { enqueueJob } from "../jobs/queue";
+import { backgroundJobsAvailable, enqueueJob } from "../jobs/queue";
 import { JOB_NAMES } from "../jobs/registry";
 import { resumeService } from "../resume/service";
 import { runHmAudit } from "../tailoring/audit";
@@ -22,10 +21,11 @@ const evaluationErrors = {
 	NOT_FOUND: { message: "Evaluation not found.", status: 404 },
 };
 
-/** Hand the evaluation to the background worker, or run it in-process when the worker is
- * off — the feature must not silently dead-end for operators who disabled background jobs. */
+/** Hand the evaluation to the background worker, or run it in-process when no worker will
+ * ever consume it (operator opt-out, or a serverless deploy whose entry never starts one) —
+ * the feature must not silently dead-end either way. */
 async function dispatchEvaluationRun(input: { evaluationId: string; userId: string; locale: string }) {
-	if (env.FLAG_DISABLE_BACKGROUND_JOBS) {
+	if (!backgroundJobsAvailable()) {
 		void runEvaluation(input).catch((error) => {
 			console.error("Inline evaluation run failed", { evaluationId: input.evaluationId, error });
 		});

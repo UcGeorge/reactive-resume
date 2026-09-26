@@ -32,6 +32,13 @@ async function createBoss(): Promise<PgBoss> {
 	return boss;
 }
 
+/** Whether a long-lived worker exists to consume queued jobs. On Vercel the serverless
+ * entry never runs the startup hook, so anything enqueued there would wait forever —
+ * callers use this to fall back to inline execution instead. */
+export function backgroundJobsAvailable(): boolean {
+	return !env.FLAG_DISABLE_BACKGROUND_JOBS && process.env.VERCEL !== "1";
+}
+
 /** The running queue instance, started lazily on first use. */
 export function getBoss(): Promise<PgBoss> {
 	bossPromise ??= createBoss();

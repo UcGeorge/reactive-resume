@@ -2,6 +2,7 @@ import { isAbsolute, join } from "node:path";
 import { createEnv } from "@t3-oss/env-core";
 import { z } from "zod";
 import { findWorkspaceRoot } from "@reactive-resume/utils/monorepo.node";
+import { deploymentEnvironment } from "./deployment";
 
 const workspaceRoot = findWorkspaceRoot();
 
@@ -28,6 +29,8 @@ export const env = createEnv({
 
 		// Database
 		DATABASE_URL: z.url({ protocol: /postgres(ql)?/ }),
+		DATABASE_MIGRATION_URL: z.url({ protocol: /postgres(ql)?/ }).optional(),
+		DATABASE_POOL_MAX: z.coerce.number().int().min(1).max(100).default(10),
 		STRICT_SCHEMA_CHECK: z.stringbool().default(false),
 
 		// Authentication
@@ -69,6 +72,10 @@ export const env = createEnv({
 		SMTP_SECURE: z.stringbool().default(false),
 
 		// Storage (Optional)
+		STORAGE_BACKEND: z.enum(["local", "s3", "blob"]),
+		BLOB_READ_WRITE_TOKEN: z.string().min(1).optional(),
+		BLOB_STORE_ID: z.string().min(1).optional(),
+		DEPLOYMENT_NAMESPACE: z.string().regex(/^[a-zA-Z0-9._-]+$/),
 		LOCAL_STORAGE_PATH: z.string().min(1).refine(isAbsolute, "LOCAL_STORAGE_PATH must be an absolute path").optional(),
 		S3_ACCESS_KEY_ID: z.string().min(1).optional(),
 		S3_SECRET_ACCESS_KEY: z.string().min(1).optional(),
@@ -96,6 +103,6 @@ export const env = createEnv({
 		/** Hours between background scans of watched companies. */
 		SCANNER_INTERVAL_HOURS: z.coerce.number().int().min(1).max(168).default(6),
 	},
-	runtimeEnv: process.env,
+	runtimeEnv: deploymentEnvironment(process.env),
 	emptyStringAsUndefined: true,
 });
