@@ -5,7 +5,7 @@
 	"private": true,
 	"scripts": {
 		"dev": "tsx watch src/index.ts",
-		"build": "tsdown",
+		"build": "tsdown && node scripts/check-runtime-deps.mjs",
 		"start": "node dist/index.mjs",
 		"docs:gen": "tsx src/openapi/generate-spec.ts",
 		"typecheck": "tsgo --noEmit",
@@ -75,6 +75,7 @@
 		"nodemailer": "^10.0.10",
 		"ollama-ai-provider-v2": "^4.0.1",
 		"pg": "^8.23.0",
+		"pg-boss": "^12.34.0",
 		"phosphor-icons-react-pdf": "^0.1.3",
 		"react": "^19.3.0",
 		"react-email": "^6.9.5",
@@ -86,6 +87,7 @@
 		"ts-pattern": "^5.9.0",
 		"unique-names-generator": "^4.7.1",
 		"uuid": "^14.0.2",
+		"wink-porter2-stemmer": "2.0.1",
 		"zod": "^4.6.5"
 	},
 	"devDependencies": {

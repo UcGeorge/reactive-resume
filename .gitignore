@@ -63,3 +63,6 @@ graphify-out
 # Git Hooks
 .vite-hooks
 
+
+# Local compose override for the dockerholicks (dh) stack; upstream ships compose.yml
+/docker-compose.yml
