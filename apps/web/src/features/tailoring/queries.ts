@@ -18,11 +18,18 @@ export const isTailoringInFlight = (status: TailoringRun["status"]) =>
 const TAILORING_POLL_INTERVAL_MS = 3000;
 
 /** The runs list, polled while any run is in flight. The server owns the progress, so every
- * surface (Tailoring tab, copilot) shows it after tab switches and reloads alike. */
-export const tailoringRunsLiveQueryOptions = (applicationId: string) => ({
+ * surface (Tailoring tab, copilot) shows it after tab switches and reloads alike.
+ * `pollWhileStarting` covers the moment between clicking Tailor and the run row appearing —
+ * pass the mutation's pending flag so the first step shows without waiting a full interval. */
+export const tailoringRunsLiveQueryOptions = (
+	applicationId: string,
+	options: { pollWhileStarting?: boolean } = {},
+) => ({
 	...tailoringRunsListQueryOptions(applicationId),
 	refetchInterval: (query: { state: { data?: TailoringRun[] | undefined } }) =>
-		query.state.data?.some((run) => isTailoringInFlight(run.status)) ? TAILORING_POLL_INTERVAL_MS : false,
+		options.pollWhileStarting || query.state.data?.some((run) => isTailoringInFlight(run.status))
+			? TAILORING_POLL_INTERVAL_MS
+			: false,
 });
 
 export const tailoringRunQueryOptions = (id: string) =>

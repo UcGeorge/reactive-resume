@@ -24,6 +24,7 @@ import type {
 	TitleFilterConfig,
 	WatchedCompanyStatus,
 } from "@reactive-resume/schema/career/data";
+import { sql } from "drizzle-orm";
 import * as pg from "drizzle-orm/pg-core";
 import { generateId } from "@reactive-resume/utils/string";
 import { application } from "./applications";
@@ -323,5 +324,14 @@ export const tailoringRun = pg.pgTable(
 			.defaultNow()
 			.$onUpdate(() => /* @__PURE__ */ new Date()),
 	},
-	(t) => [pg.index().on(t.userId), pg.index().on(t.userId, t.applicationId, t.createdAt.desc())],
+	(t) => [
+		pg.index().on(t.userId),
+		pg.index().on(t.userId, t.applicationId, t.createdAt.desc()),
+		// At most one run in flight per application; the pipeline's pre-check is the friendly
+		// message, this is the guarantee.
+		pg
+			.uniqueIndex("tailoring_run_in_flight_unique")
+			.on(t.applicationId)
+			.where(sql`${t.status} in ('pending', 'planned', 'gated')`),
+	],
 );

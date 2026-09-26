@@ -295,7 +295,11 @@ export async function runEvaluation(input: RunEvaluationInput): Promise<void> {
 	const evaluation = await evaluationsService.getById({ id: evaluationId, userId });
 	if (evaluation.status === "complete") return; // retried delivery of a finished job
 
-	const abortSignal = AbortSignal.timeout(EVALUATION_BUDGET_MS);
+	// One signal for every LLM call: the budget timer, plus a controller so a failure in one
+	// call cancels its sibling instead of leaving it running (on serverless, holding the
+	// Function open) for nothing.
+	const controller = new AbortController();
+	const abortSignal = AbortSignal.any([controller.signal, AbortSignal.timeout(EVALUATION_BUDGET_MS)]);
 
 	try {
 		await evaluationsService.update({ id: evaluationId, userId, status: "running", error: null });
@@ -316,22 +320,12 @@ export async function runEvaluation(input: RunEvaluationInput): Promise<void> {
 		const jd = evaluation.jdArchived;
 		const workAuthProfile = profile?.workAuth ?? { authorizedIn: [], needsSponsorship: false };
 
-		// Legitimacy reads the posting text only, so it runs alongside pass 1 instead of after
-		// strategy — one fewer call on the critical path. Its failure is caught below with the rest.
-		const legitimacyPromise = generateJson(
-			model,
-			{
-				system: evaluationLegitimacySystemPrompt,
-				prompt: [localeLine(locale), `JOB POSTING:\n${jd}`].join("\n\n"),
-			},
-			legitimacyOutput,
-			{ abortSignal },
-		);
-		legitimacyPromise.catch(() => undefined);
-
-		// Pass 1 — JD only. The resume is deliberately absent from this context.
-		const passOne = passOneOutput.parse(
-			await generateJson(
+		// Pass 1 (JD only) and the legitimacy pass (posting text only) both run without the
+		// resume in context and need nothing from each other, so they run together: one fewer
+		// call on the critical path, and a failure in either ends the run before pass 2 spends
+		// tokens.
+		const [passOne, legitimacy] = await Promise.all([
+			generateJson(
 				model,
 				{
 					system: evaluationPass1SystemPrompt,
@@ -347,7 +341,16 @@ export async function runEvaluation(input: RunEvaluationInput): Promise<void> {
 				passOneOutput,
 				{ abortSignal },
 			),
-		);
+			generateJson(
+				model,
+				{
+					system: evaluationLegitimacySystemPrompt,
+					prompt: [localeLine(locale), `JOB POSTING:\n${jd}`].join("\n\n"),
+				},
+				legitimacyOutput,
+				{ abortSignal },
+			),
+		]);
 
 		// Pass 2 — resume against the frozen rows.
 		const frozenRows = passOne.requirements.map((row) => ({ ...row, match: null, evidence: null }));
@@ -414,8 +417,6 @@ export async function runEvaluation(input: RunEvaluationInput): Promise<void> {
 				{ abortSignal },
 			),
 		);
-
-		const legitimacy = legitimacyOutput.parse(await legitimacyPromise);
 
 		const legitimacySignals: EvaluationBlocks["legitimacySignals"] = [
 			...legitimacy.signals.map((signal) => ({ ...signal })),
@@ -507,5 +508,7 @@ export async function runEvaluation(input: RunEvaluationInput): Promise<void> {
 			.update({ id: evaluationId, userId, status: "failed", error: message })
 			.catch(() => undefined);
 		throw error;
+	} finally {
+		controller.abort();
 	}
 }

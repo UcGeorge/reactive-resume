@@ -18,8 +18,10 @@ function stripUserId<T extends { userId: string }>(row: T): Omit<T, "userId"> {
 	return rest;
 }
 
-/** Statuses of a run whose request is still working. */
-export const IN_FLIGHT_TAILORING_STATUSES = ["pending", "planned", "gated"] as const satisfies TailoringStatus[];
+/** Statuses of a run whose request is still working. Mirrored by the partial unique index
+ * `tailoring_run_in_flight_unique` in the schema, which is what makes "one run per
+ * application at a time" atomic. */
+const IN_FLIGHT_TAILORING_STATUSES = ["pending", "planned", "gated"] as const satisfies readonly TailoringStatus[];
 
 /** An in-flight run untouched this long can no longer finish: its request died (on Vercel,
  * killed at the 300 s Function cap), which skips the pipeline's own failure bookkeeping. */

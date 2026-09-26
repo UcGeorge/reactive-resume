@@ -131,32 +131,12 @@ export function TailoringPanel({ id, resumeId, jobDescription, onResumeChanged }
 	// `undefined` means "no explicit choice yet" — the newest run is expanded by default.
 	const [expandedId, setExpandedId] = useState<string | null>();
 
-	const list = useQuery(tailoringRunsLiveQueryOptions(id));
-	const runs = list.data ?? [];
-	const expanded = expandedId === undefined ? (runs[0]?.id ?? null) : expandedId;
-	// Server state, not the local mutation: a run started from the copilot, another tab, or
-	// before a reload still shows here.
-	const activeRun = runs.find((run) => isTailoringInFlight(run.status)) ?? null;
-
 	const invalidateList = () => {
 		void queryClient.invalidateQueries({ queryKey: tailoringRunsListQueryKey(id) });
 	};
 
-	// A polled run finishing may have relinked the application's resume.
-	const activeRunId = activeRun?.id ?? null;
-	const prevActiveRef = useRef(activeRunId);
-	useEffect(() => {
-		const previous = prevActiveRef.current;
-		prevActiveRef.current = activeRunId;
-		if (previous && !activeRunId) onResumeChanged?.();
-	}, [activeRunId, onResumeChanged]);
-
 	const tailor = useMutation(
 		tailorResumeMutationOptions({
-			// The run row exists moments after the request starts; surface it to every observer.
-			onMutate: () => {
-				setTimeout(invalidateList, 1500);
-			},
 			onSuccess: (result) => {
 				invalidateList();
 				onResumeChanged?.();
@@ -174,7 +154,23 @@ export function TailoringPanel({ id, resumeId, jobDescription, onResumeChanged }
 			},
 		}),
 	);
+
+	const list = useQuery(tailoringRunsLiveQueryOptions(id, { pollWhileStarting: tailor.isPending }));
+	const runs = list.data ?? [];
+	const expanded = expandedId === undefined ? (runs[0]?.id ?? null) : expandedId;
+	// Server state, not the local mutation: a run started from the copilot, another tab, or
+	// before a reload still shows here.
+	const activeRun = runs.find((run) => isTailoringInFlight(run.status)) ?? null;
 	const running = tailor.isPending || activeRun !== null;
+
+	// A polled run finishing may have relinked the application's resume.
+	const activeRunId = activeRun?.id ?? null;
+	const prevActiveRef = useRef(activeRunId);
+	useEffect(() => {
+		const previous = prevActiveRef.current;
+		prevActiveRef.current = activeRunId;
+		if (previous && !activeRunId) onResumeChanged?.();
+	}, [activeRunId, onResumeChanged]);
 
 	const discard = useMutation(
 		discardTailoringRunMutationOptions({

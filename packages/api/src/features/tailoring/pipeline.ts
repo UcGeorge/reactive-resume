@@ -2,6 +2,7 @@ import type { FactGateReportData, TailoringChange } from "@reactive-resume/schem
 import type { LanguageModel } from "ai";
 import { ORPCError } from "@orpc/client";
 import { and, desc, eq } from "drizzle-orm";
+import { get } from "es-toolkit/compat";
 import z from "zod";
 import { tailoringPlanSystemPrompt } from "@reactive-resume/ai/prompts";
 import { resumeDataToFactTexts, verifyFacts } from "@reactive-resume/career/fact-gate";
@@ -75,6 +76,23 @@ async function latestCompleteEvaluation(userId: string, applicationId: string) {
 	return row ?? null;
 }
 
+const IN_FLIGHT_MESSAGE =
+	"A tailoring run is already in progress for this application — follow it in the Tailoring tab.";
+
+/** Create the run row. The partial unique index `tailoring_run_in_flight_unique` turns a lost
+ * race (two requests passing the pre-check together) into this same CONFLICT rather than a
+ * second concurrent run. */
+async function createRun(input: Parameters<typeof tailoringService.create>[0]) {
+	try {
+		return await tailoringService.create(input);
+	} catch (error) {
+		if (get(error, "cause.constraint") === "tailoring_run_in_flight_unique") {
+			throw new ORPCError("CONFLICT", { message: IN_FLIGHT_MESSAGE });
+		}
+		throw error;
+	}
+}
+
 export type TailorResumeResult = {
 	resumeId: string;
 	name: string;
@@ -102,9 +120,7 @@ export async function runTailoring(input: {
 	// would otherwise start a duplicate run. Stale orphans are failed first so they never block.
 	await tailoringService.failStaleRuns(userId);
 	if (await tailoringService.inFlightForApplication({ applicationId, userId })) {
-		throw new ORPCError("CONFLICT", {
-			message: "A tailoring run is already in progress for this application — follow it in the Tailoring tab.",
-		});
+		throw new ORPCError("CONFLICT", { message: IN_FLIGHT_MESSAGE });
 	}
 
 	// --- Reuse gate: compare against the previous run's archived JD before spending tokens.
@@ -120,7 +136,7 @@ export async function runTailoring(input: {
 	if (reuse?.decision === "reuse" && previousRun?.status === "complete" && previousRun.tailoredResumeId !== null) {
 		const tailored = await resumeService.getById({ id: previousRun.tailoredResumeId, userId }).catch(() => null);
 		if (tailored) {
-			const run = await tailoringService.create({
+			const run = await createRun({
 				userId,
 				applicationId,
 				sourceResumeId: previousRun.sourceResumeId ?? application.resumeId,
@@ -179,7 +195,7 @@ export async function runTailoring(input: {
 	const skillGap = computeSkillGap({ jobDescription: application.jobDescription, resume: effectiveSource.data });
 	const allowedSkills = [...skillGap.existing, ...skillGap.supportedByResume];
 
-	const run = await tailoringService.create({
+	const run = await createRun({
 		userId,
 		applicationId,
 		evaluationId: evaluation?.id ?? null,
@@ -192,6 +208,7 @@ export async function runTailoring(input: {
 	// generic bookkeeping in the catch; every other failure must mark the run failed, or it
 	// shows as in progress until the stale sweep catches it.
 	let failureRecorded = false;
+	const abortSignal = AbortSignal.timeout(TAILORING_PLAN_BUDGET_MS);
 
 	try {
 		const requirementContext = (evaluation?.requirements ?? [])
@@ -218,7 +235,7 @@ export async function runTailoring(input: {
 						.join("\n\n"),
 				},
 				planOutput,
-				{ abortSignal: AbortSignal.timeout(TAILORING_PLAN_BUDGET_MS) },
+				{ abortSignal },
 			),
 		);
 
@@ -326,12 +343,11 @@ export async function runTailoring(input: {
 		return { resumeId: newResumeId, name, tailoringRunId: run.id, reused: false, factGate: report };
 	} catch (error) {
 		if (!failureRecorded) {
-			const message =
-				error instanceof Error && error.name === "TimeoutError"
-					? "Tailoring ran out of time — the AI provider was too slow. Run it again, or switch to a faster model."
-					: error instanceof Error
-						? error.message
-						: "Tailoring failed.";
+			const message = abortSignal.aborted
+				? "Tailoring ran out of time — the AI provider was too slow. Run it again, or switch to a faster model."
+				: error instanceof Error
+					? error.message
+					: "Tailoring failed.";
 			await tailoringService.update({ id: run.id, userId, status: "failed", error: message }).catch(() => undefined);
 		}
 		throw error;

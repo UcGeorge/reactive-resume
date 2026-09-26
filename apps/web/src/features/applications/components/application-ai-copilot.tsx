@@ -135,27 +135,11 @@ export function ApplicationAiCopilot({ application, onOpenEvaluation }: Props) {
 			onError: (error) => toast.add({ type: "error", description: error.message || t`Match scoring failed.` }),
 		}),
 	);
-	const canTailor = !!application.resumeId && !!application.jobDescription;
-	// Tailoring progress lives on the server (the run row), so it survives tab switches and
-	// reloads and is shared with the Tailoring tab.
-	const tailoringRuns = useQuery({ ...tailoringRunsLiveQueryOptions(application.id), enabled: canTailor });
-	const tailoringInFlight = (tailoringRuns.data ?? []).some((run) => isTailoringInFlight(run.status));
 	const invalidateTailoringRuns = () => {
 		void queryClient.invalidateQueries({ queryKey: tailoringRunsListQueryKey(application.id) });
 	};
-
-	// A polled run finishing relinks the application's resume; refresh what shows it.
-	const prevTailoringRef = useRef(tailoringInFlight);
-	useEffect(() => {
-		if (prevTailoringRef.current && !tailoringInFlight) invalidate();
-		prevTailoringRef.current = tailoringInFlight;
-	});
-
 	const tailorResume = useMutation(
 		orpc.applications.ai.tailorResume.mutationOptions({
-			onMutate: () => {
-				setTimeout(invalidateTailoringRuns, 1500);
-			},
 			onSuccess: (result) => {
 				invalidate();
 				invalidateTailoringRuns();
@@ -172,7 +156,22 @@ export function ApplicationAiCopilot({ application, onOpenEvaluation }: Props) {
 			},
 		}),
 	);
+	const canTailor = !!application.resumeId && !!application.jobDescription;
+	// Tailoring progress lives on the server (the run row), so it survives tab switches and
+	// reloads and is shared with the Tailoring tab.
+	const tailoringRuns = useQuery({
+		...tailoringRunsLiveQueryOptions(application.id, { pollWhileStarting: tailorResume.isPending }),
+		enabled: canTailor,
+	});
+	const tailoringInFlight = (tailoringRuns.data ?? []).some((run) => isTailoringInFlight(run.status));
 	const tailoring = tailorResume.isPending || tailoringInFlight;
+
+	// A polled run finishing relinks the application's resume; refresh what shows it.
+	const prevTailoringRef = useRef(tailoringInFlight);
+	useEffect(() => {
+		if (prevTailoringRef.current && !tailoringInFlight) invalidate();
+		prevTailoringRef.current = tailoringInFlight;
+	});
 	const draftMessage = useMutation(
 		orpc.applications.ai.draftMessage.mutationOptions({
 			onSuccess: (result, variables) => {

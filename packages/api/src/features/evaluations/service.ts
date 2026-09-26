@@ -27,7 +27,7 @@ function stripUserId<T extends { userId: string }>(row: T): Omit<T, "userId"> {
  * ran); under the queue worker, pg-boss retries have long since given up. */
 const STALE_EVALUATION_MS = process.env.VERCEL === "1" ? 6 * 60 * 1000 : 30 * 60 * 1000;
 
-export const STALE_EVALUATION_MESSAGE =
+const STALE_EVALUATION_MESSAGE =
 	"The evaluation stopped before finishing — the AI provider was likely too slow. Run it again, or switch to a faster model.";
 
 /** Lazily fail the user's evaluations that were orphaned mid-run, so none spins forever. */

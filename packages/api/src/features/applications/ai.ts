@@ -320,7 +320,10 @@ export const aiRouter = {
 				factGate: factGateReportSchema.nullable().optional(),
 			}),
 		)
-		.errors(aiErrors)
+		.errors({
+			...aiErrors,
+			CONFLICT: { message: "A tailoring run is already in progress for this application.", status: 409 },
+		})
 		.handler(async ({ context, input }) => {
 			const { runTailoring } = await import("../tailoring/pipeline");
 			try {
