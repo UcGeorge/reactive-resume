@@ -25,3 +25,7 @@ tmp
 temp
 **/test-results
 **/playwright-report
+
+# Keel (deployment tooling; not part of the app upload)
+.keel
+deploy

@@ -1,0 +1,40 @@
+name: Keel configuration
+
+on:
+  pull_request:
+    paths:
+      - keel.yaml
+      - deploy/**
+      - .github/workflows/keel.yml
+  push:
+    branches: [main, career-ops]
+    paths:
+      - keel.yaml
+      - deploy/**
+      - .github/workflows/keel.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Install keel
+        run: |
+          curl -fsSL https://ucgeorge.github.io/keel/install.sh | sh
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+      - name: Validate keel.yaml
+        run: keel validate
+      - name: Check deployment scripts
+        run: |
+          for script in deploy/vercel/*.sh; do
+            sh -n "$script"
+          done
+      - name: Build the Vercel environment image
+        run: docker build -f deploy/vercel.Dockerfile deploy

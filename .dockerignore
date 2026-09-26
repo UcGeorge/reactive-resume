@@ -30,3 +30,6 @@ reports
 # Generated service-worker assets are rebuilt during the web build.
 public/sw.js
 public/workbox-*.js
+
+# Keel local state (deployment UI database)
+.keel

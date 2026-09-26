@@ -7,7 +7,8 @@ Operational runbook for the `career-ops` fork deployed on Vercel. The Docker (dh
 |                |                                                                                                      |
 | -------------- | ---------------------------------------------------------------------------------------------------- |
 | Vercel project | `reactive-resume` (team `petegeorge20005-9028s-projects`, Hobby)                                     |
-| Source         | `github.com/UcGeorge/reactive-resume`, branch `career-ops`, deployed via CLI from the local checkout |
+| Source         | `github.com/UcGeorge/reactive-resume`, branch `career-ops`, deployed from the local checkout        |
+| Deploy tooling | Keel — `keel.yaml` + `deploy/vercel.Dockerfile` + `deploy/vercel/*.sh`; `keel dev` UI or `keel deploy` |
 | Local checkout | `/Volumes/Nebula/dev/UcGeorge/reactive-resume` (Nebula must be mounted); the dh stack runs it via the wrapper in `~/dockerholicks/reactive-resume/` |
 | Runtime        | One Node 24 Function (max 300 s) + static web assets on the CDN; region `iad1`                       |
 | Postgres       | Neon `neon-red-ladder` (Free) → `DATABASE_URL` + unpooled variants                                   |
@@ -22,15 +23,29 @@ Git auto-deploy is not connected. To enable it: Vercel dashboard → Project →
 
 ## Deploying
 
+Deployments are declared in `keel.yaml` ([Keel](https://keel-cloud.mintlify.site)) and run inside the `deploy/vercel.Dockerfile` environment (Node 24, Vercel CLI 60.1.3, git, curl, jq); the step logic is in `deploy/vercel/*.sh`. Vercel still does the build in its own cloud builder — Keel only drives the CLI and verifies the result.
+
+| Deployment        | What it does                                                                                                                                   |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `vercel`          | Checks the token, uploads the checkout, waits for the Vercel build, health-checks `/api/health`. Deploy-time choices: Environment (production default, preview), force rebuild. |
+| `vercel-rollback` | `vercel promote` of an earlier deployment (ID or URL) to production, then the same health check. **Code only — the DB schema is not rolled back.** |
+
+Values saved per target (both deployments share them): `VERCEL_TOKEN` (vercel.com → Account Settings → Tokens, scoped to the team), `VERCEL_ORG_ID` + `VERCEL_PROJECT_ID` (leave blank on a linked checkout; both from `.vercel/project.json` when running in Keel Cloud), `PRODUCTION_URL` (optional; where the health check runs, defaults to the shortest alias). `keel manifest vercel -o values.md` writes the how-to-obtain list for whoever fills the form.
+
 ```bash
 cd /Volumes/Nebula/dev/UcGeorge/reactive-resume
-vercel deploy --prod --yes
+keel validate                                          # after editing keel.yaml or deploy/
+keel dev                                               # UI on http://localhost:3400 → create a target, save VERCEL_TOKEN, Deploy
+keel deploy vercel --var-file ~/.secrets/rr-vercel.env  # headless; the file holds VERCEL_TOKEN=… (chmod 600, outside the repo)
+keel deploy vercel-rollback --var-file ~/.secrets/rr-vercel.env --var DEPLOYMENT=dpl_…
 ```
 
+Manual fallback (same upload, no health check): `vercel deploy --prod --yes` from the checkout. `.github/workflows/keel.yml` validates `keel.yaml` and builds the environment image whenever they change.
+
 - The cloud build runs `pnpm build`, then `prepare-deployment.mjs`, which **applies database migrations at build time** against Neon (an advisory lock serializes concurrent builds). No runtime migrations.
-- After deploy: `https://<prod-url>/api/health` must report `database`, `storage`, `redis` all healthy. A sleeping Neon free-tier database can fail the first check — retry once.
-- Rollback (dashboard → Deployments → Promote an older one) rolls back **code only, never the DB schema**. Keep migrations backward-compatible.
-- Preview deployments refuse migrations by default (`ALLOW_PREVIEW_MIGRATIONS` unset) — leave it that way unless isolated preview resources are connected.
+- After deploy: `https://<prod-url>/api/health` must report `database`, `storage`, `redis` all healthy. The Keel health-check step retries six times, ten seconds apart, because a sleeping Neon free-tier database can fail the first request. A `302` to `vercel.com/sso-api` means the URL is SSO-walled — set `PRODUCTION_URL`.
+- Preview deployments refuse migrations by default (`ALLOW_PREVIEW_MIGRATIONS` unset) and their URLs are behind Vercel SSO, so the `vercel` deployment skips the health check for them — leave previews alone unless isolated preview resources are connected.
+- Rollback: `vercel-rollback` with the *Deployment ID* output of an earlier run (or dashboard → Deployments → Promote). Rolls back **code only, never the DB schema**. Keep migrations backward-compatible.
 
 ## Signups
 
@@ -39,11 +54,11 @@ Environment changes only take effect on the **next deployment**.
 ```bash
 # Close signups (do this AFTER creating your own account):
 printf 'true' | vercel env add FLAG_DISABLE_SIGNUPS production
-vercel deploy --prod --yes
+keel deploy vercel --var-file ~/.secrets/rr-vercel.env
 
 # Re-enable signups:
 vercel env rm FLAG_DISABLE_SIGNUPS production --yes
-vercel deploy --prod --yes
+keel deploy vercel --var-file ~/.secrets/rr-vercel.env
 ```
 
 ## Secrets and environment variables
@@ -94,7 +109,7 @@ git fetch upstream && git checkout main && git merge --ff-only upstream/main
 git checkout career-ops && git merge main
 pnpm typecheck && pnpm test && pnpm exec turbo boundaries   # gates
 git push origin career-ops main
-vercel deploy --prod --yes
+keel deploy vercel --var-file ~/.secrets/rr-vercel.env   # or Deploy in `keel dev`
 ```
 
 ## Incident log

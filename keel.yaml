@@ -1,0 +1,235 @@
+# Keel deployments for the career-ops fork on Vercel.
+# Run `keel dev` for the UI, `keel validate` after editing, or
+# `keel deploy vercel --var-file <values.env>` headlessly. See RUNBOOK.md.
+version: 1
+
+deployments:
+  vercel:
+    description: Deploy this checkout to the Vercel project (production by default).
+    long_description: |
+      Uploads the checkout to Vercel with the Vercel CLI. Vercel then runs the build
+      (`pnpm build` followed by `prepare-deployment.mjs`, which **applies database
+      migrations** against the connected Neon database), and the run ends with a
+      health check against `/api/health`.
+
+      - **Production** promotes the production aliases automatically once the build is ready.
+      - **Preview** deployments refuse migrations unless isolated preview resources are
+        connected and `ALLOW_PREVIEW_MIGRATIONS=true` is set on the Vercel project. Their
+        URLs are also behind Vercel SSO, so the health check is skipped for them.
+      - Rollbacks are a separate deployment: **vercel-rollback**.
+
+      Environment variables that the app reads at runtime live in Vercel
+      (Project → Settings → Environment Variables), not here; changes there take
+      effect on the next deployment.
+
+    environment:
+      dockerfile: deploy/vercel.Dockerfile
+      context: deploy
+
+    steps:
+      - name: Check credentials and project
+        run: sh deploy/vercel/preflight.sh
+      - name: Deploy to Vercel
+        # Sourced (not executed) so the exported URLs reach the next step and the outputs.
+        run: . deploy/vercel/deploy.sh
+      - name: Health check
+        run: |
+          if [ "${ENVIRONMENT:-production}" != "production" ]; then
+            echo "Preview deployment: skipping the health check (preview URLs are behind Vercel SSO)."
+            echo "Open $DEPLOYMENT_URL in a browser to verify."
+            exit 0
+          fi
+          sh deploy/vercel/health-check.sh "$APP_URL"
+
+    groups:
+      1: Vercel account and project
+
+    variables:
+      ENVIRONMENT:
+        label: Environment
+        type: select
+        deploy_time: true
+        default: production
+        options:
+          - {value: production, label: Production}
+          - {value: preview, label: "Preview (needs isolated preview resources, see RUNBOOK.md)"}
+      FORCE_REBUILD:
+        label: Rebuild without Vercel's build cache
+        type: boolean
+        deploy_time: true
+        required: false
+        default: "false"
+        description: Turn on when a dependency or lockfile change is not being picked up.
+
+      VERCEL_TOKEN:
+        label: Vercel access token
+        secret: true
+        group: 1
+        validation:
+          min_length: 20
+          message: A Vercel access token, usually starting with `vca_`.
+        manifest:
+          why: Authenticates the Vercel CLI against the account that owns the project.
+          how: |
+            vercel.com → avatar → **Account Settings → Tokens → Create**. Name it
+            `keel`, scope it to the team that owns the project (`petegeorge20005-9028s-projects`
+            for the reference installation), pick an expiry, and copy the value — it is shown once.
+      VERCEL_ORG_ID:
+        label: Team / organization ID
+        group: 1
+        row: 1
+        required: false
+        placeholder: team_… (or the user ID for a personal account)
+        validation:
+          pattern: "[A-Za-z0-9_]+"
+          message: Letters, digits and underscores only.
+        description: |
+          Leave blank when the checkout is linked (`.vercel/project.json` exists after `vercel link`).
+          Required together with the project ID in Keel Cloud, which deploys from a fresh clone.
+        manifest:
+          why: Tells the Vercel CLI which team owns the project when the checkout is not linked.
+          how: Copy `orgId` from `.vercel/project.json` in any linked checkout, or Vercel → Team Settings → General → Team ID.
+      VERCEL_PROJECT_ID:
+        label: Project ID
+        group: 1
+        row: 1
+        required: false
+        placeholder: prj_…
+        validation:
+          pattern: "prj_[A-Za-z0-9]+"
+          message: Vercel project IDs start with `prj_`.
+        description: Set together with the team ID, or leave both blank for a linked checkout.
+        manifest:
+          why: Tells the Vercel CLI which project to deploy to when the checkout is not linked.
+          how: Copy `projectId` from `.vercel/project.json`, or Vercel → Project → Settings → General → Project ID.
+      PRODUCTION_URL:
+        label: Public production URL
+        type: url
+        group: 1
+        required: false
+        placeholder: https://reactive-resume-psi.vercel.app
+        description: |
+          Where the health check runs after a production deploy. Leave blank to use the deployment's
+          custom domain or shortest `*.vercel.app` alias. Set it when the project has several aliases
+          and the wrong one is picked — the team-scoped `<project>-<team>.vercel.app` alias is behind SSO.
+        manifest:
+          why: The health check needs a URL that answers without Vercel SSO.
+          how: Vercel → Project → Settings → Domains, copy the public one (with `https://`).
+
+    outputs:
+      APP_URL:
+        label: Application URL
+        description: Where the deployment answers — the production alias, or the deployment URL for previews.
+      DEPLOYMENT_URL:
+        label: Deployment URL
+        description: The unique, immutable URL of this deployment.
+      DEPLOYMENT_ID:
+        label: Deployment ID
+        description: Pass this to **vercel-rollback** to make production serve this deployment again.
+      INSPECT_URL:
+        label: Vercel dashboard
+        description: Build logs, runtime logs and settings for this deployment.
+      GIT_COMMIT:
+        label: Git commit
+        description: The commit the checkout was on when it was uploaded.
+
+  vercel-rollback:
+    description: Make production serve an earlier Vercel deployment (code only, no database rollback).
+    long_description: |
+      Points the production aliases at an existing, successful deployment with `vercel promote`,
+      then health-checks the result. Nothing is rebuilt.
+
+      **The database schema is not rolled back.** Migrations applied by a newer deployment stay
+      in place, so only roll back to deployments whose code is compatible with the current
+      schema — keep migrations backward-compatible for exactly this reason.
+
+      Find candidates with `vercel ls`, in Vercel → Project → Deployments, or from the
+      *Deployment ID* output of an earlier **vercel** run.
+
+    environment:
+      dockerfile: deploy/vercel.Dockerfile
+      context: deploy
+
+    steps:
+      - name: Check credentials and project
+        run: sh deploy/vercel/preflight.sh
+      - name: Promote deployment
+        # Sourced (not executed) so the exported URLs reach the next step and the outputs.
+        run: . deploy/vercel/promote.sh
+      - name: Health check
+        run: sh deploy/vercel/health-check.sh "$APP_URL"
+
+    groups:
+      1: Vercel account and project
+
+    variables:
+      DEPLOYMENT:
+        label: Deployment to promote
+        deploy_time: true
+        placeholder: dpl_… or https://reactive-resume-xxxxxxxxx-team.vercel.app
+        validation:
+          pattern: "(https://)?[A-Za-z0-9._-]+(\\.vercel\\.app)?/?|dpl_[A-Za-z0-9]+"
+          message: A deployment ID (`dpl_…`) or a deployment URL.
+        description: A previous **READY** deployment of this project. Its ID appears as an output of every **vercel** run.
+
+      VERCEL_TOKEN:
+        label: Vercel access token
+        secret: true
+        group: 1
+        validation:
+          min_length: 20
+          message: A Vercel access token, usually starting with `vca_`.
+        manifest:
+          why: Authenticates the Vercel CLI against the account that owns the project.
+          how: |
+            vercel.com → avatar → **Account Settings → Tokens → Create**. Name it
+            `keel`, scope it to the team that owns the project, pick an expiry, and copy the value.
+      VERCEL_ORG_ID:
+        label: Team / organization ID
+        group: 1
+        row: 1
+        required: false
+        placeholder: team_… (or the user ID for a personal account)
+        validation:
+          pattern: "[A-Za-z0-9_]+"
+          message: Letters, digits and underscores only.
+        description: Leave blank when the checkout is linked (`.vercel/project.json` exists). Required in Keel Cloud.
+        manifest:
+          why: Tells the Vercel CLI which team owns the project when the checkout is not linked.
+          how: Copy `orgId` from `.vercel/project.json` in any linked checkout, or Vercel → Team Settings → General → Team ID.
+      VERCEL_PROJECT_ID:
+        label: Project ID
+        group: 1
+        row: 1
+        required: false
+        placeholder: prj_…
+        validation:
+          pattern: "prj_[A-Za-z0-9]+"
+          message: Vercel project IDs start with `prj_`.
+        description: Set together with the team ID, or leave both blank for a linked checkout.
+        manifest:
+          why: Tells the Vercel CLI which project to promote in when the checkout is not linked.
+          how: Copy `projectId` from `.vercel/project.json`, or Vercel → Project → Settings → General → Project ID.
+      PRODUCTION_URL:
+        label: Public production URL
+        type: url
+        group: 1
+        required: false
+        placeholder: https://reactive-resume-psi.vercel.app
+        description: Where the health check runs. Leave blank to use the custom domain or shortest `*.vercel.app` alias.
+        manifest:
+          why: The health check needs a URL that answers without Vercel SSO.
+          how: Vercel → Project → Settings → Domains, copy the public one (with `https://`).
+
+    outputs:
+      APP_URL:
+        label: Application URL
+        description: The production alias that now serves the promoted deployment.
+      DEPLOYMENT_URL:
+        label: Deployment URL
+        description: The unique URL of the deployment production now serves.
+      DEPLOYMENT_ID:
+        label: Deployment ID
+      GIT_COMMIT:
+        label: Git commit
+        description: The commit that deployment was built from, when Vercel recorded it.
