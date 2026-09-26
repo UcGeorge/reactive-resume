@@ -1,12 +1,14 @@
 import { isIP } from "node:net";
 import { attachDatabasePool, ipAddress, waitUntil } from "@vercel/functions";
 import { configureAgentStreamLifetime } from "@reactive-resume/api/features/agent/streams";
+import { configureBackgroundWorkLifetime } from "@reactive-resume/api/features/jobs/lifetime";
 import { initializeAuth } from "@reactive-resume/auth/config";
 import { getPool } from "@reactive-resume/db/client";
 import { TRUSTED_IP_HEADERS } from "@reactive-resume/utils/rate-limit";
 import { createApp } from "./http/app";
 
 configureAgentStreamLifetime(waitUntil);
+configureBackgroundWorkLifetime(waitUntil);
 attachDatabasePool(getPool());
 const app = createApp({
 	serveStatic: false,

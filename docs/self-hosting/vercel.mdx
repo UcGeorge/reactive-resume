@@ -135,6 +135,17 @@ Explicit variables take precedence over the Marketplace aliases listed here.
 | `BLOB_READ_WRITE_TOKEN` | Injected | Provided by the connected Blob store. `BLOB_STORE_ID` with Vercel OIDC also works. |
 | `DEPLOYMENT_NAMESPACE` | No | Prefix for Blob objects and Redis keys. Defaults to `production`, or to a per-branch value in Preview. Keep it constant after you store files. Set different values if two installations share one Blob store or Redis database. |
 | `ALLOW_PREVIEW_MIGRATIONS` | No | Set to `true` in Preview only after you connect isolated preview resources. |
+| `CRON_SECRET` | No | At least 16 characters. Authorizes the `/api/cron/*` endpoints that Vercel Cron invokes for the daily job scan and follow-up digest. Without it, scheduled scanning and the digest never run. |
+
+## Career features on Vercel
+
+Vercel Functions run only while serving a request, so the in-process background worker that Docker starts at boot never runs here. The career features adapt:
+
+- Evaluations and tailoring run inside the request, kept alive past the response with `waitUntil`. Each run must finish within the Function's five-minute limit; a run cut off by the limit can be retried from the evaluation panel.
+- Scheduled scanning of watched companies runs **once per day** via Vercel Cron (`/api/cron/scanner`), not every `SCANNER_INTERVAL_HOURS`. Hobby allows daily crons only, and the exact hour is not guaranteed. Manual **Scan now** works at any time.
+- Follow-up materialization and the opt-in email digest also run once per day (`/api/cron/follow-ups`). The in-app follow-up queue is always fresh — it recomputes on read.
+- Set `CRON_SECRET` or neither cron endpoint will accept invocations.
+- Job retries and queue persistence (pg-boss) do not apply on Vercel; failed background work is surfaced in the UI for manual retry.
 
 For SMTP, OAuth providers, and feature flags, use the same variables as Docker. See [Self-hosting with Docker](/self-hosting/docker).
 

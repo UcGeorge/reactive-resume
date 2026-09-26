@@ -5,6 +5,7 @@ import { protectedProcedure } from "../../context";
 import { evaluationDto, tailoringDto } from "../../dto/evaluation";
 import { aiRequestRateLimit } from "../../middleware/rate-limit";
 import { applicationService } from "../applications/service";
+import { runDetached } from "../jobs/lifetime";
 import { backgroundJobsAvailable, enqueueJob } from "../jobs/queue";
 import { JOB_NAMES } from "../jobs/registry";
 import { resumeService } from "../resume/service";
@@ -26,9 +27,12 @@ const evaluationErrors = {
  * the feature must not silently dead-end either way. */
 async function dispatchEvaluationRun(input: { evaluationId: string; userId: string; locale: string }) {
 	if (!backgroundJobsAvailable()) {
-		void runEvaluation(input).catch((error) => {
-			console.error("Inline evaluation run failed", { evaluationId: input.evaluationId, error });
-		});
+		// runDetached keeps the work alive past the response on serverless (Vercel waitUntil).
+		runDetached(
+			runEvaluation(input).catch((error) => {
+				console.error("Inline evaluation run failed", { evaluationId: input.evaluationId, error });
+			}),
+		);
 		return;
 	}
 	await enqueueJob(JOB_NAMES.evaluationRun, input, { singletonKey: input.evaluationId });

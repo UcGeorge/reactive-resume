@@ -9,6 +9,8 @@
 		"./features/agent/streams": "./src/features/agent/streams.ts",
 		"./features/flags": "./src/features/flags/index.ts",
 		"./features/jobs": "./src/features/jobs/boot.ts",
+		"./features/jobs/lifetime": "./src/features/jobs/lifetime.ts",
+		"./features/jobs/scheduled": "./src/features/jobs/scheduled.ts",
 		"./features/resume/export": "./src/features/resume/export.ts",
 		"./features/resume/public-pdf": "./src/features/resume/public-pdf.ts",
 		"./features/resume/social-meta": "./src/features/resume/social-meta.ts",

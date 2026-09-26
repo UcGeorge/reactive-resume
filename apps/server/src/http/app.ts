@@ -19,6 +19,7 @@ import { handleLlms, handleRobots, handleSitemap } from "../static/seo";
 import { handleUpload } from "../static/uploads";
 import { handleWebApp, serveWebDistStatic } from "../static/web";
 import { handleAuth, handleOAuth } from "./auth";
+import { handleCronFollowUps, handleCronScanner } from "./cron";
 import { handleHealth } from "./health";
 import { handlePublicResumePdf } from "./public-resume-pdf";
 import { handleResumePdfDownload } from "./resume-pdf";
@@ -59,6 +60,8 @@ export function createApp(options: AppOptions = {}) {
 	app.get("/api/auth/oauth", (c) => handleOAuth(c.req.raw));
 	app.all("/api/auth/*", (c) => handleAuth(c.req.raw));
 	app.get("/api/health", () => handleHealth());
+	app.get("/api/cron/scanner", (c) => handleCronScanner(c.req.raw));
+	app.get("/api/cron/follow-ups", (c) => handleCronFollowUps(c.req.raw));
 	app.get("/api/resumes/:username/:slug/pdf", (c) =>
 		handlePublicResumePdf(c.req.raw, c.req.param("username"), c.req.param("slug"), client(c)),
 	);

@@ -102,6 +102,9 @@ export const env = createEnv({
 		FLAG_DISABLE_JOB_SCANNER: z.stringbool().default(false),
 		/** Hours between background scans of watched companies. */
 		SCANNER_INTERVAL_HOURS: z.coerce.number().int().min(1).max(168).default(6),
+		/** Authorizes the /api/cron/* endpoints (serverless deploys only — Vercel Cron sends
+		 * it as a bearer token). Unset, the endpoints refuse every request. */
+		CRON_SECRET: z.string().min(16).optional(),
 	},
 	runtimeEnv: deploymentEnvironment(process.env),
 	emptyStringAsUndefined: true,

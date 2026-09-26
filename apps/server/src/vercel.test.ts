@@ -7,6 +7,7 @@ const mocks = vi.hoisted(() => ({
 	initializeAuth: vi.fn(),
 	attachDatabasePool: vi.fn(),
 	configureAgentStreamLifetime: vi.fn(),
+	configureBackgroundWorkLifetime: vi.fn(),
 	pool: {},
 	getPool: vi.fn(),
 	createApp:
@@ -25,6 +26,9 @@ vi.mock("@vercel/functions", () => ({
 }));
 vi.mock("@reactive-resume/api/features/agent/streams", () => ({
 	configureAgentStreamLifetime: mocks.configureAgentStreamLifetime,
+}));
+vi.mock("@reactive-resume/api/features/jobs/lifetime", () => ({
+	configureBackgroundWorkLifetime: mocks.configureBackgroundWorkLifetime,
 }));
 vi.mock("@reactive-resume/auth/config", () => ({ initializeAuth: mocks.initializeAuth }));
 vi.mock("@reactive-resume/db/client", () => ({ getPool: mocks.getPool }));
@@ -56,6 +60,7 @@ describe("Vercel adapter", () => {
 	it("registers platform lifetime hooks and disables filesystem static serving", async () => {
 		await import("./vercel");
 		expect(mocks.configureAgentStreamLifetime).toHaveBeenCalledExactlyOnceWith(mocks.waitUntil);
+		expect(mocks.configureBackgroundWorkLifetime).toHaveBeenCalledExactlyOnceWith(mocks.waitUntil);
 		expect(mocks.attachDatabasePool).toHaveBeenCalledExactlyOnceWith(mocks.pool);
 		expect(mocks.createApp).toHaveBeenCalledExactlyOnceWith({
 			serveStatic: false,
