@@ -2026,6 +2026,10 @@ msgstr ""
 msgid "Couldn't suggest stories from the resume."
 msgstr ""
 
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "Couldn't update the cover letter link."
+msgstr ""
+
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Couldn't update the timeline entry."
 msgstr "Tidak dapat memperbarui entri lini masa."
@@ -2070,12 +2074,25 @@ msgstr "Surat lamaran"
 msgid "Cover Letter"
 msgstr "Surat Lamaran"
 
+#. placeholder {0}: formatDate(letter.updatedAt)
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "Cover letter · updated {0}"
+msgstr ""
+
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Cover letter draft"
 msgstr "Draf surat lamaran"
 
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "Cover letter linked to this application."
+msgstr ""
+
 #: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
 msgid "Cover letter saved."
+msgstr ""
+
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "Cover letter unlinked from this application."
 msgstr ""
 
 #: src/routes/dashboard/-components/sidebar.tsx
@@ -4453,6 +4470,10 @@ msgstr ""
 msgid "Link a resume and paste the job description first"
 msgstr ""
 
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "Link an existing cover letter"
+msgstr ""
+
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Linked Reactive Resume"
 msgstr "Reactive Resume tertaut"
@@ -4919,6 +4940,10 @@ msgstr "Tidak ada perintah yang cocok dengan pencarian itu."
 msgid "No conventional section headings were found."
 msgstr "Tidak ditemukan judul bagian yang konvensional."
 
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "No cover letter written for this application yet."
+msgstr ""
+
 #: src/features/cover-letters/library.tsx
 msgid "No cover letters found. Create one or import an existing letter."
 msgstr "Tidak ada surat pengantar yang ditemukan. Buat satu atau impor surat yang sudah ada."
@@ -4975,6 +5000,10 @@ msgstr "Tidak ada baris yang tampak seperti jabatan yang dipasangkan dengan nama
 #: src/routes/_home/ats-checker.tsx
 msgid "No one-page rule, and no treating a font or a career gap as a fault."
 msgstr "Tidak ada aturan satu halaman, dan font atau jeda karier tidak dianggap sebagai kesalahan."
+
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "No other cover letters yet."
+msgstr ""
 
 #: src/features/settings/authentication/components/passkeys.tsx
 msgid "No passkeys registered yet."
@@ -8454,6 +8483,14 @@ msgstr "Membuka"
 #: src/features/resume/stylesheet/toolbar.tsx
 msgid "Undo stylesheet edit"
 msgstr "Batalkan pengeditan stylesheet"
+
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "Unlink"
+msgstr ""
+
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "Unlink from this application"
+msgstr ""
 
 #: src/features/settings/authentication/components/hooks.tsx
 msgid "Unlinking your {providerName} account..."

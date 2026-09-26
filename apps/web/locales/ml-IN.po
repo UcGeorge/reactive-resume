@@ -2026,6 +2026,10 @@ msgstr ""
 msgid "Couldn't suggest stories from the resume."
 msgstr ""
 
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "Couldn't update the cover letter link."
+msgstr ""
+
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Couldn't update the timeline entry."
 msgstr "ടൈംലൈൻ എൻട്രി അപ്‌ഡേറ്റ് ചെയ്യാൻ കഴിഞ്ഞില്ല."
@@ -2070,12 +2074,25 @@ msgstr "കവർ ലെറ്റർ"
 msgid "Cover Letter"
 msgstr "കവർ ലെറ്റർ"
 
+#. placeholder {0}: formatDate(letter.updatedAt)
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "Cover letter · updated {0}"
+msgstr ""
+
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Cover letter draft"
 msgstr "കവർ ലെറ്റർ ഡ്രാഫ്റ്റ്"
 
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "Cover letter linked to this application."
+msgstr ""
+
 #: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
 msgid "Cover letter saved."
+msgstr ""
+
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "Cover letter unlinked from this application."
 msgstr ""
 
 #: src/routes/dashboard/-components/sidebar.tsx
@@ -4453,6 +4470,10 @@ msgstr ""
 msgid "Link a resume and paste the job description first"
 msgstr ""
 
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "Link an existing cover letter"
+msgstr ""
+
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Linked Reactive Resume"
 msgstr "ലിങ്ക് ചെയ്‌ത Reactive Resume"
@@ -4919,6 +4940,10 @@ msgstr "ആ തിരയലിന് ചേരുന്ന കമാൻഡുക
 msgid "No conventional section headings were found."
 msgstr "പതിവ് വിഭാഗ തലക്കെട്ടുകളൊന്നും കണ്ടെത്തിയില്ല."
 
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "No cover letter written for this application yet."
+msgstr ""
+
 #: src/features/cover-letters/library.tsx
 msgid "No cover letters found. Create one or import an existing letter."
 msgstr "കവർ ലെറ്ററുകളൊന്നും കണ്ടെത്തിയില്ല. ഒരെണ്ണം സൃഷ്‌ടിക്കുക അല്ലെങ്കിൽ നിലവിലുള്ള ഒരു കത്ത് ഇറക്കുമതി ചെയ്യുക."
@@ -4975,6 +5000,10 @@ msgstr "ജോലി പേരും തൊഴിലുടമയും ചേർ
 #: src/routes/_home/ats-checker.tsx
 msgid "No one-page rule, and no treating a font or a career gap as a fault."
 msgstr "ഒരു പേജ് നിയമമില്ല, ഫോണ്ടോ കരിയർ ഇടവേളയോ പിഴവായി കണക്കാക്കുന്നുമില്ല."
+
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "No other cover letters yet."
+msgstr ""
 
 #: src/features/settings/authentication/components/passkeys.tsx
 msgid "No passkeys registered yet."
@@ -8454,6 +8483,14 @@ msgstr "പഴയപടിയാക്കുക"
 #: src/features/resume/stylesheet/toolbar.tsx
 msgid "Undo stylesheet edit"
 msgstr "സ്റ്റൈൽഷീറ്റ് എഡിറ്റ് പഴയപടിയാക്കുക"
+
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "Unlink"
+msgstr ""
+
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "Unlink from this application"
+msgstr ""
 
 #: src/features/settings/authentication/components/hooks.tsx
 msgid "Unlinking your {providerName} account..."

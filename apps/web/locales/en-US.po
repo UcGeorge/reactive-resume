@@ -2021,6 +2021,10 @@ msgstr "Couldn't start the evaluation."
 msgid "Couldn't suggest stories from the resume."
 msgstr "Couldn't suggest stories from the resume."
 
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "Couldn't update the cover letter link."
+msgstr "Couldn't update the cover letter link."
+
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Couldn't update the timeline entry."
 msgstr "Couldn't update the timeline entry."
@@ -2065,13 +2069,26 @@ msgstr "Cover letter"
 msgid "Cover Letter"
 msgstr "Cover Letter"
 
+#. placeholder {0}: formatDate(letter.updatedAt)
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "Cover letter · updated {0}"
+msgstr "Cover letter · updated {0}"
+
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Cover letter draft"
 msgstr "Cover letter draft"
 
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "Cover letter linked to this application."
+msgstr "Cover letter linked to this application."
+
 #: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
 msgid "Cover letter saved."
 msgstr "Cover letter saved."
+
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "Cover letter unlinked from this application."
+msgstr "Cover letter unlinked from this application."
 
 #: src/routes/dashboard/-components/sidebar.tsx
 #: src/routes/dashboard/cover-letters.tsx
@@ -4448,6 +4465,10 @@ msgstr "Link a resume and paste the job description (Edit) to tailor a copy for 
 msgid "Link a resume and paste the job description first"
 msgstr "Link a resume and paste the job description first"
 
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "Link an existing cover letter"
+msgstr "Link an existing cover letter"
+
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Linked Reactive Resume"
 msgstr "Linked Reactive Resume"
@@ -4914,6 +4935,10 @@ msgstr "No commands match that search."
 msgid "No conventional section headings were found."
 msgstr "No conventional section headings were found."
 
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "No cover letter written for this application yet."
+msgstr "No cover letter written for this application yet."
+
 #: src/features/cover-letters/library.tsx
 msgid "No cover letters found. Create one or import an existing letter."
 msgstr "No cover letters found. Create one or import an existing letter."
@@ -4970,6 +4995,10 @@ msgstr "No lines look like a job title paired with an employer."
 #: src/routes/_home/ats-checker.tsx
 msgid "No one-page rule, and no treating a font or a career gap as a fault."
 msgstr "No one-page rule, and no treating a font or a career gap as a fault."
+
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "No other cover letters yet."
+msgstr "No other cover letters yet."
 
 #: src/features/settings/authentication/components/passkeys.tsx
 msgid "No passkeys registered yet."
@@ -8449,6 +8478,14 @@ msgstr "Undo"
 #: src/features/resume/stylesheet/toolbar.tsx
 msgid "Undo stylesheet edit"
 msgstr "Undo stylesheet edit"
+
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "Unlink"
+msgstr "Unlink"
+
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "Unlink from this application"
+msgstr "Unlink from this application"
 
 #: src/features/settings/authentication/components/hooks.tsx
 msgid "Unlinking your {providerName} account..."

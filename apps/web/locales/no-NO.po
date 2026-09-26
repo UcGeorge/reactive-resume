@@ -2026,6 +2026,10 @@ msgstr ""
 msgid "Couldn't suggest stories from the resume."
 msgstr ""
 
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "Couldn't update the cover letter link."
+msgstr ""
+
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Couldn't update the timeline entry."
 msgstr "Kunne ikke oppdatere tidslinjeoppføringen."
@@ -2070,12 +2074,25 @@ msgstr "Følgebrev"
 msgid "Cover Letter"
 msgstr "Følgebrev"
 
+#. placeholder {0}: formatDate(letter.updatedAt)
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "Cover letter · updated {0}"
+msgstr ""
+
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Cover letter draft"
 msgstr "Utkast til følgebrev"
 
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "Cover letter linked to this application."
+msgstr ""
+
 #: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
 msgid "Cover letter saved."
+msgstr ""
+
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "Cover letter unlinked from this application."
 msgstr ""
 
 #: src/routes/dashboard/-components/sidebar.tsx
@@ -4453,6 +4470,10 @@ msgstr ""
 msgid "Link a resume and paste the job description first"
 msgstr ""
 
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "Link an existing cover letter"
+msgstr ""
+
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Linked Reactive Resume"
 msgstr "Koblet Reactive Resume"
@@ -4919,6 +4940,10 @@ msgstr "Ingen kommandoer passer til det søket."
 msgid "No conventional section headings were found."
 msgstr "Ingen vanlige seksjonsoverskrifter ble funnet."
 
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "No cover letter written for this application yet."
+msgstr ""
+
 #: src/features/cover-letters/library.tsx
 msgid "No cover letters found. Create one or import an existing letter."
 msgstr "Fant ingen følgebrev. Opprett ett, eller importer et eksisterende brev."
@@ -4975,6 +5000,10 @@ msgstr "Ingen linjer ser ut som en stillingstittel koblet med en arbeidsgiver."
 #: src/routes/_home/ats-checker.tsx
 msgid "No one-page rule, and no treating a font or a career gap as a fault."
 msgstr "Ingen énsidesregel, og ingen skrifttype eller karrierepause behandles som en feil."
+
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "No other cover letters yet."
+msgstr ""
 
 #: src/features/settings/authentication/components/passkeys.tsx
 msgid "No passkeys registered yet."
@@ -8454,6 +8483,14 @@ msgstr "Angre"
 #: src/features/resume/stylesheet/toolbar.tsx
 msgid "Undo stylesheet edit"
 msgstr "Angre redigering av stilark"
+
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "Unlink"
+msgstr ""
+
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "Unlink from this application"
+msgstr ""
 
 #: src/features/settings/authentication/components/hooks.tsx
 msgid "Unlinking your {providerName} account..."

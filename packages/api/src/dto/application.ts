@@ -91,6 +91,12 @@ const createInputSchema = editableSchema.partial().extend({
 	stageEnteredAt: timelineDateSchema.optional(),
 });
 
+// Read paths also carry the linked resume's name, resolved server-side, so no surface has to
+// show a bare "resume linked" placeholder.
+const applicationReadOutput = applicationSchema.omit({ userId: true }).extend({
+	resumeName: z.string().nullable().optional().describe("Name of the linked Reactive Resume, if any."),
+});
+
 export const applicationDto = {
 	list: {
 		input: z
@@ -101,12 +107,12 @@ export const applicationDto = {
 			})
 			.optional()
 			.default({ includeArchived: false }),
-		output: z.array(applicationSchema.omit({ userId: true })),
+		output: z.array(applicationReadOutput),
 	},
 
 	getById: {
 		input: applicationSchema.pick({ id: true }),
-		output: applicationSchema.omit({ userId: true }),
+		output: applicationReadOutput,
 	},
 
 	create: {

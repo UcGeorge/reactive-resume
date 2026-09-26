@@ -80,9 +80,9 @@ export function ApplicationCard({ application, onClick, onEdit, className, dragg
 			{(application.resumeId || application.source) && (
 				<div className="mt-2.5 flex flex-wrap gap-1.5">
 					{application.resumeId && (
-						<span className="inline-flex items-center gap-1 rounded-md border border-border bg-muted/50 px-2 py-0.5 font-medium text-[11px] text-muted-foreground">
-							<FileTextIcon className="size-3" />
-							<Trans>Resume linked</Trans>
+						<span className="inline-flex max-w-full items-center gap-1 rounded-md border border-border bg-muted/50 px-2 py-0.5 font-medium text-[11px] text-muted-foreground">
+							<FileTextIcon className="size-3 shrink-0" />
+							<span className="truncate">{application.resumeName ?? <Trans>Resume linked</Trans>}</span>
 						</span>
 					)}
 					{application.source && (

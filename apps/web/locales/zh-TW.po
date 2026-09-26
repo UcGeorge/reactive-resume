@@ -2026,6 +2026,10 @@ msgstr ""
 msgid "Couldn't suggest stories from the resume."
 msgstr ""
 
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "Couldn't update the cover letter link."
+msgstr ""
+
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Couldn't update the timeline entry."
 msgstr "無法更新時間軸項目。"
@@ -2070,12 +2074,25 @@ msgstr "求職信"
 msgid "Cover Letter"
 msgstr "求職信"
 
+#. placeholder {0}: formatDate(letter.updatedAt)
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "Cover letter · updated {0}"
+msgstr ""
+
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Cover letter draft"
 msgstr "求職信草稿"
 
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "Cover letter linked to this application."
+msgstr ""
+
 #: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
 msgid "Cover letter saved."
+msgstr ""
+
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "Cover letter unlinked from this application."
 msgstr ""
 
 #: src/routes/dashboard/-components/sidebar.tsx
@@ -4453,6 +4470,10 @@ msgstr ""
 msgid "Link a resume and paste the job description first"
 msgstr ""
 
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "Link an existing cover letter"
+msgstr ""
+
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Linked Reactive Resume"
 msgstr "已連結的 Reactive Resume"
@@ -4919,6 +4940,10 @@ msgstr "沒有符合搜尋的指令。"
 msgid "No conventional section headings were found."
 msgstr "未找到常規的部分標題。"
 
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "No cover letter written for this application yet."
+msgstr ""
+
 #: src/features/cover-letters/library.tsx
 msgid "No cover letters found. Create one or import an existing letter."
 msgstr "找不到求職信。請建立一封，或匯入現有的信件。"
@@ -4975,6 +5000,10 @@ msgstr "沒有看起來像「職稱 + 雇主」這種搭配的行。"
 #: src/routes/_home/ats-checker.tsx
 msgid "No one-page rule, and no treating a font or a career gap as a fault."
 msgstr "不強制一頁原則，也不把字型或職涯空窗期視為缺陷。"
+
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "No other cover letters yet."
+msgstr ""
 
 #: src/features/settings/authentication/components/passkeys.tsx
 msgid "No passkeys registered yet."
@@ -8454,6 +8483,14 @@ msgstr "撤銷"
 #: src/features/resume/stylesheet/toolbar.tsx
 msgid "Undo stylesheet edit"
 msgstr "撤銷樣式表編輯"
+
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "Unlink"
+msgstr ""
+
+#: src/features/applications/components/linked-cover-letters.tsx
+msgid "Unlink from this application"
+msgstr ""
 
 #: src/features/settings/authentication/components/hooks.tsx
 msgid "Unlinking your {providerName} account..."

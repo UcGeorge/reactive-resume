@@ -12,6 +12,7 @@ import * as schema from "@reactive-resume/db/schema";
 import { generateId } from "@reactive-resume/utils/string";
 import { resumeService } from "../resume/service";
 import { getStorageService, uploadFile } from "../storage/service";
+import { withResumeName, withResumeNames } from "./linked-resume";
 
 function timelineDate(value: Date | string): Date {
 	return value instanceof Date ? value : new Date(value);
@@ -208,11 +209,11 @@ export const applicationService = {
 			)
 			.orderBy(desc(schema.application.updatedAt));
 
-		return rows.filter((row) => input.includeArchived || !row.archived).map(stripUserId);
+		return withResumeNames(input.userId, rows.filter((row) => input.includeArchived || !row.archived).map(stripUserId));
 	},
 
 	getById: async (input: { id: string; userId: string }) => {
-		return stripUserId(await requireOwned(input.id, input.userId));
+		return withResumeName(input.userId, stripUserId(await requireOwned(input.id, input.userId)));
 	},
 
 	create: async (

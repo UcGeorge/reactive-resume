@@ -37,6 +37,7 @@ import { orpc } from "@/libs/orpc/client";
 import { applicationsListQueryKey } from "../queries";
 import { ApplicationAiCopilot } from "./application-ai-copilot";
 import { FileAttachmentField } from "./file-attachment-field";
+import { LinkedCoverLetters } from "./linked-cover-letters";
 
 const stageIndex = (status: ApplicationStatus) => STAGES.findIndex((s) => s.value === status);
 const stageOf = (status: ApplicationStatus) => STAGES.find((s) => s.value === status);
@@ -242,8 +243,15 @@ export function ApplicationDetailSheet({ application, onOpenChange, onEdit }: Pr
 										<span className="flex size-8 items-center justify-center rounded-md bg-primary/10 font-bold text-[10px] text-primary">
 											RXR
 										</span>
-										<span className="min-w-0 flex-1 truncate text-sm">
-											<Trans>Linked Reactive Resume</Trans>
+										<span className="min-w-0 flex-1">
+											<span className="block truncate text-sm">
+												{current.resumeName ?? <Trans>Linked Reactive Resume</Trans>}
+											</span>
+											{current.resumeName && (
+												<span className="block text-muted-foreground text-xs">
+													<Trans>Linked Reactive Resume</Trans>
+												</span>
+											)}
 										</span>
 										<ArrowSquareOutIcon className="text-muted-foreground" />
 									</Link>
@@ -286,6 +294,8 @@ export function ApplicationDetailSheet({ application, onOpenChange, onEdit }: Pr
 										})
 									}
 								/>
+
+								<LinkedCoverLetters applicationId={current.id} />
 							</Section>
 
 							{/* AI copilot — placed high so it's discoverable without scrolling past the timeline */}
