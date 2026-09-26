@@ -1638,6 +1638,10 @@ msgid "Compensation"
 msgstr "Compensation"
 
 #: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Compiling the plan and running the fact gate…"
+msgstr "Compiling the plan and running the fact gate…"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
 msgid "complete"
 msgstr "complete"
 
@@ -3159,6 +3163,14 @@ msgid "Fact gate"
 msgstr "Fact gate"
 
 #: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Fact gate passed — saving the tailored copy…"
+msgstr "Fact gate passed — saving the tailored copy…"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "fact-checking…"
+msgstr "fact-checking…"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
 msgid "failed"
 msgstr "failed"
 
@@ -3570,10 +3582,6 @@ msgstr "Gaps & mitigations"
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Gaps:"
 msgstr "Gaps:"
-
-#: src/features/tailoring/components/tailoring-panel.tsx
-msgid "gated"
-msgstr "gated"
 
 #: src/dialogs/resume/index.tsx
 msgid "Generate a random name"
@@ -5504,10 +5512,6 @@ msgstr "PDF text layer"
 msgid "PDFs already attached to applications will remain available."
 msgstr "PDFs already attached to applications will remain available."
 
-#: src/features/tailoring/components/tailoring-panel.tsx
-msgid "pending"
-msgstr "pending"
-
 #: src/dialogs/resume/sections/education.tsx
 #: src/dialogs/resume/sections/experience.tsx
 #: src/dialogs/resume/sections/project.tsx
@@ -5578,8 +5582,12 @@ msgid "Plain text, for AI tools and quick edits."
 msgstr "Plain text, for AI tools and quick edits."
 
 #: src/features/tailoring/components/tailoring-panel.tsx
-msgid "planned"
-msgstr "planned"
+msgid "Planning edits against the posting…"
+msgstr "Planning edits against the posting…"
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "planning…"
+msgstr "planning…"
 
 #: src/features/homepage/feature-explorer.tsx
 msgid "Play data flow animation"
@@ -6305,6 +6313,10 @@ msgid "Retry"
 msgstr "Retry"
 
 #: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Reuse check, plan, compile, fact gate — usually a minute or two. You can switch tabs; progress is tracked on the server."
+msgstr "Reuse check, plan, compile, fact gate — usually a minute or two. You can switch tabs; progress is tracked on the server."
+
+#: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Reuse decision"
 msgstr "Reuse decision"
 
@@ -6313,6 +6325,7 @@ msgid "reused"
 msgstr "reused"
 
 #. placeholder {0}: result.name
+#: src/features/applications/components/application-ai-copilot.tsx
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Reused \"{0}\" — the posting still matches the existing tailored resume."
 msgstr "Reused \"{0}\" — the posting still matches the existing tailored resume."
@@ -6443,10 +6456,6 @@ msgstr "Run full evaluation"
 msgid "Running quick match…"
 msgstr "Running quick match…"
 
-#: src/features/tailoring/components/tailoring-panel.tsx
-msgid "Running the full pipeline — reuse check, plan, compile, fact gate. This is a single long request and can take a minute or two; keep this tab open."
-msgstr "Running the full pipeline — reuse check, plan, compile, fact gate. This is a single long request and can take a minute or two; keep this tab open."
-
 #: src/routes/agent/-components/tool-part-card.tsx
 msgid "Running…"
 msgstr "Running…"
@@ -6564,6 +6573,10 @@ msgstr "Saved"
 #: src/features/resume/builder/draft.ts
 msgid "Saving is taking longer than expected. Your changes are still open."
 msgstr "Saving is taking longer than expected. Your changes are still open."
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "saving…"
+msgstr "saving…"
 
 #: src/routes/builder/$resumeId/-components/header.tsx
 msgid "Saving…"
@@ -7307,6 +7320,10 @@ msgstr "Start the resume with your name on its own line."
 msgid "Start thread"
 msgstr "Start thread"
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Starting…"
+msgstr "Starting…"
+
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "stated"
 msgstr "stated"
@@ -7538,6 +7555,10 @@ msgstr "Tailoring failed"
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Tailoring failed."
 msgstr "Tailoring failed."
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Tailoring in progress — follow it in the Tailoring tab"
+msgstr "Tailoring in progress — follow it in the Tailoring tab"
 
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Tailoring…"

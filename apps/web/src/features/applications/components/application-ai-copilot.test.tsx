@@ -8,7 +8,7 @@ import { i18n } from "@lingui/core";
 import { I18nProvider } from "@lingui/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-const mocks = vi.hoisted(() => ({ draft: vi.fn(), other: vi.fn() }));
+const mocks = vi.hoisted(() => ({ draft: vi.fn(), other: vi.fn(), tailoringRuns: vi.fn() }));
 type MockEditorDialogProps = { letterId: string };
 vi.mock("@/libs/orpc/client", () => ({
 	orpc: {
@@ -23,6 +23,19 @@ vi.mock("@/libs/orpc/client", () => ({
 		evaluations: {
 			start: { mutationOptions: (options: object) => ({ ...options, mutationFn: mocks.other }) },
 			listByApplication: { queryKey: () => ["evaluations"] },
+			tailoringRuns: {
+				list: {
+					queryOptions: () => ({
+						queryKey: ["tailoring-runs"],
+						queryFn: async () => (await mocks.tailoringRuns()) ?? [],
+					}),
+					queryKey: () => ["tailoring-runs"],
+				},
+				get: { queryOptions: () => ({}), queryKey: () => [] },
+				discard: { mutationOptions: (options: object) => options },
+				audit: { mutationOptions: (options: object) => options },
+			},
+			factCheck: { mutationOptions: (options: object) => options },
 		},
 	},
 }));
@@ -71,15 +84,25 @@ function draftRequest() {
 	return { promise, resolve };
 }
 
-function renderCopilot() {
+function renderCopilot(subject: Application = application) {
 	return render(
 		<QueryClientProvider client={new QueryClient({ defaultOptions: { mutations: { retry: false } } })}>
 			<I18nProvider i18n={i18n}>
-				<ApplicationAiCopilot application={application} />
+				<ApplicationAiCopilot application={subject} />
 			</I18nProvider>
 		</QueryClientProvider>,
 	);
 }
+
+it("shows a tailoring run already in flight on the server after a fresh mount", async () => {
+	mocks.tailoringRuns.mockResolvedValue([{ id: "run", status: "planned" }]);
+	renderCopilot({ ...application, resumeId: "resume", jobDescription: "A posting" });
+	const tailor = screen.getByRole("button", { name: /Tailor my resume/ });
+	await waitFor(() => expect(tailor).toBeDisabled());
+	expect(tailor).toHaveTextContent(/Tailoring in progress/);
+	await userEvent.click(tailor);
+	expect(mocks.other).not.toHaveBeenCalled();
+});
 
 it.each(["cover-letter", "follow-up"] as const)(
 	"blocks both draft actions while the first %s is pending",

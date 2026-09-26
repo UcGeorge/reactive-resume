@@ -7,7 +7,7 @@ import type {
 	TailoringStatus,
 } from "@reactive-resume/schema/career/data";
 import { ORPCError } from "@orpc/client";
-import { and, desc, eq, sql } from "drizzle-orm";
+import { and, desc, eq, inArray, lt, sql } from "drizzle-orm";
 import { db } from "@reactive-resume/db/client";
 import * as schema from "@reactive-resume/db/schema";
 
@@ -18,8 +18,35 @@ function stripUserId<T extends { userId: string }>(row: T): Omit<T, "userId"> {
 	return rest;
 }
 
+/** Statuses of a run whose request is still working. */
+export const IN_FLIGHT_TAILORING_STATUSES = ["pending", "planned", "gated"] as const satisfies TailoringStatus[];
+
+/** An in-flight run untouched this long can no longer finish: its request died (on Vercel,
+ * killed at the 300 s Function cap), which skips the pipeline's own failure bookkeeping. */
+const STALE_TAILORING_MS = process.env.VERCEL === "1" ? 6 * 60 * 1000 : 15 * 60 * 1000;
+
+/** Lazily fail the user's runs orphaned mid-flight, so none shows as running forever. */
+async function failStaleRuns(userId: string): Promise<void> {
+	await db
+		.update(schema.tailoringRun)
+		.set({
+			status: "failed",
+			error: "Tailoring stopped before finishing — the AI provider was likely too slow. Run it again.",
+		})
+		.where(
+			and(
+				eq(schema.tailoringRun.userId, userId),
+				inArray(schema.tailoringRun.status, [...IN_FLIGHT_TAILORING_STATUSES]),
+				lt(schema.tailoringRun.updatedAt, new Date(Date.now() - STALE_TAILORING_MS)),
+			),
+		);
+}
+
 export const tailoringService = {
+	failStaleRuns,
+
 	getById: async (input: { id: string; userId: string }) => {
+		await failStaleRuns(input.userId);
 		const [row] = await db
 			.select()
 			.from(schema.tailoringRun)
@@ -30,6 +57,7 @@ export const tailoringService = {
 	},
 
 	listByApplication: async (input: { applicationId: string; userId: string }) => {
+		await failStaleRuns(input.userId);
 		const rows = await db
 			.select()
 			.from(schema.tailoringRun)
@@ -38,6 +66,22 @@ export const tailoringService = {
 			)
 			.orderBy(desc(schema.tailoringRun.createdAt));
 		return rows.map(stripUserId);
+	},
+
+	/** A run for this application that is still working, or null. */
+	inFlightForApplication: async (input: { applicationId: string; userId: string }): Promise<TailoringRunRow | null> => {
+		const [row] = await db
+			.select()
+			.from(schema.tailoringRun)
+			.where(
+				and(
+					eq(schema.tailoringRun.applicationId, input.applicationId),
+					eq(schema.tailoringRun.userId, input.userId),
+					inArray(schema.tailoringRun.status, [...IN_FLIGHT_TAILORING_STATUSES]),
+				),
+			)
+			.limit(1);
+		return row ?? null;
 	},
 
 	/** The newest run for an application, or null — the reuse gate reads this. */

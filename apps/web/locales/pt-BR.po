@@ -1643,6 +1643,10 @@ msgid "Compensation"
 msgstr ""
 
 #: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Compiling the plan and running the fact gate…"
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
 msgid "complete"
 msgstr ""
 
@@ -3164,6 +3168,14 @@ msgid "Fact gate"
 msgstr ""
 
 #: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Fact gate passed — saving the tailored copy…"
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "fact-checking…"
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
 msgid "failed"
 msgstr ""
 
@@ -3575,10 +3587,6 @@ msgstr ""
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Gaps:"
 msgstr "Lacunas:"
-
-#: src/features/tailoring/components/tailoring-panel.tsx
-msgid "gated"
-msgstr ""
 
 #: src/dialogs/resume/index.tsx
 msgid "Generate a random name"
@@ -5509,10 +5517,6 @@ msgstr "Camada de texto do PDF"
 msgid "PDFs already attached to applications will remain available."
 msgstr "Os arquivos PDF já anexados às inscrições permanecerão disponíveis."
 
-#: src/features/tailoring/components/tailoring-panel.tsx
-msgid "pending"
-msgstr ""
-
 #: src/dialogs/resume/sections/education.tsx
 #: src/dialogs/resume/sections/experience.tsx
 #: src/dialogs/resume/sections/project.tsx
@@ -5583,7 +5587,11 @@ msgid "Plain text, for AI tools and quick edits."
 msgstr "Texto simples, para ferramentas de IA e edições rápidas."
 
 #: src/features/tailoring/components/tailoring-panel.tsx
-msgid "planned"
+msgid "Planning edits against the posting…"
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "planning…"
 msgstr ""
 
 #: src/features/homepage/feature-explorer.tsx
@@ -6310,6 +6318,10 @@ msgid "Retry"
 msgstr "Tentar novamente"
 
 #: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Reuse check, plan, compile, fact gate — usually a minute or two. You can switch tabs; progress is tracked on the server."
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Reuse decision"
 msgstr ""
 
@@ -6318,6 +6330,7 @@ msgid "reused"
 msgstr ""
 
 #. placeholder {0}: result.name
+#: src/features/applications/components/application-ai-copilot.tsx
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Reused \"{0}\" — the posting still matches the existing tailored resume."
 msgstr ""
@@ -6448,10 +6461,6 @@ msgstr ""
 msgid "Running quick match…"
 msgstr ""
 
-#: src/features/tailoring/components/tailoring-panel.tsx
-msgid "Running the full pipeline — reuse check, plan, compile, fact gate. This is a single long request and can take a minute or two; keep this tab open."
-msgstr ""
-
 #: src/routes/agent/-components/tool-part-card.tsx
 msgid "Running…"
 msgstr "Executando…"
@@ -6569,6 +6578,10 @@ msgstr "Salvo"
 #: src/features/resume/builder/draft.ts
 msgid "Saving is taking longer than expected. Your changes are still open."
 msgstr "O salvamento está demorando mais do que o esperado. Suas alterações continuam abertas."
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "saving…"
+msgstr ""
 
 #: src/routes/builder/$resumeId/-components/header.tsx
 msgid "Saving…"
@@ -7312,6 +7325,10 @@ msgstr "Comece o currículo com seu nome em uma linha própria."
 msgid "Start thread"
 msgstr "Iniciar tópico"
 
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Starting…"
+msgstr ""
+
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "stated"
 msgstr ""
@@ -7543,6 +7560,10 @@ msgstr ""
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Tailoring failed."
 msgstr "A adaptação falhou."
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Tailoring in progress — follow it in the Tailoring tab"
+msgstr ""
 
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Tailoring…"

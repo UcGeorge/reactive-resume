@@ -11,6 +11,20 @@ export const tailoringRunsListQueryOptions = (applicationId: string) =>
 export const tailoringRunsListQueryKey = (applicationId: string) =>
 	orpc.evaluations.tailoringRuns.list.queryKey({ input: { applicationId } });
 
+/** A run whose request is still working on the server (mirrors the API's in-flight set). */
+export const isTailoringInFlight = (status: TailoringRun["status"]) =>
+	status === "pending" || status === "planned" || status === "gated";
+
+const TAILORING_POLL_INTERVAL_MS = 3000;
+
+/** The runs list, polled while any run is in flight. The server owns the progress, so every
+ * surface (Tailoring tab, copilot) shows it after tab switches and reloads alike. */
+export const tailoringRunsLiveQueryOptions = (applicationId: string) => ({
+	...tailoringRunsListQueryOptions(applicationId),
+	refetchInterval: (query: { state: { data?: TailoringRun[] | undefined } }) =>
+		query.state.data?.some((run) => isTailoringInFlight(run.status)) ? TAILORING_POLL_INTERVAL_MS : false,
+});
+
 export const tailoringRunQueryOptions = (id: string) =>
 	orpc.evaluations.tailoringRuns.get.queryOptions({ input: { id } });
 

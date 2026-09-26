@@ -40,6 +40,10 @@ const planOutput = z.object({
 		.transform((values) => values.slice(0, 40)),
 });
 
+// Budget for the single plan call. Tailoring runs inside the request, and on Vercel the
+// Function is killed at 300 s, which would skip the failure bookkeeping below.
+const TAILORING_PLAN_BUDGET_MS = process.env.VERCEL === "1" ? 240 * 1000 : 10 * 60 * 1000;
+
 async function resolveModel(userId: string): Promise<LanguageModel> {
 	const provider = await aiProvidersService.getDefaultRunnable({ userId });
 	if (!provider) {
@@ -92,6 +96,15 @@ export async function runTailoring(input: {
 	}
 	if (!application.jobDescription) {
 		throw new ORPCError("BAD_REQUEST", { message: "Paste the job description into this application first." });
+	}
+
+	// One run per application at a time: a second click (or a second tab) while one is working
+	// would otherwise start a duplicate run. Stale orphans are failed first so they never block.
+	await tailoringService.failStaleRuns(userId);
+	if (await tailoringService.inFlightForApplication({ applicationId, userId })) {
+		throw new ORPCError("CONFLICT", {
+			message: "A tailoring run is already in progress for this application — follow it in the Tailoring tab.",
+		});
 	}
 
 	// --- Reuse gate: compare against the previous run's archived JD before spending tokens.
@@ -175,6 +188,11 @@ export async function runTailoring(input: {
 		reuseDecision: reuse,
 	});
 
+	// Failures already written to the run (the fact gate records its own report) skip the
+	// generic bookkeeping in the catch; every other failure must mark the run failed, or it
+	// shows as in progress until the stale sweep catches it.
+	let failureRecorded = false;
+
 	try {
 		const requirementContext = (evaluation?.requirements ?? [])
 			.filter((row) => row.importance === "critical" || row.importance === "high")
@@ -200,6 +218,7 @@ export async function runTailoring(input: {
 						.join("\n\n"),
 				},
 				planOutput,
+				{ abortSignal: AbortSignal.timeout(TAILORING_PLAN_BUDGET_MS) },
 			),
 		);
 
@@ -246,6 +265,7 @@ export async function runTailoring(input: {
 				factGateReport: report,
 				changes: plan.changes,
 			});
+			failureRecorded = true;
 			throw new ORPCError("BAD_REQUEST", {
 				message: `The fact gate rejected the tailored resume: ${report.violations
 					.slice(0, 3)
@@ -272,7 +292,9 @@ export async function runTailoring(input: {
 		const newResumeId = await resumeService.create({
 			userId,
 			name,
-			slug: `${slugify(name)}-${generateId().slice(0, 6)}`,
+			// generateId() is a UUIDv7: its leading characters are a timestamp that only changes every
+			// few hours, so the uniqueness suffix must come from the random tail.
+			slug: `${slugify(name)}-v${run.version}-${generateId().slice(-6)}`,
 			tags: [...effectiveSource.tags.filter((tag) => tag !== "tailored"), "tailored"],
 			data: tailoredData,
 			locale: locale as never,
@@ -303,8 +325,13 @@ export async function runTailoring(input: {
 
 		return { resumeId: newResumeId, name, tailoringRunId: run.id, reused: false, factGate: report };
 	} catch (error) {
-		if (!(error instanceof ORPCError)) {
-			const message = error instanceof Error ? error.message : "Tailoring failed.";
+		if (!failureRecorded) {
+			const message =
+				error instanceof Error && error.name === "TimeoutError"
+					? "Tailoring ran out of time — the AI provider was too slow. Run it again, or switch to a faster model."
+					: error instanceof Error
+						? error.message
+						: "Tailoring failed.";
 			await tailoringService.update({ id: run.id, userId, status: "failed", error: message }).catch(() => undefined);
 		}
 		throw error;

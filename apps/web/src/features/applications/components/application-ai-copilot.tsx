@@ -13,13 +13,18 @@ import {
 	SparkleIcon,
 	SpinnerGapIcon,
 } from "@phosphor-icons/react";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { useCallback, useState } from "react";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { toast } from "@reactive-resume/ui/components/toast";
 import { cn } from "@reactive-resume/utils/style";
 import { CoverLetterEditorDialog } from "@/features/cover-letters/editor-dialog";
 import { GuidedCoverLetterWizard } from "@/features/cover-letters/guided/guided-cover-letter-wizard";
 import { evaluationsListQueryKey, startEvaluationMutationOptions } from "@/features/evaluations/queries";
+import {
+	isTailoringInFlight,
+	tailoringRunsListQueryKey,
+	tailoringRunsLiveQueryOptions,
+} from "@/features/tailoring/queries";
 import { orpc } from "@/libs/orpc/client";
 import { applicationsListQueryKey } from "../queries";
 
@@ -130,15 +135,44 @@ export function ApplicationAiCopilot({ application, onOpenEvaluation }: Props) {
 			onError: (error) => toast.add({ type: "error", description: error.message || t`Match scoring failed.` }),
 		}),
 	);
+	const canTailor = !!application.resumeId && !!application.jobDescription;
+	// Tailoring progress lives on the server (the run row), so it survives tab switches and
+	// reloads and is shared with the Tailoring tab.
+	const tailoringRuns = useQuery({ ...tailoringRunsLiveQueryOptions(application.id), enabled: canTailor });
+	const tailoringInFlight = (tailoringRuns.data ?? []).some((run) => isTailoringInFlight(run.status));
+	const invalidateTailoringRuns = () => {
+		void queryClient.invalidateQueries({ queryKey: tailoringRunsListQueryKey(application.id) });
+	};
+
+	// A polled run finishing relinks the application's resume; refresh what shows it.
+	const prevTailoringRef = useRef(tailoringInFlight);
+	useEffect(() => {
+		if (prevTailoringRef.current && !tailoringInFlight) invalidate();
+		prevTailoringRef.current = tailoringInFlight;
+	});
+
 	const tailorResume = useMutation(
 		orpc.applications.ai.tailorResume.mutationOptions({
+			onMutate: () => {
+				setTimeout(invalidateTailoringRuns, 1500);
+			},
 			onSuccess: (result) => {
 				invalidate();
-				toast.add({ type: "success", description: t`Created "${result.name}" and linked it to this application.` });
+				invalidateTailoringRuns();
+				toast.add({
+					type: "success",
+					description: result.reused
+						? t`Reused "${result.name}" — the posting still matches the existing tailored resume.`
+						: t`Created "${result.name}" and linked it to this application.`,
+				});
 			},
-			onError: (error) => toast.add({ type: "error", description: error.message || t`Tailoring failed.` }),
+			onError: (error) => {
+				invalidateTailoringRuns();
+				toast.add({ type: "error", description: error.message || t`Tailoring failed.` });
+			},
 		}),
 	);
+	const tailoring = tailorResume.isPending || tailoringInFlight;
 	const draftMessage = useMutation(
 		orpc.applications.ai.draftMessage.mutationOptions({
 			onSuccess: (result, variables) => {
@@ -279,9 +313,11 @@ export function ApplicationAiCopilot({ application, onOpenEvaluation }: Props) {
 				<ActionRow
 					icon={<MagicWandIcon />}
 					title={<Trans>Tailor my resume</Trans>}
-					description={t`Create a copy tuned to this job`}
-					disabled={!canScore}
-					pending={tailorResume.isPending}
+					description={
+						tailoring ? t`Tailoring in progress — follow it in the Tailoring tab` : t`Create a copy tuned to this job`
+					}
+					disabled={!canScore || tailoring}
+					pending={tailoring}
 					onClick={() => tailorResume.mutate({ id: application.id })}
 				/>
 				<ActionRow

@@ -22,7 +22,7 @@ import {
 } from "@phosphor-icons/react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@reactive-resume/ui/components/accordion";
 import { Badge } from "@reactive-resume/ui/components/badge";
 import { Button } from "@reactive-resume/ui/components/button";
@@ -35,8 +35,9 @@ import {
 	auditTailoringRunMutationOptions,
 	discardTailoringRunMutationOptions,
 	factCheckMutationOptions,
+	isTailoringInFlight,
 	tailoringRunsListQueryKey,
-	tailoringRunsListQueryOptions,
+	tailoringRunsLiveQueryOptions,
 	tailorResumeMutationOptions,
 } from "../queries";
 
@@ -59,11 +60,23 @@ const statusMeta = (status: TailoringStatus) => {
 		case "rejected":
 			return { label: t`rejected`, className: DESTRUCTIVE_CHIP };
 		case "pending":
-			return { label: t`pending`, className: NEUTRAL_CHIP };
+			return { label: t`planning…`, className: WARNING_CHIP };
 		case "planned":
-			return { label: t`planned`, className: NEUTRAL_CHIP };
+			return { label: t`fact-checking…`, className: WARNING_CHIP };
 		case "gated":
-			return { label: t`gated`, className: NEUTRAL_CHIP };
+			return { label: t`saving…`, className: WARNING_CHIP };
+	}
+};
+
+// What the server is doing right now, per in-flight status.
+const inFlightStepLabel = (status: TailoringStatus) => {
+	switch (status) {
+		case "planned":
+			return t`Compiling the plan and running the fact gate…`;
+		case "gated":
+			return t`Fact gate passed — saving the tailored copy…`;
+		default:
+			return t`Planning edits against the posting…`;
 	}
 };
 
@@ -118,16 +131,32 @@ export function TailoringPanel({ id, resumeId, jobDescription, onResumeChanged }
 	// `undefined` means "no explicit choice yet" — the newest run is expanded by default.
 	const [expandedId, setExpandedId] = useState<string | null>();
 
-	const list = useQuery(tailoringRunsListQueryOptions(id));
+	const list = useQuery(tailoringRunsLiveQueryOptions(id));
 	const runs = list.data ?? [];
 	const expanded = expandedId === undefined ? (runs[0]?.id ?? null) : expandedId;
+	// Server state, not the local mutation: a run started from the copilot, another tab, or
+	// before a reload still shows here.
+	const activeRun = runs.find((run) => isTailoringInFlight(run.status)) ?? null;
 
 	const invalidateList = () => {
 		void queryClient.invalidateQueries({ queryKey: tailoringRunsListQueryKey(id) });
 	};
 
+	// A polled run finishing may have relinked the application's resume.
+	const activeRunId = activeRun?.id ?? null;
+	const prevActiveRef = useRef(activeRunId);
+	useEffect(() => {
+		const previous = prevActiveRef.current;
+		prevActiveRef.current = activeRunId;
+		if (previous && !activeRunId) onResumeChanged?.();
+	}, [activeRunId, onResumeChanged]);
+
 	const tailor = useMutation(
 		tailorResumeMutationOptions({
+			// The run row exists moments after the request starts; surface it to every observer.
+			onMutate: () => {
+				setTimeout(invalidateList, 1500);
+			},
 			onSuccess: (result) => {
 				invalidateList();
 				onResumeChanged?.();
@@ -139,9 +168,13 @@ export function TailoringPanel({ id, resumeId, jobDescription, onResumeChanged }
 						: t`Created "${result.name}" and linked it to this application.`,
 				});
 			},
-			onError: (error) => toast.add({ type: "error", description: error.message || t`Tailoring failed.` }),
+			onError: (error) => {
+				invalidateList();
+				toast.add({ type: "error", description: error.message || t`Tailoring failed.` });
+			},
 		}),
 	);
+	const running = tailor.isPending || activeRun !== null;
 
 	const discard = useMutation(
 		discardTailoringRunMutationOptions({
@@ -220,14 +253,9 @@ export function TailoringPanel({ id, resumeId, jobDescription, onResumeChanged }
 							</Trans>
 						</p>
 					</div>
-					<Button
-						size="sm"
-						className="shrink-0"
-						disabled={!canRun || tailor.isPending}
-						onClick={() => tailor.mutate({ id })}
-					>
-						{tailor.isPending ? <SpinnerGapIcon className="animate-spin" /> : <MagicWandIcon />}
-						{tailor.isPending ? <Trans>Tailoring…</Trans> : <Trans>Tailor resume</Trans>}
+					<Button size="sm" className="shrink-0" disabled={!canRun || running} onClick={() => tailor.mutate({ id })}>
+						{running ? <SpinnerGapIcon className="animate-spin" /> : <MagicWandIcon />}
+						{running ? <Trans>Tailoring…</Trans> : <Trans>Tailor resume</Trans>}
 					</Button>
 				</div>
 				{!canRun && (
@@ -235,13 +263,21 @@ export function TailoringPanel({ id, resumeId, jobDescription, onResumeChanged }
 						<Trans>Link a resume and paste the job description (Edit) to tailor a copy for this job.</Trans>
 					</p>
 				)}
-				{tailor.isPending && (
-					<p className="rounded-lg border border-primary/20 bg-primary/5 p-2.5 text-muted-foreground text-xs">
-						<Trans>
-							Running the full pipeline — reuse check, plan, compile, fact gate. This is a single long request and can
-							take a minute or two; keep this tab open.
-						</Trans>
-					</p>
+				{running && (
+					<div className="flex items-start gap-2.5 rounded-lg border border-primary/20 bg-primary/5 p-2.5">
+						<SpinnerGapIcon className="mt-0.5 shrink-0 animate-spin text-primary" />
+						<div className="min-w-0 text-xs">
+							<p className="font-medium">
+								{activeRun ? inFlightStepLabel(activeRun.status) : <Trans>Starting…</Trans>}
+							</p>
+							<p className="mt-0.5 text-muted-foreground">
+								<Trans>
+									Reuse check, plan, compile, fact gate — usually a minute or two. You can switch tabs; progress is
+									tracked on the server.
+								</Trans>
+							</p>
+						</div>
+					</div>
 				)}
 				{runs.length === 0 && (
 					<p className="text-muted-foreground text-xs">
@@ -255,7 +291,7 @@ export function TailoringPanel({ id, resumeId, jobDescription, onResumeChanged }
 					key={run.id}
 					run={run}
 					open={run.id === expanded}
-					busy={tailor.isPending || discard.isPending}
+					busy={running || discard.isPending}
 					auditPending={audit.isPending && audit.variables?.tailoringRunId === run.id}
 					factCheckPending={
 						factCheck.isPending && !!run.tailoredResumeId && factCheck.variables?.resumeId === run.tailoredResumeId
