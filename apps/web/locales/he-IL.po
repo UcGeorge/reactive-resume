@@ -269,10 +269,6 @@ msgstr ""
 msgid "<0>Free forever and open source.</0><1/>No ads, paywalls, or tracking."
 msgstr "<0>חינמי לתמיד ובקוד פתוח.</0><1/>ללא פרסומות, חומות תשלום או מעקב."
 
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-msgid "<0>Thank you for using Reactive Resume. I build this app mostly in my spare time, with help from open-source contributors around the world.</0><1>If it has been useful to you and you'd like to keep it free and open for everyone, please consider donating. Any amount helps.</1>"
-msgstr "<0>תודה שאתה משתמש ב-Reactive Resume. אני מפתח את האפליקציה הזו בעיקר בזמני הפנוי, בעזרת תורמים מקהילת הקוד הפתוח מכל העולם.</0><1>אם היא הועילה לך והיית רוצה שתישאר חינמית ופתוחה לכולם, שקול לתרום. כל סכום עוזר.</1>"
-
 #: src/features/homepage/export-playground.tsx
 msgid "<p>I design software for teams, from early research to the details people use every day.</p>"
 msgstr "<p>אני מעצב תוכנה לצוותים, ממחקר ראשוני ועד לפרטים שאנשים משתמשים בהם מדי יום.</p>"
@@ -405,14 +401,6 @@ msgstr "תאריך מספרי נקרא באופן שונה במדינות שונ
 msgid "A page is rotated."
 msgstr "עמוד מסובב."
 
-#: src/features/homepage/site-footer.tsx
-msgid "A passion project by <0>Amruth Pillai</0>"
-msgstr "מיזם שמונע מהתשוקה של <0>אמרות׳ פילאי</0>"
-
-#: src/components/ui/copyright.tsx
-msgid "A passion project by <0>Amruth Pillai</0>."
-msgstr "מיזם שמונע מהתשוקה של <0>אמרות׳ פילאי</0>."
-
 #: src/features/homepage/page.tsx
 msgid "A PDF for the application. A Word file for a few more edits. Download a sample using your choices."
 msgstr "קובץ PDF למועמדות. קובץ Word לעוד כמה עריכות. הורד דוגמה לפי הבחירות שלך."
@@ -420,10 +408,6 @@ msgstr "קובץ PDF למועמדות. קובץ Word לעוד כמה עריכו�
 #: src/features/homepage/feature-explorer.tsx
 msgid "A private resume does not appear at its public link."
 msgstr "קורות חיים פרטיים אינם מופיעים בקישור הציבורי שלהם."
-
-#: src/features/homepage/page.tsx
-msgid "A project you can<0/>be part of."
-msgstr "פרויקט שאפשר<0/>להיות חלק ממנו."
 
 #: src/features/homepage/ats-playground.tsx
 msgid "A real sample PDF"
@@ -448,6 +432,11 @@ msgstr "כתובת אינטרנט כתובה בלי https://."
 #: src/routes/builder/$resumeId/-sidebar/right/sections/page.tsx
 msgid "A4"
 msgstr "A4"
+
+#: src/routes/dashboard/-components/sidebar.tsx
+#: src/routes/dashboard/settings/about.tsx
+msgid "About"
+msgstr ""
 
 #: src/features/homepage/resume-sculpture.tsx
 msgid "About me"
@@ -724,9 +713,17 @@ msgstr "מול תיאור המשרה"
 msgid "Agent"
 msgstr "סוֹכֵן"
 
+#: src/features/settings/integrations/ai-features.ts
+msgid "Agent chat"
+msgstr ""
+
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Agent ready"
 msgstr "הסוכן מוכן"
+
+#: src/features/settings/integrations/ai-features.ts
+msgid "Agent threads and the in-resume assistant."
+msgstr ""
 
 #: src/routes/dashboard/-components/sidebar.tsx
 msgid "Agents"
@@ -932,6 +929,10 @@ msgstr "פעולות מועמדות"
 msgid "Application added to your pipeline."
 msgstr "המועמדות נוספה לתהליך שלך."
 
+#: src/features/settings/integrations/ai-features.ts
+msgid "Application autofill"
+msgstr ""
+
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Application Copilot"
 msgstr "עוזר מועמדויות"
@@ -1064,10 +1065,6 @@ msgstr "תחום לימודים"
 msgid "Artificial Intelligence"
 msgstr "בינה מלאכותית"
 
-#: src/features/homepage/community-stats.tsx
-msgid "As of <0>{formattedDate}</0>."
-msgstr "נכון ל־<0>{formattedDate}</0>."
-
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Ask anything about this resume"
 msgstr "שאלו כל דבר בנוגע לקורות חיים אלה"
@@ -1093,6 +1090,10 @@ msgstr "בדיקת ATS"
 #: src/routes/dashboard/-components/sidebar.tsx
 msgid "ATS Checker"
 msgstr "בודק ATS"
+
+#: src/features/settings/integrations/ai-features.ts
+msgid "ATS review"
+msgstr ""
 
 #: src/features/applications/components/application-detail-sheet.tsx
 #: src/features/applications/components/application-form-sheet.tsx
@@ -1188,6 +1189,10 @@ msgstr "קודי הגיבוי הועתקו ללוח הגזירים."
 msgid "Base URL"
 msgstr "כתובת אתר בסיסית"
 
+#: src/features/settings/pages/about.tsx
+msgid "Based on the open source project <0>Reactive Resume</0> by Amruth Pillai."
+msgstr ""
+
 #: src/libs/resume/section.tsx
 msgid "Basics"
 msgstr "פרטים בסיסיים"
@@ -1282,12 +1287,6 @@ msgstr "רשימת תבליטים"
 msgid "Bulleted list"
 msgstr "רשימת תבליטים"
 
-#. Tagline shown in app footer/about area
-#: src/components/ui/copyright.tsx
-#: src/features/homepage/site-footer.tsx
-msgid "By the community, for the community."
-msgstr "מהקהילה, למען הקהילה."
-
 #: src/features/career-insights/components/calibration-card.tsx
 #: src/features/command-palette/pages/navigation.tsx
 msgid "Calibration"
@@ -1367,11 +1366,6 @@ msgstr "שנה את התבנית ל-…"
 #: src/dialogs/resume/index.tsx
 msgid "Changed your mind? Rename your resume to something more descriptive."
 msgstr "התחרטת? אפשר לשנות את שם קורות החיים שלך לשם תיאורי יותר."
-
-#: src/features/homepage/site-footer.tsx
-#: src/routes/_home/-sections/footer.tsx
-msgid "Changelog"
-msgstr "יומן שינויים"
 
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Changes"
@@ -1588,11 +1582,6 @@ msgstr "לוח הפקודות"
 msgid "Command Palette - {currentPage}"
 msgstr "לוח הפקודות - {currentPage}"
 
-#: src/features/homepage/site-footer.tsx
-#: src/routes/_home/-sections/footer.tsx
-msgid "Community"
-msgstr "קהילה"
-
 #: src/routes/dashboard/resumes/index.tsx
 msgid "Compact"
 msgstr "קומפקטי"
@@ -1688,6 +1677,10 @@ msgstr "חיבור"
 msgid "Connect an application"
 msgstr "חבר אפליקציה"
 
+#: src/features/settings/integrations/components/mcp-agent-setup-panel.tsx
+msgid "Connect an MCP client (Claude Code, Codex, or any MCP-capable agent) to the URL below, with OAuth or an API key from Settings → API Keys."
+msgstr ""
+
 #: src/features/homepage/feature-explorer.tsx
 msgid "Connect through MCP to create and update resumes in a conversation. Or use the API to build your own workflow."
 msgstr "התחבר דרך MCP כדי ליצור ולעדכן קורות חיים תוך כדי שיחה. או השתמש ב־API כדי לבנות תהליך עבודה משלך."
@@ -1759,10 +1752,6 @@ msgstr "להמשיך מאיפה שהפסקת"
 msgid "Continue where you left off by importing a resume you built in Reactive Resume or another resume builder. Supported formats are PDF, Microsoft Word, and JSON files from Reactive Resume or JSON Resume."
 msgstr "המשך מהמקום שבו הפסקת על ידי ייבוא קורות חיים שיצרת ב-Reactive Resume או בבונה קורות חיים אחר. הפורמטים הנתמכים הם PDF, Microsoft Word וקובצי JSON מ-Reactive Resume או מ-JSON Resume."
 
-#: src/features/homepage/page.tsx
-msgid "Contribute code"
-msgstr "תרום קוד"
-
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Conversation copied."
 msgstr "השיחה הועתקה."
@@ -1807,6 +1796,10 @@ msgstr "העתק מקורות החיים"
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Copy JSON"
 msgstr "העתקת JSON"
+
+#: src/features/settings/integrations/components/mcp-agent-setup-panel.tsx
+msgid "Copy MCP URL"
+msgstr ""
 
 #: src/features/stories/components/practice-dialog.tsx
 msgid "Copy prompt"
@@ -2095,6 +2088,10 @@ msgstr ""
 msgid "Cover letter unlinked from this application."
 msgstr ""
 
+#: src/features/settings/integrations/ai-features.ts
+msgid "Cover letters"
+msgstr ""
+
 #: src/routes/dashboard/-components/sidebar.tsx
 #: src/routes/dashboard/cover-letters.tsx
 msgid "Cover Letters"
@@ -2374,6 +2371,10 @@ msgstr ""
 msgid "Deep report: requirements, gaps, strategy, legitimacy"
 msgstr ""
 
+#: src/features/settings/integrations/ai-features.ts
+msgid "Default"
+msgstr ""
+
 #: src/features/cover-letters/library.tsx
 msgid "Default template"
 msgstr "תבנית ברירת מחדל"
@@ -2579,11 +2580,6 @@ msgstr "למחוק שינויים שלא נשמרו?"
 msgid "Disconnect"
 msgstr "ניתוק"
 
-#: src/features/homepage/site-footer.tsx
-#: src/routes/_home/-sections/footer.tsx
-msgid "Discord"
-msgstr "דיסקורד"
-
 #: src/features/command-palette/pages/navigation.tsx
 #: src/routes/dashboard/-components/sidebar.tsx
 #: src/routes/dashboard/discover/index.tsx
@@ -2610,7 +2606,6 @@ msgstr "תיעוד"
 
 #: src/features/homepage/site-footer.tsx
 #: src/routes/_home/-sections/footer.tsx
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
 msgid "Documentation"
 msgstr "תיעוד"
 
@@ -2625,14 +2620,6 @@ msgstr "אין לך חשבון? <0/>"
 #: src/features/discovery/components/settings-view.tsx
 msgid "Don't re-surface a company + title you already applied to within this window."
 msgstr ""
-
-#: src/components/ui/donation-toast.tsx
-msgid "Donate"
-msgstr "לִתְרוֹם"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-msgid "Donate to Reactive Resume"
-msgstr "תרומה ל־Reactive Resume"
 
 #: src/features/discovery/components/watch-company-dialog.tsx
 #: src/routes/agent/-components/tool-part-card.tsx
@@ -3326,6 +3313,10 @@ msgstr "לא הצליח לבטל את הקישור לספק. אנא נסה שו�
 msgid "Failed to update provider."
 msgstr "עדכון הספק נכשל."
 
+#: src/features/settings/integrations/components/ai-routing-section.tsx
+msgid "Failed to update routing."
+msgstr ""
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Failed to update thread settings."
 msgstr "עדכון הגדרות השרשור נכשל."
@@ -3398,6 +3389,10 @@ msgstr "מילוי שדות"
 msgid "Filled in what we could from the posting."
 msgstr "מילאנו את מה שהיה אפשר מתוך המודעה."
 
+#: src/features/settings/integrations/ai-features.ts
+msgid "Filling an application from a job posting or URL."
+msgstr ""
+
 #: src/routes/dashboard/resumes/index.tsx
 msgid "Filter by"
 msgstr "סינון לפי"
@@ -3413,10 +3408,6 @@ msgstr ""
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Find the weak bullet points and rewrite them with stronger outcomes, numbers, scope, and sharper verbs."
 msgstr "מצא את הנקודות החלשות ונסח אותן מחדש עם תוצאות חזקות יותר, מספרים, היקף ופעלים חדים יותר."
-
-#: src/features/homepage/page.tsx
-msgid "Find us on GitHub"
-msgstr "מצא אותנו ב־GitHub"
 
 #: src/libs/locale.ts
 msgid "Finnish"
@@ -3634,9 +3625,7 @@ msgstr ""
 #. Authentication provider display name in account settings
 #. Brand name label for GitHub social sign-in button
 #: src/features/auth/components/social-auth.tsx
-#: src/features/homepage/site-footer.tsx
 #: src/features/settings/authentication/components/hooks.tsx
-#: src/routes/_home/-sections/footer.tsx
 msgid "GitHub"
 msgstr "GitHub"
 
@@ -3700,6 +3689,10 @@ msgstr "יוונית"
 msgid "Grid"
 msgstr "רשת"
 
+#: src/features/settings/integrations/ai-features.ts
+msgid "Guided angles and drafts."
+msgstr ""
+
 #: src/features/applications/components/application-ai-copilot.tsx
 #: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
 msgid "Guided cover letter"
@@ -3750,14 +3743,6 @@ msgstr "כותרת עליונה"
 #: src/libs/locale.ts
 msgid "Hebrew"
 msgstr "עברית"
-
-#: src/features/homepage/languages-showcase.tsx
-msgid "Help translate the app"
-msgstr "עזור לתרגם את האפליקציה"
-
-#: src/features/settings/pages/preferences.tsx
-msgid "Help translate the app to your language"
-msgstr "עזרו לתרגם את היישום לשפה שלכם"
 
 #: src/dialogs/api-key/create.tsx
 msgid "Here's your new API key"
@@ -3978,6 +3963,10 @@ msgstr "ייבוא…"
 msgid "In {0}"
 msgstr "ב-{0}"
 
+#: src/features/settings/integrations/components/mcp-agent-setup-panel.tsx
+msgid "In that client, run the <0>serve_ai_requests</0> prompt, or call <1>claim_ai_request</1> in a loop."
+msgstr ""
+
 #: src/routes/dashboard/discover/index.tsx
 msgid "Inbox"
 msgstr ""
@@ -4014,10 +4003,6 @@ msgstr "אינדונזית"
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "inferred"
 msgstr ""
-
-#: src/libs/resume/section.tsx
-msgid "Information"
-msgstr "מידע"
 
 #: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
 msgid "Inline"
@@ -4119,6 +4104,10 @@ msgstr "תיאור משרה"
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "Job description (optional)"
 msgstr "תיאור משרה (רשות)"
+
+#: src/features/settings/integrations/ai-features.ts
+msgid "Job evaluation"
+msgstr ""
 
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Job posting"
@@ -4375,10 +4364,6 @@ msgstr "לעזוב כדי להגדיר ספק בינה מלאכותית?"
 msgid "Left Align"
 msgstr "יישור לשמאל"
 
-#: src/features/homepage/site-footer.tsx
-msgid "Legal"
-msgstr "משפטי"
-
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Legitimacy signals"
 msgstr ""
@@ -4481,9 +4466,7 @@ msgstr "Reactive Resume מקושר"
 #. Authentication provider display name in account settings
 #. Brand name label for LinkedIn social sign-in button
 #: src/features/auth/components/social-auth.tsx
-#: src/features/homepage/site-footer.tsx
 #: src/features/settings/authentication/components/hooks.tsx
-#: src/routes/_home/-sections/footer.tsx
 msgid "LinkedIn"
 msgstr "לינקדאין"
 
@@ -4531,6 +4514,10 @@ msgstr "טוען ספקים…"
 msgid "Loading resumes…"
 msgstr "טוען קורות חיים…"
 
+#: src/features/settings/integrations/components/ai-routing-section.tsx
+msgid "Loading routes…"
+msgstr ""
+
 #: src/features/homepage/page.tsx
 msgid "Loading the playground…"
 msgstr "טוען את סביבת ההתנסות…"
@@ -4539,10 +4526,6 @@ msgstr "טוען את סביבת ההתנסות…"
 #: src/routes/agent/-components/thread-sidebar.tsx
 msgid "Loading threads…"
 msgstr "טוען שרשורים…"
-
-#: src/features/homepage/community-stats.tsx
-msgid "Loading total"
-msgstr "טוען נתון כולל"
 
 #: src/routes/builder/$resumeId/-components/version-history.tsx
 msgid "Loading…"
@@ -4671,6 +4654,10 @@ msgstr ""
 msgid "Match scoring failed."
 msgstr "דירוג ההתאמה נכשל."
 
+#: src/features/settings/integrations/components/mcp-agent-setup-panel.tsx
+msgid "MCP server URL"
+msgstr ""
+
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "meaningful"
 msgstr ""
@@ -4708,10 +4695,6 @@ msgstr ""
 #: src/routes/agent/-components/resume-pane.tsx
 msgid "Missing working resume"
 msgstr "קורות חיים חסרים"
-
-#: src/features/homepage/site-footer.tsx
-msgid "MIT License"
-msgstr "רישיון MIT"
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Mitigation:"
@@ -4783,6 +4766,10 @@ msgstr "הזז את הדוא״ל ומספר הטלפון שלך לראש העמ�
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Moved to"
 msgstr "הועבר אל"
+
+#: src/features/settings/integrations/ai-features.ts
+msgid "Multi-pass evaluation of a posting against your profile."
+msgstr ""
 
 #. Placeholder text for custom link URL field in resume builder
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom-fields.tsx
@@ -5134,6 +5121,10 @@ msgstr "לא נמצא מקטע ניסיון תעסוקתי."
 msgid "Norwegian"
 msgstr "נורווגית"
 
+#: src/features/settings/integrations/components/ai-routing-section.tsx
+msgid "not connected"
+msgstr ""
+
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Not connected"
 msgstr "לא מחובר"
@@ -5217,6 +5208,10 @@ msgstr "הצעה"
 #: src/features/discovery/components/companies-view.tsx
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "ok"
+msgstr ""
+
+#: src/features/settings/integrations/components/ai-routing-section.tsx
+msgid "Oldest tested provider"
 msgstr ""
 
 #: src/features/settings/pages/api-keys.tsx
@@ -5330,9 +5325,7 @@ msgstr "פותח את הקובץ…"
 msgid "Opens in a new tab"
 msgstr "נפתח בלשונית חדשה"
 
-#: src/features/homepage/site-footer.tsx
 #: src/features/resume/stylesheet/editor.tsx
-#: src/routes/_home/-sections/footer.tsx
 msgid "opens in new tab"
 msgstr "נפתח בלשונית חדשה"
 
@@ -5385,6 +5378,10 @@ msgstr "עיצוב הטבלה המקורי נשמר. תוכן זה הוא לקר
 msgid "out of 100"
 msgstr "מתוך 100"
 
+#: src/features/settings/integrations/ai-features.ts
+msgid "Outreach"
+msgstr ""
+
 #: src/features/follow-ups/components/follow-ups-view.tsx
 msgid "Overdue"
 msgstr ""
@@ -5414,6 +5411,10 @@ msgstr "פסקה"
 #: src/components/input/rich-input.tsx
 msgid "Paragraph and heading style"
 msgstr "סגנון פסקה וכותרת"
+
+#: src/features/settings/integrations/ai-features.ts
+msgid "Parsing PDF and Word files into resume data."
+msgstr ""
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "partial"
@@ -5595,6 +5596,10 @@ msgstr "בחר תבנית אחת והשתמש בה בכל מקום."
 msgid "Pick the bullet points the letter may cite — taken word-for-word from your linked resume, so it can't claim anything you didn't. Select at least one."
 msgstr ""
 
+#: src/features/settings/integrations/components/ai-routing-section.tsx
+msgid "Pick which provider each feature uses. Features without a route use Default; an unset Default uses the oldest tested provider."
+msgstr ""
+
 #: src/libs/resume/section.tsx
 msgid "Picture"
 msgstr "תמונה"
@@ -5626,10 +5631,6 @@ msgstr ""
 #: src/features/homepage/feature-explorer.tsx
 msgid "Play data flow animation"
 msgstr "הפעל את אנימציית זרימת הנתונים"
-
-#: src/components/ui/donation-toast.tsx
-msgid "Please support the project"
-msgstr "אנא תמכו בפרויקט"
 
 #: src/features/applications/components/file-attachment-field.tsx
 msgid "Please upload a PDF file."
@@ -5763,10 +5764,6 @@ msgstr "צבע עיקרי"
 msgid "Print or export the form to a flat PDF before sending it."
 msgstr "הדפס או ייצא את הטופס ל־PDF שטוח לפני השליחה."
 
-#: src/features/homepage/site-footer.tsx
-msgid "Privacy Policy"
-msgstr "מדיניות פרטיות"
-
 #: src/features/homepage/feature-explorer.tsx
 msgid "Private"
 msgstr "פרטי"
@@ -5841,6 +5838,14 @@ msgstr "חיבור הספק אומת."
 msgid "Provider model"
 msgstr "מודל הספק"
 
+#: src/features/settings/integrations/components/ai-routing-section.tsx
+msgid "Provider removed, using default"
+msgstr ""
+
+#: src/features/settings/integrations/components/ai-routing-section.tsx
+msgid "Provider unavailable, using default"
+msgstr ""
+
 #: src/features/homepage/feature-explorer.tsx
 msgid "Public"
 msgstr "ציבורי"
@@ -5858,6 +5863,10 @@ msgstr "מוציא לאור"
 #: src/features/ats-checker/messages.ts
 msgid "Put a plain email address near the top of the first page. It is what most systems file you under."
 msgstr "מקם כתובת דוא״ל פשוטה ליד ראש העמוד הראשון. זה מה שרוב המערכות מתייגות אותך לפיו."
+
+#: src/features/settings/integrations/ai-features.ts
+msgid "Qualitative review of the text extracted from a resume."
+msgstr ""
 
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Quick match"
@@ -5911,14 +5920,6 @@ msgstr "Reactive Resume - מעבר לדף הבית"
 #: src/dialogs/resume/import.tsx
 msgid "Reactive Resume (JSON)"
 msgstr "קורות חיים תגובתיים (JSON)"
-
-#: src/features/homepage/page.tsx
-msgid "Reactive Resume is free and open source. Amruth and a community of contributors keep it running. If you’d like to support the work, donations help cover hosting and development."
-msgstr "Reactive Resume חינמי ובקוד פתוח. Amruth וקהילת תורמים מתחזקים אותו. אם תרצה לתמוך בעבודה, תרומות מסייעות לכסות עלויות אירוח ופיתוח."
-
-#: src/components/ui/donation-toast.tsx
-msgid "Reactive Resume is free and open source. If it has helped you, please consider donating."
-msgstr "ריאקטיבי קורות חיים הם חינמיים ובקוד פתוח. אם זה עזר לך, אנא שקול לתרום."
 
 #. App version label in footer; includes semantic version variable
 #: src/components/ui/copyright.tsx
@@ -6011,6 +6012,10 @@ msgstr "נמען"
 
 #: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
 msgid "Recipient (optional)"
+msgstr ""
+
+#: src/features/settings/integrations/ai-features.ts
+msgid "Recruiter messages and follow-up drafts."
 msgstr ""
 
 #: src/components/level/combobox.tsx
@@ -6182,19 +6187,6 @@ msgstr "להחליף את המכתב המצורף?"
 msgid "Reply follow-up"
 msgstr ""
 
-#: src/features/homepage/page.tsx
-msgid "Report a bug"
-msgstr "דווח על תקלה"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-msgid "Report a Bug"
-msgstr "דיווח על באג"
-
-#: src/features/homepage/site-footer.tsx
-#: src/routes/_home/-sections/footer.tsx
-msgid "Report an issue"
-msgstr "דיווח על בעיה"
-
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Reports to"
 msgstr ""
@@ -6296,6 +6288,10 @@ msgstr "עריכת קורות חיים"
 msgid "Resume file"
 msgstr "קובץ קורות חיים"
 
+#: src/features/settings/integrations/ai-features.ts
+msgid "Resume import"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-components/dock.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
 msgid "Resume link copied to clipboard."
@@ -6332,7 +6328,6 @@ msgstr ""
 
 #: src/features/command-palette/pages/navigation.tsx
 #: src/features/command-palette/pages/resumes.tsx
-#: src/features/homepage/community-stats.tsx
 #: src/features/homepage/languages-showcase.tsx
 #: src/routes/dashboard/-components/sidebar.tsx
 #: src/routes/dashboard/resumes/index.tsx
@@ -6457,6 +6452,10 @@ msgstr "רומנית"
 msgid "Rotation"
 msgstr "סיבוב"
 
+#: src/features/settings/integrations/components/ai-routing-section.tsx
+msgid "Routing"
+msgstr ""
+
 #: src/features/discovery/components/inbox-view.tsx
 msgid "Run a scan, or loosen the title and location filters in Settings."
 msgstr ""
@@ -6540,6 +6539,10 @@ msgstr "שמור"
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Save & Test Provider"
 msgstr "שמור ובדוק ספק"
+
+#: src/features/settings/integrations/components/mcp-agent-setup-panel.tsx
+msgid "Save & Test waits up to 90 seconds for the agent to answer. Keep the agent serving whenever you use AI features routed to it."
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Save an unprotected copy, with no password and no permissions restrictions."
@@ -6845,6 +6848,14 @@ msgstr "סרבית"
 #: src/features/homepage/resume-sculpture.tsx
 msgid "Serif"
 msgstr "Serif"
+
+#: src/features/settings/integrations/components/mcp-agent-setup-panel.tsx
+msgid "Serve this provider from your own agent"
+msgstr ""
+
+#: src/features/settings/integrations/components/ai-section.tsx
+msgid "Served by an MCP client connected to"
+msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
 msgid "Set a password if you want only people who know it to open the public URL."
@@ -7169,10 +7180,6 @@ msgstr "חלק מהטקסט נופל מחוץ לעמוד."
 msgid "Some text is rotated."
 msgstr "חלק מהטקסט מסובב."
 
-#: src/features/homepage/community-stats.tsx
-msgid "Some totals are unavailable right now."
-msgstr "חלק מהנתונים הכוללים אינם זמינים כעת."
-
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Something else…"
 msgstr "משהו אחר…"
@@ -7224,12 +7231,6 @@ msgstr "מיין לפי…"
 msgid "Source"
 msgstr "מקור"
 
-#: src/features/homepage/site-footer.tsx
-#: src/routes/_home/-sections/footer.tsx
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-msgid "Source Code"
-msgstr "קוד מקור"
-
 #: src/features/stories/components/story-editor-dialog.tsx
 msgid "Source resume"
 msgstr ""
@@ -7259,10 +7260,6 @@ msgstr "ספרדית"
 msgid "Spell the month, as in \"Mar 2022\"."
 msgstr "כתוב את החודש במילים, כמו ב־״Mar 2022״."
 
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-msgid "Sponsors"
-msgstr "נותני חסות"
-
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Sponsors visas"
 msgstr ""
@@ -7270,11 +7267,6 @@ msgstr ""
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Sponsorship unstated"
 msgstr ""
-
-#: src/features/homepage/site-footer.tsx
-#: src/routes/_home/-sections/footer.tsx
-msgid "Sponsorships"
-msgstr "חסויות"
 
 #: src/features/homepage/resume-sculpture.tsx
 msgid "Spread pages"
@@ -7298,15 +7290,6 @@ msgstr "שלב"
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Stage date"
 msgstr "תאריך שלב"
-
-#: src/components/input/github-stars-button.tsx
-msgid "Star us on GitHub (opens in new tab)"
-msgstr "סמנו אותנו בכוכב ב־GitHub (נפתח בלשונית חדשה)"
-
-#. placeholder {0}: starCount.toLocaleString()
-#: src/components/input/github-stars-button.tsx
-msgid "Star us on GitHub, currently {0} stars (opens in new tab)"
-msgstr "סמנו אותנו בכוכב ב־GitHub, כרגע {0} כוכבים (נפתח בלשונית חדשה)"
 
 #: src/routes/agent/$threadId.tsx
 msgid "Start a new thread"
@@ -7406,6 +7389,7 @@ msgid "Story added to your bank."
 msgstr ""
 
 #: src/features/command-palette/pages/navigation.tsx
+#: src/features/settings/integrations/ai-features.ts
 msgid "Story bank"
 msgstr ""
 
@@ -7465,11 +7449,6 @@ msgstr "פרטי הסגנון והשולח מועתקים. עריכות עתיד
 msgid "Styling and sender details refreshed from the selected resume."
 msgstr "פרטי הסגנון והשולח רענון מקורות החיים שנבחרו."
 
-#: src/features/homepage/site-footer.tsx
-#: src/routes/_home/-sections/footer.tsx
-msgid "Subreddit"
-msgstr "סברדיט"
-
 #: src/routes/dashboard/interviews/index.tsx
 msgid "Suggest from resume"
 msgstr ""
@@ -7486,6 +7465,10 @@ msgstr ""
 msgid "Suggested"
 msgstr ""
 
+#: src/features/settings/integrations/ai-features.ts
+msgid "Suggesting interview stories from a resume."
+msgstr ""
+
 #: src/features/ats-checker/ai-review/ai-review-results.tsx
 msgid "Suggestions"
 msgstr "הצעות"
@@ -7499,14 +7482,6 @@ msgstr "הצעות"
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 msgid "Summary"
 msgstr "תקציר"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-msgid "Support the app by doing what you can!"
-msgstr "אפשר לתמוך ביישום על ידי עשייה בכל דרך שאפשרית לך!"
-
-#: src/features/homepage/page.tsx
-msgid "Support the project"
-msgstr "תמוך בפרויקט"
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Supported by your resume"
@@ -7569,6 +7544,10 @@ msgstr ""
 msgid "Tailor this resume to a product manager job description, and emphasize roadmap ownership, stakeholder communication, and measurable launch outcomes."
 msgstr "התאם את קורות החיים האלה לתיאור משרה של מנהל מוצר, והדגש בעלות על מפת דרכים, תקשורת עם בעלי עניין ותוצאות השקה מדידות."
 
+#: src/features/settings/integrations/ai-features.ts
+msgid "Tailored resume copies and their bullet audit."
+msgstr ""
+
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Tailored resume discarded — the source resume is linked again."
 msgstr ""
@@ -7578,6 +7557,7 @@ msgid "Tailored resumes"
 msgstr ""
 
 #: src/features/applications/components/application-detail-sheet.tsx
+#: src/features/settings/integrations/ai-features.ts
 msgid "Tailoring"
 msgstr ""
 
@@ -7669,10 +7649,6 @@ msgstr "הטקסט נמצא באזור הכותרת העליונה או התחת
 #: src/libs/locale.ts
 msgid "Thai"
 msgstr "תאית"
-
-#: src/features/homepage/page.tsx
-msgid "Thank you for helping keep it free."
-msgstr "תודה שעזרת לשמור אותו חינמי."
 
 #: src/features/follow-ups/components/follow-ups-view.tsx
 msgid "Thank-you note"
@@ -7924,10 +7900,6 @@ msgstr "ערכת עיצוב"
 #: src/dialogs/auth/enable-two-factor.tsx
 msgid "Then, enter the 6 digit code that the app provides to continue."
 msgstr "לאחר מכן, הזן את הקוד בן 6 הספרות שהאפליקציה מציגה כדי להמשיך."
-
-#: src/features/homepage/page.tsx
-msgid "There are other ways to pitch in."
-msgstr "יש דרכים נוספות לעזור."
 
 #: src/features/ats-checker/messages.ts
 msgid "There is a gap between two dated roles."
@@ -8327,14 +8299,6 @@ msgstr ""
 msgid "Topics this story answers best — \"conflict\", \"scaling\"…"
 msgstr ""
 
-#: src/features/homepage/community-stats.tsx
-msgid "Total unavailable"
-msgstr "הנתון הכולל אינו זמין"
-
-#: src/features/homepage/community-stats.tsx
-msgid "Totals are refreshed periodically."
-msgstr "הנתונים הכוללים מתעדכנים מעת לעת."
-
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Track a job you're applying to and link the resume you sent."
 msgstr "עקוב אחר משרה שאליה אתה מגיש מועמדות וקשר את קורות החיים ששלחת."
@@ -8346,16 +8310,6 @@ msgstr "עקוב אחר המועמדות הראשונה שלך"
 #: src/routes/builder/$resumeId/-sidebar/right/sections/statistics.tsx
 msgid "Track your resume's views and downloads"
 msgstr "עקוב אחר צפיות והורדות של קורות החיים שלך"
-
-#: src/features/homepage/page.tsx
-msgid "Translate the app"
-msgstr "תרגם את האפליקציה"
-
-#: src/features/homepage/site-footer.tsx
-#: src/routes/_home/-sections/footer.tsx
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-msgid "Translations"
-msgstr "תרגומים"
 
 #: src/components/layout/error-screen.tsx
 #: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
@@ -8717,6 +8671,10 @@ msgstr "יש להשתמש ב-6 עד 64 תווים."
 msgid "Use color {color}"
 msgstr "השתמש בצבע {color}"
 
+#: src/features/settings/integrations/components/ai-routing-section.tsx
+msgid "Use default"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Use plain headings such as \"Experience\", \"Education\" and \"Skills\"."
 msgstr "השתמש בכותרות פשוטות כגון ״Experience״, ״Education״ ו־״Skills״."
@@ -8726,8 +8684,8 @@ msgid "Use sample"
 msgstr "השתמש בדוגמה"
 
 #: src/features/homepage/languages-showcase.tsx
-msgid "Use the app in a language you’re comfortable with. Try a few of the translations made by the community."
-msgstr "השתמש באפליקציה בשפה שנוחה לך. נסה כמה מתרגומי הקהילה."
+msgid "Use the app in a language you’re comfortable with. Pick one of the available translations."
+msgstr ""
 
 #: src/features/homepage/feature-explorer.tsx
 msgid "Use this wording"
@@ -8736,6 +8694,10 @@ msgstr "השתמש בניסוח הזה"
 #: src/features/ats-checker/messages.ts
 msgid "Use your editor's normal bullet list, so stray glyphs do not land mid-sentence."
 msgstr "השתמש ברשימת התבליטים הרגילה של העורך שלך, כדי שגליפים תועים לא ינחתו באמצע משפט."
+
+#: src/features/settings/integrations/ai-features.ts
+msgid "Used by every feature without a route of its own."
+msgstr ""
 
 #: src/features/homepage/export-playground.tsx
 #: src/features/homepage/resume-sculpture.tsx
@@ -8762,10 +8724,6 @@ msgstr ""
 #: src/features/settings/pages/profile.tsx
 msgid "Username"
 msgstr "שם משתמש"
-
-#: src/features/homepage/community-stats.tsx
-msgid "Users"
-msgstr "משתמשים"
 
 #: src/features/homepage/export-playground.tsx
 msgid "Uses the name, template, color, and type you chose above."
@@ -9127,11 +9085,6 @@ msgstr "כתוב את הכתובת המלאה, כולל https://."
 msgid "Writing"
 msgstr "כתיבה"
 
-#: src/features/homepage/site-footer.tsx
-#: src/routes/_home/-sections/footer.tsx
-msgid "X (Twitter)"
-msgstr "איקס (טוויטר)"
-
 #: src/features/auth/pages/login.tsx
 msgid "You can also sign in with your username."
 msgstr "אפשר גם להיכנס עם שם המשתמש שלך."
@@ -9159,10 +9112,6 @@ msgstr ""
 #: src/dialogs/resume/import.tsx
 msgid "You'll be taken to the Integrations page. The file you selected won't be imported."
 msgstr "תועבר לדף האינטגרציות. הקובץ שבחרת לא ייובא."
-
-#: src/features/homepage/community-stats.tsx
-msgid "You’re in good company."
-msgstr "אתה בחברה טובה."
 
 #: src/features/auth/pages/forgot-password.tsx
 #: src/features/auth/pages/register.tsx
