@@ -1,21 +1,11 @@
-import type { Icon } from "@phosphor-icons/react";
 import { t } from "@lingui/core/macro";
 import { Trans } from "@lingui/react/macro";
-import {
-	ArrowUpRightIcon,
-	DiscordLogoIcon,
-	GithubLogoIcon,
-	LinkedinLogoIcon,
-	RedditLogoIcon,
-	XLogoIcon,
-} from "@phosphor-icons/react";
+import { ArrowUpRightIcon } from "@phosphor-icons/react";
 import { Link } from "@tanstack/react-router";
 import { m } from "motion/react";
 import { cn } from "@reactive-resume/utils/style";
+import { DOCS_URL, UPSTREAM_LICENSE_URL } from "@/libs/links";
 import { wrap } from "./classes";
-
-const githubUrl = "https://github.com/reactive-resume/reactive-resume";
-const licenseUrl = `${githubUrl}/blob/main/LICENSE`;
 
 type FooterLink = { label: string } & (
 	| { external: string }
@@ -23,7 +13,6 @@ type FooterLink = { label: string } & (
 	| { to: "/dashboard" | "/ats-checker" }
 );
 type FooterColumn = { title: string; links: FooterLink[] };
-type SocialLink = { url: string; label: string; icon: Icon };
 
 const getColumns = (): FooterColumn[] => [
 	{
@@ -37,45 +26,14 @@ const getColumns = (): FooterColumn[] => [
 	},
 	{
 		title: t`Resources`,
-		links: [
-			{ external: "https://docs.rxresu.me", label: t`Documentation` },
-			{ external: "https://docs.rxresu.me/changelog", label: t`Changelog` },
-			{ external: githubUrl, label: t`Source Code` },
-			{ external: "https://opencollective.com/reactive-resume/donate", label: t`Sponsorships` },
-		],
+		links: [{ external: DOCS_URL, label: t`Documentation` }],
 	},
-	{
-		title: t`Community`,
-		links: [
-			{ external: "https://discord.gg/aSyA5ZSxpb", label: t`Discord` },
-			{ external: "https://reddit.com/r/reactiveresume", label: t`Subreddit` },
-			{ external: "https://crowdin.com/project/reactive-resume", label: t`Translations` },
-			{ external: `${githubUrl}/issues`, label: t`Report an issue` },
-		],
-	},
-	{
-		title: t`Legal`,
-		links: [
-			{ external: "https://docs.rxresu.me/legal/privacy-policy", label: t`Privacy Policy` },
-			{ external: licenseUrl, label: t`MIT License` },
-		],
-	},
-];
-
-const getSocialLinks = (): SocialLink[] => [
-	{ url: githubUrl, label: t`GitHub`, icon: GithubLogoIcon },
-	{ url: "https://x.com/KingOKings", label: t`X (Twitter)`, icon: XLogoIcon },
-	{ url: "https://linkedin.com/in/amruthpillai", label: t`LinkedIn`, icon: LinkedinLogoIcon },
-	{ url: "https://discord.gg/aSyA5ZSxpb", label: t`Discord`, icon: DiscordLogoIcon },
-	{ url: "https://reddit.com/r/reactiveresume", label: t`Subreddit`, icon: RedditLogoIcon },
 ];
 
 const linkClass =
 	"group/link inline-flex min-h-9 items-center gap-1 text-(--home-muted) text-[14px] [transition:color_150ms_ease] hover:text-(--home-ink)";
 const arrowClass =
 	"opacity-0 [transition:opacity_180ms_ease,transform_180ms_cubic-bezier(0.23,1,0.32,1)] group-hover/link:transform-[translate(1px,-1px)] group-hover/link:opacity-60";
-const socialClass =
-	"inline-grid size-10 place-items-center text-(--home-muted) [transition:color_160ms_ease] hover:text-(--home-ink)";
 const metaLinkClass = "text-(--home-ink) underline-offset-[3px] hover:underline";
 
 function FooterColumnLink({ link }: { link: FooterLink }) {
@@ -118,10 +76,10 @@ export function SiteFooter() {
 			<div
 				className={cn(
 					wrap,
-					"grid grid-cols-[minmax(0,1.4fr)_repeat(4,minmax(0,1fr))] gap-x-8 gap-y-12 pt-[76px] max-[1100px]:grid-cols-[repeat(3,minmax(0,1fr))] max-[700px]:grid-cols-2 max-[700px]:gap-y-10 max-[540px]:pt-[52px]",
+					"grid grid-cols-[minmax(0,1.4fr)_repeat(2,minmax(0,1fr))] gap-x-8 gap-y-12 pt-[76px] max-[700px]:grid-cols-2 max-[700px]:gap-y-10 max-[540px]:pt-[52px]",
 				)}
 			>
-				<div className="max-[1100px]:col-span-full">
+				<div className="max-[700px]:col-span-full">
 					<Link to="/" className="inline-flex items-center gap-[11px] font-[550] text-[17px] tracking-[-0.04em]">
 						<img src="/icon/dark.svg" alt="" width="30" height="30" className="block" />
 						<span>Reactive Resume</span>
@@ -129,21 +87,6 @@ export function SiteFooter() {
 					<p className="mt-[18px] max-w-[300px] text-(--home-muted) text-[14px] leading-[1.7]">
 						<Trans>A free, open-source resume builder. Yours to keep, yours to export, yours to host.</Trans>
 					</p>
-					<ul className="mt-6 flex flex-wrap gap-1">
-						{getSocialLinks().map((social) => (
-							<li key={social.label}>
-								<a
-									href={social.url}
-									target="_blank"
-									rel="noopener noreferrer"
-									className={socialClass}
-									aria-label={`${social.label} (${t`opens in new tab`})`}
-								>
-									<social.icon aria-hidden="true" size={19} weight="fill" />
-								</a>
-							</li>
-						))}
-					</ul>
 				</div>
 
 				{getColumns().map((column) => (
@@ -169,26 +112,15 @@ export function SiteFooter() {
 				)}
 			>
 				<p>
-					<Trans>By the community, for the community.</Trans>
-					<br />
 					<Trans>
 						Released under the{" "}
-						<a href={licenseUrl} target="_blank" rel="noopener noreferrer" className={metaLinkClass}>
+						<a href={UPSTREAM_LICENSE_URL} target="_blank" rel="noopener noreferrer" className={metaLinkClass}>
 							MIT License
 						</a>
 						.
 					</Trans>
 				</p>
 				<p>
-					<Trans>
-						A passion project by{" "}
-						<a href="https://amruthpillai.com" target="_blank" rel="noopener noreferrer" className={metaLinkClass}>
-							Amruth Pillai
-						</a>
-					</Trans>
-					<span aria-hidden="true" className="px-2 text-(--home-line)">
-						/
-					</span>
 					<bdi className="tabular-nums">v{__APP_VERSION__}</bdi>
 				</p>
 			</div>

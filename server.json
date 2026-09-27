@@ -1,18 +1,18 @@
 {
 	"$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-	"name": "io.github.amruthpillai/reactive-resume",
+	"name": "io.github.ucgeorge/reactive-resume",
 	"title": "Reactive Resume",
-	"description": "Free open-source resume builder with remote MCP tools for resumes and job applications.",
-	"websiteUrl": "https://rxresu.me",
+	"description": "Reactive Resume fork with remote MCP tools for resumes, job applications, and serving AI requests from your own agent.",
+	"websiteUrl": "https://github.com/UcGeorge/reactive-resume",
 	"repository": {
-		"url": "https://github.com/reactive-resume/reactive-resume",
+		"url": "https://github.com/UcGeorge/reactive-resume",
 		"source": "github"
 	},
 	"version": "5.3.1",
 	"remotes": [
 		{
 			"type": "streamable-http",
-			"url": "https://rxresu.me/mcp"
+			"url": "https://your-deployment.example.com/mcp"
 		}
 	]
 }

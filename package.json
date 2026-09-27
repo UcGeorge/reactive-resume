@@ -5,13 +5,12 @@
 	"private": true,
 	"license": "MIT",
 	"author": {
-		"name": "Amruth Pillai",
-		"email": "hello@amruthpillai.com",
-		"url": "https://amruthpillai.com"
+		"name": "UcGeorge",
+		"url": "https://github.com/UcGeorge/reactive-resume"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/reactive-resume/reactive-resume.git"
+		"url": "https://github.com/UcGeorge/reactive-resume.git"
 	},
 	"engines": {
 		"node": "24.x"

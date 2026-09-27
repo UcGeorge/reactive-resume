@@ -1,5 +1,6 @@
 import { Trans } from "@lingui/react/macro";
 import { cn } from "@reactive-resume/utils/style";
+import { UPSTREAM_LICENSE_URL } from "@/libs/links";
 
 type Props = React.ComponentProps<"div">;
 
@@ -10,31 +11,12 @@ export function Copyright({ className, ...props }: Props) {
 				<Trans>
 					Licensed under{" "}
 					<a
-						href="https://github.com/reactive-resume/reactive-resume/blob/main/LICENSE"
+						href={UPSTREAM_LICENSE_URL}
 						target="_blank"
 						rel="noopener noreferrer"
 						className="font-medium underline underline-offset-2"
 					>
 						MIT
-					</a>
-					.
-				</Trans>
-			</p>
-
-			<p>
-				<Trans comment="Tagline shown in app footer/about area">By the community, for the community.</Trans>
-			</p>
-
-			<p>
-				<Trans>
-					A passion project by{" "}
-					<a
-						target="_blank"
-						rel="noopener noreferrer"
-						href="https://amruthpillai.com"
-						className="font-medium underline underline-offset-2"
-					>
-						Amruth Pillai
 					</a>
 					.
 				</Trans>

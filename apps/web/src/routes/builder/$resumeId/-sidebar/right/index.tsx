@@ -5,7 +5,6 @@ import { Button } from "@reactive-resume/ui/components/button";
 import { ScrollArea } from "@reactive-resume/ui/components/scroll-area";
 import { Separator } from "@reactive-resume/ui/components/separator";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@reactive-resume/ui/components/tooltip";
-import { Copyright } from "@/components/ui/copyright";
 import { getSectionIcon, getSectionTitle, rightSidebarSections } from "@/libs/resume/section";
 import { BuilderSidebarEdge } from "../../-components/edge";
 import { useBuilderSidebar } from "../../-store/sidebar";
@@ -13,7 +12,6 @@ import { AtsCheckSectionBuilder } from "./sections/ats-check";
 import { CustomStylesSectionBuilder } from "./sections/custom-styles";
 import { DesignSectionBuilder } from "./sections/design";
 import { ExportSectionBuilder } from "./sections/export";
-import { InformationSectionBuilder } from "./sections/information";
 import { LayoutSectionBuilder } from "./sections/layout";
 import { NotesSectionBuilder } from "./sections/notes";
 import { PageSectionBuilder } from "./sections/page";
@@ -35,7 +33,6 @@ function getSectionComponent(type: RightSidebarSection) {
 		.with("statistics", () => <StatisticsSectionBuilder />)
 		.with("ats", () => <AtsCheckSectionBuilder />)
 		.with("export", () => <ExportSectionBuilder />)
-		.with("information", () => <InformationSectionBuilder />)
 		.exhaustive();
 }
 
@@ -57,8 +54,6 @@ export function BuilderSidebarRight() {
 							<Separator />
 						</Fragment>
 					))}
-
-					<Copyright className="mx-auto py-2 text-center" />
 				</div>
 			</ScrollArea>
 		</>

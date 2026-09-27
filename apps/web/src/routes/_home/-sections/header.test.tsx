@@ -20,9 +20,6 @@ vi.mock("@tanstack/react-router", () => ({
 		</a>
 	),
 }));
-vi.mock("@/components/input/github-stars-button", () => ({
-	GithubStarsButton: () => <div data-testid="github-stars-button" />,
-}));
 vi.mock("@/features/locale/combobox", () => ({
 	LocaleCombobox: ({ render: renderProp }: LocaleComboboxProps) => renderProp,
 }));
@@ -55,10 +52,10 @@ describe("Header", () => {
 		expect(dashboard).toBeDefined();
 	});
 
-	it("includes ThemeToggleButton and GithubStarsButton in the navigation", () => {
-		const { getByTestId } = renderHeader();
+	it("includes ThemeToggleButton in the navigation and no promotional buttons", () => {
+		const { getByTestId, container } = renderHeader();
 		expect(getByTestId("theme-toggle")).toBeInTheDocument();
-		expect(getByTestId("github-stars-button")).toBeInTheDocument();
+		expect(container.textContent).not.toMatch(/star/i);
 	});
 
 	it("labels the navigation landmark", () => {
