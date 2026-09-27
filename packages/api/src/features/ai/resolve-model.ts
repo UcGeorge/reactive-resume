@@ -5,8 +5,7 @@ import { ORPCError } from "@orpc/client";
 import { aiProvidersService } from "../ai-providers/service";
 import { getModel } from "./service";
 
-export const NO_AI_PROVIDER_MESSAGE =
-	"No AI provider is configured. Add one in Settings → Integrations to use AI features.";
+const NO_AI_PROVIDER_MESSAGE = "No AI provider is configured. Add one in Settings → Integrations to use AI features.";
 
 export type ResolvedFeatureModel = {
 	model: LanguageModel;

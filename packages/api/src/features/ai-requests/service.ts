@@ -53,7 +53,7 @@ function appUrl() {
 	return env.APP_URL.replace(/\/$/, "");
 }
 
-export function noAgentMessage(timeoutMs: number) {
+function noAgentMessage(timeoutMs: number) {
 	return `No connected agent answered within ${Math.round(timeoutMs / 1000)} seconds. Connect an MCP client to ${appUrl()}/mcp and run the serve_ai_requests prompt (or call claim_ai_request in a loop), then try again.`;
 }
 

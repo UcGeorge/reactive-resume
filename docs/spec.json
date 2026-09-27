@@ -8,14 +8,13 @@
 			"url": "https://github.com/reactive-resume/reactive-resume/blob/main/LICENSE"
 		},
 		"contact": {
-			"name": "Amruth Pillai",
-			"email": "hello@amruthpillai.com",
-			"url": "https://amruthpillai.com"
+			"name": "Reactive Resume (fork)",
+			"url": "https://github.com/UcGeorge/reactive-resume"
 		}
 	},
 	"servers": [
 		{
-			"url": "https://rxresu.me/api/openapi"
+			"url": "http://localhost:3000/api/openapi"
 		}
 	],
 	"paths": {
@@ -29,7 +28,7 @@
 				"description": "Checks database and storage availability. Does not require authentication.",
 				"servers": [
 					{
-						"url": "https://rxresu.me"
+						"url": "http://localhost:3000"
 					}
 				],
 				"security": [],
@@ -46283,29 +46282,6 @@
 										"resumes",
 										"cachedAt"
 									]
-								}
-							}
-						}
-					}
-				}
-			}
-		},
-		"/statistics/github/stars": {
-			"get": {
-				"operationId": "getGitHubStarCount",
-				"summary": "Get GitHub star count",
-				"description": "Returns the number of GitHub stars for the Reactive Resume repository. The count is cached for up to 6 hours and falls back to a last-known value if the GitHub API is unavailable. No authentication required.",
-				"tags": [
-					"Platform Statistics"
-				],
-				"responses": {
-					"200": {
-						"description": "The number of GitHub stars for the Reactive Resume repository.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"type": "number",
-									"description": "The number of GitHub stars."
 								}
 							}
 						}

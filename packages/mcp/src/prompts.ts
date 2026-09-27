@@ -56,7 +56,7 @@ export const PROMPT_ARGUMENTS: Record<
 };
 
 /** The serve loop, as one instruction the agent keeps following until the user stops it. */
-export function buildServeAiRequestsText(providerId?: string) {
+function buildServeAiRequestsText(providerId?: string) {
 	const claimArgs = providerId ? `\`wait: 25\` and \`providerId: "${providerId}"\`` : "`wait: 25`";
 
 	return [

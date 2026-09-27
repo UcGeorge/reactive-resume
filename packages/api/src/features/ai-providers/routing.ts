@@ -2,7 +2,7 @@ import type { AiFeature } from "@reactive-resume/ai/types";
 import { AI_FEATURES } from "@reactive-resume/ai/types";
 
 export type RouteStatus = "unset" | "ok" | "unavailable" | "removed";
-export type RouteSource = "feature" | "default" | "fallback";
+type RouteSource = "feature" | "default" | "fallback";
 
 type ProviderLike = { id: string; enabled: boolean; testStatus: string; createdAt: Date };
 type RouteLike = { feature: string; aiProviderId: string | null };
@@ -22,7 +22,7 @@ export type AiProviderRouteStatus = {
 	source: RouteSource;
 };
 
-export function isRunnable(provider: ProviderLike) {
+function isRunnable(provider: ProviderLike) {
 	return provider.enabled && provider.testStatus === "success";
 }
 
