@@ -3,24 +3,51 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 const { dbMock, queryMock, queryState } = vi.hoisted(() => {
 	const state = {
 		rows: [] as unknown[],
+		// Rows for statements awaited straight after `.where()` (no `.limit()`), keyed by table.
+		rowsByTable: new Map<unknown, unknown[]>(),
 		whereArg: undefined as unknown,
 		orderByArgs: [] as unknown[],
+		deletedWhere: [] as unknown[],
+	};
+	type Statement = {
+		where: (arg: unknown) => Statement;
+		orderBy: (...args: unknown[]) => Statement;
+		limit: (count: number) => Promise<unknown[]>;
+		then: (onFulfilled?: (value: unknown) => unknown, onRejected?: (reason: unknown) => unknown) => Promise<unknown>;
+	};
+	const limit = vi.fn(async () => state.rows);
+	// Each `.from(table)` gets its own statement so concurrent selects (Promise.all) keep their
+	// table; awaiting a statement without `.limit()` resolves that table's scripted rows.
+	const statementFor = (table: unknown): Statement => {
+		const statement: Statement = {
+			where: vi.fn((arg: unknown) => {
+				state.whereArg = arg;
+				return statement;
+			}),
+			orderBy: vi.fn((...args: unknown[]) => {
+				state.orderByArgs = args;
+				return statement;
+			}),
+			limit,
+			// biome-ignore lint/suspicious/noThenProperty: the query builder is awaited directly, like Drizzle's.
+			then: (onFulfilled, onRejected) =>
+				Promise.resolve(state.rowsByTable.get(table) ?? state.rows).then(onFulfilled, onRejected),
+		};
+		return statement;
 	};
 	const query = {
-		from: vi.fn(() => query),
+		from: vi.fn((table: unknown) => statementFor(table)),
+		limit,
+	};
+	const deletion = {
 		where: vi.fn((arg: unknown) => {
-			state.whereArg = arg;
-			return query;
+			state.deletedWhere.push(arg);
+			return Promise.resolve();
 		}),
-		orderBy: vi.fn((...args: unknown[]) => {
-			state.orderByArgs = args;
-			return query;
-		}),
-		limit: vi.fn(async () => state.rows),
 	};
 
 	return {
-		dbMock: { select: vi.fn(() => query) },
+		dbMock: { select: vi.fn(() => query), delete: vi.fn(() => deletion) },
 		queryMock: query,
 		queryState: state,
 	};
@@ -47,6 +74,14 @@ vi.mock("@reactive-resume/db/schema", () => ({
 		createdAt: "ai_provider.created_at",
 		updatedAt: "ai_provider.updated_at",
 	},
+	aiProviderRoute: {
+		id: "ai_provider_route.id",
+		userId: "ai_provider_route.user_id",
+		feature: "ai_provider_route.feature",
+		aiProviderId: "ai_provider_route.ai_provider_id",
+		createdAt: "ai_provider_route.created_at",
+		updatedAt: "ai_provider_route.updated_at",
+	},
 }));
 vi.mock("drizzle-orm", () => ({
 	and: (...conditions: unknown[]) => ({ type: "and", conditions }),
@@ -68,6 +103,7 @@ vi.mock("../ai/service", () => ({ testConnection: vi.fn() }));
 vi.mock("../ai/url-policy", () => ({ resolveAiBaseUrl: vi.fn() }));
 
 const { aiProvidersService } = await import("./service");
+const schema = await import("@reactive-resume/db/schema");
 
 function providerRow(overrides: Record<string, unknown> = {}) {
 	return {
@@ -96,8 +132,10 @@ describe("aiProvidersService", () => {
 	beforeEach(() => {
 		vi.clearAllMocks();
 		queryState.rows = [];
+		queryState.rowsByTable = new Map();
 		queryState.whereArg = undefined;
 		queryState.orderByArgs = [];
+		queryState.deletedWhere = [];
 	});
 
 	it("gets the first enabled and tested provider by creation order", async () => {
@@ -118,5 +156,72 @@ describe("aiProvidersService", () => {
 		});
 		expect(queryState.orderByArgs).toEqual([{ type: "asc", value: "ai_provider.created_at" }]);
 		expect(queryMock.limit).toHaveBeenCalledWith(1);
+	});
+});
+
+describe("aiProvidersService.resolveForFeature", () => {
+	beforeEach(() => {
+		vi.clearAllMocks();
+		queryState.rows = [];
+		queryState.rowsByTable = new Map();
+		queryState.deletedWhere = [];
+	});
+
+	it("uses the feature's route when its provider is runnable", async () => {
+		queryState.rowsByTable.set(schema.aiProvider, [
+			providerRow({ id: "oldest", createdAt: new Date("2026-06-01T00:00:00Z") }),
+			providerRow({ id: "agent", provider: "mcp-agent" }),
+		]);
+		queryState.rowsByTable.set(schema.aiProviderRoute, [{ feature: "chat", aiProviderId: "agent" }]);
+
+		await expect(aiProvidersService.resolveForFeature({ userId: "user-1", feature: "chat" })).resolves.toMatchObject({
+			source: "feature",
+			provider: { id: "agent", userId: "user-1", apiKey: "decrypted-key" },
+		});
+	});
+
+	it("falls back to the oldest tested provider and flags the skipped route", async () => {
+		queryState.rowsByTable.set(schema.aiProvider, [
+			providerRow({ id: "oldest", createdAt: new Date("2026-06-01T00:00:00Z") }),
+			providerRow({ id: "broken", enabled: false, testStatus: "failure" }),
+		]);
+		queryState.rowsByTable.set(schema.aiProviderRoute, [{ feature: "evaluation", aiProviderId: "broken" }]);
+
+		await expect(
+			aiProvidersService.resolveForFeature({ userId: "user-1", feature: "evaluation" }),
+		).resolves.toMatchObject({ source: "fallback", warning: "unavailable", provider: { id: "oldest" } });
+	});
+
+	it("resolves to nothing when no provider can run", async () => {
+		queryState.rowsByTable.set(schema.aiProvider, [
+			providerRow({ id: "untested", testStatus: "untested", enabled: false }),
+		]);
+		queryState.rowsByTable.set(schema.aiProviderRoute, []);
+
+		await expect(aiProvidersService.resolveForFeature({ userId: "user-1", feature: "stories" })).resolves.toEqual({
+			source: "fallback",
+			provider: null,
+		});
+	});
+
+	it("clears a route when set to null and returns the refreshed list", async () => {
+		queryState.rowsByTable.set(schema.aiProvider, [providerRow({ id: "only" })]);
+		queryState.rowsByTable.set(schema.aiProviderRoute, []);
+
+		const rows = await aiProvidersService.routes.set({ userId: "user-1", feature: "import", aiProviderId: null });
+
+		expect(dbMock.delete).toHaveBeenCalledTimes(1);
+		expect(queryState.deletedWhere[0]).toEqual({
+			type: "and",
+			conditions: [
+				{ type: "eq", left: "ai_provider_route.user_id", right: "user-1" },
+				{ type: "eq", left: "ai_provider_route.feature", right: "import" },
+			],
+		});
+		expect(rows.find((row) => row.feature === "import")).toMatchObject({
+			status: "unset",
+			effectiveProviderId: "only",
+			source: "fallback",
+		});
 	});
 });

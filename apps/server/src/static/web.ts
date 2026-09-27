@@ -3,6 +3,7 @@ import fs from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { serveStatic } from "@hono/node-server/serve-static";
 import { env } from "@reactive-resume/env/server";
+import { FORK_REPO_URL } from "../links";
 
 function resolveWebDistPath() {
 	const candidates = [
@@ -88,11 +89,6 @@ const ROOT_FAQ_ITEMS = [
 		answer: "Yes. One click exports your resume to PDF, with your formatting and styling intact.",
 	},
 	{
-		question: "Is Reactive Resume available in multiple languages?",
-		answer:
-			"Yes. Pick your language on the settings page, or with the language switcher in the top right corner. If your language is missing, or the existing translation could be better, you can contribute to the translations on Crowdin.",
-	},
-	{
 		question: "What makes Reactive Resume different from other resume builders?",
 		answer:
 			"Reactive Resume is open source, private, and free. It shows no ads, doesn't track what you do, and doesn't lock features behind a paywall.",
@@ -127,13 +123,13 @@ function createRootSeoMarkup(canonicalUrl: string) {
 					price: "0",
 					priceCurrency: "USD",
 				},
-				codeRepository: "https://github.com/reactive-resume/reactive-resume",
+				codeRepository: FORK_REPO_URL,
 			},
 			{
 				"@type": "Project",
 				name: "Reactive Resume",
 				url: canonicalUrl,
-				sameAs: ["https://github.com/reactive-resume/reactive-resume"],
+				sameAs: [FORK_REPO_URL],
 			},
 			{
 				"@type": "FAQPage",

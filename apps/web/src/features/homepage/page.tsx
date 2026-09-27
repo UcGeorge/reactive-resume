@@ -3,14 +3,13 @@ import type { ReactNode } from "react";
 import type { SculptureTemplate } from "./resume-sculpture";
 import { t } from "@lingui/core/macro";
 import { Trans } from "@lingui/react/macro";
-import { ArrowDownIcon, ArrowRightIcon, ArrowUpRightIcon, GithubLogoIcon } from "@phosphor-icons/react";
+import { ArrowDownIcon, ArrowRightIcon } from "@phosphor-icons/react";
 import { Link } from "@tanstack/react-router";
 import { useInView } from "motion/react";
 import { lazy, Suspense, useRef, useState } from "react";
 import { cn } from "@reactive-resume/utils/style";
-import { GithubStarsButton } from "@/components/input/github-stars-button";
+import { DOCS_URL } from "@/libs/links";
 import { section, sectionHeading, sectionText, sectionTitle, textLink, wrap } from "./classes";
-import { CommunityStats } from "./community-stats";
 import { FeatureExplorer } from "./feature-explorer";
 import LanguagesShowcase from "./languages-showcase";
 import { PageBackground } from "./page-background";
@@ -21,16 +20,10 @@ import "./styles.css";
 
 const ExportPlayground = lazy(() => import("./export-playground"));
 const AtsPlayground = lazy(() => import("./ats-playground"));
-const githubUrl = "https://github.com/reactive-resume/reactive-resume";
 const buttonClass =
 	"inline-flex min-h-[52px] items-center justify-center gap-3 rounded-[4px] border border-[#f1f0eb] bg-[#f1f0eb] px-[19px] py-[14px] text-[14px] font-[550] text-[#151516] [transition:background-color_150ms_ease,transform_150ms_cubic-bezier(0.23,1,0.32,1)] hover:bg-[#d9d8d2] active:transform-[scale(0.97)] max-[540px]:min-h-[49px] max-[540px]:gap-[18px] max-[540px]:px-[15px] max-[540px]:py-3 max-[540px]:text-[13px]";
 const brandClass = "inline-flex shrink-0 items-center gap-[11px] font-[550] tracking-[-0.04em] max-[540px]:gap-2";
-const paperLinkClass =
-	"group/link flex min-h-[65px] items-center gap-[14px] border-t border-[#2d2e3038] text-[14px] [transition:background-color_160ms_ease] focus-visible:outline-[#37383a]";
-const paperArrowClass =
-	"ml-auto [transition:transform_180ms_cubic-bezier(0.23,1,0.32,1)] group-hover/link:transform-[translate(2px,-2px)]";
-const contributeLinkClass =
-	"inline-flex min-h-11 items-center gap-2 text-(--home-ink) underline-offset-4 hover:underline";
+
 type DeferredDemoProps = { children: ReactNode };
 
 function DeferredDemo({ children }: DeferredDemoProps) {
@@ -86,14 +79,11 @@ export function Homepage() {
 					aria-label={t`Main navigation`}
 				>
 					<a
-						href="https://docs.rxresu.me"
+						href={DOCS_URL}
 						className="inline-flex min-h-[38px] items-center gap-[5px] [transition:color_150ms_ease] hover:text-(--home-ink) max-[900px]:hidden"
 					>
 						<Trans>Docs</Trans>
 					</a>
-					<div className="[&>a]:hover:[&_svg:last-child]:transform-[rotate(20deg)_scale(1.15)] [&>a>span]:min-w-[6ch] [&>a>span]:border-s [&>a>span]:border-s-[#3d444d] [&>a>span]:ps-2 [&>a>span]:text-center [&>a>span]:font-semibold max-[540px]:[&>a>span]:min-w-0 max-[540px]:[&>a>span]:ps-[6px] [&>a]:inline-flex [&>a]:min-h-[38px] [&>a]:min-w-[128px] [&>a]:items-center [&>a]:gap-2 [&>a]:rounded-[4px] [&>a]:border [&>a]:border-[#3d444d] [&>a]:bg-[#161b22] [&>a]:px-[11px] [&>a]:py-0 [&>a]:text-[#f0f6fc] [&>a]:text-[13px] [&>a]:tabular-nums [&>a]:shadow-[inset_0_1px_0_#ffffff0d,0_3px_0_#09090966] [&>a]:[transition:background-color_180ms_ease,border-color_180ms_ease,box-shadow_180ms_ease] [&>a]:hover:border-[#6e7681] [&>a]:hover:bg-[#21262d] [&>a]:hover:text-(--home-ink) [&>a]:hover:shadow-[inset_0_1px_0_#ffffff14,0_3px_0_#09090966,0_0_18px_#ffffff08] [&>a]:focus-visible:border-[#3d444d] [&>a]:focus-visible:ring-0 max-[540px]:[&>a]:min-w-24 max-[540px]:[&>a]:gap-[5px] max-[540px]:[&>a]:px-[6px] max-[540px]:[&>a]:text-[11px] [&_svg:last-child]:text-[#f0f6fc] [&_svg:last-child]:[transition:transform_220ms_cubic-bezier(0.23,1,0.32,1)] max-[540px]:[&_svg:not([class*='size-'])]:size-[14px]">
-						<GithubStarsButton />
-					</div>
 				</nav>
 			</header>
 			<main id="main-content" className="relative z-1">
@@ -156,7 +146,6 @@ export function Homepage() {
 						onTypefaceChange={setTypeface}
 					/>
 				</section>
-				<CommunityStats />
 				<section className={cn(section, "bg-[rgb(23_23_24/55%)]")} id="templates" aria-labelledby="templates-title">
 					<div className={wrap}>
 						<div className={sectionHeading}>
@@ -236,79 +225,6 @@ export function Homepage() {
 					<FeatureExplorer />
 				</section>
 				<LanguagesShowcase />
-				<section
-					className={cn(
-						wrap,
-						"grid grid-cols-[1.1fr_1fr] items-center gap-x-[90px] gap-y-[50px] border-(--home-line) border-t pt-[100px] pb-[65px] max-[600px]:grid-cols-1 max-[600px]:gap-[42px] max-[900px]:gap-[45px] max-[900px]:pt-[70px] max-[900px]:pb-[45px]",
-					)}
-					id="support"
-					aria-labelledby="open-title"
-				>
-					<div>
-						<h2 id="open-title" className={sectionTitle}>
-							<Trans>
-								A project you can
-								<br />
-								be part of.
-							</Trans>
-						</h2>
-						<p className="mt-[26px] max-w-[460px] text-(--home-muted) text-[16px] leading-[1.75] max-[900px]:text-[14px]">
-							<Trans>
-								Reactive Resume is free and open source. Amruth and a community of contributors keep it running. If
-								you’d like to support the work, donations help cover hosting and development.
-							</Trans>
-						</p>
-						<a href={githubUrl} className={cn(textLink, "mt-5")}>
-							<GithubLogoIcon size={21} aria-hidden="true" />
-							<Trans>Find us on GitHub</Trans>
-							<ArrowUpRightIcon size={16} aria-hidden="true" />
-						</a>
-					</div>
-					<div className="transform-[perspective(1000px)_rotateY(-7deg)_rotateZ(2deg)] relative rounded-[2px_4px_2px_2px] bg-[#d9dad5] px-[35px] pt-[29px] pb-6 text-[#2d2e30] shadow-[1px_1px_0_#fafaf3_inset,1px_2px_0_#a9aaa6,2px_4px_0_#6b6c6a,8px_19px_30px_#0005] after:absolute after:top-0 after:right-0 after:size-[26px] after:rounded-[0_0_0_4px] after:bg-[#f4f5ec] after:shadow-[-1px_2px_2px_#0002] after:content-[''] max-[600px]:mx-auto max-[600px]:w-[calc(100%_-_10px)] max-[900px]:p-[25px]">
-						<div className="flex items-center gap-[11px] pr-5 text-[13px] tracking-[-0.02em]">
-							<img src="/icon/light.svg" alt="" width="36" height="36" />
-							<span>Reactive Resume</span>
-						</div>
-						<h3 className="mt-[30px] mb-6 font-[Manrope_Variable,sans-serif] font-semibold text-[28px] leading-[1.2] tracking-[-0.045em] max-[900px]:text-[24px]">
-							<Trans>Support the project</Trans>
-						</h3>
-						<a href="https://github.com/sponsors/AmruthPillai" className={paperLinkClass}>
-							<GithubLogoIcon size={22} aria-hidden="true" />
-							<span>GitHub Sponsors</span>
-							<ArrowUpRightIcon size={20} aria-hidden="true" className={paperArrowClass} />
-						</a>
-						<a href="https://opencollective.com/reactive-resume/donate" className={paperLinkClass}>
-							<span
-								className="block size-[21px] rounded-full border-4 border-current border-r-[#9e9f99]"
-								aria-hidden="true"
-							/>
-							<span>Open Collective</span>
-							<ArrowUpRightIcon size={20} aria-hidden="true" className={paperArrowClass} />
-						</a>
-						<p className="mt-[22px] border-[#2d2e3045] border-t border-dashed pt-5 text-[#62635f] text-[11px]">
-							<Trans>Thank you for helping keep it free.</Trans>
-						</p>
-					</div>
-					<div className="col-span-full flex items-center justify-between gap-5 pt-3 text-(--home-muted) text-[13px] max-[900px]:flex-col max-[900px]:items-start max-[900px]:gap-3 max-[600px]:text-[12px]">
-						<p>
-							<Trans>There are other ways to pitch in.</Trans>
-						</p>
-						<div className="flex flex-wrap gap-x-7 max-[600px]:gap-x-5">
-							<a href="https://crowdin.com/project/reactive-resume" className={contributeLinkClass}>
-								<Trans>Translate the app</Trans>
-								<ArrowUpRightIcon size={15} aria-hidden="true" />
-							</a>
-							<a href={`${githubUrl}/issues`} className={contributeLinkClass}>
-								<Trans>Report a bug</Trans>
-								<ArrowUpRightIcon size={15} aria-hidden="true" />
-							</a>
-							<a href="https://docs.rxresu.me/contributing/development" className={contributeLinkClass}>
-								<Trans>Contribute code</Trans>
-								<ArrowUpRightIcon size={15} aria-hidden="true" />
-							</a>
-						</div>
-					</div>
-				</section>
 				<div
 					className={cn(
 						wrap,

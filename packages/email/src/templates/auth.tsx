@@ -16,12 +16,13 @@ import {
 	Tailwind,
 	Text,
 } from "react-email";
+import { env } from "@reactive-resume/env/server";
 
 // ponytail: server dev consumes this source through tsx, which emits React.createElement here.
 void React;
 
 const appName = "Reactive Resume";
-const logoUrl = "https://rxresu.me/icon/dark.svg";
+const logoUrl = `${env.APP_URL.replace(/\/$/, "")}/icon/dark.svg`;
 
 interface AuthEmailLayoutProps {
 	preview: string;
@@ -110,20 +111,6 @@ function AuthEmailLayout({ preview, heading, intro, details, actionLabel, action
 							</Section>
 
 							<Hr className="my-10 border-zinc-700" />
-
-							<Text className="mt-8 text-xs leading-1 opacity-40">By the community, for the community.</Text>
-							<Text className="text-xs leading-1 opacity-40">
-								A passion project by{" "}
-								<Link
-									target="_blank"
-									rel="noopener noreferrer"
-									href="https://amruthpillai.com"
-									className="text-inherit underline underline-offset-2"
-								>
-									Amruth Pillai
-								</Link>
-								.
-							</Text>
 
 							<Text className="mt-8 font-heading font-medium text-base tracking-tight opacity-80">Reactive Resume</Text>
 						</Section>

@@ -16,6 +16,7 @@ import {
 import { useInView, useReducedMotion } from "motion/react";
 import { useRef, useState } from "react";
 import { cn } from "@reactive-resume/utils/style";
+import { DOCS_URL } from "@/libs/links";
 import { textLink } from "./classes";
 
 const demoClass =
@@ -363,7 +364,7 @@ export function FeatureExplorer() {
 								workflow.
 							</Trans>
 						</p>
-						<a href="https://docs.rxresu.me/guides/using-the-mcp-server" className={cn(textLink, "mt-4")}>
+						<a href={`${DOCS_URL}/guides/using-the-mcp-server`} className={cn(textLink, "mt-4")}>
 							<Trans>See how to connect</Trans>
 							<ArrowUpRightIcon size={17} aria-hidden="true" />
 						</a>

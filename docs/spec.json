@@ -8,14 +8,13 @@
 			"url": "https://github.com/reactive-resume/reactive-resume/blob/main/LICENSE"
 		},
 		"contact": {
-			"name": "Amruth Pillai",
-			"email": "hello@amruthpillai.com",
-			"url": "https://amruthpillai.com"
+			"name": "Reactive Resume (fork)",
+			"url": "https://github.com/UcGeorge/reactive-resume"
 		}
 	},
 	"servers": [
 		{
-			"url": "https://rxresu.me/api/openapi"
+			"url": "http://localhost:3000/api/openapi"
 		}
 	],
 	"paths": {
@@ -29,7 +28,7 @@
 				"description": "Checks database and storage availability. Does not require authentication.",
 				"servers": [
 					{
-						"url": "https://rxresu.me"
+						"url": "http://localhost:3000"
 					}
 				],
 				"security": [],
@@ -941,7 +940,8 @@
 											"cerebras",
 											"perplexity",
 											"ollama",
-											"openai-compatible"
+											"openai-compatible",
+											"mcp-agent"
 										],
 										"type": "string"
 									},
@@ -953,15 +953,13 @@
 										"type": "string"
 									},
 									"apiKey": {
-										"type": "string",
-										"minLength": 1
+										"type": "string"
 									}
 								},
 								"required": [
 									"label",
 									"provider",
-									"model",
-									"apiKey"
+									"model"
 								]
 							}
 						}
@@ -1152,7 +1150,8 @@
 											"cerebras",
 											"perplexity",
 											"ollama",
-											"openai-compatible"
+											"openai-compatible",
+											"mcp-agent"
 										],
 										"type": "string"
 									},
@@ -1164,8 +1163,7 @@
 										"type": "string"
 									},
 									"apiKey": {
-										"type": "string",
-										"minLength": 1
+										"type": "string"
 									},
 									"enabled": {
 										"type": "boolean"
@@ -1739,6 +1737,821 @@
 												"status",
 												"message"
 											]
+										}
+									]
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/ai-providers/routes": {
+			"get": {
+				"operationId": "listAiProviderRoutes",
+				"summary": "List per-feature provider routes",
+				"description": "One row per AI feature: the provider assigned to it, whether that provider can currently run, and the provider the feature effectively resolves to (feature route, then the Default route, then the oldest tested provider).",
+				"tags": [
+					"AI Providers"
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"application/json": {
+								"schema": {
+									"anyOf": [
+										{},
+										{
+											"not": {}
+										}
+									]
+								}
+							}
+						}
+					},
+					"412": {
+						"description": "412",
+						"content": {
+							"application/json": {
+								"schema": {
+									"oneOf": [
+										{
+											"type": "object",
+											"properties": {
+												"defined": {
+													"const": true
+												},
+												"code": {
+													"const": "PRECONDITION_FAILED"
+												},
+												"status": {
+													"const": 412
+												},
+												"message": {
+													"type": "string",
+													"default": "AI agent workspace is not configured."
+												},
+												"data": {}
+											},
+											"required": [
+												"defined",
+												"code",
+												"status",
+												"message"
+											]
+										},
+										{
+											"type": "object",
+											"properties": {
+												"defined": {
+													"const": false
+												},
+												"code": {
+													"type": "string"
+												},
+												"status": {
+													"type": "number"
+												},
+												"message": {
+													"type": "string"
+												},
+												"data": {}
+											},
+											"required": [
+												"defined",
+												"code",
+												"status",
+												"message"
+											]
+										}
+									]
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/ai-providers/routes/{feature}": {
+			"put": {
+				"operationId": "setAiProviderRoute",
+				"summary": "Route a feature to a provider",
+				"description": "Assigns a saved provider to an AI feature, or clears the route with a null provider id.",
+				"tags": [
+					"AI Providers"
+				],
+				"parameters": [
+					{
+						"name": "feature",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"enum": [
+								"default",
+								"chat",
+								"import",
+								"ats-review",
+								"autofill",
+								"evaluation",
+								"tailoring",
+								"cover-letter",
+								"outreach",
+								"stories"
+							],
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"aiProviderId": {
+										"anyOf": [
+											{
+												"type": "string"
+											},
+											{
+												"type": "null"
+											}
+										]
+									}
+								},
+								"required": [
+									"aiProviderId"
+								]
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"application/json": {
+								"schema": {
+									"anyOf": [
+										{},
+										{
+											"not": {}
+										}
+									]
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "404",
+						"content": {
+							"application/json": {
+								"schema": {
+									"oneOf": [
+										{
+											"type": "object",
+											"properties": {
+												"defined": {
+													"const": true
+												},
+												"code": {
+													"const": "NOT_FOUND"
+												},
+												"status": {
+													"const": 404
+												},
+												"message": {
+													"type": "string",
+													"default": "AI provider was not found."
+												},
+												"data": {}
+											},
+											"required": [
+												"defined",
+												"code",
+												"status",
+												"message"
+											]
+										},
+										{
+											"type": "object",
+											"properties": {
+												"defined": {
+													"const": false
+												},
+												"code": {
+													"type": "string"
+												},
+												"status": {
+													"type": "number"
+												},
+												"message": {
+													"type": "string"
+												},
+												"data": {}
+											},
+											"required": [
+												"defined",
+												"code",
+												"status",
+												"message"
+											]
+										}
+									]
+								}
+							}
+						}
+					},
+					"412": {
+						"description": "412",
+						"content": {
+							"application/json": {
+								"schema": {
+									"oneOf": [
+										{
+											"type": "object",
+											"properties": {
+												"defined": {
+													"const": true
+												},
+												"code": {
+													"const": "PRECONDITION_FAILED"
+												},
+												"status": {
+													"const": 412
+												},
+												"message": {
+													"type": "string",
+													"default": "AI agent workspace is not configured."
+												},
+												"data": {}
+											},
+											"required": [
+												"defined",
+												"code",
+												"status",
+												"message"
+											]
+										},
+										{
+											"type": "object",
+											"properties": {
+												"defined": {
+													"const": false
+												},
+												"code": {
+													"type": "string"
+												},
+												"status": {
+													"type": "number"
+												},
+												"message": {
+													"type": "string"
+												},
+												"data": {}
+											},
+											"required": [
+												"defined",
+												"code",
+												"status",
+												"message"
+											]
+										}
+									]
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/ai-requests/claim": {
+			"post": {
+				"operationId": "claimAiRequest",
+				"summary": "Claim the next queued AI request",
+				"description": "Long-polls the queue of inference requests that features enqueued for a Connected agent (MCP) provider. Returns at most one request, atomically marked as claimed with a lease, or null when nothing arrived within `wait` seconds.",
+				"tags": [
+					"AI Requests"
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"providerId": {
+										"type": "string",
+										"description": "Only claim requests for this AI provider id."
+									},
+									"wait": {
+										"type": "integer",
+										"minimum": 0,
+										"maximum": 25,
+										"default": 0
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"application/json": {
+								"schema": {
+									"anyOf": [
+										{},
+										{
+											"not": {}
+										}
+									]
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/ai-requests/complete": {
+			"post": {
+				"operationId": "completeAiRequest",
+				"summary": "Deliver the answer for a claimed AI request",
+				"description": "Answers a claimed request with `text` (a single JSON object when the request's responseFormat is json) and/or `toolCalls` (names from the request's tools). Validation problems are returned as an error so the answer can be fixed and resent.",
+				"tags": [
+					"AI Requests"
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"id": {
+										"type": "string",
+										"minLength": 1
+									},
+									"text": {
+										"type": "string"
+									},
+									"toolCalls": {
+										"type": "array",
+										"items": {
+											"type": "object",
+											"properties": {
+												"toolName": {
+													"type": "string",
+													"minLength": 1,
+													"description": "One of the tools offered by the request."
+												},
+												"input": {
+													"type": "object",
+													"propertyNames": {
+														"type": "string"
+													},
+													"additionalProperties": {},
+													"description": "Arguments matching that tool's inputSchema."
+												}
+											},
+											"required": [
+												"toolName",
+												"input"
+											]
+										}
+									}
+								},
+								"required": [
+									"id"
+								]
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"id": {
+											"type": "string"
+										},
+										"status": {
+											"const": "completed"
+										}
+									},
+									"required": [
+										"id",
+										"status"
+									]
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "400",
+						"content": {
+							"application/json": {
+								"schema": {
+									"oneOf": [
+										{
+											"type": "object",
+											"properties": {
+												"defined": {
+													"const": true
+												},
+												"code": {
+													"const": "BAD_REQUEST"
+												},
+												"status": {
+													"const": 400
+												},
+												"message": {
+													"type": "string",
+													"default": "The answer does not fit the request."
+												},
+												"data": {}
+											},
+											"required": [
+												"defined",
+												"code",
+												"status",
+												"message"
+											]
+										},
+										{
+											"type": "object",
+											"properties": {
+												"defined": {
+													"const": false
+												},
+												"code": {
+													"type": "string"
+												},
+												"status": {
+													"type": "number"
+												},
+												"message": {
+													"type": "string"
+												},
+												"data": {}
+											},
+											"required": [
+												"defined",
+												"code",
+												"status",
+												"message"
+											]
+										}
+									]
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "404",
+						"content": {
+							"application/json": {
+								"schema": {
+									"oneOf": [
+										{
+											"type": "object",
+											"properties": {
+												"defined": {
+													"const": true
+												},
+												"code": {
+													"const": "NOT_FOUND"
+												},
+												"status": {
+													"const": 404
+												},
+												"message": {
+													"type": "string",
+													"default": "AI request was not found."
+												},
+												"data": {}
+											},
+											"required": [
+												"defined",
+												"code",
+												"status",
+												"message"
+											]
+										},
+										{
+											"type": "object",
+											"properties": {
+												"defined": {
+													"const": false
+												},
+												"code": {
+													"type": "string"
+												},
+												"status": {
+													"type": "number"
+												},
+												"message": {
+													"type": "string"
+												},
+												"data": {}
+											},
+											"required": [
+												"defined",
+												"code",
+												"status",
+												"message"
+											]
+										}
+									]
+								}
+							}
+						}
+					},
+					"409": {
+						"description": "409",
+						"content": {
+							"application/json": {
+								"schema": {
+									"oneOf": [
+										{
+											"type": "object",
+											"properties": {
+												"defined": {
+													"const": true
+												},
+												"code": {
+													"const": "CONFLICT"
+												},
+												"status": {
+													"const": 409
+												},
+												"message": {
+													"type": "string",
+													"default": "The request is not claimed."
+												},
+												"data": {}
+											},
+											"required": [
+												"defined",
+												"code",
+												"status",
+												"message"
+											]
+										},
+										{
+											"type": "object",
+											"properties": {
+												"defined": {
+													"const": false
+												},
+												"code": {
+													"type": "string"
+												},
+												"status": {
+													"type": "number"
+												},
+												"message": {
+													"type": "string"
+												},
+												"data": {}
+											},
+											"required": [
+												"defined",
+												"code",
+												"status",
+												"message"
+											]
+										}
+									]
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/ai-requests/fail": {
+			"post": {
+				"operationId": "failAiRequest",
+				"summary": "Give up on a claimed AI request",
+				"description": "Marks a queued or claimed request as failed with a reason the requesting feature shows to the user.",
+				"tags": [
+					"AI Requests"
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"id": {
+										"type": "string",
+										"minLength": 1
+									},
+									"reason": {
+										"type": "string",
+										"minLength": 1,
+										"maxLength": 2000
+									}
+								},
+								"required": [
+									"id",
+									"reason"
+								]
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"id": {
+											"type": "string"
+										},
+										"status": {
+											"const": "failed"
+										}
+									},
+									"required": [
+										"id",
+										"status"
+									]
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "404",
+						"content": {
+							"application/json": {
+								"schema": {
+									"oneOf": [
+										{
+											"type": "object",
+											"properties": {
+												"defined": {
+													"const": true
+												},
+												"code": {
+													"const": "NOT_FOUND"
+												},
+												"status": {
+													"const": 404
+												},
+												"message": {
+													"type": "string",
+													"default": "AI request was not found."
+												},
+												"data": {}
+											},
+											"required": [
+												"defined",
+												"code",
+												"status",
+												"message"
+											]
+										},
+										{
+											"type": "object",
+											"properties": {
+												"defined": {
+													"const": false
+												},
+												"code": {
+													"type": "string"
+												},
+												"status": {
+													"type": "number"
+												},
+												"message": {
+													"type": "string"
+												},
+												"data": {}
+											},
+											"required": [
+												"defined",
+												"code",
+												"status",
+												"message"
+											]
+										}
+									]
+								}
+							}
+						}
+					},
+					"409": {
+						"description": "409",
+						"content": {
+							"application/json": {
+								"schema": {
+									"oneOf": [
+										{
+											"type": "object",
+											"properties": {
+												"defined": {
+													"const": true
+												},
+												"code": {
+													"const": "CONFLICT"
+												},
+												"status": {
+													"const": 409
+												},
+												"message": {
+													"type": "string",
+													"default": "The request is already finished."
+												},
+												"data": {}
+											},
+											"required": [
+												"defined",
+												"code",
+												"status",
+												"message"
+											]
+										},
+										{
+											"type": "object",
+											"properties": {
+												"defined": {
+													"const": false
+												},
+												"code": {
+													"type": "string"
+												},
+												"status": {
+													"type": "number"
+												},
+												"message": {
+													"type": "string"
+												},
+												"data": {}
+											},
+											"required": [
+												"defined",
+												"code",
+												"status",
+												"message"
+											]
+										}
+									]
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/ai-requests": {
+			"get": {
+				"operationId": "listAiRequests",
+				"summary": "List recent AI requests",
+				"description": "Recent requests for the authenticated user, newest first, without their payloads.",
+				"tags": [
+					"AI Requests"
+				],
+				"parameters": [
+					{
+						"name": "status",
+						"in": "query",
+						"schema": {
+							"enum": [
+								"queued",
+								"claimed",
+								"completed",
+								"failed",
+								"canceled"
+							],
+							"type": "string"
+						},
+						"allowEmptyValue": true,
+						"allowReserved": true
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"application/json": {
+								"schema": {
+									"anyOf": [
+										{},
+										{
+											"not": {}
 										}
 									]
 								}
@@ -45469,29 +46282,6 @@
 										"resumes",
 										"cachedAt"
 									]
-								}
-							}
-						}
-					}
-				}
-			}
-		},
-		"/statistics/github/stars": {
-			"get": {
-				"operationId": "getGitHubStarCount",
-				"summary": "Get GitHub star count",
-				"description": "Returns the number of GitHub stars for the Reactive Resume repository. The count is cached for up to 6 hours and falls back to a last-known value if the GitHub API is unavailable. No authentication required.",
-				"tags": [
-					"Platform Statistics"
-				],
-				"responses": {
-					"200": {
-						"description": "The number of GitHub stars for the Reactive Resume repository.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"type": "number",
-									"description": "The number of GitHub stars."
 								}
 							}
 						}

@@ -3,6 +3,7 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { onError } from "@orpc/client";
 import { createRouterClient } from "@orpc/server";
 import router from "@reactive-resume/api/routers";
+import { env } from "@reactive-resume/env/server";
 import {
 	buildMcpServerInfo,
 	MCP_TOOL_NAME,
@@ -29,10 +30,11 @@ function createRequestClient(request: Request): RouterClient<typeof router> {
 }
 
 export function createMcpServer(request: Request) {
-	const server = new McpServer(buildMcpServerInfo(appVersion), {
+	const server = new McpServer(buildMcpServerInfo(appVersion, env.APP_URL), {
 		instructions: [
 			"You are connected to Reactive Resume over MCP.",
 			"Authenticate with OAuth (recommended) or an API key (`x-api-key`).",
+			`Serve the app's AI requests for a "Connected agent (MCP)" provider with the \`serve_ai_requests\` prompt (\`${MCP_TOOL_NAME.claimAiRequest}\` → answer → \`${MCP_TOOL_NAME.completeAiRequest}\`).`,
 			`Discover resume IDs with \`${MCP_TOOL_NAME.listResumes}\` (not \`resources/list\`).`,
 			`List distinct tags with \`${MCP_TOOL_NAME.listResumeTags}\`.`,
 			`Read schema at \`resume://_meta/schema\`; read resume JSON via \`resume://{id}\` or \`${MCP_TOOL_NAME.getResume}\`.`,

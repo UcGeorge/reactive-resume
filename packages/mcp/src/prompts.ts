@@ -10,6 +10,11 @@ const resumeIdArg = z
 		`The ID of the resume. Use \`${T.listResumes}\` to find IDs, or \`${T.createResume}\` to create a new one first.`,
 	);
 
+const providerIdArg = z
+	.string()
+	.optional()
+	.describe("Optional AI provider id to serve; omit to serve every connected-agent provider on this account.");
+
 /** Shared prompt titles/descriptions, also consumed by the static MCP server card. */
 export const PROMPT_META = {
 	build_resume: {
@@ -25,7 +30,51 @@ export const PROMPT_META = {
 		description:
 			"Get a structured, professional critique with a scorecard and prioritized recommendations. Read-only: no changes are made.",
 	},
+	serve_ai_requests: {
+		title: "Serve AI Requests",
+		description:
+			"Turn this session into the model behind a 'Connected agent (MCP)' AI provider: claim queued requests, answer them yourself, repeat.",
+	},
 } as const;
+
+const RESUME_ID_ARGUMENT = { name: "id", description: "Resume ID.", required: true } as const;
+const PROVIDER_ID_ARGUMENT = {
+	name: "provider",
+	description: "Optional AI provider id to serve; omit to serve every connected-agent provider on this account.",
+	required: false,
+} as const;
+
+/** Prompt argument metadata for the static server card, mirroring each prompt's `argsSchema`. */
+export const PROMPT_ARGUMENTS: Record<
+	keyof typeof PROMPT_META,
+	readonly { name: string; description: string; required: boolean }[]
+> = {
+	build_resume: [RESUME_ID_ARGUMENT],
+	improve_resume: [RESUME_ID_ARGUMENT],
+	review_resume: [RESUME_ID_ARGUMENT],
+	serve_ai_requests: [PROVIDER_ID_ARGUMENT],
+};
+
+/** The serve loop, as one instruction the agent keeps following until the user stops it. */
+function buildServeAiRequestsText(providerId?: string) {
+	const claimArgs = providerId ? `\`wait: 25\` and \`providerId: "${providerId}"\`` : "`wait: 25`";
+
+	return [
+		'You are now the language model behind a "Connected agent (MCP)" AI provider in Reactive Resume.',
+		"Features of the app (evaluations, tailoring, cover letters, imports, chat) queue their model calls for you.",
+		"Serve them in a loop until the user tells you to stop:",
+		"",
+		`1. Call \`${T.claimAiRequest}\` with ${claimArgs}. An empty result means nothing arrived yet; call it again.`,
+		"2. Read the claimed request: `system`, `messages` (a message part with a `fileIndex` refers to the attached file resources in order), `tools`, `toolChoice`, `responseFormat` and `maxOutputTokens`.",
+		"3. Produce the answer yourself, exactly as the language model would. Do not call other Reactive Resume tools to fulfil it: the requesting feature executes any tool call itself and sends the result back as a new request.",
+		`4. Deliver it with \`${T.completeAiRequest}\`: \`{ id, text }\` for a written answer, or \`{ id, toolCalls: [{ toolName, input }] }\` to call one of the request's tools. When \`responseFormat.type\` is "json", \`text\` must be exactly one JSON object with no prose or code fences around it.`,
+		`5. If \`${T.completeAiRequest}\` returns a validation error, fix the answer and call it again. If the request cannot be answered, call \`${T.failAiRequest}\` with the reason.`,
+		"6. Go back to step 1.",
+		"",
+		"Keep your own commentary minimal; the answer belongs in the tool call.",
+		"Unclaimed requests expire after about two minutes and claimed ones after ten, so do not pause between steps.",
+	].join("\n");
+}
 
 /** Embeds the resume data and JSON schema as context messages. */
 function resumeContext(id: string) {
@@ -204,6 +253,23 @@ export function registerPrompts(server: McpServer) {
 							"Format the review as a clear, structured report.",
 						].join("\n"),
 					},
+				},
+			],
+		}),
+	);
+
+	// ── Serve AI Requests ────────────────────────────────────────
+	server.registerPrompt(
+		"serve_ai_requests",
+		{
+			...PROMPT_META.serve_ai_requests,
+			argsSchema: { provider: providerIdArg },
+		},
+		({ provider }) => ({
+			messages: [
+				{
+					role: "user" as const,
+					content: { type: "text" as const, text: buildServeAiRequestsText(provider) },
 				},
 			],
 		}),

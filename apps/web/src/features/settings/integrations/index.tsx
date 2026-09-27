@@ -1,5 +1,6 @@
 import { m } from "motion/react";
 import { useIsClient } from "usehooks-ts";
+import { AiRoutingSection } from "./components/ai-routing-section";
 import { AISettingsSection } from "./components/ai-section";
 
 export function IntegrationsSettingsPage() {
@@ -15,6 +16,7 @@ export function IntegrationsSettingsPage() {
 			className="grid max-w-4xl gap-8 will-change-[transform,opacity]"
 		>
 			<AISettingsSection />
+			<AiRoutingSection />
 		</m.div>
 	);
 }

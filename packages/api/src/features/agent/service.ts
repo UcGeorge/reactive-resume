@@ -20,6 +20,7 @@ import * as schema from "@reactive-resume/db/schema";
 import { defaultResumeData } from "@reactive-resume/schema/resume/default";
 import { generateId } from "@reactive-resume/utils/string";
 import { assertAgentEnvironment, getAgentToolApprovalSecret } from "../ai/credentials";
+import { resolveRunnableForFeature } from "../ai/resolve-model";
 import { getAgentModel } from "../ai/service";
 import { aiProvidersService } from "../ai-providers/service";
 import { resumeService } from "../resume/service";
@@ -865,7 +866,9 @@ function createAgent(input: {
 		stopWhen: isStepCount(MAX_AGENT_STEPS),
 		maxOutputTokens: MAX_AGENT_OUTPUT_TOKENS,
 		maxRetries: MAX_AGENT_MODEL_RETRIES,
-		timeout: { stepMs: AGENT_STEP_TIMEOUT_MS },
+		// A connected agent answers at human speed; give one step the whole run budget instead of
+		// cutting it at the network-provider step limit. The run wall clock still applies.
+		timeout: { stepMs: input.provider.provider === "mcp-agent" ? AGENT_RUN_TIMEOUT_MS : AGENT_STEP_TIMEOUT_MS },
 		// HMAC-signs approval requests at issuance and verifies them when replayed on the
 		// continuation run, so a client cannot forge or alter an approval payload. The agent
 		// runtime forwards constructor settings to streamText verbatim; ToolLoopAgentSettings
@@ -943,7 +946,7 @@ export const agentService = {
 
 			const selectedProvider = input.aiProviderId
 				? await aiProvidersService.getRunnableById({ id: input.aiProviderId, userId: input.userId })
-				: await aiProvidersService.getDefaultRunnable({ userId: input.userId });
+				: await resolveRunnableForFeature(input.userId, "chat");
 
 			if (!selectedProvider) throw new ORPCError("BAD_REQUEST", { message: "No tested AI provider is available." });
 
@@ -979,7 +982,7 @@ export const agentService = {
 
 			const selectedProvider = input.aiProviderId
 				? await aiProvidersService.getRunnableById({ id: input.aiProviderId, userId: input.userId })
-				: await aiProvidersService.getDefaultRunnable({ userId: input.userId });
+				: await resolveRunnableForFeature(input.userId, "chat");
 
 			if (!selectedProvider) throw new ORPCError("BAD_REQUEST", { message: "No tested AI provider is available." });
 
@@ -1290,6 +1293,8 @@ export const agentService = {
 						model: runnableProvider.model,
 						apiKey: runnableProvider.apiKey,
 						baseURL: runnableProvider.baseURL ?? "",
+						id: runnableProvider.id,
+						userId: input.userId,
 					}),
 				});
 

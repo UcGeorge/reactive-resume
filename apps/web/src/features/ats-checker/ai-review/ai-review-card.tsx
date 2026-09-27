@@ -13,6 +13,7 @@ import { Spinner } from "@reactive-resume/ui/components/spinner";
 import { toast } from "@reactive-resume/ui/components/toast";
 import { AiProviderPicker } from "@/features/settings/integrations/components/ai-provider-picker";
 import { useHasUsableAiProvider } from "@/features/settings/integrations/hooks/use-has-usable-ai-provider";
+import { useRoutedProvider } from "@/features/settings/integrations/hooks/use-routed-provider";
 import { getOrpcErrorMessage } from "@/libs/error-message";
 import { orpc } from "@/libs/orpc/client";
 import { getPdfFindingMessage } from "../messages";
@@ -36,10 +37,12 @@ type AiReviewCardProps = {
  */
 export function AiReviewCard({ report, fullText, jobDescription }: AiReviewCardProps) {
 	const { usableProviders, hasUsableProvider, isLoading } = useHasUsableAiProvider();
+	const routed = useRoutedProvider("ats-review");
 	const [providerOverride, setProviderOverride] = useState<string | null | undefined>(undefined);
 	const [review, setReview] = useState<AtsAiReview | null>(null);
 
-	const aiProviderId = providerOverride ?? usableProviders[0]?.id ?? null;
+	// Preselect the provider routed to ATS review, so the picker matches the server's choice.
+	const aiProviderId = providerOverride ?? routed.providerId ?? usableProviders[0]?.id ?? null;
 
 	const { mutate, isPending } = useMutation({
 		...orpc.ai.atsReview.mutationOptions(),

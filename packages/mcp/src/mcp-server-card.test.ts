@@ -4,21 +4,25 @@ import { MCP_TOOL_NAME } from "./mcp-tool-names";
 import { TOOL_META } from "./tool-meta";
 
 describe("buildMcpServerCard", () => {
-	const card = buildMcpServerCard("1.2.3");
+	const card = buildMcpServerCard("1.2.3", "https://example.com/");
 
 	it("includes the provided app version in serverInfo", () => {
 		expect(card.serverInfo.version).toBe("1.2.3");
 	});
 
-	it("identifies the server as reactive-resume", () => {
+	it("identifies the server as reactive-resume at the deployment's own URL", () => {
 		expect(card.serverInfo.name).toBe("reactive-resume");
 		expect(card.serverInfo.title).toBe("Reactive Resume");
-		expect(card.serverInfo.websiteUrl).toBe("https://rxresu.me");
+		expect(card.serverInfo.websiteUrl).toBe("https://example.com");
 	});
 
-	it("exposes light + dark theme icons", () => {
+	it("exposes light + dark theme icons served by the deployment", () => {
 		const themes = card.serverInfo.icons.map((icon) => icon.theme).sort();
 		expect(themes).toEqual(["dark", "light"]);
+		expect(card.serverInfo.icons.map((icon) => icon.src)).toEqual([
+			"https://example.com/icon/light.svg",
+			"https://example.com/icon/dark.svg",
+		]);
 	});
 
 	it("requires authentication with oauth2 + bearer schemes", () => {
@@ -80,9 +84,25 @@ describe("buildMcpServerCard", () => {
 		}
 	});
 
-	it("registers the three documented prompts", () => {
+	it("registers the four documented prompts with their own arguments", () => {
 		const promptNames = card.prompts.map((p) => p.name).sort();
-		expect(promptNames).toEqual(["build_resume", "improve_resume", "review_resume"]);
+		expect(promptNames).toEqual(["build_resume", "improve_resume", "review_resume", "serve_ai_requests"]);
+
+		const build = card.prompts.find((p) => p.name === "build_resume");
+		expect(build?.arguments).toEqual([{ name: "id", description: "Resume ID.", required: true }]);
+
+		const serve = card.prompts.find((p) => p.name === "serve_ai_requests");
+		expect(serve?.arguments).toHaveLength(1);
+		expect(serve?.arguments[0]).toMatchObject({ name: "provider", required: false });
+	});
+
+	it("advertises the connected-agent queue tools", () => {
+		const names = card.tools.map((tool) => tool.name);
+		expect(names).toEqual(expect.arrayContaining(["claim_ai_request", "complete_ai_request", "fail_ai_request"]));
+
+		const claim = card.tools.find((tool) => tool.name === "claim_ai_request");
+		const properties = claim?.inputSchema.properties as Record<string, { maximum?: number; default?: number }>;
+		expect(properties.wait).toMatchObject({ maximum: 25, default: 25 });
 	});
 
 	it("publishes a resource template for resume://{id}", () => {

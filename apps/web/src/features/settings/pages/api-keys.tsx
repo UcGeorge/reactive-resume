@@ -10,6 +10,7 @@ import { useDialogStore } from "@/dialogs/store";
 import { useConfirm } from "@/hooks/use-confirm";
 import { authClient } from "@/libs/auth/client";
 import { getReadableErrorMessage } from "@/libs/error-message";
+import { DOCS_URL } from "@/libs/links";
 
 export function ApiKeysSettingsPage() {
 	const confirm = useConfirm();
@@ -94,7 +95,7 @@ export function ApiKeysSettingsPage() {
 						variant="link"
 						nativeButton={false}
 						render={
-							<a href="https://docs.rxresu.me/api-reference" target="_blank" rel="noopener noreferrer">
+							<a href={`${DOCS_URL}/api-reference`} target="_blank" rel="noopener noreferrer">
 								<LinkSimpleIcon />
 								<Trans>API Reference</Trans>
 							</a>

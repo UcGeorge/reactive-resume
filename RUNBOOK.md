@@ -91,6 +91,26 @@ Both cron endpoints refuse every request when `CRON_SECRET` is unset.
 | Queue persistence & retries     | yes (pg-boss)                        | no                                                |
 | In-app follow-up queue          | fresh (recomputes on read)           | fresh (same)                                      |
 
+## Connected agent (MCP) AI provider
+
+A "Connected agent (MCP)" provider has no API key. Features that need a model queue their calls in the `ai_requests` table; an MCP client you run (Claude Code, Codex, anything MCP-capable) claims them, answers with its own model, and completes them. Settings → Integrations also has a Routing card: assign each AI feature (chat, import, evaluation, ...) to a provider. Unrouted features use the Default route, then the oldest tested provider; a route whose provider is untested, disabled, or deleted falls back the same way and is flagged in the UI.
+
+Serve it from Claude Code:
+
+```sh
+claude mcp add --transport http rr https://<your-app>/mcp --header "x-api-key: <key from Settings → API Keys>"
+claude   # then: /mcp → rr → prompt serve_ai_requests (keeps claiming until you stop it)
+```
+
+Any HTTP client can serve too: `POST /api/openapi/ai-requests/claim` with `{"wait":25}`, then `POST /api/openapi/ai-requests/complete` (`{"id","text"}` or `{"id","toolCalls"}`) or `/fail`.
+
+Environment (declared in `packages/env/src/server.ts`, `turbo.json` globalEnv, `.env.example`):
+
+- `AI_AGENT_REQUEST_TIMEOUT_MS` (default 120000): a queued request nobody claims fails after this long, with a message telling the user to start the serve loop.
+- `AI_AGENT_TEST_TIMEOUT_MS` (default 90000): how long Save & Test waits for the agent to answer.
+
+Limits: claims poll Postgres once a second and long-poll up to 25 s per call; a claimed request has a 10-minute lease; terminal rows are deleted after 24 h; the API-key rate limit applies per key. On Vercel an agent chat run is capped at 240 s and evaluations at their 240 s budget, so route `evaluation` (and anything else slow) to an API-key provider there. Import through the agent depends on the client rendering embedded file resources; use an API-key provider for Import if yours cannot. Check the agent vendor's subscription terms before serving automated requests from a consumer plan.
+
 ## Troubleshooting
 
 - Logs: `vercel logs <deployment-url>`, or dashboard → Logs.

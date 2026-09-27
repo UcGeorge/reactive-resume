@@ -269,10 +269,6 @@ msgstr ""
 msgid "<0>Free forever and open source.</0><1/>No ads, paywalls, or tracking."
 msgstr "<0>எப்போதும் இலவசம், திறந்த மூலமும்.</0><1/>விளம்பரங்கள், கட்டணத் தடைகள், கண்காணிப்பு எதுவும் இல்லை."
 
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-msgid "<0>Thank you for using Reactive Resume. I build this app mostly in my spare time, with help from open-source contributors around the world.</0><1>If it has been useful to you and you'd like to keep it free and open for everyone, please consider donating. Any amount helps.</1>"
-msgstr "<0>Reactive Resume-ஐப் பயன்படுத்தியதற்கு நன்றி. உலகெங்கிலும் உள்ள ஓபன் சோர்ஸ் பங்களிப்பாளர்களின் உதவியுடன், பெரும்பாலும் என் ஓய்வு நேரத்தில்தான் இந்த ஆப்பை உருவாக்குகிறேன்.</0><1>இது உங்களுக்குப் பயனுள்ளதாக இருந்திருந்தால், அனைவருக்கும் இலவசமாகவும் திறந்ததாகவும் இது தொடர வேண்டும் என நீங்கள் விரும்பினால், நன்கொடை அளிப்பதைப் பரிசீலியுங்கள். எந்தத் தொகையும் உதவும்.</1>"
-
 #: src/features/homepage/export-playground.tsx
 msgid "<p>I design software for teams, from early research to the details people use every day.</p>"
 msgstr "<p>ஆரம்பகால ஆய்விலிருந்து மக்கள் தினமும் பயன்படுத்தும் நுணுக்கங்கள் வரை, குழுக்களுக்கான மென்பொருளை நான் வடிவமைக்கிறேன்.</p>"
@@ -405,14 +401,6 @@ msgstr "எண் வடிவ தேதி வெவ்வேறு நாட�
 msgid "A page is rotated."
 msgstr "ஒரு பக்கம் சுழற்றப்பட்டுள்ளது."
 
-#: src/features/homepage/site-footer.tsx
-msgid "A passion project by <0>Amruth Pillai</0>"
-msgstr "<0>அம்ருத் பிள்ளை</0> உருவாக்கிய ஒரு ஆர்வமான திட்டம்"
-
-#: src/components/ui/copyright.tsx
-msgid "A passion project by <0>Amruth Pillai</0>."
-msgstr "<0>அம்ருத் பிள்ளை</0> உருவாக்கிய ஒரு ஆர்வமான திட்டம்."
-
 #: src/features/homepage/page.tsx
 msgid "A PDF for the application. A Word file for a few more edits. Download a sample using your choices."
 msgstr "வேலை விண்ணப்பத்திற்கான PDF. மேலும் சில திருத்தங்களுக்கு Word கோப்பு. உங்கள் தேர்வுகளுடன் மாதிரியைப் பதிவிறக்குங்கள்."
@@ -420,10 +408,6 @@ msgstr "வேலை விண்ணப்பத்திற்கான PDF. �
 #: src/features/homepage/feature-explorer.tsx
 msgid "A private resume does not appear at its public link."
 msgstr "தனிப்பட்ட வாழ்க்கைக் குறிப்பு அதன் பொது இணைப்பில் தோன்றாது."
-
-#: src/features/homepage/page.tsx
-msgid "A project you can<0/>be part of."
-msgstr "நீங்களும் பங்கேற்கக்கூடிய<0/>ஒரு திட்டம்."
 
 #: src/features/homepage/ats-playground.tsx
 msgid "A real sample PDF"
@@ -448,6 +432,11 @@ msgstr "ஒரு இணைய முகவரி https:// இல்லாமல
 #: src/routes/builder/$resumeId/-sidebar/right/sections/page.tsx
 msgid "A4"
 msgstr "ஏ4"
+
+#: src/routes/dashboard/-components/sidebar.tsx
+#: src/routes/dashboard/settings/about.tsx
+msgid "About"
+msgstr ""
 
 #: src/features/homepage/resume-sculpture.tsx
 msgid "About me"
@@ -724,9 +713,17 @@ msgstr "பணி விவரத்திற்கு எதிராக"
 msgid "Agent"
 msgstr "முகவர்"
 
+#: src/features/settings/integrations/ai-features.ts
+msgid "Agent chat"
+msgstr ""
+
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Agent ready"
 msgstr "முகவர் தயார்"
+
+#: src/features/settings/integrations/ai-features.ts
+msgid "Agent threads and the in-resume assistant."
+msgstr ""
 
 #: src/routes/dashboard/-components/sidebar.tsx
 msgid "Agents"
@@ -932,6 +929,10 @@ msgstr "விண்ணப்ப நடவடிக்கைகள்"
 msgid "Application added to your pipeline."
 msgstr "உங்கள் பைப்லைனில் விண்ணப்பம் சேர்க்கப்பட்டது."
 
+#: src/features/settings/integrations/ai-features.ts
+msgid "Application autofill"
+msgstr ""
+
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Application Copilot"
 msgstr "விண்ணப்ப காபிலட்"
@@ -1064,10 +1065,6 @@ msgstr "கற்றல் துறை"
 msgid "Artificial Intelligence"
 msgstr "செயற்கை நுண்ணறிவு"
 
-#: src/features/homepage/community-stats.tsx
-msgid "As of <0>{formattedDate}</0>."
-msgstr "<0>{formattedDate}</0> நிலவரப்படி."
-
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Ask anything about this resume"
 msgstr "இந்த ரெஸ்யூம் பற்றி எதையும் கேளுங்கள்"
@@ -1093,6 +1090,10 @@ msgstr "ATS சோதனை"
 #: src/routes/dashboard/-components/sidebar.tsx
 msgid "ATS Checker"
 msgstr "ATS சோதனையாளர்"
+
+#: src/features/settings/integrations/ai-features.ts
+msgid "ATS review"
+msgstr ""
 
 #: src/features/applications/components/application-detail-sheet.tsx
 #: src/features/applications/components/application-form-sheet.tsx
@@ -1188,6 +1189,10 @@ msgstr "காப்பு குறியீடுகள் கிளிப்�
 msgid "Base URL"
 msgstr "அடிப்படை URL"
 
+#: src/features/settings/pages/about.tsx
+msgid "Based on the open source project <0>Reactive Resume</0> by Amruth Pillai."
+msgstr ""
+
 #: src/libs/resume/section.tsx
 msgid "Basics"
 msgstr "அடிப்படைத் தகவல்கள்"
@@ -1282,12 +1287,6 @@ msgstr "குறியிட்டு பட்டியல்"
 msgid "Bulleted list"
 msgstr "பொட்டுக்குறியிடப்பட்ட பட்டியல்"
 
-#. Tagline shown in app footer/about area
-#: src/components/ui/copyright.tsx
-#: src/features/homepage/site-footer.tsx
-msgid "By the community, for the community."
-msgstr "சமூகத்தால், சமூகத்திற்காக."
-
 #: src/features/career-insights/components/calibration-card.tsx
 #: src/features/command-palette/pages/navigation.tsx
 msgid "Calibration"
@@ -1367,11 +1366,6 @@ msgstr "தீம்மை… க்கு மாற்றவும்"
 #: src/dialogs/resume/index.tsx
 msgid "Changed your mind? Rename your resume to something more descriptive."
 msgstr "மனசு மாறிச்சா? உங்கள் ரெஸ்யூமிக்கு இன்னும் விளக்கமான பெயராக மாற்றிக் கொள்ளலாம்."
-
-#: src/features/homepage/site-footer.tsx
-#: src/routes/_home/-sections/footer.tsx
-msgid "Changelog"
-msgstr "மாற்றப்பதிவேடு"
 
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Changes"
@@ -1588,11 +1582,6 @@ msgstr "கட்டளைத் தட்டு"
 msgid "Command Palette - {currentPage}"
 msgstr "கட்டளைத் தட்டு - {currentPage}"
 
-#: src/features/homepage/site-footer.tsx
-#: src/routes/_home/-sections/footer.tsx
-msgid "Community"
-msgstr "சமூகம்"
-
 #: src/routes/dashboard/resumes/index.tsx
 msgid "Compact"
 msgstr "இறுக்கம்"
@@ -1688,6 +1677,10 @@ msgstr "இணைக்கவும்"
 msgid "Connect an application"
 msgstr "ஒரு பயன்பாட்டை இணைக்கவும்"
 
+#: src/features/settings/integrations/components/mcp-agent-setup-panel.tsx
+msgid "Connect an MCP client (Claude Code, Codex, or any MCP-capable agent) to the URL below, with OAuth or an API key from Settings → API Keys."
+msgstr ""
+
 #: src/features/homepage/feature-explorer.tsx
 msgid "Connect through MCP to create and update resumes in a conversation. Or use the API to build your own workflow."
 msgstr "உரையாடலில் வாழ்க்கைக் குறிப்புகளை உருவாக்கவும் புதுப்பிக்கவும் MCP வழியாக இணையுங்கள். அல்லது உங்கள் சொந்த பணிப்பாய்வை அமைக்க API-ஐப் பயன்படுத்துங்கள்."
@@ -1759,10 +1752,6 @@ msgstr "நீங்கள் நிறுத்திய இடத்தில�
 msgid "Continue where you left off by importing a resume you built in Reactive Resume or another resume builder. Supported formats are PDF, Microsoft Word, and JSON files from Reactive Resume or JSON Resume."
 msgstr "Reactive Resume-இலோ வேறு ரெஸ்யூம் பில்டரிலோ நீங்கள் உருவாக்கிய ரெஸ்யூமை இறக்குமதி செய்து, நிறுத்திய இடத்திலிருந்தே தொடரவும். PDF, Microsoft Word, மற்றும் Reactive Resume அல்லது JSON Resume-இன் JSON கோப்புகள் ஆதரிக்கப்படுகின்றன."
 
-#: src/features/homepage/page.tsx
-msgid "Contribute code"
-msgstr "குறியீடு பங்களிக்கவும்"
-
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Conversation copied."
 msgstr "உரையாடல் நகலெடுக்கப்பட்டது."
@@ -1807,6 +1796,10 @@ msgstr "ரெஸ்யூமிலிருந்து நகல்"
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Copy JSON"
 msgstr "JSON-ஐ நகலெடுக்கவும்"
+
+#: src/features/settings/integrations/components/mcp-agent-setup-panel.tsx
+msgid "Copy MCP URL"
+msgstr ""
 
 #: src/features/stories/components/practice-dialog.tsx
 msgid "Copy prompt"
@@ -2095,6 +2088,10 @@ msgstr ""
 msgid "Cover letter unlinked from this application."
 msgstr ""
 
+#: src/features/settings/integrations/ai-features.ts
+msgid "Cover letters"
+msgstr ""
+
 #: src/routes/dashboard/-components/sidebar.tsx
 #: src/routes/dashboard/cover-letters.tsx
 msgid "Cover Letters"
@@ -2374,6 +2371,10 @@ msgstr ""
 msgid "Deep report: requirements, gaps, strategy, legitimacy"
 msgstr ""
 
+#: src/features/settings/integrations/ai-features.ts
+msgid "Default"
+msgstr ""
+
 #: src/features/cover-letters/library.tsx
 msgid "Default template"
 msgstr "இயல்புநிலை டெம்ப்ளேட்"
@@ -2579,11 +2580,6 @@ msgstr "சேமிக்கப்படாத மாற்றங்களை �
 msgid "Disconnect"
 msgstr "துண்டிக்கவும்"
 
-#: src/features/homepage/site-footer.tsx
-#: src/routes/_home/-sections/footer.tsx
-msgid "Discord"
-msgstr "டிஸ்கார்ட்"
-
 #: src/features/command-palette/pages/navigation.tsx
 #: src/routes/dashboard/-components/sidebar.tsx
 #: src/routes/dashboard/discover/index.tsx
@@ -2610,7 +2606,6 @@ msgstr "ஆவணங்கள்"
 
 #: src/features/homepage/site-footer.tsx
 #: src/routes/_home/-sections/footer.tsx
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
 msgid "Documentation"
 msgstr "ஆவணங்கள்"
 
@@ -2625,14 +2620,6 @@ msgstr "கணக்கு இல்லையா? <0/>"
 #: src/features/discovery/components/settings-view.tsx
 msgid "Don't re-surface a company + title you already applied to within this window."
 msgstr ""
-
-#: src/components/ui/donation-toast.tsx
-msgid "Donate"
-msgstr "நன்கொடை அளிக்கவும்"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-msgid "Donate to Reactive Resume"
-msgstr "Reactive Resume-க்கு நன்கொடை அளிக்கவும்"
 
 #: src/features/discovery/components/watch-company-dialog.tsx
 #: src/routes/agent/-components/tool-part-card.tsx
@@ -3326,6 +3313,10 @@ msgstr "செயலியைத் துண்டிக்கத் தவற�
 msgid "Failed to update provider."
 msgstr "வழங்குநரைப் புதுப்பிக்க முடியவில்லை."
 
+#: src/features/settings/integrations/components/ai-routing-section.tsx
+msgid "Failed to update routing."
+msgstr ""
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Failed to update thread settings."
 msgstr "த்ரெட் அமைப்புகளைப் புதுப்பிக்க முடியவில்லை."
@@ -3398,6 +3389,10 @@ msgstr "புலங்களை நிரப்பு"
 msgid "Filled in what we could from the posting."
 msgstr "இடுகையிலிருந்து எங்களால் முடிந்ததை நிரப்பினோம்."
 
+#: src/features/settings/integrations/ai-features.ts
+msgid "Filling an application from a job posting or URL."
+msgstr ""
+
 #: src/routes/dashboard/resumes/index.tsx
 msgid "Filter by"
 msgstr "இதன்படி வடிகட்டு"
@@ -3413,10 +3408,6 @@ msgstr ""
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Find the weak bullet points and rewrite them with stronger outcomes, numbers, scope, and sharper verbs."
 msgstr "பலவீனமான புள்ளிகளைக் கண்டறிந்து, வலுவான விளைவுகள், எண்கள், பரப்பு, கூர்மையான வினைச்சொற்களுடன் அவற்றை மீண்டும் எழுதவும்."
-
-#: src/features/homepage/page.tsx
-msgid "Find us on GitHub"
-msgstr "GitHub-ல் எங்களைத் தேடுங்கள்"
 
 #: src/libs/locale.ts
 msgid "Finnish"
@@ -3634,9 +3625,7 @@ msgstr ""
 #. Authentication provider display name in account settings
 #. Brand name label for GitHub social sign-in button
 #: src/features/auth/components/social-auth.tsx
-#: src/features/homepage/site-footer.tsx
 #: src/features/settings/authentication/components/hooks.tsx
-#: src/routes/_home/-sections/footer.tsx
 msgid "GitHub"
 msgstr "கிட்ஹப்"
 
@@ -3700,6 +3689,10 @@ msgstr "கிரேக்கம்"
 msgid "Grid"
 msgstr "கட்டம்"
 
+#: src/features/settings/integrations/ai-features.ts
+msgid "Guided angles and drafts."
+msgstr ""
+
 #: src/features/applications/components/application-ai-copilot.tsx
 #: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
 msgid "Guided cover letter"
@@ -3750,14 +3743,6 @@ msgstr "தலைவரி"
 #: src/libs/locale.ts
 msgid "Hebrew"
 msgstr "ஹீப்ரூ"
-
-#: src/features/homepage/languages-showcase.tsx
-msgid "Help translate the app"
-msgstr "செயலியை மொழிபெயர்க்க உதவுங்கள்"
-
-#: src/features/settings/pages/preferences.tsx
-msgid "Help translate the app to your language"
-msgstr "செயலியை உங்கள் மொழிக்கு மொழிபெயர்க்க உதவுங்கள்"
 
 #: src/dialogs/api-key/create.tsx
 msgid "Here's your new API key"
@@ -3978,6 +3963,10 @@ msgstr "… இறக்குமதி செய்கிறது"
 msgid "In {0}"
 msgstr "{0} இல்"
 
+#: src/features/settings/integrations/components/mcp-agent-setup-panel.tsx
+msgid "In that client, run the <0>serve_ai_requests</0> prompt, or call <1>claim_ai_request</1> in a loop."
+msgstr ""
+
 #: src/routes/dashboard/discover/index.tsx
 msgid "Inbox"
 msgstr ""
@@ -4014,10 +4003,6 @@ msgstr "இந்தோனேஷியன்"
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "inferred"
 msgstr ""
-
-#: src/libs/resume/section.tsx
-msgid "Information"
-msgstr "தகவல்"
 
 #: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
 msgid "Inline"
@@ -4119,6 +4104,10 @@ msgstr "வேலை விளக்கம்"
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "Job description (optional)"
 msgstr "பணி விவரம் (விருப்பமானது)"
+
+#: src/features/settings/integrations/ai-features.ts
+msgid "Job evaluation"
+msgstr ""
 
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Job posting"
@@ -4375,10 +4364,6 @@ msgstr "AI வழங்குநரை அமைக்க விட்டுவ�
 msgid "Left Align"
 msgstr "இடது சீரமை"
 
-#: src/features/homepage/site-footer.tsx
-msgid "Legal"
-msgstr "சட்டம்"
-
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Legitimacy signals"
 msgstr ""
@@ -4481,9 +4466,7 @@ msgstr "இணைக்கப்பட்ட Reactive Resume"
 #. Authentication provider display name in account settings
 #. Brand name label for LinkedIn social sign-in button
 #: src/features/auth/components/social-auth.tsx
-#: src/features/homepage/site-footer.tsx
 #: src/features/settings/authentication/components/hooks.tsx
-#: src/routes/_home/-sections/footer.tsx
 msgid "LinkedIn"
 msgstr "லிங்க்ட்இன்"
 
@@ -4531,6 +4514,10 @@ msgstr "வழங்குநர்களை ஏற்றுகிறது…"
 msgid "Loading resumes…"
 msgstr "ஏற்றுதல் மீண்டும் தொடங்குகிறது…"
 
+#: src/features/settings/integrations/components/ai-routing-section.tsx
+msgid "Loading routes…"
+msgstr ""
+
 #: src/features/homepage/page.tsx
 msgid "Loading the playground…"
 msgstr "சோதனைப் பகுதி ஏற்றப்படுகிறது…"
@@ -4539,10 +4526,6 @@ msgstr "சோதனைப் பகுதி ஏற்றப்படுகி�
 #: src/routes/agent/-components/thread-sidebar.tsx
 msgid "Loading threads…"
 msgstr "த்ரெட்டுகள் ஏற்றப்படுகின்றன…"
-
-#: src/features/homepage/community-stats.tsx
-msgid "Loading total"
-msgstr "மொத்தம் ஏற்றப்படுகிறது"
 
 #: src/routes/builder/$resumeId/-components/version-history.tsx
 msgid "Loading…"
@@ -4671,6 +4654,10 @@ msgstr ""
 msgid "Match scoring failed."
 msgstr "மேட்ச் ஸ்கோரிங் தோல்வி."
 
+#: src/features/settings/integrations/components/mcp-agent-setup-panel.tsx
+msgid "MCP server URL"
+msgstr ""
+
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "meaningful"
 msgstr ""
@@ -4708,10 +4695,6 @@ msgstr ""
 #: src/routes/agent/-components/resume-pane.tsx
 msgid "Missing working resume"
 msgstr "வேலைக்கான ரெஸ்யூம் காணவில்லை"
-
-#: src/features/homepage/site-footer.tsx
-msgid "MIT License"
-msgstr "MIT உரிமம்"
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Mitigation:"
@@ -4783,6 +4766,10 @@ msgstr "உங்கள் மின்னஞ்சல் மற்றும் 
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Moved to"
 msgstr "இதற்கு நகர்த்தப்பட்டது"
+
+#: src/features/settings/integrations/ai-features.ts
+msgid "Multi-pass evaluation of a posting against your profile."
+msgstr ""
 
 #. Placeholder text for custom link URL field in resume builder
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom-fields.tsx
@@ -5134,6 +5121,10 @@ msgstr "பணி அனுபவப் பிரிவு எதுவும்
 msgid "Norwegian"
 msgstr "நார்வேஜியன்"
 
+#: src/features/settings/integrations/components/ai-routing-section.tsx
+msgid "not connected"
+msgstr ""
+
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Not connected"
 msgstr "இணைப்பு இல்லை"
@@ -5217,6 +5208,10 @@ msgstr "சலுகை"
 #: src/features/discovery/components/companies-view.tsx
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "ok"
+msgstr ""
+
+#: src/features/settings/integrations/components/ai-routing-section.tsx
+msgid "Oldest tested provider"
 msgstr ""
 
 #: src/features/settings/pages/api-keys.tsx
@@ -5330,9 +5325,7 @@ msgstr "கோப்பைத் திறக்கிறது…"
 msgid "Opens in a new tab"
 msgstr "புதிய தாவலில் திறக்கும்"
 
-#: src/features/homepage/site-footer.tsx
 #: src/features/resume/stylesheet/editor.tsx
-#: src/routes/_home/-sections/footer.tsx
 msgid "opens in new tab"
 msgstr "புதிய தாவலில் திறக்கிறது"
 
@@ -5385,6 +5378,10 @@ msgstr "அசல் அட்டவணை வடிவமைப்பு பா
 msgid "out of 100"
 msgstr "100 இல்"
 
+#: src/features/settings/integrations/ai-features.ts
+msgid "Outreach"
+msgstr ""
+
 #: src/features/follow-ups/components/follow-ups-view.tsx
 msgid "Overdue"
 msgstr ""
@@ -5414,6 +5411,10 @@ msgstr "பத்தியம்"
 #: src/components/input/rich-input.tsx
 msgid "Paragraph and heading style"
 msgstr "பத்தி மற்றும் தலைப்பு பாணி"
+
+#: src/features/settings/integrations/ai-features.ts
+msgid "Parsing PDF and Word files into resume data."
+msgstr ""
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "partial"
@@ -5595,6 +5596,10 @@ msgstr "ஒரு வடிவமைப்பைத் தேர்ந்தெ�
 msgid "Pick the bullet points the letter may cite — taken word-for-word from your linked resume, so it can't claim anything you didn't. Select at least one."
 msgstr ""
 
+#: src/features/settings/integrations/components/ai-routing-section.tsx
+msgid "Pick which provider each feature uses. Features without a route use Default; an unset Default uses the oldest tested provider."
+msgstr ""
+
 #: src/libs/resume/section.tsx
 msgid "Picture"
 msgstr "படம்"
@@ -5626,10 +5631,6 @@ msgstr ""
 #: src/features/homepage/feature-explorer.tsx
 msgid "Play data flow animation"
 msgstr "தரவு ஓட்ட அசைவூட்டலை இயக்கவும்"
-
-#: src/components/ui/donation-toast.tsx
-msgid "Please support the project"
-msgstr "திட்டத்திற்கு ஆதரவளிக்கவும்"
 
 #: src/features/applications/components/file-attachment-field.tsx
 msgid "Please upload a PDF file."
@@ -5763,10 +5764,6 @@ msgstr "முதன்மை நிறம்"
 msgid "Print or export the form to a flat PDF before sending it."
 msgstr "அனுப்புவதற்கு முன் படிவத்தை ஒரு தட்டையான PDF ஆக அச்சிடவும் அல்லது ஏற்றுமதி செய்யவும்."
 
-#: src/features/homepage/site-footer.tsx
-msgid "Privacy Policy"
-msgstr "தனியுரிமைக் கொள்கை"
-
 #: src/features/homepage/feature-explorer.tsx
 msgid "Private"
 msgstr "தனிப்பட்டது"
@@ -5841,6 +5838,14 @@ msgstr "சேவை வழங்குநர் இணைப்பு சரி
 msgid "Provider model"
 msgstr "வழங்குநர் மாதிரி"
 
+#: src/features/settings/integrations/components/ai-routing-section.tsx
+msgid "Provider removed, using default"
+msgstr ""
+
+#: src/features/settings/integrations/components/ai-routing-section.tsx
+msgid "Provider unavailable, using default"
+msgstr ""
+
 #: src/features/homepage/feature-explorer.tsx
 msgid "Public"
 msgstr "பொது"
@@ -5858,6 +5863,10 @@ msgstr "பதிப்பாளர்"
 #: src/features/ats-checker/messages.ts
 msgid "Put a plain email address near the top of the first page. It is what most systems file you under."
 msgstr "முதல் பக்கத்தின் மேற்பகுதிக்கு அருகில் ஒரு எளிய மின்னஞ்சல் முகவரியை வைக்கவும். பெரும்பாலான அமைப்புகள் இதன் கீழேயே உங்களைப் பதிவு செய்கின்றன."
+
+#: src/features/settings/integrations/ai-features.ts
+msgid "Qualitative review of the text extracted from a resume."
+msgstr ""
 
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Quick match"
@@ -5911,14 +5920,6 @@ msgstr "Reactive Resume - முகப்புப் பக்கத்து�
 #: src/dialogs/resume/import.tsx
 msgid "Reactive Resume (JSON)"
 msgstr "எதிர்வினை விவரக்குறிப்பு (JSON)"
-
-#: src/features/homepage/page.tsx
-msgid "Reactive Resume is free and open source. Amruth and a community of contributors keep it running. If you’d like to support the work, donations help cover hosting and development."
-msgstr "Reactive Resume இலவசமும் திறந்த மூலமுமாகும். Amruth-மும் பங்களிப்பாளர்களின் சமூகமும் இதை இயக்குகின்றனர். இந்தப் பணியை ஆதரிக்க விரும்பினால், நன்கொடைகள் சேவையகப் பராமரிப்பு மற்றும் மேம்பாட்டுச் செலவுகளை ஈடுகட்ட உதவும்."
-
-#: src/components/ui/donation-toast.tsx
-msgid "Reactive Resume is free and open source. If it has helped you, please consider donating."
-msgstr "ரியாக்டிவ் ரெஸ்யூம் இலவசமானது மற்றும் திறந்த மூல மென்பொருளாகும். இது உங்களுக்கு உதவியிருந்தால், நன்கொடை அளிக்கப் பரிசீலிக்கவும்."
 
 #. App version label in footer; includes semantic version variable
 #: src/components/ui/copyright.tsx
@@ -6011,6 +6012,10 @@ msgstr "பெறுநர்"
 
 #: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
 msgid "Recipient (optional)"
+msgstr ""
+
+#: src/features/settings/integrations/ai-features.ts
+msgid "Recruiter messages and follow-up drafts."
 msgstr ""
 
 #: src/components/level/combobox.tsx
@@ -6182,19 +6187,6 @@ msgstr "இணைக்கப்பட்டுள்ள முகப்பு�
 msgid "Reply follow-up"
 msgstr ""
 
-#: src/features/homepage/page.tsx
-msgid "Report a bug"
-msgstr "பிழையைப் புகாரளிக்கவும்"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-msgid "Report a Bug"
-msgstr "ஒரு பிழையை அறிவிக்கவும்"
-
-#: src/features/homepage/site-footer.tsx
-#: src/routes/_home/-sections/footer.tsx
-msgid "Report an issue"
-msgstr "ஒரு பிரச்சினையை அறிக்கையிடவும்"
-
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Reports to"
 msgstr ""
@@ -6296,6 +6288,10 @@ msgstr "ரெஸ்யூம் திருத்தம்"
 msgid "Resume file"
 msgstr "ரெஸ்யூம் கோப்பு"
 
+#: src/features/settings/integrations/ai-features.ts
+msgid "Resume import"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-components/dock.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
 msgid "Resume link copied to clipboard."
@@ -6332,7 +6328,6 @@ msgstr ""
 
 #: src/features/command-palette/pages/navigation.tsx
 #: src/features/command-palette/pages/resumes.tsx
-#: src/features/homepage/community-stats.tsx
 #: src/features/homepage/languages-showcase.tsx
 #: src/routes/dashboard/-components/sidebar.tsx
 #: src/routes/dashboard/resumes/index.tsx
@@ -6457,6 +6452,10 @@ msgstr "ரோமேனியன்"
 msgid "Rotation"
 msgstr "சுழற்சி"
 
+#: src/features/settings/integrations/components/ai-routing-section.tsx
+msgid "Routing"
+msgstr ""
+
 #: src/features/discovery/components/inbox-view.tsx
 msgid "Run a scan, or loosen the title and location filters in Settings."
 msgstr ""
@@ -6540,6 +6539,10 @@ msgstr "சேமி"
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Save & Test Provider"
 msgstr "வழங்குநரைச் சேமித்துச் சோதிக்கவும்"
+
+#: src/features/settings/integrations/components/mcp-agent-setup-panel.tsx
+msgid "Save & Test waits up to 90 seconds for the agent to answer. Keep the agent serving whenever you use AI features routed to it."
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Save an unprotected copy, with no password and no permissions restrictions."
@@ -6845,6 +6848,14 @@ msgstr "செர்பியன்"
 #: src/features/homepage/resume-sculpture.tsx
 msgid "Serif"
 msgstr "Serif"
+
+#: src/features/settings/integrations/components/mcp-agent-setup-panel.tsx
+msgid "Serve this provider from your own agent"
+msgstr ""
+
+#: src/features/settings/integrations/components/ai-section.tsx
+msgid "Served by an MCP client connected to"
+msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
 msgid "Set a password if you want only people who know it to open the public URL."
@@ -7169,10 +7180,6 @@ msgstr "சில உரை பக்கத்திற்கு வெளிய
 msgid "Some text is rotated."
 msgstr "சில உரை சுழற்றப்பட்டுள்ளது."
 
-#: src/features/homepage/community-stats.tsx
-msgid "Some totals are unavailable right now."
-msgstr "சில மொத்தங்கள் இப்போது கிடைக்கவில்லை."
-
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Something else…"
 msgstr "வேறு ஏதாவது…"
@@ -7224,12 +7231,6 @@ msgstr "வரிசைப்படுத்து…"
 msgid "Source"
 msgstr "ஆதாரம்"
 
-#: src/features/homepage/site-footer.tsx
-#: src/routes/_home/-sections/footer.tsx
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-msgid "Source Code"
-msgstr "மூல குறியீடு"
-
 #: src/features/stories/components/story-editor-dialog.tsx
 msgid "Source resume"
 msgstr ""
@@ -7259,10 +7260,6 @@ msgstr "ஸ்பானிஷ்"
 msgid "Spell the month, as in \"Mar 2022\"."
 msgstr "\"Mar 2022\" போன்று மாதத்தை எழுத்துக்களில் எழுதவும்."
 
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-msgid "Sponsors"
-msgstr "ஆதார ஆதாரவர்கள்"
-
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Sponsors visas"
 msgstr ""
@@ -7270,11 +7267,6 @@ msgstr ""
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Sponsorship unstated"
 msgstr ""
-
-#: src/features/homepage/site-footer.tsx
-#: src/routes/_home/-sections/footer.tsx
-msgid "Sponsorships"
-msgstr "வேந்துகளை ஆதரிப்புகள்"
 
 #: src/features/homepage/resume-sculpture.tsx
 msgid "Spread pages"
@@ -7298,15 +7290,6 @@ msgstr "நிலை"
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Stage date"
 msgstr "நிலை தேதி"
-
-#: src/components/input/github-stars-button.tsx
-msgid "Star us on GitHub (opens in new tab)"
-msgstr "GitHub-இல் எங்களுக்கு ஸ்டார் கொடுக்கவும் (புதிய தாவலில் திறக்கிறது)"
-
-#. placeholder {0}: starCount.toLocaleString()
-#: src/components/input/github-stars-button.tsx
-msgid "Star us on GitHub, currently {0} stars (opens in new tab)"
-msgstr "GitHub-இல் எங்களுக்கு ஸ்டார் கொடுக்கவும், தற்போது {0} ஸ்டார்கள் உள்ளன (புதிய தாவலில் திறக்கிறது)"
 
 #: src/routes/agent/$threadId.tsx
 msgid "Start a new thread"
@@ -7406,6 +7389,7 @@ msgid "Story added to your bank."
 msgstr ""
 
 #: src/features/command-palette/pages/navigation.tsx
+#: src/features/settings/integrations/ai-features.ts
 msgid "Story bank"
 msgstr ""
 
@@ -7465,11 +7449,6 @@ msgstr "பாணி மற்றும் அனுப்பியவர் வ
 msgid "Styling and sender details refreshed from the selected resume."
 msgstr "தேர்ந்தெடுக்கப்பட்ட ரெஸ்யூமிலிருந்து ஸ்டைலிங் மற்றும் அனுப்பியவர் விவரங்கள் புதுப்பிக்கப்பட்டன."
 
-#: src/features/homepage/site-footer.tsx
-#: src/routes/_home/-sections/footer.tsx
-msgid "Subreddit"
-msgstr "சப்ரெட்டிட்"
-
 #: src/routes/dashboard/interviews/index.tsx
 msgid "Suggest from resume"
 msgstr ""
@@ -7486,6 +7465,10 @@ msgstr ""
 msgid "Suggested"
 msgstr ""
 
+#: src/features/settings/integrations/ai-features.ts
+msgid "Suggesting interview stories from a resume."
+msgstr ""
+
 #: src/features/ats-checker/ai-review/ai-review-results.tsx
 msgid "Suggestions"
 msgstr "முன்மொழிவுகள்"
@@ -7499,14 +7482,6 @@ msgstr "முன்மொழிவுகள்"
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 msgid "Summary"
 msgstr "சுருக்கம்"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-msgid "Support the app by doing what you can!"
-msgstr "உங்களால் இயன்ற அளவு செய்து இந்த செயலியை ஆதரிக்கவும்!"
-
-#: src/features/homepage/page.tsx
-msgid "Support the project"
-msgstr "திட்டத்தை ஆதரியுங்கள்"
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Supported by your resume"
@@ -7569,6 +7544,10 @@ msgstr ""
 msgid "Tailor this resume to a product manager job description, and emphasize roadmap ownership, stakeholder communication, and measurable launch outcomes."
 msgstr "தயாரிப்பு மேலாளர் பணி விவரத்திற்கு ஏற்ப இந்த ரெஸ்யூமை மாற்றியமைத்து, ரோட்மேப் பொறுப்பு, பங்குதாரர் தொடர்பு, அளவிடக்கூடிய வெளியீட்டு விளைவுகளை வலியுறுத்தவும்."
 
+#: src/features/settings/integrations/ai-features.ts
+msgid "Tailored resume copies and their bullet audit."
+msgstr ""
+
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Tailored resume discarded — the source resume is linked again."
 msgstr ""
@@ -7578,6 +7557,7 @@ msgid "Tailored resumes"
 msgstr ""
 
 #: src/features/applications/components/application-detail-sheet.tsx
+#: src/features/settings/integrations/ai-features.ts
 msgid "Tailoring"
 msgstr ""
 
@@ -7669,10 +7649,6 @@ msgstr "உரை மேல்தலைப்பு அல்லது அடி
 #: src/libs/locale.ts
 msgid "Thai"
 msgstr "தாய்"
-
-#: src/features/homepage/page.tsx
-msgid "Thank you for helping keep it free."
-msgstr "இதை இலவசமாக வைத்திருக்க உதவியதற்கு நன்றி."
 
 #: src/features/follow-ups/components/follow-ups-view.tsx
 msgid "Thank-you note"
@@ -7924,10 +7900,6 @@ msgstr "தீம்"
 #: src/dialogs/auth/enable-two-factor.tsx
 msgid "Then, enter the 6 digit code that the app provides to continue."
 msgstr "பின்னர், செயலி வழங்கும் 6 இலக்க குறியீட்டை தொடர்ந்து செல்ல உள்ளிடவும்."
-
-#: src/features/homepage/page.tsx
-msgid "There are other ways to pitch in."
-msgstr "பங்களிக்க வேறு வழிகளும் உள்ளன."
 
 #: src/features/ats-checker/messages.ts
 msgid "There is a gap between two dated roles."
@@ -8327,14 +8299,6 @@ msgstr ""
 msgid "Topics this story answers best — \"conflict\", \"scaling\"…"
 msgstr ""
 
-#: src/features/homepage/community-stats.tsx
-msgid "Total unavailable"
-msgstr "மொத்தம் கிடைக்கவில்லை"
-
-#: src/features/homepage/community-stats.tsx
-msgid "Totals are refreshed periodically."
-msgstr "மொத்தங்கள் அவ்வப்போது புதுப்பிக்கப்படுகின்றன."
-
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Track a job you're applying to and link the resume you sent."
 msgstr "நீங்கள் விண்ணப்பிக்கும் வேலையைக் கண்காணித்து, நீங்கள் அனுப்பிய ரெஸ்யூமை இணைக்கவும்."
@@ -8346,16 +8310,6 @@ msgstr "உங்கள் முதல் பயன்பாட்டைக் 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/statistics.tsx
 msgid "Track your resume's views and downloads"
 msgstr "உங்கள் ரெஸ்யூமியின் பார்வை மற்றும் பதிவிறக்கம் எண்ணிக்கைகளை கண்காணிக்கவும்"
-
-#: src/features/homepage/page.tsx
-msgid "Translate the app"
-msgstr "செயலியை மொழிபெயர்க்கவும்"
-
-#: src/features/homepage/site-footer.tsx
-#: src/routes/_home/-sections/footer.tsx
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-msgid "Translations"
-msgstr "மொழிபெயர்ப்புகள்"
 
 #: src/components/layout/error-screen.tsx
 #: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
@@ -8717,6 +8671,10 @@ msgstr "6 முதல் 64 எழுத்துக்கள் வரை ப�
 msgid "Use color {color}"
 msgstr "வண்ணத்தைப் பயன்படுத்துங்கள் {color}"
 
+#: src/features/settings/integrations/components/ai-routing-section.tsx
+msgid "Use default"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Use plain headings such as \"Experience\", \"Education\" and \"Skills\"."
 msgstr "\"Experience\", \"Education\" மற்றும் \"Skills\" போன்ற எளிய தலைப்புகளைப் பயன்படுத்தவும்."
@@ -8726,8 +8684,8 @@ msgid "Use sample"
 msgstr "மாதிரியைப் பயன்படுத்தவும்"
 
 #: src/features/homepage/languages-showcase.tsx
-msgid "Use the app in a language you’re comfortable with. Try a few of the translations made by the community."
-msgstr "உங்களுக்கு வசதியான மொழியில் செயலியைப் பயன்படுத்துங்கள். சமூகம் உருவாக்கிய சில மொழிபெயர்ப்புகளை முயற்சித்துப் பாருங்கள்."
+msgid "Use the app in a language you’re comfortable with. Pick one of the available translations."
+msgstr ""
 
 #: src/features/homepage/feature-explorer.tsx
 msgid "Use this wording"
@@ -8736,6 +8694,10 @@ msgstr "இந்த வாசகத்தைப் பயன்படுத்�
 #: src/features/ats-checker/messages.ts
 msgid "Use your editor's normal bullet list, so stray glyphs do not land mid-sentence."
 msgstr "பிசகான எழுத்துருக் குறியீடுகள் வாக்கியத்தின் நடுவில் வராமல் இருக்க, உங்கள் எடிட்டரின் வழக்கமான புல்லட் பட்டியலைப் பயன்படுத்தவும்."
+
+#: src/features/settings/integrations/ai-features.ts
+msgid "Used by every feature without a route of its own."
+msgstr ""
 
 #: src/features/homepage/export-playground.tsx
 #: src/features/homepage/resume-sculpture.tsx
@@ -8762,10 +8724,6 @@ msgstr ""
 #: src/features/settings/pages/profile.tsx
 msgid "Username"
 msgstr "பயனர் பெயர்"
-
-#: src/features/homepage/community-stats.tsx
-msgid "Users"
-msgstr "பயனர்கள்"
 
 #: src/features/homepage/export-playground.tsx
 msgid "Uses the name, template, color, and type you chose above."
@@ -9127,11 +9085,6 @@ msgstr "https:// உட்பட முழு முகவரியை எழு
 msgid "Writing"
 msgstr "எழுத்து நடை"
 
-#: src/features/homepage/site-footer.tsx
-#: src/routes/_home/-sections/footer.tsx
-msgid "X (Twitter)"
-msgstr "X (ட்விட்டர்)"
-
 #: src/features/auth/pages/login.tsx
 msgid "You can also sign in with your username."
 msgstr "உங்கள் பயனர் பெயரைப் பயன்படுத்தியும் உள்நுழையலாம்."
@@ -9159,10 +9112,6 @@ msgstr ""
 #: src/dialogs/resume/import.tsx
 msgid "You'll be taken to the Integrations page. The file you selected won't be imported."
 msgstr "நீங்கள் ஒருங்கிணைப்புகள் பக்கத்திற்கு அழைத்துச் செல்லப்படுவீர்கள். நீங்கள் தேர்ந்தெடுத்த கோப்பு இறக்குமதி செய்யப்படாது."
-
-#: src/features/homepage/community-stats.tsx
-msgid "You’re in good company."
-msgstr "நீங்கள் தனியாக இல்லை."
 
 #: src/features/auth/pages/forgot-password.tsx
 #: src/features/auth/pages/register.tsx

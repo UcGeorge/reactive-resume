@@ -1,3 +1,4 @@
+import type { AiFeature } from "@reactive-resume/ai/types";
 import type { ResumeData } from "@reactive-resume/schema/resume/data";
 import { ORPCError } from "@orpc/client";
 import { AISDKError } from "ai";
@@ -6,6 +7,7 @@ import { protectedProcedure } from "../../context";
 import { aiRequestRateLimit } from "../../middleware/rate-limit";
 import { aiProvidersService } from "../ai-providers/service";
 import { atsReviewInputSchema, atsReviewOutputSchema, reviewResumeText } from "./ats-review";
+import { resolveRunnableForFeature } from "./resolve-model";
 import { aiService, fileInputSchema } from "./service";
 
 function isInvalidAiBaseUrlError(error: unknown): boolean {
@@ -42,10 +44,11 @@ function throwResumeStructureError(error: ZodError): never {
 	});
 }
 
-async function getRunnableProvider(userId: string, aiProviderId?: string) {
+// An explicit provider from the request wins; otherwise the feature's route decides.
+async function getRunnableProvider(userId: string, feature: AiFeature, aiProviderId?: string) {
 	const provider = aiProviderId
 		? await aiProvidersService.getRunnableById({ id: aiProviderId, userId })
-		: await aiProvidersService.getDefaultRunnable({ userId });
+		: await resolveRunnableForFeature(userId, feature);
 
 	if (!provider) throw new ORPCError("BAD_REQUEST", { message: "No tested AI provider is available." });
 
@@ -72,12 +75,14 @@ export const aiRouter = {
 		})
 		.handler(async ({ context, input }): Promise<ResumeData> => {
 			try {
-				const provider = await getRunnableProvider(context.user.id, input.aiProviderId);
+				const provider = await getRunnableProvider(context.user.id, "import", input.aiProviderId);
 				return await aiService.parsePdf({
 					provider: provider.provider,
 					model: provider.model,
 					apiKey: provider.apiKey,
 					baseURL: provider.baseURL ?? "",
+					id: provider.id,
+					userId: context.user.id,
 					file: input.file,
 				});
 			} catch (error) {
@@ -117,12 +122,14 @@ export const aiRouter = {
 		})
 		.handler(async ({ context, input }) => {
 			try {
-				const provider = await getRunnableProvider(context.user.id, input.aiProviderId);
+				const provider = await getRunnableProvider(context.user.id, "import", input.aiProviderId);
 				return await aiService.parseDocx({
 					provider: provider.provider,
 					model: provider.model,
 					apiKey: provider.apiKey,
 					baseURL: provider.baseURL ?? "",
+					id: provider.id,
+					userId: context.user.id,
 					mediaType: input.mediaType,
 					file: input.file,
 				});
@@ -155,7 +162,7 @@ export const aiRouter = {
 		})
 		.handler(async ({ context, input }) => {
 			try {
-				const provider = await getRunnableProvider(context.user.id, input.aiProviderId);
+				const provider = await getRunnableProvider(context.user.id, "ats-review", input.aiProviderId);
 
 				return await reviewResumeText({
 					...input,
@@ -163,6 +170,8 @@ export const aiRouter = {
 					model: provider.model,
 					apiKey: provider.apiKey,
 					baseURL: provider.baseURL ?? "",
+					id: provider.id,
+					userId: context.user.id,
 				});
 			} catch (error) {
 				if (isCredentialEncryptionUnavailable(error)) throwCredentialEncryptionUnavailable();

@@ -1,22 +1,22 @@
 import { toJsonSchemaCompat } from "@modelcontextprotocol/sdk/server/zod-json-schema-compat.js";
 import { MCP_TOOL_NAME as T } from "./mcp-tool-names";
-import { PROMPT_META } from "./prompts";
+import { PROMPT_ARGUMENTS, PROMPT_META } from "./prompts";
 import { TOOL_META } from "./tool-meta";
 
-const RESUME_ID_ARGUMENT = [{ name: "id", description: "Resume ID.", required: true }] as const;
-
 /** Shared server identity for both the live MCP server and the static server card. */
-export function buildMcpServerInfo(version: string) {
+export function buildMcpServerInfo(version: string, appUrl: string) {
+	const origin = appUrl.replace(/\/$/, "");
+
 	return {
 		name: "reactive-resume",
 		version,
 		title: "Reactive Resume",
-		websiteUrl: "https://rxresu.me",
+		websiteUrl: origin,
 		description:
-			"Reactive Resume is a free and open-source resume builder. Use this MCP server to interact with your resume using an LLM of your choice.",
+			"Reactive Resume is a resume builder and job-search workspace. Use this MCP server to manage resumes, cover letters and applications with an LLM of your choice, or to serve the app's AI requests from your own agent.",
 		icons: [
-			{ src: "https://rxresu.me/icon/light.svg", mimeType: "image/svg+xml", theme: "light" as const },
-			{ src: "https://rxresu.me/icon/dark.svg", mimeType: "image/svg+xml", theme: "dark" as const },
+			{ src: `${origin}/icon/light.svg`, mimeType: "image/svg+xml", theme: "light" as const },
+			{ src: `${origin}/icon/dark.svg`, mimeType: "image/svg+xml", theme: "dark" as const },
 		],
 	};
 }
@@ -28,7 +28,7 @@ export function buildMcpServerInfo(version: string) {
  * Some registries only surface the `resources` array in their UI, not `resourceTemplates`.
  * The parameterized resume URI is therefore duplicated here so discovery matches the live template.
  */
-export function buildMcpServerCard(appVersion: string) {
+export function buildMcpServerCard(appVersion: string, appUrl: string) {
 	// ponytail: derived from TOOL_META; title/description/inputSchema/annotations declared once
 	const tools = Object.entries(TOOL_META).map(([name, { title, description, inputSchema, annotations }]) => ({
 		name,
@@ -38,10 +38,10 @@ export function buildMcpServerCard(appVersion: string) {
 		annotations,
 	}));
 
-	const prompts = Object.entries(PROMPT_META).map(([name, meta]) => ({
+	const prompts = (Object.keys(PROMPT_META) as (keyof typeof PROMPT_META)[]).map((name) => ({
 		name,
-		...meta,
-		arguments: [...RESUME_ID_ARGUMENT],
+		...PROMPT_META[name],
+		arguments: [...PROMPT_ARGUMENTS[name]],
 	}));
 
 	const resources = [
@@ -94,7 +94,7 @@ export function buildMcpServerCard(appVersion: string) {
 				},
 			},
 		},
-		serverInfo: buildMcpServerInfo(appVersion),
+		serverInfo: buildMcpServerInfo(appVersion, appUrl),
 		tools,
 		prompts,
 		resources,

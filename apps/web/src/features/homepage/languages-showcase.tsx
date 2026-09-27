@@ -2,11 +2,11 @@ import type { Locale } from "@reactive-resume/utils/locale";
 import { t } from "@lingui/core/macro";
 import { useLingui } from "@lingui/react";
 import { Trans } from "@lingui/react/macro";
-import { ArrowUpRightIcon, CheckIcon, DownloadSimpleIcon, PlusIcon } from "@phosphor-icons/react";
+import { CheckIcon, DownloadSimpleIcon, PlusIcon } from "@phosphor-icons/react";
 import { useState } from "react";
 import { cn } from "@reactive-resume/utils/style";
 import { changeLocale, isLocale, isRTL, localeMap, resolveLocale } from "@/libs/locale";
-import { section, sectionHeading, sectionText, sectionTitle, textLink, wrap } from "./classes";
+import { section, sectionHeading, sectionText, sectionTitle, wrap } from "./classes";
 import "./languages-showcase.css";
 
 const featuredLocales = [
@@ -66,9 +66,7 @@ export default function LanguagesShowcase() {
 					</Trans>
 				</h2>
 				<p className={sectionText}>
-					<Trans>
-						Use the app in a language you’re comfortable with. Try a few of the translations made by the community.
-					</Trans>
+					<Trans>Use the app in a language you’re comfortable with. Pick one of the available translations.</Trans>
 				</p>
 			</div>
 			<div className="grid grid-cols-[0.9fr_1.1fr] items-center gap-[clamp(32px,6vw,88px)] rounded border border-(--home-line) bg-[#19191b] p-[clamp(24px,5vw,64px)] shadow-[inset_0_1px_0_#ffffff05] max-[760px]:grid-cols-1 max-[760px]:gap-3 max-[420px]:px-4 max-[420px]:pt-[22px] max-[420px]:pb-[25px]">
@@ -185,10 +183,6 @@ export default function LanguagesShowcase() {
 						))}
 					</fieldset>
 				</details>
-				<a href="https://crowdin.com/project/reactive-resume" className={cn(textLink, "mt-[5px]")}>
-					<Trans>Help translate the app</Trans>
-					<ArrowUpRightIcon size={17} aria-hidden="true" />
-				</a>
 			</div>
 		</section>
 	);

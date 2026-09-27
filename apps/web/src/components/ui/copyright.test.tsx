@@ -28,12 +28,6 @@ describe("Copyright", () => {
 		expect(link.getAttribute("rel")).toBe("noopener noreferrer");
 	});
 
-	it("renders the Amruth Pillai attribution link", () => {
-		renderCopyright();
-		const link = screen.getByRole("link", { name: "Amruth Pillai" });
-		expect(link.getAttribute("href")).toBe("https://amruthpillai.com");
-	});
-
 	it("includes the app version string", () => {
 		renderCopyright();
 		// The version is wrapped in <bdi> for RTL isolation, so it is its own text node.

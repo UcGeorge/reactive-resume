@@ -28,6 +28,7 @@ import { Combobox } from "@/components/ui/combobox";
 import { useHasUsableAiProvider } from "@/features/settings/integrations/hooks/use-has-usable-ai-provider";
 import { getOrpcErrorMessage } from "@/libs/error-message";
 import { orpc } from "@/libs/orpc/client";
+import { getMcpUrl, McpAgentSetupPanel } from "./mcp-agent-setup-panel";
 
 type SavedProvider = RouterOutput["aiProviders"]["list"][number];
 type AIProviderOption = ComboboxOption<AIProvider> & { defaultBaseURL: string; defaultModel: string };
@@ -150,6 +151,14 @@ const providerOptions: AIProviderOption[] = [
 		keywords: ["compatible", "custom", "gateway"],
 		defaultBaseURL: AI_PROVIDER_DEFAULT_BASE_URLS["openai-compatible"],
 		defaultModel: "",
+	},
+	{
+		value: "mcp-agent",
+		label: "Connected agent (MCP)",
+		keywords: ["mcp", "agent", "connected", "claude", "codex", "cursor", "subscription"],
+		defaultBaseURL: AI_PROVIDER_DEFAULT_BASE_URLS["mcp-agent"],
+		// Informational only: names the agent that serves the queue.
+		defaultModel: "claude-code",
 	},
 ];
 
@@ -312,10 +321,18 @@ function ProviderRow({ provider }: ProviderRowProps) {
 							</Button>
 						</div>
 					) : null}
-					<p className="truncate">{provider.baseURL ?? AI_PROVIDER_DEFAULT_BASE_URLS[provider.provider]}</p>
-					<p>
-						<Trans>Key</Trans>: {provider.apiKeyPreview}
-					</p>
+					{provider.provider === "mcp-agent" ? (
+						<p className="truncate">
+							<Trans>Served by an MCP client connected to</Trans> {getMcpUrl()}
+						</p>
+					) : (
+						<>
+							<p className="truncate">{provider.baseURL ?? AI_PROVIDER_DEFAULT_BASE_URLS[provider.provider]}</p>
+							<p>
+								<Trans>Key</Trans>: {provider.apiKeyPreview}
+							</p>
+						</>
+					)}
 					{provider.testError ? <p className="text-rose-600">{provider.testError}</p> : null}
 				</div>
 			</div>
@@ -446,7 +463,9 @@ function CreateProviderForm() {
 	// Model/label are prefilled from provider defaults, so step 1 (Provider + API Key) is enough to save.
 	const model = form.model.trim();
 	const label = form.label.trim() || String(selectedOption?.label ?? form.provider);
-	const canSave = Boolean(form.apiKey.trim() && model);
+	// A connected agent has no key or URL: the server mints a placeholder and the MCP client is the transport.
+	const isMcpAgent = form.provider === "mcp-agent";
+	const canSave = Boolean(model && (isMcpAgent || form.apiKey.trim()));
 
 	const save = async () => {
 		setResult(null);
@@ -455,8 +474,8 @@ function CreateProviderForm() {
 				label,
 				provider: form.provider,
 				model,
-				baseURL: form.baseURL.trim(),
-				apiKey: form.apiKey.trim(),
+				baseURL: isMcpAgent ? "" : form.baseURL.trim(),
+				...(isMcpAgent ? {} : { apiKey: form.apiKey.trim() }),
 			});
 
 			// Test on save: verify the connection immediately instead of leaving it to a manual step.
@@ -517,23 +536,27 @@ function CreateProviderForm() {
 					/>
 				</div>
 
-				<div className="space-y-2">
-					<Label htmlFor="ai-api-key">
-						<Trans>API Key</Trans>
-					</Label>
-					<Input
-						id="ai-api-key"
-						type="password"
-						value={form.apiKey}
-						onChange={(event) => setForm((current) => ({ ...current, apiKey: event.target.value }))}
-						autoCorrect="off"
-						autoCapitalize="off"
-						spellCheck="false"
-						data-lpignore="true"
-						data-bwignore="true"
-						data-1p-ignore="true"
-					/>
-				</div>
+				{isMcpAgent ? (
+					<McpAgentSetupPanel />
+				) : (
+					<div className="space-y-2">
+						<Label htmlFor="ai-api-key">
+							<Trans>API Key</Trans>
+						</Label>
+						<Input
+							id="ai-api-key"
+							type="password"
+							value={form.apiKey}
+							onChange={(event) => setForm((current) => ({ ...current, apiKey: event.target.value }))}
+							autoCorrect="off"
+							autoCapitalize="off"
+							spellCheck="false"
+							data-lpignore="true"
+							data-bwignore="true"
+							data-1p-ignore="true"
+						/>
+					</div>
+				)}
 
 				<details className="rounded-md border bg-background/50 px-3 py-2 [&_summary]:cursor-pointer">
 					<summary className="font-medium text-muted-foreground text-sm">
@@ -568,21 +591,23 @@ function CreateProviderForm() {
 							/>
 						</div>
 
-						<div className="space-y-2 md:col-span-2">
-							<Label htmlFor="ai-base-url">
-								<Trans>Base URL</Trans>
-							</Label>
-							<Input
-								id="ai-base-url"
-								type="url"
-								value={form.baseURL}
-								onChange={(event) => setForm((current) => ({ ...current, baseURL: event.target.value }))}
-								placeholder={selectedOption?.defaultBaseURL || "https://gateway.example.com/v1"}
-								autoCorrect="off"
-								autoCapitalize="off"
-								spellCheck="false"
-							/>
-						</div>
+						{isMcpAgent ? null : (
+							<div className="space-y-2 md:col-span-2">
+								<Label htmlFor="ai-base-url">
+									<Trans>Base URL</Trans>
+								</Label>
+								<Input
+									id="ai-base-url"
+									type="url"
+									value={form.baseURL}
+									onChange={(event) => setForm((current) => ({ ...current, baseURL: event.target.value }))}
+									placeholder={selectedOption?.defaultBaseURL || "https://gateway.example.com/v1"}
+									autoCorrect="off"
+									autoCapitalize="off"
+									spellCheck="false"
+								/>
+							</div>
+						)}
 					</div>
 				</details>
 			</div>

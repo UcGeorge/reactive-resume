@@ -5,8 +5,10 @@ import { convertToModelMessages, modelMessageSchema } from "ai";
 const envMock = vi.hoisted(() => ({
 	FLAG_ALLOW_UNSAFE_AI_BASE_URL: false,
 }));
+const enqueueAndWaitMock = vi.hoisted(() => vi.fn());
 
 vi.mock("@reactive-resume/env/server", () => ({ env: envMock }));
+vi.mock("../ai-requests/service", () => ({ aiRequestsService: { enqueueAndWait: enqueueAndWaitMock } }));
 
 afterEach(() => {
 	vi.unstubAllEnvs();
@@ -315,5 +317,53 @@ describe("AI chat service", () => {
 		for (const message of modelMessages) {
 			expect(modelMessageSchema.safeParse(message).success).toBe(true);
 		}
+	});
+});
+
+describe("connected agent connection test", () => {
+	const agentInput = {
+		provider: "mcp-agent" as const,
+		model: "claude-code",
+		apiKey: "placeholder",
+		baseURL: "",
+		id: "provider-1",
+		userId: "user-1",
+	};
+
+	it("passes when an agent answers the queued test request with OK", async () => {
+		enqueueAndWaitMock.mockResolvedValueOnce({ id: "req-1", result: { text: "OK" } });
+
+		await expect(testConnection(agentInput)).resolves.toEqual({ ok: true });
+		expect(enqueueAndWaitMock).toHaveBeenCalledWith(
+			expect.objectContaining({ kind: "test", aiProviderId: "provider-1", userId: "user-1", timeoutMs: 90_000 }),
+		);
+	});
+
+	it("relays the queue's explanation when no agent answers", async () => {
+		enqueueAndWaitMock.mockRejectedValueOnce(new Error("No connected agent answered within 90 seconds."));
+
+		await expect(testConnection(agentInput)).resolves.toEqual({
+			ok: false,
+			message: "No connected agent answered within 90 seconds.",
+		});
+	});
+
+	it("rejects an answer that is not OK", async () => {
+		enqueueAndWaitMock.mockResolvedValueOnce({ id: "req-1", result: { text: "Sure, what do you need?" } });
+
+		await expect(testConnection(agentInput)).resolves.toMatchObject({
+			ok: false,
+			message: expect.stringContaining("not with OK"),
+		});
+	});
+
+	it("requires the provider to be saved before it can be tested", async () => {
+		const { id: _id, ...unsaved } = agentInput;
+
+		await expect(testConnection(unsaved)).resolves.toMatchObject({
+			ok: false,
+			message: expect.stringContaining("Save the connected agent provider"),
+		});
+		expect(enqueueAndWaitMock).not.toHaveBeenCalled();
 	});
 });

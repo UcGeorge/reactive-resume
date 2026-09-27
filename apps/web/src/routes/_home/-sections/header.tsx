@@ -5,7 +5,6 @@ import { m, useMotionValue, useSpring } from "motion/react";
 import { useEffect, useRef } from "react";
 import { BrandIcon } from "@reactive-resume/ui/components/brand-icon";
 import { Button } from "@reactive-resume/ui/components/button";
-import { GithubStarsButton } from "@/components/input/github-stars-button";
 import { LocaleCombobox } from "@/features/locale/combobox";
 import { ThemeToggleButton } from "@/features/theme/toggle-button";
 
@@ -65,8 +64,6 @@ export function Header() {
 					<ThemeToggleButton />
 
 					<div className="hidden items-center gap-x-4 sm:flex">
-						<GithubStarsButton />
-
 						<Button
 							size="icon"
 							nativeButton={false}

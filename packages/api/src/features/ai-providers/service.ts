@@ -1,4 +1,6 @@
-import type { AIProvider } from "@reactive-resume/ai/types";
+import type { AIProvider, AiFeature } from "@reactive-resume/ai/types";
+import type { AiProviderRouteStatus, ResolvedRoute } from "./routing";
+import { randomBytes } from "node:crypto";
 import { ORPCError } from "@orpc/client";
 import { and, asc, desc, eq, sql } from "drizzle-orm";
 import { aiProviderSchema } from "@reactive-resume/ai/types";
@@ -12,6 +14,7 @@ import {
 } from "../ai/credentials";
 import { testConnection } from "../ai/service";
 import { resolveAiBaseUrl } from "../ai/url-policy";
+import { listRouteStatuses, resolveFeatureProviderId } from "./routing";
 
 type AiProviderRecord = typeof schema.aiProvider.$inferSelect;
 
@@ -38,8 +41,17 @@ type CreateAiProviderInput = {
 	provider: AIProvider;
 	model: string;
 	baseURL?: string | null;
-	apiKey: string;
+	// Optional only for connected agents, which get a server-minted placeholder.
+	apiKey?: string;
 };
+
+export type RunnableAiProvider = AiProviderResponse & { userId: string; apiKey: string; baseURL: string };
+
+// A connected agent has nothing to authenticate with; the placeholder keeps the encrypted
+// credential column non-null and is never shown or used.
+function mintPlaceholderKey() {
+	return randomBytes(24).toString("base64url");
+}
 
 type UpdateAiProviderInput = {
 	id: string;
@@ -79,11 +91,29 @@ function toResponse(row: AiProviderRecord): AiProviderResponse {
 	};
 }
 
-function normalizeBaseUrl(input: { provider: AIProvider; baseURL?: string | null }) {
+function normalizeBaseUrl(input: { provider: AIProvider; baseURL?: string | null | undefined }) {
 	const trimmed = input.baseURL?.trim() ?? "";
-	if (!trimmed) return null;
+	if (!trimmed || input.provider === "mcp-agent") return null;
 
 	return resolveAiBaseUrl({ provider: input.provider, baseURL: trimmed });
+}
+
+function toRunnable(row: AiProviderRecord, userId: string): RunnableAiProvider {
+	return {
+		...toResponse(row),
+		userId,
+		apiKey: decryptCredential(row.encryptedApiKey),
+		baseURL: row.baseUrl ?? "",
+	};
+}
+
+async function loadProvidersAndRoutes(userId: string) {
+	const [providers, routes] = await Promise.all([
+		db.select().from(schema.aiProvider).where(eq(schema.aiProvider.userId, userId)),
+		db.select().from(schema.aiProviderRoute).where(eq(schema.aiProviderRoute.userId, userId)),
+	]);
+
+	return { providers, routes };
 }
 
 async function getOwnedProvider(input: { id: string; userId: string }) {
@@ -122,11 +152,7 @@ export const aiProvidersService = {
 			throw new ORPCError("BAD_REQUEST", { message: "AI provider must be tested and enabled before use." });
 		}
 
-		return {
-			...toResponse(provider),
-			apiKey: decryptCredential(provider.encryptedApiKey),
-			baseURL: provider.baseUrl ?? "",
-		};
+		return toRunnable(provider, input.userId);
 	},
 
 	getDefaultRunnable: async (input: { userId: string }) => {
@@ -145,19 +171,65 @@ export const aiProvidersService = {
 			.orderBy(asc(schema.aiProvider.createdAt))
 			.limit(1);
 
-		return provider
-			? {
-					...toResponse(provider),
-					apiKey: decryptCredential(provider.encryptedApiKey),
-					baseURL: provider.baseUrl ?? "",
-				}
-			: null;
+		return provider ? toRunnable(provider, input.userId) : null;
+	},
+
+	/** The provider a feature resolves to (feature route → default route → oldest runnable). */
+	resolveForFeature: async (input: {
+		userId: string;
+		feature: AiFeature;
+	}): Promise<Omit<ResolvedRoute, "providerId"> & { provider: RunnableAiProvider | null }> => {
+		assertCredentialEncryptionConfigured();
+
+		const { providers, routes } = await loadProvidersAndRoutes(input.userId);
+		const { providerId, ...resolved } = resolveFeatureProviderId(input.feature, routes, providers);
+		const row = providerId ? providers.find((provider) => provider.id === providerId) : undefined;
+
+		return { ...resolved, provider: row ? toRunnable(row, input.userId) : null };
+	},
+
+	routes: {
+		list: async (input: { userId: string }): Promise<AiProviderRouteStatus[]> => {
+			assertCredentialEncryptionConfigured();
+
+			const { providers, routes } = await loadProvidersAndRoutes(input.userId);
+			return listRouteStatuses(routes, providers);
+		},
+
+		// Null clears the route (the feature falls back to Default); otherwise the provider must be
+		// the caller's. Untested or disabled providers may be assigned: the resolver skips them at
+		// call time and the list reports them as unavailable.
+		set: async (input: { userId: string; feature: AiFeature; aiProviderId: string | null }) => {
+			assertCredentialEncryptionConfigured();
+
+			if (input.aiProviderId === null) {
+				await db
+					.delete(schema.aiProviderRoute)
+					.where(
+						and(eq(schema.aiProviderRoute.userId, input.userId), eq(schema.aiProviderRoute.feature, input.feature)),
+					);
+			} else {
+				await getOwnedProvider({ id: input.aiProviderId, userId: input.userId });
+				await db
+					.insert(schema.aiProviderRoute)
+					.values({ userId: input.userId, feature: input.feature, aiProviderId: input.aiProviderId })
+					.onConflictDoUpdate({
+						target: [schema.aiProviderRoute.userId, schema.aiProviderRoute.feature],
+						set: { aiProviderId: input.aiProviderId, updatedAt: new Date() },
+					});
+			}
+
+			return aiProvidersService.routes.list({ userId: input.userId });
+		},
 	},
 
 	create: async (input: CreateAiProviderInput) => {
 		assertCredentialEncryptionConfigured();
 
-		const encrypted = encryptCredential(input.apiKey.trim());
+		const apiKey = input.provider === "mcp-agent" ? mintPlaceholderKey() : input.apiKey?.trim();
+		if (!apiKey) throw new ORPCError("BAD_REQUEST", { message: "API key is required." });
+
+		const encrypted = encryptCredential(apiKey);
 		const [provider] = await db
 			.insert(schema.aiProvider)
 			.values({
@@ -180,14 +252,16 @@ export const aiProvidersService = {
 
 		const existing = await getOwnedProvider(input);
 		const provider = input.provider ?? aiProviderSchema.parse(existing.provider);
-		const nextApiKey = input.apiKey?.trim();
+		const providerChanged = input.provider !== undefined && input.provider !== existing.provider;
+		// Switching to a connected agent mints its placeholder; switching away requires a real key.
+		const nextApiKey =
+			input.apiKey?.trim() || (provider === "mcp-agent" && providerChanged ? mintPlaceholderKey() : undefined);
 		const encrypted = nextApiKey ? encryptCredential(nextApiKey) : {};
 		const credentialChanged = !!nextApiKey;
-		const nextBaseUrl =
-			input.baseURL !== undefined ? normalizeBaseUrl({ provider, baseURL: input.baseURL }) : existing.baseUrl;
-		const providerChanged = input.provider !== undefined && input.provider !== existing.provider;
+		const baseUrlTouched = input.baseURL !== undefined || provider === "mcp-agent";
+		const nextBaseUrl = baseUrlTouched ? normalizeBaseUrl({ provider, baseURL: input.baseURL }) : existing.baseUrl;
 		const modelChanged = input.model !== undefined && input.model.trim() !== existing.model;
-		const baseUrlChanged = input.baseURL !== undefined && nextBaseUrl !== existing.baseUrl;
+		const baseUrlChanged = baseUrlTouched && nextBaseUrl !== existing.baseUrl;
 		const runtimeChanged = credentialChanged || providerChanged || modelChanged || baseUrlChanged;
 
 		if (input.enabled === true && existing.testStatus !== "success" && !runtimeChanged) {
@@ -200,7 +274,7 @@ export const aiProvidersService = {
 				...(input.label !== undefined ? { label: input.label.trim() } : {}),
 				...(input.provider !== undefined ? { provider: input.provider } : {}),
 				...(input.model !== undefined ? { model: input.model.trim() } : {}),
-				...(input.baseURL !== undefined ? { baseUrl: nextBaseUrl } : {}),
+				...(baseUrlTouched ? { baseUrl: nextBaseUrl } : {}),
 				...(input.enabled !== undefined && !runtimeChanged ? { enabled: input.enabled } : {}),
 				...(runtimeChanged ? { enabled: false, testStatus: "untested", lastTestedAt: null, testError: null } : {}),
 				...encrypted,
@@ -233,6 +307,8 @@ export const aiProvidersService = {
 				model: provider.model,
 				apiKey,
 				baseURL: provider.baseUrl ?? "",
+				id: provider.id,
+				userId: input.userId,
 			});
 
 			// A provider that answers "no" is a completed test, not a failed request: it comes back as

@@ -14,7 +14,10 @@ vi.mock("ai", () => ({ generateText: mocks.generate }));
 vi.mock("../ai/service", () => ({ getModel: vi.fn(() => ({})) }));
 vi.mock("../ai-providers/service", () => ({
 	aiProvidersService: {
-		getDefaultRunnable: vi.fn(async () => ({ provider: "openai", model: "test", apiKey: "test" })),
+		resolveForFeature: vi.fn(async () => ({
+			provider: { id: "provider-1", userId: "owner", provider: "openai", model: "test", apiKey: "test", baseURL: "" },
+			source: "fallback",
+		})),
 	},
 }));
 vi.mock("../resume/service", () => ({ resumeService: { getById: mocks.resume } }));

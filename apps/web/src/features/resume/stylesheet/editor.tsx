@@ -34,6 +34,7 @@ import { Sheet, SheetContent, SheetTitle } from "@reactive-resume/ui/components/
 import { ColorPicker } from "@/components/input/color-picker";
 import { useIsResumeLocked, useResumeData, useResumeStore, useUpdateResumeData } from "@/features/resume/builder/draft";
 import { useTheme } from "@/features/theme/provider";
+import { DOCS_URL } from "@/libs/links";
 import { useBuilderSidebarStore } from "@/routes/builder/$resumeId/-store/sidebar";
 import { serializeStylesheetColor, toStylesheetPickerColor } from "./color-format";
 import { compositionAwareDocumentListener, createSemanticCssEditorExtensions } from "./editor-extensions";
@@ -550,7 +551,7 @@ function StylesheetEditorShell({ readOnly = false }: StylesheetEditorShellProps)
 					<Trans>Not sure what to write?</Trans>{" "}
 					<a
 						className="text-primary underline underline-offset-4"
-						href="https://docs.rxresu.me/applying-custom-styles"
+						href={`${DOCS_URL}/applying-custom-styles`}
 						target="_blank"
 						rel="noopener noreferrer"
 					>

@@ -6,6 +6,7 @@ import router from "@reactive-resume/api/routers";
 import { resumeDataSchema } from "@reactive-resume/schema/resume/data";
 import { createResumeDataJsonSchema } from "@reactive-resume/schema/resume/json-schema";
 import { writableResumeDataSchema } from "@reactive-resume/schema/resume/write";
+import { DOCS_URL, FORK_REPO_URL, UPSTREAM_LICENSE_URL } from "../links";
 
 export const openAPIRouter = {
 	...router,
@@ -84,8 +85,8 @@ export async function generateOpenApiSpec({ appUrl, version }: GenerateOpenApiSp
 			title: "Reactive Resume",
 			version,
 			description: "Reactive Resume API",
-			license: { name: "MIT", url: "https://github.com/reactive-resume/reactive-resume/blob/main/LICENSE" },
-			contact: { name: "Amruth Pillai", email: "hello@amruthpillai.com", url: "https://amruthpillai.com" },
+			license: { name: "MIT", url: UPSTREAM_LICENSE_URL },
+			contact: { name: "Reactive Resume (fork)", url: FORK_REPO_URL },
 		},
 		servers: [{ url: `${appUrl}/api/openapi` }],
 		paths: {
@@ -110,7 +111,7 @@ export async function generateOpenApiSpec({ appUrl, version }: GenerateOpenApiSp
 				},
 			},
 		},
-		externalDocs: { url: "https://docs.rxresu.me", description: "Reactive Resume Documentation" },
+		externalDocs: { url: DOCS_URL, description: "Reactive Resume Documentation" },
 		commonSchemas: {
 			ResumeData: { schema: writableResumeDataSchema, strategy: "input" },
 		},

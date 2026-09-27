@@ -10,7 +10,7 @@ type Registration = {
 		description: string;
 		argsSchema: Record<string, unknown>;
 	};
-	handler: (args: { id: string }) => Promise<{
+	handler: (args: Record<string, string>) => Promise<{
 		messages: Array<{
 			role: "user";
 			content: { type: string; text?: string; resource?: { uri: string; mimeType: string } };
@@ -29,23 +29,48 @@ const makeFakeServer = () => {
 };
 
 describe("registerPrompts", () => {
-	it("registers build_resume, improve_resume, and review_resume", () => {
+	it("registers the resume prompts and the serve loop", () => {
 		const { server, registered } = makeFakeServer();
 
 		registerPrompts(server as never);
 
-		expect(server.registerPrompt).toHaveBeenCalledTimes(3);
-		expect(registered.map((r) => r.name).sort()).toEqual(["build_resume", "improve_resume", "review_resume"]);
+		expect(server.registerPrompt).toHaveBeenCalledTimes(4);
+		expect(registered.map((r) => r.name).sort()).toEqual([
+			"build_resume",
+			"improve_resume",
+			"review_resume",
+			"serve_ai_requests",
+		]);
 	});
 
-	it("requires an `id` argument on every prompt", () => {
+	it("requires an `id` argument on every resume prompt", () => {
 		const { server, registered } = makeFakeServer();
 
 		registerPrompts(server as never);
 
-		for (const reg of registered) {
+		for (const reg of registered.filter((r) => r.name !== "serve_ai_requests")) {
 			expect(reg.config.argsSchema.id, reg.name).toBeDefined();
 		}
+	});
+
+	it("serve_ai_requests spells out the claim → answer → complete loop", async () => {
+		const { server, registered } = makeFakeServer();
+		registerPrompts(server as never);
+
+		const serve = registered.find((r) => r.name === "serve_ai_requests")!;
+		expect(serve.config.argsSchema.provider).toBeDefined();
+		expect(serve.config.argsSchema.id).toBeUndefined();
+
+		const anyProvider = await serve.handler({});
+		const text = anyProvider.messages[0]?.content.text ?? "";
+		expect(text).toContain("claim_ai_request");
+		expect(text).toContain("complete_ai_request");
+		expect(text).toContain("fail_ai_request");
+		expect(text).toContain("Do not call other Reactive Resume tools");
+		expect(text).not.toContain("providerId");
+
+		const pinned = await serve.handler({ provider: "prov-1" });
+		expect(pinned.messages[0]?.content.text).toContain('providerId: "prov-1"');
 	});
 
 	it("build_resume handler attaches the resume + schema resources and a guidance text", async () => {

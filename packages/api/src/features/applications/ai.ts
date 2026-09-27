@@ -1,3 +1,4 @@
+import type { LanguageModel } from "ai";
 import { ORPCError } from "@orpc/client";
 import { APICallError, generateText, RetryError } from "ai";
 import z from "zod";
@@ -11,30 +12,13 @@ import { factGateReportSchema, skillGapLowConfidenceSchema } from "@reactive-res
 import { protectedProcedure } from "../../context";
 import { aiRequestRateLimit } from "../../middleware/rate-limit";
 import { generateJson as sharedGenerateJson } from "../ai/generate-json";
-import { getModel } from "../ai/service";
-import { aiProvidersService } from "../ai-providers/service";
+import { resolveModelForFeature } from "../ai/resolve-model";
 import { coverLetterService } from "../cover-letters/service";
 import { resumeService } from "../resume/service";
 import { applicationService } from "./service";
 
 const reserved = { tags: ["Applications", "AI"] } as const;
 const MAX_PASTED_JOB_DESCRIPTION_CHARS = 20_000;
-
-// Resolve the user's default (tested + enabled) AI provider into a ready model instance.
-async function resolveModel(userId: string) {
-	const provider = await aiProvidersService.getDefaultRunnable({ userId });
-	if (!provider) {
-		throw new ORPCError("BAD_REQUEST", {
-			message: "No AI provider is configured. Add one in Settings → Integrations to use AI features.",
-		});
-	}
-	return getModel({
-		provider: provider.provider,
-		model: provider.model,
-		apiKey: provider.apiKey,
-		...(provider.baseURL ? { baseURL: provider.baseURL } : {}),
-	});
-}
 
 // --- AI provider failure translation ------------------------------------------
 // The AI SDK surfaces provider-side failures as `APICallError` (HTTP 4xx/5xx from
@@ -60,7 +44,7 @@ function throwAiProviderGatewayError(cause?: unknown): never {
  * Exported for tests.
  */
 export async function generateJson<T>(
-	model: Awaited<ReturnType<typeof resolveModel>>,
+	model: LanguageModel,
 	prompt: { system?: string; prompt: string },
 	schema: z.ZodType<T>,
 ) {
@@ -73,7 +57,7 @@ export async function generateJson<T>(
 }
 
 /** Exported for tests: provider-failure translation shared by every copilot procedure. */
-export async function generatePlainText(model: Awaited<ReturnType<typeof resolveModel>>, prompt: string) {
+export async function generatePlainText(model: LanguageModel, prompt: string) {
 	try {
 		const { text } = await generateText({ model, messages: [{ role: "user", content: prompt }] });
 		return text.trim();
@@ -134,7 +118,7 @@ export const aiRouter = {
 		.output(autofillOutput)
 		.errors(aiErrors)
 		.handler(async ({ context, input }) => {
-			const model = await resolveModel(context.user.id);
+			const { model } = await resolveModelForFeature(context.user.id, "autofill");
 
 			return generateJson(
 				model,
@@ -192,7 +176,7 @@ export const aiRouter = {
 				});
 			}
 
-			const model = await resolveModel(context.user.id);
+			const { model } = await resolveModelForFeature(context.user.id, "autofill");
 			const fields = await generateJson(
 				model,
 				{
@@ -274,7 +258,7 @@ export const aiRouter = {
 		.errors(aiErrors)
 		.handler(async ({ context, input }) => {
 			const application = await applicationService.getById({ id: input.id, userId: context.user.id });
-			const model = await resolveModel(context.user.id);
+			const { model } = await resolveModelForFeature(context.user.id, "outreach");
 			const resume = application.resumeId
 				? await resumeService.getById({ id: application.resumeId, userId: context.user.id }).catch(() => null)
 				: null;

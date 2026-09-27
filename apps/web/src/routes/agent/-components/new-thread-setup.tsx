@@ -13,6 +13,7 @@ import { toast } from "@reactive-resume/ui/components/toast";
 import { Combobox } from "@/components/ui/combobox";
 import { AiProviderPicker } from "@/features/settings/integrations/components/ai-provider-picker";
 import { useHasUsableAiProvider } from "@/features/settings/integrations/hooks/use-has-usable-ai-provider";
+import { useRoutedProvider } from "@/features/settings/integrations/hooks/use-routed-provider";
 import { getOrpcErrorMessage } from "@/libs/error-message";
 import { orpc } from "@/libs/orpc/client";
 
@@ -37,9 +38,11 @@ export function NewThreadSetup({ resumeId }: NewThreadSetupProps) {
 	);
 	const { mutate: createThread, isPending } = useMutation(orpc.agent.threads.create.mutationOptions());
 
+	const routed = useRoutedProvider("chat");
 	const [aiProviderIdOverride, setAiProviderIdOverride] = useState<string | null | undefined>(undefined);
 	const [sourceResumeIdOverride, setSourceResumeIdOverride] = useState<string | null | undefined>(undefined);
-	const aiProviderId = aiProviderIdOverride ?? usableProviders[0]?.id ?? null;
+	// Preselect what the server would pick for chat, so the picker and the route agree.
+	const aiProviderId = aiProviderIdOverride ?? routed.providerId ?? usableProviders[0]?.id ?? null;
 	const sourceResumeId = sourceResumeIdOverride ?? resumeId ?? null;
 
 	const resumeOptions = [

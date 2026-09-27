@@ -795,4 +795,39 @@ export const TOOL_META = {
 		inputSchema: z.object({ id: applicationIdSchema, kind: z.enum(["cover-letter", "follow-up"]) }),
 		annotations: { ...WRITE_NON_IDEMPOTENT, openWorldHint: true },
 	},
+	[T.claimAiRequest]: {
+		title: "Claim AI Request",
+		description:
+			"Long-poll the queue of language-model calls that Reactive Resume features enqueued for a 'Connected agent (MCP)' provider. Returns at most one request (system, messages, tools, toolChoice, responseFormat, attached files) that you must answer yourself with complete_ai_request. Blocks up to `wait` seconds before returning empty; call again to keep serving.",
+		inputSchema: z.object({
+			providerId: z.string().optional().describe("Only claim requests for this AI provider id."),
+			wait: z
+				.number()
+				.int()
+				.min(0)
+				.max(25)
+				.default(25)
+				.describe("Seconds to wait for a request before returning empty."),
+		}),
+		annotations: WRITE_NON_IDEMPOTENT,
+	},
+	[T.completeAiRequest]: {
+		title: "Complete AI Request",
+		description:
+			"Deliver the answer for a claimed request: `text` for a written reply (exactly one JSON object when the request's responseFormat.type is 'json'), and/or `toolCalls` whose toolName comes from the request's tools and whose input matches that tool's inputSchema. Validation problems come back as an error: fix the answer and call again.",
+		inputSchema: z.object({
+			id: z.string().min(1).describe("The claimed request's id."),
+			text: z.string().optional(),
+			toolCalls: z
+				.array(z.object({ toolName: z.string().min(1), input: z.record(z.string(), z.unknown()) }))
+				.optional(),
+		}),
+		annotations: WRITE_NON_IDEMPOTENT,
+	},
+	[T.failAiRequest]: {
+		title: "Fail AI Request",
+		description: "Give up on a claimed request with a reason; the requesting feature shows it to the user.",
+		inputSchema: z.object({ id: z.string().min(1), reason: z.string().min(1).max(2000) }),
+		annotations: WRITE_NON_IDEMPOTENT,
+	},
 } as const;

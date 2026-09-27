@@ -7,9 +7,7 @@ import { I18nProvider } from "@lingui/react";
 
 vi.stubGlobal("__APP_VERSION__", "9.9.9");
 
-// The footer module evaluates `socialLinks = [{ label: t`...`, ... }]` at module
-// scope. That `t` call needs an activated locale BEFORE the import, so do that
-// here instead of in beforeAll.
+// The footer module evaluates `t` calls at module scope, so the locale must be active before the import.
 i18n.loadAndActivate({ locale: "en", messages: {} });
 
 const { Footer } = await import("./footer");
@@ -22,34 +20,28 @@ const renderFooter = () =>
 	);
 
 describe("Footer", () => {
-	it("renders Resources and Community link group headings", () => {
+	it("renders only the Resources link group", () => {
 		renderFooter();
 		expect(screen.getByText("Resources")).toBeInTheDocument();
-		expect(screen.getByText("Community")).toBeInTheDocument();
+		expect(screen.queryByText("Community")).not.toBeInTheDocument();
 	});
 
-	it("renders the documented resource links", () => {
+	it("keeps the documentation link and drops promotional links", () => {
 		const { container } = renderFooter();
 		const text = container.textContent ?? "";
-		for (const label of ["Documentation", "Sponsorships", "Source Code", "Changelog"]) {
-			expect(text, label).toContain(label);
+		expect(text).toContain("Documentation");
+		for (const label of ["Sponsorships", "Changelog", "Report an issue", "Translations", "Subreddit", "Discord"]) {
+			expect(text, label).not.toContain(label);
 		}
 	});
 
-	it("renders the documented community links", () => {
-		const { container } = renderFooter();
-		const text = container.textContent ?? "";
-		for (const label of ["Report an issue", "Translations", "Subreddit", "Discord"]) {
-			expect(text, label).toContain(label);
-		}
-	});
-
-	it("renders social media icon links to GitHub, LinkedIn, and X", () => {
+	it("links nowhere promotional or personal", () => {
 		const { container } = renderFooter();
 		const hrefs = Array.from(container.querySelectorAll<HTMLAnchorElement>("a")).map((a) => a.href);
-		expect(hrefs.some((h) => h.includes("github.com/reactive-resume/reactive-resume"))).toBe(true);
-		expect(hrefs.some((h) => h.includes("linkedin.com/in/amruthpillai"))).toBe(true);
-		expect(hrefs.some((h) => h.includes("x.com/KingOKings"))).toBe(true);
+		expect(hrefs.some((h) => h.includes("docs.rxresu.me"))).toBe(true);
+		expect(hrefs.some((h) => /opencollective|sponsors|linkedin\.com|x\.com|discord|reddit|crowdin/.test(h))).toBe(
+			false,
+		);
 	});
 
 	it("includes Reactive Resume version copy via Copyright", () => {

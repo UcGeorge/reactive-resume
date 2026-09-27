@@ -1,6 +1,8 @@
+import { FORK_REPO_URL } from "@/libs/links";
+
 const productionRootUrl = "https://rxresu.me/";
 const appName = "Reactive Resume";
-const repositoryUrl = "https://github.com/reactive-resume/reactive-resume";
+const repositoryUrl = FORK_REPO_URL;
 
 type JsonLd = Record<string, unknown>;
 
@@ -123,11 +125,6 @@ const homeFaqJsonLdItems = [
 	{
 		question: "Can I export my resume to PDF?",
 		answer: "Yes. One click exports your resume to PDF, with your formatting and styling intact.",
-	},
-	{
-		question: "Is Reactive Resume available in multiple languages?",
-		answer:
-			"Yes. Pick your language on the settings page, or with the language switcher in the top right corner. If your language is missing, or the existing translation could be better, you can contribute to the translations on Crowdin.",
 	},
 	{
 		question: "What makes Reactive Resume different from other resume builders?",

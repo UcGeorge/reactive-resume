@@ -269,10 +269,6 @@ msgstr ""
 msgid "<0>Free forever and open source.</0><1/>No ads, paywalls, or tracking."
 msgstr "<0>ಯಾವತ್ತಿಗೂ ಉಚಿತ ಮತ್ತು ಮುಕ್ತ ಮೂಲ.</0><1/>ಜಾಹೀರಾತು, ಪಾವತಿ ತಡೆಗಳು ಅಥವಾ ಟ್ರ್ಯಾಕಿಂಗ್ ಇಲ್ಲ."
 
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-msgid "<0>Thank you for using Reactive Resume. I build this app mostly in my spare time, with help from open-source contributors around the world.</0><1>If it has been useful to you and you'd like to keep it free and open for everyone, please consider donating. Any amount helps.</1>"
-msgstr "<0>Reactive Resume ಬಳಸಿದ್ದಕ್ಕೆ ಧನ್ಯವಾದಗಳು. ಪ್ರಪಂಚದಾದ್ಯಂತದ ಮುಕ್ತ-ಮೂಲ ಕೊಡುಗೆದಾರರ ನೆರವಿನಿಂದ, ಬಹುಪಾಲು ನನ್ನ ಬಿಡುವಿನ ವೇಳೆಯಲ್ಲಿಯೇ ನಾನು ಈ ಆ್ಯಪ್ ಅನ್ನು ಕಟ್ಟುತ್ತೇನೆ.</0><1>ಇದು ನಿಮಗೆ ಉಪಯುಕ್ತವಾಗಿದ್ದರೆ, ಎಲ್ಲರಿಗೂ ಉಚಿತವಾಗಿ ಮತ್ತು ಮುಕ್ತವಾಗಿ ಉಳಿಯಬೇಕೆಂದು ನೀವು ಬಯಸಿದರೆ, ದಯವಿಟ್ಟು ದೇಣಿಗೆ ನೀಡುವುದನ್ನು ಪರಿಗಣಿಸಿ. ಎಷ್ಟೇ ಮೊತ್ತವಾದರೂ ಸಹಾಯವಾಗುತ್ತದೆ.</1>"
-
 #: src/features/homepage/export-playground.tsx
 msgid "<p>I design software for teams, from early research to the details people use every day.</p>"
 msgstr "<p>ಆರಂಭಿಕ ಸಂಶೋಧನೆಯಿಂದ ಜನರು ಪ್ರತಿದಿನ ಬಳಸುವ ಸಣ್ಣ ವಿವರಗಳವರೆಗೆ, ನಾನು ತಂಡಗಳಿಗಾಗಿ ಸಾಫ್ಟ್‌ವೇರ್ ವಿನ್ಯಾಸಗೊಳಿಸುತ್ತೇನೆ.</p>"
@@ -405,14 +401,6 @@ msgstr "ಸಂಖ್ಯಾತ್ಮಕ ದಿನಾಂಕವು ವಿಭಿನ�
 msgid "A page is rotated."
 msgstr "ಒಂದು ಪುಟ ತಿರುಗಿಸಲ್ಪಟ್ಟಿದೆ."
 
-#: src/features/homepage/site-footer.tsx
-msgid "A passion project by <0>Amruth Pillai</0>"
-msgstr "<0>ಅಮೃತ್ ಪಿಳ್ಳೈ</0> ಅವರಿಂದ ಒಂದು ಆಸಕ್ತಿಪೂರ್ಣ ಪ್ರಾಜೆಕ್ಟ್"
-
-#: src/components/ui/copyright.tsx
-msgid "A passion project by <0>Amruth Pillai</0>."
-msgstr "<0>ಅಮೃತ್ ಪಿಳ್ಳೈ</0> ಅವರಿಂದ ಒಂದು ಆಸಕ್ತಿಪೂರ್ಣ ಪ್ರಾಜೆಕ್ಟ್."
-
 #: src/features/homepage/page.tsx
 msgid "A PDF for the application. A Word file for a few more edits. Download a sample using your choices."
 msgstr "ಅರ್ಜಿಗಾಗಿ PDF. ಇನ್ನಷ್ಟು ತಿದ್ದುಪಡಿಗಳಿಗೆ Word ಫೈಲ್. ನಿಮ್ಮ ಆಯ್ಕೆಗಳೊಂದಿಗೆ ಮಾದರಿಯನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ."
@@ -420,10 +408,6 @@ msgstr "ಅರ್ಜಿಗಾಗಿ PDF. ಇನ್ನಷ್ಟು ತಿದ್�
 #: src/features/homepage/feature-explorer.tsx
 msgid "A private resume does not appear at its public link."
 msgstr "ಖಾಸಗಿ ರೆಸ್ಯೂಮ್ ಅದರ ಸಾರ್ವಜನಿಕ ಲಿಂಕ್‌ನಲ್ಲಿ ಕಾಣಿಸುವುದಿಲ್ಲ."
-
-#: src/features/homepage/page.tsx
-msgid "A project you can<0/>be part of."
-msgstr "ನೀವು ಭಾಗವಾಗಬಹುದಾದ<0/>ಯೋಜನೆ."
 
 #: src/features/homepage/ats-playground.tsx
 msgid "A real sample PDF"
@@ -448,6 +432,11 @@ msgstr "ವೆಬ್ ವಿಳಾಸವನ್ನು https:// ಇಲ್ಲದೆ 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/page.tsx
 msgid "A4"
 msgstr "A4"
+
+#: src/routes/dashboard/-components/sidebar.tsx
+#: src/routes/dashboard/settings/about.tsx
+msgid "About"
+msgstr ""
 
 #: src/features/homepage/resume-sculpture.tsx
 msgid "About me"
@@ -724,9 +713,17 @@ msgstr "ಉದ್ಯೋಗ ವಿವರಣೆಗೆ ಅನುಗುಣವಾಗ�
 msgid "Agent"
 msgstr "ಏಜೆಂಟ್"
 
+#: src/features/settings/integrations/ai-features.ts
+msgid "Agent chat"
+msgstr ""
+
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Agent ready"
 msgstr "ಏಜೆಂಟ್ ಸಿದ್ಧವಾಗಿದೆ"
+
+#: src/features/settings/integrations/ai-features.ts
+msgid "Agent threads and the in-resume assistant."
+msgstr ""
 
 #: src/routes/dashboard/-components/sidebar.tsx
 msgid "Agents"
@@ -932,6 +929,10 @@ msgstr "ಅರ್ಜಿಯ ಕ್ರಿಯೆಗಳು"
 msgid "Application added to your pipeline."
 msgstr "ಅರ್ಜಿಯನ್ನು ನಿಮ್ಮ ಪೈಪ್‌ಲೈನ್‌ಗೆ ಸೇರಿಸಲಾಗಿದೆ."
 
+#: src/features/settings/integrations/ai-features.ts
+msgid "Application autofill"
+msgstr ""
+
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Application Copilot"
 msgstr "ಅರ್ಜಿಯ Copilot"
@@ -1064,10 +1065,6 @@ msgstr "ಅಧ್ಯಯನದ ಕ್ಷೇತ್ರ"
 msgid "Artificial Intelligence"
 msgstr "ಕೃತಕ ಬುದ್ಧಿವಂತಿಕೆ"
 
-#: src/features/homepage/community-stats.tsx
-msgid "As of <0>{formattedDate}</0>."
-msgstr "<0>{formattedDate}</0>ರ ಸ್ಥಿತಿಗೆ."
-
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Ask anything about this resume"
 msgstr "ಈ ರೆಸ್ಯೂಮ್ ಬಗ್ಗೆ ಏನಾದರೂ ಕೇಳಿ."
@@ -1093,6 +1090,10 @@ msgstr "ಎಟಿಎಸ್ ಪರಿಶೀಲನೆ"
 #: src/routes/dashboard/-components/sidebar.tsx
 msgid "ATS Checker"
 msgstr "ATS ಪರಿಶೀಲಕ"
+
+#: src/features/settings/integrations/ai-features.ts
+msgid "ATS review"
+msgstr ""
 
 #: src/features/applications/components/application-detail-sheet.tsx
 #: src/features/applications/components/application-form-sheet.tsx
@@ -1188,6 +1189,10 @@ msgstr "ಬ್ಯಾಕಪ್ ಕೋಡ್‌ಗಳನ್ನು ಕ್ಲಿಪ�
 msgid "Base URL"
 msgstr "ಮೂಲ URL"
 
+#: src/features/settings/pages/about.tsx
+msgid "Based on the open source project <0>Reactive Resume</0> by Amruth Pillai."
+msgstr ""
+
 #: src/libs/resume/section.tsx
 msgid "Basics"
 msgstr "ಮೂಲಭೂತಗಳು"
@@ -1282,12 +1287,6 @@ msgstr "ಬುಲೆಟ್ ಪಟ್ಟ್ತಿ"
 msgid "Bulleted list"
 msgstr "ಬುಲೆಟ್ ಪಟ್ಟಿ"
 
-#. Tagline shown in app footer/about area
-#: src/components/ui/copyright.tsx
-#: src/features/homepage/site-footer.tsx
-msgid "By the community, for the community."
-msgstr "ಸಮುದಾಯದಿಂದ, ಸಮುದಾಯಕ್ಕಾಗಿ."
-
 #: src/features/career-insights/components/calibration-card.tsx
 #: src/features/command-palette/pages/navigation.tsx
 msgid "Calibration"
@@ -1367,11 +1366,6 @@ msgstr "ಥೀಮ್ ಅನ್ನು… ಗೆ ಬದಲಾಯಿಸಿ"
 #: src/dialogs/resume/index.tsx
 msgid "Changed your mind? Rename your resume to something more descriptive."
 msgstr "ಮನಸ್ಸು ಬದಲಾಯಿಸಿದಿರಾ? ನಿಮ್ಮ ರೆಸ್ಯೂಮ್ ಅನ್ನು ಇನ್ನಷ್ಟು ವಿವರಣಾತ್ಮಕ ಹೆಸರಿಗೆ ಮರುಹೆಸರಿಸಿ."
-
-#: src/features/homepage/site-footer.tsx
-#: src/routes/_home/-sections/footer.tsx
-msgid "Changelog"
-msgstr "ಬದಲಾವಣೆ ಚಿಟಿಕೆಗಳು"
 
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Changes"
@@ -1588,11 +1582,6 @@ msgstr "ಕಮಾಂಡ್ ಪ್ಯಾಲೆಟ್"
 msgid "Command Palette - {currentPage}"
 msgstr "ಕಮಾಂಡ್ ಪ್ಯಾಲೆಟ್ - {currentPage}"
 
-#: src/features/homepage/site-footer.tsx
-#: src/routes/_home/-sections/footer.tsx
-msgid "Community"
-msgstr "ಸಮುದಾಯ"
-
 #: src/routes/dashboard/resumes/index.tsx
 msgid "Compact"
 msgstr "ಕಾಂಪ್ಯಾಕ್ಟ್"
@@ -1688,6 +1677,10 @@ msgstr "ಕನೆಕ್ಟ್ ಮಾಡಿ"
 msgid "Connect an application"
 msgstr "ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ಸಂಪರ್ಕಿಸಿ"
 
+#: src/features/settings/integrations/components/mcp-agent-setup-panel.tsx
+msgid "Connect an MCP client (Claude Code, Codex, or any MCP-capable agent) to the URL below, with OAuth or an API key from Settings → API Keys."
+msgstr ""
+
 #: src/features/homepage/feature-explorer.tsx
 msgid "Connect through MCP to create and update resumes in a conversation. Or use the API to build your own workflow."
 msgstr "ಸಂಭಾಷಣೆಯಲ್ಲಿ ರೆಸ್ಯೂಮ್‌ಗಳನ್ನು ರಚಿಸಲು ಮತ್ತು ನವೀಕರಿಸಲು MCP ಮೂಲಕ ಸಂಪರ್ಕಿಸಿ. ಅಥವಾ ನಿಮ್ಮದೇ ಕಾರ್ಯಹರಿವನ್ನು ನಿರ್ಮಿಸಲು API ಬಳಸಿ."
@@ -1759,10 +1752,6 @@ msgstr "ನೀವು ನಿಲ್ಲಿಸಿದ ಜಾಗದಿಂದ ಮುಂ
 msgid "Continue where you left off by importing a resume you built in Reactive Resume or another resume builder. Supported formats are PDF, Microsoft Word, and JSON files from Reactive Resume or JSON Resume."
 msgstr "Reactive Resume ನಲ್ಲಿ ಅಥವಾ ಬೇರೆ ರೆಸ್ಯೂಮ್ ನಿರ್ಮಾಪಕದಲ್ಲಿ ನೀವು ಕಟ್ಟಿದ ರೆಸ್ಯೂಮ್ ಅನ್ನು ಆಮದು ಮಾಡಿಕೊಂಡು, ನಿಲ್ಲಿಸಿದಲ್ಲಿಂದಲೇ ಮುಂದುವರಿಸಿ. PDF, Microsoft Word, ಮತ್ತು Reactive Resume ಅಥವಾ JSON Resume ನ JSON ಫೈಲ್‌ಗಳಿಗೆ ಬೆಂಬಲವಿದೆ."
 
-#: src/features/homepage/page.tsx
-msgid "Contribute code"
-msgstr "ಕೋಡ್ ಕೊಡುಗೆ ನೀಡಿ"
-
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Conversation copied."
 msgstr "ಸಂಭಾಷಣೆಯನ್ನು ನಕಲಿಸಲಾಗಿದೆ."
@@ -1807,6 +1796,10 @@ msgstr "ಪುನರಾರಂಭದಿಂದ ನಕಲಿಸಿ"
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Copy JSON"
 msgstr "JSON ನಕಲಿಸಿ"
+
+#: src/features/settings/integrations/components/mcp-agent-setup-panel.tsx
+msgid "Copy MCP URL"
+msgstr ""
 
 #: src/features/stories/components/practice-dialog.tsx
 msgid "Copy prompt"
@@ -2095,6 +2088,10 @@ msgstr ""
 msgid "Cover letter unlinked from this application."
 msgstr ""
 
+#: src/features/settings/integrations/ai-features.ts
+msgid "Cover letters"
+msgstr ""
+
 #: src/routes/dashboard/-components/sidebar.tsx
 #: src/routes/dashboard/cover-letters.tsx
 msgid "Cover Letters"
@@ -2374,6 +2371,10 @@ msgstr ""
 msgid "Deep report: requirements, gaps, strategy, legitimacy"
 msgstr ""
 
+#: src/features/settings/integrations/ai-features.ts
+msgid "Default"
+msgstr ""
+
 #: src/features/cover-letters/library.tsx
 msgid "Default template"
 msgstr "ಡೀಫಾಲ್ಟ್ ಟೆಂಪ್ಲೇಟ್"
@@ -2579,11 +2580,6 @@ msgstr "ಉಳಿಸದ ಬದಲಾವಣೆಗಳನ್ನು ತ್ಯಜಿ�
 msgid "Disconnect"
 msgstr "ಡಿಸ್ಕನೆಕ್ಟ್ ಮಾಡಿ"
 
-#: src/features/homepage/site-footer.tsx
-#: src/routes/_home/-sections/footer.tsx
-msgid "Discord"
-msgstr "ಡಿಸ್ಕೋರ್ಡ್"
-
 #: src/features/command-palette/pages/navigation.tsx
 #: src/routes/dashboard/-components/sidebar.tsx
 #: src/routes/dashboard/discover/index.tsx
@@ -2610,7 +2606,6 @@ msgstr "ದಾಖಲೆಗಳು"
 
 #: src/features/homepage/site-footer.tsx
 #: src/routes/_home/-sections/footer.tsx
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
 msgid "Documentation"
 msgstr "ದಾಖಲೀಕರಣ"
 
@@ -2625,14 +2620,6 @@ msgstr "ಖಾತೆ ಇಲ್ಲವೇ? <0/>"
 #: src/features/discovery/components/settings-view.tsx
 msgid "Don't re-surface a company + title you already applied to within this window."
 msgstr ""
-
-#: src/components/ui/donation-toast.tsx
-msgid "Donate"
-msgstr "ದಾನ ಮಾಡಿ"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-msgid "Donate to Reactive Resume"
-msgstr "ರಿಯಾಕ್ಟಿವ್ ರೆಸ್ಯೂಮ್‌ಗೆ ದೇಣಿಗೆ ನೀಡಿ"
 
 #: src/features/discovery/components/watch-company-dialog.tsx
 #: src/routes/agent/-components/tool-part-card.tsx
@@ -3326,6 +3313,10 @@ msgstr "ಪ್ರೊವೈಡರ್ ಅನ್ನು ಅನ್‌ಲಿಂಕ್ 
 msgid "Failed to update provider."
 msgstr "ಪೂರೈಕೆದಾರರನ್ನು ನವೀಕರಿಸಲು ವಿಫಲವಾಗಿದೆ."
 
+#: src/features/settings/integrations/components/ai-routing-section.tsx
+msgid "Failed to update routing."
+msgstr ""
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Failed to update thread settings."
 msgstr "ಥ್ರೆಡ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ನವೀಕರಿಸಲು ವಿಫಲವಾಗಿದೆ."
@@ -3398,6 +3389,10 @@ msgstr "ಕ್ಷೇತ್ರಗಳನ್ನು ಭರ್ತಿ ಮಾಡು"
 msgid "Filled in what we could from the posting."
 msgstr "ಪೋಸ್ಟಿಂಗ್‌ನಿಂದ ಸಾಧ್ಯವಾದುದನ್ನು ಭರ್ತಿ ಮಾಡಲಾಗಿದೆ."
 
+#: src/features/settings/integrations/ai-features.ts
+msgid "Filling an application from a job posting or URL."
+msgstr ""
+
 #: src/routes/dashboard/resumes/index.tsx
 msgid "Filter by"
 msgstr "ಫಿಲ್ಟರ್ ಆಧಾರಿತವಾಗಿ"
@@ -3413,10 +3408,6 @@ msgstr ""
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Find the weak bullet points and rewrite them with stronger outcomes, numbers, scope, and sharper verbs."
 msgstr "ದುರ್ಬಲ ಬುಲೆಟ್ ಅಂಶಗಳನ್ನು ಗುರುತಿಸಿ, ಬಲವಾದ ಫಲಿತಾಂಶಗಳು, ಸಂಖ್ಯೆಗಳು, ವ್ಯಾಪ್ತಿ ಮತ್ತು ಹರಿತವಾದ ಕ್ರಿಯಾಪದಗಳೊಂದಿಗೆ ಅವನ್ನು ಮತ್ತೆ ಬರೆಯಿರಿ."
-
-#: src/features/homepage/page.tsx
-msgid "Find us on GitHub"
-msgstr "GitHub ನಲ್ಲಿ ನಮ್ಮನ್ನು ಹುಡುಕಿ"
 
 #: src/libs/locale.ts
 msgid "Finnish"
@@ -3634,9 +3625,7 @@ msgstr ""
 #. Authentication provider display name in account settings
 #. Brand name label for GitHub social sign-in button
 #: src/features/auth/components/social-auth.tsx
-#: src/features/homepage/site-footer.tsx
 #: src/features/settings/authentication/components/hooks.tsx
-#: src/routes/_home/-sections/footer.tsx
 msgid "GitHub"
 msgstr "GitHub"
 
@@ -3700,6 +3689,10 @@ msgstr "ಗ್ರೀಕ್"
 msgid "Grid"
 msgstr "ಗ್ರಿಡ್"
 
+#: src/features/settings/integrations/ai-features.ts
+msgid "Guided angles and drafts."
+msgstr ""
+
 #: src/features/applications/components/application-ai-copilot.tsx
 #: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
 msgid "Guided cover letter"
@@ -3750,14 +3743,6 @@ msgstr "ಶೀರ್ಷಿಕೆ"
 #: src/libs/locale.ts
 msgid "Hebrew"
 msgstr "ಹೀಬ್ರೂ"
-
-#: src/features/homepage/languages-showcase.tsx
-msgid "Help translate the app"
-msgstr "ಆ್ಯಪ್ ಅನುವಾದಿಸಲು ನೆರವಾಗಿ"
-
-#: src/features/settings/pages/preferences.tsx
-msgid "Help translate the app to your language"
-msgstr "ಆ್ಯಪ್ ಅನ್ನು ನಿಮ್ಮ ಭಾಷೆಗೆ ಅನುವಾದ ಮಾಡಲು ಸಹಾಯ ಮಾಡಿ"
 
 #: src/dialogs/api-key/create.tsx
 msgid "Here's your new API key"
@@ -3978,6 +3963,10 @@ msgstr "… ಆಮದು ಮಾಡಿಕೊಳ್ಳಲಾಗುತ್ತಿದ�
 msgid "In {0}"
 msgstr "{0} ನಲ್ಲಿ"
 
+#: src/features/settings/integrations/components/mcp-agent-setup-panel.tsx
+msgid "In that client, run the <0>serve_ai_requests</0> prompt, or call <1>claim_ai_request</1> in a loop."
+msgstr ""
+
 #: src/routes/dashboard/discover/index.tsx
 msgid "Inbox"
 msgstr ""
@@ -4014,10 +4003,6 @@ msgstr "ಇಂಡೋನೇಷಿಯನ್"
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "inferred"
 msgstr ""
-
-#: src/libs/resume/section.tsx
-msgid "Information"
-msgstr "ಮಾಹಿತಿ"
 
 #: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
 msgid "Inline"
@@ -4119,6 +4104,10 @@ msgstr "ಉದ್ಯೋಗ ವಿವರಣೆ"
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "Job description (optional)"
 msgstr "ಉದ್ಯೋಗ ವಿವರಣೆ (ಐಚ್ಛಿಕ)"
+
+#: src/features/settings/integrations/ai-features.ts
+msgid "Job evaluation"
+msgstr ""
 
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Job posting"
@@ -4375,10 +4364,6 @@ msgstr "AI ಪೂರೈಕೆದಾರರನ್ನು ಹೊಂದಿಸಲು �
 msgid "Left Align"
 msgstr "ಎಡ ಸರಿಸು"
 
-#: src/features/homepage/site-footer.tsx
-msgid "Legal"
-msgstr "ಕಾನೂನು"
-
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Legitimacy signals"
 msgstr ""
@@ -4481,9 +4466,7 @@ msgstr "ಲಿಂಕ್ ಮಾಡಿದ Reactive Resume"
 #. Authentication provider display name in account settings
 #. Brand name label for LinkedIn social sign-in button
 #: src/features/auth/components/social-auth.tsx
-#: src/features/homepage/site-footer.tsx
 #: src/features/settings/authentication/components/hooks.tsx
-#: src/routes/_home/-sections/footer.tsx
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
@@ -4531,6 +4514,10 @@ msgstr "ಪೂರೈಕೆದಾರರನ್ನು ಲೋಡ್ ಮಾಡಲಾ�
 msgid "Loading resumes…"
 msgstr "ರೆಸ್ಯೂಮ್‌ಗಳನ್ನು ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ…"
 
+#: src/features/settings/integrations/components/ai-routing-section.tsx
+msgid "Loading routes…"
+msgstr ""
+
 #: src/features/homepage/page.tsx
 msgid "Loading the playground…"
 msgstr "ಪ್ರಯೋಗಾಂಗಣ ಲೋಡ್ ಆಗುತ್ತಿದೆ…"
@@ -4539,10 +4526,6 @@ msgstr "ಪ್ರಯೋಗಾಂಗಣ ಲೋಡ್ ಆಗುತ್ತಿದೆ�
 #: src/routes/agent/-components/thread-sidebar.tsx
 msgid "Loading threads…"
 msgstr "ಥ್ರೆಡ್‌ಗಳನ್ನು ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ…"
-
-#: src/features/homepage/community-stats.tsx
-msgid "Loading total"
-msgstr "ಒಟ್ಟು ಸಂಖ್ಯೆ ಲೋಡ್ ಆಗುತ್ತಿದೆ"
 
 #: src/routes/builder/$resumeId/-components/version-history.tsx
 msgid "Loading…"
@@ -4671,6 +4654,10 @@ msgstr ""
 msgid "Match scoring failed."
 msgstr "ಹೊಂದಾಣಿಕೆ ಅಂಕೀಕರಣ ವಿಫಲವಾಗಿದೆ."
 
+#: src/features/settings/integrations/components/mcp-agent-setup-panel.tsx
+msgid "MCP server URL"
+msgstr ""
+
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "meaningful"
 msgstr ""
@@ -4708,10 +4695,6 @@ msgstr ""
 #: src/routes/agent/-components/resume-pane.tsx
 msgid "Missing working resume"
 msgstr "ಕೆಲಸದ ರೆಸ್ಯೂಮ್ ಕಾಣೆಯಾಗಿದೆ"
-
-#: src/features/homepage/site-footer.tsx
-msgid "MIT License"
-msgstr "MIT ಪರವಾನಗಿ"
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Mitigation:"
@@ -4783,6 +4766,10 @@ msgstr "ನಿಮ್ಮ ಇಮೇಲ್ ಮತ್ತು ಫೋನ್ ಸಂಖ�
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Moved to"
 msgstr "ಇದಕ್ಕೆ ಸ್ಥಳಾಂತರಿಸಲಾಗಿದೆ"
+
+#: src/features/settings/integrations/ai-features.ts
+msgid "Multi-pass evaluation of a posting against your profile."
+msgstr ""
 
 #. Placeholder text for custom link URL field in resume builder
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom-fields.tsx
@@ -5134,6 +5121,10 @@ msgstr "ಯಾವುದೇ ಕೆಲಸದ ಅನುಭವ ವಿಭಾಗ ಕ�
 msgid "Norwegian"
 msgstr "ನಾರ್ವೇಜಿಯನ್"
 
+#: src/features/settings/integrations/components/ai-routing-section.tsx
+msgid "not connected"
+msgstr ""
+
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Not connected"
 msgstr "ಸಂಪರ್ಕಗೊಂಡಿಲ್ಲ"
@@ -5217,6 +5208,10 @@ msgstr "ಆಫರ್"
 #: src/features/discovery/components/companies-view.tsx
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "ok"
+msgstr ""
+
+#: src/features/settings/integrations/components/ai-routing-section.tsx
+msgid "Oldest tested provider"
 msgstr ""
 
 #: src/features/settings/pages/api-keys.tsx
@@ -5330,9 +5325,7 @@ msgstr "ಫೈಲ್ ತೆರೆಯಲಾಗುತ್ತಿದೆ…"
 msgid "Opens in a new tab"
 msgstr "ಹೊಸ ಟ್ಯಾಬ್‌ನಲ್ಲಿ ತೆರೆಯುತ್ತದೆ"
 
-#: src/features/homepage/site-footer.tsx
 #: src/features/resume/stylesheet/editor.tsx
-#: src/routes/_home/-sections/footer.tsx
 msgid "opens in new tab"
 msgstr "ಹೊಸ ಟ್ಯಾಬ್‌ನಲ್ಲಿ ತೆರೆಯುತ್ತದೆ"
 
@@ -5385,6 +5378,10 @@ msgstr "ಮೂಲ ಟೇಬಲ್ ಫಾರ್ಮ್ಯಾಟಿಂಗ್ ಅನ
 msgid "out of 100"
 msgstr "100 ರಲ್ಲಿ"
 
+#: src/features/settings/integrations/ai-features.ts
+msgid "Outreach"
+msgstr ""
+
 #: src/features/follow-ups/components/follow-ups-view.tsx
 msgid "Overdue"
 msgstr ""
@@ -5414,6 +5411,10 @@ msgstr "ಪ್ಯಾರಾಗ್ರಾಫ್"
 #: src/components/input/rich-input.tsx
 msgid "Paragraph and heading style"
 msgstr "ಪ್ಯಾರಾಗ್ರಾಫ್ ಮತ್ತು ಶೀರ್ಷಿಕೆ ಶೈಲಿ"
+
+#: src/features/settings/integrations/ai-features.ts
+msgid "Parsing PDF and Word files into resume data."
+msgstr ""
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "partial"
@@ -5595,6 +5596,10 @@ msgstr "ಒಂದು ಸ್ವರೂಪವನ್ನು ಆರಿಸಿ ಮತ್
 msgid "Pick the bullet points the letter may cite — taken word-for-word from your linked resume, so it can't claim anything you didn't. Select at least one."
 msgstr ""
 
+#: src/features/settings/integrations/components/ai-routing-section.tsx
+msgid "Pick which provider each feature uses. Features without a route use Default; an unset Default uses the oldest tested provider."
+msgstr ""
+
 #: src/libs/resume/section.tsx
 msgid "Picture"
 msgstr "ಚಿತ್ರ"
@@ -5626,10 +5631,6 @@ msgstr ""
 #: src/features/homepage/feature-explorer.tsx
 msgid "Play data flow animation"
 msgstr "ಡೇಟಾ ಹರಿವಿನ ಅನಿಮೇಷನ್ ಚಲಾಯಿಸಿ"
-
-#: src/components/ui/donation-toast.tsx
-msgid "Please support the project"
-msgstr "ದಯವಿಟ್ಟು ಯೋಜನೆಯನ್ನು ಬೆಂಬಲಿಸಿ"
 
 #: src/features/applications/components/file-attachment-field.tsx
 msgid "Please upload a PDF file."
@@ -5763,10 +5764,6 @@ msgstr "ಪ್ರಾಥಮಿಕ ಬಣ್ಣ"
 msgid "Print or export the form to a flat PDF before sending it."
 msgstr "ಕಳುಹಿಸುವ ಮೊದಲು ಫಾರ್ಮ್ ಅನ್ನು ಫ್ಲಾಟ್ PDF ಆಗಿ ಮುದ್ರಿಸಿ ಅಥವಾ ಎಕ್ಸ್‌ಪೋರ್ಟ್ ಮಾಡಿ."
 
-#: src/features/homepage/site-footer.tsx
-msgid "Privacy Policy"
-msgstr "ಗೌಪ್ಯತಾ ನೀತಿ"
-
 #: src/features/homepage/feature-explorer.tsx
 msgid "Private"
 msgstr "ಖಾಸಗಿ"
@@ -5841,6 +5838,14 @@ msgstr "ಪೂರೈಕೆದಾರರ ಸಂಪರ್ಕವನ್ನು ಪರ�
 msgid "Provider model"
 msgstr "ಪೂರೈಕೆದಾರ ಮಾದರಿ"
 
+#: src/features/settings/integrations/components/ai-routing-section.tsx
+msgid "Provider removed, using default"
+msgstr ""
+
+#: src/features/settings/integrations/components/ai-routing-section.tsx
+msgid "Provider unavailable, using default"
+msgstr ""
+
 #: src/features/homepage/feature-explorer.tsx
 msgid "Public"
 msgstr "ಸಾರ್ವಜನಿಕ"
@@ -5858,6 +5863,10 @@ msgstr "ಪ್ರಕಾಶಕರು"
 #: src/features/ats-checker/messages.ts
 msgid "Put a plain email address near the top of the first page. It is what most systems file you under."
 msgstr "ಸರಳ ಇಮೇಲ್ ವಿಳಾಸವನ್ನು ಮೊದಲ ಪುಟದ ಮೇಲ್ಭಾಗದ ಬಳಿ ಇರಿಸಿ. ಹೆಚ್ಚಿನ ಸಿಸ್ಟಂಗಳು ಇದರಡಿಯಲ್ಲಿಯೇ ನಿಮ್ಮನ್ನು ಫೈಲ್ ಮಾಡುತ್ತವೆ."
+
+#: src/features/settings/integrations/ai-features.ts
+msgid "Qualitative review of the text extracted from a resume."
+msgstr ""
 
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Quick match"
@@ -5911,14 +5920,6 @@ msgstr "Reactive Resume - ಮುಖ್ಯ ಪುಟಕ್ಕೆ ಹೋಗಿ"
 #: src/dialogs/resume/import.tsx
 msgid "Reactive Resume (JSON)"
 msgstr "ರಿಯಾಕ್ಟಿವ್ ರೆಸ್ಯೂಮೇ (JSON)"
-
-#: src/features/homepage/page.tsx
-msgid "Reactive Resume is free and open source. Amruth and a community of contributors keep it running. If you’d like to support the work, donations help cover hosting and development."
-msgstr "Reactive Resume ಉಚಿತ ಮತ್ತು ಮುಕ್ತ ಮೂಲದ್ದು. ಅಮೃತ್ ಮತ್ತು ಕೊಡುಗೆದಾರರ ಸಮುದಾಯ ಇದನ್ನು ನಡೆಸಿಕೊಂಡು ಬರುತ್ತಿದೆ. ಈ ಕೆಲಸಕ್ಕೆ ಬೆಂಬಲ ನೀಡಲು ಬಯಸಿದರೆ, ದೇಣಿಗೆಗಳು ಹೋಸ್ಟಿಂಗ್ ಮತ್ತು ಅಭಿವೃದ್ಧಿಯ ವೆಚ್ಚ ಭರಿಸಲು ನೆರವಾಗುತ್ತವೆ."
-
-#: src/components/ui/donation-toast.tsx
-msgid "Reactive Resume is free and open source. If it has helped you, please consider donating."
-msgstr "ರಿಯಾಕ್ಟಿವ್ ರೆಸ್ಯೂಮ್ ಉಚಿತ ಮತ್ತು ಮುಕ್ತ ಮೂಲವಾಗಿದೆ. ಇದು ನಿಮಗೆ ಸಹಾಯ ಮಾಡಿದ್ದರೆ, ದಯವಿಟ್ಟು ದಾನ ಮಾಡುವುದನ್ನು ಪರಿಗಣಿಸಿ."
 
 #. App version label in footer; includes semantic version variable
 #: src/components/ui/copyright.tsx
@@ -6011,6 +6012,10 @@ msgstr "ಸ್ವೀಕೃತದಾರ"
 
 #: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
 msgid "Recipient (optional)"
+msgstr ""
+
+#: src/features/settings/integrations/ai-features.ts
+msgid "Recruiter messages and follow-up drafts."
 msgstr ""
 
 #: src/components/level/combobox.tsx
@@ -6182,19 +6187,6 @@ msgstr "ಲಗತ್ತಿಸಲಾದ ಕವರ್ ಲೆಟರ್ ಅನ್ನ
 msgid "Reply follow-up"
 msgstr ""
 
-#: src/features/homepage/page.tsx
-msgid "Report a bug"
-msgstr "ದೋಷ ವರದಿ ಮಾಡಿ"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-msgid "Report a Bug"
-msgstr "ದೋಷವನ್ನು ವರದಿ ಮಾಡಿ"
-
-#: src/features/homepage/site-footer.tsx
-#: src/routes/_home/-sections/footer.tsx
-msgid "Report an issue"
-msgstr "ಪ್ರಶ್ನೆಯನ್ನು ವರದಿ ಮಾಡಿ"
-
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Reports to"
 msgstr ""
@@ -6296,6 +6288,10 @@ msgstr "ರೆಸ್ಯೂಮ್ ಸಂಪಾದನೆ"
 msgid "Resume file"
 msgstr "ರೆಸ್ಯೂಮ್ ಫೈಲ್"
 
+#: src/features/settings/integrations/ai-features.ts
+msgid "Resume import"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-components/dock.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
 msgid "Resume link copied to clipboard."
@@ -6332,7 +6328,6 @@ msgstr ""
 
 #: src/features/command-palette/pages/navigation.tsx
 #: src/features/command-palette/pages/resumes.tsx
-#: src/features/homepage/community-stats.tsx
 #: src/features/homepage/languages-showcase.tsx
 #: src/routes/dashboard/-components/sidebar.tsx
 #: src/routes/dashboard/resumes/index.tsx
@@ -6457,6 +6452,10 @@ msgstr "ರೊಮೇನಿಯನ್"
 msgid "Rotation"
 msgstr "ಭ್ರಮನ"
 
+#: src/features/settings/integrations/components/ai-routing-section.tsx
+msgid "Routing"
+msgstr ""
+
 #: src/features/discovery/components/inbox-view.tsx
 msgid "Run a scan, or loosen the title and location filters in Settings."
 msgstr ""
@@ -6540,6 +6539,10 @@ msgstr "ಉಳಿಸಿ"
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Save & Test Provider"
 msgstr "ಉಳಿಸಿ ಮತ್ತು ಪರೀಕ್ಷಿಸಿ ಪೂರೈಕೆದಾರ"
+
+#: src/features/settings/integrations/components/mcp-agent-setup-panel.tsx
+msgid "Save & Test waits up to 90 seconds for the agent to answer. Keep the agent serving whenever you use AI features routed to it."
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Save an unprotected copy, with no password and no permissions restrictions."
@@ -6845,6 +6848,14 @@ msgstr "ಸರ್ಬಿಯನ್"
 #: src/features/homepage/resume-sculpture.tsx
 msgid "Serif"
 msgstr "Serif"
+
+#: src/features/settings/integrations/components/mcp-agent-setup-panel.tsx
+msgid "Serve this provider from your own agent"
+msgstr ""
+
+#: src/features/settings/integrations/components/ai-section.tsx
+msgid "Served by an MCP client connected to"
+msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
 msgid "Set a password if you want only people who know it to open the public URL."
@@ -7169,10 +7180,6 @@ msgstr "ಕೆಲವು ಪಠ್ಯ ಪುಟದ ಹೊರಗೆ ಬೀಳು�
 msgid "Some text is rotated."
 msgstr "ಕೆಲವು ಪಠ್ಯ ತಿರುಗಿಸಲ್ಪಟ್ಟಿದೆ."
 
-#: src/features/homepage/community-stats.tsx
-msgid "Some totals are unavailable right now."
-msgstr "ಕೆಲವು ಒಟ್ಟು ಸಂಖ್ಯೆಗಳು ಸದ್ಯಕ್ಕೆ ಲಭ್ಯವಿಲ್ಲ."
-
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Something else…"
 msgstr "ಬೇರೇನಾದರೂ…"
@@ -7224,12 +7231,6 @@ msgstr "ಇದರ ಪ್ರಕಾರ ವಿಂಗಡಿಸಿ…"
 msgid "Source"
 msgstr "ಮೂಲ"
 
-#: src/features/homepage/site-footer.tsx
-#: src/routes/_home/-sections/footer.tsx
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-msgid "Source Code"
-msgstr "ಮೂಲ ಕೋಡ್"
-
 #: src/features/stories/components/story-editor-dialog.tsx
 msgid "Source resume"
 msgstr ""
@@ -7259,10 +7260,6 @@ msgstr "ಸ್ಪ್ಯಾನಿಷ್"
 msgid "Spell the month, as in \"Mar 2022\"."
 msgstr "\"Mar 2022\" ರಂತೆ ತಿಂಗಳ ಹೆಸರನ್ನು ಬರೆಯಿರಿ."
 
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-msgid "Sponsors"
-msgstr "ಪ್ರಾಯೋಜಕರು"
-
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Sponsors visas"
 msgstr ""
@@ -7270,11 +7267,6 @@ msgstr ""
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Sponsorship unstated"
 msgstr ""
-
-#: src/features/homepage/site-footer.tsx
-#: src/routes/_home/-sections/footer.tsx
-msgid "Sponsorships"
-msgstr "ಪ್ರಾಯೋಜಕತ್ವಗಳು"
 
 #: src/features/homepage/resume-sculpture.tsx
 msgid "Spread pages"
@@ -7298,15 +7290,6 @@ msgstr "ಹಂತ"
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Stage date"
 msgstr "ಹಂತದ ದಿನಾಂಕ"
-
-#: src/components/input/github-stars-button.tsx
-msgid "Star us on GitHub (opens in new tab)"
-msgstr "GitHub ನಲ್ಲಿ ನಮಗೆ ಸ್ಟಾರ್ ನೀಡಿ (ಹೊಸ ಟ್ಯಾಬ್‌ನಲ್ಲಿ ತೆರೆಯುತ್ತದೆ)"
-
-#. placeholder {0}: starCount.toLocaleString()
-#: src/components/input/github-stars-button.tsx
-msgid "Star us on GitHub, currently {0} stars (opens in new tab)"
-msgstr "GitHub ನಲ್ಲಿ ನಮಗೆ ಸ್ಟಾರ್ ನೀಡಿ, ಪ್ರಸ್ತುತ {0} ಸ್ಟಾರ್‌ಗಳು आहेत (ಹೊಸ ಟ್ಯಾಬ್‌ನಲ್ಲಿ ತೆರೆಯುತ್ತದೆ)"
 
 #: src/routes/agent/$threadId.tsx
 msgid "Start a new thread"
@@ -7406,6 +7389,7 @@ msgid "Story added to your bank."
 msgstr ""
 
 #: src/features/command-palette/pages/navigation.tsx
+#: src/features/settings/integrations/ai-features.ts
 msgid "Story bank"
 msgstr ""
 
@@ -7465,11 +7449,6 @@ msgstr "ಸ್ಟೈಲಿಂಗ್ ಮತ್ತು ಕಳುಹಿಸುವವ�
 msgid "Styling and sender details refreshed from the selected resume."
 msgstr "ಆಯ್ಕೆಮಾಡಿದ ರೆಸ್ಯೂಮ್‌ನಿಂದ ಸ್ಟೈಲಿಂಗ್ ಮತ್ತು ಕಳುಹಿಸುವವರ ವಿವರಗಳನ್ನು ರಿಫ್ರೆಶ್ ಮಾಡಲಾಗಿದೆ."
 
-#: src/features/homepage/site-footer.tsx
-#: src/routes/_home/-sections/footer.tsx
-msgid "Subreddit"
-msgstr "ಸಬ್‌ರೆಡಿಟ್"
-
 #: src/routes/dashboard/interviews/index.tsx
 msgid "Suggest from resume"
 msgstr ""
@@ -7486,6 +7465,10 @@ msgstr ""
 msgid "Suggested"
 msgstr ""
 
+#: src/features/settings/integrations/ai-features.ts
+msgid "Suggesting interview stories from a resume."
+msgstr ""
+
 #: src/features/ats-checker/ai-review/ai-review-results.tsx
 msgid "Suggestions"
 msgstr "ಸಲಹೆಗಳು"
@@ -7499,14 +7482,6 @@ msgstr "ಸಲಹೆಗಳು"
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 msgid "Summary"
 msgstr "ಸಾರಾಂಶ"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-msgid "Support the app by doing what you can!"
-msgstr "ನೀವು ಮಾಡಬಹುದಾದುದನ್ನು ಮಾಡಿ ಆ್ಯಪ್ ಅನ್ನು ಬೆಂಬಲಿಸಿ!"
-
-#: src/features/homepage/page.tsx
-msgid "Support the project"
-msgstr "ಯೋಜನೆಗೆ ಬೆಂಬಲ ನೀಡಿ"
 
 #: src/features/evaluations/components/evaluation-panel.tsx
 msgid "Supported by your resume"
@@ -7569,6 +7544,10 @@ msgstr ""
 msgid "Tailor this resume to a product manager job description, and emphasize roadmap ownership, stakeholder communication, and measurable launch outcomes."
 msgstr "ಉತ್ಪನ್ನ ವ್ಯವಸ್ಥಾಪಕ ಉದ್ಯೋಗ ವಿವರಣೆಗೆ ತಕ್ಕಂತೆ ಈ ರೆಸ್ಯೂಮ್ ಅನ್ನು ಹೊಂದಿಸಿ, ಮತ್ತು ರೋಡ್‌ಮ್ಯಾಪ್ ಜವಾಬ್ದಾರಿ, ಪಾಲುದಾರರ ಸಂವಹನ ಹಾಗೂ ಅಳೆಯಬಹುದಾದ ಬಿಡುಗಡೆ ಫಲಿತಾಂಶಗಳಿಗೆ ಒತ್ತು ನೀಡಿ."
 
+#: src/features/settings/integrations/ai-features.ts
+msgid "Tailored resume copies and their bullet audit."
+msgstr ""
+
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Tailored resume discarded — the source resume is linked again."
 msgstr ""
@@ -7578,6 +7557,7 @@ msgid "Tailored resumes"
 msgstr ""
 
 #: src/features/applications/components/application-detail-sheet.tsx
+#: src/features/settings/integrations/ai-features.ts
 msgid "Tailoring"
 msgstr ""
 
@@ -7669,10 +7649,6 @@ msgstr "ಪಠ್ಯವು ಹೆಡರ್ ಅಥವಾ ಫುಟರ್ ಪ್�
 #: src/libs/locale.ts
 msgid "Thai"
 msgstr "ಥಾಯ್"
-
-#: src/features/homepage/page.tsx
-msgid "Thank you for helping keep it free."
-msgstr "ಇದನ್ನು ಉಚಿತವಾಗಿ ಉಳಿಸಲು ನೆರವಾದದ್ದಕ್ಕೆ ಧನ್ಯವಾದಗಳು."
 
 #: src/features/follow-ups/components/follow-ups-view.tsx
 msgid "Thank-you note"
@@ -7924,10 +7900,6 @@ msgstr "ಥೀಮ್"
 #: src/dialogs/auth/enable-two-factor.tsx
 msgid "Then, enter the 6 digit code that the app provides to continue."
 msgstr "ನಂತರ, ಆ್ಯಪ್ ನೀಡುವ 6 ಅಂಕಿಯ ಕೋಡ್ ಅನ್ನು ನಮೂದಿಸಿ."
-
-#: src/features/homepage/page.tsx
-msgid "There are other ways to pitch in."
-msgstr "ಕೈಜೋಡಿಸಲು ಬೇರೆ ದಾರಿಗಳೂ ಇವೆ."
 
 #: src/features/ats-checker/messages.ts
 msgid "There is a gap between two dated roles."
@@ -8327,14 +8299,6 @@ msgstr ""
 msgid "Topics this story answers best — \"conflict\", \"scaling\"…"
 msgstr ""
 
-#: src/features/homepage/community-stats.tsx
-msgid "Total unavailable"
-msgstr "ಒಟ್ಟು ಸಂಖ್ಯೆ ಲಭ್ಯವಿಲ್ಲ"
-
-#: src/features/homepage/community-stats.tsx
-msgid "Totals are refreshed periodically."
-msgstr "ಒಟ್ಟು ಸಂಖ್ಯೆಗಳು ಆಗಾಗ ನವೀಕರಣಗೊಳ್ಳುತ್ತವೆ."
-
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Track a job you're applying to and link the resume you sent."
 msgstr "ನೀವು ಅರ್ಜಿ ಸಲ್ಲಿಸುತ್ತಿರುವ ಉದ್ಯೋಗವನ್ನು ಟ್ರ್ಯಾಕ್ ಮಾಡಿ ಮತ್ತು ಕಳುಹಿಸಿದ ರೆಸ್ಯೂಮೆಯನ್ನು ಲಿಂಕ್ ಮಾಡಿ."
@@ -8346,16 +8310,6 @@ msgstr "ನಿಮ್ಮ ಮೊದಲ ಅರ್ಜಿಯನ್ನು ಟ್ರ್
 #: src/routes/builder/$resumeId/-sidebar/right/sections/statistics.tsx
 msgid "Track your resume's views and downloads"
 msgstr "ನಿಮ್ಮ ರೆಸ್ಯೂಮ್‌ನ ವೀಕ್ಷಣೆಗಳು ಮತ್ತು ಡೌನ್‌ಲೋಡ್‌ಗಳನ್ನು ಟ್ರ್ಯಾಕ್ ಮಾಡಿ"
-
-#: src/features/homepage/page.tsx
-msgid "Translate the app"
-msgstr "ಆ್ಯಪ್ ಅನುವಾದಿಸಿ"
-
-#: src/features/homepage/site-footer.tsx
-#: src/routes/_home/-sections/footer.tsx
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-msgid "Translations"
-msgstr "ಅನುವಾದಗಳು"
 
 #: src/components/layout/error-screen.tsx
 #: src/features/cover-letters/guided/guided-cover-letter-wizard.tsx
@@ -8717,6 +8671,10 @@ msgstr "6 ಮತ್ತು 64 ಅಕ್ಷರಗಳ ನಡುವೆ ಬಳಸಿ.
 msgid "Use color {color}"
 msgstr "{color} ಬಣ್ಣವನ್ನು ಬಳಸಿ"
 
+#: src/features/settings/integrations/components/ai-routing-section.tsx
+msgid "Use default"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Use plain headings such as \"Experience\", \"Education\" and \"Skills\"."
 msgstr "\"Experience\", \"Education\" ಮತ್ತು \"Skills\" ನಂತಹ ಸರಳ ಶೀರ್ಷಿಕೆಗಳನ್ನು ಬಳಸಿ."
@@ -8726,8 +8684,8 @@ msgid "Use sample"
 msgstr "ಮಾದರಿ ಬಳಸಿ"
 
 #: src/features/homepage/languages-showcase.tsx
-msgid "Use the app in a language you’re comfortable with. Try a few of the translations made by the community."
-msgstr "ನಿಮಗೆ ಅನುಕೂಲವಾದ ಭಾಷೆಯಲ್ಲಿ ಆ್ಯಪ್ ಬಳಸಿ. ಸಮುದಾಯ ಮಾಡಿದ ಕೆಲವು ಅನುವಾದಗಳನ್ನು ಪ್ರಯತ್ನಿಸಿ ನೋಡಿ."
+msgid "Use the app in a language you’re comfortable with. Pick one of the available translations."
+msgstr ""
 
 #: src/features/homepage/feature-explorer.tsx
 msgid "Use this wording"
@@ -8736,6 +8694,10 @@ msgstr "ಈ ಪದಗಳನ್ನು ಬಳಸಿ"
 #: src/features/ats-checker/messages.ts
 msgid "Use your editor's normal bullet list, so stray glyphs do not land mid-sentence."
 msgstr "ನಿಮ್ಮ ಎಡಿಟರ್‌ನ ಸಾಮಾನ್ಯ ಬುಲೆಟ್ ಪಟ್ಟಿ ಬಳಸಿ, ಇದರಿಂದ ಅಲೆದಾಡುವ ಗ್ಲಿಫ್‌ಗಳು ವಾಕ್ಯದ ಮಧ್ಯದಲ್ಲಿ ಬೀಳುವುದಿಲ್ಲ."
+
+#: src/features/settings/integrations/ai-features.ts
+msgid "Used by every feature without a route of its own."
+msgstr ""
 
 #: src/features/homepage/export-playground.tsx
 #: src/features/homepage/resume-sculpture.tsx
@@ -8762,10 +8724,6 @@ msgstr ""
 #: src/features/settings/pages/profile.tsx
 msgid "Username"
 msgstr "ಬಳಕೆದಾರರ ಹೆಸರು"
-
-#: src/features/homepage/community-stats.tsx
-msgid "Users"
-msgstr "ಬಳಕೆದಾರರು"
 
 #: src/features/homepage/export-playground.tsx
 msgid "Uses the name, template, color, and type you chose above."
@@ -9127,11 +9085,6 @@ msgstr "https:// ಸೇರಿದಂತೆ ಪೂರ್ಣ ವಿಳಾಸವನ�
 msgid "Writing"
 msgstr "ಬರವಣಿಗೆ"
 
-#: src/features/homepage/site-footer.tsx
-#: src/routes/_home/-sections/footer.tsx
-msgid "X (Twitter)"
-msgstr "ಎಕ್ಸ್ (ಟ್ವಿಟರ್)"
-
 #: src/features/auth/pages/login.tsx
 msgid "You can also sign in with your username."
 msgstr "ನಿಮ್ಮ ಬಳಕೆದಾರರ ಹೆಸರಿನಿಂದಲೂ ಸೈನ್ ಇನ್ ಮಾಡಬಹುದು."
@@ -9159,10 +9112,6 @@ msgstr ""
 #: src/dialogs/resume/import.tsx
 msgid "You'll be taken to the Integrations page. The file you selected won't be imported."
 msgstr "ನಿಮ್ಮನ್ನು ಇಂಟಿಗ್ರೇಷನ್‌ಗಳ ಪುಟಕ್ಕೆ ಕರೆದೊಯ್ಯಲಾಗುತ್ತದೆ. "
-
-#: src/features/homepage/community-stats.tsx
-msgid "You’re in good company."
-msgstr "ನಿಮ್ಮ ಜೊತೆ ಬಹಳಷ್ಟು ಮಂದಿ ಇದ್ದಾರೆ."
 
 #: src/features/auth/pages/forgot-password.tsx
 #: src/features/auth/pages/register.tsx

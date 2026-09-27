@@ -95,6 +95,9 @@ describe("tool annotations", () => {
 			MCP_TOOL_NAME.duplicateCoverLetter,
 			MCP_TOOL_NAME.copyEmbeddedCoverLetter,
 			MCP_TOOL_NAME.importCoverLetter,
+			MCP_TOOL_NAME.claimAiRequest,
+			MCP_TOOL_NAME.completeAiRequest,
+			MCP_TOOL_NAME.failAiRequest,
 		]) {
 			const annotations = TOOL_META[name].annotations;
 			expect(annotations.readOnlyHint, name).toBe(false);
