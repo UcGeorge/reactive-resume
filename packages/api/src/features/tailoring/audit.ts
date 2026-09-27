@@ -5,8 +5,7 @@ import z from "zod";
 import { hmAuditSystemPrompt } from "@reactive-resume/ai/prompts";
 import { htmlToMarkdown } from "@reactive-resume/resume/markdown";
 import { generateJson } from "../ai/generate-json";
-import { getModel } from "../ai/service";
-import { aiProvidersService } from "../ai-providers/service";
+import { resolveModelForFeature } from "../ai/resolve-model";
 import { resumeService } from "../resume/service";
 import { tailoringService } from "./service";
 
@@ -75,18 +74,7 @@ export async function runHmAudit(input: {
 		throw new ORPCError("BAD_REQUEST", { message: "Only a completed tailoring run can be audited." });
 	}
 
-	const provider = await aiProvidersService.getDefaultRunnable({ userId: input.userId });
-	if (!provider) {
-		throw new ORPCError("BAD_REQUEST", {
-			message: "No AI provider is configured. Add one in Settings → Integrations to use AI features.",
-		});
-	}
-	const model = getModel({
-		provider: provider.provider,
-		model: provider.model,
-		apiKey: provider.apiKey,
-		...(provider.baseURL ? { baseURL: provider.baseURL } : {}),
-	});
+	const { model } = await resolveModelForFeature(input.userId, "tailoring");
 
 	const tailored = await resumeService.getById({ id: run.tailoredResumeId, userId: input.userId });
 	const bullets = collectAuditBullets(tailored.data);

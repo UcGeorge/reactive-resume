@@ -1,8 +1,6 @@
 import type { FollowUpKind } from "@reactive-resume/schema/career/data";
-import { ORPCError } from "@orpc/client";
 import { generateText } from "ai";
-import { getModel } from "../ai/service";
-import { aiProvidersService } from "../ai-providers/service";
+import { resolveModelForFeature } from "../ai/resolve-model";
 import { evaluationsService } from "../evaluations/service";
 
 type DraftApplication = {
@@ -31,18 +29,7 @@ export async function draftFollowUpText(input: {
 	application: DraftApplication;
 	followUp: DraftFollowUp;
 }): Promise<string> {
-	const provider = await aiProvidersService.getDefaultRunnable({ userId: input.userId });
-	if (!provider) {
-		throw new ORPCError("BAD_REQUEST", {
-			message: "No AI provider is configured. Add one in Settings → Integrations to use AI features.",
-		});
-	}
-	const model = getModel({
-		provider: provider.provider,
-		model: provider.model,
-		apiKey: provider.apiKey,
-		...(provider.baseURL ? { baseURL: provider.baseURL } : {}),
-	});
+	const { model } = await resolveModelForFeature(input.userId, "outreach");
 
 	const profile = await evaluationsService.getCareerProfile({ userId: input.userId });
 	const daysSinceApplied = Math.max(0, Math.floor((Date.now() - input.application.appliedAt.getTime()) / 86_400_000));

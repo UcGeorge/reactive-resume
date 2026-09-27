@@ -24,8 +24,7 @@ import {
 	riskLevelSchema,
 } from "@reactive-resume/schema/career/data";
 import { generateJson } from "../ai/generate-json";
-import { getModel } from "../ai/service";
-import { aiProvidersService } from "../ai-providers/service";
+import { resolveRunnableForFeature, runnableToModel } from "../ai/resolve-model";
 import { applicationService } from "../applications/service";
 import { resumeService } from "../resume/service";
 import { evaluationsService } from "./service";
@@ -191,15 +190,10 @@ async function resolveDefaultModel(userId: string): Promise<{
 	provider: string;
 	modelId: string;
 } | null> {
-	const provider = await aiProvidersService.getDefaultRunnable({ userId });
+	const provider = await resolveRunnableForFeature(userId, "evaluation");
 	if (!provider) return null;
 	return {
-		model: getModel({
-			provider: provider.provider,
-			model: provider.model,
-			apiKey: provider.apiKey,
-			...(provider.baseURL ? { baseURL: provider.baseURL } : {}),
-		}),
+		model: runnableToModel(provider),
 		provider: provider.provider,
 		modelId: provider.model,
 	};

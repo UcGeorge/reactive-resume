@@ -53,6 +53,98 @@ export const aiProvider = pg.pgTable(
 	],
 );
 
+export type AiRequestStatus = "queued" | "claimed" | "completed" | "failed" | "canceled";
+export type AiRequestKind = "generate" | "test";
+/** A file attached to a queued request; `data` is base64. */
+export type AiRequestFile = { mediaType: string; filename?: string; data: string };
+export type AiRequestMessage = {
+	role: "user" | "assistant" | "tool";
+	content: Record<string, unknown>[];
+};
+/** The serialised language-model call a connected agent answers. */
+export type AiRequestPayload = {
+	system?: string;
+	messages: AiRequestMessage[];
+	tools?: {
+		name: string;
+		description?: string;
+		inputSchema: unknown;
+		inputExamples?: { input: Record<string, unknown> }[];
+	}[];
+	toolChoice?: { type: "auto" | "none" | "required" } | { type: "tool"; toolName: string };
+	responseFormat?: { type: "text" } | { type: "json"; schema?: unknown; name?: string; description?: string };
+	files?: AiRequestFile[];
+	maxOutputTokens?: number;
+};
+export type AiRequestResult = {
+	text?: string;
+	toolCalls?: { toolName: string; input: Record<string, unknown> }[];
+};
+
+// Inference requests queued for a "Connected agent (MCP)" provider. The requesting feature
+// inserts a row and polls it; an MCP client claims the row, answers with its own model and
+// completes it. Rows are per user and cleaned up opportunistically once they are terminal.
+export const aiRequest = pg.pgTable(
+	"ai_requests",
+	{
+		id: pg
+			.text("id")
+			.notNull()
+			.primaryKey()
+			.$defaultFn(() => generateId()),
+		userId: pg
+			.text("user_id")
+			.notNull()
+			.references(() => user.id, { onDelete: "cascade" }),
+		aiProviderId: pg
+			.text("ai_provider_id")
+			.notNull()
+			.references(() => aiProvider.id, { onDelete: "cascade" }),
+		status: pg.text("status").notNull().default("queued").$type<AiRequestStatus>(),
+		kind: pg.text("kind").notNull().default("generate").$type<AiRequestKind>(),
+		request: pg.jsonb("request").notNull().$type<AiRequestPayload>(),
+		result: pg.jsonb("result").$type<AiRequestResult>(),
+		error: pg.text("error"),
+		claimedAt: pg.timestamp("claimed_at", { withTimezone: true }),
+		leaseExpiresAt: pg.timestamp("lease_expires_at", { withTimezone: true }),
+		completedAt: pg.timestamp("completed_at", { withTimezone: true }),
+		createdAt: pg.timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+		updatedAt: pg
+			.timestamp("updated_at", { withTimezone: true })
+			.notNull()
+			.defaultNow()
+			.$onUpdate(() => /* @__PURE__ */ new Date()),
+	},
+	(t) => [pg.index().on(t.userId, t.status, t.createdAt), pg.index().on(t.aiProviderId, t.status)],
+);
+
+// Which saved provider each AI feature uses. `feature` is one of the values in
+// `AI_FEATURES` (@reactive-resume/ai/types), validated at the API layer. A provider that is
+// deleted leaves the row behind with a null provider so the UI can say "removed".
+export const aiProviderRoute = pg.pgTable(
+	"ai_provider_routes",
+	{
+		id: pg
+			.text("id")
+			.notNull()
+			.primaryKey()
+			.$defaultFn(() => generateId()),
+		userId: pg
+			.text("user_id")
+			.notNull()
+			.references(() => user.id, { onDelete: "cascade" }),
+		feature: pg.text("feature").notNull(),
+		aiProviderId: pg.text("ai_provider_id").references(() => aiProvider.id, { onDelete: "set null" }),
+		createdAt: pg.timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+		updatedAt: pg
+			.timestamp("updated_at", { withTimezone: true })
+			.notNull()
+			.defaultNow()
+			.$onUpdate(() => /* @__PURE__ */ new Date()),
+	},
+	(t) => [pg.uniqueIndex().on(t.userId, t.feature)],
+);
+
 export const agentThread = pg.pgTable(
 	"agent_threads",
 	{

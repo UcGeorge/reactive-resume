@@ -1,7 +1,9 @@
+import type { AiProviderRouteStatus } from "./routing";
 import type { AiProviderResponse } from "./service";
 import { ORPCError } from "@orpc/client";
 import { type } from "@orpc/server";
 import z from "zod";
+import { aiFeatureSchema } from "@reactive-resume/ai/types";
 import { protectedProcedure } from "../../context";
 import { aiRequestRateLimit } from "../../middleware/rate-limit";
 import { providerInput, updateProviderInput } from "./inputs";
@@ -54,7 +56,7 @@ export const aiProvidersRouter = {
 					provider: input.provider,
 					model: input.model,
 					...(input.baseURL !== undefined ? { baseURL: input.baseURL } : {}),
-					apiKey: input.apiKey,
+					...(input.apiKey !== undefined ? { apiKey: input.apiKey } : {}),
 				});
 			} catch (error) {
 				if (isInvalidAiBaseUrl(error)) throwInvalidProviderConfig();
@@ -140,4 +142,45 @@ export const aiProvidersRouter = {
 				throw new ORPCError("BAD_GATEWAY", { message: "Could not reach the AI provider." });
 			}
 		}),
+
+	routes: {
+		list: protectedProcedure
+			.route({
+				method: "GET",
+				path: "/ai-providers/routes",
+				tags: ["AI Providers"],
+				operationId: "listAiProviderRoutes",
+				summary: "List per-feature provider routes",
+				description:
+					"One row per AI feature: the provider assigned to it, whether that provider can currently run, and the provider the feature effectively resolves to (feature route, then the Default route, then the oldest tested provider).",
+			})
+			.output(type<AiProviderRouteStatus[]>())
+			.errors({
+				PRECONDITION_FAILED: { message: "AI agent workspace is not configured.", status: 412 },
+			})
+			.handler(({ context }) => aiProvidersService.routes.list({ userId: context.user.id })),
+
+		set: protectedProcedure
+			.route({
+				method: "PUT",
+				path: "/ai-providers/routes/{feature}",
+				tags: ["AI Providers"],
+				operationId: "setAiProviderRoute",
+				summary: "Route a feature to a provider",
+				description: "Assigns a saved provider to an AI feature, or clears the route with a null provider id.",
+			})
+			.input(z.object({ feature: aiFeatureSchema, aiProviderId: z.string().nullable() }))
+			.output(type<AiProviderRouteStatus[]>())
+			.errors({
+				NOT_FOUND: { message: "AI provider was not found.", status: 404 },
+				PRECONDITION_FAILED: { message: "AI agent workspace is not configured.", status: 412 },
+			})
+			.handler(({ context, input }) =>
+				aiProvidersService.routes.set({
+					userId: context.user.id,
+					feature: input.feature,
+					aiProviderId: input.aiProviderId,
+				}),
+			),
+	},
 };

@@ -87,6 +87,10 @@ export const env = createEnv({
 		// AI Agent Workspace (optional until the agent feature is used)
 		REDIS_URL: z.url({ protocol: /redis(s)?/ }).optional(),
 		ENCRYPTION_SECRET: z.string().min(32, "ENCRYPTION_SECRET must be at least 32 characters").optional(),
+		// Connected agent (MCP) providers: how long a queued inference request waits for an agent
+		// to claim it, and how long the provider Test button waits for the agent's answer.
+		AI_AGENT_REQUEST_TIMEOUT_MS: z.coerce.number().int().positive().max(2_147_483_647).default(120_000),
+		AI_AGENT_TEST_TIMEOUT_MS: z.coerce.number().int().positive().max(2_147_483_647).default(90_000),
 
 		// Feature Flags
 		FLAG_DISABLE_SIGNUPS: z.stringbool().default(false),

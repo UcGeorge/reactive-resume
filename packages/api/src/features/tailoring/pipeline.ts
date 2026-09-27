@@ -14,8 +14,7 @@ import { applyResumePatches } from "@reactive-resume/resume/patch";
 import { tailoringOperationSchema } from "@reactive-resume/schema/career/data";
 import { generateId, slugify } from "@reactive-resume/utils/string";
 import { generateJson } from "../ai/generate-json";
-import { getModel } from "../ai/service";
-import { aiProvidersService } from "../ai-providers/service";
+import { resolveModelForFeature } from "../ai/resolve-model";
 import { applicationService } from "../applications/service";
 import { evaluationsService } from "../evaluations/service";
 import { resumeService } from "../resume/service";
@@ -46,18 +45,7 @@ const planOutput = z.object({
 const TAILORING_PLAN_BUDGET_MS = process.env.VERCEL === "1" ? 240 * 1000 : 10 * 60 * 1000;
 
 async function resolveModel(userId: string): Promise<LanguageModel> {
-	const provider = await aiProvidersService.getDefaultRunnable({ userId });
-	if (!provider) {
-		throw new ORPCError("BAD_REQUEST", {
-			message: "No AI provider is configured. Add one in Settings → Integrations to use AI features.",
-		});
-	}
-	return getModel({
-		provider: provider.provider,
-		model: provider.model,
-		apiKey: provider.apiKey,
-		...(provider.baseURL ? { baseURL: provider.baseURL } : {}),
-	});
+	return (await resolveModelForFeature(userId, "tailoring")).model;
 }
 
 async function latestCompleteEvaluation(userId: string, applicationId: string) {

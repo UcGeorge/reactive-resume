@@ -17,11 +17,33 @@ const AI_PROVIDERS = [
 	"perplexity",
 	"ollama",
 	"openai-compatible",
+	// Served by an MCP client (Claude Code, Codex, ...) that claims queued requests and answers
+	// them with its own model; no API key or base URL.
+	"mcp-agent",
 ] as const;
 
 export type AIProvider = (typeof AI_PROVIDERS)[number];
 
 export const aiProviderSchema = z.enum(AI_PROVIDERS);
+
+// Every place the app calls a language model, grouped as users recognise them. Each feature can
+// be routed to a saved provider; `default` is the explicit fallback for unrouted features.
+export const AI_FEATURES = [
+	"default",
+	"chat",
+	"import",
+	"ats-review",
+	"autofill",
+	"evaluation",
+	"tailoring",
+	"cover-letter",
+	"outreach",
+	"stories",
+] as const;
+
+export type AiFeature = (typeof AI_FEATURES)[number];
+
+export const aiFeatureSchema = z.enum(AI_FEATURES);
 
 export const AI_PROVIDER_DEFAULT_BASE_URLS: Record<AIProvider, string> = {
 	openai: "https://api.openai.com/v1",
@@ -40,6 +62,7 @@ export const AI_PROVIDER_DEFAULT_BASE_URLS: Record<AIProvider, string> = {
 	perplexity: "https://api.perplexity.ai",
 	ollama: "https://ollama.com/api",
 	"openai-compatible": "",
+	"mcp-agent": "",
 };
 
 // Brand names, used when a message has to name the provider outside a translated UI string. Every
@@ -61,4 +84,5 @@ export const AI_PROVIDER_DISPLAY_NAMES: Record<AIProvider, string> = {
 	perplexity: "Perplexity",
 	ollama: "Ollama",
 	"openai-compatible": "The provider",
+	"mcp-agent": "Connected agent (MCP)",
 };

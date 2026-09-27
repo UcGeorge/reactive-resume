@@ -1,6 +1,7 @@
 import { agentRouter } from "../features/agent/router";
 import { aiRouter } from "../features/ai/router";
 import { aiProvidersRouter } from "../features/ai-providers/router";
+import { aiRequestsRouter } from "../features/ai-requests/router";
 import { applicationsRouter } from "../features/applications/router";
 import { authRouter } from "../features/auth/router";
 import { careerInsightsRouter } from "../features/career-insights/router";
@@ -17,6 +18,7 @@ import { storiesRouter } from "../features/stories/router";
 export default {
 	ai: aiRouter,
 	aiProviders: aiProvidersRouter,
+	aiRequests: aiRequestsRouter,
 	agent: agentRouter,
 	applications: applicationsRouter,
 	auth: authRouter,

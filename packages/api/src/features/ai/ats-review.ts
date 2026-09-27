@@ -76,6 +76,8 @@ type AtsReviewServiceInput = AtsReviewInput & {
 	model: string;
 	apiKey: string;
 	baseURL: string;
+	id?: string;
+	userId?: string;
 };
 
 function renderFindings(findings: AtsReviewInput["findings"]): string {

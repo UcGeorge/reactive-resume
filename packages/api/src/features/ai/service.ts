@@ -28,6 +28,9 @@ import {
 import { buildAiExtractionTemplate } from "@reactive-resume/ai/resume/extraction-template";
 import { sanitizeAndParseResumeJson } from "@reactive-resume/ai/resume/sanitize";
 import { AI_PROVIDER_DEFAULT_BASE_URLS, AI_PROVIDER_DISPLAY_NAMES, aiProviderSchema } from "@reactive-resume/ai/types";
+import { env } from "@reactive-resume/env/server";
+import { createAgentQueueModel } from "../ai-requests/model";
+import { aiRequestsService } from "../ai-requests/service";
 import { supportsProviderNativeWebSearch } from "./capabilities";
 import { resolveAiBaseUrl } from "./url-policy";
 
@@ -67,6 +70,10 @@ type GetModelInput = {
 	model: string;
 	apiKey: string;
 	baseURL?: string;
+	// Connected-agent providers queue their calls per owner and provider row, so both are
+	// required for them and ignored by every other provider.
+	id?: string;
+	userId?: string;
 };
 
 const MAX_AI_FILE_BYTES = 10 * 1024 * 1024; // 10MB
@@ -93,7 +100,15 @@ const ZIP_STORED_METHOD = 0;
 const ZIP_DEFLATED_METHOD = 8;
 
 export function getModel(input: GetModelInput) {
-	const { provider, model, apiKey } = input;
+	const { model, apiKey } = input;
+
+	// Branch before the base-URL policy: a connected agent has no URL to validate.
+	if (input.provider === "mcp-agent") {
+		if (!input.id || !input.userId) throw new Error("MCP_AGENT_CONTEXT_REQUIRED");
+		return createAgentQueueModel({ userId: input.userId, providerId: input.id, modelId: model });
+	}
+
+	const provider = input.provider;
 	const baseURL = resolveAiBaseUrl(input);
 
 	return match(provider)
@@ -144,9 +159,40 @@ export const fileInputSchema = z.object({
 	data: z.string().max(MAX_AI_FILE_BASE64_CHARS, "File is too large. Maximum size is 10MB."),
 });
 
-type TestConnectionInput = z.infer<typeof aiCredentialsSchema>;
+type TestConnectionInput = z.infer<typeof aiCredentialsSchema> & { id?: string; userId?: string };
 
 type TestConnectionResult = { ok: true } | { ok: false; message: string };
+
+// A connected agent is tested by queueing a real request: it passes only when an MCP client is
+// actually serving. The wait is longer than a network test because a human-driven agent answers
+// in seconds, not milliseconds.
+async function testAgentConnection(input: TestConnectionInput): Promise<TestConnectionResult> {
+	if (!input.id || !input.userId) {
+		return { ok: false, message: "Save the connected agent provider before testing it." };
+	}
+
+	try {
+		const { result } = await aiRequestsService.enqueueAndWait({
+			userId: input.userId,
+			aiProviderId: input.id,
+			kind: "test",
+			timeoutMs: env.AI_AGENT_TEST_TIMEOUT_MS ?? 90_000,
+			request: { messages: [{ role: "user", content: [{ type: "text", text: "Reply with exactly: OK" }] }] },
+		});
+
+		if (/\bOK\b/i.test(result.text ?? "")) return { ok: true };
+
+		return {
+			ok: false,
+			message: "The connected agent answered, but not with OK. Check that it is running the serve_ai_requests prompt.",
+		};
+	} catch (error) {
+		return {
+			ok: false,
+			message: error instanceof Error ? error.message : "The connected agent could not be tested.",
+		};
+	}
+}
 
 const NETWORK_ERROR_CODES = new Set([
 	"ECONNREFUSED",
@@ -239,6 +285,8 @@ function describeTestConnectionFailure(input: TestConnectionInput, error: unknow
 }
 
 export async function testConnection(input: TestConnectionInput): Promise<TestConnectionResult> {
+	if (input.provider === "mcp-agent") return testAgentConnection(input);
+
 	const RESPONSE_OK = "1";
 	const provider = AI_PROVIDER_DISPLAY_NAMES[input.provider];
 
@@ -278,6 +326,8 @@ export async function testConnection(input: TestConnectionInput): Promise<TestCo
 }
 
 type ParsePdfInput = z.infer<typeof aiCredentialsSchema> & {
+	id?: string;
+	userId?: string;
 	file: z.infer<typeof fileInputSchema>;
 };
 
@@ -334,6 +384,8 @@ async function parsePdf(input: ParsePdfInput): Promise<ResumeData> {
 }
 
 type ParseDocxInput = z.infer<typeof aiCredentialsSchema> & {
+	id?: string;
+	userId?: string;
 	file: z.infer<typeof fileInputSchema>;
 	mediaType: "application/msword" | "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
 };
