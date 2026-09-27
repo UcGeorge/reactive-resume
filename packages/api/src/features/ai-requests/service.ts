@@ -22,7 +22,7 @@ export const MAX_CLAIM_WAIT_SECONDS = 25;
 const LEASE_EXPIRED_MESSAGE = "The connected agent claimed the request but did not answer within 10 minutes.";
 const CANCELED_MESSAGE = "The request was canceled by the feature that made it.";
 
-export type ClaimedAiRequest = AiRequestPayload & {
+export type ClaimedAiRequest = Omit<AiRequestPayload, "files"> & {
 	id: string;
 	kind: AiRequestKind;
 	providerId: string;

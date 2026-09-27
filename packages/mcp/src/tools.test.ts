@@ -100,6 +100,11 @@ const clientMock = {
 			draftMessage: vi.fn(),
 		},
 	},
+	aiRequests: {
+		claim: vi.fn(),
+		complete: vi.fn(),
+		fail: vi.fn(),
+	},
 };
 
 describe("registerTools", () => {
@@ -443,5 +448,83 @@ describe("registerTools", () => {
 			expect(result.isError).toBe(true);
 			expect(result.content[0]!.text).toBe("Error getting resume: socket hang up");
 		});
+	});
+});
+
+describe("connected-agent queue tools", () => {
+	type ContentBlock = { type: string; text?: string; resource?: { uri: string; mimeType: string; blob: string } };
+
+	const register = () => {
+		const { server, registered } = makeFakeServer();
+		registerTools(server as never, clientMock as never, new Headers());
+		return registered;
+	};
+
+	beforeEach(() => {
+		vi.clearAllMocks();
+	});
+
+	it("tells the agent to keep polling when nothing is queued", async () => {
+		clientMock.aiRequests.claim.mockResolvedValueOnce(null);
+
+		const tool = register().find((item) => item.name === "claim_ai_request")!;
+		const result = await tool.handler({ wait: 5 });
+
+		expect(clientMock.aiRequests.claim).toHaveBeenCalledWith({ wait: 5 });
+		expect(result.isError).toBeUndefined();
+		expect(result.content[0]?.text).toContain("Call `claim_ai_request` again");
+	});
+
+	it("returns the request as JSON plus one embedded resource per file", async () => {
+		clientMock.aiRequests.claim.mockResolvedValueOnce({
+			id: "req-1",
+			kind: "generate",
+			providerId: "prov-1",
+			system: "Be brief.",
+			messages: [{ role: "user", content: [{ type: "file", fileIndex: 0, mediaType: "application/pdf" }] }],
+			files: [{ index: 0, mediaType: "application/pdf", filename: "cv.pdf", data: "QUJD" }],
+			instructions: "Answer yourself.",
+		});
+
+		const tool = register().find((item) => item.name === "claim_ai_request")!;
+		const result = await tool.handler({ providerId: "prov-1" });
+		const content = result.content as ContentBlock[];
+
+		expect(clientMock.aiRequests.claim).toHaveBeenCalledWith({ providerId: "prov-1", wait: 25 });
+		expect(content).toHaveLength(2);
+		expect(JSON.parse(content[0]!.text!)).toMatchObject({
+			id: "req-1",
+			system: "Be brief.",
+			instructions: "Answer yourself.",
+		});
+		expect(content[0]!.text).not.toContain("QUJD");
+		expect(content[1]).toEqual({
+			type: "resource",
+			resource: { uri: "ai-request://req-1/files/0", mimeType: "application/pdf", blob: "QUJD" },
+		});
+	});
+
+	it("forwards answers and failures, surfacing validation errors to the agent", async () => {
+		clientMock.aiRequests.complete.mockResolvedValueOnce({ id: "req-1", status: "completed" });
+		clientMock.aiRequests.fail.mockResolvedValueOnce({ id: "req-2", status: "failed" });
+
+		const registered = register();
+		const complete = registered.find((item) => item.name === "complete_ai_request")!;
+		const fail = registered.find((item) => item.name === "fail_ai_request")!;
+
+		const completed = await complete.handler({ id: "req-1", text: "OK" });
+		expect(clientMock.aiRequests.complete).toHaveBeenCalledWith({ id: "req-1", text: "OK" });
+		expect(JSON.parse(completed.content[0]!.text)).toEqual({ id: "req-1", status: "completed" });
+
+		const failed = await fail.handler({ id: "req-2", reason: "cannot read PDFs" });
+		expect(clientMock.aiRequests.fail).toHaveBeenCalledWith({ id: "req-2", reason: "cannot read PDFs" });
+		expect(JSON.parse(failed.content[0]!.text)).toEqual({ id: "req-2", status: "failed" });
+
+		clientMock.aiRequests.complete.mockRejectedValueOnce(
+			new ORPCError("BAD_REQUEST", { message: 'Unknown tool "b". Available tools: a.' }),
+		);
+		const rejected = await complete.handler({ id: "req-1", toolCalls: [{ toolName: "b", input: {} }] });
+		expect(rejected.isError).toBe(true);
+		expect(rejected.content[0]?.text).toContain('Unknown tool "b"');
 	});
 });

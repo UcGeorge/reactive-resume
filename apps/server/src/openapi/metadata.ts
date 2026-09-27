@@ -12,7 +12,7 @@ export function handleWellKnownFallback() {
 }
 
 export function handleMcpServerCard() {
-	return Response.json(buildMcpServerCard(appVersion), {
+	return Response.json(buildMcpServerCard(appVersion, env.APP_URL), {
 		headers: {
 			"Content-Type": "application/json",
 			"Cache-Control": "public, max-age=60, stale-while-revalidate=120",

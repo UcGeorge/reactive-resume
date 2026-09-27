@@ -673,6 +673,45 @@ export function registerTools(server: McpServer, client: RouterClient<typeof rou
 			"matching story to question",
 			async (params: { question: string; applicationId?: string }) => json(await client.stories.match(params)),
 		],
+		// Connected-agent queue: the client's own model answers requests other features enqueued.
+		[
+			T.claimAiRequest,
+			"claiming AI request",
+			async ({ providerId, wait }: { providerId?: string; wait?: number }) => {
+				const claimed = await client.aiRequests.claim({ ...(providerId ? { providerId } : {}), wait: wait ?? 25 });
+				if (!claimed) return text(`No AI request is waiting. Call \`${T.claimAiRequest}\` again to keep serving.`);
+
+				// File bytes travel as embedded resources so the JSON stays readable.
+				const { files, ...request } = claimed;
+				return {
+					content: [
+						{ type: "text", text: JSON.stringify(request, null, 2) },
+						...files.map((file) => ({
+							type: "resource" as const,
+							resource: {
+								uri: `ai-request://${claimed.id}/files/${file.index}`,
+								mimeType: file.mediaType,
+								blob: file.data,
+							},
+						})),
+					],
+				};
+			},
+		],
+		[
+			T.completeAiRequest,
+			"completing AI request",
+			async (params: {
+				id: string;
+				text?: string;
+				toolCalls?: { toolName: string; input: Record<string, unknown> }[];
+			}) => json(await client.aiRequests.complete(params)),
+		],
+		[
+			T.failAiRequest,
+			"failing AI request",
+			async ({ id, reason }: { id: string; reason: string }) => json(await client.aiRequests.fail({ id, reason })),
+		],
 	];
 
 	for (const [name, label, handler] of coverLetterAndApplicationTools) {

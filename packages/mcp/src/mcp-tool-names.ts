@@ -65,4 +65,7 @@ export const MCP_TOOL_NAME = {
 	createStory: "create_story",
 	updateStory: "update_story",
 	matchStoryToQuestion: "match_story_to_question",
+	claimAiRequest: "claim_ai_request",
+	completeAiRequest: "complete_ai_request",
+	failAiRequest: "fail_ai_request",
 } as const;
