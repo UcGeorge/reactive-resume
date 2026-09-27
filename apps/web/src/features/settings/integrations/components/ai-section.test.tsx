@@ -11,7 +11,7 @@ type MutationName = "create" | "test" | "update" | "delete";
 type MockProvider = {
 	id: string;
 	label: string;
-	provider: "openai";
+	provider: "openai" | "mcp-agent";
 	model: string;
 	baseURL: string;
 	enabled: boolean;
@@ -221,6 +221,45 @@ describe("AISettingsSection", () => {
 
 		expect(screen.getAllByText("OpenAI rejected the API key.").length).toBeGreaterThan(0);
 		expect(screen.getAllByText("Connection failed").length).toBeGreaterThan(0);
+	});
+
+	it("saves a connected agent without an API key and explains how to serve it", async () => {
+		const created = provider({
+			id: "agent-1",
+			provider: "mcp-agent",
+			model: "claude-code",
+			label: "Connected agent (MCP)",
+		});
+		mutations.create.mockResolvedValue(created);
+		mutations.test.mockResolvedValue({ ...created, enabled: true, testStatus: "success" });
+
+		renderSection();
+
+		fireEvent.change(screen.getByLabelText("Provider"), { target: { value: "mcp-agent" } });
+
+		expect(screen.queryByLabelText("API Key")).not.toBeInTheDocument();
+		expect(screen.queryByLabelText("Base URL")).not.toBeInTheDocument();
+		expect(screen.getByLabelText("MCP server URL")).toHaveValue(`${window.location.origin}/mcp`);
+		expect(screen.getByText(/serve_ai_requests/)).toBeInTheDocument();
+
+		fireEvent.click(screen.getByRole("button", { name: /save & test provider/i }));
+
+		await waitFor(() => expect(mutations.test).toHaveBeenCalledWith({ id: "agent-1" }));
+		expect(mutations.create).toHaveBeenCalledWith({
+			label: "Connected agent (MCP)",
+			provider: "mcp-agent",
+			model: "claude-code",
+			baseURL: "",
+		});
+	});
+
+	it("describes a saved connected agent by its MCP endpoint instead of a key", () => {
+		providers.data = [provider({ provider: "mcp-agent", model: "claude-code", enabled: true, testStatus: "success" })];
+
+		renderSection();
+
+		expect(screen.getByText(/Served by an MCP client connected to/)).toBeInTheDocument();
+		expect(screen.queryByText(/^Key:/)).not.toBeInTheDocument();
 	});
 
 	it("updates a configured provider's model", async () => {
