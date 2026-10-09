@@ -11,6 +11,7 @@ import { Label } from "@reactive-resume/ui/components/label";
 import { Spinner } from "@reactive-resume/ui/components/spinner";
 import { toast } from "@reactive-resume/ui/components/toast";
 import { Combobox } from "@/components/ui/combobox";
+import { ResumeUpdateMode } from "@/features/resume/components/resume-update-mode";
 import { AiProviderPicker } from "@/features/settings/integrations/components/ai-provider-picker";
 import { useHasUsableAiProvider } from "@/features/settings/integrations/hooks/use-has-usable-ai-provider";
 import { useRoutedProvider } from "@/features/settings/integrations/hooks/use-routed-provider";
@@ -39,11 +40,12 @@ export function NewThreadSetup({ resumeId }: NewThreadSetupProps) {
 	const { mutate: createThread, isPending } = useMutation(orpc.agent.threads.create.mutationOptions());
 
 	const routed = useRoutedProvider("chat");
+	const [updateInPlace, setUpdateInPlace] = useState(false);
 	const [aiProviderIdOverride, setAiProviderIdOverride] = useState<string | null | undefined>(undefined);
 	const [sourceResumeIdOverride, setSourceResumeIdOverride] = useState<string | null | undefined>(undefined);
 	// Preselect what the server would pick for chat, so the picker and the route agree.
 	const aiProviderId = aiProviderIdOverride ?? routed.providerId ?? usableProviders[0]?.id ?? null;
-	const sourceResumeId = sourceResumeIdOverride ?? resumeId ?? null;
+	const sourceResumeId = sourceResumeIdOverride === undefined ? (resumeId ?? null) : sourceResumeIdOverride;
 
 	const resumeOptions = [
 		{ value: "__scratch__", label: t`Create from scratch` },
@@ -140,12 +142,31 @@ export function NewThreadSetup({ resumeId }: NewThreadSetupProps) {
 								options={resumeOptions}
 								disabled={isLoadingResumes}
 								placeholder={isLoadingResumes ? t`Loading resumes…` : t`Choose a resume`}
-								onValueChange={(value) => setSourceResumeIdOverride(value && value !== "__scratch__" ? value : null)}
+								onValueChange={(value) => {
+									setSourceResumeIdOverride(value && value !== "__scratch__" ? value : null);
+									setUpdateInPlace(false);
+								}}
 							/>
+							{sourceResumeId && (
+								<ResumeUpdateMode checked={updateInPlace} onCheckedChange={setUpdateInPlace} disabled={isPending} />
+							)}
+							{updateInPlace && (
+								<p className="text-muted-foreground text-xs">
+									<Trans>If this resume already has an active assistant thread, it will reopen.</Trans>
+								</p>
+							)}
 							<div className="flex flex-wrap items-center gap-2 text-muted-foreground text-sm">
 								<Badge variant="secondary" className="h-7 gap-1.5 rounded-md px-2">
 									<FilePlusIcon />
-									{sourceResumeId ? <Trans>Duplicate as AI draft</Trans> : <Trans>Blank draft</Trans>}
+									{sourceResumeId ? (
+										updateInPlace ? (
+											<Trans>Edit existing resume</Trans>
+										) : (
+											<Trans>Duplicate as AI draft</Trans>
+										)
+									) : (
+										<Trans>Blank draft</Trans>
+									)}
 								</Badge>
 							</div>
 						</div>
@@ -161,7 +182,7 @@ export function NewThreadSetup({ resumeId }: NewThreadSetupProps) {
 							createThread(
 								{
 									...(aiProviderId ? { aiProviderId } : {}),
-									...(sourceResumeId ? { sourceResumeId } : {}),
+									...(sourceResumeId ? { sourceResumeId, updateInPlace } : {}),
 								},
 								{
 									onSuccess: (thread) => {

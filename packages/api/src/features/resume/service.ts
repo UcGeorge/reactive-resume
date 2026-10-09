@@ -119,6 +119,7 @@ async function applyResumePatchTx(
 		operations: JsonPatchOperation[];
 		expectedUpdatedAt?: Date;
 		versionLabel?: string;
+		beforeVersionLabel?: string;
 	},
 ) {
 	const [existing] = await client
@@ -159,6 +160,14 @@ async function applyResumePatchTx(
 	}
 
 	patchedData = parseWritableResumeData(patchedData);
+	if (input.beforeVersionLabel) {
+		await writeResumeVersion(client, {
+			resumeId: input.id,
+			userId: input.userId,
+			data: parseStoredResumeData(existing.data),
+			label: input.beforeVersionLabel,
+		});
+	}
 	// The version guard is the ms-precision JS check above, under the SELECT ... FOR UPDATE lock.
 	// Never compare expectedUpdatedAt in SQL: rows stamped by Postgres now() (defaultNow() on
 	// insert) carry microseconds, while JS Dates are ms-truncated — SQL equality then matches
@@ -383,6 +392,25 @@ export const resumeService = {
 	statistics,
 
 	versions: {
+		getByLabel: async (input: { resumeId: string; userId: string; label: string }) => {
+			const [version] = await db
+				.select({ data: schema.resumeVersion.data })
+				.from(schema.resumeVersion)
+				.innerJoin(schema.resume, eq(schema.resumeVersion.resumeId, schema.resume.id))
+				.where(
+					and(
+						eq(schema.resumeVersion.resumeId, input.resumeId),
+						eq(schema.resume.userId, input.userId),
+						eq(schema.resumeVersion.label, input.label),
+					),
+				)
+				.orderBy(desc(schema.resumeVersion.createdAt))
+				.limit(1);
+			if (!version)
+				throw new ORPCError("NOT_FOUND", { message: "The original resume snapshot is no longer available." });
+			return { data: parseStoredResumeData(version.data) };
+		},
+
 		list: async (input: { resumeId: string; userId: string }) => {
 			const [owner] = await db
 				.select({ id: schema.resume.id })
@@ -702,7 +730,14 @@ export const resumeService = {
 		return resume;
 	},
 
-	patch: async (input: { id: string; userId: string; operations: JsonPatchOperation[]; expectedUpdatedAt?: Date }) => {
+	patch: async (input: {
+		id: string;
+		userId: string;
+		operations: JsonPatchOperation[];
+		expectedUpdatedAt?: Date;
+		beforeVersionLabel?: string;
+		versionLabel?: string;
+	}) => {
 		const resume = await db.transaction((tx) => applyResumePatchTx(tx, input));
 
 		await notifyResumeUpdated({

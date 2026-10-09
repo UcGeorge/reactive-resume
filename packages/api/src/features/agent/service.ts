@@ -87,6 +87,7 @@ type CreateThreadInput = {
 	locale: Locale;
 	aiProviderId?: string;
 	sourceResumeId?: string;
+	updateInPlace?: boolean;
 };
 
 type SendMessageInput = {
@@ -943,6 +944,19 @@ export const agentService = {
 
 		create: async (input: CreateThreadInput) => {
 			assertAgentEnvironment();
+
+			if (input.updateInPlace) {
+				if (!input.sourceResumeId) {
+					throw new ORPCError("BAD_REQUEST", { message: "Select a resume to update in place." });
+				}
+				const source = await resumeService.getById({ id: input.sourceResumeId, userId: input.userId });
+				if (source.isLocked) throw new ORPCError("RESUME_LOCKED");
+				return agentService.threads.getOrCreateForResume({
+					userId: input.userId,
+					resumeId: input.sourceResumeId,
+					...(input.aiProviderId ? { aiProviderId: input.aiProviderId } : {}),
+				});
+			}
 
 			const selectedProvider = input.aiProviderId
 				? await aiProvidersService.getRunnableById({ id: input.aiProviderId, userId: input.userId })

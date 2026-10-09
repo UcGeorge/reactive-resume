@@ -665,7 +665,7 @@ describe("patch", () => {
 			from: () => ({ where: () => ({ orderBy: () => ({ limit: () => [] }) }) }),
 		};
 		const tx = {
-			select: vi.fn().mockReturnValueOnce(lockedSelect.chain).mockReturnValueOnce(versionSelect),
+			select: vi.fn().mockReturnValueOnce(lockedSelect.chain).mockReturnValue(versionSelect),
 			update: vi.fn(() => update.chain),
 			insert: vi.fn(() => ({ values: vi.fn(() => Promise.resolve()) })),
 			delete: vi.fn(() => ({ where: vi.fn(() => Promise.resolve()) })),
@@ -673,6 +673,54 @@ describe("patch", () => {
 
 		return { tx, update };
 	};
+
+	it("atomically checkpoints the original content before an in-place tailoring patch", async () => {
+		const data = structuredClone(defaultResumeData);
+		const updatedAt = new Date("2026-01-01");
+		const { tx } = createPatchTx({ data, isLocked: false, updatedAt });
+		const values = vi.fn().mockResolvedValue(undefined);
+		tx.insert.mockReturnValue({ values });
+		await resumeService.patchInTransaction(tx as never, {
+			id: "resume-1",
+			userId: "user-1",
+			expectedUpdatedAt: updatedAt,
+			operations: [{ op: "replace", path: "/basics/headline", value: "New headline" }],
+			beforeVersionLabel: "Before tailoring run-1",
+			versionLabel: "Tailored v1",
+		});
+		expect(values).toHaveBeenNthCalledWith(
+			1,
+			expect.objectContaining({
+				data,
+				label: "Before tailoring run-1",
+			}),
+		);
+		expect(values).toHaveBeenNthCalledWith(
+			2,
+			expect.objectContaining({
+				data: expect.objectContaining({ basics: expect.objectContaining({ headline: "New headline" }) }),
+				label: "Tailored v1",
+			}),
+		);
+	});
+
+	it("leaves the resume untouched when its recovery snapshot cannot be saved", async () => {
+		const { tx, update } = createPatchTx({
+			data: structuredClone(defaultResumeData),
+			isLocked: false,
+			updatedAt: new Date(),
+		});
+		tx.insert.mockReturnValue({ values: vi.fn().mockRejectedValue(new Error("Snapshot failed")) });
+		await expect(
+			resumeService.patchInTransaction(tx as never, {
+				id: "resume-1",
+				userId: "user-1",
+				operations: [{ op: "replace", path: "/basics/headline", value: "New headline" }],
+				beforeVersionLabel: "Before tailoring run-1",
+			}),
+		).rejects.toThrow("Snapshot failed");
+		expect(update.set).not.toHaveBeenCalled();
+	});
 
 	it.each([
 		["/metadata/template", "unknown-template"],

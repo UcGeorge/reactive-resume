@@ -7,11 +7,13 @@ import { beforeAll, beforeEach, expect, it, vi } from "vitest";
 import { i18n } from "@lingui/core";
 import { I18nProvider } from "@lingui/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ConfirmDialogProvider } from "@/hooks/use-confirm";
 
-const mocks = vi.hoisted(() => ({ draft: vi.fn(), other: vi.fn(), tailoringRuns: vi.fn() }));
+const mocks = vi.hoisted(() => ({ draft: vi.fn(), other: vi.fn(), tailoringRuns: vi.fn(), evaluations: vi.fn() }));
 type MockEditorDialogProps = { letterId: string };
 vi.mock("@/libs/orpc/client", () => ({
 	orpc: {
+		resume: { key: () => ["resumes"] },
 		applications: {
 			ai: {
 				matchScore: { mutationOptions: (options: object) => ({ ...options, mutationFn: mocks.other }) },
@@ -22,7 +24,10 @@ vi.mock("@/libs/orpc/client", () => ({
 		coverLetters: { list: { key: () => ["cover-letters"] } },
 		evaluations: {
 			start: { mutationOptions: (options: object) => ({ ...options, mutationFn: mocks.other }) },
-			listByApplication: { queryKey: () => ["evaluations"] },
+			listByApplication: {
+				queryKey: () => ["evaluations"],
+				queryOptions: () => ({ queryKey: ["evaluations"], queryFn: async () => (await mocks.evaluations()) ?? [] }),
+			},
 			tailoringRuns: {
 				list: {
 					queryOptions: () => ({
@@ -88,7 +93,9 @@ function renderCopilot(subject: Application = application) {
 	return render(
 		<QueryClientProvider client={new QueryClient({ defaultOptions: { mutations: { retry: false } } })}>
 			<I18nProvider i18n={i18n}>
-				<ApplicationAiCopilot application={subject} />
+				<ConfirmDialogProvider>
+					<ApplicationAiCopilot application={subject} />
+				</ConfirmDialogProvider>
 			</I18nProvider>
 		</QueryClientProvider>,
 	);
@@ -149,4 +156,33 @@ it("prevents duplicate saved letters after an earlier follow-up completed", asyn
 	await act(async () => request.resolve({ text: "Saved letter", coverLetterId: "letter-two" }));
 	expect(await screen.findByRole("dialog")).toHaveTextContent("letter-two");
 	expect(screen.queryByText("Earlier follow-up")).not.toBeInTheDocument();
+});
+
+it("defaults to a copy and shows evaluation guidance", async () => {
+	renderCopilot({ ...application, resumeId: "resume", jobDescription: "A posting" });
+	expect(screen.getByRole("switch", { name: /Update existing/ })).not.toBeChecked();
+	await screen.findByText(/Tailoring works best after a full evaluation/);
+	await userEvent.click(screen.getByRole("button", { name: /Tailor my resume/ }));
+	await waitFor(() =>
+		expect(mocks.other).toHaveBeenCalledWith({ id: "application", updateInPlace: false }, expect.anything()),
+	);
+});
+
+it("requires confirmation before enabling in-place tailoring", async () => {
+	mocks.evaluations.mockResolvedValue([{ status: "complete" }]);
+	renderCopilot({ ...application, resumeId: "resume", jobDescription: "A posting" });
+	await screen.findByText(/Tailoring will use your latest completed evaluation/);
+	const toggle = screen.getByRole("switch", { name: /Update existing/ });
+	await userEvent.click(toggle);
+	expect(await screen.findByRole("alertdialog")).toHaveTextContent(/Other applications and shared links/);
+	expect(toggle).not.toBeChecked();
+	await userEvent.click(screen.getByRole("button", { name: "Keep creating a copy" }));
+	expect(toggle).not.toBeChecked();
+	await userEvent.click(toggle);
+	await userEvent.click(screen.getByRole("button", { name: "Update in place" }));
+	expect(toggle).toBeChecked();
+	await userEvent.click(screen.getByRole("button", { name: /Tailor my resume/ }));
+	await waitFor(() =>
+		expect(mocks.other).toHaveBeenCalledWith({ id: "application", updateInPlace: true }, expect.anything()),
+	);
 });

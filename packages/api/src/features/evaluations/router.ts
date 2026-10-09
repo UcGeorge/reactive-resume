@@ -230,7 +230,13 @@ export const evaluationsRouter = {
 			}
 			const [{ resumeDataToFactTexts, verifyFacts }, source, tailored, profile] = await Promise.all([
 				import("@reactive-resume/career/fact-gate"),
-				resumeService.getById({ id: run.sourceResumeId, userId: context.user.id }),
+				run.sourceResumeId === input.resumeId
+					? resumeService.versions.getByLabel({
+							resumeId: input.resumeId,
+							userId: context.user.id,
+							label: `Before tailoring ${run.id}`,
+						})
+					: resumeService.getById({ id: run.sourceResumeId, userId: context.user.id }),
 				resumeService.getById({ id: input.resumeId, userId: context.user.id }),
 				evaluationsService.getCareerProfile({ userId: context.user.id }),
 			]);

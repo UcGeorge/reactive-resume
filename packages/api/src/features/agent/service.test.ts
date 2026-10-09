@@ -34,6 +34,7 @@ const storageServiceMock = {
 
 const resumeServiceMock = {
 	getById: vi.fn(),
+	create: vi.fn(),
 	patch: vi.fn(),
 	patchInTransaction: vi.fn(),
 	notifyResumePatched: vi.fn(),
@@ -1935,5 +1936,57 @@ describe("agentService.actions.revert", () => {
 		await expect(reverting).rejects.toBeInstanceOf(ORPCError);
 		await expect(reverting).rejects.toMatchObject({ code: "NOT_FOUND" });
 		expect(resumeServiceMock.patch).not.toHaveBeenCalled();
+	});
+});
+
+describe("creating in-place agent threads", () => {
+	it("requires a source resume", async () => {
+		const { agentService } = await import("./service");
+		await expect(
+			agentService.threads.create({ userId: "user-1", locale: "en-US", updateInPlace: true }),
+		).rejects.toMatchObject({ code: "BAD_REQUEST" });
+		expect(resumeServiceMock.create).not.toHaveBeenCalled();
+	});
+
+	it("checks ownership before opening an in-place thread", async () => {
+		const { agentService } = await import("./service");
+		resumeServiceMock.getById.mockRejectedValue(new ORPCError("NOT_FOUND"));
+		await expect(
+			agentService.threads.create({ userId: "user-1", locale: "en-US", sourceResumeId: "other", updateInPlace: true }),
+		).rejects.toMatchObject({ code: "NOT_FOUND" });
+		expect(resumeServiceMock.create).not.toHaveBeenCalled();
+	});
+
+	it("rejects a locked source", async () => {
+		const { agentService } = await import("./service");
+		resumeServiceMock.getById.mockResolvedValue({ isLocked: true });
+		await expect(
+			agentService.threads.create({
+				userId: "user-1",
+				locale: "en-US",
+				sourceResumeId: "resume-1",
+				updateInPlace: true,
+			}),
+		).rejects.toMatchObject({ code: "RESUME_LOCKED" });
+		expect(resumeServiceMock.create).not.toHaveBeenCalled();
+	});
+
+	it("uses an owned resume directly and reuses its active thread", async () => {
+		const { agentService } = await import("./service");
+		resumeServiceMock.getById.mockResolvedValue({ id: "resume-1", isLocked: false });
+		const thread = buildActiveThread({ sourceResumeId: "resume-1" });
+		dbMock.select.mockReturnValue({
+			from: () => ({
+				leftJoin: () => ({ leftJoin: () => ({ where: () => ({ orderBy: () => ({ limit: async () => [thread] }) }) }) }),
+			}),
+		});
+		const result = await agentService.threads.create({
+			userId: "user-1",
+			locale: "en-US",
+			sourceResumeId: "resume-1",
+			updateInPlace: true,
+		});
+		expect(result).toMatchObject({ id: thread.id, sourceResumeId: "resume-1", workingResumeId: "resume-1" });
+		expect(resumeServiceMock.create).not.toHaveBeenCalled();
 	});
 });

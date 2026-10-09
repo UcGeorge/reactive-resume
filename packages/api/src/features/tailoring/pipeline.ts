@@ -24,9 +24,8 @@ import { tailoringService } from "./service";
 /**
  * The tailoring pipeline (career-ops pdf steps 8-19, on Reactive Resume primitives):
  * reuse gate → constrained plan call → deterministic compile → fact gate (hard, with one
- * strip-and-retry) → materialize a real resume copy plus a version snapshot. The tailored
- * artifact is a copy, so "approval" is inherent: the UI shows the changes and the fact-gate
- * report, and Discard deletes the copy.
+ * strip-and-retry) → save a resume copy by default, or patch the linked resume on explicit
+ * opt-in. In-place patches preserve a recovery snapshot and reject concurrent edits.
  */
 
 const planOutput = z.object({
@@ -86,6 +85,7 @@ export type TailorResumeResult = {
 	name: string;
 	tailoringRunId: string;
 	reused: boolean;
+	updatedInPlace?: boolean;
 	factGate: FactGateReportData | null;
 };
 
@@ -93,8 +93,9 @@ export async function runTailoring(input: {
 	applicationId: string;
 	userId: string;
 	locale: string;
+	updateInPlace?: boolean;
 }): Promise<TailorResumeResult> {
-	const { applicationId, userId, locale } = input;
+	const { applicationId, userId, locale, updateInPlace = false } = input;
 
 	const application = await applicationService.getById({ id: applicationId, userId });
 	if (!application.resumeId) {
@@ -112,14 +113,34 @@ export async function runTailoring(input: {
 	}
 
 	// --- Reuse gate: compare against the previous run's archived JD before spending tokens.
-	const previousRun = await tailoringService.latestForApplication({ applicationId, userId });
-	const reuse =
+	const [previousRun, evaluation] = await Promise.all([
+		tailoringService.latestForApplication({ applicationId, userId }),
+		latestCompleteEvaluation(userId, applicationId),
+	]);
+	let reuse =
 		previousRun === null
 			? null
 			: decideReuse({
 					previousJd: previousRun.jdArchived,
 					nextJd: application.jobDescription,
 				});
+
+	// A retried evaluation keeps its ID, so compare its update time as well as provenance.
+	const evaluationChanged =
+		previousRun !== null &&
+		(previousRun.evaluationId !== (evaluation?.id ?? null) ||
+			(evaluation !== null && evaluation.updatedAt > previousRun.createdAt));
+	if (reuse && (updateInPlace || evaluationChanged || previousRun?.sourceResumeId === previousRun?.tailoredResumeId)) {
+		reuse = {
+			...reuse,
+			decision: "regenerate",
+			reason: updateInPlace
+				? "The user chose to update the linked resume in place."
+				: evaluationChanged
+					? "The latest evaluation contains findings not included in the previous run."
+					: "The previous run updated its source in place; create a separate copy for this request.",
+		};
+	}
 
 	if (reuse?.decision === "reuse" && previousRun?.status === "complete" && previousRun.tailoredResumeId !== null) {
 		const tailored = await resumeService.getById({ id: previousRun.tailoredResumeId, userId }).catch(() => null);
@@ -128,6 +149,7 @@ export async function runTailoring(input: {
 				userId,
 				applicationId,
 				sourceResumeId: previousRun.sourceResumeId ?? application.resumeId,
+				evaluationId: evaluation?.id ?? null,
 				jdArchived: application.jobDescription,
 				reuseDecision: reuse,
 			});
@@ -168,17 +190,15 @@ export async function runTailoring(input: {
 	// the application already points at a previous run's tailored copy, tailor from that
 	// run's source instead of stacking tailorings on tailorings.
 	const sourceResumeId =
-		previousRun?.tailoredResumeId === application.resumeId && previousRun.sourceResumeId
+		!updateInPlace && previousRun?.tailoredResumeId === application.resumeId && previousRun.sourceResumeId
 			? previousRun.sourceResumeId
 			: application.resumeId;
 	const source = await resumeService.getById({ id: sourceResumeId, userId }).catch(() => null);
 	const effectiveSource = source ?? (await resumeService.getById({ id: application.resumeId, userId }));
 
+	if (updateInPlace && effectiveSource.isLocked) throw new ORPCError("RESUME_LOCKED");
 	const model = await resolveModel(userId);
-	const [profile, evaluation] = await Promise.all([
-		evaluationsService.getCareerProfile({ userId }),
-		latestCompleteEvaluation(userId, applicationId),
-	]);
+	const profile = await evaluationsService.getCareerProfile({ userId });
 
 	const skillGap = computeSkillGap({ jobDescription: application.jobDescription, resume: effectiveSource.data });
 	const allowedSkills = [...skillGap.existing, ...skillGap.supportedByResume];
@@ -199,11 +219,6 @@ export async function runTailoring(input: {
 	const abortSignal = AbortSignal.timeout(TAILORING_PLAN_BUDGET_MS);
 
 	try {
-		const requirementContext = (evaluation?.requirements ?? [])
-			.filter((row) => row.importance === "critical" || row.importance === "high")
-			.map((row) => `- [${row.importance}] ${row.requirement} (${row.match ?? "unassessed"})`)
-			.join("\n");
-
 		const plan = planOutput.parse(
 			await generateJson(
 				model,
@@ -215,7 +230,18 @@ export async function runTailoring(input: {
 						`EXISTING (named skills, usable): ${skillGap.existing.join(", ") || "(none)"}`,
 						`SUPPORTED BY RESUME (prose-backed, usable): ${skillGap.supportedByResume.join(", ") || "(none)"}`,
 						`GAP (FORBIDDEN as claims): ${skillGap.gap.join(", ") || "(none)"}${skillGap.lowConfidence ? `\nSKILL-GAP LOW CONFIDENCE: ${skillGap.lowConfidence.message}` : ""}`,
-						requirementContext ? `HIGHEST-IMPORTANCE REQUIREMENTS (from the evaluation):\n${requirementContext}` : "",
+						evaluation
+							? `LATEST COMPLETED EVALUATION (analysis, not proof of candidate facts):\n${JSON.stringify({
+									resumeId: evaluation.resumeId,
+									resumeChanged:
+										evaluation.resumeId !== effectiveSource.id || effectiveSource.updatedAt > evaluation.createdAt,
+									jobDescriptionChanged: evaluation.jdArchived !== application.jobDescription,
+									score: evaluation.score,
+									requirements: evaluation.requirements,
+									blocks: evaluation.blocks,
+									skillGap: evaluation.skillGap,
+								})}`
+							: "",
 						`JOB DESCRIPTION:\n${application.jobDescription}`,
 						`RESUME (the document your operations mutate):\n${JSON.stringify(effectiveSource.data)}`,
 					]
@@ -292,26 +318,40 @@ export async function runTailoring(input: {
 			...sixSecondLint(tailoredData, evaluation?.requirements ?? null),
 		];
 
-		// Materialize: a real resume copy, a version snapshot, the application relinked.
-		const name = `Tailored — ${application.company} · ${application.role}`.slice(0, 60);
-		const newResumeId = await resumeService.create({
-			userId,
-			name,
-			// generateId() is a UUIDv7: its leading characters are a timestamp that only changes every
-			// few hours, so the uniqueness suffix must come from the random tail.
-			slug: `${slugify(name)}-v${run.version}-${generateId().slice(-6)}`,
-			tags: [...effectiveSource.tags.filter((tag) => tag !== "tailored"), "tailored"],
-			data: tailoredData,
-			locale: locale as never,
-		});
-		await resumeService.versions.snapshot({
-			resumeId: newResumeId,
-			userId,
-			data: tailoredData,
-			label: `Tailored v${run.version} — ${application.company}`.slice(0, 80),
-		});
+		// In-place mode keeps identity, metadata and links; the patch transaction captures both versions.
+		const name = updateInPlace
+			? effectiveSource.name
+			: `Tailored — ${application.company} · ${application.role}`.slice(0, 60);
+		let newResumeId: string;
+		if (updateInPlace) {
+			await resumeService.patch({
+				id: effectiveSource.id,
+				userId,
+				operations: compiled.operations,
+				expectedUpdatedAt: effectiveSource.updatedAt,
+				beforeVersionLabel: `Before tailoring ${run.id}`,
+				versionLabel: `Tailored v${run.version} — ${application.company}`.slice(0, 80),
+			});
+			newResumeId = effectiveSource.id;
+		} else {
+			newResumeId = await resumeService.create({
+				userId,
+				name,
+				// UUIDv7 uniqueness comes from the random tail, not its timestamp prefix.
+				slug: `${slugify(name)}-v${run.version}-${generateId().slice(-6)}`,
+				tags: [...effectiveSource.tags.filter((tag) => tag !== "tailored"), "tailored"],
+				data: tailoredData,
+				locale: locale as never,
+			});
+			await resumeService.versions.snapshot({
+				resumeId: newResumeId,
+				userId,
+				data: tailoredData,
+				label: `Tailored v${run.version} — ${application.company}`.slice(0, 80),
+			});
+		}
 
-		await applicationService.update({ id: applicationId, userId, resumeId: newResumeId });
+		if (!updateInPlace) await applicationService.update({ id: applicationId, userId, resumeId: newResumeId });
 		await applicationService.addNote({
 			id: applicationId,
 			userId,
@@ -328,7 +368,14 @@ export async function runTailoring(input: {
 			factGateReport: report,
 		});
 
-		return { resumeId: newResumeId, name, tailoringRunId: run.id, reused: false, factGate: report };
+		return {
+			resumeId: newResumeId,
+			name,
+			tailoringRunId: run.id,
+			reused: false,
+			updatedInPlace: updateInPlace,
+			factGate: report,
+		};
 	} catch (error) {
 		if (!failureRecorded) {
 			const message = abortSignal.aborted
@@ -348,6 +395,17 @@ export async function discardTailoringRun(input: { id: string; userId: string })
 	const run = await tailoringService.getById({ id: input.id, userId: input.userId });
 	if (run.status !== "complete") {
 		throw new ORPCError("BAD_REQUEST", { message: "Only a completed run can be discarded." });
+	}
+	const latestForResume = run.tailoredResumeId
+		? await tailoringService.findByTailoredResume({ resumeId: run.tailoredResumeId, userId: input.userId })
+		: null;
+	if (
+		run.tailoredResumeId &&
+		(run.tailoredResumeId === run.sourceResumeId || latestForResume?.sourceResumeId === run.tailoredResumeId)
+	) {
+		throw new ORPCError("BAD_REQUEST", {
+			message: "This run updated the resume in place. Restore a previous version from the resume builder instead.",
+		});
 	}
 	if (run.tailoredResumeId) {
 		const application = await applicationService

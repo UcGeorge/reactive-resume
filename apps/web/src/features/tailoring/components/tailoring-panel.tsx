@@ -30,7 +30,9 @@ import { Skeleton } from "@reactive-resume/ui/components/skeleton";
 import { toast } from "@reactive-resume/ui/components/toast";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@reactive-resume/ui/components/tooltip";
 import { cn } from "@reactive-resume/utils/style";
+import { ResumeUpdateMode } from "@/features/resume/components/resume-update-mode";
 import { useConfirm } from "@/hooks/use-confirm";
+import { orpc } from "@/libs/orpc/client";
 import {
 	auditTailoringRunMutationOptions,
 	discardTailoringRunMutationOptions,
@@ -40,6 +42,7 @@ import {
 	tailoringRunsLiveQueryOptions,
 	tailorResumeMutationOptions,
 } from "../queries";
+import { TailoringEvaluationHint } from "./tailoring-evaluation-hint";
 
 const formatDateTime = (value: Date | string) =>
 	new Date(value).toLocaleString(undefined, { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
@@ -74,7 +77,7 @@ const inFlightStepLabel = (status: TailoringStatus) => {
 		case "planned":
 			return t`Compiling the plan and running the fact gate…`;
 		case "gated":
-			return t`Fact gate passed — saving the tailored copy…`;
+			return t`Fact gate passed — saving the tailored resume…`;
 		default:
 			return t`Planning edits against the posting…`;
 	}
@@ -128,6 +131,7 @@ type TailoringPanelProps = {
 export function TailoringPanel({ id, resumeId, jobDescription, onResumeChanged }: TailoringPanelProps) {
 	const queryClient = useQueryClient();
 	const confirm = useConfirm();
+	const [updateInPlace, setUpdateInPlace] = useState(false);
 	// `undefined` means "no explicit choice yet" — the newest run is expanded by default.
 	const [expandedId, setExpandedId] = useState<string | null>();
 
@@ -138,6 +142,8 @@ export function TailoringPanel({ id, resumeId, jobDescription, onResumeChanged }
 	const tailor = useMutation(
 		tailorResumeMutationOptions({
 			onSuccess: (result) => {
+				setUpdateInPlace(false);
+				void queryClient.invalidateQueries({ queryKey: orpc.resume.key() });
 				invalidateList();
 				onResumeChanged?.();
 				setExpandedId(undefined);
@@ -145,7 +151,9 @@ export function TailoringPanel({ id, resumeId, jobDescription, onResumeChanged }
 					type: "success",
 					description: result.reused
 						? t`Reused "${result.name}" — the posting still matches the existing tailored resume.`
-						: t`Created "${result.name}" and linked it to this application.`,
+						: result.updatedInPlace
+							? t`Updated "${result.name}" in place.`
+							: t`Created "${result.name}" and linked it to this application.`,
 				});
 			},
 			onError: (error) => {
@@ -249,14 +257,21 @@ export function TailoringPanel({ id, resumeId, jobDescription, onResumeChanged }
 							</Trans>
 						</p>
 					</div>
-					<Button size="sm" className="shrink-0" disabled={!canRun || running} onClick={() => tailor.mutate({ id })}>
+					<Button
+						size="sm"
+						className="shrink-0"
+						disabled={!canRun || running}
+						onClick={() => tailor.mutate({ id, updateInPlace })}
+					>
 						{running ? <SpinnerGapIcon className="animate-spin" /> : <MagicWandIcon />}
 						{running ? <Trans>Tailoring…</Trans> : <Trans>Tailor resume</Trans>}
 					</Button>
 				</div>
+				<ResumeUpdateMode checked={updateInPlace} onCheckedChange={setUpdateInPlace} disabled={!resumeId || running} />
+				<TailoringEvaluationHint applicationId={id} />
 				{!canRun && (
 					<p className="text-muted-foreground text-xs">
-						<Trans>Link a resume and paste the job description (Edit) to tailor a copy for this job.</Trans>
+						<Trans>Link a resume and paste the job description (Edit) to tailor your resume for this job.</Trans>
 					</p>
 				)}
 				{running && (
@@ -401,13 +416,20 @@ function RunCard({
 								size="sm"
 								variant="ghost"
 								className="ms-auto text-destructive"
-								disabled={busy || discardPending}
+								disabled={busy || discardPending || run.sourceResumeId === run.tailoredResumeId}
 								onClick={onDiscard}
 							>
 								{discardPending ? <SpinnerGapIcon className="animate-spin" /> : <TrashIcon />}
 								<Trans>Discard</Trans>
 							</Button>
 						</div>
+					)}
+					{run.tailoredResumeId && run.sourceResumeId === run.tailoredResumeId && (
+						<p className="text-muted-foreground text-xs">
+							<Trans>
+								Updated in place. To undo, open the resume and restore a previous version from version history.
+							</Trans>
+						</p>
 					)}
 					{auditPending && (
 						<p className="text-muted-foreground text-xs">

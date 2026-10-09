@@ -293,12 +293,13 @@ export const aiRouter = {
 			operationId: "aiTailorResumeForApplication",
 			...reserved,
 		})
-		.input(z.object({ id: z.string() }))
+		.input(z.object({ id: z.string(), updateInPlace: z.boolean().default(false) }))
 		.use(aiRequestRateLimit)
 		.output(
 			z.object({
 				resumeId: z.string(),
 				name: z.string(),
+				updatedInPlace: z.boolean().optional(),
 				tailoringRunId: z.string().optional(),
 				reused: z.boolean().optional(),
 				factGate: factGateReportSchema.nullable().optional(),
@@ -315,6 +316,7 @@ export const aiRouter = {
 					applicationId: input.id,
 					userId: context.user.id,
 					locale: context.locale,
+					updateInPlace: input.updateInPlace,
 				});
 			} catch (error) {
 				if (isAiProviderGatewayError(error)) throwAiProviderGatewayError(error);

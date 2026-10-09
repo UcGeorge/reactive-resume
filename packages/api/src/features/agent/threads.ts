@@ -23,12 +23,19 @@ export const threadsRouter = {
 			operationId: "createAgentThread",
 			summary: "Create agent thread",
 		})
-		.input(z.object({ aiProviderId: z.string().optional(), sourceResumeId: z.string().optional() }))
+		.input(
+			z.object({
+				aiProviderId: z.string().optional(),
+				sourceResumeId: z.string().optional(),
+				updateInPlace: z.boolean().default(false),
+			}),
+		)
 		.use(mapAgentEnvironmentError)
 		.handler(({ context, input }) =>
 			agentService.threads.create({
 				userId: context.user.id,
 				locale: context.locale,
+				updateInPlace: input.updateInPlace,
 				...(input.aiProviderId ? { aiProviderId: input.aiProviderId } : {}),
 				...(input.sourceResumeId ? { sourceResumeId: input.sourceResumeId } : {}),
 			}),

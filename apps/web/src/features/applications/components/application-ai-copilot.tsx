@@ -20,6 +20,8 @@ import { cn } from "@reactive-resume/utils/style";
 import { CoverLetterEditorDialog } from "@/features/cover-letters/editor-dialog";
 import { GuidedCoverLetterWizard } from "@/features/cover-letters/guided/guided-cover-letter-wizard";
 import { evaluationsListQueryKey, startEvaluationMutationOptions } from "@/features/evaluations/queries";
+import { ResumeUpdateMode } from "@/features/resume/components/resume-update-mode";
+import { TailoringEvaluationHint } from "@/features/tailoring/components/tailoring-evaluation-hint";
 import {
 	isTailoringInFlight,
 	tailoringRunsListQueryKey,
@@ -115,6 +117,7 @@ type Props = {
 
 export function ApplicationAiCopilot({ application, onOpenEvaluation }: Props) {
 	const queryClient = useQueryClient();
+	const [updateInPlace, setUpdateInPlace] = useState(false);
 	const [draft, setDraft] = useState<{ kind: string; text: string } | null>(null);
 	const [coverLetterId, setCoverLetterId] = useState<string | null>(null);
 	// The guided wizard mounts on first open and stays mounted while the host surface lives,
@@ -141,13 +144,17 @@ export function ApplicationAiCopilot({ application, onOpenEvaluation }: Props) {
 	const tailorResume = useMutation(
 		orpc.applications.ai.tailorResume.mutationOptions({
 			onSuccess: (result) => {
+				setUpdateInPlace(false);
+				void queryClient.invalidateQueries({ queryKey: orpc.resume.key() });
 				invalidate();
 				invalidateTailoringRuns();
 				toast.add({
 					type: "success",
 					description: result.reused
 						? t`Reused "${result.name}" — the posting still matches the existing tailored resume.`
-						: t`Created "${result.name}" and linked it to this application.`,
+						: result.updatedInPlace
+							? t`Updated "${result.name}" in place.`
+							: t`Created "${result.name}" and linked it to this application.`,
 				});
 			},
 			onError: (error) => {
@@ -313,12 +320,24 @@ export function ApplicationAiCopilot({ application, onOpenEvaluation }: Props) {
 					icon={<MagicWandIcon />}
 					title={<Trans>Tailor my resume</Trans>}
 					description={
-						tailoring ? t`Tailoring in progress — follow it in the Tailoring tab` : t`Create a copy tuned to this job`
+						tailoring
+							? t`Tailoring in progress — follow it in the Tailoring tab`
+							: updateInPlace
+								? t`Update the linked resume for this job`
+								: t`Create a copy tuned to this job`
 					}
 					disabled={!canScore || tailoring}
 					pending={tailoring}
-					onClick={() => tailorResume.mutate({ id: application.id })}
+					onClick={() => tailorResume.mutate({ id: application.id, updateInPlace })}
 				/>
+				<div className="space-y-2 px-2 pb-2">
+					<ResumeUpdateMode
+						checked={updateInPlace}
+						onCheckedChange={setUpdateInPlace}
+						disabled={!application.resumeId || tailoring}
+					/>
+					<TailoringEvaluationHint applicationId={application.id} />
+				</div>
 				<ActionRow
 					icon={<EnvelopeSimpleIcon />}
 					title={<Trans>Draft a cover letter</Trans>}
