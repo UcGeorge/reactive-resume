@@ -745,6 +745,10 @@ msgstr "REDIS_URL 및 ENCRYPTION_SECRET이 구성될 때까지 AI 에이전트 �
 msgid "AI assistant"
 msgstr "AI 비서"
 
+#: src/features/resume/components/resume-update-mode.tsx
+msgid "AI changes will modify the selected resume directly instead of creating a separate copy. Other applications and shared links using this resume will show those changes too. Review the changes carefully. You can use version history or the agent's undo controls to recover earlier content."
+msgstr ""
+
 #: src/features/stories/components/suggest-from-resume-dialog.tsx
 msgid "AI extracts STAR+R candidates grounded in the resume's real projects. They arrive as derived-unverified drafts — nothing counts as a fact until you confirm it."
 msgstr ""
@@ -2863,6 +2867,10 @@ msgstr "편집 거부됨"
 msgid "Edit details"
 msgstr "세부 정보 수정"
 
+#: src/routes/agent/-components/new-thread-setup.tsx
+msgid "Edit existing resume"
+msgstr ""
+
 #: src/components/input/chip-input.tsx
 msgid "Edit keyword"
 msgstr "키워드 수정"
@@ -3172,7 +3180,7 @@ msgid "Fact gate"
 msgstr ""
 
 #: src/features/tailoring/components/tailoring-panel.tsx
-msgid "Fact gate passed — saving the tailored copy…"
+msgid "Fact gate passed — saving the tailored resume…"
 msgstr ""
 
 #: src/features/tailoring/components/tailoring-panel.tsx
@@ -3876,6 +3884,10 @@ msgstr "아이콘"
 msgid "If it came from a scan, that is expected. Otherwise remove it; recruiters read it as keyword stuffing."
 msgstr "스캔본이라면 자연스러운 현상입니다. 그렇지 않다면 제거하세요. 채용 담당자는 이를 키워드 남용으로 받아들입니다."
 
+#: src/routes/agent/-components/new-thread-setup.tsx
+msgid "If this resume already has an active assistant thread, it will reopen."
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Images cover most of the page."
 msgstr "이미지가 페이지의 대부분을 차지하고 있습니다."
@@ -4172,6 +4184,10 @@ msgstr "주소는 하나만 남겨서 소프트웨어가 어느 것을 써야 �
 msgid "Keep access when you are not using the application."
 msgstr "애플리케이션을 사용하지 않을 때도 액세스를 유지합니다."
 
+#: src/features/resume/components/resume-update-mode.tsx
+msgid "Keep creating a copy"
+msgstr ""
+
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Keep editing"
 msgstr "계속 편집"
@@ -4448,7 +4464,7 @@ msgid "Link a resume and paste the job description (Edit) to score your fit and 
 msgstr "이력서를 연결하고 직무 설명을 붙여넣으면(편집) 적합도를 평가하고 맞춤 사본을 만들 수 있습니다."
 
 #: src/features/tailoring/components/tailoring-panel.tsx
-msgid "Link a resume and paste the job description (Edit) to tailor a copy for this job."
+msgid "Link a resume and paste the job description (Edit) to tailor your resume for this job."
 msgstr ""
 
 #: src/features/applications/components/application-ai-copilot.tsx
@@ -7574,6 +7590,14 @@ msgstr "맞춤 조정에 실패했습니다."
 msgid "Tailoring in progress — follow it in the Tailoring tab"
 msgstr ""
 
+#: src/features/tailoring/components/tailoring-evaluation-hint.tsx
+msgid "Tailoring will use your latest completed evaluation, including gaps and recommendations."
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-evaluation-hint.tsx
+msgid "Tailoring works best after a full evaluation identifies gaps. You can still tailor without one."
+msgstr ""
+
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Tailoring…"
 msgstr ""
@@ -8550,6 +8574,14 @@ msgstr "기존 요약 항목 업데이트"
 msgid "Update an existing volunteer experience"
 msgstr "기존 봉사 경험 업데이트"
 
+#: src/features/resume/components/resume-update-mode.tsx
+msgid "Update existing resume in place"
+msgstr ""
+
+#: src/features/resume/components/resume-update-mode.tsx
+msgid "Update in place"
+msgstr ""
+
 #. Primary action button to submit changed password
 #: src/dialogs/auth/change-password.tsx
 #: src/features/settings/authentication/components/password.tsx
@@ -8564,6 +8596,10 @@ msgstr "이력서 업데이트"
 msgid "Update the calendar date for this timeline entry."
 msgstr "이 타임라인 항목의 캘린더 날짜를 업데이트하세요."
 
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Update the linked resume for this job"
+msgstr ""
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Update the project bullets to show leadership, constraints, tradeoffs, and measurable outcomes."
 msgstr "프로젝트 항목을 리더십, 제약, 절충, 측정 가능한 성과가 드러나도록 수정해 주세요."
@@ -8572,6 +8608,10 @@ msgstr "프로젝트 항목을 리더십, 제약, 절충, 측정 가능한 성�
 msgid "Update this application's details."
 msgstr "이 지원의 세부 정보를 업데이트하세요."
 
+#: src/features/resume/components/resume-update-mode.tsx
+msgid "Update this resume in place?"
+msgstr ""
+
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Update this timeline note."
 msgstr "이 타임라인 메모를 업데이트하세요."
@@ -8579,6 +8619,16 @@ msgstr "이 타임라인 메모를 업데이트하세요."
 #: src/dialogs/auth/change-password.tsx
 msgid "Update your password"
 msgstr "비밀번호 업데이트"
+
+#. placeholder {0}: result.name
+#: src/features/applications/components/application-ai-copilot.tsx
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Updated \"{0}\" in place."
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Updated in place. To undo, open the resume and restore a previous version from version history."
+msgstr ""
 
 #: src/dialogs/auth/change-password.tsx
 msgid "Updating your password..."

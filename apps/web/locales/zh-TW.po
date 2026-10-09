@@ -745,6 +745,10 @@ msgstr "在配置 REDIS_URL 和 ENCRYPTION_SECRET 之前，AI 代理設定不可
 msgid "AI assistant"
 msgstr "人工智慧助手"
 
+#: src/features/resume/components/resume-update-mode.tsx
+msgid "AI changes will modify the selected resume directly instead of creating a separate copy. Other applications and shared links using this resume will show those changes too. Review the changes carefully. You can use version history or the agent's undo controls to recover earlier content."
+msgstr ""
+
 #: src/features/stories/components/suggest-from-resume-dialog.tsx
 msgid "AI extracts STAR+R candidates grounded in the resume's real projects. They arrive as derived-unverified drafts — nothing counts as a fact until you confirm it."
 msgstr ""
@@ -2863,6 +2867,10 @@ msgstr "編輯已被拒絕"
 msgid "Edit details"
 msgstr "編輯詳情"
 
+#: src/routes/agent/-components/new-thread-setup.tsx
+msgid "Edit existing resume"
+msgstr ""
+
 #: src/components/input/chip-input.tsx
 msgid "Edit keyword"
 msgstr "編輯關鍵字"
@@ -3172,7 +3180,7 @@ msgid "Fact gate"
 msgstr ""
 
 #: src/features/tailoring/components/tailoring-panel.tsx
-msgid "Fact gate passed — saving the tailored copy…"
+msgid "Fact gate passed — saving the tailored resume…"
 msgstr ""
 
 #: src/features/tailoring/components/tailoring-panel.tsx
@@ -3876,6 +3884,10 @@ msgstr "圖示"
 msgid "If it came from a scan, that is expected. Otherwise remove it; recruiters read it as keyword stuffing."
 msgstr "如果是掃描檔導致的，這屬於正常情況。否則請刪除它；招募人員會把它當作關鍵詞堆砌。"
 
+#: src/routes/agent/-components/new-thread-setup.tsx
+msgid "If this resume already has an active assistant thread, it will reopen."
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Images cover most of the page."
 msgstr "圖片佔據了頁面的大部分空間。"
@@ -4172,6 +4184,10 @@ msgstr "只保留一個地址，讓軟體不必猜要用哪一個。"
 msgid "Keep access when you are not using the application."
 msgstr "在您未使用該應用程式時保持存取權限。"
 
+#: src/features/resume/components/resume-update-mode.tsx
+msgid "Keep creating a copy"
+msgstr ""
+
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Keep editing"
 msgstr "繼續編輯"
@@ -4448,7 +4464,7 @@ msgid "Link a resume and paste the job description (Edit) to score your fit and 
 msgstr "連結一份履歷並貼上職缺描述（編輯），即可評估符合度並客製一份副本。"
 
 #: src/features/tailoring/components/tailoring-panel.tsx
-msgid "Link a resume and paste the job description (Edit) to tailor a copy for this job."
+msgid "Link a resume and paste the job description (Edit) to tailor your resume for this job."
 msgstr ""
 
 #: src/features/applications/components/application-ai-copilot.tsx
@@ -7574,6 +7590,14 @@ msgstr "調整失敗。"
 msgid "Tailoring in progress — follow it in the Tailoring tab"
 msgstr ""
 
+#: src/features/tailoring/components/tailoring-evaluation-hint.tsx
+msgid "Tailoring will use your latest completed evaluation, including gaps and recommendations."
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-evaluation-hint.tsx
+msgid "Tailoring works best after a full evaluation identifies gaps. You can still tailor without one."
+msgstr ""
+
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Tailoring…"
 msgstr ""
@@ -8550,6 +8574,14 @@ msgstr "更新現有摘要項目"
 msgid "Update an existing volunteer experience"
 msgstr "更新現有的志工經歷"
 
+#: src/features/resume/components/resume-update-mode.tsx
+msgid "Update existing resume in place"
+msgstr ""
+
+#: src/features/resume/components/resume-update-mode.tsx
+msgid "Update in place"
+msgstr ""
+
 #. Primary action button to submit changed password
 #: src/dialogs/auth/change-password.tsx
 #: src/features/settings/authentication/components/password.tsx
@@ -8564,6 +8596,10 @@ msgstr "更新履歷"
 msgid "Update the calendar date for this timeline entry."
 msgstr "更新此時間軸項目的行事曆日期。"
 
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Update the linked resume for this job"
+msgstr ""
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Update the project bullets to show leadership, constraints, tradeoffs, and measurable outcomes."
 msgstr "請更新專案條列項目，呈現出領導力、限制條件、取捨以及可衡量的成果。"
@@ -8572,6 +8608,10 @@ msgstr "請更新專案條列項目，呈現出領導力、限制條件、取捨
 msgid "Update this application's details."
 msgstr "更新此應徵紀錄的詳細資料。"
 
+#: src/features/resume/components/resume-update-mode.tsx
+msgid "Update this resume in place?"
+msgstr ""
+
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Update this timeline note."
 msgstr "更新此時間軸備註。"
@@ -8579,6 +8619,16 @@ msgstr "更新此時間軸備註。"
 #: src/dialogs/auth/change-password.tsx
 msgid "Update your password"
 msgstr "更新您的密碼"
+
+#. placeholder {0}: result.name
+#: src/features/applications/components/application-ai-copilot.tsx
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Updated \"{0}\" in place."
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Updated in place. To undo, open the resume and restore a previous version from version history."
+msgstr ""
 
 #: src/dialogs/auth/change-password.tsx
 msgid "Updating your password..."

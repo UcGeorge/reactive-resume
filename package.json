@@ -23,7 +23,7 @@
 	],
 	"scripts": {
 		"build": "pnpm pdf:translations && turbo run build",
-		"check": "pnpm pdf:translations && biome check --write --unsafe . && markdownlint-cli2 --fix && github-actionlint -shellcheck= -pyflakes=",
+		"check": "pnpm lingui:extract && biome check --write --unsafe . && markdownlint-cli2 --fix && github-actionlint -shellcheck= -pyflakes=",
 		"docs:gen": "pnpm --filter server docs:gen && pnpm --filter @reactive-resume/tooling docs:gen",
 		"db:generate": "turbo run db:generate --filter=@reactive-resume/db",
 		"db:migrate": "turbo run db:migrate --filter=@reactive-resume/db",

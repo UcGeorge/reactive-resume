@@ -740,6 +740,10 @@ msgstr "AI agent setup is unavailable until REDIS_URL and ENCRYPTION_SECRET are 
 msgid "AI assistant"
 msgstr "AI assistant"
 
+#: src/features/resume/components/resume-update-mode.tsx
+msgid "AI changes will modify the selected resume directly instead of creating a separate copy. Other applications and shared links using this resume will show those changes too. Review the changes carefully. You can use version history or the agent's undo controls to recover earlier content."
+msgstr "AI changes will modify the selected resume directly instead of creating a separate copy. Other applications and shared links using this resume will show those changes too. Review the changes carefully. You can use version history or the agent's undo controls to recover earlier content."
+
 #: src/features/stories/components/suggest-from-resume-dialog.tsx
 msgid "AI extracts STAR+R candidates grounded in the resume's real projects. They arrive as derived-unverified drafts — nothing counts as a fact until you confirm it."
 msgstr "AI extracts STAR+R candidates grounded in the resume's real projects. They arrive as derived-unverified drafts — nothing counts as a fact until you confirm it."
@@ -2858,6 +2862,10 @@ msgstr "Edit declined"
 msgid "Edit details"
 msgstr "Edit details"
 
+#: src/routes/agent/-components/new-thread-setup.tsx
+msgid "Edit existing resume"
+msgstr "Edit existing resume"
+
 #: src/components/input/chip-input.tsx
 msgid "Edit keyword"
 msgstr "Edit keyword"
@@ -3167,8 +3175,8 @@ msgid "Fact gate"
 msgstr "Fact gate"
 
 #: src/features/tailoring/components/tailoring-panel.tsx
-msgid "Fact gate passed — saving the tailored copy…"
-msgstr "Fact gate passed — saving the tailored copy…"
+msgid "Fact gate passed — saving the tailored resume…"
+msgstr "Fact gate passed — saving the tailored resume…"
 
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "fact-checking…"
@@ -3871,6 +3879,10 @@ msgstr "Icon"
 msgid "If it came from a scan, that is expected. Otherwise remove it; recruiters read it as keyword stuffing."
 msgstr "If it came from a scan, that is expected. Otherwise remove it; recruiters read it as keyword stuffing."
 
+#: src/routes/agent/-components/new-thread-setup.tsx
+msgid "If this resume already has an active assistant thread, it will reopen."
+msgstr "If this resume already has an active assistant thread, it will reopen."
+
 #: src/features/ats-checker/messages.ts
 msgid "Images cover most of the page."
 msgstr "Images cover most of the page."
@@ -4167,6 +4179,10 @@ msgstr "Keep a single address, so software does not have to guess which one to u
 msgid "Keep access when you are not using the application."
 msgstr "Keep access when you are not using the application."
 
+#: src/features/resume/components/resume-update-mode.tsx
+msgid "Keep creating a copy"
+msgstr "Keep creating a copy"
+
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Keep editing"
 msgstr "Keep editing"
@@ -4443,8 +4459,8 @@ msgid "Link a resume and paste the job description (Edit) to score your fit and 
 msgstr "Link a resume and paste the job description (Edit) to score your fit and tailor a copy."
 
 #: src/features/tailoring/components/tailoring-panel.tsx
-msgid "Link a resume and paste the job description (Edit) to tailor a copy for this job."
-msgstr "Link a resume and paste the job description (Edit) to tailor a copy for this job."
+msgid "Link a resume and paste the job description (Edit) to tailor your resume for this job."
+msgstr "Link a resume and paste the job description (Edit) to tailor your resume for this job."
 
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Link a resume and paste the job description first"
@@ -7569,6 +7585,14 @@ msgstr "Tailoring failed."
 msgid "Tailoring in progress — follow it in the Tailoring tab"
 msgstr "Tailoring in progress — follow it in the Tailoring tab"
 
+#: src/features/tailoring/components/tailoring-evaluation-hint.tsx
+msgid "Tailoring will use your latest completed evaluation, including gaps and recommendations."
+msgstr "Tailoring will use your latest completed evaluation, including gaps and recommendations."
+
+#: src/features/tailoring/components/tailoring-evaluation-hint.tsx
+msgid "Tailoring works best after a full evaluation identifies gaps. You can still tailor without one."
+msgstr "Tailoring works best after a full evaluation identifies gaps. You can still tailor without one."
+
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Tailoring…"
 msgstr "Tailoring…"
@@ -8545,6 +8569,14 @@ msgstr "Update an existing summary item"
 msgid "Update an existing volunteer experience"
 msgstr "Update an existing volunteer experience"
 
+#: src/features/resume/components/resume-update-mode.tsx
+msgid "Update existing resume in place"
+msgstr "Update existing resume in place"
+
+#: src/features/resume/components/resume-update-mode.tsx
+msgid "Update in place"
+msgstr "Update in place"
+
 #. Primary action button to submit changed password
 #: src/dialogs/auth/change-password.tsx
 #: src/features/settings/authentication/components/password.tsx
@@ -8559,6 +8591,10 @@ msgstr "Update Resume"
 msgid "Update the calendar date for this timeline entry."
 msgstr "Update the calendar date for this timeline entry."
 
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Update the linked resume for this job"
+msgstr "Update the linked resume for this job"
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Update the project bullets to show leadership, constraints, tradeoffs, and measurable outcomes."
 msgstr "Update the project bullets to show leadership, constraints, tradeoffs, and measurable outcomes."
@@ -8567,6 +8603,10 @@ msgstr "Update the project bullets to show leadership, constraints, tradeoffs, a
 msgid "Update this application's details."
 msgstr "Update this application's details."
 
+#: src/features/resume/components/resume-update-mode.tsx
+msgid "Update this resume in place?"
+msgstr "Update this resume in place?"
+
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Update this timeline note."
 msgstr "Update this timeline note."
@@ -8574,6 +8614,16 @@ msgstr "Update this timeline note."
 #: src/dialogs/auth/change-password.tsx
 msgid "Update your password"
 msgstr "Update your password"
+
+#. placeholder {0}: result.name
+#: src/features/applications/components/application-ai-copilot.tsx
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Updated \"{0}\" in place."
+msgstr "Updated \"{0}\" in place."
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Updated in place. To undo, open the resume and restore a previous version from version history."
+msgstr "Updated in place. To undo, open the resume and restore a previous version from version history."
 
 #: src/dialogs/auth/change-password.tsx
 msgid "Updating your password..."

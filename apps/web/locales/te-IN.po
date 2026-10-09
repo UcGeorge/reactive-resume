@@ -745,6 +745,10 @@ msgstr "REDIS_URL మరియు ENCRYPTION_SECRET కాన్ఫిగర్ 
 msgid "AI assistant"
 msgstr "AI సహాయకుడు"
 
+#: src/features/resume/components/resume-update-mode.tsx
+msgid "AI changes will modify the selected resume directly instead of creating a separate copy. Other applications and shared links using this resume will show those changes too. Review the changes carefully. You can use version history or the agent's undo controls to recover earlier content."
+msgstr ""
+
 #: src/features/stories/components/suggest-from-resume-dialog.tsx
 msgid "AI extracts STAR+R candidates grounded in the resume's real projects. They arrive as derived-unverified drafts — nothing counts as a fact until you confirm it."
 msgstr ""
@@ -2863,6 +2867,10 @@ msgstr "సవరణ తిరస్కరించబడింది"
 msgid "Edit details"
 msgstr "వివరాలను సవరించండి"
 
+#: src/routes/agent/-components/new-thread-setup.tsx
+msgid "Edit existing resume"
+msgstr ""
+
 #: src/components/input/chip-input.tsx
 msgid "Edit keyword"
 msgstr "కీవర్డ్‌ను సవరించండి"
@@ -3172,7 +3180,7 @@ msgid "Fact gate"
 msgstr ""
 
 #: src/features/tailoring/components/tailoring-panel.tsx
-msgid "Fact gate passed — saving the tailored copy…"
+msgid "Fact gate passed — saving the tailored resume…"
 msgstr ""
 
 #: src/features/tailoring/components/tailoring-panel.tsx
@@ -3876,6 +3884,10 @@ msgstr "ఐకాన్"
 msgid "If it came from a scan, that is expected. Otherwise remove it; recruiters read it as keyword stuffing."
 msgstr "అది స్కాన్ నుండి వచ్చినట్లయితే, అది ఊహించదగినదే. లేకపోతే దాన్ని తొలగించండి; రిక్రూటర్లు దీన్ని కీవర్డ్ స్టఫింగ్‌గా చదువుతారు."
 
+#: src/routes/agent/-components/new-thread-setup.tsx
+msgid "If this resume already has an active assistant thread, it will reopen."
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Images cover most of the page."
 msgstr "చిత్రాలు పేజీలో ఎక్కువ భాగాన్ని ఆక్రమిస్తాయి."
@@ -4172,6 +4184,10 @@ msgstr "ఒకే చిరునామాను ఉంచండి; అప్�
 msgid "Keep access when you are not using the application."
 msgstr "మీరు అప్లికేషన్‌ను ఉపయోగించనప్పుడు యాక్సెస్‌ను ఉంచండి."
 
+#: src/features/resume/components/resume-update-mode.tsx
+msgid "Keep creating a copy"
+msgstr ""
+
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Keep editing"
 msgstr "ఎడిట్ చేస్తూ ఉండండి"
@@ -4448,7 +4464,7 @@ msgid "Link a resume and paste the job description (Edit) to score your fit and 
 msgstr "మీ సరిపోలికను స్కోర్ చేయడానికి మరియు అనుకూలీకరించిన కాపీని రూపొందించడానికి ఒక రెజ్యూమెను లింక్ చేసి ఉద్యోగ వివరణను అతికించండి (సవరించు)."
 
 #: src/features/tailoring/components/tailoring-panel.tsx
-msgid "Link a resume and paste the job description (Edit) to tailor a copy for this job."
+msgid "Link a resume and paste the job description (Edit) to tailor your resume for this job."
 msgstr ""
 
 #: src/features/applications/components/application-ai-copilot.tsx
@@ -7574,6 +7590,14 @@ msgstr "అనుకూలీకరణ విఫలమైంది."
 msgid "Tailoring in progress — follow it in the Tailoring tab"
 msgstr ""
 
+#: src/features/tailoring/components/tailoring-evaluation-hint.tsx
+msgid "Tailoring will use your latest completed evaluation, including gaps and recommendations."
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-evaluation-hint.tsx
+msgid "Tailoring works best after a full evaluation identifies gaps. You can still tailor without one."
+msgstr ""
+
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Tailoring…"
 msgstr ""
@@ -8550,6 +8574,14 @@ msgstr "ఇప్పటికే ఉన్న సారాంశ అంశాన
 msgid "Update an existing volunteer experience"
 msgstr "ఉన్న వాలంటీర్ అనుభవాన్ని అప్‌డేట్ చేయండి"
 
+#: src/features/resume/components/resume-update-mode.tsx
+msgid "Update existing resume in place"
+msgstr ""
+
+#: src/features/resume/components/resume-update-mode.tsx
+msgid "Update in place"
+msgstr ""
+
 #. Primary action button to submit changed password
 #: src/dialogs/auth/change-password.tsx
 #: src/features/settings/authentication/components/password.tsx
@@ -8564,6 +8596,10 @@ msgstr "రిజ్యూమ్‌ను నవీకరించండి"
 msgid "Update the calendar date for this timeline entry."
 msgstr "ఈ టైమ్‌లైన్ ఎంట్రీ కోసం క్యాలెండర్ తేదీని నవీకరించండి."
 
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Update the linked resume for this job"
+msgstr ""
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Update the project bullets to show leadership, constraints, tradeoffs, and measurable outcomes."
 msgstr "నాయకత్వం, పరిమితులు, రాజీలు, కొలవగలిగే ఫలితాలు కనిపించేలా ప్రాజెక్ట్ బుల్లెట్లను నవీకరించండి."
@@ -8572,6 +8608,10 @@ msgstr "నాయకత్వం, పరిమితులు, రాజీల�
 msgid "Update this application's details."
 msgstr "ఈ దరఖాస్తు వివరాలను నవీకరించండి."
 
+#: src/features/resume/components/resume-update-mode.tsx
+msgid "Update this resume in place?"
+msgstr ""
+
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Update this timeline note."
 msgstr "ఈ టైమ్‌లైన్ గమనికను నవీకరించండి."
@@ -8579,6 +8619,16 @@ msgstr "ఈ టైమ్‌లైన్ గమనికను నవీకరి
 #: src/dialogs/auth/change-password.tsx
 msgid "Update your password"
 msgstr "మీ పాస్‌వర్డ్‌ను నవీకరించండి"
+
+#. placeholder {0}: result.name
+#: src/features/applications/components/application-ai-copilot.tsx
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Updated \"{0}\" in place."
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Updated in place. To undo, open the resume and restore a previous version from version history."
+msgstr ""
 
 #: src/dialogs/auth/change-password.tsx
 msgid "Updating your password..."

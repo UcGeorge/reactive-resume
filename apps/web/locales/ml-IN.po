@@ -745,6 +745,10 @@ msgstr "REDIS_URL ഉം ENCRYPTION_SECRET ഉം കോൺഫിഗർ ചെ�
 msgid "AI assistant"
 msgstr "AI അസിസ്റ്റന്റ്"
 
+#: src/features/resume/components/resume-update-mode.tsx
+msgid "AI changes will modify the selected resume directly instead of creating a separate copy. Other applications and shared links using this resume will show those changes too. Review the changes carefully. You can use version history or the agent's undo controls to recover earlier content."
+msgstr ""
+
 #: src/features/stories/components/suggest-from-resume-dialog.tsx
 msgid "AI extracts STAR+R candidates grounded in the resume's real projects. They arrive as derived-unverified drafts — nothing counts as a fact until you confirm it."
 msgstr ""
@@ -2863,6 +2867,10 @@ msgstr "എഡിറ്റ് നിരസിച്ചു"
 msgid "Edit details"
 msgstr "വിശദാംശങ്ങൾ എഡിറ്റ് ചെയ്യുക"
 
+#: src/routes/agent/-components/new-thread-setup.tsx
+msgid "Edit existing resume"
+msgstr ""
+
 #: src/components/input/chip-input.tsx
 msgid "Edit keyword"
 msgstr "പദം തിരുത്തുക"
@@ -3172,7 +3180,7 @@ msgid "Fact gate"
 msgstr ""
 
 #: src/features/tailoring/components/tailoring-panel.tsx
-msgid "Fact gate passed — saving the tailored copy…"
+msgid "Fact gate passed — saving the tailored resume…"
 msgstr ""
 
 #: src/features/tailoring/components/tailoring-panel.tsx
@@ -3876,6 +3884,10 @@ msgstr "ഐക്കൺ"
 msgid "If it came from a scan, that is expected. Otherwise remove it; recruiters read it as keyword stuffing."
 msgstr "അത് ഒരു സ്കാനിൽ നിന്നാണെങ്കിൽ, അത് പ്രതീക്ഷിക്കാവുന്നതാണ്. അല്ലാത്തപക്ഷം അത് നീക്കം ചെയ്യുക; റിക്രൂട്ടർമാർ ഇതിനെ കീവേഡ് സ്റ്റഫിംഗായി കാണും."
 
+#: src/routes/agent/-components/new-thread-setup.tsx
+msgid "If this resume already has an active assistant thread, it will reopen."
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Images cover most of the page."
 msgstr "ചിത്രങ്ങൾ പേജിന്റെ ഭൂരിഭാഗവും മൂടുന്നു."
@@ -4172,6 +4184,10 @@ msgstr "ഒരൊറ്റ വിലാസം മാത്രം വയ്ക്
 msgid "Keep access when you are not using the application."
 msgstr "നിങ്ങൾ ആപ്ലിക്കേഷൻ ഉപയോഗിക്കാത്തപ്പോൾ ആക്സസ് നിലനിർത്തുക."
 
+#: src/features/resume/components/resume-update-mode.tsx
+msgid "Keep creating a copy"
+msgstr ""
+
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Keep editing"
 msgstr "എഡിറ്റിംഗ് തുടരുക"
@@ -4448,7 +4464,7 @@ msgid "Link a resume and paste the job description (Edit) to score your fit and 
 msgstr "നിങ്ങളുടെ യോജിപ്പ് സ്കോർ ചെയ്യാനും ക്രമീകരിച്ച പകർപ്പ് ഉണ്ടാക്കാനും ഒരു റിസ്യൂം ലിങ്ക് ചെയ്ത് ജോലി വിവരണം ഒട്ടിക്കുക (എഡിറ്റ്)."
 
 #: src/features/tailoring/components/tailoring-panel.tsx
-msgid "Link a resume and paste the job description (Edit) to tailor a copy for this job."
+msgid "Link a resume and paste the job description (Edit) to tailor your resume for this job."
 msgstr ""
 
 #: src/features/applications/components/application-ai-copilot.tsx
@@ -7574,6 +7590,14 @@ msgstr "ടെയ്ലറിംഗ് പരാജയപ്പെട്ടു."
 msgid "Tailoring in progress — follow it in the Tailoring tab"
 msgstr ""
 
+#: src/features/tailoring/components/tailoring-evaluation-hint.tsx
+msgid "Tailoring will use your latest completed evaluation, including gaps and recommendations."
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-evaluation-hint.tsx
+msgid "Tailoring works best after a full evaluation identifies gaps. You can still tailor without one."
+msgstr ""
+
 #: src/features/tailoring/components/tailoring-panel.tsx
 msgid "Tailoring…"
 msgstr ""
@@ -8550,6 +8574,14 @@ msgstr "നിലവിലുള്ള സംഗ്രഹ ഇനം അപ്ഡ
 msgid "Update an existing volunteer experience"
 msgstr "നിലവിലുള്ള ഒരു വളന്റിയർ അനുഭവം അപ്‌ഡേറ്റ് ചെയ്യുക"
 
+#: src/features/resume/components/resume-update-mode.tsx
+msgid "Update existing resume in place"
+msgstr ""
+
+#: src/features/resume/components/resume-update-mode.tsx
+msgid "Update in place"
+msgstr ""
+
 #. Primary action button to submit changed password
 #: src/dialogs/auth/change-password.tsx
 #: src/features/settings/authentication/components/password.tsx
@@ -8564,6 +8596,10 @@ msgstr "റിസ്യൂം അപ്‌ഡേറ്റ് ചെയ്യു�
 msgid "Update the calendar date for this timeline entry."
 msgstr "ഈ ടൈംലൈൻ എൻട്രിക്കുള്ള കലണ്ടർ തീയതി അപ്‌ഡേറ്റ് ചെയ്യുക."
 
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Update the linked resume for this job"
+msgstr ""
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Update the project bullets to show leadership, constraints, tradeoffs, and measurable outcomes."
 msgstr "നേതൃത്വം, പരിമിതികൾ, വിട്ടുവീഴ്ചകൾ, അളക്കാവുന്ന ഫലങ്ങൾ എന്നിവ കാണിക്കുംവിധം പ്രോജക്ട് ബുള്ളറ്റുകൾ പുതുക്കുക."
@@ -8572,6 +8608,10 @@ msgstr "നേതൃത്വം, പരിമിതികൾ, വിട്ട�
 msgid "Update this application's details."
 msgstr "ഈ ആപ്ലിക്കേഷൻ്റെ details അപ്‌ഡേറ്റ് ചെയ്യുക."
 
+#: src/features/resume/components/resume-update-mode.tsx
+msgid "Update this resume in place?"
+msgstr ""
+
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Update this timeline note."
 msgstr "ഈ ടൈംലൈൻ കുറിപ്പ് അപ്‌ഡേറ്റ് ചെയ്യുക."
@@ -8579,6 +8619,16 @@ msgstr "ഈ ടൈംലൈൻ കുറിപ്പ് അപ്‌ഡേറ്
 #: src/dialogs/auth/change-password.tsx
 msgid "Update your password"
 msgstr "നിങ്ങളുടെ പാസ്‌വേഡ് അപ്‌ഡേറ്റ് ചെയ്യുക"
+
+#. placeholder {0}: result.name
+#: src/features/applications/components/application-ai-copilot.tsx
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Updated \"{0}\" in place."
+msgstr ""
+
+#: src/features/tailoring/components/tailoring-panel.tsx
+msgid "Updated in place. To undo, open the resume and restore a previous version from version history."
+msgstr ""
 
 #: src/dialogs/auth/change-password.tsx
 msgid "Updating your password..."
